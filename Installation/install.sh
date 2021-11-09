@@ -15,25 +15,25 @@ firefox_dev() {
 }
 
 sublime_text() {
-  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  wget -O - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt update
-  sudo apt install sublime-text
+  sudo apt install -y sublime-text
 }
 
 discord() {
-  sudo apt install discord
+  sudo apt install -y discord
 }
 
 redshift() {
   cp ../config/redshift.conf ~/.config/redshift.conf
-  sudo apt install redshift redshift-gtk
+  sudo apt install -y redshift redshift-gtk
 }
 
 python() {
-  sudo apt install python3-pip
-  sudo apt install python-is-python3
-  sudo apt install ipython3
+  sudo apt install -y python3-pip
+  sudo apt install -y python-is-python3
+  sudo apt install -y ipython3
 }
 
 postman() {
@@ -44,7 +44,7 @@ postman() {
 }
 
 flameshot() {
-  sudo apt install flameshot
+  sudo apt install -y flameshot
   # unbind default screenshot
   gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip "[]"
   gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot-clip "[]"
@@ -68,53 +68,53 @@ flameshot() {
 }
 
 vs_code() {
-  sudo apt install code
+  sudo apt install -y code
 }
 
 java() {
   # install java 8 and MOVE it to java-8
-  sudo apt install openjdk-8-jdk
+  sudo apt install -y openjdk-8-jdk
   sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /etc/alternatives/java-8
   sudo ln -s /etc/alternatives/java-8 /bin/java-8
   # install java 17 and COPY it to java-8
-  sudo apt install openjdk-17-jdk
+  sudo apt install -y openjdk-17-jdk
   sudo ln -s /usr/lib/jvm/java-17-openjdk-amd64/bin/java /etc/alternatives/java-17
   sudo ln -s /etc/alternatives/java-17 /bin/java-17
   # overall it make 'java-8', 'java-17' and 'java' which is 17
 }
 
 sqlite() {
-  sudo apt install sqlite3
+  sudo apt install -y sqlite3
 }
 
 dbeaver() {
-  sudo apt install dbeaver-ce
+  sudo apt install -y dbeaver-ce
 }
 
 steam() {
-  sudo apt install steam
+  sudo apt install -y steam
 }
 
 lutris() {
-  sudo apt install lutris
+  sudo apt install -y lutris
 }
 
 multimc() {
   wget https://files.multimc.org/downloads/multimc_1.5-1.deb
-  sudo apt install ./multimc_1.5-1.deb
+  sudo apt install -y ./multimc_1.5-1.deb
   rm multimc_1.5-1.deb
 }
 
 filezilla() {
-  sudo apt install filezilla
+  sudo apt install -y filezilla
 }
 
 ms_teams() {
-  sudo apt install teams
+  sudo apt install -y teams
 }
 
 vim() {
-  sudo apt install neovim
+  sudo apt install -y neovim
   curl -sLf https://spacevim.org/install.sh | bash
 }
 
@@ -143,11 +143,11 @@ gnome_keyboard_shortcuts() {
 }
 
 gnome_tweaks() {
-  sudo apt install gnome-tweaks
+  sudo apt install -y gnome-tweaks
 }
 
 gnome_extension_panel_osd() {
-  sudo apt install gnome-shell-extension-panel-osd
+  sudo apt install -y gnome-shell-extension-panel-osd
   gnome-shell-extension-tool -e panel-osd@berend.de.schouwer.gmail.com
   gsettings set org.gnome.shell.extensions.panel-osd x-pos 98
   gsettings set org.gnome.shell.extensions.panel-osd y-pos 2
@@ -155,17 +155,17 @@ gnome_extension_panel_osd() {
 }
 
 gnome_extension_no_annoyance() {
-  sudo apt install gnome-shell-extension-no-annoyance
+  sudo apt install -y gnome-shell-extension-no-annoyance
   gnome-shell-extension-tool -e noannoyance@sindex.com
 }
 
 gnome_extension_multi_monitor() {
-  sudo apt install gnome-shell-extension-multi-monitors
+  sudo apt install -y gnome-shell-extension-multi-monitors
   gnome-shell-extension-tool -e multi-monitors-add-on@spin83
 }
 
 gnome_extension_system_monitor() {
-  sudo apt install gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
+  sudo apt install -y gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
   gnome-shell-extension-tool -e system-monitor@paradoxxx.zero.gmail.com
 }
 
@@ -175,7 +175,7 @@ terminal_autocomplete_case_insensitive() {
 
 ## Call the install functions
 
-sudo apt update && sudo apt upgrade
+sudo apt full-upgrade
 
 ################################################################
 ################################################################
