@@ -9,7 +9,6 @@ fi
 
 ## Go into root and create a temporary directory
 sudo mkdir temp
-sudo chown $USER temp
 cd temp
 
 ## Define an install process for every application
@@ -131,50 +130,12 @@ anydesk() {
   apt install -y ./anydesk_6.1.1-1_amd64.deb 
 }
 
-gnome_keyboard_shortcuts() {
-  # unbind conflict keys
-  gsettings set org.gnome.desktop.wm.keybindings switch-input-source "[]"
-  gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
-  gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
-  gsettings set org.gnome.shell.extensions.pop-shell focus-left "[]"
-  gsettings set org.gnome.shell.extensions.pop-shell focus-right "[]"
-  gsettings set org.gnome.shell.extensions.pop-shell focus-up "[]"
-  gsettings set org.gnome.shell.extensions.pop-shell focus-down "[]"
-  # bind keys
-  gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"                 # alt tab menu
-  gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']" # alt tab menu go backwards
-  gsettings set org.gnome.settings-daemon.plugins.media-keys search "['<Super>Tab']"           # show all apps and type to search
-  gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Super>Left']"               # resize window and fit to left
-  gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Super>Right']"             # resize window and fit to right
-  gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>Up']"              # toggle maximize window
-  gsettings set org.gnome.desktop.wm.keybindings minimize "['<Super>Down']"                    # minimize window
-}
-
-gnome_tweaks() {
-  apt install -y gnome-tweaks
-}
-
-gnome_extension_panel_osd() {
-  apt install -y gnome-shell-extension-panel-osd
-  gnome-shell-extension-tool -e panel-osd@berend.de.schouwer.gmail.com
-  gsettings set org.gnome.shell.extensions.panel-osd x-pos 98
-  gsettings set org.gnome.shell.extensions.panel-osd y-pos 2
-  gsettings set org.gnome.shell.extensions.panel-osd force-expand true
-}
-
-gnome_extension_no_annoyance() {
-  apt install -y gnome-shell-extension-no-annoyance
-  gnome-shell-extension-tool -e noannoyance@sindex.com
-}
-
-gnome_extension_multi_monitor() {
-  apt install -y gnome-shell-extension-multi-monitors
-  gnome-shell-extension-tool -e multi-monitors-add-on@spin83
-}
-
-gnome_extension_system_monitor() {
-  apt install -y gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
-  gnome-shell-extension-tool -e system-monitor@paradoxxx.zero.gmail.com
+fman() {
+  apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 45BCC825BC281C06D2A7F912B015FE599CFAF7EB
+  apt install -y apt-transport-https
+  echo "deb [arch=amd64] https://fman.io/updates/ubuntu/ stable main" | sudo tee /etc/apt/sources.list.d/fman.list
+  apt update
+  apt install fman
 }
 
 terminal_autocomplete_case_insensitive() {
@@ -191,12 +152,12 @@ apt full-upgrade
 ################################################################
 ################################################################
 
-#firefox_dev
+firefox_dev
 sublime_text
 discord
 redshift
 python
-#postman
+postman
 flameshot
 vs_code
 java
@@ -206,14 +167,10 @@ steam
 lutris
 multimc
 filezilla
-#ms_teams
-#vim
+ms_teams
+vim
 anydesk
-gnome_keyboard_shortcuts
-gnome_tweaks
-gnome_extension_panel_osd
-gnome_extension_no_annoyance
-gnome_extension_system_monitor
+fman
 terminal_autocomplete_case_insensitive
 
 ################################################################
