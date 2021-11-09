@@ -113,6 +113,16 @@ ms_teams() {
   sudo apt install teams
 }
 
+vim() {
+  sudo apt install neovim
+  curl -sLf https://spacevim.org/install.sh | bash
+}
+
+anydesk() {
+  wget https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb
+  sudo dpkg -i anydesk_6.1.1-1_amd64.deb 
+}
+
 gnome_keyboard_shortcuts() {
   # unbind conflict keys
   gsettings set org.gnome.desktop.wm.keybindings switch-input-source "[]"
@@ -189,6 +199,8 @@ lutris
 multimc
 filezilla
 ms_teams
+vim
+anydesk
 gnome_keyboard_shortcuts
 gnome_tweaks
 gnome_extension_panel_osd
