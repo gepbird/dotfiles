@@ -138,8 +138,18 @@ fman() {
   apt install fman
 }
 
+sshfs() {
+  apt install -y sshfs
+}
+
 terminal_autocomplete_case_insensitive() {
   echo "set completion-ignore-case on" >> /etc/inputrc
+}
+
+xampp() {
+  wget https://www.apachefriends.org/xampp-files/8.0.12/xampp-linux-x64-8.0.12-0-installer.run
+  chmod +x xampp-linux-x64-8.0.12-0-installer.run
+  ./xampp-linux-x64-8.0.12-0-installer.run
 }
 
 ## Call the install functions
@@ -171,7 +181,9 @@ ms_teams
 vim
 anydesk
 fman
+sshfs
 terminal_autocomplete_case_insensitive
+xampp
 
 ################################################################
 ################################################################
