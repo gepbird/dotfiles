@@ -150,6 +150,7 @@ xampp() {
   wget https://www.apachefriends.org/xampp-files/8.0.12/xampp-linux-x64-8.0.12-0-installer.run
   chmod +x xampp-linux-x64-8.0.12-0-installer.run
   ./xampp-linux-x64-8.0.12-0-installer.run
+  ln -s /opt/lampp/xampp /bin/xampp
 }
 
 ## Call the install functions
