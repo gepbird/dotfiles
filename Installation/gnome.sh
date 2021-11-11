@@ -17,13 +17,12 @@ gnome_keyboard_shortcuts() {
   # bind keys
   gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"                 # alt tab menu
   gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']" # alt tab menu go backwards
-#  gsettings set org.gnome.settings-daemon.plugins.media-keys search "['<Super>']"           # show all apps and type to search
-  gsettings set org.gnome.shell.keybindings toggle-application-view "['<Super>']"
-  gsettings set org.gnome.shell.extensions.pop-shell activate-launcher "['<Super>Tab']"
-  gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Super>Left', '<Super>h']"               # resize window and fit to left
-  gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Super>Right', '<Super>l']"             # resize window and fit to right
-  gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>Up', '<Super>k']"              # toggle maximize window
-  gsettings set org.gnome.desktop.wm.keybindings minimize "['<Super>Down', '<Super>j']"                    # minimize window
+  gsettings set org.gnome.shell.keybindings toggle-application-view "['<Super>']"              # applications search
+  gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>Tab']"                   # show workspaces
+  gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Super>Left', '<Super>h']"   # resize window and fit to left
+  gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Super>Right', '<Super>l']" # resize window and fit to right
+  gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>Up', '<Super>k']"  # toggle maximize window
+  gsettings set org.gnome.desktop.wm.keybindings minimize "['<Super>Down', '<Super>j']"        # minimize window
 }
 
 gnome_tweaks() {
