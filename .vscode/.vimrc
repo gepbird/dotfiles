@@ -1,8 +1,8 @@
 inoremap jj <esc>
 
-map <S-l> e
-map <S-h> b
-map <S-j> 5j
-map <S-k> 5k
+nnoremap <S-l> e
+nnoremap <S-h> b
+nnoremap <S-j> 5j
+nnoremap <S-k> 5k
 
-map rw dwi 
+nnoremap <S-z> <S-j>

@@ -6,19 +6,21 @@ function! myconfig#after() abort
 
   inoremap jj <esc>
 
-  map <S-l> e
-  map <S-h> b
-  map <S-j> 5j
-  map <S-k> 5k
+  nnoremap <S-l> e
+  nnoremap <S-h> b
+  nnoremap <S-j> 5j
+  nnoremap <S-k> 5k
 
-  map rw dwi 
+  nnoremap <S-u> <C-r>
 
-  map <C-h> <C-w>h
-  map <C-j> <C-w>j
-  map <C-k> <C-w>k
-  map <C-l> <C-w>l
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-l> <C-w>l
 
-  map <C-b> :NERDTreeToggle<CR>
+  nnoremap <S-z> <S-j>
+
+  nnoremap <C-b> :NERDTreeToggle<CR>
   let g:NERDTreeWinPos = "left"
 
 endfunction
