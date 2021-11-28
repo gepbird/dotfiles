@@ -1,4 +1,3 @@
-alias sudo='sudo -E env "PATH=$PATH"'
 alias lf='ls -la | grep'
 alias ff='find | grep'
 alias hisf='history | grep'
