@@ -5,4 +5,6 @@ nnoremap <S-h> b
 nnoremap <S-j> 5j
 nnoremap <S-k> 5k
 
+nnoremap <S-u> <C-r>
+
 nnoremap <S-z> <S-j>

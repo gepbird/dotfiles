@@ -125,4 +125,3 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
 
-setxkbmap -option "caps:swapescape"
