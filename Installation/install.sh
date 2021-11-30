@@ -82,11 +82,11 @@ java() {
   sudo apt install -y openjdk-8-jdk
   sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /etc/alternatives/java-8
   sudo ln -s /etc/alternatives/java-8 /bin/java-8
-  # install java 17 and COPY it to java-8
-  sudo apt install -y openjdk-17-jdk
-  sudo ln -s /usr/lib/jvm/java-17-openjdk-amd64/bin/java /etc/alternatives/java-17
-  sudo ln -s /etc/alternatives/java-17 /bin/java-17
-  # overall it make 'java-8', 'java-17' and 'java' which is 17
+  # install java 16 and COPY it to java-8
+  sudo apt install -y openjdk-16-jdk
+  sudo ln -s /usr/lib/jvm/java-16-openjdk-amd64/bin/java /etc/alternatives/java-16
+  sudo ln -s /etc/alternatives/java-16 /bin/java-16
+  # overall it make 'java-8', 'java-16' and 'java' which is 16
 }
 
 sqlite() {
