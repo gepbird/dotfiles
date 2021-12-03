@@ -145,7 +145,7 @@ sshfs() {
 }
 
 terminal_autocomplete_case_insensitive() {
-  sudo echo bash -c '"set completion-ignore-case on" >> /etc/inputrc'
+  sudo bash -c 'echo "set completion-ignore-case on" >> /etc/inputrc'
 }
 
 xampp() {
