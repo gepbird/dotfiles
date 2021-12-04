@@ -1,0 +1,70 @@
+{
+	// Place your snippets for csharp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Console.WriteLine": {
+		"prefix": "cw",
+		"body": [
+			"Console.WriteLine($1);",
+		],
+		"description": "Console.WriteLine",
+	},
+	"Console.WriteLine with formatting": {
+		"prefix": "cwf",
+		"body": [
+			"Console.WriteLine($\"$1\");",
+		],
+		"description": "Console.WriteLine with formatting",
+	},
+	"Console.WriteLine with index": {
+		"prefix": "cwi",
+		"body": [
+			"Console.WriteLine($\"{i + 1}. $1\");",
+		],
+		"description": "Console.WriteLine with index",
+	},
+
+	"Console.ReadLine": {
+		"prefix": "cr",
+		"body": [
+			"Console.ReadLine()",
+		],
+		"description": "Console.ReadLine",
+	},
+
+
+	"For loop with i": {
+		"prefix": "fori",
+		"body": [
+			"for(int i = 0; i < $1.Length; i++)",
+			"{",
+			"\t$2",
+			"}",
+		],
+		"description": "For loop with i",
+	},
+	"Double for loop with i and j": {
+		"prefix": "forij",
+		"body": [
+			"for(int i = 0; i < $1.GetLength(0); i++)",
+			"{",
+			"\tfor(int j = 0; j < $1.GetLength(1); j++)",
+			"\t{",
+			"\t\t$2",
+			"\t}",
+			"}",
+		],
+		"description": "Double for loop with i and j",
+	},
+}

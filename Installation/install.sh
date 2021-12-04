@@ -32,7 +32,6 @@ discord() {
 }
 
 redshift() {
-  sudo cp ../config/redshift.conf ~/.config/redshift.conf
   sudo apt install -y redshift redshift-gtk
 }
 
@@ -87,6 +86,14 @@ java() {
   sudo ln -s /usr/lib/jvm/java-16-openjdk-amd64/bin/java /etc/alternatives/java-16
   sudo ln -s /etc/alternatives/java-16 /bin/java-16
   # overall it make 'java-8', 'java-16' and 'java' which is 16
+}
+
+csharp() {
+  wget https://download.visualstudio.microsoft.com/download/pr/17b6759f-1af0-41bc-ab12-209ba0377779/e8d02195dbf1434b940e0f05ae086453/dotnet-sdk-6.0.100-linux-x64.tar.gz
+  mkdir dotnet
+  tar xvf dotnet-sdk-6.0.100-linux-x64.tar.gz -C dotnet
+  sudo mv dotnet /opt
+  sudo ln -s /opt/dotnet/dotnet /bin/dotnet
 }
 
 sqlite() {
@@ -220,6 +227,7 @@ postman
 flameshot
 vs_code
 java
+csharp
 sqlite
 dbeaver
 steam
