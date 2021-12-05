@@ -8,6 +8,7 @@
   "git.autofetchPeriod": 30,
   "git.confirmSync": false,
   "git.autofetch": true,
+  "git.ignoreLimitWarning": true,
   "workbench.activityBar.visible": true,
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "material-icon-theme",
@@ -15,9 +16,9 @@
   "editor.fontSize": 16,
   "editor.suggestSelection": "first",
   "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
   "editor.useTabStops": true,
   "editor.tabSize": 2,
   "editor.selectionClipboard": false,
@@ -169,7 +170,7 @@
   // ],
   // "java.home": "/usr/lib/jvm/java-16-openjdk-amd64",
   "vim.enableNeovim": true,
-  "vim.vimrc.path": "~/.vscode/.vimrc",
+  "vim.vimrc.path": "/home/geptop/.vscode/.vimrc",
   "remote.SSH.remotePlatform": {
     "thegep.xyz": "linux"
   },
@@ -177,5 +178,7 @@
   "settingsSync.ignoredSettings": [
     "vim.vimrc.path"
   ],
+  "git.statusLimit": 1000,
   "vim.vimrc.enable": true,
+  "editor.cursorBlinking": "phase",
 }

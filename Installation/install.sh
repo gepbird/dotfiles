@@ -1,54 +1,58 @@
-#!/bin/sh
+#!/bin/bash
 
 ## Since there are user specific settings, force the user to run without sudo
-if [ $USER = "root" ]
-then
+if [ $USER = "root" ]; then
   echo "Run this script without sudo!"
   exit
 fi 
 
-## Go into root and create a temporary directory
-mkdir temp
+## Refresh the temporary directory
+rm -vrf temp
+mkdir -v temp
 cd temp
 
 ## Define an install process for every application
 
-firefox_dev() {
-  wget -O firefox-dev.tar.bz2 "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64"
-  tar xvf firefox-dev.tar.bz2
-  sudo mv firefox /opt/firefox-dev
-  sudo cp ../config/firefox-dev.desktop /usr/share/applications/firefox-dev.desktop
+install_firefox() {
+  if [ ! -d '/opt/firefox-dev' ]; then
+    wget -vO firefox-dev.tar.bz2 "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64"
+    tar xvf firefox-dev.tar.bz2
+    sudo mv -vn firefox /opt/firefox-dev
+  fi
+  sudo cp -vn ../config/firefox-dev.desktop /usr/share/applications/firefox-dev.desktop
 }
 
-sublime_text() {
-  wget -O - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+install_sublime_text() {
+  wget -vO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt update -y
   sudo apt install -y sublime-text
 }
 
-discord() {
+install_discord() {
   sudo apt install -y discord
 }
 
-redshift() {
+install_redshift() {
   sudo apt install -y redshift redshift-gtk
 }
 
-python() {
+install_python() {
   sudo apt install -y python3-pip
   sudo apt install -y python-is-python3
   sudo apt install -y ipython3
 }
 
-postman() {
-  wget -O Postman-linux-x64-8.10.0.tar.gz https://dl.pstmn.io/download/latest/linux64
-  tar xvf Postman-linux-x64-8.10.0.tar.gz
-  sudo sudo mv Postman /opt/postman
-  sudo cp ../config/postman.desktop /usr/share/applications/postman.desktop
+install_postman() {
+  if [ ! -d '/opt/postman' ]; then
+    wget -vO Postman-linux-x64-8.10.0.tar.gz https://dl.pstmn.io/download/latest/linux64
+    tar xvf Postman-linux-x64-8.10.0.tar.gz
+    sudo mv -vn Postman /opt/postman
+  fi
+  sudo cp -vn ../config/postman.desktop /usr/share/applications/postman.desktop
 }
 
-flameshot() {
+install_flameshot() {
   sudo apt install -y flameshot
   # unbind default screenshot
   gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip "[]"
@@ -57,7 +61,7 @@ flameshot() {
   gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot-clip "[]"
   gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot "[]"
   gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
-  # add insant and delay (2 sec) screenshot
+  # add insant and delayed (2 sec) screenshot
   gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
 		'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/',
 		'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/'
@@ -72,82 +76,91 @@ flameshot() {
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ binding '<Ctrl><Shift>Print'
 }
 
-vs_code() {
+install_vs_code() {
   sudo apt install -y code
 }
 
-java() {
-  # install java 8 and MOVE it to java-8
+install_java() {
+  # java-8
   sudo apt install -y openjdk-8-jdk
-  sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /etc/alternatives/java-8
-  sudo ln -s /etc/alternatives/java-8 /bin/java-8
-  # install java 16 and COPY it to java-8
+  sudo ln -sf /usr/lib/jvm/java-8-openjdk-amd64/bin/java /bin/java-8
+  # java-16
   sudo apt install -y openjdk-16-jdk
-  sudo ln -s /usr/lib/jvm/java-16-openjdk-amd64/bin/java /etc/alternatives/java-16
-  sudo ln -s /etc/alternatives/java-16 /bin/java-16
-  # overall it make 'java-8', 'java-16' and 'java' which is 16
+  sudo ln -sf /usr/lib/jvm/java-16-openjdk-amd64/bin/java /bin/java-16
+  # java-17
+  sudo apt install -y openjdk-17-jdk
+  sudo ln -sf /usr/lib/jvm/java-17-openjdk-amd64/bin/java /bin/java-17
+  # default java
+  sudo ln -sf /bin/java-17 /bin/java
 }
 
-csharp() {
-  wget https://download.visualstudio.microsoft.com/download/pr/17b6759f-1af0-41bc-ab12-209ba0377779/e8d02195dbf1434b940e0f05ae086453/dotnet-sdk-6.0.100-linux-x64.tar.gz
-  mkdir dotnet
-  tar xvf dotnet-sdk-6.0.100-linux-x64.tar.gz -C dotnet
-  sudo mv dotnet /opt
-  sudo ln -s /opt/dotnet/dotnet /bin/dotnet
+install_csharp() {
+  sudo apt install -y gnupg ca-certificates
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+  sudo apt update
+  sudo apt install -y mono-devel
 }
 
-sqlite() {
+install_sqlite() {
   sudo apt install -y sqlite3
 }
 
-dbeaver() {
+install_dbeaver() {
   sudo apt install -y dbeaver-ce
 }
 
-steam() {
+install_steam() {
   sudo apt install -y steam
 }
 
-lutris() {
+install_lutris() {
   sudo apt install -y lutris
 }
 
-multimc() {
-  wget https://files.multimc.org/downloads/multimc_1.5-1.deb
+install_multimc() {
+  if [[ ! `apt list --installed | grep multimc/now` ]]; then
+    wget -v https://files.multimc.org/downloads/multimc_1.5-1.deb
+    sudo apt install -y ./multimc_1.5-1.deb
+  fi
 }
 
-filezilla() {
+install_filezilla() {
   sudo apt install -y filezilla
 }
 
-ms_teams() {
-  wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.4.00.26453_amd64.deb 
-  sudo apt install -y ./teams_1.4.00.26453_amd64.deb 
+install_teams() {
+  if [[ ! `apt list --installed | grep teams/stable` ]]; then
+    wget -v https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.4.00.26453_amd64.deb 
+    sudo apt install -y ./teams_1.4.00.26453_amd64.deb 
+  fi
 }
 
-vim() {
+install_anydesk() {
+  if [[ ! `apt list --installed | grep anydesk/now` ]]; then
+    wget -v https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb
+    sudo apt install -y ./anydesk_6.1.1-1_amd64.deb 
+  fi
+}
+
+install_vim() {
   sudo apt install -y neovim
-  curl -sLf https://spacevim.org/install.sh | bash
+  curl -Lv https://spacevim.org/install.sh | bash
 }
 
 swap_caps_and_esc() {
   gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
 }
 
-anydesk() {
-  wget https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb
-  sudo apt install -y ./anydesk_6.1.1-1_amd64.deb 
-}
-
-fman() {
+install_fman() {
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 45BCC825BC281C06D2A7F912B015FE599CFAF7EB
   sudo apt install -y apt-transport-https
   sudo echo "deb [arch=amd64] https://fman.io/updates/ubuntu/ stable main" | sudo tee /etc/apt/sources.list.d/fman.list
   sudo apt update
-  sudo apt install fman
+  sudo apt install -y fman
 }
 
-sshfs() {
+install_sshfs() {
   sudo apt install -y sshfs
 }
 
@@ -155,11 +168,13 @@ terminal_autocomplete_case_insensitive() {
   sudo bash -c 'echo "set completion-ignore-case on" >> /etc/inputrc'
 }
 
-xampp() {
-  wget https://www.apachefriends.org/xampp-files/8.0.12/xampp-linux-x64-8.0.12-0-installer.run
-  sudo chmod +x xampp-linux-x64-8.0.12-0-installer.run
-  sudo ./xampp-linux-x64-8.0.12-0-installer.run
-  sudo ln -s /opt/lampp/xampp /bin/xampp
+install_xampp() {
+  if [ ! -d '/opt/lampp' ]; then
+    wget -v https://www.apachefriends.org/xampp-files/8.0.12/xampp-linux-x64-8.0.12-0-installer.run
+    sudo chmod +x xampp-linux-x64-8.0.12-0-installer.run
+    sudo ./xampp-linux-x64-8.0.12-0-installer.run
+    sudo ln -sf /opt/lampp/xampp /bin/xampp
+  fi
 }
 
 gnome_keyboard_shortcuts() {
@@ -205,7 +220,7 @@ gnome_extension_multi_monitor() {
 }
 
 gnome_extension_system_monitor() {
-  sudo apt install -y gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-system-monitor
+  sudo apt install -y gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 gnome-shell-extension-system-monitor 
   gnome-shell-extension-tool -e system-monitor@paradoxxx.zero.gmail.com
 }
 
@@ -213,46 +228,53 @@ gnome_extension_system_monitor() {
 
 sudo apt full-upgrade -y
 
+if [ $# = 0 ]; then
 ################################################################
 ################################################################
 ################## CHOOSE YOUR TOOLS BELOW #####################
 ################################################################
 ################################################################
-firefox_dev
-sublime_text
-discord
-redshift
-python
-postman
-flameshot
-vs_code
-java
-csharp
-sqlite
-dbeaver
-steam
-lutris
-multimc
-filezilla
-ms_teams
-vim
-swap_caps_and_esc
-anydesk
-fman
-sshfs
-terminal_autocomplete_case_insensitive
-xampp
-gnome_keyboard_shortcuts
-gnome_tweaks
-gnome_extension_panel_osd
-gnome_extension_no_annoyance
-gnome_extension_system_monitor
+  install_firefox
+  install_sublime_text
+  install_discord
+  install_redshift
+  install_python
+  install_postman
+  install_flameshot
+  install_vs_code
+  install_java
+  install_csharp
+  install_sqlite
+  install_dbeaver
+  install_steam
+  install_lutris
+  install_multimc
+  install_filezilla
+  install_teams
+  install_anydesk
+  install_vim
+  swap_caps_and_esc
+  install_fman
+  install_sshfs
+  terminal_autocomplete_case_insensitive
+  install_xampp
+  gnome_keyboard_shortcuts
+  gnome_tweaks
+  gnome_extension_panel_osd
+  gnome_extension_no_annoyance
+  gnome_extension_system_monitor
 ################################################################
 ################################################################
 ######################## END OF TOOLS ##########################
 ################################################################
 ################################################################
+else
+  for tool in $*
+  do
+    $tool
+  done
+fi
 
 ## Clean up
 cd ..
-sudo rm -rf temp
+sudo rm -vrf temp
