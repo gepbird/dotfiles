@@ -1,3 +1,4 @@
+alias la='ls -la'
 alias lf='ls -la | grep'
 alias ff='find | grep'
 alias hisf='history | grep'

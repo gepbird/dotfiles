@@ -16,9 +16,9 @@
   "editor.fontSize": 16,
   "editor.suggestSelection": "first",
   "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
-  "editor.formatOnType": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
   "editor.useTabStops": true,
   "editor.tabSize": 2,
   "editor.selectionClipboard": false,
@@ -179,6 +179,6 @@
     "vim.vimrc.path"
   ],
   "git.statusLimit": 1000,
-  "vim.vimrc.enable": true,
   "editor.cursorBlinking": "phase",
+  "vim.vimrc.enable": true,
 }
