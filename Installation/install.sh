@@ -61,16 +61,20 @@ install_flameshot() {
   gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot-clip "[]"
   gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot "[]"
   gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
-  # add insant and delayed (2 sec) screenshot
+  # bind all monitor screenshot (gnome)
+  gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot-clip "['Print']"
+  # bind focused window screenshot (gnome)
+  gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip "['<Alt>Print']"
+  # add insant and delayed (2 sec) screenshot (flameshot)
   gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
 		'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/',
 		'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/'
 	]"
-  # bind instant screenshot
+  # bind instant screenshot (flameshot)
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/ name 'flameshot-insant'
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/ command 'flameshot gui'
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/ binding '<Ctrl>Print'
-  # bind delayed screenshot
+  # bind delayed screenshot (flameshot)
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ name 'flameshot-delayed'
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ command 'flameshot gui -d 2000'
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ binding '<Ctrl><Shift>Print'
@@ -152,10 +156,10 @@ install_teams() {
 }
 
 install_anydesk() {
-  if [[ ! `apt list --installed | grep anydesk/now` ]]; then
-    wget -v https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb
-    sudo apt install -y ./anydesk_6.1.1-1_amd64.deb 
-  fi
+  wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+  sudo bash -c 'echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list'
+  sudo apt update
+  sudo apt install -y anydesk
 }
 
 install_vim() {
