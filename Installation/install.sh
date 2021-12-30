@@ -163,6 +163,8 @@ install_anydesk() {
 }
 
 install_vim() {
+  sudo apt install -y vim
+  sudo apt install -y vim-gtk
   sudo apt install -y neovim
   curl -Lv https://spacevim.org/install.sh | bash
 }

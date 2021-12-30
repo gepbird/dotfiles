@@ -4,9 +4,13 @@ function! myconfig#after() abort
   set shiftwidth=2
   set expandtab
 
+  nnoremap y "+y
+  vnoremap y "+y
+
   inoremap jj <esc>
 
   nnoremap j jzz
+  nnoremap k kzz
   nnoremap k kzz
 
   nnoremap <S-l> e
