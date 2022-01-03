@@ -1,0 +1,38 @@
+{
+  "defaultSettings": {
+    "altLegendaryBin": "",
+    "addDesktopShortcuts": false,
+    "addStartMenuShortcuts": false,
+    "audioFix": false,
+    "autoInstallDxvk": false,
+    "checkForUpdatesOnStartup": true,
+    "customWinePaths": [
+      "/mnt/LinuxGames/Steam/steamapps/common/Proton 6.3/proton"
+    ],
+    "darkTrayIcon": false,
+    "defaultInstallPath": "'/mnt/LinuxGames/Heroic'",
+    "discordRPC": false,
+    "egsLinkedPath": "",
+    "enableEsync": false,
+    "enableFsync": false,
+    "exitToTray": false,
+    "language": "en",
+    "maxRecentGames": 5,
+    "maxWorkers": 0,
+    "nvidiaPrime": false,
+    "offlineMode": false,
+    "otherOptions": "",
+    "showFps": false,
+    "showMangohud": false,
+    "showUnrealMarket": false,
+    "startInTray": false,
+    "useGameMode": false,
+    "wineCrossoverBottle": "Heroic",
+    "winePrefix": "/mnt/LinuxGames/Heroic/Prefixes",
+    "wineVersion": {
+      "bin": "'/mnt/LinuxGames/Steam/steamapps/common/Proton 6.3/proton'",
+      "name": "Custom Proton - /mnt/LinuxGames/Steam/steamapps/common/Proton 6.3/proton"
+    }
+  },
+  "version": "v0"
+}

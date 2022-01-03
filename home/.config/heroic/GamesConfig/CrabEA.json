@@ -1,0 +1,45 @@
+{
+  "CrabEA": {
+    "checkUpdatesInterval": 10,
+    "enableUpdates": false,
+    "addDesktopShortcuts": false,
+    "addStartMenuShortcuts": false,
+    "autoInstallDxvk": false,
+    "checkForUpdatesOnStartup": true,
+    "customWinePaths": [
+      "/mnt/LinuxGames/Steam/steamapps/common/Proton 6.3/proton"
+    ],
+    "defaultInstallPath": "'/mnt/LinuxGames/Heroic'",
+    "language": "en",
+    "maxWorkers": 0,
+    "nvidiaPrime": false,
+    "otherOptions": "",
+    "showUnrealMarket": false,
+    "showFps": false,
+    "useGameMode": false,
+    "userInfo": {
+      "epicId": "51f9f797e84540f5b179f8067cd5234e",
+      "name": "gep"
+    },
+    "wineCrossoverBottle": "Heroic",
+    "winePrefix": "~/Games/Heroic/Prefixes/Satisfactory-Early-Access",
+    "wineVersion": {
+      "bin": "'/mnt/LinuxGames/Steam/steamapps/common/Proton 6.3/proton'",
+      "name": "Custom Proton - /mnt/LinuxGames/Steam/steamapps/common/Proton 6.3/proton"
+    },
+    "altLegendaryBin": "",
+    "audioFix": false,
+    "darkTrayIcon": false,
+    "discordRPC": false,
+    "egsLinkedPath": "",
+    "enableEsync": false,
+    "enableFsync": false,
+    "exitToTray": false,
+    "maxRecentGames": 5,
+    "offlineMode": false,
+    "showMangohud": false,
+    "startInTray": false
+  },
+  "version": "v0",
+  "explicit": true
+}
