@@ -135,7 +135,8 @@ end
 
 function heroic
   queue aur/heroic-games-launcher-bin
-  link .config/heroic
+  link .config/heroic/config.json
+  link .config/heroic/GamesConfig/CrabEA.json
 end
 
 function lutris

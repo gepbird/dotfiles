@@ -57,11 +57,6 @@
     "command": "workbench.action.files.openFolder"
   },
   {
-    "key": "ctrl+shift+o",
-    "command": "workbench.action.files.openLocalFolder",
-    "when": "remoteFileDialogVisible"
-  },
-  {
     "key": "ctrl+m",
     "command": "-editor.action.toggleTabFocusMode"
   },
@@ -213,5 +208,13 @@
   {
     "key": "ctrl+k ctrl+w",
     "command": "-workbench.action.closeAllEditors"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.openRecent"
   }
 ]

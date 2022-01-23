@@ -1,35 +1,44 @@
 {
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "keyboard.dispatch": "keyCode",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
-  "git.enableSmartCommit": true,
-  "git.autofetchPeriod": 30,
-  "git.confirmSync": false,
-  "git.autofetch": true,
-  "git.ignoreLimitWarning": true,
   "workbench.activityBar.visible": true,
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.untitled.hint": "hidden",
+  "window.title": "${dirty}${seperator}${rootName}",
   "editor.minimap.enabled": false,
   "editor.fontSize": 16,
+  "editor.lineNumbers": "relative",
   "editor.suggestSelection": "first",
   "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+  "editor.cursorBlinking": "phase",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "editor.useTabStops": true,
-  "editor.tabSize": 2,
-  "editor.selectionClipboard": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
   },
+  "editor.useTabStops": true,
   "editor.bracketPairColorization.enabled": true,
-  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.enabled": false,
+  "editor.quickSuggestionsDelay": 999999,
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
   "editor.detectIndentation": false,
+  "editor.tabCompletion": "off",
   "editor.renderWhitespace": "all",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "debug.onTaskErrors": "showErrors",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -51,8 +60,19 @@
       "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
     }
   },
-  "window.title": "${dirty}${seperator}${rootName}",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.autofetchPeriod": 30,
+  "git.confirmSync": false,
+  "git.ignoreLimitWarning": true,
+  "git.statusLimit": 1000,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "settingsSync.ignoredSettings": [
+    "vim.vimrc.path"
+  ],
+  "remote.SSH.remotePlatform": {
+    "thegep.xyz": "linux"
+  },
   "liveServer.settings.donotShowInfoMsg": true,
   "files.exclude": {
     "**/__pycache__": true,
@@ -63,7 +83,16 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "files.insertFinalNewline": true,
+  "vim.useCtrlKeys": false,
+  "vim.vimrc.enable": true,
+  "vim.enableNeovim": true,
+  "vim.vimrc.path": "/home/gep/.config/Code/User/.vimrc",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true
+  },
   "[html]": {
     "editor.suggest.insertMode": "replace",
     "editor.autoClosingBrackets": "always",
@@ -76,12 +105,16 @@
   "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
   "javascript.format.semicolons": "insert",
   "javascript.preferences.quoteStyle": "single",
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "/usr/bin/node"
+  },
   "[typescript]": {},
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
   "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
   "typescript.preferences.quoteStyle": "single",
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
@@ -96,15 +129,13 @@
   },
   "dart.devToolsReuseWindows": false,
   "dart.debugSdkLibraries": true,
+  "dart.flutterSdkPath": "/opt/flutter",
+  "dart.debugExternalPackageLibraries": true,
   "[php]": {
     "editor.defaultFormatter": "Sophisticode.php-formatter",
   },
-  "workbench.colorCustomizations": {
-    "editorError.foreground": "#00000000",
-    "editorWarning.foreground": "#00000000",
-    "editorOverviewRuler.errorForeground": "#00000000",
-    "editorOverviewRuler.warningForeground": "#00000000"
-  },
+  "intelephense.telemetry.enabled": false,
+  "phpformatter.composer": true,
   "intelephense.format.braces": "allman",
   "intelephense.format.enable": false,
   "intelephense.diagnostics.undefinedTypes": false,
@@ -126,15 +157,13 @@
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp",
   },
-  "omnisharp.enableRoslynAnalyzers": true,
   "csharp.semanticHighlighting.enabled": true,
   "csharp.suppressHiddenDiagnostics": false,
   "csharpextensions.useThisForCtorAssignments": false,
-  "js/ts.implicitProjectConfig.experimentalDecorators": true,
-  "debug.onTaskErrors": "debugAnyway",
-  "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-node": "/usr/bin/node"
-  },
+  "omnisharp.enableRoslynAnalyzers": true,
+  "omnisharp.enableAsyncCompletion": true,
+  "omnisharp.enableDecompilationSupport": true,
+  "omnisharp.enableImportCompletion": true,
   "[cpp]": {
     "editor.wordBasedSuggestions": false,
     "editor.suggest.insertMode": "replace",
@@ -145,40 +174,4 @@
   "C_Cpp.vcFormat.indent.caseLabels": true,
   "C_Cpp.vcFormat.indent.preprocessor": "none",
   "C_Cpp.vcFormat.indent.accessSpecifiers": true,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  "dart.flutterSdkPath": "/opt/flutter",
-  "dart.debugExternalPackageLibraries": true,
-  "phpformatter.composer": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": true,
-    "markdown": true
-  },
-  "vim.useCtrlKeys": false,
-  "workbench.editor.untitled.hint": "hidden",
-  "editor.lineNumbers": "relative",
-  // "java.configuration.runtimes": [
-  //   {
-  //     "name": "JavaSE-16",
-  //     "path": "/usr/lib/jvm/java-16-openjdk-amd64",
-  //     "default": true
-  //   }
-  // ],
-  // "java.home": "/usr/lib/jvm/java-16-openjdk-amd64",
-  "vim.enableNeovim": true,
-  "vim.vimrc.path": "/home/gep/.config/Code/User/.vimrc",
-  "remote.SSH.remotePlatform": {
-    "thegep.xyz": "linux"
-  },
-  "github.copilot.advanced": {},
-  "settingsSync.ignoredSettings": [
-    "vim.vimrc.path"
-  ],
-  "git.statusLimit": 1000,
-  "editor.cursorBlinking": "phase",
-"vim.vimrc.enable": true,
 }
