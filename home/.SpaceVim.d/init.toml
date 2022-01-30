@@ -39,3 +39,7 @@ auto_completion_tab_key_behavior = "cycle"
 name = 'shell'
 default_position = 'top'
 default_height = 30
+
+[[custom_plugins]]
+repo = 'dag/vim-fish'
+merged = false

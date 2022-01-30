@@ -90,8 +90,10 @@ alias ff='find | grep'
 alias hisf='history | grep'
 alias rmf='sudo rm -rf'
 alias fishreload='source ~/.config/fish/config.fish'
-alias vim='nvim'
-alias v='nvim'
+function vim -a file
+  bash -c "nvim $file"
+end
+alias v='vim'
 alias screen='screen -s fish'
 
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
