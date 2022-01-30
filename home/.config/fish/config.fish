@@ -92,6 +92,7 @@ alias rmf='sudo rm -rf'
 alias fishreload='source ~/.config/fish/config.fish'
 alias vim='nvim'
 alias v='nvim'
+alias screen='screen -s fish'
 
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias wget='wget -c '

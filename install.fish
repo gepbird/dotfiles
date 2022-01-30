@@ -81,7 +81,7 @@ function flameshot
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ binding '<Ctrl><Shift>Print'
 end
 
-function git
+function gitconfig
   link .gitconfig
 end
 
@@ -156,6 +156,53 @@ function teams
   queue aur/teams
 end
 
+function packet_tracer
+  if ! paru -Q | grep -q packettracer
+    git clone https://aur.archlinux.org/packettracer.git
+    set deb_link 'https://www.netacad.com/portal/resources/file/7b1849d4-dd2c-4e4d-aded-195fd82feca9'
+    set downloads_link 'https://www.netacad.com/portal/node/488'
+    echo "-------------------------------------------------"
+    echo "Log in to netacad and"
+    echo " - download packet tracer version 8.1.1 from $deb_link"
+    echo " - or choose another version from $downloads_link "
+    echo "Wait for the download to complete"
+    echo "If the script doesnt continue, try manually moving the downloaded deb file to "(pwd)"/packettracer"
+    echo "-------------------------------------------------"
+    echo "Waiting for the debian file..."
+    xdg-open $deb_link 2>/dev/null
+    set deb_file 'CiscoPacketTracer_[0-9]+_Ubuntu_64bit.deb'
+    set detected_deb false
+    # check if the deb file downloaded in ~/Downloads then move it to to the cloned AUR repo
+    while true
+      if ls ~/Downloads | grep -q $deb_file
+        if ! ls ~/Downloads | grep -q $deb_file.part
+          mv ~/Downloads/CiscoPacketTracer_*_Ubuntu_64bit.deb packettracer
+        end
+        if ! $detected_deb
+          set detected_deb true
+          echo "Found debian file in downloads directory, waiting for download to complete..."
+        end
+      end
+      if ls packettracer | grep -q $deb_file
+        echo "Debian file is in place"
+        break
+      end
+      sleep 0.1
+    end
+    cd packettracer
+    # packet tracer version in the deb and AUR PKBUILD may differ, put deb version to PKGBUILD
+    echo "Patching PKGBUILD"
+    set deb_file (exa | grep *.deb)
+    echo "source=('local://$deb_file' 'packettracer.sh')" | tee -a PKGBUILD
+    makepkg -src --skipchecksums
+    paru -U --noconfirm *.pkg.*
+    cd ..
+    rm -rf packettracer
+  else
+    echo "Packet tracer is installed"
+  end
+end
+
 function anydesk
   queue aur/anydesk-bin
 end
@@ -172,6 +219,10 @@ end
 
 function swap_caps_and_esc
   gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
+end
+
+function screen
+  queue extra/screen
 end
 
 function fman
@@ -246,6 +297,7 @@ if ! test -n "$argv"
   python
   postman
   flameshot
+  gitconfig
   vs_code
   java
   csharp
@@ -258,9 +310,11 @@ if ! test -n "$argv"
   multimc
   filezilla
   teams
+  packet_tracer
   anydesk
   vim
   swap_caps_and_esc
+  screen
   fman
   obs
   openshot

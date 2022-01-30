@@ -14,3 +14,6 @@ nnoremap <S-z> <S-j>
 
 nnoremap < <<
 nnoremap > >>
+
+nnoremap ; $a;<esc>
+nnoremap , $a,<esc>
