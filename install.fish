@@ -90,6 +90,17 @@ function vs_code
   link .config/Code/User/settings.json
   link .config/Code/User/keybindings.json
   link .config/Code/User/.vimrc
+  link .vscode/extensions/extension-manager.c#-profile-1.0.0
+  link .vscode/extensions/extension-manager.cpp-profile-1.0.0
+  link .vscode/extensions/extension-manager.flutter-profile-1.0.0
+  link .vscode/extensions/extension-manager.java-profile-1.0.0
+  link .vscode/extensions/extension-manager.laravel-profile-1.0.0
+  link .vscode/extensions/extension-manager.php-profile-1.0.0
+  link .vscode/extensions/extension-manager.python-profile-1.0.0
+  link .vscode/extensions/extension-manager.quality-of-life-1.0.0
+  link .vscode/extensions/extension-manager.scripting-profile-1.0.0
+  link .vscode/extensions/extension-manager.viewers,-syntax-highlighters-1.0.0
+  link .vscode/extensions/extension-manager.web-frontend-profile-1.0.0
 end
 
 function java
