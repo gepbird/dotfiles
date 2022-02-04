@@ -111,10 +111,12 @@ function ssh-make-key
   ssh-keygen -t ed25519 -C $email
   bash -c 'eval "$(ssh-agent -s)"'
   ssh-add ~/.ssh/id_ed25519
-  echo 'Add it to github via https://github.com/settings/ssh/new'
-  echo '------------- PUBLIC KEY -------------'
+  set ssh_add_link 'https://github.com/settings/ssh/new'
+  xdg-open $ssh_add_link
+  echo "Add it to github via $ssh_add_link"
+  echo "------------- PUBLIC KEY --------------"
   bat --style snip ~/.ssh/id_ed25519.pub
-  echo '---------- END OF PUBLIC KEY ----------'
+  echo "---------- END OF PUBLIC KEY ----------"
 end
 
 function pacman-repair
