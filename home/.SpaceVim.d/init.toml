@@ -43,3 +43,15 @@ default_height = 30
 [[custom_plugins]]
 repo = 'dag/vim-fish'
 merged = false
+
+[[custom_plugins]]
+repo = 'PeterRincker/vim-argumentative'
+merged = false
+
+[[custom_plugins]]
+repo = 'justinmk/vim-sneak'
+merged = false
+
+[[custom_plugins]]
+repo = 'tpope/vim-surround'
+merged = false

@@ -94,7 +94,6 @@ function vim -a file
   bash -c "nvim $file"
 end
 alias v='vim'
-alias screen='screen -s fish'
 
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias wget='wget -c '

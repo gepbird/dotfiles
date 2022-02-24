@@ -32,7 +32,7 @@
     "strings": false
   },
   "editor.detectIndentation": false,
-  "editor.tabCompletion": "off",
+  "editor.tabCompletion": "on",
   "editor.renderWhitespace": "all",
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
@@ -69,7 +69,8 @@
   "git.statusLimit": 1000,
   "diffEditor.ignoreTrimWhitespace": false,
   "settingsSync.ignoredSettings": [
-    "vim.vimrc.path"
+    "vim.vimrc.path",
+    "vim.enableNeovim"
   ],
   "remote.SSH.remotePlatform": {
     "thegep.xyz": "linux"
@@ -88,14 +89,26 @@
     "**/bin": true,
   },
   "vim.useCtrlKeys": false,
-  "vim.vimrc.enable": true,
   "vim.enableNeovim": true,
   "vim.vimrc.path": "/home/gep/.config/Code/User/.vimrc",
+  "vim.changeWordIncludesWhitespace": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 1000,
+  "vim.highlightedyank.color": "#2299bb33",
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.sneakReplacesF": true,
+  "vim.startInInsertMode": true,
+  "vim.surround": true,
+  "vim.useSystemClipboard": true,
+  "vim.whichwrap": "b,s",
+  "vim.vimrc.enable": true,
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
     "plaintext": true,
-    "markdown": true
+    "markdown": true,
+    "sql": true
   },
   "[html]": {
     "editor.suggest.insertMode": "replace",
@@ -178,4 +191,5 @@
   "C_Cpp.vcFormat.indent.caseLabels": true,
   "C_Cpp.vcFormat.indent.preprocessor": "none",
   "C_Cpp.vcFormat.indent.accessSpecifiers": true,
+  "java.import.gradle.java.home": "/usr/lib/jvm/java-8-openjdk",
 }

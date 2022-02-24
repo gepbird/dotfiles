@@ -8,24 +8,40 @@ function! myconfig#after() abort
   vnoremap y "+y
 
   inoremap jj <esc>
+  map j jzz
+  map k kzz
 
-  nnoremap j jzz
-  nnoremap k kzz
-  nnoremap k kzz
-
-  nnoremap <S-l> e
-  nnoremap <S-h> b
-  nmap <S-j> 5j
-  nmap <S-k> 5k
+  map <S-l> e
+  map <S-h> b
+  map <S-j> 5j
+  map <S-k> 5k
 
   nnoremap <S-u> <C-r>
 
-  nnoremap <C-h> <C-w>h
-  nnoremap <C-j> <C-w>j
-  nnoremap <C-k> <C-w>k
-  nnoremap <C-l> <C-w>l
-
   nnoremap <S-z> <S-j>
+
+  nnoremap < <<
+  nnoremap > >>
+
+  nnoremap c( ci(
+  nnoremap c8 ci(
+  nnoremap d( di(
+  nnoremap d8 di(
+  nnoremap c{ ci{
+  nnoremap cb ci{
+  nnoremap d{ di{
+  nnoremap db di{
+  nnoremap c[ ci[
+  nnoremap cf ci[
+  nnoremap d[ di[
+  nnoremap df di[
+  nnoremap cp cia
+  nnoremap dp daa
+
+  nnoremap ; $a;<esc>
+  nnoremap , $a,<esc>
+
+  nnoremap - ;
 
   nnoremap <C-b> :NERDTreeToggle<CR>
   let g:NERDTreeWinPos = "left"
