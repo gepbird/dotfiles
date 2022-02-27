@@ -14,6 +14,10 @@ function link
   ./link.fish $argv[1]
 end
 
+function link_su
+  ./link.fish $argv[1] 1
+end
+
 set packages
 function queue
   set packages $packages $argv[1]
@@ -42,7 +46,9 @@ end
 
 function fish
   link .config/fish/config.fish
+  link_su .config/fish/config.fish
   link .config/starship.toml
+  link_su .config/starship.toml
 end
 
 function python
@@ -224,8 +230,10 @@ function vim
   paci extra/xclip
   if ! test -d ~/.SpaceVim
     curl -Lv https://spacevim.org/install.sh | bash
-    link .SpaceVim.d
   end
+  link_su .SpaceVim
+  link .SpaceVim.d
+  link_su .SpaceVim.d
 end
 
 function swap_caps_and_esc
@@ -314,7 +322,7 @@ if ! test -n "$argv"
   csharp
   sqlite
   dbeaver
-  wine
+  # wine
   steam
   heroic
   lutris
