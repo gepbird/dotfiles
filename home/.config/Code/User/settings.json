@@ -97,7 +97,6 @@
   "vim.highlightedyank.color": "#2299bb33",
   "vim.hlsearch": true,
   "vim.sneak": true,
-  "vim.sneakReplacesF": true,
   "vim.startInInsertMode": true,
   "vim.surround": true,
   "vim.useSystemClipboard": true,
