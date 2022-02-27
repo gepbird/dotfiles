@@ -83,7 +83,7 @@ alias pacf='paru -Ss'
 alias pacfi='paru -Q'
 alias paci='paru -S --noconfirm --needed'
 alias pacr='paru -R --noconfirm'
-alias pacu='paru -Syy --noconfirm && paru && paru -c'
+alias pacu='paru -Syyu && paru -c'
 
 # Common use
 alias ff='find | grep'
