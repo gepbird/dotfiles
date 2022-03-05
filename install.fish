@@ -281,6 +281,8 @@ function gnome_keyboard_shortcuts
   gsettings set org.gnome.desktop.wm.keybindings switch-input-source "[]"
   gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
   gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
+  gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
+  gsettings set org.gnome.desktop.wm.keybindings unmaximize "[]"
   # bind keys
   gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"                 # alt tab menu
   gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']" # alt tab menu go backwards

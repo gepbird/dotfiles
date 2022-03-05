@@ -118,6 +118,14 @@ function ssh-make-key
   echo "---------- END OF PUBLIC KEY ----------"
 end
 
+function java-upgrade
+  sudo ln -vsf /bin/java-17 /bin/java
+end
+
+function java-downgrade
+  sudo ln -vsf /bin/java-8 /bin/java
+end
+
 function pacman-repair
   #pacman keyring error solver
   #made by Csaba

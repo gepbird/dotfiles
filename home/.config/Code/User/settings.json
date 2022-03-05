@@ -67,7 +67,6 @@
   "git.confirmSync": false,
   "git.ignoreLimitWarning": true,
   "git.statusLimit": 1000,
-  "diffEditor.ignoreTrimWhitespace": false,
   "settingsSync.ignoredSettings": [
     "vim.vimrc.path",
     "vim.enableNeovim"
@@ -191,4 +190,5 @@
   "C_Cpp.vcFormat.indent.preprocessor": "none",
   "C_Cpp.vcFormat.indent.accessSpecifiers": true,
   "java.import.gradle.java.home": "/usr/lib/jvm/java-8-openjdk",
+  "diffEditor.ignoreTrimWhitespace": false,
 }

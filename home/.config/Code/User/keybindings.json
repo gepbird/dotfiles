@@ -258,5 +258,19 @@
     "key": "alt+home",
     "command": "workbench.action.debug.restart",
     "when": "debuggersAvailable && inDebugMode && !terminalFocus"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "alt+i",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "alt+o",
+    "command": "git.unstageSelectedRanges",
+    "when": "isInDiffEditor"
   }
 ]
