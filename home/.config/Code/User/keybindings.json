@@ -91,11 +91,20 @@
     "command": "editor.action.startFindReplaceAction"
   },
   {
-    "key": "ctrl+[Quote]",
+    "key": "ctrl+up",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+-",
     "command": "workbench.action.decreaseViewSize"
   },
   {
-    "key": "ctrl+[Semicolon]",
+    "key": "ctrl+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+.",
     "command": "workbench.action.increaseViewSize"
   },
   {
@@ -128,11 +137,6 @@
   {
     "key": "ctrl+-",
     "command": "-workbench.action.zoomOut"
-  },
-  {
-    "key": "ctrl+-",
-    "command": "editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
   {
     "key": "alt+-",
@@ -170,6 +174,16 @@
   {
     "key": "alt+s",
     "command": "git.sync"
+  },
+  {
+    "key": "alt+i",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "alt+o",
+    "command": "git.unstageSelectedRanges",
+    "when": "isInDiffEditor"
   },
   {
     "key": "ctrl+h",
@@ -259,18 +273,4 @@
     "command": "workbench.action.debug.restart",
     "when": "debuggersAvailable && inDebugMode && !terminalFocus"
   },
-  {
-    "key": "ctrl+up",
-    "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
-    "key": "alt+i",
-    "command": "git.stageSelectedRanges",
-    "when": "isInDiffEditor"
-  },
-  {
-    "key": "alt+o",
-    "command": "git.unstageSelectedRanges",
-    "when": "isInDiffEditor"
-  }
 ]

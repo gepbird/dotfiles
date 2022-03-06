@@ -18,16 +18,24 @@ nnoremap c( ci(
 nnoremap c8 ci(
 nnoremap d( di(
 nnoremap d8 di(
+
 nnoremap c{ ci{
 nnoremap cb ci{
 nnoremap d{ di{
 nnoremap db di{
+
 nnoremap c[ ci[
 nnoremap cf ci[
 nnoremap d[ di[
 nnoremap df di[
+
 nnoremap cp cia
 nnoremap dp daa
+
+nnoremap c" ci"
+nnoremap c2 ci"
+nnoremap d" di"
+nnoremap d2 di"
 
 nnoremap ; $a;<esc>
 nnoremap , $a,<esc>
