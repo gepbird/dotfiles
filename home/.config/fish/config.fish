@@ -80,10 +80,13 @@ alias cat='bat --style rules --style snip --style changes --style header'
 
 # Package manager 
 alias pacf='paru -Ss'
-alias pacfi='paru -Q'
+function pacff
+  paru -Ss $argv[1] | grep $argv[1]
+end
+alias pacfi='paru -Q | grep'
 alias paci='paru -S --noconfirm --needed'
 alias pacr='paru -R --noconfirm'
-alias pacu='paru -Syyu && paru -c'
+alias pacu='paru -Syyu'
 
 # Common use
 alias ff='find | grep'
