@@ -6,11 +6,21 @@
   },
   {
     "key": "ctrl+p",
-    "command": "workbench.action.debug.start",
-    "when": "debuggersAvailable && debugState == 'inactive' && !terminalFocus"
+    "command": "workbench.action.debug.restart",
+    "when": "debuggersAvailable && inDebugMode && !terminalFocus"
   },
   {
-    "key": "ctrl+p",
+    "key": "alt+end",
+    "command": "workbench.action.debug.stop",
+    "when": "inDebugMode && !focusedSessionIsAttach"
+  },
+  {
+    "key": "alt+home",
+    "command": "workbench.action.debug.start",
+    "when": "debuggersAvailable && !terminalFocus && debugState == 'inactive'"
+  },
+  {
+    "key": "alt+home",
     "command": "workbench.action.debug.restart",
     "when": "debuggersAvailable && inDebugMode && !terminalFocus"
   },
@@ -249,16 +259,6 @@
     "command": "workbench.action.reloadWindow"
   },
   {
-    "key": "alt+end",
-    "command": "workbench.action.debug.stop",
-    "when": "inDebugMode && !focusedSessionIsAttach"
-  },
-  {
-    "key": "alt+home",
-    "command": "workbench.action.debug.start",
-    "when": "debuggersAvailable && !terminalFocus && debugState == 'inactive'"
-  },
-  {
     "key": "alt+e",
     "command": "workbench.view.explorer",
     "when": "activeViewlet == 'workbench.view.debug'"
@@ -267,10 +267,5 @@
     "key": "alt+e",
     "command": "workbench.view.debug",
     "when": "activeViewlet == 'workbench.view.explorer'"
-  },
-  {
-    "key": "alt+home",
-    "command": "workbench.action.debug.restart",
-    "when": "debuggersAvailable && inDebugMode && !terminalFocus"
   },
 ]

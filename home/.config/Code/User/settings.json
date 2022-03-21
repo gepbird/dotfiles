@@ -191,4 +191,6 @@
   "C_Cpp.vcFormat.indent.accessSpecifiers": true,
   "java.import.gradle.java.home": "/usr/lib/jvm/java-8-openjdk",
   "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.currentLine.enabled": false,
 }
