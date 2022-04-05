@@ -114,6 +114,10 @@
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
   },
   {
+    "key": "ctrl+,",
+    "command": "editor.action.quickFix"
+  },
+  {
     "key": "ctrl+.",
     "command": "workbench.action.increaseViewSize"
   },
@@ -267,5 +271,9 @@
     "key": "alt+e",
     "command": "workbench.view.debug",
     "when": "activeViewlet == 'workbench.view.explorer'"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "-workbench.action.openSettings"
   },
 ]

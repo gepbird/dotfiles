@@ -106,7 +106,8 @@
     "yaml": true,
     "plaintext": true,
     "markdown": true,
-    "sql": true
+    "sql": true,
+    "csharp": true
   },
   "[html]": {
     "editor.suggest.insertMode": "replace",
@@ -179,6 +180,7 @@
   "omnisharp.enableAsyncCompletion": true,
   "omnisharp.enableDecompilationSupport": true,
   "omnisharp.enableImportCompletion": true,
+  "omnisharp.useModernNet": true,
   "[cpp]": {
     "editor.wordBasedSuggestions": false,
     "editor.suggest.insertMode": "replace",
@@ -193,4 +195,5 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.currentLine.enabled": false,
+  "terminal.integrated.enableMultiLinePasteWarning": false
 }
