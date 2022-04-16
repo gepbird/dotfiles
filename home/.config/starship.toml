@@ -15,3 +15,9 @@ disabled = true
 
 [line_break]
 disabled = true
+
+[cmd_duration]
+disabled = true
+
+[username]
+disabled = true
