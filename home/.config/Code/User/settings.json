@@ -38,6 +38,7 @@
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
   "debug.onTaskErrors": "showErrors",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.tabs.enabled": true,
@@ -72,7 +73,7 @@
     "vim.enableNeovim"
   ],
   "remote.SSH.remotePlatform": {
-    "thegep.xyz": "linux"
+    "ymstnt.com": "linux"
   },
   "liveServer.settings.donotShowInfoMsg": true,
   "files.exclude": {
