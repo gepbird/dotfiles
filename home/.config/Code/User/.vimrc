@@ -14,6 +14,8 @@ nnoremap <S-z> <S-j>
 nnoremap < <<
 nnoremap > >>
 
+nnoremap <S-d> dd
+
 nnoremap c( ci(
 nnoremap c8 ci(
 nnoremap d( di(

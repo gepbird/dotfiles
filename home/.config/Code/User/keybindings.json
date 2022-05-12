@@ -276,4 +276,9 @@
     "key": "ctrl+,",
     "command": "-workbench.action.openSettings"
   },
+  {
+    "key": "alt+b",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && editorTextFocus"
+  },
 ]

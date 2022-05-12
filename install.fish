@@ -114,12 +114,12 @@ function java
   sudo rm /bin/java
   paci extra/jdk8-openjdk
   sudo ln -sf /usr/lib/jvm/java-8-openjdk/bin/java /bin/java-8
-  # java-17
+  # java-18
   sudo rm /bin/java
-  paci extra/jdk17-openjdk
-  sudo ln -sf /usr/lib/jvm/java-17-openjdk/bin/java /bin/java-17
-  # default java is 17
-  sudo ln -sf /bin/java-17 /bin/java
+  paci extra/jdk18-openjdk
+  sudo ln -sf /usr/lib/jvm/java-18-openjdk/bin/java /bin/java-18
+  # default java is 18
+  sudo ln -sf /bin/java-18 /bin/java
 end
 
 function nodejs
@@ -160,8 +160,8 @@ function lutris
   queue community/lutris
 end
 
-function multimc
-  queue aur/multimc-bin
+function polymc
+  queue chaotic-aur/polymc
 end
 
 function filezilla

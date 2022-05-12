@@ -20,6 +20,8 @@ function! myconfig#after() abort
 
   nnoremap <S-z> <S-j>
 
+  nnoremap <S-d> dd
+
   nnoremap c( ci(
   nnoremap c8 ci(
   nnoremap d( di(

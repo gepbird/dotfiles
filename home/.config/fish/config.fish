@@ -122,7 +122,7 @@ function ssh-make-key
 end
 
 function java-upgrade
-  sudo ln -vsf /bin/java-17 /bin/java
+  sudo ln -vsf /bin/java-18 /bin/java
 end
 
 function java-downgrade
