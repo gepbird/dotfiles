@@ -727,11 +727,9 @@ drawbar(Monitor* m)
     return;
 
   /* draw status first so it can be overdrawn by tags later */
-  if(m == selmon) { /* status is only drawn on selected monitor */
-    drw_setscheme(drw, scheme[SchemeNorm]);
-    tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-    drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
-  }
+  drw_setscheme(drw, scheme[SchemeNorm]);
+  tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
+  drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
 
   for(c = m->clients; c; c = c->next) {
     occ |= c->tags;
@@ -2112,7 +2110,8 @@ updatestatus(void)
 {
   if(!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
     strcpy(stext, "dwm-"VERSION);
-  drawbar(selmon);
+  for(Monitor* m = mons; m; m = m->next)
+    drawbar(m);
 }
 
 void
