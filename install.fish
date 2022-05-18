@@ -29,19 +29,21 @@ function firefox
   queue community/firefox-developer-edition
 end
 
+function chromium
+ queue extra/chromium
+end
+
 function sublime_text
   queue aur/sublime-text-4
 end
 
 function discord
   queue community/discord
-  link .config/autostart/discord.desktop
 end
 
 function redshift
   queue aur/redshift-git
   link .config/redshift.conf
-  link .config/autostart/redshift-gtk.desktop
 end
 
 function fish
@@ -67,7 +69,7 @@ function gitconfig
   link .gitconfig
 end
 
-function vs_code
+function vscode
   queue aur/visual-studio-code-bin
   link .config/Code/User/settings.json
   link .config/Code/User/keybindings.json
@@ -118,6 +120,10 @@ function dbeaver
   queue community/dbeaver
 end
 
+function onlyoffice
+  queue aur/onlyoffice-bin
+end
+
 function wine
   queue multilib/wine
 end
@@ -136,8 +142,13 @@ function lutris
   queue community/lutris
 end
 
-function polymc
+function minecraft
   queue chaotic-aur/polymc
+  queue aur/mcrcon
+end
+
+function osu
+  queue chaotic-aur/osu-lazer
 end
 
 function filezilla
@@ -200,6 +211,14 @@ function anydesk
   queue aur/anydesk-bin
 end
 
+function realvnc
+  queue aur/realvnc-vnc-viewer
+end
+
+function virtualbox
+  queue community/virtualbox
+end
+
 function vim
   paci extra/vim
   paci community/neovim
@@ -210,10 +229,6 @@ function vim
   link_su .SpaceVim
   link .SpaceVim.d
   link_su .SpaceVim.d
-end
-
-function swap_caps_and_esc
-  gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
 end
 
 function fman
@@ -230,24 +245,52 @@ function obs
   queue community/obs-studio
 end
 
-function openshot
-  queue community/openshot
+function kdenlive
+  queue extra/kdenlive
+end
+
+function vlc
+  queue extra/vlc
+end
+
+function gimp
+  queue extra/gimp
 end
 
 function sshfs
   queue community/sshfs
 end
 
-function terminal_autocomplete_case_insensitive
-  if ! grep -Fq 'set completion-ignore-case on' /etc/inputrc
-    echo 'set completion-ignore-case on' | sudo tee -a /etc/inputrc
-  end
+function htop
+  queue extra/htop
 end
 
 function xampp
   queue aur/xampp
 end
 
+function xinitrc
+  link .xinitrc
+end
+
+function suckless
+  link .dwm
+  link .dwmblocks
+  link .dmenu
+  queue community/sxiv
+end
+
+function dunst
+  queue community/dunst
+end
+
+function insect
+  queue aur/insect
+end
+
+function utilities
+  xdotool
+end
 
 ## Call the install functions
 
@@ -258,6 +301,7 @@ if ! test -n "$argv"
   ################################################################
   ################################################################
   firefox
+  chromium
   sublime_text
   discord
   redshift
@@ -266,29 +310,37 @@ if ! test -n "$argv"
   postman
   flameshot
   gitconfig
-  vs_code
+  vscode
   java
   csharp
   sqlite
   dbeaver
-  # wine
+  onlyoffice
+  wine
   steam
   heroic
   lutris
-  polymc
+  minecraft
+  osu
   filezilla
   teams
   packet_tracer
   anydesk
+  realvnc
   vim
-  swap_caps_and_esc
   screen
   fman
   obs
-  openshot
+  kdenlive
+  gimp
   sshfs
-  terminal_autocomplete_case_insensitive
+  htop
   xampp
+  xinitrc
+  suckless
+  dunst
+  insect
+  utilities
   ################################################################
   ################################################################
   ######################## END OF TOOLS ##########################
