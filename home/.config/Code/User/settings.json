@@ -68,6 +68,10 @@
   "git.confirmSync": false,
   "git.ignoreLimitWarning": true,
   "git.statusLimit": 1000,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.currentLine.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
   "settingsSync.ignoredSettings": [
     "vim.vimrc.path",
     "vim.enableNeovim"
@@ -108,7 +112,8 @@
     "plaintext": true,
     "markdown": true,
     "sql": true,
-    "csharp": true
+    "csharp": true,
+    "c": true
   },
   "[html]": {
     "editor.suggest.insertMode": "replace",
@@ -193,8 +198,4 @@
   "C_Cpp.vcFormat.indent.preprocessor": "none",
   "C_Cpp.vcFormat.indent.accessSpecifiers": true,
   "java.import.gradle.java.home": "/usr/lib/jvm/java-8-openjdk",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.hovers.currentLine.enabled": false,
-  "terminal.integrated.enableMultiLinePasteWarning": false
 }

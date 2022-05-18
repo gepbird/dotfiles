@@ -163,12 +163,12 @@
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "ctrl+0",
+    "key": "alt+`",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "alt+p",
-    "command": "workbench.action.tasks.build"
+    "command": "workbench.action.tasks.runTask"
   },
   {
     "key": "ctrl+alt+'",
