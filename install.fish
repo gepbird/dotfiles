@@ -39,7 +39,7 @@ function discord
 end
 
 function redshift
-  queue aur/redshift-gtk-git
+  queue aur/redshift-git
   link .config/redshift.conf
   link .config/autostart/redshift-gtk.desktop
 end
@@ -61,30 +61,6 @@ end
 
 function flameshot
   paci community/flameshot
-  # unbind default screenshot
-  gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip "[]"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot-clip "[]"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot "[]"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot-clip "[]"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys area-screenshot "[]"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot "[]"
-  # bind all monitor screenshot (gnome)
-  gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot-clip "['Print']"
-  # bind focused window screenshot (gnome)
-  gsettings set org.gnome.settings-daemon.plugins.media-keys window-screenshot-clip "['<Alt>Print']"
-  # add insant and delayed (2 sec) screenshot (flameshot)
-  gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
-		'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/',
-		'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/'
-	]"
-  # bind instant screenshot (flameshot)
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/ name 'flameshot-insant'
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/ command 'flameshot gui'
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-instant/ binding '<Ctrl>Print'
-  # bind delayed screenshot (flameshot)
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ name 'flameshot-delayed'
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ command 'flameshot gui -d 2000'
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/flameshot-delayed/ binding '<Ctrl><Shift>Print'
 end
 
 function gitconfig
@@ -240,10 +216,6 @@ function swap_caps_and_esc
   gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
 end
 
-function screen
-  queue extra/screen
-end
-
 function fman
   if ! grep -Fq '[fman]' /etc/pacman.conf
     sudo pacman-key --keyserver hkp://keyserver.ubuntu.com:80 -r 9CFAF7EB
@@ -276,31 +248,6 @@ function xampp
   queue aur/xampp
 end
 
-function gnome_keyboard_shortcuts
-  # unbind conflict keys
-  gsettings set org.gnome.desktop.wm.keybindings switch-input-source "[]"
-  gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
-  gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
-  gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
-  gsettings set org.gnome.desktop.wm.keybindings unmaximize "[]"
-  # bind keys
-  gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"                 # alt tab menu
-  gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']" # alt tab menu go backwards
-  gsettings set org.gnome.shell.keybindings toggle-application-view "['<Super>']"              # applications search
-  gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Super>Left', '<Super>h']"   # resize window and fit to left
-  gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Super>Right', '<Super>l']" # resize window and fit to right
-  gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>Up', '<Super>k']"  # toggle maximize window
-  gsettings set org.gnome.desktop.wm.keybindings minimize "['<Super>Down', '<Super>j']"        # minimize window
-  gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"                          # close window
-  gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier "['<Super>z']"          # turn on zoom
-  gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-in "['<Super>.']"  # zoom in
-  gsettings set org.gnome.settings-daemon.plugins.media-keys magnifier-zoom-out "['<Super>-']" # zoom out
-end
-
-function gnome
-  paci gnome
-  paci aur/chrome-gnome-shell
-end
 
 ## Call the install functions
 
@@ -328,7 +275,7 @@ if ! test -n "$argv"
   steam
   heroic
   lutris
-  multimc
+  polymc
   filezilla
   teams
   packet_tracer
@@ -342,8 +289,6 @@ if ! test -n "$argv"
   sshfs
   terminal_autocomplete_case_insensitive
   xampp
-  gnome_keyboard_shortcuts
-  gnome
   ################################################################
   ################################################################
   ######################## END OF TOOLS ##########################
