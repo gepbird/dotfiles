@@ -758,14 +758,13 @@ drawbar(Monitor* m)
   x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
   if((w = m->ww - tw - x) > bh) {
+    drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
     if(m->sel) {
-      drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
       drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
       if(m->sel->isfloating)
         drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
     }
     else {
-      drw_setscheme(drw, scheme[SchemeNorm]);
       drw_rect(drw, x, 0, w, bh, 1, 1);
     }
   }
@@ -1330,6 +1329,13 @@ resizeclient(Client* c, int x, int y, int w, int h)
   c->oldw = c->w; c->w = wc.width = w;
   c->oldh = c->h; c->h = wc.height = h;
   wc.border_width = c->bw;
+  if(((nexttiled(c->mon->clients) == c && !nexttiled(c->next))
+    || &monocle == c->mon->lt[c->mon->sellt]->arrange)
+    && !c->isfullscreen && !c->isfloating) {
+    c->w = wc.width += c->bw * 2;
+    c->h = wc.height += c->bw * 2;
+    wc.border_width = 0;
+  }
   XConfigureWindow(dpy, c->win, CWX | CWY | CWWidth | CWHeight | CWBorderWidth, &wc);
   configure(c);
   XSync(dpy, False);

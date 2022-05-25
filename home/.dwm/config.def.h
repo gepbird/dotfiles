@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 1;        /* border pixel of windows */
+static const unsigned int borderpx = 2;        /* border pixel of windows */
 static const unsigned int snap = 32;           /* snap pixel */
 static const int showbar = 1;                  /* 0 means no bar */
 static const int topbar = 1;                   /* 0 means bottom bar */
@@ -12,10 +12,11 @@ static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
 static const char col_cyan[] = "#005577";
+static const char col_green[] = "#00aa55";
 static const char* colors[][3] = {
   /*               fg         bg         border   */
   [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-  [SchemeSel] = { col_gray4, col_cyan,  col_cyan  },
+  [SchemeSel] = { col_gray4, col_cyan,  col_green },
 };
 
 /* tagging */
@@ -41,8 +42,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
   /* symbol     arrange function */
-  { "[]=",      tile },    /* first entry is default */
-  { "><>",      NULL },    /* no layout function means floating behavior */
+  { "[T]",      tile },    /* first entry is default */
+  { "[F]",      NULL },    /* no layout function means floating behavior */
   { "[M]",      monocle },
 };
 
@@ -55,16 +56,16 @@ static const Layout layouts[] = {
 #define Super Mod4Mask
 
 #define TAGKEYS(KEY,TAG) \
-	{ Super                         ,KEY      ,view           ,{.ui = 1 << TAG} }, \
-	{ Super | Control               ,KEY      ,toggleview     ,{.ui = 1 << TAG} }, \
-	{ Super | Shift                 ,KEY      ,tag            ,{.ui = 1 << TAG} }, \
-	{ Super | Control | Shift       ,KEY      ,toggletag      ,{.ui = 1 << TAG} },
+  { Super                         ,KEY      ,view           ,{.ui = 1 << TAG} }, \
+  { Super | Control               ,KEY      ,toggleview     ,{.ui = 1 << TAG} }, \
+  { Super | Shift                 ,KEY      ,tag            ,{.ui = 1 << TAG} }, \
+  { Super | Control | Shift       ,KEY      ,toggletag      ,{.ui = 1 << TAG} },
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char* dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char* termcmd[] = { "alacritty", "-e", "fish", NULL };
-static const char* flameshotfull[] = { "flameshot", "full", NULL };
+static const char* flameshotfull[] = { "flameshot", "full", "--clipboard", NULL };
 static const char* flameshotgui[] = { "flameshot", "gui", NULL };
 static const char* flameshotguidelayed[] = { "flameshot", "gui", "-d", "2500", NULL };
 
@@ -91,14 +92,13 @@ static Key keys[] = {
   {  Super                        ,XK_t     ,setlayout      ,{.v = &layouts[0]} },
   {  Super                        ,XK_f     ,setlayout      ,{.v = &layouts[1]} },
   {  Super                        ,XK_m     ,setlayout      ,{.v = &layouts[2]} },
-  {  Super                        ,XK_space ,setlayout      ,{0} },
-  {  Super | Shift                ,XK_space ,togglefloating ,{0} },
+  {  Super                        ,XK_g     ,togglefloating ,{0} },
   {  Super                        ,XK_0     ,view           ,{.ui = ~0 } },
   {  Super | Shift                ,XK_0     ,tag            ,{.ui = ~0 } },
-  {  Super                        ,XK_comma ,focusmon       ,{.i = -1 } },
-  {  Super                        ,XK_period,focusmon       ,{.i = +1 } },
-  {  Super | Shift                ,XK_comma ,tagmon         ,{.i = -1 } },
-  {  Super | Shift                ,XK_period,tagmon         ,{.i = +1 } },
+  {  Super | Shift                ,XK_j     ,focusmon       ,{.i = -1 } },
+  {  Super | Shift                ,XK_k     ,focusmon       ,{.i = +1 } },
+  {  Super | Shift                ,XK_h     ,tagmon         ,{.i = -1 } },
+  {  Super | Shift                ,XK_l     ,tagmon         ,{.i = +1 } },
   {  Super | Shift                ,XK_q     ,quit           ,{0} },
   TAGKEYS(XK_1, 0)
   TAGKEYS(XK_2, 1)
