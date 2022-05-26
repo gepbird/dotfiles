@@ -27,11 +27,12 @@ static const Rule rules[] = {
    *	WM_CLASS(STRING) = instance, class
    *	WM_NAME(STRING) = title
    */
-   /* class                       instance    title       tags mask     isfloating   monitor */
-   { "discord"                   ,NULL       ,NULL       ,1 << 0       ,0           ,1 },
-   { "Microsoft Teams - Preview" ,NULL       ,NULL       ,1 << 1       ,0           ,1 },
-   { "Chromium"                  ,NULL       ,NULL       ,1 << 2       ,0           ,1 },
-   { "flameshot"                 ,NULL       ,NULL       ,0            ,1           ,-1 },
+   /* class                       instance  title           tags mask  isfloating  monitor */
+   { "discord"                   ,NULL     ,NULL           ,1 << 0    ,0          ,1 },
+   { "Microsoft Teams - Preview" ,NULL     ,NULL           ,1 << 1    ,0          ,1 },
+   { "Chromium"                  ,NULL     ,NULL           ,1 << 2    ,0          ,1 },
+   { "flameshot"                 ,NULL     ,NULL           ,0         ,1          ,-1 },
+   { NULL                        ,NULL     ,"Event Tester" ,0         ,1          ,-1 },
 };
 
 /* layout(s) */
@@ -41,25 +42,29 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
-  /* symbol     arrange function */
-  { "[T]",      tile },    /* first entry is default */
-  { "[F]",      NULL },    /* no layout function means floating behavior */
-  { "[M]",      monocle },
+  /* symbol  arrange function */
+  { "[T]",   tile },    /* first entry is default */
+  { "[F]",   NULL },    /* no layout function means floating behavior */
+  { "[M]",   monocle },
 };
 
-/* key definitions */
-#define MODKEY Mod1Mask
+/* keysymdef.h extension */
+#define XK_XF86MonBrightnessUp 0x1008ff02
+#define XK_XF86MonBrightnessDown 0x1008ff03
 
-#define Alt MODKEY
+/* key definitions */
+#define Alt Mod1Mask
 #define Control ControlMask
 #define Shift ShiftMask
 #define Super Mod4Mask
+#define BrightUp XK_XF86MonBrightnessUp
+#define BrightDown XK_XF86MonBrightnessDown
 
 #define TAGKEYS(KEY,TAG) \
-  { Super                         ,KEY      ,view           ,{.ui = 1 << TAG} }, \
-  { Super | Control               ,KEY      ,toggleview     ,{.ui = 1 << TAG} }, \
-  { Super | Shift                 ,KEY      ,tag            ,{.ui = 1 << TAG} }, \
-  { Super | Control | Shift       ,KEY      ,toggletag      ,{.ui = 1 << TAG} },
+  { Super                   ,KEY ,view       ,{.ui = 1 << TAG} }, \
+  { Super | Control         ,KEY ,toggleview ,{.ui = 1 << TAG} }, \
+  { Super | Shift           ,KEY ,tag        ,{.ui = 1 << TAG} }, \
+  { Super | Control | Shift ,KEY ,toggletag  ,{.ui = 1 << TAG} },
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -68,38 +73,42 @@ static const char* termcmd[] = { "alacritty", "-e", "fish", NULL };
 static const char* flameshotfull[] = { "flameshot", "full", "--clipboard", NULL };
 static const char* flameshotgui[] = { "flameshot", "gui", NULL };
 static const char* flameshotguidelayed[] = { "flameshot", "gui", "-d", "2500", NULL };
+static const char* brightup[] = { "backlight_control", "+10", NULL };
+static const char* brightdown[] = { "backlight_control", "-10", NULL };
 
 static Key keys[] = {
-  /* modifier                      key       function        argument */
-  {  Super                        ,XK_p     ,spawn          ,{.v = dmenucmd } },
-  {  Super                        ,XK_Return,spawn          ,{.v = termcmd } },
-  {  0                            ,XK_Print ,spawn          ,{.v = flameshotfull} },
-  {  Control                      ,XK_Print ,spawn          ,{.v = flameshotgui } },
-  {  Control | Shift              ,XK_Print ,spawn          ,{.v = flameshotguidelayed } },
-  {  Super                        ,XK_b     ,togglebar      ,{0} },
-  {  Super                        ,XK_j     ,focusstack     ,{.i = +1 } },
-  {  Super                        ,XK_k     ,focusstack     ,{.i = -1 } },
-  {  Super                        ,XK_i     ,incnmaster     ,{.i = +1 } },
-  {  Super                        ,XK_d     ,incnmaster     ,{.i = -1 } },
-  {  Super                        ,XK_h     ,setmfact       ,{.f = -0.05} },
-  {  Super                        ,XK_l     ,setmfact       ,{.f = +0.05} },
-  {  Super                        ,XK_Tab   ,zoom           ,{0} },
-  {  Alt                          ,XK_Tab   ,viewnext,       {0} },
-  {  Alt | Shift                  ,XK_Tab   ,viewprev,       {0} },
-  {  Alt | Control                ,XK_Tab   ,tagtonext,      {0} },
-  {  Alt | Control | Shift        ,XK_Tab   ,tagtoprev,      {0} },
-  {  Super                        ,XK_q     ,killclient     ,{0} },
-  {  Super                        ,XK_t     ,setlayout      ,{.v = &layouts[0]} },
-  {  Super                        ,XK_f     ,setlayout      ,{.v = &layouts[1]} },
-  {  Super                        ,XK_m     ,setlayout      ,{.v = &layouts[2]} },
-  {  Super                        ,XK_g     ,togglefloating ,{0} },
-  {  Super                        ,XK_0     ,view           ,{.ui = ~0 } },
-  {  Super | Shift                ,XK_0     ,tag            ,{.ui = ~0 } },
-  {  Super | Shift                ,XK_j     ,focusmon       ,{.i = -1 } },
-  {  Super | Shift                ,XK_k     ,focusmon       ,{.i = +1 } },
-  {  Super | Shift                ,XK_h     ,tagmon         ,{.i = -1 } },
-  {  Super | Shift                ,XK_l     ,tagmon         ,{.i = +1 } },
-  {  Super | Shift                ,XK_q     ,quit           ,{0} },
+  /* modifier               key         function        argument */
+  {  Super                 ,XK_p       ,spawn          ,{ .v = dmenucmd } },
+  {  Super                 ,XK_Return  ,spawn          ,{ .v = termcmd } },
+  {  0                     ,XK_Print   ,spawn          ,{ .v = flameshotfull } },
+  {  Control               ,XK_Print   ,spawn          ,{ .v = flameshotgui } },
+  {  Control | Shift       ,XK_Print   ,spawn          ,{ .v = flameshotguidelayed } },
+  {  Super                 ,XK_b       ,togglebar      ,{ 0 } },
+  {  Super                 ,XK_j       ,focusstack     ,{ .i = +1 } },
+  {  Super                 ,XK_k       ,focusstack     ,{ .i = -1 } },
+  {  Super                 ,XK_i       ,incnmaster     ,{ .i = +1 } },
+  {  Super                 ,XK_d       ,incnmaster     ,{ .i = -1 } },
+  {  Super                 ,XK_h       ,setmfact       ,{ .f = -0.05 } },
+  {  Super                 ,XK_l       ,setmfact       ,{ .f = +0.05 } },
+  {  Super                 ,XK_Tab     ,zoom           ,{ 0 } },
+  {  Alt                   ,XK_Tab     ,viewnext,       { 0 } },
+  {  Alt | Shift           ,XK_Tab     ,viewprev,       { 0 } },
+  {  Alt | Control         ,XK_Tab     ,tagtonext,      { 0 } },
+  {  Alt | Control | Shift ,XK_Tab     ,tagtoprev,      { 0 } },
+  {  Super                 ,XK_q       ,killclient     ,{ 0 } },
+  {  Super                 ,XK_t       ,setlayout      ,{ .v = &layouts[0] } },
+  {  Super                 ,XK_f       ,setlayout      ,{ .v = &layouts[1] } },
+  {  Super                 ,XK_m       ,setlayout      ,{ .v = &layouts[2] } },
+  {  Super                 ,XK_g       ,togglefloating ,{ 0 } },
+  {  Super                 ,XK_0       ,view           ,{ .ui = ~0 } },
+  {  Super | Shift         ,XK_0       ,tag            ,{ .ui = ~0 } },
+  {  Super | Shift         ,XK_j       ,focusmon       ,{ .i = -1 } },
+  {  Super | Shift         ,XK_k       ,focusmon       ,{ .i = +1 } },
+  {  Super | Shift         ,XK_h       ,tagmon         ,{ .i = -1 } },
+  {  Super | Shift         ,XK_l       ,tagmon         ,{ .i = +1 } },
+  {  Super | Shift         ,XK_q       ,quit           ,{ 0 } },
+  {  0                     ,BrightUp   ,spawn          ,{ .v = brightup } },
+  {  0                     ,BrightDown ,spawn          ,{ .v = brightdown } },
   TAGKEYS(XK_1, 0)
   TAGKEYS(XK_2, 1)
   TAGKEYS(XK_3, 2)
@@ -114,17 +123,17 @@ static Key keys[] = {
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
-  /* click                event mask      button          function        argument */
-  { ClkLtSymbol          ,0              ,Button1        ,setlayout      ,{0} },
-  { ClkLtSymbol          ,0              ,Button3        ,setlayout      ,{.v = &layouts[2]} },
-  { ClkWinTitle          ,0              ,Button2        ,zoom           ,{0} },
-  { ClkStatusText        ,0              ,Button2        ,spawn          ,{.v = termcmd } },
-  { ClkClientWin         ,Super          ,Button1        ,movemouse      ,{0}, },
-  { ClkClientWin         ,Super          ,Button2        ,togglefloating ,{0}, },
-  { ClkClientWin         ,Super          ,Button3        ,resizemouse    ,{0}, },
-  { ClkTagBar            ,0              ,Button1        ,view           ,{0} },
-  { ClkTagBar            ,0              ,Button3        ,toggleview     ,{0} },
-  { ClkTagBar            ,Super          ,Button1        ,tag            ,{0}, },
-  { ClkTagBar            ,Super          ,Button3        ,toggletag      ,{0}, },
+  /* click         event mask  button   function        argument */
+  { ClkLtSymbol   ,0          ,Button1 ,setlayout      ,{ 0 } },
+  { ClkLtSymbol   ,0          ,Button3 ,setlayout      ,{ .v = &layouts[2] } },
+  { ClkWinTitle   ,0          ,Button2 ,zoom           ,{ 0 } },
+  { ClkStatusText ,0          ,Button2 ,spawn          ,{ .v = termcmd } },
+  { ClkClientWin  ,Super      ,Button1 ,movemouse      ,{ 0 }, },
+  { ClkClientWin  ,Super      ,Button2 ,togglefloating ,{ 0 }, },
+  { ClkClientWin  ,Super      ,Button3 ,resizemouse    ,{ 0 }, },
+  { ClkTagBar     ,0          ,Button1 ,view           ,{ 0 } },
+  { ClkTagBar     ,0          ,Button3 ,toggleview     ,{ 0 } },
+  { ClkTagBar     ,Super      ,Button1 ,tag            ,{ 0 }, },
+  { ClkTagBar     ,Super      ,Button3 ,toggletag      ,{ 0 }, },
 };
 
