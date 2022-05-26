@@ -269,7 +269,8 @@ function xampp
   queue aur/xampp
 end
 
-function xinitrc
+function startup
+  link .bashrc
   link .xinitrc
 end
 
@@ -339,7 +340,7 @@ if ! test -n "$argv"
   sshfs
   htop
   xampp
-  xinitrc
+  startup
   suckless
   dunst
   calc
