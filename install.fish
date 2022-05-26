@@ -275,8 +275,11 @@ end
 
 function suckless
   link .dwm
+  sudo make install --directory ~/.dwm
   link .dwmblocks
+  sudo make install --directory ~/.dwmblocks
   link .dmenu
+  sudo make install --directory ~/.dmenu
   queue community/sxiv
 end
 
@@ -284,12 +287,13 @@ function dunst
   queue community/dunst
 end
 
-function insect
-  queue aur/insect
+function calc
+  queue community/calc
 end
 
 function utilities
-  xdotool
+  queue community/xdotool
+  queue extra/xorg-xev
 end
 
 ## Call the install functions
@@ -328,7 +332,6 @@ if ! test -n "$argv"
   anydesk
   realvnc
   vim
-  screen
   fman
   obs
   kdenlive
@@ -339,7 +342,7 @@ if ! test -n "$argv"
   xinitrc
   suckless
   dunst
-  insect
+  calc
   utilities
   ################################################################
   ################################################################
