@@ -12,7 +12,6 @@
   "extensions.ignoreRecommendations": true,
   "editor.minimap.enabled": false,
   "editor.fontSize": 16,
-  "editor.lineNumbers": "relative",
   "editor.suggestSelection": "first",
   "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
   "editor.cursorBlinking": "phase",
