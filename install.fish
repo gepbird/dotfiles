@@ -281,6 +281,8 @@ function suckless
   sudo make install --directory ~/.dwmblocks
   link .dmenu
   sudo make install --directory ~/.dmenu
+  link .st
+  sudo make install --directory ~/.st
   queue community/sxiv
 end
 
