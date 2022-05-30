@@ -69,12 +69,14 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char* dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char* termcmd[] = { "alacritty", "-e", "fish", NULL };
+static const char* termcmd[] = { "st", "-e", "fish", NULL };
 static const char* flameshotfull[] = { "flameshot", "full", "--clipboard", NULL };
 static const char* flameshotgui[] = { "flameshot", "gui", NULL };
 static const char* flameshotguidelayed[] = { "flameshot", "gui", "-d", "2500", NULL };
 static const char* brightup[] = { "backlight_control", "+10", NULL };
+static const char* brightup_little[] = { "backlight_control", "+1", NULL };
 static const char* brightdown[] = { "backlight_control", "-10", NULL };
+static const char* brightdown_little[] = { "backlight_control", "-1", NULL };
 
 static Key keys[] = {
   /* modifier               key         function        argument */
@@ -108,7 +110,9 @@ static Key keys[] = {
   {  Super | Shift         ,XK_l       ,tagmon         ,{ .i = +1 } },
   {  Super | Shift         ,XK_q       ,quit           ,{ 0 } },
   {  0                     ,BrightUp   ,spawn          ,{ .v = brightup } },
+  {  Shift                 ,BrightUp   ,spawn          ,{ .v = brightup_little } },
   {  0                     ,BrightDown ,spawn          ,{ .v = brightdown } },
+  {  Shift                 ,BrightDown ,spawn          ,{ .v = brightdown_little } },
   TAGKEYS(XK_1, 0)
   TAGKEYS(XK_2, 1)
   TAGKEYS(XK_3, 2)
