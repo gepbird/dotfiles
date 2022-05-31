@@ -18,7 +18,7 @@ options:
 .c.o:
 	$(CC) $(STCFLAGS) -c $<
 
-st.o: config.def.h st.h win.h
+st.o: config.def.h st.h win.h normalMode.h normalMode.c utils.h
 x.o: arg.h config.def.h st.h win.h
 boxdraw.o: config.def.h st.h boxdraw_data.h
 
