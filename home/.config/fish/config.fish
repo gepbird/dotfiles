@@ -84,7 +84,7 @@ function pacff
   paru -Ss $argv[1] | grep $argv[1]
 end
 function pacfi
-  paru -Ss $argv[1] | grep \\[Installed\\]
+  paru -Ss $argv[1] | grep Installed | grep $argv[1]
 end
 alias paci='paru -S --noconfirm --needed'
 alias pacr='paru -R --noconfirm'
