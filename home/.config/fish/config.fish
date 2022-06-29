@@ -13,6 +13,8 @@ if status --is-interactive
    source ("/usr/bin/starship" init fish --print-full-init | psub)
 end
 
+fish_vi_key_bindings
+
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
@@ -96,10 +98,7 @@ alias ff='find | grep'
 alias hisf='history | grep'
 alias rmf='sudo rm -rf'
 alias fishreload='source ~/.config/fish/config.fish'
-function vim -a file
-  bash -c "nvim $file"
-end
-alias v='vim'
+alias v='nvim'
 
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias wget='wget -c '
