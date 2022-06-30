@@ -228,15 +228,12 @@ function virtualbox
 end
 
 function vim
-  paci extra/vim
-  paci community/neovim
-  paci extra/xclip
-  if ! test -d ~/.SpaceVim
-    curl -Lv https://spacevim.org/install.sh | bash
-  end
-  link_su .SpaceVim
-  link .SpaceVim.d
-  link_su .SpaceVim.d
+  #queue extra/vim
+  queue community/neovim
+  queue extra/xclip
+  queue aur/nvim-packer-git
+  link .config/nvim
+  link_su .config/nvim
 end
 
 function fman
@@ -305,6 +302,7 @@ end
 function utilities
   queue community/xdotool
   queue extra/xorg-xev
+  queue chaotic-aur/lf
 end
 
 ## Call the install functions
