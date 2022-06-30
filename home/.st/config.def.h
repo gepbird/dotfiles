@@ -137,7 +137,7 @@ unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
 unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 257;
-unsigned int const currentBg = 6, buffSize = 2048;
+unsigned int const currentBg = 0, buffSize = 2048;
 /// Enable double / triple click yanking / selection of word / line.
 int const mouseYank = 1, mouseSelect = 0;
 /// [Vim Browse] Colors for search results currently on screen.
@@ -220,7 +220,7 @@ static Shortcut shortcuts[] = {
   { TERMMOD,              XK_Y,           selpaste,       {.i = 0} },
   { ShiftMask,            XK_Insert,      selpaste,       {.i = 0} },
   { TERMMOD,              XK_Num_Lock,    numlock,        {.i = 0} },
-  { MODKEY,               XK_c,           normalMode,     {.i = 0} },
+  { ShiftMask,            XK_Escape,      normalMode,     {.i = 0} },
 };
 
 /*
