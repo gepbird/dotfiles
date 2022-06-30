@@ -294,6 +294,7 @@ end
 function utilities
   queue community/xdotool
   queue extra/xorg-xev
+  queue chaotic-aur/lf
 end
 
 ## Call the install functions

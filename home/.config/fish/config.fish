@@ -74,7 +74,7 @@ alias grep='rg -i --color=auto'
 alias ls='exa --color=always --group-directories-first --icons' # preferred listing
 alias la='ls -la'                                               # all files and dirs
 alias lt='ls -aT'                                               # tree listing
-alias lf='la | grep'                                            # list and find
+alias lff='la | grep'                                            # list and find
 
 # Replace some more things with better alternatives
 alias cat='bat --style rules --style snip --style changes --style header'
