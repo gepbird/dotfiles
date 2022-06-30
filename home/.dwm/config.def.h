@@ -48,17 +48,18 @@ static const Layout layouts[] = {
   { "[M]",   monocle },
 };
 
-/* keysymdef.h extension */
-#define XK_XF86MonBrightnessUp 0x1008ff02
-#define XK_XF86MonBrightnessDown 0x1008ff03
+#include <X11/XF86keysym.h>
 
 /* key definitions */
 #define Alt Mod1Mask
 #define Control ControlMask
 #define Shift ShiftMask
 #define Super Mod4Mask
-#define BrightUp XK_XF86MonBrightnessUp
-#define BrightDown XK_XF86MonBrightnessDown
+#define VolToggle XF86XK_AudioMute
+#define VolDown XF86XK_AudioLowerVolume
+#define VolUp XF86XK_AudioRaiseVolume
+#define BrightDown XF86XK_MonBrightnessDown
+#define BrightUp XF86XK_MonBrightnessUp
 
 #define TAGKEYS(KEY,TAG) \
   { Super                   ,KEY ,view       ,{.ui = 1 << TAG} }, \
@@ -73,10 +74,15 @@ static const char* termcmd[] = { "st", "-e", "fish", NULL };
 static const char* flameshotfull[] = { "flameshot", "full", "--clipboard", NULL };
 static const char* flameshotgui[] = { "flameshot", "gui", NULL };
 static const char* flameshotguidelayed[] = { "flameshot", "gui", "-d", "2500", NULL };
-static const char* brightup[] = { "backlight_control", "+10", NULL };
-static const char* brightup_little[] = { "backlight_control", "+1", NULL };
+static const char* voltoggle[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char* voldown[] = { "pactl", "set-sink-volume", "0", "-10%", NULL };
+static const char* voldown_little[] = { "pactl", "set-sink-volume", "0", "-1%", NULL };
+static const char* volup[] = { "pactl", "set-sink-volume", "0", "+10%", NULL };
+static const char* volup_little[] = { "pactl", "set-sink-volume", "0", "+1%", NULL };
 static const char* brightdown[] = { "backlight_control", "-10", NULL };
 static const char* brightdown_little[] = { "backlight_control", "-1", NULL };
+static const char* brightup[] = { "backlight_control", "+10", NULL };
+static const char* brightup_little[] = { "backlight_control", "+1", NULL };
 
 static Key keys[] = {
   /* modifier               key         function        argument */
@@ -113,6 +119,11 @@ static Key keys[] = {
   {  Shift                 ,BrightUp   ,spawn          ,{ .v = brightup_little } },
   {  0                     ,BrightDown ,spawn          ,{ .v = brightdown } },
   {  Shift                 ,BrightDown ,spawn          ,{ .v = brightdown_little } },
+  {  0                     ,VolToggle  ,spawn          ,{ .v = voltoggle } },
+  {  0                     ,VolDown    ,spawn          ,{ .v = voldown } },
+  {  Shift                 ,VolDown    ,spawn          ,{ .v = voldown_little } },
+  {  0                     ,VolUp      ,spawn          ,{ .v = volup } },
+  {  Shift                 ,VolUp      ,spawn          ,{ .v = volup_little } },
   TAGKEYS(XK_1, 0)
   TAGKEYS(XK_2, 1)
   TAGKEYS(XK_3, 2)
