@@ -108,7 +108,8 @@ function yarn
   queue community/yarn
 end
 
-function csharp
+function dotnet
+  paci aur/dotnet-runtime-bin
   queue community/dotnet-sdk
 end
 
@@ -148,7 +149,8 @@ function minecraft
 end
 
 function osu
-  queue chaotic-aur/osu-lazer
+  queue aur/osu-lazer-git
+  queue aur/opentabletdriver-git
 end
 
 function filezilla
@@ -213,6 +215,12 @@ end
 
 function realvnc
   queue aur/realvnc-vnc-viewer
+end
+
+function tailscale
+  paci aur/tailscale-git
+  sudo systemctl start tailscaled
+  sudo tailscale up
 end
 
 function virtualbox
@@ -319,7 +327,7 @@ if ! test -n "$argv"
   gitconfig
   vscode
   java
-  csharp
+  dotnet
   sqlite
   dbeaver
   onlyoffice
@@ -334,6 +342,7 @@ if ! test -n "$argv"
   packet_tracer
   anydesk
   realvnc
+  tailscale
   vim
   fman
   obs
