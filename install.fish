@@ -299,10 +299,14 @@ function calc
   queue community/calc
 end
 
+function lf
+  queue chaotic-aur/lf
+  link .config/lf
+end
+
 function utilities
   queue community/xdotool
   queue extra/xorg-xev
-  queue chaotic-aur/lf
 end
 
 ## Call the install functions

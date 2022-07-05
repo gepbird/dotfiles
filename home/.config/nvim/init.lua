@@ -1,9 +1,12 @@
+require('user.utils')
+
 api = vim.api
 fn = vim.fn
 test = nil
 local mark_sign = '$' .. '$'
 local mark_sign_escaped = '\\$\\$'
 local goto_mark = '/' .. mark_sign_escaped .. '<cr>diw'
+ls = require('luasnip')
 
 local function load_options()
   require 'user.options'
@@ -19,7 +22,7 @@ end
 local function load_maps()
   vim.g.mapleader = ' '
 
-  local maps = {
+  register_maps({
     -- { mode, key, action, { option = value } },
     { 'nvo', '<s-h>', '5h' },
     { 'nvo', '<s-j>', '5j' },
@@ -59,8 +62,11 @@ local function load_maps()
     { 'n', '<s-z>', '<s-j>' },
     { 'nvi', '<a-f>', 'mfgg=G`f', { insert_to_normal = true } },
 
-    { 'ni', '<c-r>', ':lua reload_config()<cr>', { insert_to_normal = true } },
-    { 'ni', '<a-r>', ':e $MYVIMRC<cr>', { insert_to_normal = true } },
+    { 'n', ',', 'mz$a,<esc>`z' },
+    { 'n', ';', 'mz$a;<esc>`z' },
+
+    { 'n', '<c-r>', ':lua reload_config()<cr>', { insert_to_normal = true } },
+    { 'n', '<a-r>', ':e $MYVIMRC<cr>', { insert_to_normal = true } },
     { 'n', '<leader>ps', ':PackerSync<cr>' },
 
     { 'n', 'e', '<Plug>(easymotion-sn)', { unmap = '/' } },
@@ -108,35 +114,25 @@ local function load_maps()
     { 'v', '>', '>gv' },
     { 'n', '>', '>>' },
     { 'n', '<', '<<' },
-  }
 
-  local default_options = function() return { noremap = true, silent = true } end
-  for _, map in pairs(maps) do
-    local modes = map[1]
-    local key = map[2]
-    local options = map[4]
-    local opts = default_options()
-    for mode in modes:gmatch'.' do
-      local action = map[3]
-      if options then
-        for option_name, option_value in pairs(options) do
-          if option_name == 'unmap' and option_value == true then
-            option_value = action
-            api.nvim_set_keymap(mode, option_value, '', { }) 
-          end
-          if option_name == 'insert_to_normal' and mode == 'i' then
-            if option_value == true then
-              action = '<esc>' .. action .. 'a'
-            else 
-              action = option_value
-            end
-          end
-        end
-      end
-      api.nvim_set_keymap(mode, key, action, opts)
-    end
-  end
+    { 'n', '<leader>o', '<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>' },
+    { 'n', '<leader>tg', '<cmd>Telescope live_grep<cr>' },
+    { 'n', '<leader>tb', '<cmd>Telescope buffers<cr>' },
+    { 'n', '<leader><tab>', '<cmd>Telescope oldfiles<cr>' },
+
+    { 'n', '<leader>-', '<cmd>Telescope lsp_references<cr>' },
+
+    { 'i', '<c-k>', '<cmd>:lua if ls.expand_or_jumpable() then ls.expand_or_jump() end<cr>' },
+  })
 end
+
+-- bind copilot#Accept() to CTRL+J using lua
+vim.api.nvim_set_keymap('n', '<c-j>', '<cmd>copilot#Accept()<cr>', { noremap = true })
+
+
+--vim.cmd([[
+--imap <expr> úő copilot#Accept("\<CR>")
+--]])
 
 function reload_config()
   for name,_ in pairs(package.loaded) do
@@ -148,30 +144,30 @@ function reload_config()
   --packer.sync()
 end
 
-local function load_abbreviations()
-  local abbreviations_per_filetype = {
-    ['lua'] = {
-      { 'iő', 'if ' .. mark_sign .. ' then<cr>' .. mark_sign .. ' <cr>end<esc>' .. goto_mark .. 'i' },
-      { 'fő', 'for ' .. mark_sign .. ' in ' .. mark_sign .. ' do<cr>' .. mark_sign .. ' <cr>end<esc>' .. goto_mark .. 'i' },
-    }
-  }
-  api.nvim_create_augroup('abbreviations_pre_filetype', { })
-  api.nvim_create_autocmd({ 'FileType' },
-  {
-    group = 'abbreviations_pre_filetype',
-    callback = function()
-      abbreviations = abbreviations_per_filetype[vim.bo.filetype]
-      if abbreviations then
-        for _, abbreviation in pairs(abbreviations) do
-          local from = abbreviation[1]
-          local to = abbreviation[2]
-          api.nvim_set_keymap('i', from, to, { noremap = true })
-          --vim.cmd('inoreabbrev ' .. from .. ' ' .. to)
-        end
-      end
-    end,
-  })
-end
+--local function load_abbreviations()
+--local abbreviations_per_filetype = {
+--['lua'] = {
+--{ 'iő', 'if ' .. mark_sign .. ' then<cr>' .. mark_sign .. ' <cr>end<esc>' .. goto_mark .. 'i' },
+--{ 'fő', 'for ' .. mark_sign .. ' in ' .. mark_sign .. ' do<cr>' .. mark_sign .. ' <cr>end<esc>' .. goto_mark .. 'i' },
+--}
+--}
+--api.nvim_create_augroup('abbreviations_pre_filetype', { })
+--api.nvim_create_autocmd({ 'FileType' },
+--{
+--group = 'abbreviations_pre_filetype',
+--callback = function()
+--abbreviations = abbreviations_per_filetype[vim.bo.filetype]
+--if abbreviations then
+--for _, abbreviation in pairs(abbreviations) do
+--local from = abbreviation[1]
+--local to = abbreviation[2]
+--api.nvim_set_keymap('i', from, to, { noremap = true })
+----vim.cmd('inoreabbrev ' .. from .. ' ' .. to)
+--end
+--end
+--end,
+--})
+--end
 
 local function load_autocommands()
   local autocommands = {
@@ -221,14 +217,13 @@ end
 
 local function load_plugins()
   packer = require('packer')
-  packer.startup(function()
+  packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'easymotion/vim-easymotion'
     use 'preservim/nerdcommenter'
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
     use 'ghifarit53/tokyonight-vim'
-    --use 'windwp/nvim-autopairs'
 
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -238,36 +233,46 @@ local function load_plugins()
 
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
-
-    use 'rafamadriz/friendly-snippets'
+    --use 'rafamadriz/friendly-snippets'
 
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
 
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
+    use {
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+    }
+
+    use 'github/copilot.vim'
+
     --use 'nvim-lua/popup.nvim'
-    --use 'nvim-lua/plenary.nvim'
   end)
 end
 
 load_options()
 load_maps()
-load_abbreviations()
+--load_abbreviations()
 load_autocommands()
 load_plugins()
 
 --require('user.cmp')
 
 
-require("nvim-lsp-installer").setup({
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
+--require("nvim-lsp-installer").setup({
+  --automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+  --ui = {
+    --icons = {
+      --server_installed = "✓",
+      --server_pending = "➜",
+      --server_uninstalled = "✗"
+    --}
+  --}
+--})
 
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>,', vim.diagnostic.open_float, opts)
@@ -299,26 +304,47 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>:', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', '<leader>-', vim.lsp.buf.references, bufopts)
+  --vim.keymap.set('n', '<leader>-', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+--local lsp_flags = {
+  ---- This is the default in Nvim 0.7+
+  --debounce_text_changes = 150,
+--}
+--local capabilities = vim.lsp.protocol.make_client_capabilities()
+--capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 --require('lspconfig').pyright.setup{
   --on_attach = on_attach,
   --flags = lsp_flags,
   --capabilities = capabilities
 --}
+--
+--require('lspconfig').sumneko_lua.setup{
+  --on_attach = on_attach,
+  --flags = lsp_flags,
+  --capabilities = capabilities
+--}
+local lsp_installer = require("nvim-lsp-installer")
+local lspconfig = require("lspconfig")
 
+lsp_installer.setup {}
+
+lspconfig.util.default_config = vim.tbl_extend(
+    "force",
+    lspconfig.util.default_config,
+    {
+        on_attach = on_attach
+    }
+)
+
+for _, server in ipairs(lsp_installer.get_installed_servers()) do
+  lspconfig[server.name].setup {}
+end
 
 
 require('luasnip')
-require('luasnip.loaders.from_vscode').lazy_load()
+--require('luasnip.loaders.from_vscode').lazy_load()
 vim.cmd([[
 " press <Tab> to expand or jump in a snippet. These can also be mapped separately
 " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
@@ -333,12 +359,6 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 ]])
---require('luasnip').add_snippets('all', {
---s('ternary', {
----- equivalent to '${1:cond} ? ${2:then} : ${3:else}'
---i(1, 'cond'), t(' ? '), i(2, 'then'), t(' : '), i(3, 'else')
---})
---})
 
 
 vim.cmd(':colorscheme tokyonight')
@@ -385,10 +405,12 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s'
 end
 
+local luasnip = require('luasnip')
+
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -481,17 +503,23 @@ cmp.setup.cmdline(':', {
 
 
 
+--require('telescope').setup{
+--defaults = {
+--vimgrep_arguments = {
+--'rg',
+--'--color=never',
+--'--no-heading',
+--'--with-filename',
+--'--line-number',
+--'--column',
+--'--smart-case',
+--'-u' -- thats the new thing
+--},
+--}
+--}
 
 
-
-
-
-
-
-
-
-
-
+require('user.snippets')
 
 
 

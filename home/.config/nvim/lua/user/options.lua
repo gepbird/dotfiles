@@ -1,4 +1,5 @@
 local o = vim.opt
+
 o.backup = false                          -- creates a backup file
 o.clipboard = "unnamed"                   -- allows neovim to access the system clipboard
 o.cmdheight = 1                           -- more space in the neovim command line for displaying messages
