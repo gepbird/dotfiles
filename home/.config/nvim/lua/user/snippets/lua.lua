@@ -1,6 +1,4 @@
-
-local ls = require('luasnip')
--- some shorthands...
+local ls = require 'luasnip'
 local s = ls.snippet
 local sn = ls.snippet_node
 local t = ls.text_node
@@ -19,32 +17,23 @@ local fmt = require('luasnip.extras.fmt').fmt
 local fmta = require('luasnip.extras.fmt').fmta
 local types = require('luasnip.util.types')
 local conds = require('luasnip.extras.expand_conditions')
-local newline = { '', '' }
 
-ls.config.set_config({
-  enable_autosnippets = true,
-})
-
-ls.add_snippets('lua', {
+return {
   s('iő', {
     t('if '),
     i(1, 'true'),
     t(' then'),
-    t(newline),
-    t({ '\t' }),
+    t({ '', '\t' }),
     i(2),
-    t(newline),
-    t('end')
+    t({ '', 'end' })
   }),
   s('wő', {
     t('while '),
     i(1, 'true'),
     t(' do'),
-    t(newline),
-    t('\t'),
+    t({ '', '\t' }),
     i(2),
-    t(newline),
-    t('end')
+    t({ '', 'end' })
   }),
   s('fő', {
     t('for '),
@@ -52,11 +41,9 @@ ls.add_snippets('lua', {
     t(' in '),
     i(2, 'iterator'),
     t(' do'),
-    t(newline),
-    t('\t'),
+    t({ '', '\t' }),
     i(3),
-    t(newline),
-    t('end')
+    t({ '', 'end' })
   }),
   s('Fő', {
     t('for '),
@@ -66,11 +53,9 @@ ls.add_snippets('lua', {
     t(' in '),
     i(3, 'iterator'),
     t(' do'),
-    t(newline),
-    t('\t'),
+    t({ '', '\t' }),
     i(4),
-    t(newline),
-    t('end')
+    t({ '', 'end' })
   }),
   s('mő', {
     t('function '),
@@ -78,29 +63,25 @@ ls.add_snippets('lua', {
     t('('),
     i(2),
     t(')'),
-    t(newline),
-    t('\t'),
+    t({ '', '\t' }),
     i(3),
-    t(newline),
-    t('end')
+    t({ '', 'end' })
   }),
   s('Mő', {
-    t('function'),
-    t('('),
+    t('function('),
     i(1),
     t(') '),
     i(2),
     t(' end')
   }),
   s('rő', {
-    t('return '),
+    t('return'),
   }),
   s('bő', {
     t('{'),
-    t(newline),
-    t('\t'),
+    t({ '', '\t' }),
     i(1),
-    t(newline),
-    t('}'),
+    t({ '', '}' }),
   }),
-}, { type = 'autosnippets', })
+}
+

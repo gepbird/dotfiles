@@ -1,14 +1,14 @@
 local o = vim.opt
 
 o.backup = false                          -- creates a backup file
-o.clipboard = "unnamed"                   -- allows neovim to access the system clipboard
+o.clipboard = 'unnamed'                   -- allows neovim to access the system clipboard
 o.cmdheight = 1                           -- more space in the neovim command line for displaying messages
-o.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+o.completeopt = { 'menuone', 'noselect' } -- mostly just for cmp
 o.conceallevel = 0                        -- so that `` is visible in markdown files
-o.fileencoding = "utf-8"                  -- the encoding written to a file
+o.fileencoding = 'utf-8'                  -- the encoding written to a file
 o.hlsearch = true                         -- highlight all matches on previous search pattern
 o.ignorecase = true                       -- ignore case in search patterns
-o.mouse = "a"                             -- allow the mouse to be used in neovim
+o.mouse = 'a'                             -- allow the mouse to be used in neovim
 o.pumheight = 10                          -- pop up menu height
 o.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
 o.showtabline = 2                         -- always show tabs
@@ -29,13 +29,13 @@ o.cursorline = false                      -- highlight the current line
 o.number = true                           -- set numbered lines
 o.relativenumber = false                  -- set relative numbered lines
 o.numberwidth = 4                         -- set number column width to 2 {default 4}
-o.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
+o.signcolumn = 'yes'                      -- always show the sign column, otherwise it would shift the text each time
 o.wrap = false                            -- display lines as one long line
-o.scrolloff = 8                           -- is one of my fav
+o.scrolloff = 8                           -- always see the last x lines
 o.sidescrolloff = 8
---o.guifont = "monospace:h17"               -- the font used in graphical neovim applications
-
-o.shortmess:append "c"
-
---vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+--o.guifont = 'monospace:h17'               -- the font used in graphical neovim applications
+o.shortmess:append 'c'                    -- turn off common vim messages
+o.listchars = 'space:·,tab:··,eol:'     -- define whitespace rendering
+o.list = true                             -- show whitespace
+--o.whichwrap:append '<,>,[,],h,l'          -- can move to next line when pressing these keys
+o.iskeyword:append '-'                    -- what characters count as a word movement
