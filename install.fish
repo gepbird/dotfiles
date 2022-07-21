@@ -46,11 +46,18 @@ function redshift
   link .config/redshift.conf
 end
 
+function nerdfonts
+  paci ttf-iosevka-nerd
+  ln -vsf /usr/share/fonts/TTF/Iosevka\ Nerd\ Font\ Complete.ttf \
+  ~/.local/share/fonts/Iosevka\ Nerd\ Font\ Complete.ttf
+end
+
 function fish
   link .config/fish/config.fish
   link_su .config/fish/config.fish
   link .config/starship.toml
   link_su .config/starship.toml
+  nerdfonts
 end
 
 function python
@@ -227,13 +234,14 @@ function virtualbox
   queue community/virtualbox
 end
 
-function vim
-  #queue extra/vim
+function nvim
   queue community/neovim
   queue extra/xclip
+  queue community/ueberzug # image support for terminals
   queue aur/nvim-packer-git
   link .config/nvim
   link_su .config/nvim
+  nerdfonts
 end
 
 function fman
@@ -288,6 +296,7 @@ function suckless
   sudo make install --directory ~/.dmenu
   link .st
   sudo make install --directory ~/.st
+  queue ttf-symbola # emoji font so st won't crash
   queue community/sxiv
 end
 
@@ -322,6 +331,7 @@ if ! test -n "$argv"
   sublime_text
   discord
   redshift
+  nerdfonts
   fish
   python
   postman
@@ -345,7 +355,7 @@ if ! test -n "$argv"
   anydesk
   realvnc
   tailscale
-  vim
+  nvim
   fman
   obs
   kdenlive
@@ -357,6 +367,7 @@ if ! test -n "$argv"
   suckless
   dunst
   calc
+  lf
   utilities
   ################################################################
   ################################################################
