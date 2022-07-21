@@ -1,6 +1,5 @@
 require 'user.utils'
 
--- TODO: fix small nerdfonts
 -- TODO: keybind to close floatings
 local signs = {
   DiagnosticSignError = '',
@@ -74,6 +73,7 @@ lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_c
 local servers = {
   'sumneko_lua',
   'pyright',
+  'omnisharp',
 }
 for _, server in ipairs(servers) do
   lspconfig[server].setup(require('user.lsp.settings.' .. server))
@@ -83,10 +83,9 @@ local lsp = vim.lsp.buf
 register_maps {
   { 'n', '<space>li', ':LspInstallInfo<cr>' },
   { 'n', '<space>ls', ':LspInfo<cr>' },
-  { 'n', '<space>-', '<cmd>Telescope lsp_references<cr>' },
-  { 'n', '<space>.', lsp.definition },
+  { 'n', '<space>-', function() require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy()) end },
+  { 'n', '<space>.', function() require('telescope.builtin').lsp_definitions(require('telescope.themes').get_ivy()) end },
   { 'n', '<space>:', lsp.type_definition },
-  --{ 'n', '<space>-', vim.lsp.buf.references },
   { 'n', '<space>r', lsp.rename },
   { 'n', '<space>f', lsp.formatting },
   { 'n', '<space>k', lsp.hover },

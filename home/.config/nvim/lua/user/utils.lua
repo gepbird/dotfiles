@@ -32,12 +32,7 @@ function _G.register_maps(maps)
         end
       end
 
-      if type(rhs) == 'string' then
-        vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
-      else
-        vim.keymap.set(mode, lhs, rhs, opts)
-      end
-      
+      vim.keymap.set(mode, lhs, rhs, opts)
     end
   end
 end
