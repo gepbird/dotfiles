@@ -4,8 +4,8 @@ require 'user.utils'
 local signs = {
   DiagnosticSignError = '',
   DiagnosticSignWarn = '',
-  DiagnosticSignHint = '',
-  DiagnosticSignInfo = '',
+  DiagnosticSignHint = '',
+  DiagnosticSignInfo = '',
 }
 
 for name, text in pairs(signs) do

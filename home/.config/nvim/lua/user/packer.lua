@@ -8,9 +8,9 @@ require('packer').startup(function(use)
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-surround', config = function() require 'user.surround' end }
   use { 'windwp/nvim-autopairs', config = function() require 'user.autopairs' end }
+  use { 'rcarriga/nvim-notify', config = function() require 'user.notify' end }
 
-  use {
-    'hrsh7th/nvim-cmp', config = function() require 'user.cmp' end,
+  use { 'hrsh7th/nvim-cmp', config = function() require 'user.cmp' end,
     requires = {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-buffer' },
@@ -22,23 +22,26 @@ require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
+  use { 'github/copilot.vim', config = function() require 'user.copilot' end }
 
-  use {
-    'neovim/nvim-lspconfig', config = function() require 'user.lsp' end,
-    requires = 'williamboman/nvim-lsp-installer',
+  use { 'neovim/nvim-lspconfig', config = function() require 'user.lsp' end,
+    requires = {
+      { 'williamboman/nvim-lsp-installer' },
+    }
   }
   use { 'nvim-treesitter/nvim-treesitter', config = function() require 'user.treesitter' end,
     run = function() require('nvim-treesitter.install').update { with_sync = true } end,
     requires = {
-      'p00f/nvim-ts-rainbow',
+      { 'p00f/nvim-ts-rainbow' },
     }
   }
   use { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end,
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires ={
+      { 'kyazdani42/nvim-web-devicons' },
+    }
   }
 
-  use {
-    'nvim-telescope/telescope.nvim', config = function() require 'user.telescope' end,
+  use { 'nvim-telescope/telescope.nvim', config = function() require 'user.telescope' end,
     requires = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-file-browser.nvim' },
@@ -51,14 +54,21 @@ require('packer').startup(function(use)
     }
   }
 
+  use { 'kyazdani42/nvim-tree.lua', config = function() require 'user.tree' end,
+    requires ={
+      { 'kyazdani42/nvim-web-devicons' },
+    }
+  }
+
   use { 'lewis6991/gitsigns.nvim', config = function() require 'user.gitsigns' end }
-
-  --use { 'ghifarit53/tokyonight-vim', config = function() require 'user.colorscheme' end }
-  use  { 'LunarVim/darkplus.nvim', config = function() require 'user.colorscheme' end }
-
-  --use { 'tpope/vim-scriptease' }
-
-  use { 'github/copilot.vim', config = function() require 'user.copilot' end }
+  use { 'LunarVim/darkplus.nvim', config = function() require 'user.colorscheme' end }
+  use { 'akinsho/bufferline.nvim', config = function() require 'user.bufferline' end,
+    requires = {
+      { 'kyazdani42/nvim-web-devicons' },
+      { 'LunarVim/darkplus.nvim' },
+      { 'moll/vim-bbye' },
+    }
+  }
 end)
 
 register_maps {

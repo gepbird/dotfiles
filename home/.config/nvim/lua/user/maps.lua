@@ -57,7 +57,7 @@ register_maps {
   { 'n', '<c-r>', ':lua reload_config()<cr>' },
   { 'n', '<a-r>', ':e $MYVIMRC<cr>' },
 
-  { 'n', '<s-left>', ':bnext<cr>' },
-  { 'n', '<s-right>', ':bprevious<cr>' },
+  { 'n', '<tab>', ':bnex<cr>' },
+  { 'n', '<s-tab>', ':bprevious<cr>' },
 }
 
