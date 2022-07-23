@@ -2,9 +2,8 @@ return {
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = 'on'
-      }
-    }
+        typeCheckingMode = 'on',
+      },
+    },
   },
 }
-

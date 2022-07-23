@@ -21,4 +21,3 @@ register_maps {
   { 'nvo', 'qw', '<Plug>(easymotion-bd-w)' },
   { 'n', 'qw', '<Plug>(easymotion-overwin-w)' },
 }
-

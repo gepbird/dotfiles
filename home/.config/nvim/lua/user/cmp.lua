@@ -1,9 +1,9 @@
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
-vim.cmd([[
+vim.cmd [[
 set completeopt=menu,noselect
-]])
+]]
 --  פּ ﯟ   some other good icons
 local kind_icons = {
   Text = '',
@@ -35,7 +35,7 @@ local kind_icons = {
 --
 local check_backspace = function()
   local col = vim.fn.col '.' - 1
-  return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s'
+  return col == 0 or vim.fn.getline '.':sub(col, col):match '%s'
 end
 
 cmp.setup {
@@ -51,11 +51,11 @@ cmp.setup {
     ['<a-l>'] = cmp.mapping.scroll_docs(4),
     ['<c-space>'] = cmp.mapping.complete(),
     ['<a-esc>'] = cmp.mapping.abort(),
-    ['<cr>'] = cmp.mapping.confirm({ select = true }),
+    ['<cr>'] = cmp.mapping.confirm { select = true },
     ['<Tab>'] = cmp.mapping(function(fallback)
       local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
       end
       if cmp.visible() then
         cmp.select_next_item()
@@ -69,21 +69,21 @@ cmp.setup {
         fallback()
       end
     end, {
-    'i',
-    's',
-  }),
-  ['<S-Tab>'] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_prev_item()
-    elseif luasnip.jumpable(-1) then
-      luasnip.jump(-1)
-    else
-      fallback()
-    end
-  end, {
-  'i',
-  's',
-}),
+      'i',
+      's',
+    }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {
+      'i',
+      's',
+    }),
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
@@ -127,10 +127,8 @@ cmp.setup.filetype('gitcommit', {
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
+  sources = cmp.config.sources(
+    { { name = 'path' } },
+    { { name = 'cmdline' } }
+  )
 })
-

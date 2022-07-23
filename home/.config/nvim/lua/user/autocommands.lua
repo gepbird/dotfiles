@@ -20,21 +20,15 @@ register_autocommands('main', {
     { pattern = '*/.config/nvim/**' }
   },
   {
-    'BufReadPost',
-    function()
-      --vim.cmd('g`0')
-    end
-  },
-  {
     'TextYankPost',
     function()
-      vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 700 })
+      vim.highlight.on_yank { higroup = 'IncSearch', timeout = 700 }
     end
   },
   {
     'FileType',
     function()
-      vim.cmd('set formatoptions-=cro')
+      vim.cmd 'set formatoptions-=cro'
     end
   },
 })

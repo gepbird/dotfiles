@@ -9,23 +9,23 @@ function _G.register_maps(maps)
       silent = true,
     }
 
-    for mode in modes:gmatch'.' do
+    for mode in modes:gmatch '.' do
       local rhs = map[3]
       if options then
         for option_name, option_value in pairs(options) do
           if option_name == 'unmap' then
             if option_value then
-            option_value = rhs
-            vim.api.nvim_set_keymap(mode, option_value, '', { })
-          end
+              option_value = rhs
+              vim.api.nvim_set_keymap(mode, option_value, '', {})
+            end
           elseif option_name == 'insert_to_normal' then
             if mode == 'i' then
-            if option_value == true then
-              rhs = '<esc>' .. rhs .. 'a'
-            else
-              rhs = option_value
+              if option_value == true then
+                rhs = '<esc>' .. rhs .. 'a'
+              else
+                rhs = option_value
+              end
             end
-          end
           else
             opts[option_name] = option_value
           end
@@ -39,7 +39,7 @@ end
 
 -- Usage: { event, callaback, options },
 function _G.register_autocommands(augroup, autocmds)
-  vim.api.nvim_create_augroup(augroup, { })
+  vim.api.nvim_create_augroup(augroup, {})
 
   for _, autocmd in ipairs(autocmds) do
     local event = autocmd[1]
@@ -47,7 +47,7 @@ function _G.register_autocommands(augroup, autocmds)
     local options = autocmd[3]
     local opts = {
       group = augroup,
-      callback = callback
+      callback = callback,
     }
 
     if options then

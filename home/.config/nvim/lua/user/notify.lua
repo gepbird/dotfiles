@@ -1,5 +1,4 @@
-require('notify').setup {
+require 'notify'.setup {
   level = 'WARN',
   timeout = 2000,
 }
-

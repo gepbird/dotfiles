@@ -2,7 +2,7 @@ require 'user.utils'
 
 local telescope = require 'telescope'
 local actions = require 'telescope.actions'
-local fb = require('telescope').extensions.file_browser
+local fb = require 'telescope'.extensions.file_browser
 
 telescope.setup {
   defaults = {
@@ -48,8 +48,10 @@ telescope.setup {
 
         ['j'] = actions.move_selection_next,
         ['k'] = actions.move_selection_previous,
-        ['<s-j>'] = actions.move_selection_next + actions.move_selection_next + actions.move_selection_next + actions.move_selection_next + actions.move_selection_next,
-        ['<s-k>'] = actions.move_selection_previous + actions.move_selection_previous + actions.move_selection_previous + actions.move_selection_previous + actions.move_selection_previous,
+        ['<s-j>'] = actions.move_selection_next + actions.move_selection_next + actions.move_selection_next +
+            actions.move_selection_next + actions.move_selection_next,
+        ['<s-k>'] = actions.move_selection_previous + actions.move_selection_previous + actions.move_selection_previous +
+            actions.move_selection_previous + actions.move_selection_previous,
         ['<c-j>'] = actions.results_scrolling_up,
         ['<c-k>'] = actions.results_scrolling_down,
         ['gg'] = actions.move_to_top,
@@ -76,14 +78,14 @@ telescope.setup {
       '--line-number',
       '--column',
       '--smart-case',
-      '-uu'
+      '-uu',
     },
   },
   extensions = {
     media_files = {
       filetypes = { 'png', 'webp', 'jpg', 'jpeg' },
-      find_cmd = 'rg'
-    }
+      find_cmd = 'rg',
+    },
   },
 }
 
@@ -100,4 +102,3 @@ register_maps {
   { 'n', '<space>tc', '<cmd>Telescope commands<cr>' },
   { 'n', '<space>th', '<cmd>Telescope help_tags<cr>' },
 }
-

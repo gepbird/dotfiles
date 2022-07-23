@@ -1,14 +1,14 @@
 require 'user.utils'
 
-require('bufferline').setup {
+require 'bufferline'.setup {
   options = {
     mode = 'buffers', -- set to 'tabs' to only show tabpages instead
     --numbers = 'none' | 'ordinal' | 'buffer_id' | 'both' | function({ ordinal, id, lower, raise }): string,
     numbers = 'none',
-    close_command = 'Bdelete! %d',       -- can be a string | function, see 'Mouse actions'
+    close_command = 'Bdelete! %d', -- can be a string | function, see 'Mouse actions'
     right_mouse_command = 'Bdelete! %d', -- can be a string | function, see 'Mouse actions'
-    left_mouse_command = 'buffer %d',    -- can be a string | function, see 'Mouse actions'
-    middle_mouse_command = nil,          -- can be a string | function, see 'Mouse actions'
+    left_mouse_command = 'buffer %d', -- can be a string | function, see 'Mouse actions'
+    middle_mouse_command = nil, -- can be a string | function, see 'Mouse actions'
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
@@ -33,7 +33,7 @@ require('bufferline').setup {
     diagnostics_update_in_insert = false,
     -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
     diagnostics_indicator = function(count, _, _, _)
-      return '('..count..')'
+      return '(' .. count .. ')'
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
     --custom_filter = function(buf_number, buf_numbers)
@@ -66,26 +66,26 @@ require('bufferline').setup {
       right = function()
         local result = {}
         local seve = vim.diagnostic.severity
-        local error = #vim.diagnostic.get(0, {severity = seve.ERROR})
-        local warning = #vim.diagnostic.get(0, {severity = seve.WARN})
-        local info = #vim.diagnostic.get(0, {severity = seve.INFO})
-        local hint = #vim.diagnostic.get(0, {severity = seve.HINT})
+        local error = #vim.diagnostic.get(0, { severity = seve.ERROR })
+        local warning = #vim.diagnostic.get(0, { severity = seve.WARN })
+        local info = #vim.diagnostic.get(0, { severity = seve.INFO })
+        local hint = #vim.diagnostic.get(0, { severity = seve.HINT })
         local colors = require 'darkplus.palette'
 
         if error ~= 0 then
-          table.insert(result, {text =  ' ' .. error, guifg = colors.error_red})
+          table.insert(result, { text = ' ' .. error, guifg = colors.error_red })
         end
 
         if warning ~= 0 then
-          table.insert(result, {text = '  ' .. warning, guifg = colors.warning_orange})
+          table.insert(result, { text = '  ' .. warning, guifg = colors.warning_orange })
         end
 
         if hint ~= 0 then
-          table.insert(result, {text = '  ' .. hint, guifg = colors.hint_blue})
+          table.insert(result, { text = '  ' .. hint, guifg = colors.hint_blue })
         end
 
         if info ~= 0 then
-          table.insert(result, {text = '  ' .. info, guifg = colors.info_yellow})
+          table.insert(result, { text = '  ' .. info, guifg = colors.info_yellow })
         end
         return result
       end,

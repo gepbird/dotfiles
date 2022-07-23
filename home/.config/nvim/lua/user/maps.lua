@@ -60,4 +60,3 @@ register_maps {
   { 'n', '<tab>', ':bnex<cr>' },
   { 'n', '<s-tab>', ':bprevious<cr>' },
 }
-

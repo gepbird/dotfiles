@@ -1,14 +1,19 @@
 require 'user.utils'
 
-require('packer').startup(function(use)
+require 'packer'.startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
-  use { 'easymotion/vim-easymotion', config = function() require 'user.easymotion' end }
+  use { 'easymotion/vim-easymotion', config = function() require 'user.easymotion' end } -- TODO: replace with hop.nvim
   use { 'numToStr/Comment.nvim', config = function() require 'user.comment' end }
   use { 'tpope/vim-repeat' }
-  use { 'tpope/vim-surround', config = function() require 'user.surround' end }
-  use { 'windwp/nvim-autopairs', config = function() require 'user.autopairs' end }
+  use { 'tpope/vim-surround', config = function() require 'user.surround' end } -- TODO: replace with vim-sandwich
+  use { 'windwp/nvim-autopairs', config = function() require 'user.autopairs' end,
+    requires = {
+      { 'hrsh7th/nvim-cmp' },
+    },
+  }
   use { 'rcarriga/nvim-notify', config = function() require 'user.notify' end }
+  use { 'ethanholz/nvim-lastplace', config = function() require 'user.lastplace' end }
 
   use { 'hrsh7th/nvim-cmp', config = function() require 'user.cmp' end,
     requires = {
@@ -20,25 +25,25 @@ require('packer').startup(function(use)
       { 'saadparwaiz1/cmp_luasnip' },
       { 'L3MON4D3/LuaSnip', config = function() require 'user.snippets' end },
       { 'rafamadriz/friendly-snippets' },
-    }
+    },
   }
   use { 'github/copilot.vim', config = function() require 'user.copilot' end }
 
   use { 'neovim/nvim-lspconfig', config = function() require 'user.lsp' end,
     requires = {
       { 'williamboman/nvim-lsp-installer' },
-    }
+    },
   }
   use { 'nvim-treesitter/nvim-treesitter', config = function() require 'user.treesitter' end,
-    run = function() require('nvim-treesitter.install').update { with_sync = true } end,
+    run = function() require 'nvim-treesitter.install'.update { with_sync = true } end,
     requires = {
       { 'p00f/nvim-ts-rainbow' },
-    }
+    },
   }
   use { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end,
-    requires ={
+    requires = {
       { 'kyazdani42/nvim-web-devicons' },
-    }
+    },
   }
 
   use { 'nvim-telescope/telescope.nvim', config = function() require 'user.telescope' end,
@@ -49,15 +54,15 @@ require('packer').startup(function(use)
         requires = {
           'nvim-lua/plenary.nvim',
           'nvim-lua/popup.nvim',
-        }
+        },
       },
-    }
+    },
   }
 
   use { 'kyazdani42/nvim-tree.lua', config = function() require 'user.tree' end,
-    requires ={
+    requires = {
       { 'kyazdani42/nvim-web-devicons' },
-    }
+    },
   }
 
   use { 'lewis6991/gitsigns.nvim', config = function() require 'user.gitsigns' end }
@@ -67,7 +72,7 @@ require('packer').startup(function(use)
       { 'kyazdani42/nvim-web-devicons' },
       { 'LunarVim/darkplus.nvim' },
       { 'moll/vim-bbye' },
-    }
+    },
   }
 end)
 
@@ -75,4 +80,3 @@ register_maps {
   { 'n', '<space>ps', ':PackerSync<cr>' },
   { 'n', '<space>pS', ':PackerStatus<cr>' },
 }
-

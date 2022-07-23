@@ -10,4 +10,3 @@ register_maps {
   { 'n', 'ds', '<Plug>Dsurround' },
   { 'n', '<s-s>', '<Plug>Ysurround' },
 }
-

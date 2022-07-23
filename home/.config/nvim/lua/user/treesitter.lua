@@ -1,23 +1,44 @@
-require('nvim-treesitter.configs').setup {
-  ensure_installed = 'all',
+require 'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    'c',
+    'cpp',
+    'c_sharp',
+    'java',
+    'dart',
+    'php',
+    'python',
+    'lua',
+    'html',
+    'css',
+    'javascript',
+    'typescript',
+    'regex',
+    'sql',
+    'json',
+    'markdown',
+    'vim',
+    'make',
+    'bash',
+    'fish',
+  },
   auto_install = true,
   sync_install = true,
-  ignore_install = { },
+  ignore_install = {},
   autopairs = {
     enable = true,
   },
   highlight = {
     enable = true,
-    disable = { },
+    disable = {},
     additional_vim_regex_highlighting = false,
   },
   indent = {
     enable = true,
-    disable = { },
+    disable = {},
   },
   rainbow = {
     enable = true,
-    disable = { },
+    disable = {},
     extended_mode = true,
     max_file_lines = nil,
     colors = {
@@ -29,4 +50,3 @@ require('nvim-treesitter.configs').setup {
     --termcolors = { },
   },
 }
-

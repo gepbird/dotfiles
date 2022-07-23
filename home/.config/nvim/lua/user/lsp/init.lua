@@ -30,8 +30,8 @@ vim.diagnostic.config {
   },
 }
 
-require('nvim-lsp-installer').setup {
-  automatic_installation = true
+require 'nvim-lsp-installer'.setup {
+  automatic_installation = true,
 }
 
 local lspconfig = require 'lspconfig'
@@ -61,7 +61,7 @@ local function lsp_highlight_document(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require 'cmp_nvim_lsp'.update_capabilities(capabilities)
 
 lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
   on_attach = function(client, bufnr)
@@ -83,8 +83,8 @@ local lsp = vim.lsp.buf
 register_maps {
   { 'n', '<space>li', ':LspInstallInfo<cr>' },
   { 'n', '<space>ls', ':LspInfo<cr>' },
-  { 'n', '<space>-', function() require('telescope.builtin').lsp_references(require('telescope.themes').get_ivy()) end },
-  { 'n', '<space>.', function() require('telescope.builtin').lsp_definitions(require('telescope.themes').get_ivy()) end },
+  { 'n', '<space>-', function() require 'telescope.builtin'.lsp_references(require 'telescope.themes'.get_ivy()) end },
+  { 'n', '<space>.', function() require 'telescope.builtin'.lsp_definitions(require 'telescope.themes'.get_ivy()) end },
   { 'n', '<space>:', lsp.type_definition },
   { 'n', '<space>r', lsp.rename },
   { 'n', '<space>f', lsp.formatting },
@@ -93,4 +93,3 @@ register_maps {
   { 'n', '<space>ca', lsp.code_action },
   { 'n', '<space>_', vim.diagnostic.open_float },
 }
-
