@@ -26,5 +26,5 @@ register_maps {
   { 'nvo', 'qj', hint_lines { direction = dir.AFTER_CURSOR } },
   { 'nvo', 'qk', hint_lines { direction = dir.BEFORE_CURSOR } },
   { 'nvo', 'ql', hint_char1 { direction = dir.AFTER_CURSOR, current_line_only = true } },
-  { 'nvo', 's', hint_char2 {} },
+  { 'nvo', 'S', hint_char2 {} },
 }

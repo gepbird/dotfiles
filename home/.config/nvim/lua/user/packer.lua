@@ -6,7 +6,7 @@ require 'packer'.startup(function(use)
   use { 'phaazon/hop.nvim', config = function() require 'user.hop' end }
   use { 'numToStr/Comment.nvim', config = function() require 'user.comment' end }
   use { 'tpope/vim-repeat' }
-  use { 'tpope/vim-surround', config = function() require 'user.surround' end } -- TODO: replace with vim-sandwich
+  use { 'machakann/vim-sandwich', config = function() require 'user.sandwich' end }
   use { 'windwp/nvim-autopairs', config = function() require 'user.autopairs' end,
     requires = {
       { 'hrsh7th/nvim-cmp' },

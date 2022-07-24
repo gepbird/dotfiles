@@ -69,6 +69,6 @@ require 'Comment'.setup {
 }
 
 register_maps {
-  { 'x', 'bi', '<Plug>(comment_toggle_linewise_visual)' },
-  { 'x', 'b<s-i>', '<Plug>(comment_toggle_blockwise_visual)' },
+  { 'x', 'bi', '<plug>(comment_toggle_linewise_visual)' },
+  { 'x', 'b<s-i>', '<plug>(comment_toggle_blockwise_visual)' },
 }
