@@ -16,6 +16,10 @@ register_maps {
   { 'nvi', '<a-k>', '<c-w>k', { insert_to_normal = true } },
   { 'nvi', '<a-l>', '<c-w>l', { insert_to_normal = true } },
 
+  { 'nvo', 'e', '/', { unmap = true } },
+  { 'nvo', '<s-e>', '?', { unmap = true } },
+  { 'n', '<c-e>', ':nohlsearch<cr>' },
+
   { 'v', '<', '<gv' },
   { 'v', '>', '>gv' },
   { 'n', '>', '>>' },

@@ -3,7 +3,7 @@ require 'user.utils'
 require 'packer'.startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
-  use { 'easymotion/vim-easymotion', config = function() require 'user.easymotion' end } -- TODO: replace with hop.nvim
+  use { 'phaazon/hop.nvim', config = function() require 'user.hop' end }
   use { 'numToStr/Comment.nvim', config = function() require 'user.comment' end }
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-surround', config = function() require 'user.surround' end } -- TODO: replace with vim-sandwich
