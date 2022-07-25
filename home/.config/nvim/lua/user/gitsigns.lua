@@ -10,10 +10,10 @@ gs.setup {
     topdelete = { text = '契', hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
     changedelete = { text = '▎', hl = 'GitSignsChange', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
   },
-  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
-  numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
-  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
-  word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+  numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
+  linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+  word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
   watch_gitdir = {
     interval = 1000,
     follow_files = true
@@ -44,16 +44,23 @@ gs.setup {
   },
 }
 
+local function then_write(callback)
+  return function()
+    callback()
+    vim.cmd ':w'
+  end
+end
+
 register_maps {
   { 'n', '<space>gj', gs.next_hunk },
   { 'n', '<space>gk', gs.prev_hunk },
-  { 'nv', '<space>gs', gs.stage_hunk },
-  { 'n', '<space>g<s-s>', gs.stage_buffer },
-  { 'nv', '<space>gr', gs.reset_hunk },
-  { 'n', '<space>g<s-r>', gs.reset_buffer },
-  { 'n', '<space>gu', gs.undo_stage_hunk },
+  { 'nv', '<space>gs', then_write(gs.stage_hunk) },
+  { 'n', '<space>g<s-s>', then_write(gs.stage_buffer) },
+  { 'nv', '<space>gr', then_write(gs.reset_hunk) },
+  { 'n', '<space>g<s-r>', then_write(gs.reset_buffer) },
+  { 'n', '<space>gu', then_write(gs.undo_stage_hunk) },
   { 'n', '<space>gp', gs.preview_hunk },
-  { 'n', '<space>gb', function() gs.blame_line { full = true} end },
+  { 'n', '<space>gb', function() gs.blame_line { full = true } end },
   { 'n', '<space>gB', gs.toggle_current_line_blame },
   { 'n', '<space>gd', gs.diffthis },
 }
