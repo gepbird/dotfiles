@@ -1,44 +1,44 @@
+local branch = {
+  'branch',
+  icon = '',
+}
+
+local diff = {
+  'diff',
+  symbols = { added = ' ', modified = ' ', removed = ' ' },
+}
+
 local diagnostics = {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
   sections = { 'error', 'warn', 'hint', 'info' },
   symbols = { error = ' ', warn = ' ', hint = ' ', info = ' ' },
-  colored = true,
-  update_in_insert = true,
   always_visible = false,
 }
 
-local diff = {
-  'diff',
-  colored = true,
-  symbols = { added = ' ', modified = ' ', removed = ' ' },
+local filetype = {
+  'filetype',
+  icon_only = true,
 }
 
-local mode = {
-  'mode',
-  fmt = function(str)
-    return str
-  end,
-}
-
-local branch = {
-  'branch',
-  icons_enabled = true,
-  icon = '',
-}
-
-local location = {
-  'location',
-  padding = 0,
+local filename = {
+  'filename',
+  icon_only = true,
+  file_status = true,
+  symbols = {
+    modified = ' ● ',
+    readonly = '  ',
+    unnamed = '',
+  }
 }
 
 local sections = {
-  lualine_a = { mode },
+  lualine_a = { 'mode' },
   lualine_b = { branch, diff },
   lualine_c = { diagnostics },
-  lualine_x = { 'filename' },
-  lualine_y = {},
-  lualine_z = { location, 'progress' },
+  lualine_x = {},
+  lualine_y = { filetype, filename },
+  lualine_z = { 'location', 'progress' },
 }
 
 local C = require 'darkplus.palette'
@@ -51,6 +51,8 @@ require 'lualine'.setup {
     disabled_filetypes = { 'dashboard', 'NvimTree', 'Outline' },
     always_divide_middle = false,
     gloabalstatus = false,
+    colored = true,
+    update_in_insert = true,
     theme = {
       normal = {
         a = { fg = C.dark_gray, bg = '#818596', gui = 'bold' },

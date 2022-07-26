@@ -25,11 +25,6 @@ register_maps {
   { 'n', '>', '>>' },
   { 'n', '<', '<<' },
 
-  { 't', '<a-h>', '<c-\\><c-s-n><c-w>h', { unmap = true } },
-  { 't', '<a-j>', '<c-\\><c-s-n><c-w>j', { unmap = true } },
-  { 't', '<a-k>', '<c-\\><c-s-n><c-w>k', { unmap = true } },
-  { 't', '<a-l>', '<c-\\><c-s-n><c-w>l', { unmap = true } },
-
   { 'n', '<c-up>', ':resize +2<cr>' },
   { 'n', '<c-down>', ':resize -2<cr>' },
   { 'n', '<c-left>', ':vertical resize -2<cr>' },

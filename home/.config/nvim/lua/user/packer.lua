@@ -70,6 +70,7 @@ require 'packer'.startup(function(use)
       { 'kyazdani42/nvim-web-devicons' },
     },
   }
+  use { 'akinsho/toggleterm.nvim', config = function() require 'user.toggleterm' end }
 
   use { 'lewis6991/gitsigns.nvim', config = function() require 'user.gitsigns' end }
   use { 'gutyina70/darkplus.nvim', config = function() require 'user.colorscheme' end }

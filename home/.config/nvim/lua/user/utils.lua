@@ -1,3 +1,4 @@
+-- TODO: Refactor to use exports instead of global functions
 -- Usage: { mode, lhs, rhs, { option = value } },
 function _G.register_maps(maps)
   for _, map in pairs(maps) do
