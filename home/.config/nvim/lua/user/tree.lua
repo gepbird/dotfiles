@@ -1,6 +1,8 @@
 require 'user.utils'
 
-require 'nvim-tree'.setup {
+local tree = require 'nvim-tree'
+
+tree.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
@@ -15,9 +17,9 @@ require 'nvim-tree'.setup {
   sort_by = 'name',
   root_dirs = {},
   prefer_startup_root = false,
-  sync_root_with_cwd = false,
+  sync_root_with_cwd = true,
   reload_on_bufenter = false,
-  respect_buf_cwd = false,
+  respect_buf_cwd = true,
   view = {
     adaptive_size = false,
     centralize_selection = false,
@@ -139,8 +141,8 @@ require 'nvim-tree'.setup {
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
-    update_root = false,
+    enable = true,
+    update_root = true,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},
@@ -226,5 +228,5 @@ require 'nvim-tree'.setup {
 }
 
 register_maps {
-  { 'n', '<space>e', ':NvimTreeToggle<cr>' },
+  { 'n', '<space>e', tree.toggle },
 }

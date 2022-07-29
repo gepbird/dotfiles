@@ -63,6 +63,7 @@ require 'packer'.startup(function(use)
           'nvim-lua/popup.nvim',
         },
       },
+      { 'ahmedkhalf/project.nvim', config = function() require 'user.project' end },
     },
   }
 
