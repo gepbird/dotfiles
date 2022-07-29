@@ -3,7 +3,7 @@ require 'user.utils'
 require 'nvim-tree'.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = false,
-  disable_netrw = true,
+  disable_netrw = false,
   hijack_cursor = true,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,

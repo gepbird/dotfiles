@@ -20,9 +20,9 @@ require 'Comment'.setup {
   ---@type table
   toggler = {
     ---Line-comment toggle keymap
-    line = 'bi',
+    line = '<space>i',
     ---Block-comment toggle keymap
-    block = 'b<s-i>',
+    block = '<space><s-i>',
   },
 
   ---LHS of operator-pending mappings in NORMAL + VISUAL mode
@@ -69,6 +69,6 @@ require 'Comment'.setup {
 }
 
 register_maps {
-  { 'x', 'bi', '<plug>(comment_toggle_linewise_visual)' },
-  { 'x', 'b<s-i>', '<plug>(comment_toggle_blockwise_visual)' },
+  { 'x', '<space>i', '<plug>(comment_toggle_linewise_visual)' },
+  { 'x', '<space><s-i>', '<plug>(comment_toggle_blockwise_visual)' },
 }

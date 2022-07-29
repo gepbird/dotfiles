@@ -38,17 +38,18 @@ require 'packer'.startup(function(use)
   use { 'neovim/nvim-lspconfig', config = function() require 'user.lsp' end,
     requires = {
       { 'williamboman/nvim-lsp-installer' },
+      { 'glepnir/lspsaga.nvim', config = function() require 'user.lsp.lspsaga' end },
+      { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end,
+        requires = {
+          { 'kyazdani42/nvim-web-devicons' },
+        },
+      }
     },
   }
   use { 'nvim-treesitter/nvim-treesitter', config = function() require 'user.treesitter' end,
     run = function() require 'nvim-treesitter.install'.update { with_sync = true } end,
     requires = {
       { 'p00f/nvim-ts-rainbow' },
-    },
-  }
-  use { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end,
-    requires = {
-      { 'kyazdani42/nvim-web-devicons' },
     },
   }
 

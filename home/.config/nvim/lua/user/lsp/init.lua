@@ -44,7 +44,7 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 })
 
 local function lsp_highlight_document(client, bufnr)
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.documentHighlightProvider then
     register_autocommands('lsp_document_highlight', {
       {
         'CursorHold',
@@ -80,16 +80,13 @@ for _, server in ipairs(servers) do
 end
 
 local lsp = vim.lsp.buf
+local telescope = require 'telescope.builtin'
+local ivy = require 'telescope.themes'.get_ivy()
 register_maps {
   { 'n', '<space>li', ':LspInstallInfo<cr>' },
   { 'n', '<space>ls', ':LspInfo<cr>' },
-  { 'n', '<space>-', function() require 'telescope.builtin'.lsp_references(require 'telescope.themes'.get_ivy()) end },
-  { 'n', '<space>.', function() require 'telescope.builtin'.lsp_definitions(require 'telescope.themes'.get_ivy()) end },
+  { 'n', '<space>-', function() telescope.lsp_references(ivy) end },
+  { 'n', '<space>.', function() telescope.lsp_definitions(ivy) end },
   { 'n', '<space>:', lsp.type_definition },
-  { 'n', '<space>r', lsp.rename },
-  { 'n', '<space>f', lsp.formatting },
-  { 'n', '<space>k', lsp.hover },
-  { 'n', '<space>K', lsp.signature_help },
-  { 'n', '<space>ca', lsp.code_action },
-  { 'n', '<space>_', vim.diagnostic.open_float },
+  { 'n', '<space>f', function() lsp.format { async = false }; vim.cmd ':w' end },
 }
