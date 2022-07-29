@@ -1,5 +1,3 @@
-require 'user.utils'
-
 require 'packer'.startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
@@ -85,7 +83,7 @@ require 'packer'.startup(function(use)
   }
 end)
 
-register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<space>ps', ':PackerSync<cr>' },
   { 'n', '<space>pS', ':PackerStatus<cr>' },
 }

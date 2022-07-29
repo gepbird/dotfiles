@@ -1,5 +1,3 @@
-require 'user.utils'
-
 require 'lspsaga'.init_lsp_saga {
   code_action_lightbulb = {
     enable = false
@@ -23,7 +21,7 @@ require 'lspsaga'.init_lsp_saga {
 }
 
 local action = require 'lspsaga.action'
-register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<space>m', require 'lspsaga.codeaction'.code_action },
   { 'n', '<space>r', require 'lspsaga.rename'.lsp_rename },
   { 'n', '<space>k', require 'lspsaga.hover'.render_hover_doc },

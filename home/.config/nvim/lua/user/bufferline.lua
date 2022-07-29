@@ -1,5 +1,3 @@
-require 'user.utils'
-
 require 'bufferline'.setup {
   options = {
     mode = 'buffers', -- set to 'tabs' to only show tabpages instead
@@ -79,6 +77,6 @@ require 'bufferline'.setup {
   }
 }
 
-register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<s-q>', ':Bdelete<cr>' },
 }

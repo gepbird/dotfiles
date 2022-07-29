@@ -1,5 +1,3 @@
-require 'user.utils'
-
 -- TODO: keybind to close floatings
 local signs = {
   DiagnosticSignError = '',
@@ -45,7 +43,7 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 
 local function lsp_highlight_document(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
-    register_autocommands('lsp_document_highlight', {
+    require 'user.utils'.register_autocommands('lsp_document_highlight', {
       {
         'CursorHold',
         function() vim.lsp.buf.document_highlight() end,
@@ -82,7 +80,7 @@ end
 local lsp = vim.lsp.buf
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
-register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<space>li', ':LspInstallInfo<cr>' },
   { 'n', '<space>ls', ':LspInfo<cr>' },
   { 'n', '<space>-', function() telescope.lsp_references(ivy) end },

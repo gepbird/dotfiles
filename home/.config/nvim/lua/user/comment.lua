@@ -1,5 +1,3 @@
-require 'user.utils'
-
 require 'Comment'.setup {
   ---Add a space b/w comment and the line
   ---@type boolean|fun():boolean
@@ -68,7 +66,7 @@ require 'Comment'.setup {
   post_hook = nil,
 }
 
-register_maps {
+require 'user.utils'.register_maps {
   { 'x', '<space>i', '<plug>(comment_toggle_linewise_visual)' },
   { 'x', '<space><s-i>', '<plug>(comment_toggle_blockwise_visual)' },
 }

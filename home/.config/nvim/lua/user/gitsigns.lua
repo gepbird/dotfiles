@@ -1,5 +1,3 @@
-require 'user.utils'
-
 local gs = require 'gitsigns'
 
 gs.setup {
@@ -51,7 +49,7 @@ local function then_write(callback)
   end
 end
 
-register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<space>gj', gs.next_hunk },
   { 'n', '<space>gk', gs.prev_hunk },
   { 'nv', '<space>gs', then_write(gs.stage_hunk) },

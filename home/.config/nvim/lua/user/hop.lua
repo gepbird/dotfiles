@@ -1,5 +1,3 @@
-require 'user.utils'
-
 local hop = require 'hop'
 local hint = require 'hop.hint'
 local dir = hint.HintDirection
@@ -20,7 +18,7 @@ local function hint_char2(opts) return function() hop.hint_char2(opts) end end
 
 local function hint_lines(opts) return function() hop.hint_lines(opts) end end
 
-register_maps {
+require 'user.utils'.register_maps {
   { 'nvo', 'qw', hint_words {} },
   { 'nvo', 'qh', hint_char1 { direction = dir.BEFORE_CURSOR, current_line_only = true } },
   { 'nvo', 'qj', hint_lines { direction = dir.AFTER_CURSOR } },

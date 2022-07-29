@@ -1,6 +1,4 @@
-require 'user.utils'
-
-register_maps {
+require 'user.utils'.register_maps {
   { 'nvo', '<s-h>', '5h' },
   { 'nvo', '<s-j>', '5j' },
   { 'nvo', '<s-k>', '5k' },

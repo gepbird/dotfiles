@@ -1,5 +1,3 @@
-require 'user.utils'
-
 local tree = require 'nvim-tree'
 
 tree.setup {
@@ -227,6 +225,6 @@ tree.setup {
   },
 }
 
-register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<space>e', tree.toggle },
 }

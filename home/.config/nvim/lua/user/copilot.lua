@@ -1,5 +1,3 @@
-require 'user.utils'
-
-register_maps {
+require 'user.utils'.register_maps {
   { 'i', 'úő', 'copilot#Accept("<CR>")', { expr = true } },
 }

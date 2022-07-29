@@ -1,5 +1,3 @@
-require 'user.utils'
-
 -- TODO: properly reload nvim config
 local function reload_config()
   --for name,_ in pairs(package.loaded) do
@@ -11,7 +9,7 @@ local function reload_config()
   --packer.sync()
 end
 
-register_autocommands('main', {
+require 'user.utils'.register_autocommands('main', {
   {
     'BufWritePost',
     function()

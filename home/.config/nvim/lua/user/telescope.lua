@@ -1,5 +1,3 @@
-require 'user.utils'
-
 local telescope = require 'telescope'
 local actions = require 'telescope.actions'
 local fb = require 'telescope'.extensions.file_browser
@@ -92,7 +90,7 @@ telescope.setup {
 telescope.load_extension 'file_browser'
 telescope.load_extension 'media_files'
 
-register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<space>o', '<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>' },
   { 'n', '<space><tab>', '<cmd>Telescope oldfiles<cr>' },
   { 'n', '<space>tf', fb.file_browser },

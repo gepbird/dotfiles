@@ -1,5 +1,3 @@
-require 'user.utils'
-
 require 'toggleterm'.setup {
   size = 15,
   open_mapping = '<c-t>',
@@ -21,7 +19,7 @@ require 'toggleterm'.setup {
   },
 }
 
-register_maps {
+require 'user.utils'.register_maps {
   { 't', '<esc>', '<c-\\><c-s-n>', { unmap = true } },
   { 't', '<a-h>', '<c-\\><c-s-n><c-w>h', { unmap = true } },
   { 't', '<a-j>', '<c-\\><c-s-n><c-w>j', { unmap = true } },
