@@ -1,5 +1,9 @@
 require 'packer'.startup(function(use)
+  local darkplus = { 'gutyina70/darkplus.nvim', config = function() require 'user.colorscheme' end }
+
   use { 'wbthomason/packer.nvim' }
+  use { 'lewis6991/impatient.nvim', config = function() require 'impatient'.enable_profile() end }
+  use { 'antoinemadec/FixCursorHold.nvim', config = function() vim.cmd 'let g:cursorhold_updatetime = 50' end }
 
   use { 'phaazon/hop.nvim', config = function() require 'user.hop' end }
   use { 'numToStr/Comment.nvim', config = function() require 'user.comment' end }
@@ -14,7 +18,7 @@ require 'packer'.startup(function(use)
   use { 'nvim-lualine/lualine.nvim', config = function() require 'user.lualine' end,
     requires = {
       { 'kyazdani42/nvim-web-devicons' },
-      { 'LunarVim/darkplus.nvim' },
+      darkplus,
     },
   }
   use { 'ethanholz/nvim-lastplace', config = function() require 'user.lastplace' end }
@@ -73,11 +77,16 @@ require 'packer'.startup(function(use)
   use { 'akinsho/toggleterm.nvim', config = function() require 'user.toggleterm' end }
 
   use { 'lewis6991/gitsigns.nvim', config = function() require 'user.gitsigns' end }
-  use { 'gutyina70/darkplus.nvim', config = function() require 'user.colorscheme' end }
+  use { 'https://github.com/tpope/vim-fugitive', config = function() require 'user.fugitive' end,
+    requires = {
+      { 'tpope/vim-rhubarb' },
+    },
+  }
+  use(darkplus)
   use { 'akinsho/bufferline.nvim', config = function() require 'user.bufferline' end,
     requires = {
       { 'kyazdani42/nvim-web-devicons' },
-      { 'LunarVim/darkplus.nvim' },
+      darkplus,
       { 'moll/vim-bbye' },
     },
   }

@@ -10,7 +10,7 @@ require 'lspsaga'.init_lsp_saga {
   saga_winblend = 0,
   show_outline = {
     win_position = 'left',
-    left_with = 'NvimTree',
+    win_with = 'NvimTree',
     win_width = 30,
     auto_enter = true,
     auto_preview = true,

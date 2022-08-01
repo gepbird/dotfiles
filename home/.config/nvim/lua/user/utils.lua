@@ -6,7 +6,7 @@ return {
       local lhs = map[2]
       local options = map[4]
       local opts = {
-        noremap = true,
+        remap = false,
         silent = true,
       }
 

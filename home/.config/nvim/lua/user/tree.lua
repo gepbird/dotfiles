@@ -121,10 +121,10 @@ tree.setup {
           symlink_open = '',
         },
         git = {
-          unstaged = '',
+          unstaged = 'M',
           staged = 'S',
           unmerged = '',
-          renamed = '➜',
+          renamed = 'R',
           deleted = '',
           untracked = 'U',
           ignored = '◌',
