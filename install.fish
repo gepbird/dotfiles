@@ -284,6 +284,7 @@ end
 
 function startup
   link .bashrc
+  link .bash_profile
   link .xinitrc
 end
 
