@@ -25,4 +25,6 @@ dunst &
 dwmblocks &
 discord &
 
-exec dwm
+while true; do
+  dwm 2> ~/.cache/dwm.log
+done
