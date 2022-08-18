@@ -1,0 +1,117 @@
+local dap = require 'dap'
+local dapui = require 'dapui'
+local widgets = require 'dap.ui.widgets'
+
+vim.fn.sign_define('DapBreakpoint', { text = ' ', texthl = 'DapBreakpoint' })
+vim.fn.sign_define('DapBreakpointRejected', { text = ' ', texthl = 'DapUIBreakpointsDisabledLine' })
+vim.fn.sign_define('DapStopped', { text = ' '})
+
+dapui.setup {
+  icons = { expanded = '▾', collapsed = '▸' },
+  mappings = {
+    expand = { 'h', 'l' },
+    open = '<cr>',
+    remove = '<s-d>',
+    edit = '<s-c>',
+    repl = 'r',
+    toggle = '<tab>',
+  },
+  expand_lines = true,
+  layouts = {
+    {
+      elements = {
+        'scopes',
+        --'breakpoints',
+        'watches',
+        'stacks',
+      },
+      size = 40,
+      position = 'left',
+    },
+    {
+      elements = {
+        'repl',
+        'console',
+      },
+      size = 0.25,
+      position = 'bottom',
+    },
+  },
+  floating = {
+    max_height = nil,
+    max_width = nil,
+    border = 'rounded',
+    mappings = {
+      close = { 'q', '<esc>' },
+    },
+  },
+  windows = { indent = 1 },
+  render = {
+    max_type_length = nil,
+  }
+}
+dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+require 'nvim-dap-virtual-text'.setup {
+  enabled = true, -- enable this plugin (the default)
+  enabled_commands = true, -- create commands DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle, (DapVirtualTextForceRefresh for refreshing when debug adapter did not notify its termination)
+  highlight_changed_variables = true, -- highlight changed values with NvimDapVirtualTextChanged, else always NvimDapVirtualText
+  highlight_new_as_changed = true, -- highlight new variables in the same way as changed variables (if highlight_changed_variables)
+  show_stop_reason = true, -- show stop reason when stopped for exceptions
+  commented = false, -- prefix virtual text with comment string
+  only_first_definition = false, -- only show virtual text at first definition (if there are multiple)
+  all_references = false, -- show virtual text on all all references of the variable (not only definitions)
+  filter_references_pattern = '<module', -- filter references (not definitions) pattern when all_references is activated (Lua gmatch pattern, default filters out Python modules)
+  -- experimental features:
+  virt_text_pos = 'eol', -- position of virtual text, see `:h nvim_buf_set_extmark()`
+  all_frames = false, -- show virtual text for all stack frames not only current. Only works for debugpy on my machine.
+  virt_lines = false, -- show virtual lines instead of virtual text (will flicker!)
+  virt_text_win_col = nil -- position the virtual text at a fixed window column (starting from the first text column) ,
+  -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
+}
+
+local telescope_dap = require 'telescope'.load_extension 'dap'
+local utils = require 'user.utils'
+
+utils.register_autocommands('dap', {
+  {
+    'FileType',
+    function()
+      utils.register_maps {
+        { 'n', 't', telescope_dap.variables, { buffer = true } },
+      }
+    end,
+    { pattern = { 'dapui_scopes', 'dapui_watches' } },
+  },
+  {
+    'FileType',
+    function()
+      utils.register_maps {
+        { 'n', 't', telescope_dap.frames, { buffer = true } },
+      }
+    end,
+    { pattern = 'dapui_stacks' },
+  },
+})
+
+dap.on_continue = dap.continue
+
+utils.register_maps {
+  { 'n', '<space>b', dap.toggle_breakpoint },
+  { 'n', '<space><s-b>', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end },
+  { 'n', '<space><c-b>', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end },
+  { 'n', '<a-up>', function() dap.on_continue() end },
+  { 'n', '<a-down>', dap.step_over },
+  { 'n', '<a-left>', dap.step_out },
+  { 'n', '<a-right>', dap.step_into },
+  { 'n', '<end>', dap.terminate },
+  { 'n', '<a-cr>', dapui.toggle },
+  { 'n', '<space><a-k>', widgets.hover },
+  { 'n', '<space>td', telescope_dap.commands },
+}
+
+require 'user.dap.settings.debugpy'
+require 'user.dap.settings.netcoredbg'
+require 'user.dap.settings.nvim'

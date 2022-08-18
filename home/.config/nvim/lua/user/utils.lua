@@ -1,3 +1,11 @@
+function Inspect(obj)
+  print(vim.inspect(obj))
+end
+
+function Inspectr(module)
+  Inspect(require(module))
+end
+
 return {
   -- Usage: { mode, lhs, rhs, { option = value } },
   register_maps = function(maps)

@@ -28,7 +28,7 @@ vim.diagnostic.config {
   },
 }
 
-require 'nvim-lsp-installer'.setup {
+require 'mason-lspconfig'.setup {
   automatic_installation = true,
 }
 
@@ -81,7 +81,7 @@ local lsp = vim.lsp.buf
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
 require 'user.utils'.register_maps {
-  { 'n', '<space>li', ':LspInstallInfo<cr>' },
+  { 'n', '<space>li', ':Mason<cr>' },
   { 'n', '<space>ls', ':LspInfo<cr>' },
   { 'n', '<space>-', function() telescope.lsp_references(ivy) end },
   { 'n', '<space>.', function() telescope.lsp_definitions(ivy) end },

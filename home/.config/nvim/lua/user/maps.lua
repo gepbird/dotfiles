@@ -1,25 +1,28 @@
 require 'user.utils'.register_maps {
-  { 'nvo', '<s-h>', '5h' },
-  { 'nvo', '<s-j>', '5j' },
-  { 'nvo', '<s-k>', '5k' },
-  { 'nvo', '<s-l>', '5l' },
+  { 'nxo', '<s-h>', '5h' },
+  { 'nxo', '<s-j>', '5j' },
+  { 'nxo', '<s-k>', '5k' },
+  { 'nxo', '<s-l>', '5l' },
 
-  { 'nvo', '<c-h>', '_', { unmap = true } },
-  { 'nvo', '<c-j>', '}', { unmap = true } },
-  { 'nvo', '<c-k>', '{', { unmap = true } },
-  { 'nvo', '<c-l>', '$', { unmap = true } },
+  { 'nxo', '<c-h>', '_', { unmap = true } },
+  { 'nxo', '<c-j>', '}', { unmap = true } },
+  { 'nxo', '<c-k>', '{', { unmap = true } },
+  { 'nxo', '<c-l>', '$', { unmap = true } },
 
-  { 'nvi', '<a-h>', '<c-w>h', { insert_to_normal = true } },
-  { 'nvi', '<a-j>', '<c-w>j', { insert_to_normal = true } },
-  { 'nvi', '<a-k>', '<c-w>k', { insert_to_normal = true } },
-  { 'nvi', '<a-l>', '<c-w>l', { insert_to_normal = true } },
+  { 'nxi', '<a-h>', '<c-w>h', { insert_to_normal = true } },
+  { 'nxi', '<a-j>', '<c-w>j', { insert_to_normal = true } },
+  { 'nxi', '<a-k>', '<c-w>k', { insert_to_normal = true } },
+  { 'nxi', '<a-l>', '<c-w>l', { insert_to_normal = true } },
 
-  { 'nvo', 'e', '/', { unmap = true } },
-  { 'nvo', '<s-e>', '?', { unmap = true } },
+  { 'n', '<space>h', ':split<cr>' },
+  { 'n', '<space>v', ':vsplit<cr>' },
+
+  { 'nxo', 'e', '/', { unmap = true } },
+  { 'nxo', '<s-e>', '?', { unmap = true } },
   { 'n', '<c-e>', ':nohlsearch<cr>' },
 
-  { 'v', '<', '<gv' },
-  { 'v', '>', '>gv' },
+  { 'x', '<', '<gv' },
+  { 'x', '>', '>gv' },
   { 'n', '>', '>>' },
   { 'n', '<', '<<' },
 
@@ -28,12 +31,12 @@ require 'user.utils'.register_maps {
   { 'n', '<c-left>', ':vertical resize -2<cr>' },
   { 'n', '<c-right>', ':vertical resize +2<cr>' },
 
-  { 'nv', 'y', '"+y' },
+  { 'nx', 'y', '"+y' },
   { 'n', '<s-y>', '"+yy', { unmap = 'yy' } },
-  { 'nv', 'p', '"+p' },
-  { 'nv', '<s-p>', '"+<s-p>' },
-  { 'nv', '<c-p>', 'p' },
-  { 'nv', '<c-s-p>', '<s-p>' },
+  { 'nx', 'p', '"+p' },
+  { 'nx', '<s-p>', '"+<s-p>' },
+  { 'nx', '<c-p>', 'p' },
+  { 'nx', '<c-s-p>', '<s-p>' },
   { 'n', '<s-c>', 'cc', { unmap = true } },
   { 'n', '<s-d>', 'dd', { unmap = true } },
 
@@ -42,10 +45,12 @@ require 'user.utils'.register_maps {
   { 'n', '<space>w', ':w<cr>' },
   { 'n', '<space>W', ':wq<cr>' },
 
+  { 'n', '<space><s-m>', ':messages<cr>' },
+
   { 'n', '<s-u>', '<c-r>', { unmap = true } },
   { 'n', 'z', 'i<cr><esc>' },
   { 'n', '<s-z>', '<s-j>' },
-  { 'nvi', '<a-f>', 'mfgg=G`f', { insert_to_normal = true } },
+  { 'nxi', '<a-f>', 'mfgg=G`f', { insert_to_normal = true } },
 
   { 'n', ',', 'mz$a,<esc>`z' },
   { 'n', ';', 'mz$a;<esc>`z' },

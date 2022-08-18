@@ -19,10 +19,10 @@ local function hint_char2(opts) return function() hop.hint_char2(opts) end end
 local function hint_lines(opts) return function() hop.hint_lines(opts) end end
 
 require 'user.utils'.register_maps {
-  { 'nvo', 'qw', hint_words {} },
-  { 'nvo', 'qh', hint_char1 { direction = dir.BEFORE_CURSOR, current_line_only = true } },
-  { 'nvo', 'qj', hint_lines { direction = dir.AFTER_CURSOR } },
-  { 'nvo', 'qk', hint_lines { direction = dir.BEFORE_CURSOR } },
-  { 'nvo', 'ql', hint_char1 { direction = dir.AFTER_CURSOR, current_line_only = true } },
-  { 'nvo', 'S', hint_char2 {} },
+  { 'nxo', 'qw', hint_words {} },
+  { 'nxo', 'qh', hint_char1 { direction = dir.BEFORE_CURSOR, current_line_only = true } },
+  { 'nxo', 'qj', hint_lines { direction = dir.AFTER_CURSOR } },
+  { 'nxo', 'qk', hint_lines { direction = dir.BEFORE_CURSOR } },
+  { 'nxo', 'ql', hint_char1 { direction = dir.AFTER_CURSOR, current_line_only = true } },
+  { 'nxo', 'S', hint_char2 {} },
 }

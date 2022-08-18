@@ -14,7 +14,11 @@ require 'packer'.startup(function(use)
       { 'hrsh7th/nvim-cmp' },
     },
   }
-  use { 'rcarriga/nvim-notify', config = function() require 'user.notify' end }
+  use { 'rcarriga/nvim-notify', config = function() require 'user.notify' end,
+    requires = {
+      { 'nvim-telescope/telescope.nvim' },
+    },
+  }
   use { 'nvim-lualine/lualine.nvim', config = function() require 'user.lualine' end,
     requires = {
       { 'kyazdani42/nvim-web-devicons' },
@@ -23,6 +27,7 @@ require 'packer'.startup(function(use)
   }
   use { 'ethanholz/nvim-lastplace', config = function() require 'user.lastplace' end }
 
+  use { 'github/copilot.vim', config = function() require 'user.copilot' end }
   use { 'hrsh7th/nvim-cmp', config = function() require 'user.cmp' end,
     requires = {
       { 'hrsh7th/cmp-nvim-lsp' },
@@ -35,17 +40,38 @@ require 'packer'.startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     },
   }
-  use { 'github/copilot.vim', config = function() require 'user.copilot' end }
+  use { 'williamboman/mason.nvim', config = function() require 'user.mason' end,
+    requires = {
+      { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+    },
+  }
+  use { 'mfussenegger/nvim-dap', config = function() require 'user.dap' end,
+    requires = {
+      { 'rcarriga/nvim-dap-ui' },
+      { 'williamboman/mason.nvim' },
+      { 'theHamsta/nvim-dap-virtual-text' },
+      { 'nvim-telescope/telescope-dap.nvim',
+        requires = {
+          'nvim-telescope/telescope.nvim',
+        },
+      },
+      { 'jbyuki/one-small-step-for-vimkind' },
+    },
+  }
 
   use { 'neovim/nvim-lspconfig', config = function() require 'user.lsp' end,
     requires = {
-      { 'williamboman/nvim-lsp-installer' },
+      { 'williamboman/mason-lspconfig.nvim',
+        requires = {
+          'williamboman/mason.nvim',
+        },
+      },
       { 'glepnir/lspsaga.nvim', config = function() require 'user.lsp.lspsaga' end },
       { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end,
         requires = {
-          { 'kyazdani42/nvim-web-devicons' },
+          'kyazdani42/nvim-web-devicons',
         },
-      }
+      },
     },
   }
   use { 'nvim-treesitter/nvim-treesitter', config = function() require 'user.treesitter' end,

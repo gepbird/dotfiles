@@ -6,6 +6,7 @@ require 'lspsaga'.init_lsp_saga {
     quit = { '<esc>', 'q' },
     exec = { '<cr>', 'l' },
   },
+  rename_in_select = true,
   border_style = 'rounded',
   saga_winblend = 0,
   show_outline = {

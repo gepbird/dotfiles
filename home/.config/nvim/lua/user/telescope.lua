@@ -16,7 +16,7 @@ telescope.setup {
         ['<c-v>'] = actions.select_vertical,
         ['<c-t>'] = actions.select_tab,
         ['<c-q>'] = actions.send_to_qflist + actions.open_qflist,
-        ['<a-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+        ['<a-q>'] = actions.send_selected_to_qflist + actions.open_qflist, -- TODO: if nothing is selected, select everything
         ['<a-t>'] = actions.complete_tag,
 
         ['<c-j>'] = actions.move_selection_next,
@@ -99,4 +99,6 @@ require 'user.utils'.register_maps {
   { 'n', '<space>tm', '<cmd>Telescope keymaps<cr>' },
   { 'n', '<space>tc', '<cmd>Telescope commands<cr>' },
   { 'n', '<space>th', '<cmd>Telescope help_tags<cr>' },
+  { 'n', '<space>t<s-h>', '<cmd>Telescope highlights<cr>' },
+  { 'n', '<space>tr', '<cmd>Telescope registers<cr>' },
 }

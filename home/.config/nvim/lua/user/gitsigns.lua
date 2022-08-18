@@ -52,9 +52,9 @@ end
 require 'user.utils'.register_maps {
   { 'n', '<space>gj', gs.next_hunk },
   { 'n', '<space>gk', gs.prev_hunk },
-  { 'nv', '<space>gs', then_write(gs.stage_hunk) },
+  { 'nx', '<space>gs', then_write(gs.stage_hunk) },
   { 'n', '<space>g<s-s>', then_write(gs.stage_buffer) },
-  { 'nv', '<space>gr', then_write(gs.reset_hunk) },
+  { 'nx', '<space>gr', then_write(gs.reset_hunk) },
   { 'n', '<space>g<s-r>', then_write(gs.reset_buffer) },
   { 'n', '<space>gu', then_write(gs.undo_stage_hunk) },
   { 'n', '<space>gp', gs.preview_hunk },
