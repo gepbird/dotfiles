@@ -46,6 +46,7 @@ require 'user.utils'.register_maps {
   { 'n', '<space>W', ':wq<cr>' },
 
   { 'n', '<space><s-m>', ':messages<cr>' },
+  { 'n', '<space>n', function() print(vim.fn.expand '%') end },
   { 'n', '<a-q>', 'q' },
   { 'n', '<space><s-r>', ':w<cr>:e<cr>' },
 
@@ -63,4 +64,6 @@ require 'user.utils'.register_maps {
 
   { 'n', '<tab>', ':bnex<cr>' },
   { 'n', '<s-tab>', ':bprevious<cr>' },
+
+  { 'n', 'l', '<cr>', { filetype = 'qf' } }
 }

@@ -88,15 +88,22 @@ telescope.setup {
 telescope.load_extension 'file_browser'
 telescope.load_extension 'media_files'
 
+local builtin = require 'telescope.builtin'
+
 require 'user.utils'.register_maps {
-  { 'n', '<space>o', '<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>' },
-  { 'n', '<space><tab>', '<cmd>Telescope oldfiles<cr>' },
+  { 'n', '<space>o', function()
+    builtin.find_files { find_command = { 'rg', '--files', '--hidden', '--glob=!.git', '--color', 'never' } }
+  end },
+  { 'n', '<space><s-o>', function()
+    builtin.find_files { find_command = { 'rg', '--files', '--hidden', '--no-ignore', '--glob=!.git', '--color', 'never' } }
+  end },
+  { 'n', '<space><tab>', builtin.oldfiles },
   { 'n', '<space>tf', fb.file_browser },
-  { 'n', '<space>tg', '<cmd>Telescope live_grep<cr>' },
-  { 'n', '<space>tb', '<cmd>Telescope buffers<cr>' },
-  { 'n', '<space>tm', '<cmd>Telescope keymaps<cr>' },
-  { 'n', '<space>tc', '<cmd>Telescope commands<cr>' },
-  { 'n', '<space>th', '<cmd>Telescope help_tags<cr>' },
-  { 'n', '<space>t<s-h>', '<cmd>Telescope highlights<cr>' },
-  { 'n', '<space>tr', '<cmd>Telescope registers<cr>' },
+  { 'n', '<space>tg', builtin.live_grep },
+  { 'n', '<space>tb', builtin.buffers },
+  { 'n', '<space>tm', builtin.keymaps },
+  { 'n', '<space>tc', builtin.commands },
+  { 'n', '<space>th', builtin.help_tags },
+  { 'n', '<space>t<s-h>', builtin.highlights },
+  { 'n', '<space>tr', builtin.registers },
 }

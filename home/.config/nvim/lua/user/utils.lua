@@ -6,64 +6,82 @@ function Inspectr(module)
   Inspect(require(module))
 end
 
-return {
-  -- Usage: { mode, lhs, rhs, { option = value } },
-  register_maps = function(maps)
-    for _, map in pairs(maps) do
-      local modes = map[1]
-      local lhs = map[2]
-      local options = map[4]
-      local opts = {
-        remap = false,
-        silent = true,
-      }
+local M = {}
+-- Usage: { mode, lhs, rhs, { option1 = value1 } },
+M.register_maps = function(maps)
+  for _, map in pairs(maps) do
+    M.register_map(map)
+  end
+end
 
-      for mode in modes:gmatch '.' do
-        local rhs = map[3]
-        if options then
-          for option_name, option_value in pairs(options) do
-            if option_name == 'unmap' then
-              if option_value then
-                option_value = rhs
-                vim.api.nvim_set_keymap(mode, option_value, '', {})
-              end
-            elseif option_name == 'insert_to_normal' then
-              if mode == 'i' then
-                if option_value == true then
-                  rhs = '<esc>' .. rhs .. 'a'
-                else
-                  rhs = option_value
-                end
-              end
-            else
-              opts[option_name] = option_value
-            end
+M.register_map = function(map)
+  local modes = map[1]
+
+  for mode in modes:gmatch '.' do
+    local rhs = map[3]
+    local lhs = map[2]
+    local options = map[4] or {}
+    local opts = {
+      remap = false,
+      silent = true,
+    }
+    local filetype = nil
+
+    for key, value in pairs(options) do
+      if key == 'unmap' then
+        if value then
+          value = rhs
+          vim.api.nvim_set_keymap(mode, value, '', {})
+        end
+      elseif key == 'insert_to_normal' then
+        if mode == 'i' then
+          if value == true then
+            rhs = '<esc>' .. rhs .. 'a'
+          else
+            rhs = value
           end
         end
-
-        vim.keymap.set(mode, lhs, rhs, opts)
+      elseif key == 'filetype' then
+        filetype = value
+        opts.buffer = true
+        break
+      else
+        opts[key] = value
       end
     end
-  end,
 
-  -- Usage: { event, callaback, options },
-  register_autocommands = function(augroup, autocmds)
-    vim.api.nvim_create_augroup(augroup, {})
-
-    for _, autocmd in ipairs(autocmds) do
-      local event = autocmd[1]
-      local callback = autocmd[2]
-      local options = autocmd[3]
-      local opts = {
-        group = augroup,
-        callback = callback,
-      }
-
-      if options then
-        opts = vim.tbl_extend('error', opts, options)
-      end
-
-      vim.api.nvim_create_autocmd({ event }, opts)
+    local keymap_set = function()
+      vim.keymap.set(mode, lhs, rhs, opts)
     end
-  end,
-}
+    if filetype then
+      M.register_autocmd { 'FileType', keymap_set, { pattern = filetype } }
+    else
+      keymap_set()
+    end
+
+  end
+end
+
+-- Usage: { event, callaback, { option1 = value1 } },
+M.register_autocmds = function(autocmds)
+  for _, autocmd in ipairs(autocmds) do
+    M.register_autocmd(autocmd)
+  end
+end
+
+M.register_autocmd = function(autocmd)
+  local event = autocmd[1]
+  local callback = autocmd[2]
+  local options = autocmd[3] or {}
+  options = vim.tbl_extend('error', options, {
+    callback = callback,
+  })
+
+  if options.buffer == true then
+    options.buffer = 0
+  end
+
+  vim.api.nvim_create_autocmd({ event }, options)
+end
+
+return M;

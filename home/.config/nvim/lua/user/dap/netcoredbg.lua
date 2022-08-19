@@ -56,12 +56,10 @@ local function on_continue()
   })
 end
 
-utils.register_autocommands('user.netcoredbg', {
-  {
-    'FileType',
-    function()
-      dap.on_continue = on_continue
-    end,
-    { pattern = 'cs' },
-  },
-})
+utils.register_autocmd {
+  'FileType',
+  function()
+    dap.on_continue = on_continue
+  end,
+  { pattern = 'cs' },
+}

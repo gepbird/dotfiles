@@ -33,6 +33,7 @@ require 'mason-lspconfig'.setup {
 }
 
 local lspconfig = require 'lspconfig'
+local utils = require 'user.utils'
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = 'rounded',
@@ -43,18 +44,10 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 
 local function lsp_highlight_document(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
-    require 'user.utils'.register_autocommands('lsp_document_highlight', {
-      {
-        'CursorHold',
-        function() vim.lsp.buf.document_highlight() end,
-        { buffer = bufnr },
-      },
-      {
-        'CursorMoved',
-        function() vim.lsp.buf.clear_references() end,
-        { buffer = bufnr },
-      },
-    })
+    utils.register_autocmds {
+      { 'CursorHold', vim.lsp.buf.document_highlight, { buffer = true } },
+      { 'CursorMoved', vim.lsp.buf.clear_references, { buffer = true } },
+    }
   end
 end
 
@@ -74,13 +67,13 @@ local servers = {
   'omnisharp',
 }
 for _, server in ipairs(servers) do
-  lspconfig[server].setup(require('user.lsp.settings.' .. server))
+  lspconfig[server].setup(require('user.lsp.' .. server))
 end
 
 local lsp = vim.lsp.buf
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
-require 'user.utils'.register_maps {
+utils.register_maps {
   { 'n', '<space>li', ':Mason<cr>' },
   { 'n', '<space>ls', ':LspInfo<cr>' },
   { 'n', '<space>-', function() telescope.lsp_references(ivy) end },

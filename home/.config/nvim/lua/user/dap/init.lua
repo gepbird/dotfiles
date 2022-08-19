@@ -4,7 +4,7 @@ local widgets = require 'dap.ui.widgets'
 
 vim.fn.sign_define('DapBreakpoint', { text = ' ', texthl = 'DapBreakpoint' })
 vim.fn.sign_define('DapBreakpointRejected', { text = ' ', texthl = 'DapUIBreakpointsDisabledLine' })
-vim.fn.sign_define('DapStopped', { text = ' '})
+vim.fn.sign_define('DapStopped', { text = ' ' })
 
 dapui.setup {
   icons = { expanded = '▾', collapsed = '▸' },
@@ -73,35 +73,13 @@ require 'nvim-dap-virtual-text'.setup {
 }
 
 local telescope_dap = require 'telescope'.load_extension 'dap'
-local utils = require 'user.utils'
-
-utils.register_autocommands('dap', {
-  {
-    'FileType',
-    function()
-      utils.register_maps {
-        { 'n', 't', telescope_dap.variables, { buffer = true } },
-      }
-    end,
-    { pattern = { 'dapui_scopes', 'dapui_watches' } },
-  },
-  {
-    'FileType',
-    function()
-      utils.register_maps {
-        { 'n', 't', telescope_dap.frames, { buffer = true } },
-      }
-    end,
-    { pattern = 'dapui_stacks' },
-  },
-})
 
 dap.on_continue = dap.continue
 
-utils.register_maps {
+require 'user.utils'.register_maps {
   { 'n', '<space>b', dap.toggle_breakpoint },
-  { 'n', '<space><s-b>', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end },
-  { 'n', '<space><c-b>', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end },
+  { 'n', '<space><s-b>', function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end },
+  { 'n', '<space><c-b>', function() dap.set_breakpoint(nil, nil, vim.fn.input 'Log point message: ') end },
   { 'n', '<a-up>', function() dap.on_continue() end },
   { 'n', '<a-down>', dap.step_over },
   { 'n', '<a-left>', dap.step_out },
@@ -110,8 +88,10 @@ utils.register_maps {
   { 'n', '<a-cr>', dapui.toggle },
   { 'n', '<space><a-k>', widgets.hover },
   { 'n', '<space>td', telescope_dap.commands },
+  { 'n', 't', telescope_dap.variables, { filetype = { 'dapui_scopes', 'dapui_watches' } } },
+  { 'n', 't', telescope_dap.frames, { filetype = 'dapui_stacks' } },
 }
 
-require 'user.dap.settings.debugpy'
-require 'user.dap.settings.netcoredbg'
-require 'user.dap.settings.nvim'
+require 'user.dap.debugpy'
+require 'user.dap.netcoredbg'
+require 'user.dap.nvim'
