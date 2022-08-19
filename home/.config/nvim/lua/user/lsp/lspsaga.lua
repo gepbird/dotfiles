@@ -3,9 +3,10 @@ require 'lspsaga'.init_lsp_saga {
     enable = false
   },
   code_action_keys = {
-    quit = { '<esc>', 'q' },
-    exec = { '<cr>', 'l' },
+    quit = '<esc>',
+    exec = 'l',
   },
+  rename_action_quit = '<esc>',
   rename_in_select = true,
   border_style = 'rounded',
   saga_winblend = 0,
@@ -23,10 +24,10 @@ require 'lspsaga'.init_lsp_saga {
 
 local action = require 'lspsaga.action'
 require 'user.utils'.register_maps {
-  { 'n', '<space>m', require 'lspsaga.codeaction'.code_action },
-  { 'n', '<space>r', require 'lspsaga.rename'.lsp_rename },
-  { 'n', '<space>k', require 'lspsaga.hover'.render_hover_doc },
-  { 'n', '<space><c-k>', require 'lspsaga.diagnostic'.show_line_diagnostics },
+  { 'n', '<space>m', function() require 'lspsaga.codeaction':code_action() end },
+  { 'n', '<space>r', function() require 'lspsaga.rename':lsp_rename() end },
+  { 'n', '<space>k', function() require 'lspsaga.hover':render_hover_doc() end },
+  { 'n', '<space><c-k>', function() require 'lspsaga.diagnostic':show_line_diagnostics() end },
   { 'n', '<c-f>', function() action.smart_scroll_with_saga(1) end },
   { 'n', '<c-b>', function() action.smart_scroll_with_saga(-1) end },
   { 'n', '<space>lo', function() require 'lspsaga.outline':render_outline() end },

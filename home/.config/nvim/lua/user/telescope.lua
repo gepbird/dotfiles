@@ -15,8 +15,7 @@ telescope.setup {
         ['<c-x>'] = actions.select_horizontal,
         ['<c-v>'] = actions.select_vertical,
         ['<c-t>'] = actions.select_tab,
-        ['<c-q>'] = actions.send_to_qflist + actions.open_qflist,
-        ['<a-q>'] = actions.send_selected_to_qflist + actions.open_qflist, -- TODO: if nothing is selected, select everything
+        ['<a-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
         ['<a-t>'] = actions.complete_tag,
 
         ['<c-j>'] = actions.move_selection_next,
@@ -29,19 +28,19 @@ telescope.setup {
         ['<c-h>'] = actions.cycle_history_prev,
 
         ['<tab>'] = actions.toggle_selection,
-        ['<s-tab>'] = actions.toggle_selection,
 
         ['<a-h>'] = fb.actions.toggle_hidden,
       },
 
       n = {
         ['<esc>'] = actions.close,
+        ['<a-esc>'] = actions.close,
         ['<cr>'] = actions.select_default,
+        ['l'] = actions.select_default,
         ['<c-x>'] = actions.select_horizontal,
         ['<c-v>'] = actions.select_vertical,
         ['<c-t>'] = actions.select_tab,
-        ['<c-q>'] = actions.send_to_qflist + actions.open_qflist,
-        ['<a-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+        ['<a-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
         ['<a-t>'] = actions.complete_tag,
 
         ['j'] = actions.move_selection_next,
@@ -62,7 +61,6 @@ telescope.setup {
         ['<c-h>'] = actions.cycle_history_prev,
 
         ['<tab>'] = actions.toggle_selection,
-        ['<s-tab>'] = actions.toggle_selection,
 
         ['?'] = actions.which_key,
         ['<a-h>'] = fb.actions.toggle_hidden,

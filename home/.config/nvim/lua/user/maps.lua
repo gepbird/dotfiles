@@ -46,6 +46,8 @@ require 'user.utils'.register_maps {
   { 'n', '<space>W', ':wq<cr>' },
 
   { 'n', '<space><s-m>', ':messages<cr>' },
+  { 'n', '<a-q>', 'q' },
+  { 'n', '<space><s-r>', ':w<cr>:e<cr>' },
 
   { 'n', '<s-u>', '<c-r>', { unmap = true } },
   { 'n', 'z', 'i<cr><esc>' },

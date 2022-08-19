@@ -1,5 +1,4 @@
 local dap = require 'dap'
-local output_path = 'bin/Build'
 
 dap.adapters.coreclr = {
   type = 'executable',
@@ -17,7 +16,7 @@ local function generate_configurations(dll_paths)
       type = 'coreclr',
       name = '[Generated] Launch .' .. dll_path_truncated,
       request = 'launch',
-      program = dll_path,
+      program = '${workspaceFolder}' .. dll_path_truncated,
       console = 'externalTerminal',
     })
   end
@@ -30,7 +29,7 @@ local function on_continue()
   end
 
   local dll_paths = {}
-  vim.fn.jobstart('dotnet build --nologo --output ' .. output_path, {
+  vim.fn.jobstart('dotnet build --nologo', {
 
     on_stdout = function(_, lines, _)
       for _, line in ipairs(lines) do
@@ -45,10 +44,9 @@ local function on_continue()
 
     on_exit = function(_, code, _)
       if code == 0 then
-        vim.notify('Build succeeded', 'ok', { title = 'netcoredbg' })
         dap.configurations.cs = {}
-        generate_configurations(dll_paths)
         require 'dap.ext.vscode'.load_launchjs(nil, { coreclr = { 'cs' } })
+        generate_configurations(dll_paths)
         dap.continue()
       else
         vim.notify('Build failed', 'error', { title = 'netcoredbg' })
