@@ -72,6 +72,7 @@ require 'packer'.startup(function(use)
           'kyazdani42/nvim-web-devicons',
         },
       },
+      { 'Hoffs/omnisharp-extended-lsp.nvim' },
     },
   }
   use { 'nvim-treesitter/nvim-treesitter', config = function() require 'user.treesitter' end,
