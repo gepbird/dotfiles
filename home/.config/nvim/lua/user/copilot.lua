@@ -1,3 +1,3 @@
 require 'user.utils'.register_maps {
-  { 'i', 'úő', 'copilot#Accept("<CR>")', { expr = true } },
+  { 'i', 'úő', 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false } },
 }
