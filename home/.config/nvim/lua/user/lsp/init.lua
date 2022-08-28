@@ -87,4 +87,5 @@ require 'user.utils'.register_maps {
   { 'n', '<space>.', function() telescope.lsp_definitions(ivy) end },
   { 'n', '<space>:', lsp.type_definition },
   { 'n', '<space>f', function() lsp.format { async = false }; vim.cmd ':w' end },
+  { 'n', '<space><s-k>', vim.lsp.buf.signature_help },
 }

@@ -26,7 +26,6 @@ require 'user.utils'.register_maps {
   { 'n', '<space>m', require 'lspsaga.codeaction'.code_action },
   { 'n', '<space>r', require 'lspsaga.rename'.lsp_rename },
   { 'n', '<space>k', require 'lspsaga.hover'.render_hover_doc },
-  { 'n', '<space><s-k>', require 'lspsaga.signaturehelp'.signature_help },
   { 'n', '<space><c-k>', require 'lspsaga.diagnostic'.show_line_diagnostics },
   { 'n', '<c-f>', function() action.smart_scroll_with_saga(1) end },
   { 'n', '<c-b>', function() action.smart_scroll_with_saga(-1) end },
