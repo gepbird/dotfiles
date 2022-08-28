@@ -172,36 +172,19 @@ end
 function packet_tracer
   if ! paru -Q | grep -q packettracer
     git clone https://aur.archlinux.org/packettracer.git
-    set deb_link 'https://www.netacad.com/portal/resources/file/7b1849d4-dd2c-4e4d-aded-195fd82feca9'
+    set deb_link 'https://www.netacad.com/portal/resources/file/36b7afbe-2109-40d3-aa8e-d57a18531687'
     set downloads_link 'https://www.netacad.com/portal/node/488'
     echo "-------------------------------------------------"
     echo "Log in to netacad and"
-    echo " - download packet tracer version 8.1.1 from $deb_link"
+    echo " - download packet tracer version 8.2.0 from $deb_link"
     echo " - or choose another version from $downloads_link "
     echo "Wait for the download to complete"
     echo "If the script doesnt continue, try manually moving the downloaded deb file to "(pwd)"/packettracer"
     echo "-------------------------------------------------"
-    echo "Waiting for the debian file..."
     xdg-open $deb_link 2>/dev/null
-    set deb_file 'CiscoPacketTracer_[0-9]+_Ubuntu_64bit.deb'
-    set detected_deb false
-    # check if the deb file downloaded in ~/Downloads then move it to to the cloned AUR repo
-    while true
-      if ls ~/Downloads | grep -q $deb_file
-        if ! ls ~/Downloads | grep -q $deb_file.part
-          mv ~/Downloads/CiscoPacketTracer_*_Ubuntu_64bit.deb packettracer
-        end
-        if ! $detected_deb
-          set detected_deb true
-          echo "Found debian file in downloads directory, waiting for download to complete..."
-        end
-      end
-      if ls packettracer | grep -q $deb_file
-        echo "Debian file is in place"
-        break
-      end
-      sleep 0.1
-    end
+    read -P 'Press enter when the deb file is downloaded'
+
+    mv ~/Downloads/CiscoPacketTracer_*_Ubuntu_64bit.deb packettracer
     cd packettracer
     # packet tracer version in the deb and AUR PKBUILD may differ, put deb version to PKGBUILD
     echo "Patching PKGBUILD"
