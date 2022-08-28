@@ -295,11 +295,16 @@ end
 function lf
   queue chaotic-aur/lf
   link .config/lf
+  link .local/bin/lfrun
 end
 
 function utilities
   queue community/xdotool
   queue extra/xorg-xev
+end
+
+function mimeapps
+  link .config/mimeapps.list
 end
 
 ## Call the install functions
@@ -353,6 +358,7 @@ if ! test -n "$argv"
   calc
   lf
   utilities
+  mimeapps
   ################################################################
   ################################################################
   ######################## END OF TOOLS ##########################

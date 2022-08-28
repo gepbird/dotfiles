@@ -1,23 +1,16 @@
-﻿## Set values
-# Hide welcome message
+﻿set TERMINAL st
 set EDITOR nvim
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+fish_add_path $HOME/.local/bin
 
-# Set settings for https://github.com/franciscolourenco/done
-set -U __done_min_cmd_duration 10000
-set -U __done_notification_urgency_level low
-
-## Starship prompt
 if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
+  source ("/usr/bin/starship" init fish --print-full-init | psub)
 end
 
 fish_vi_key_bindings
 
-## Functions
-# Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command
   switch (commandline -t)
   case "!"
@@ -45,43 +38,23 @@ else
   bind '$' __history_previous_command_arguments
 end
 
-# Fish command history
 function history
-    builtin history --show-time='%F %T '
+  builtin history --show-time='%F %T '
 end
 
 function backup --argument filename
-    cp -r $filename $filename.bak
+  cp -r $filename $filename.bak
 end
 
-# Copy DIR1 DIR2
-function copy
-    set count (count $argv | tr -d \n)
-    if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
-        command cp -r $from $to
-    else
-        command cp $argv
-    end
-end
-
-## Useful aliases
-
-# Replace grep with ripgrep
 alias grep='rg -i --color=auto'
+alias cat='bat --style rules --style snip --style changes --style header'
+alias lf='lfrun'
 
-# Replace ls with exa
-alias ls='exa --color=always --group-directories-first --icons' # preferred listing
+alias ls='exa --color=always --group-directories-first --icons'
 alias la='ls -la'                                               # all files and dirs
 alias lt='ls -aT'                                               # tree listing
-alias lff='la | grep'                                            # list and find
+alias lff='la | grep'                                           # list and find
 
-# Replace some more things with better alternatives
-alias cat='bat --style rules --style snip --style changes --style header'
-[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru --bottomup'
-
-# Package manager 
 alias pacf='paru -Ss'
 function pacff
   paru -Ss $argv[1] | grep $argv[1]
@@ -90,26 +63,39 @@ function pacfi
   paru -Ss $argv[1] | grep Installed | grep $argv[1]
 end
 alias paci='paru -S --noconfirm --needed'
+alias pacI='paru -S --needed'
 alias pacr='paru -Rs --noconfirm'
 alias pacrr='paru -Rns --noconfirm'
 alias pacu='paru -Syyu'
+alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 
-# Common use
+alias sysi='systemctl status'
+alias sysr='sudo systemctl restart'
+alias sysl='sudo systemctl start'
+alias syss='sudo systemctl stop'
+alias syse='sudo systemctl enable --now'
+alias sysE='sudo systemctl enable'
+alias sysd='sudo systemctl disable --now'
+alias sysD='sudo systemctl disable'
+alias jouri='journalctl -u'
+alias joure='journalctl -xeu'
+
+alias v='nvim'
+alias g='git'
 alias ff='find | grep'
 alias hisf='history | grep'
 alias rmf='sudo rm -rf'
 alias fishreload='source ~/.config/fish/config.fish'
-alias v='nvim'
-
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias wget='wget -c '
 alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && fish_update_completions && sudo updatedb'
-alias hw='hwinfo --short'                                   # Hardware Info
-
-function chgep
-  sudo chown -R $USER $argv[1]
-  sudo chgrp -R $USER $argv[1]
-end
+alias hw='hwinfo --short'
+alias chgep='sudo chown -R $USER:$USER'
+alias clip='xclip -selection clipboard'
+alias java-upgrade='sudo ln -vsf /bin/java-18 /bin/java'
+alias java-downgrade='sudo ln -vsf /bin/java-8 /bin/java'
+alias getpid='xdotool getwindowpid $(xdotool selectwindow)'
 
 function ssh-make-key
   read -P 'Enter email: ' email
@@ -122,40 +108,6 @@ function ssh-make-key
   echo "------------- PUBLIC KEY --------------"
   bat --style snip ~/.ssh/id_ed25519.pub
   echo "---------- END OF PUBLIC KEY ----------"
+  cat ~/.ssh/id_ed25519.pub | clip
+  echo "Public key copied to clipboard"
 end
-
-function java-upgrade
-  sudo ln -vsf /bin/java-18 /bin/java
-end
-
-function java-downgrade
-  sudo ln -vsf /bin/java-8 /bin/java
-end
-
-function pacman-repair
-  #pacman keyring error solver
-  #made by Csaba
-  #kavcsicsabcsi@gmail.com
-
-  sudo rm /var/lib/pacman/db.lck
-  sudo rm -rf /etc/pacman.d/gnupg
-  sudo rm /var/lib/pacman/sync/blackarch.db.sig
-  sudo touch /etc/pacman.conf
-
-  sudo pacman-key --init
-  #delete the chaotic part, if you dont use the repository
-  sudo pacman-key --populate archlinux blackarch chaotic
-  sudo pacman -Syy
-  #delete the chaotic part, if you dont use the repository
-  sudo pacman -Sy archlinux-keyring blackarch-keyring chaotic-keyring
-  #pacman-key --recv-key <++> --keyserver keyserver.ubuntu.com
-  ##pacman-key --lsign-key <++>
-  #https://aur.chaotic.cx/
-end
-
-# Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
-
-# Recent installed packages
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-
