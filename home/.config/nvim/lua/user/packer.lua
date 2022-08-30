@@ -22,6 +22,7 @@ require 'packer'.startup(function(use)
   use { 'nvim-lualine/lualine.nvim', config = function() require 'user.lualine' end,
     requires = {
       { 'kyazdani42/nvim-web-devicons' },
+      { 'mfussenegger/nvim-dap' },
       darkplus,
     },
   }
@@ -101,6 +102,7 @@ require 'packer'.startup(function(use)
       { 'kyazdani42/nvim-web-devicons' },
     },
   }
+  use { 'kevinhwang91/nvim-bqf', config = function() require 'user.bqf' end }
   use { 'akinsho/toggleterm.nvim', config = function() require 'user.toggleterm' end }
 
   use { 'lewis6991/gitsigns.nvim', config = function() require 'user.gitsigns' end }

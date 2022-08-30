@@ -68,13 +68,13 @@ telescope.setup {
     },
     vimgrep_arguments = {
       'rg',
-      '--color=never',
+      '--hidden',
       '--no-heading',
       '--with-filename',
       '--line-number',
       '--column',
       '--smart-case',
-      '-uu',
+      '--color=never',
     },
   },
   extensions = {
@@ -89,17 +89,21 @@ telescope.load_extension 'file_browser'
 telescope.load_extension 'media_files'
 
 local builtin = require 'telescope.builtin'
+local find_command = { 'rg', '--files', '--glob=!.git', '--color', 'never' }
 
 require 'user.utils'.register_maps {
   { 'n', '<space>o', function()
-    builtin.find_files { find_command = { 'rg', '--files', '--hidden', '--glob=!.git', '--color', 'never' } }
+    builtin.find_files { hidden = true, find_command = find_command }
   end },
   { 'n', '<space><s-o>', function()
-    builtin.find_files { find_command = { 'rg', '--files', '--hidden', '--no-ignore', '--glob=!.git', '--color', 'never' } }
+    builtin.find_files { hidden = true, no_ignore = true, find_command = find_command }
   end },
   { 'n', '<space><tab>', builtin.oldfiles },
   { 'n', '<space>tf', fb.file_browser },
   { 'n', '<space>tg', builtin.live_grep },
+  { 'n', '<space>t<s-g>', function()
+    builtin.live_grep { additional_args = function() return { '--no-ignore' } end }
+  end },
   { 'n', '<space>tb', builtin.buffers },
   { 'n', '<space>tm', builtin.keymaps },
   { 'n', '<space>tc', builtin.commands },

@@ -20,10 +20,8 @@ dapui.setup {
   layouts = {
     {
       elements = {
-        'scopes',
-        --'breakpoints',
+        { id = 'scopes', size = 0.25 },
         'watches',
-        'stacks',
       },
       size = 40,
       position = 'left',
@@ -50,9 +48,6 @@ dapui.setup {
     max_type_length = nil,
   }
 }
-dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
 require 'nvim-dap-virtual-text'.setup {
   enabled = true, -- enable this plugin (the default)
@@ -74,13 +69,22 @@ require 'nvim-dap-virtual-text'.setup {
 
 local telescope_dap = require 'telescope'.load_extension 'dap'
 
-dap.on_continue = dap.continue
+-- Override these for debuggers
+dap.on_run = dap.continue
+dap.on_restart = dap.run_last
 
 require 'user.utils'.register_maps {
   { 'n', '<space>b', dap.toggle_breakpoint },
   { 'n', '<space><s-b>', function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end },
   { 'n', '<space><c-b>', function() dap.set_breakpoint(nil, nil, vim.fn.input 'Log point message: ') end },
-  { 'n', '<a-up>', function() dap.on_continue() end },
+  { 'n', '<a-up>', function()
+    if dap.session() then
+      dap.continue()
+      return
+    end
+    dap.on_run()
+  end },
+  { 'n', '<space>dp', function() dap.on_restart() end },
   { 'n', '<a-down>', dap.step_over },
   { 'n', '<a-left>', dap.step_out },
   { 'n', '<a-right>', dap.step_into },
@@ -88,6 +92,12 @@ require 'user.utils'.register_maps {
   { 'n', '<a-cr>', dapui.toggle },
   { 'n', '<space><a-k>', widgets.hover },
   { 'n', '<space>td', telescope_dap.commands },
+  { 'n', '<space>dl', function() dapui.float_element('scopes', { enter = true }) end },
+  { 'n', '<space>db', function() dapui.float_element('breakpoints', { enter = true }) end },
+  { 'n', '<space>dw', function() dapui.float_element('watches', { enter = true }) end },
+  { 'n', '<space>ds', function() dapui.float_element('stacks', { enter = true }) end },
+  { 'n', '<space>dr', function() dapui.float_element('repl', { enter = true }) end },
+  { 'n', '<space>dc', function() dapui.float_element('console', { enter = true }) end },
   { 'n', 't', telescope_dap.variables, { filetype = { 'dapui_scopes', 'dapui_watches' } } },
   { 'n', 't', telescope_dap.frames, { filetype = 'dapui_stacks' } },
 }

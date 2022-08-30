@@ -16,6 +16,10 @@ local diagnostics = {
   always_visible = false,
 }
 
+local debug_status = function()
+  return require 'dap'.status()
+end
+
 local filetype = {
   'filetype',
   icon_only = true,
@@ -36,7 +40,7 @@ local sections = {
   lualine_a = { 'mode' },
   lualine_b = { branch, diff },
   lualine_c = { diagnostics },
-  lualine_x = {},
+  lualine_x = { debug_status },
   lualine_y = { filetype, filename },
   lualine_z = { 'location', 'progress' },
 }
