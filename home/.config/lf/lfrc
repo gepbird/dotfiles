@@ -53,7 +53,7 @@ cmd delete ${{
   [ "$ans" = "y" ] && rm -rf $fx
 }}
 map <delete> delete
-map d push $trash<space>$fx<enter>
+map d push $gio<space>trash<space>$fx<enter>
 
 cmd extract ${{
   set -f
