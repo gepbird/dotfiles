@@ -33,7 +33,7 @@ local filename = {
     modified = ' ● ',
     readonly = '  ',
     unnamed = '',
-  }
+  },
 }
 
 local sections = {

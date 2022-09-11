@@ -1,6 +1,6 @@
 require 'lspsaga'.init_lsp_saga {
   code_action_lightbulb = {
-    enable = false
+    enable = false,
   },
   code_action_keys = {
     quit = '<esc>',

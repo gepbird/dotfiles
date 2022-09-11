@@ -36,5 +36,5 @@ require 'project_nvim'.setup {
 require 'telescope'.load_extension 'projects'
 
 require 'user.utils'.register_maps {
-  { 'n', '<space>tp', require 'telescope'.extensions.projects.projects }
+  { 'n', '<space>tp', require 'telescope'.extensions.projects.projects },
 }

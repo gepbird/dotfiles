@@ -122,7 +122,7 @@ cmp.setup.filetype('gitcommit', {
     { name = 'cmp_git' },
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 cmp.setup.cmdline(':', {
@@ -130,5 +130,5 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources(
     { { name = 'path' } },
     { { name = 'cmdline' } }
-  )
+  ),
 })

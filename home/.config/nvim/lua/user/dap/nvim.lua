@@ -8,7 +8,7 @@ dap.configurations.lua = {
     name = 'Attach to running Neovim instance',
     host = '127.0.0.1',
     port = port,
-  }
+  },
 }
 
 dap.adapters.nlua = function(callback, config)

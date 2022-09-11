@@ -65,7 +65,7 @@ require 'bufferline'.setup {
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     sort_by = 'insert_after_current',
-  }
+  },
 }
 
 require 'user.utils'.register_maps {

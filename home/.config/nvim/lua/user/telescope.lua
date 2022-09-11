@@ -94,16 +94,16 @@ local find_command = { 'rg', '--files', '--glob=!.git', '--color', 'never' }
 require 'user.utils'.register_maps {
   { 'n', '<space>o', function()
     builtin.find_files { hidden = true, find_command = find_command }
-  end },
+  end, },
   { 'n', '<space><s-o>', function()
     builtin.find_files { hidden = true, no_ignore = true, find_command = find_command }
-  end },
+  end, },
   { 'n', '<space><tab>', builtin.oldfiles },
   { 'n', '<space>tf', fb.file_browser },
   { 'n', '<space>tg', builtin.live_grep },
   { 'n', '<space>t<s-g>', function()
     builtin.live_grep { additional_args = function() return { '--no-ignore' } end }
-  end },
+  end, },
   { 'n', '<space>tb', builtin.buffers },
   { 'n', '<space>tm', builtin.keymaps },
   { 'n', '<space>tc', builtin.commands },
