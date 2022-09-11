@@ -57,6 +57,7 @@ require 'packer'.startup(function(use)
         },
       },
       { 'jbyuki/one-small-step-for-vimkind' },
+      { 'Joakker/lua-json5', run = './install.sh' },
     },
   }
 

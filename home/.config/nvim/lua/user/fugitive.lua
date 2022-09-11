@@ -6,4 +6,5 @@ require 'user.utils'.register_maps {
   { 'n', '<space>gl', ':G log<cr>' },
   { 'nx', '<s-j>', ')', { remap = true, filetype = 'fugitive' } },
   { 'nx', '<s-k>', '(', { remap = true, filetype = 'fugitive' } },
+  { 'n', '<space>gc', ':G commit -S<cr>'}
 }
