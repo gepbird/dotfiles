@@ -1,8 +1,8 @@
 
 [Default Applications]
-x-scheme-handler/http=firefox-developer-edition.desktop;
-x-scheme-handler/https=firefox-developer-edition.desktop;
-text/html=firefox-developer-edition.desktop;
+x-scheme-handler/http=firefoxdeveloperedition.desktop;
+x-scheme-handler/https=firefoxdeveloperedition.desktop;
+text/html=firefoxdeveloperedition.desktop;
 text/plain=nvim.desktop
 image/jpeg=sxiv.desktop;
 image/png=sxiv.desktop;

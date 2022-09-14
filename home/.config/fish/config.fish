@@ -47,7 +47,7 @@ function backup --argument filename
 end
 
 alias grep='rg -i --color=auto'
-alias cat='bat --style rules --style snip --style changes --style header'
+alias cat='bat --style rule --style snip --style changes --style header'
 alias lf='lfrun'
 
 alias ls='exa --color=always --group-directories-first --icons'
