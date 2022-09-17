@@ -48,8 +48,15 @@ end
 
 function nerdfonts
   paci ttf-iosevka-nerd
+  mkdir -p ~/.local/share/fonts
   ln -vsf /usr/share/fonts/TTF/Iosevka\ Nerd\ Font\ Complete.ttf \
   ~/.local/share/fonts/Iosevka\ Nerd\ Font\ Complete.ttf
+end
+
+function pipewire
+  queue extra/pipewire
+  queue extra/pipewire-pulse
+  queue extra/pavucontrol
 end
 
 function fish
@@ -120,6 +127,10 @@ function dotnet
   queue community/dotnet-sdk
 end
 
+function rust
+  queue extra/rust
+end
+
 function sqlite
   queue core/sqlite
 end
@@ -133,7 +144,9 @@ function onlyoffice
 end
 
 function wine
-  queue multilib/wine
+  paci multilib/wine
+  paci multilib/winetricks
+  paci community/wine-mono
 end
 
 function steam
@@ -148,6 +161,15 @@ end
 
 function lutris
   queue community/lutris
+end
+
+function roblox
+  wine
+  paci aur/grapejuice-git
+  paci multilib/lib32-nvidia-utils
+  paci extra/vulkan-icd-loader
+  paci multilib/lib32-vulkan-icd-loader
+  grapejuice first-time-setup
 end
 
 function minecraft
@@ -174,7 +196,7 @@ function packet_tracer
     git clone https://aur.archlinux.org/packettracer.git
     set deb_link 'https://www.netacad.com/portal/resources/file/36b7afbe-2109-40d3-aa8e-d57a18531687'
     set downloads_link 'https://www.netacad.com/portal/node/488'
-    echo "-------------------------------------------------"
+    echo "------------------packet-tracer------------------"
     echo "Log in to netacad and"
     echo " - download packet tracer version 8.2.0 from $deb_link"
     echo " - or choose another version from $downloads_link "
@@ -218,7 +240,7 @@ function virtualbox
 end
 
 function nvim
-  queue community/neovim
+  queue aur/neovim-nightly-bin
   queue extra/xclip
   queue community/ueberzug # image support for terminals
   queue aur/nvim-packer-git
@@ -298,9 +320,28 @@ function lf
   link .local/bin/lfrun
 end
 
+function nemo
+  queue community/nemo
+end
+
+function baobab
+  queue extra/baobab
+end
+
+function gparted
+  queue extra/gparted
+end
+
+function downgrade
+  queue aur/downgrade
+end
+
 function utilities
   queue community/xdotool
+  queue extra/xorg-xkill
   queue extra/xorg-xev
+  queue community/iotop
+  queue extra/wget
 end
 
 function mimeapps
@@ -321,6 +362,7 @@ if ! test -n "$argv"
   discord
   redshift
   nerdfonts
+  pipewire
   fish
   python
   postman
@@ -329,6 +371,7 @@ if ! test -n "$argv"
   vscode
   java
   dotnet
+  rust
   sqlite
   dbeaver
   onlyoffice
@@ -336,14 +379,15 @@ if ! test -n "$argv"
   steam
   heroic
   lutris
+  #roblox
   minecraft
   osu
   filezilla
   teams
-  packet_tracer
+  #packet_tracer
   anydesk
   realvnc
-  tailscale
+  #tailscale
   nvim
   fman
   obs
@@ -357,6 +401,10 @@ if ! test -n "$argv"
   dunst
   calc
   lf
+  nemo
+  baobab
+  gparted
+  downgrade
   utilities
   mimeapps
   ################################################################

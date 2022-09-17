@@ -96,6 +96,7 @@ alias clip='xclip -selection clipboard'
 alias java-upgrade='sudo ln -vsf /bin/java-18 /bin/java'
 alias java-downgrade='sudo ln -vsf /bin/java-8 /bin/java'
 alias getpid='xdotool getwindowpid $(xdotool selectwindow)'
+alias whatsmyip='curl ifconfig.me'
 
 function ssh-make-key
   read -P 'Enter email: ' email
