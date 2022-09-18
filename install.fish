@@ -123,7 +123,6 @@ function yarn
 end
 
 function dotnet
-  paci aur/dotnet-runtime-bin
   queue community/dotnet-sdk
 end
 
