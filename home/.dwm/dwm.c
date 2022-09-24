@@ -280,7 +280,7 @@ static Clr** scheme;
 static Display* dpy;
 static Drw* drw;
 static Monitor* mons, * selmon;
-static int showborder = 1;
+static int variable_borderpx;
 static Window root, wmcheckwin;
 
 /* configuration, allows nested code to access above variables */
@@ -1625,6 +1625,7 @@ setup(void)
     scheme[i] = drw_scm_create(drw, colors[i], 3);
   /* init bars */
   updatebars();
+  variable_borderpx = borderpx;
   updatestatus();
   /* supporting window for NetWMCheck */
   wmcheckwin = XCreateSimpleWindow(dpy, root, 0, 0, 1, 1, 0, 0, 0);
@@ -1791,12 +1792,11 @@ togglebar(const Arg* arg)
 void 
 updateborder()
 {
-  int bw = showborder * borderpx;
   for(Monitor* m = mons; m; m = m->next)
   {
     for(Client* c = m->clients; c; c = c->next)
     {
-      c->bw = bw;
+      c->bw = borderpx;
     }
     arrange(m);
   }
@@ -1805,14 +1805,15 @@ updateborder()
 void
 toggleborder(const Arg* arg)
 {
-  showborder = showborder == 0;
+  borderpx = borderpx == 0 ? variable_borderpx : 0;
   updateborder();
 }
 
 void
 incborder(const Arg* arg)
 {
-  borderpx = MAX(0, borderpx + arg->i);
+  variable_borderpx = MAX(0, variable_borderpx + arg->i);
+  borderpx = variable_borderpx;
   updateborder();
 }
 
