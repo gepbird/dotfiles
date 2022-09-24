@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 2;        /* border pixel of windows */
+static int borderpx = 3;                       /* border pixel of windows */
 static const unsigned int snap = 32;           /* snap pixel */
 static const int showbar = 1;                  /* 0 means no bar */
 static const int topbar = 1;                   /* 0 means bottom bar */
@@ -16,7 +16,7 @@ static const char col_green[] = "#00aa55";
 static const char* colors[][3] = {
   /*               fg         bg         border   */
   [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-  [SchemeSel] = { col_gray4, col_cyan,  col_green },
+  [SchemeSel]  = { col_gray4, col_cyan,  col_green },
 };
 
 /* tagging */
@@ -27,12 +27,12 @@ static const Rule rules[] = {
    *	WM_CLASS(STRING) = instance, class
    *	WM_NAME(STRING) = title
    */
-   /* class                       instance  title           tags mask  isfloating  monitor */
-   { "discord"                   ,NULL     ,NULL           ,1 << 0    ,0          ,1 },
-   { "Microsoft Teams - Preview" ,NULL     ,NULL           ,1 << 1    ,0          ,1 },
-   { "Chromium"                  ,NULL     ,NULL           ,1 << 2    ,0          ,1 },
-   { "flameshot"                 ,NULL     ,NULL           ,0         ,1          ,-1 },
-   { NULL                        ,NULL     ,"Event Tester" ,0         ,1          ,-1 },
+  /* class                       instance  title           tags mask  isfloating  monitor */
+  { "discord"                   ,NULL     ,NULL           ,1 << 0    ,0          ,1 },
+  { "firefoxdeveloperedition"   ,NULL     ,NULL           ,1 << 1    ,0          ,1 },
+  { "Microsoft Teams - Preview" ,NULL     ,NULL           ,1 << 2    ,0          ,1 },
+  { "flameshot"                 ,NULL     ,NULL           ,0         ,1          ,-1 },
+  { NULL                        ,NULL     ,"Event Tester" ,0         ,1          ,-1 },
 };
 
 /* layout(s) */
@@ -83,6 +83,7 @@ static const char* brightdown[] = { "backlight_control", "-10", NULL };
 static const char* brightdown_little[] = { "backlight_control", "-1", NULL };
 static const char* brightup[] = { "backlight_control", "+10", NULL };
 static const char* brightup_little[] = { "backlight_control", "+1", NULL };
+static const char* xkill[] = { "xkill", NULL };
 
 static Key keys[] = {
   /* modifier               key         function        argument */
@@ -92,6 +93,9 @@ static Key keys[] = {
   {  Control               ,XK_Print   ,spawn          ,{ .v = flameshotgui } },
   {  Control | Shift       ,XK_Print   ,spawn          ,{ .v = flameshotguidelayed } },
   {  Super                 ,XK_b       ,togglebar      ,{ 0 } },
+  {  Super                 ,XK_v       ,toggleborder   ,{ 0 } },
+  {  Super                 ,XK_c       ,incborder      ,{ .i = +1 } },
+  {  Super                 ,XK_x       ,incborder      ,{ .i = -1 } },
   {  Super                 ,XK_j       ,focusstack     ,{ .i = +1 } },
   {  Super                 ,XK_k       ,focusstack     ,{ .i = -1 } },
   {  Super                 ,XK_i       ,incnmaster     ,{ .i = +1 } },
@@ -99,11 +103,12 @@ static Key keys[] = {
   {  Super                 ,XK_h       ,setmfact       ,{ .f = -0.05 } },
   {  Super                 ,XK_l       ,setmfact       ,{ .f = +0.05 } },
   {  Super                 ,XK_Tab     ,zoom           ,{ 0 } },
-  {  Alt                   ,XK_Tab     ,viewnext,       { 0 } },
-  {  Alt | Shift           ,XK_Tab     ,viewprev,       { 0 } },
-  {  Alt | Control         ,XK_Tab     ,tagtonext,      { 0 } },
-  {  Alt | Control | Shift ,XK_Tab     ,tagtoprev,      { 0 } },
+  {  Alt                   ,XK_Tab     ,viewnext       ,{ 0 } },
+  {  Alt | Shift           ,XK_Tab     ,viewprev       ,{ 0 } },
+  {  Alt | Control         ,XK_Tab     ,tagtonext      ,{ 0 } },
+  {  Alt | Control | Shift ,XK_Tab     ,tagtoprev      ,{ 0 } },
   {  Super                 ,XK_q       ,killclient     ,{ 0 } },
+  {  Super | Control       ,XK_q       ,spawn          ,{ .v = xkill } },
   {  Super                 ,XK_t       ,setlayout      ,{ .v = &layouts[0] } },
   {  Super                 ,XK_f       ,setlayout      ,{ .v = &layouts[1] } },
   {  Super                 ,XK_m       ,setlayout      ,{ .v = &layouts[2] } },

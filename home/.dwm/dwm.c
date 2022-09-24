@@ -219,6 +219,9 @@ static void tagtonext(const Arg* arg);
 static void tagtoprev(const Arg* arg);
 static void tile(Monitor*);
 static void togglebar(const Arg* arg);
+static void updateborder();
+static void toggleborder(const Arg* arg);
+static void incborder(const Arg* arg);
 static void togglefloating(const Arg* arg);
 static void toggletag(const Arg* arg);
 static void toggleview(const Arg* arg);
@@ -277,6 +280,7 @@ static Clr** scheme;
 static Display* dpy;
 static Drw* drw;
 static Monitor* mons, * selmon;
+static int showborder = 1;
 static Window root, wmcheckwin;
 
 /* configuration, allows nested code to access above variables */
@@ -1782,6 +1786,34 @@ togglebar(const Arg* arg)
   updatebarpos(selmon);
   XMoveResizeWindow(dpy, selmon->barwin, selmon->wx, selmon->by, selmon->ww, bh);
   arrange(selmon);
+}
+
+void 
+updateborder()
+{
+  int bw = showborder * borderpx;
+  for(Monitor* m = mons; m; m = m->next)
+  {
+    for(Client* c = m->clients; c; c = c->next)
+    {
+      c->bw = bw;
+    }
+    arrange(m);
+  }
+}
+
+void
+toggleborder(const Arg* arg)
+{
+  showborder = showborder == 0;
+  updateborder();
+}
+
+void
+incborder(const Arg* arg)
+{
+  borderpx = MAX(0, borderpx + arg->i);
+  updateborder();
 }
 
 void
