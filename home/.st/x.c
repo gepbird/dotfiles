@@ -1748,11 +1748,11 @@ xdrawline(Line line, int x1, int y1, int x2, int termcols)
     }
     i++;
   }
-  if(i > 0)
+  if (i > 0)
   {
     xdrawglyphfontspecs(specs, base, i, ox, y1);
     /* use last column as background */
-    if(x == termcols)
+    if (x == termcols)
     {
       Glyph g = { ' ', ATTR_NULL, 0, line[x - 1].bg };
       xdrawglyphfontspecs(specs, g, i, x, y1);
