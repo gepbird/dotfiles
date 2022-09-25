@@ -245,8 +245,8 @@ ExitState kPressHist(char const *cs, size_t len, int ctrl, KeySym const *kSym) {
 	if (!posLin || posLin==h || !h) strcpy(posBuffer, posLin ? " [BOT] " : " [TOP] ");
 	else sprintf(posBuffer, " % 3d%c  ", min(100, max(0, (int)(.5 + posLin * 100. / h))),'%');
 	if ((overlay || overlay!=prevOverlay) && term.col>9 && term.row>4) {
-		if (!term.dirty[term.row-1]) xdrawline(term.line[term.row-1], term.col*2/3, term.row-1, term.col-1);
-		if (!term.dirty[term.row-2]) xdrawline(term.line[term.row-2], term.col*2/3, term.row-2, term.col-1);
+		if (!term.dirty[term.row-1]) xdrawline(term.line[term.row-1], term.col*2/3, term.row-1, term.col-1, term.col);
+		if (!term.dirty[term.row-2]) xdrawline(term.line[term.row-2], term.col*2/3, term.row-2, term.col-1, term.col);
 	}
 	if (result==finish) altToggle = 0;
 	if (altToggle != prevAltToggle) tswapscreen();
@@ -274,8 +274,8 @@ void historyPreDraw() {
 	if (term.c.y >= term.row || op.p[1] >= term.row) tfulldirt();
 	else if (exited || (op.p[1] != term.c.y)) term.dirty[term.c.y] = term.dirty[op.p[1]] = 1;
 	for (int i=0; (exited || term.c.x != op.p[0]) && i<term.row; ++i) if (!term.dirty[i]) {
-		xdrawline(term.line[i], term.c.x, i, term.c.x + 1);
-		xdrawline(term.line[i], op.p[0], i, op.p[0] + 1);
+		xdrawline(term.line[i], term.c.x, i, term.c.x + 1, term.col);
+		xdrawline(term.line[i], op.p[0], i, op.p[0] + 1, term.col);
 	}
 	// Update search results either only for lines with new content or all results if exiting
 	markSearchMatches(exited);

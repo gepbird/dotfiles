@@ -2688,7 +2688,15 @@ drawregion(int x1, int y1, int x2, int y2)
   for(y = y1; y < y2; y++) {
     int const oy = o ? (y + insertOff - histOff + h) % h : y;
     if(!BETWEEN(oy, 0, term.row - 1) || !term.dirty[y]) continue;
-    xdrawline(term.line[y], x1, oy, x2);
+    xdrawline(term.line[y], x1, oy, x2, term.col);
+  }
+  /* use last row as background */
+  if(y == term.row)
+  {
+    Line line = malloc((x2 - x1) * sizeof(Glyph));
+    for(int x = x1; x < x2; x++)
+      line[x] = (Glyph){ ' ', ATTR_NULL, 0, term.line[y - 1][x].bg };
+    xdrawline(line, x1, y, x2, term.col);
   }
   memset(&term.dirty[y1], 0, sizeof(*term.dirty) * (y2 - y1));
 }

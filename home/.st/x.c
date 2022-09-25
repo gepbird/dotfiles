@@ -1721,7 +1721,7 @@ xstartdraw(void)
 }
 
 void
-xdrawline(Line line, int x1, int y1, int x2)
+xdrawline(Line line, int x1, int y1, int x2, int termcols)
 {
   int i, x, ox, numspecs;
   Glyph base, new;
@@ -1749,7 +1749,15 @@ xdrawline(Line line, int x1, int y1, int x2)
     i++;
   }
   if(i > 0)
+  {
     xdrawglyphfontspecs(specs, base, i, ox, y1);
+    /* use last column as background */
+    if(x == termcols)
+    {
+      Glyph g = { ' ', ATTR_NULL, 0, line[x - 1].bg };
+      xdrawglyphfontspecs(specs, g, i, x, y1);
+    }
+  }
 }
 
 void

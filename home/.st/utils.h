@@ -1,3 +1,14 @@
+#define lprint(text) { \
+  FILE* fp = fopen("/tmp/st.log", "a"); \
+  fprintf(fp, text); \
+  fclose(fp); \
+}
+#define lprintf(text, arg0) { \
+  FILE* fp = fopen("/tmp/st.log", "a"); \
+  fprintf(fp, text, arg0); \
+  fclose(fp); \
+}
+
 /// Dynamic memory-chunk, with (1) datatype size, (2/3) initialized / allocated chunk, (4) content
 typedef struct { uint8_t const elSize; uint32_t init, alloc; char* content; } DynamicArray;
 #define UTF8_ARRAY {4, 0, 0, NULL}
