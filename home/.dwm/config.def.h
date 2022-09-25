@@ -19,20 +19,32 @@ static const char* colors[][3] = {
   [SchemeSel]  = { col_gray4, col_cyan,  col_green },
 };
 
+typedef struct {
+  const char *name;
+  const void *cmd;
+} Sp;
+static Sp scratchpads[] = {
+  /* name                      cmd  */
+  { "spterm"       ,(char*[]){ "st", "-n", "spterm", "-g", "120x34", NULL } },
+  { "spinsect"     ,(char*[]){ "st", "-n", "spinsect", "-g", "120x34", "-e", "insect", NULL } },
+};
+
 /* tagging */
 static const char* tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
   /* xprop(1):
-   *	WM_CLASS(STRING) = instance, class
-   *	WM_NAME(STRING) = title
+   *  WM_CLASS(STRING) = instance, class
+   *  WM_NAME(STRING) = title
    */
-  /* class                       instance  title           tags mask  isfloating  monitor */
-  { "discord"                   ,NULL     ,NULL           ,1 << 0    ,0          ,1 },
-  { "firefoxdeveloperedition"   ,NULL     ,NULL           ,1 << 1    ,0          ,1 },
-  { "Microsoft Teams - Preview" ,NULL     ,NULL           ,1 << 2    ,0          ,1 },
-  { "flameshot"                 ,NULL     ,NULL           ,0         ,1          ,-1 },
-  { NULL                        ,NULL     ,"Event Tester" ,0         ,1          ,-1 },
+  /* class                       instance     title           tags mask  isfloating  monitor */
+  { "discord"                   ,NULL        ,NULL           ,1 << 0    ,0          ,1 },
+  { "firefoxdeveloperedition"   ,NULL        ,NULL           ,1 << 1    ,0          ,1 },
+  { "Microsoft Teams - Preview" ,NULL        ,NULL           ,1 << 2    ,0          ,1 },
+  { "flameshot"                 ,NULL        ,NULL           ,0         ,1          ,-1 },
+  { NULL                        ,NULL        ,"Event Tester" ,0         ,1          ,-1 },
+  { NULL                        ,"spterm"    ,NULL           ,SPTAG(0)  ,1          ,-1 },
+  { NULL                        ,"spinsect"  ,NULL           ,SPTAG(1)  ,1          ,-1 },
 };
 
 /* layout(s) */
@@ -43,9 +55,11 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
   /* symbol  arrange function */
-  { "[T]",   tile },    /* first entry is default */
-  { "[F]",   NULL },    /* no layout function means floating behavior */
-  { "[M]",   monocle },
+  { "[T]"   ,tile },    /* first entry is default */
+  { "[F]"   ,NULL },    /* no layout function means floating behavior */
+  { "[M]"   ,monocle },
+  { "[CM]"  ,centeredmaster },
+  { "[CFM]" ,centeredfloatingmaster },
 };
 
 #include <X11/XF86keysym.h>
@@ -112,6 +126,8 @@ static Key keys[] = {
   {  Super                 ,XK_t       ,setlayout      ,{ .v = &layouts[0] } },
   {  Super                 ,XK_f       ,setlayout      ,{ .v = &layouts[1] } },
   {  Super                 ,XK_m       ,setlayout      ,{ .v = &layouts[2] } },
+  {  Super                 ,XK_w       ,setlayout      ,{.v = &layouts[3]} },
+  {  Super                 ,XK_o       ,setlayout      ,{.v = &layouts[4]} },
   {  Super                 ,XK_g       ,togglefloating ,{ 0 } },
   {  Super                 ,XK_0       ,view           ,{ .ui = ~0 } },
   {  Super | Shift         ,XK_0       ,tag            ,{ .ui = ~0 } },
@@ -119,6 +135,8 @@ static Key keys[] = {
   {  Super | Shift         ,XK_k       ,focusmon       ,{ .i = +1 } },
   {  Super | Shift         ,XK_h       ,tagmon         ,{ .i = -1 } },
   {  Super | Shift         ,XK_l       ,tagmon         ,{ .i = +1 } },
+  {  Super                 ,XK_z       ,togglescratch  ,{.ui = 0 } },
+  {  Super                 ,XK_u       ,togglescratch  ,{.ui = 1 } },
   {  Super | Shift         ,XK_q       ,quit           ,{ 0 } },
   {  0                     ,BrightUp   ,spawn          ,{ .v = brightup } },
   {  Shift                 ,BrightUp   ,spawn          ,{ .v = brightup_little } },
