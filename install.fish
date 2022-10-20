@@ -79,6 +79,10 @@ function flameshot
   paci community/flameshot
 end
 
+function screenkey
+  queue community/screenkey
+end
+
 function gitconfig
   link .gitconfig
 end
@@ -101,6 +105,20 @@ function vscode
   link .vscode/extensions/extension-manager.web-frontend-profile-1.0.0
 end
 
+function flutter_install
+  queue community/android-tools
+  paci aur/flutter-git
+  paci aur/android-sdk
+  paci aur/android-sdk-platform-tools
+  paci aur/android-sdk-build-tools
+  paci aur/android-platform
+  paci aur/sdkmanager
+  sudo chown -R $USER /opt/flutter
+  sudo chown -R $USER /opt/android-sdk
+  sdkmanager --install 'cmdline-tools;latest'
+  flutter doctor --android-licenses
+end
+
 function java
   # java-8
   sudo rm /bin/java
@@ -116,6 +134,7 @@ end
 
 function nodejs
   queue community/nodejs
+  queue community/npm
 end
 
 function yarn
@@ -270,6 +289,10 @@ function vlc
   queue extra/vlc
 end
 
+function youtube_dl
+  queue community/youtube-dl
+end
+
 function gimp
   queue extra/gimp
 end
@@ -309,8 +332,8 @@ function dunst
   queue community/dunst
 end
 
-function calc
-  queue community/calc
+function clac
+  queue aur/clac
 end
 
 function lf
@@ -340,7 +363,14 @@ function utilities
   queue extra/xorg-xkill
   queue extra/xorg-xev
   queue community/iotop
+  queue community/btop
   queue extra/wget
+  queue extra/unrar
+  queue core/man-db
+end
+
+function dragon_drop
+  queue aur/dragon-drop
 end
 
 function mimeapps
@@ -366,8 +396,10 @@ if ! test -n "$argv"
   python
   postman
   flameshot
+  screenkey
   gitconfig
   vscode
+  flutter_install
   java
   dotnet
   rust
@@ -391,6 +423,8 @@ if ! test -n "$argv"
   fman
   obs
   kdenlive
+  vlc
+  youtube_dl
   gimp
   sshfs
   htop
@@ -398,13 +432,14 @@ if ! test -n "$argv"
   startup
   suckless
   dunst
-  calc
+  clac
   lf
   nemo
   baobab
   gparted
   downgrade
   utilities
+  dragon_drop
   mimeapps
   ################################################################
   ################################################################

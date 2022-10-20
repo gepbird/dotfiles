@@ -95,6 +95,7 @@ alias chgep='sudo chown -R $USER:$USER'
 alias clip='xclip -selection clipboard'
 alias java-upgrade='sudo ln -vsf /bin/java-18 /bin/java'
 alias java-downgrade='sudo ln -vsf /bin/java-8 /bin/java'
+alias dnd='dragon-drop --and-exit --all'
 alias getpid='xdotool getwindowpid $(xdotool selectwindow)'
 alias whatsmyip='curl ifconfig.me'
 

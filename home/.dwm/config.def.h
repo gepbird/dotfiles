@@ -25,8 +25,8 @@ typedef struct {
 } Sp;
 static Sp scratchpads[] = {
   /* name                      cmd  */
-  { "spterm"       ,(char*[]){ "st", "-n", "spterm", "-g", "120x34", NULL } },
-  { "spinsect"     ,(char*[]){ "st", "-n", "spinsect", "-g", "120x34", "-e", "insect", NULL } },
+  { "spterm"       ,(char*[]){ "st", "-n", "spterm", "-g", "120x34", "-e", "fish", NULL } },
+  { "spclac"       ,(char*[]){ "st", "-n", "spclac", "-g", "120x34", "-e", "clac", NULL } },
 };
 
 /* tagging */
@@ -44,7 +44,7 @@ static const Rule rules[] = {
   { "flameshot"                 ,NULL        ,NULL           ,0         ,1          ,-1 },
   { NULL                        ,NULL        ,"Event Tester" ,0         ,1          ,-1 },
   { NULL                        ,"spterm"    ,NULL           ,SPTAG(0)  ,1          ,-1 },
-  { NULL                        ,"spinsect"  ,NULL           ,SPTAG(1)  ,1          ,-1 },
+  { NULL                        ,"spclac"    ,NULL           ,SPTAG(1)  ,1          ,-1 },
 };
 
 /* layout(s) */
