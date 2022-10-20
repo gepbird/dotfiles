@@ -143,6 +143,7 @@ end
 
 function dotnet
   queue community/dotnet-sdk
+  link .omnisharp
 end
 
 function rust

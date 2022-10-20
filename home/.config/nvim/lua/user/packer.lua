@@ -1,4 +1,5 @@
-require 'packer'.startup(function(use)
+local packer = require 'packer'
+packer.startup(function(use)
   local darkplus = { 'gutyina70/darkplus.nvim', config = function() require 'user.colorscheme' end }
 
   use { 'wbthomason/packer.nvim' }
@@ -28,7 +29,7 @@ require 'packer'.startup(function(use)
   }
   use { 'ethanholz/nvim-lastplace', config = function() require 'user.lastplace' end }
 
-  use { 'github/copilot.vim', config = function() require 'user.copilot' end }
+  --use { 'github/copilot.vim', config = function() require 'user.copilot' end }
   use { 'hrsh7th/nvim-cmp', config = function() require 'user.cmp' end,
     requires = {
       { 'hrsh7th/cmp-nvim-lsp' },
@@ -123,6 +124,13 @@ require 'packer'.startup(function(use)
 end)
 
 require 'user.utils'.register_maps {
-  { 'n', '<space>ps', ':PackerSync<cr>' },
-  { 'n', '<space>pS', ':PackerStatus<cr>' },
+  { 'n', '<space>ps', function()
+    packer.sync()
+    local ok, treesitter_install = pcall(require, 'nvim-treesitter.install')
+    if ok then
+      treesitter_install.update()
+    end
+  end,
+  },
+  { 'n', '<space>pS', packer.status },
 }
