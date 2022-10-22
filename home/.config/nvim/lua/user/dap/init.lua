@@ -91,7 +91,13 @@ require 'user.utils'.register_maps {
   { 'n', '<a-left>', dap.step_out },
   { 'n', '<a-right>', dap.step_into },
   { 'n', '<end>', dap.terminate },
-  { 'n', '<a-cr>', dapui.toggle },
+  { 'n', '<a-cr>', function()
+    local ok, nvim_tree = pcall(require, 'nvim-tree.view')
+    if ok then
+      nvim_tree.close()
+    end
+    dapui.toggle()
+  end, },
   { 'n', '<space><a-k>', widgets.hover },
   { 'n', '<space>td', telescope_dap.commands },
   { 'n', '<space>dl', function() dapui.float_element('scopes', { enter = true }) end },

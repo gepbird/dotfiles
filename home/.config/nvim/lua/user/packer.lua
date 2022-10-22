@@ -121,6 +121,12 @@ packer.startup(function(use)
       { 'moll/vim-bbye' },
     },
   }
+
+  use { 'akinsho/flutter-tools.nvim', config = function() require 'user.fluttertools' end,
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+  }
 end)
 
 require 'user.utils'.register_maps {

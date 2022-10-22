@@ -4,7 +4,7 @@ require 'user.utils'.register_maps {
   { 'nxo', '<s-k>', '5k' },
   { 'nxo', '<s-l>', '5l' },
 
-  { 'nxo', '<c-h>', '_', { unmap = true } },
+  { 'nxo', '<c-h>', '0', { unmap = true } },
   { 'nxo', '<c-j>', '}', { unmap = true } },
   { 'nxo', '<c-k>', '{', { unmap = true } },
   { 'nxo', '<c-l>', '$', { unmap = true } },
@@ -13,6 +13,14 @@ require 'user.utils'.register_maps {
   { 'nxi', '<a-j>', '<c-w>j', { insert_to_normal = true } },
   { 'nxi', '<a-k>', '<c-w>k', { insert_to_normal = true } },
   { 'nxi', '<a-l>', '<c-w>l', { insert_to_normal = true } },
+
+  {'i','<c-h>', '<left>'},
+  {'i','<c-j>', '<down>'},
+  {'i','<c-k>', '<up>'},
+  {'i','<c-l>', '<right>'},
+
+  {'i','<a-h>', '<bs>'},
+  {'i','<a-l>', '<del>'},
 
   { 'n', '<space>h', ':split<cr>' },
   { 'n', '<space>v', ':vsplit<cr>' },
