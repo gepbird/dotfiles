@@ -66,7 +66,7 @@ alias paci='paru -S --noconfirm --needed'
 alias pacI='paru -S --needed'
 alias pacr='paru -Rs --noconfirm'
 alias pacrr='paru -Rns --noconfirm'
-alias pacu='paru -Syyu'
+alias pacu='paru -Syyu; dvm update stable'
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
@@ -93,8 +93,6 @@ alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort
 alias hw='hwinfo --short'
 alias chgep='sudo chown -R $USER:$USER'
 alias clip='xclip -selection clipboard'
-alias java-upgrade='sudo ln -vsf /bin/java-18 /bin/java'
-alias java-downgrade='sudo ln -vsf /bin/java-8 /bin/java'
 alias dnd='dragon-drop --and-exit --all'
 alias getpid='xdotool getwindowpid $(xdotool selectwindow)'
 alias whatsmyip='curl ifconfig.me'
