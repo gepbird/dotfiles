@@ -72,4 +72,5 @@ require 'bufferline'.setup {
 
 require 'user.utils'.register_maps {
   { 'n', '<s-q>', ':Bdelete<cr>' },
+  { 'n', '<c-q>', ':Bdelete!<cr>' },
 }

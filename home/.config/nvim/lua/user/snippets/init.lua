@@ -6,5 +6,6 @@ ls.config.set_config {
 
 ls.add_snippets('lua', require 'user.snippets.lua', { type = 'autosnippets' })
 ls.add_snippets('cs', require 'user.snippets.cs', { type = 'autosnippets' })
+ls.add_snippets('dart', require 'user.snippets.dart', { type = 'autosnippets' })
 
 require 'luasnip.loaders.from_vscode'.lazy_load()

@@ -51,7 +51,6 @@ cmp.setup {
     ['<a-k>'] = cmp.mapping.scroll_docs(4),
     ['<c-space>'] = cmp.mapping.complete(),
     ['<a-esc>'] = cmp.mapping.abort(),
-    ['<cr>'] = cmp.mapping.confirm { select = true },
     ['<c-l>'] = cmp.mapping.confirm { select = true },
     ['<Tab>'] = cmp.mapping(function(fallback)
       local has_words_before = function()

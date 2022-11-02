@@ -33,14 +33,6 @@ M.register_map = function(map)
           value = rhs
           vim.api.nvim_set_keymap(mode, value, '', {})
         end
-      elseif key == 'insert_to_normal' then
-        if mode == 'i' then
-          if value == true then
-            rhs = '<esc>' .. rhs .. 'a'
-          else
-            rhs = value
-          end
-        end
       elseif key == 'filetype' then
         filetype = value
         opts.buffer = true
