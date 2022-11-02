@@ -1,4 +1,5 @@
 // sudo make install && killall -q dwmblocks; dwmblocks &
+static char battery[] = "cat /sys/class/power_supply/BAT0/capacity | awk '{ printf \"Battery: %s%\", $1 }'";
 static char totalMemory[] = "free | awk '/^Mem/ { printf \"%.1f%\", $3 / $2 * 100 }'";
 static char focusedMemory[] =
 "win=`xdotool getactivewindow`;"
@@ -14,6 +15,7 @@ static char date[] = "date '+%m-%d %H:%M:%S'";
 
 static const Block blocks[] = {
   /* Icon            Command         Update Interval (100ms)    Update Signal */
+  {  ""             ,battery        ,500                       ,0 },
   {  "Total Mem: "  ,totalMemory    ,10                        ,0 },
   {  ""             ,focusedMemory  ,1                         ,0 },
   {  ""             ,date           ,1                         ,0 },
