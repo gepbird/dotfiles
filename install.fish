@@ -51,8 +51,8 @@ end
 function nerdfonts
   paci ttf-iosevka-nerd
   mkdir -p ~/.local/share/fonts
-  ln -vsf /usr/share/fonts/TTF/Iosevka\ Nerd\ Font\ Complete.ttf \
-  ~/.local/share/fonts/Iosevka\ Nerd\ Font\ Complete.ttf
+  ln -vsf "/usr/share/fonts/TTF/Iosevka Nerd Font Complete.ttf" \
+    "$HOME/.local/share/fonts/Iosevka Nerd Font Complete.ttf"
 end
 
 function emojifont
@@ -63,6 +63,7 @@ function pipewire
   queue extra/pipewire
   queue extra/pipewire-pulse
   queue extra/pavucontrol
+  queue aur/autojump
 end
 
 function fish
@@ -334,6 +335,7 @@ end
 
 function clac
   queue aur/clac
+  link .config/clac
 end
 
 function lf
@@ -367,6 +369,7 @@ function utilities
   queue extra/wget
   queue extra/unrar
   queue core/man-db
+  queue extra/perl-file-mimeinfo
 end
 
 function dragon_drop

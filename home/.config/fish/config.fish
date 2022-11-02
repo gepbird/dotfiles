@@ -88,7 +88,7 @@ alias ff='find | grep'
 alias hisf='history | grep'
 alias rmf='sudo rm -rf'
 alias fishreload='source ~/.config/fish/config.fish'
-alias wget='wget -c '
+alias j='autojump'
 alias upd='sudo reflector --latest 5 --age 2 --fastest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && cat /etc/pacman.d/mirrorlist && sudo pacman -Syu && fish_update_completions && sudo updatedb'
 alias hw='hwinfo --short'
 alias chgep='sudo chown -R $USER:$USER'
@@ -111,3 +111,6 @@ function ssh-make-key
   cat ~/.ssh/id_ed25519.pub | clip
   echo "Public key copied to clipboard"
 end
+
+autojump # need to run it once to turn it on
+clear

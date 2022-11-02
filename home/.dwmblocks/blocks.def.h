@@ -1,4 +1,11 @@
 // sudo make install && killall -q dwmblocks; dwmblocks &
+static char sshConnections[] =
+"addresses=`ss | grep ssh | awk '{ printf(\"%s \", $6) }'`;"
+"if test ! -z \"$addresses\"; then"
+"  count=`echo $addresses | wc -w`;"
+"  echo \"SSH sessions: ($count) $addresses\";"
+"fi" 
+"";
 static char totalMemory[] = "free | awk '/^Mem/ { printf \"%.1f%\", $3 / $2 * 100 }'";
 static char focusedMemory[] =
 "win=`xdotool getactivewindow`;"
@@ -14,6 +21,7 @@ static char date[] = "date '+%m-%d %H:%M:%S'";
 
 static const Block blocks[] = {
   /* Icon            Command         Update Interval (100ms)    Update Signal */
+  {  ""             ,sshConnections ,10                        ,0 },
   {  "Total Mem: "  ,totalMemory    ,10                        ,0 },
   {  ""             ,focusedMemory  ,1                         ,0 },
   {  ""             ,date           ,1                         ,0 },
