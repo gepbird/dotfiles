@@ -17,7 +17,7 @@ packer.startup(function(use)
   }
   use { 'rcarriga/nvim-notify', config = function() require 'user.notify' end,
     requires = {
-      { 'nvim-telescope/telescope.nvim' },
+      { 'gutyina70/telescope.nvim' },
     },
   }
   use { 'nvim-lualine/lualine.nvim', config = function() require 'user.lualine' end,
@@ -54,7 +54,7 @@ packer.startup(function(use)
       { 'theHamsta/nvim-dap-virtual-text' },
       { 'nvim-telescope/telescope-dap.nvim',
         requires = {
-          'nvim-telescope/telescope.nvim',
+          'gutyina70/telescope.nvim',
         },
       },
       { 'jbyuki/one-small-step-for-vimkind' },
@@ -82,10 +82,11 @@ packer.startup(function(use)
     run = function() require 'nvim-treesitter.install'.update { with_sync = true } end,
     requires = {
       { 'p00f/nvim-ts-rainbow' },
+      { 'nvim-treesitter/nvim-treesitter-textobjects' },
     },
   }
 
-  use { 'nvim-telescope/telescope.nvim', config = function() require 'user.telescope' end,
+  use { 'gutyina70/telescope.nvim', config = function() require 'user.telescope' end,
     requires = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-file-browser.nvim' },
@@ -119,6 +120,12 @@ packer.startup(function(use)
       { 'kyazdani42/nvim-web-devicons' },
       darkplus,
       { 'moll/vim-bbye' },
+    },
+  }
+
+  use { 'akinsho/flutter-tools.nvim', config = function() require 'user.fluttertools' end,
+    requires = {
+      'nvim-lua/plenary.nvim',
     },
   }
 end)

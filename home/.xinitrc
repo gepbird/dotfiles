@@ -23,7 +23,7 @@ setxkbmap -option "caps:swapescape"
 redshift &
 dunst &
 dwmblocks &
-discord &
+dvm run stable &
 
 while true; do
   dwm 2> ~/.cache/dwm.log

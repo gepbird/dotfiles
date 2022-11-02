@@ -64,10 +64,13 @@ require 'bufferline'.setup {
     --enforce_regular_tabs = false | true,
     enforce_regular_tabs = true,
     always_show_bufferline = true,
-    sort_by = 'insert_after_current',
+    sort_by = function(buffer_a, buffer_b)
+      return buffer_a.id < buffer_b.id
+    end,
   },
 }
 
 require 'user.utils'.register_maps {
   { 'n', '<s-q>', ':Bdelete<cr>' },
+  { 'n', '<c-q>', ':Bdelete!<cr>' },
 }

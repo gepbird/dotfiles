@@ -4,15 +4,23 @@ require 'user.utils'.register_maps {
   { 'nxo', '<s-k>', '5k' },
   { 'nxo', '<s-l>', '5l' },
 
-  { 'nxo', '<c-h>', '_', { unmap = true } },
+  { 'nxo', '<c-h>', '0', { unmap = true } },
   { 'nxo', '<c-j>', '}', { unmap = true } },
   { 'nxo', '<c-k>', '{', { unmap = true } },
   { 'nxo', '<c-l>', '$', { unmap = true } },
 
-  { 'nxi', '<a-h>', '<c-w>h', { insert_to_normal = true } },
-  { 'nxi', '<a-j>', '<c-w>j', { insert_to_normal = true } },
-  { 'nxi', '<a-k>', '<c-w>k', { insert_to_normal = true } },
-  { 'nxi', '<a-l>', '<c-w>l', { insert_to_normal = true } },
+  { 'nxi', '<a-h>', '<c-w>h' },
+  { 'nxi', '<a-j>', '<c-w>j' },
+  { 'nxi', '<a-k>', '<c-w>k' },
+  { 'nxi', '<a-l>', '<c-w>l' },
+
+  { 'i', '<c-h>', '<left>' },
+  { 'i', '<c-j>', '<down>' },
+  { 'i', '<c-k>', '<up>' },
+  { 'i', '<c-l>', '<right>' },
+
+  { 'i', '<a-h>', '<bs>' },
+  { 'i', '<a-l>', '<del>' },
 
   { 'n', '<space>h', ':split<cr>' },
   { 'n', '<space>v', ':vsplit<cr>' },
@@ -20,6 +28,8 @@ require 'user.utils'.register_maps {
   { 'nxo', 'e', '/', { unmap = true } },
   { 'nxo', '<s-e>', '?', { unmap = true } },
   { 'n', '<c-e>', ':nohlsearch<cr>' },
+
+  { 'nxo', 'b', '%', { unmap = true } },
 
   { 'x', '<', '<gv' },
   { 'x', '>', '>gv' },
@@ -31,12 +41,7 @@ require 'user.utils'.register_maps {
   { 'n', '<c-left>', ':vertical resize -2<cr>' },
   { 'n', '<c-right>', ':vertical resize +2<cr>' },
 
-  { 'nx', 'y', '"+y' },
-  { 'n', '<s-y>', '"+yy', { unmap = 'yy' } },
-  { 'nx', 'p', '"+p' },
-  { 'nx', '<s-p>', '"+<s-p>' },
-  { 'nx', '<c-p>', 'p' },
-  { 'nx', '<c-s-p>', '<s-p>' },
+  { 'n', '<s-y>', 'yy', { unmap = true } },
   { 'n', '<s-c>', 'cc', { unmap = true } },
   { 'n', '<s-d>', 'dd', { unmap = true } },
 
@@ -54,7 +59,7 @@ require 'user.utils'.register_maps {
   { 'n', '<s-u>', '<c-r>', { unmap = true } },
   { 'n', 'z', 'i<cr><esc>' },
   { 'n', '<s-z>', '<s-j>' },
-  { 'nxi', '<a-f>', 'mfgg=G`f', { insert_to_normal = true } },
+  { 'nxi', '<a-f>', 'mfgg=G`f' },
 
   { 'n', ',', 'mz$a,<esc>`z' },
   { 'n', ';', 'mz$a;<esc>`z' },
@@ -65,4 +70,5 @@ require 'user.utils'.register_maps {
 
   { 'n', '<tab>', ':bnex<cr>' },
   { 'n', '<s-tab>', ':bprevious<cr>' },
+  { 'n', '<c-n>', ':enew<cr>' },
 }

@@ -38,7 +38,9 @@ function sublime_text
 end
 
 function discord
-  queue community/discord
+  paci aur/dvm
+  dvm install stable
+  dvm update stable
 end
 
 function redshift
@@ -49,14 +51,19 @@ end
 function nerdfonts
   paci ttf-iosevka-nerd
   mkdir -p ~/.local/share/fonts
-  ln -vsf /usr/share/fonts/TTF/Iosevka\ Nerd\ Font\ Complete.ttf \
-  ~/.local/share/fonts/Iosevka\ Nerd\ Font\ Complete.ttf
+  ln -vsf "/usr/share/fonts/TTF/Iosevka Nerd Font Complete.ttf" \
+    "$HOME/.local/share/fonts/Iosevka Nerd Font Complete.ttf"
+end
+
+function emojifont
+  queue extra/noto-fonts-emoji
 end
 
 function pipewire
   queue extra/pipewire
   queue extra/pipewire-pulse
   queue extra/pavucontrol
+  queue aur/autojump
 end
 
 function fish
@@ -120,16 +127,9 @@ function flutter_install
 end
 
 function java
-  # java-8
-  sudo rm /bin/java
-  paci extra/jdk8-openjdk
-  sudo ln -sf /usr/lib/jvm/java-8-openjdk/bin/java /bin/java-8
-  # java-18
-  sudo rm /bin/java
-  paci extra/jdk18-openjdk
-  sudo ln -sf /usr/lib/jvm/java-18-openjdk/bin/java /bin/java-18
-  # default java is 18
-  sudo ln -sf /bin/java-18 /bin/java
+  queue extra/jdk8-openjdk
+  queue aur/jdk18-openj9-bin
+  queue extra/jdk19-openjdk
 end
 
 function nodejs
@@ -335,6 +335,7 @@ end
 
 function clac
   queue aur/clac
+  link .config/clac
 end
 
 function lf
@@ -368,6 +369,7 @@ function utilities
   queue extra/wget
   queue extra/unrar
   queue core/man-db
+  queue extra/perl-file-mimeinfo
 end
 
 function dragon_drop
@@ -392,6 +394,7 @@ if ! test -n "$argv"
   discord
   redshift
   nerdfonts
+  emojifont
   pipewire
   fish
   python
