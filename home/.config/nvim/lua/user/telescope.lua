@@ -10,8 +10,8 @@ telescope.setup {
 
     mappings = {
       i = {
-        ['<a-esc>'] = actions.close,
-        ['<cr>'] = actions.select_default,
+        ['<esc>'] = actions.close,
+        ['<c-l>'] = actions.select_default,
         ['<c-x>'] = actions.select_horizontal,
         ['<c-v>'] = actions.select_vertical,
         ['<c-t>'] = actions.select_tab,
@@ -24,8 +24,8 @@ telescope.setup {
         ['<c-u>'] = actions.preview_scrolling_up,
         ['<c-d>'] = actions.preview_scrolling_down,
 
-        ['<c-l>'] = actions.cycle_history_next,
-        ['<c-h>'] = actions.cycle_history_prev,
+        ['<c-n>'] = actions.cycle_history_next,
+        ['<c-p>'] = actions.cycle_history_prev,
 
         ['<tab>'] = actions.toggle_selection,
 
@@ -35,7 +35,7 @@ telescope.setup {
       n = {
         ['<esc>'] = actions.close,
         ['<a-esc>'] = actions.close,
-        ['<cr>'] = actions.select_default,
+        ['<c-l>'] = actions.select_default,
         ['l'] = actions.select_default,
         ['<c-x>'] = actions.select_horizontal,
         ['<c-v>'] = actions.select_vertical,
@@ -57,12 +57,11 @@ telescope.setup {
         ['<c-u>'] = actions.preview_scrolling_up,
         ['<c-d>'] = actions.preview_scrolling_down,
 
-        ['<c-l>'] = actions.cycle_history_next,
-        ['<c-h>'] = actions.cycle_history_prev,
+        ['<c-n>'] = actions.cycle_history_next,
+        ['<c-p>'] = actions.cycle_history_prev,
 
         ['<tab>'] = actions.toggle_selection,
 
-        ['?'] = actions.which_key,
         ['<a-h>'] = fb.actions.toggle_hidden,
       },
     },

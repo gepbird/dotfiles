@@ -1,6 +1,13 @@
 {
   "FormattingOptions": {
-    "useTabs": false,
-    "indentationSize": 2,
+    "UseTabs": false,
+    "IndentationSize": 2,
+    "EnableEditorConfigSupport": true,
+    "OrganizeImports": true
+  },
+  "RoslynExtensionsOptions": {
+    "EnableDecompilationSupport": true,
+    "EnableImportCompletion": true,
+    "EnableAnalyzersSupport": false
   }
 }

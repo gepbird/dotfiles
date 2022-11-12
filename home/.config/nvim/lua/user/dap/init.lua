@@ -20,18 +20,18 @@ dapui.setup {
   },
   expand_lines = true,
   layouts = {
-    {
-      elements = {
-        { id = 'scopes', size = 0.25 },
-        'watches',
-      },
-      size = 40,
-      position = 'left',
-    },
+    --{
+    --  elements = {
+    --    { id = 'scopes', size = 0.25 },
+    --    'watches',
+    --  },
+    --  size = 40,
+    --  position = 'left',
+    --},
     {
       elements = {
         'repl',
-        'console',
+        --'console',
       },
       size = 0.25,
       position = 'bottom',
@@ -100,6 +100,9 @@ require 'user.utils'.register_maps {
   end, },
   { 'n', '<space><a-k>', widgets.hover },
   { 'n', '<space>td', telescope_dap.commands },
+  { 'nv', '<space>de', function() dapui.eval() end },
+  { 'nv', '<space>de', function() dapui.eval() end },
+  { 'n', '<space>d<s-e>', function() dapui.eval(vim.fn.input("Expression: ")) end },
   { 'n', '<space>dl', function() dapui.float_element('scopes', { enter = true }) end },
   { 'n', '<space>db', function() dapui.float_element('breakpoints', { enter = true }) end },
   { 'n', '<space>dw', function() dapui.float_element('watches', { enter = true }) end },

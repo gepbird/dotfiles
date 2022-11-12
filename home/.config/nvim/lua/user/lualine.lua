@@ -16,6 +16,17 @@ local diagnostics = {
   always_visible = false,
 }
 
+local lsp = function()
+  local clients = vim.lsp.buf_get_clients()
+  local client_names = vim.tbl_map(function(v)
+    return v.name
+  end, clients)
+  local client_names_normalized = vim.tbl_filter(function(v)
+    return v ~= nil
+  end, client_names)
+  return table.concat(client_names_normalized, ',')
+end
+
 local debug_status = function()
   return require 'dap'.status()
 end
@@ -39,7 +50,7 @@ local filename = {
 local sections = {
   lualine_a = { 'mode' },
   lualine_b = { branch, diff },
-  lualine_c = { diagnostics },
+  lualine_c = { diagnostics, lsp },
   lualine_x = { debug_status },
   lualine_y = { filetype, filename },
   lualine_z = { 'location', 'progress' },

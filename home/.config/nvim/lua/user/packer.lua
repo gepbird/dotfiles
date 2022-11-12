@@ -17,7 +17,7 @@ packer.startup(function(use)
   }
   use { 'rcarriga/nvim-notify', config = function() require 'user.notify' end,
     requires = {
-      { 'gutyina70/telescope.nvim' },
+      { 'nvim-telescope/telescope.nvim' },
     },
   }
   use { 'nvim-lualine/lualine.nvim', config = function() require 'user.lualine' end,
@@ -54,7 +54,7 @@ packer.startup(function(use)
       { 'theHamsta/nvim-dap-virtual-text' },
       { 'nvim-telescope/telescope-dap.nvim',
         requires = {
-          'gutyina70/telescope.nvim',
+          'nvim-telescope/telescope.nvim',
         },
       },
       { 'jbyuki/one-small-step-for-vimkind' },
@@ -86,7 +86,7 @@ packer.startup(function(use)
     },
   }
 
-  use { 'gutyina70/telescope.nvim', config = function() require 'user.telescope' end,
+  use { 'nvim-telescope/telescope.nvim', config = function() require 'user.telescope' end,
     requires = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-file-browser.nvim' },
@@ -131,7 +131,7 @@ packer.startup(function(use)
 end)
 
 require 'user.utils'.register_maps {
-  { 'n', '<space>ps', function()
+  { 'n', '<space>pi', function()
     packer.sync()
     local ok, treesitter_install = pcall(require, 'nvim-treesitter.install')
     if ok then
@@ -139,5 +139,5 @@ require 'user.utils'.register_maps {
     end
   end,
   },
-  { 'n', '<space>pS', packer.status },
+  { 'n', '<space>ps', packer.status },
 }

@@ -65,6 +65,7 @@ local servers = {
   'sumneko_lua',
   'pyright',
   'omnisharp',
+  'jsonls'
 }
 for _, server in ipairs(servers) do
   lspconfig[server].setup(require('user.lsp.' .. server))
@@ -77,7 +78,7 @@ utils.register_maps {
   { 'n', '<space>li', ':Mason<cr>' },
   { 'n', '<space>ls', ':LspInfo<cr>' },
   { 'n', '<space>-', function() telescope.lsp_references(ivy) end },
-  { 'n', '<space>.', function() telescope.lsp_definitions(ivy) end },
+  { 'n', '<space>.', vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions 
   { 'n', '<space>:', function() telescope.lsp_type_definitions(ivy) end },
   { 'n', '<space>f', function() lsp.format { async = false }; vim.cmd ':w' end },
   { 'n', '<space><s-k>', vim.lsp.buf.signature_help },

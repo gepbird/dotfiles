@@ -4,7 +4,7 @@ require 'user.utils'.register_maps {
   { 'nxo', '<s-k>', '5k' },
   { 'nxo', '<s-l>', '5l' },
 
-  { 'nxo', '<c-h>', '0', { unmap = true } },
+  { 'nxo', '<c-h>', '_', {} },
   { 'nxo', '<c-j>', '}', { unmap = true } },
   { 'nxo', '<c-k>', '{', { unmap = true } },
   { 'nxo', '<c-l>', '$', { unmap = true } },
@@ -30,6 +30,8 @@ require 'user.utils'.register_maps {
   { 'n', '<c-e>', ':nohlsearch<cr>' },
 
   { 'nxo', 'b', '%', { unmap = true } },
+  { 'nxo', '_', ',', { unmap = true } },
+  { 'nxo', '-', ';', { unmap = true } },
 
   { 'x', '<', '<gv' },
   { 'x', '>', '>gv' },
