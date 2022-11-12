@@ -38,7 +38,7 @@ function sublime_text
 end
 
 function discord
-  paci aur/dvm
+  paci aur/dvm-git
   dvm install stable
   dvm update stable
 end
@@ -192,7 +192,7 @@ function roblox
 end
 
 function minecraft
-  queue chaotic-aur/polymc
+  queue aur/prismlauncher-git
   queue aur/mcrcon
 end
 
@@ -339,7 +339,7 @@ function clac
 end
 
 function lf
-  queue chaotic-aur/lf
+  queue community/lf
   link .config/lf
   link .local/bin/lfrun
 end
@@ -403,7 +403,7 @@ if ! test -n "$argv"
   screenkey
   gitconfig
   vscode
-  flutter_install
+  #flutter_install
   java
   dotnet
   rust

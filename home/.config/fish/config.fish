@@ -113,4 +113,3 @@ function ssh-make-key
 end
 
 autojump # need to run it once to turn it on
-clear
