@@ -372,6 +372,12 @@ function utilities
   queue extra/perl-file-mimeinfo
 end
 
+function theming
+  queue aur/qt5-styleplugins
+  queue qt6gtk2
+  link .config/Xresources
+end
+
 function dragon_drop
   queue aur/dragon-drop
 end
@@ -443,6 +449,7 @@ if ! test -n "$argv"
   gparted
   downgrade
   utilities
+  theming
   dragon_drop
   mimeapps
   ################################################################

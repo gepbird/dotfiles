@@ -18,6 +18,8 @@ xset s off
 xset b off
 # switch caps and esc
 setxkbmap -option "caps:swapescape"
+# theming for X apps
+xrdb -load ~/.config/Xresources
 
 # auto start apps
 redshift &
