@@ -64,9 +64,9 @@ function pacfi
 end
 alias paci='paru -S --noconfirm --needed'
 alias pacI='paru -S --needed'
-alias pacr='paru -Rs --noconfirm'
-alias pacrr='paru -Rns --noconfirm'
-alias pacu='paru -Syyu; dvm update stable'
+alias pacr='sudo paru -Rs --noconfirm'
+alias pacrr='sudo paru -Rns --noconfirm'
+alias pacu='sudo pacman -Syyu; paru -Su; dvm update stable'
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"

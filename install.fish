@@ -66,6 +66,11 @@ function pipewire
   queue aur/autojump
 end
 
+function dash
+  queue core/dash
+  queue aur/dashbinsh
+end
+
 function fish
   link .config/fish/config.fish
   link_su .config/fish/config.fish
@@ -402,6 +407,7 @@ if ! test -n "$argv"
   nerdfonts
   emojifont
   pipewire
+  dash
   fish
   python
   postman
@@ -429,6 +435,7 @@ if ! test -n "$argv"
   anydesk
   realvnc
   #tailscale
+  virtualbox
   nvim
   fman
   obs
