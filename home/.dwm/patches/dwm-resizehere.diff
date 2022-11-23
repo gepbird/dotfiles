@@ -1,5 +1,5 @@
 Author: Gutyina Gergő <gutyina.gergo.2@gmail.com>
-Date:   Tue Nov 22 02:57:45 2022 +0200
+Date:   Tue Nov 22 14:57:45 2022 +0200
 
 diff --git a/dwm.c b/dwm.c
 index a96f33c..2ffcda1 100644
