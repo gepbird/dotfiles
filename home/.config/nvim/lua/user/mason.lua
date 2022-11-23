@@ -7,6 +7,7 @@ require 'mason-tool-installer'.setup {
     'netcoredbg',
     'pyright',
     'debugpy',
+    'clangd',
     'json-lsp',
   },
   auto_update = true,
