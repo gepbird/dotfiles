@@ -79,6 +79,13 @@ function fish
   nerdfonts
 end
 
+function zsh
+  queue aur/zsh-autosuggestions-git
+  queue aur/zsh-syntax-highlighting-git
+  queue aur/zsh-vi-mode-git
+  link .zshrc
+end
+
 function python
   queue extra/python-pip
 end
@@ -375,6 +382,8 @@ function utilities
   queue extra/unrar
   queue core/man-db
   queue extra/perl-file-mimeinfo
+  queue community/expac
+  queue aur/colorpicker
 end
 
 function theming
@@ -409,6 +418,7 @@ if ! test -n "$argv"
   pipewire
   dash
   fish
+  zsh
   python
   postman
   flameshot

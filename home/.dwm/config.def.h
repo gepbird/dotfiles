@@ -26,7 +26,7 @@ typedef struct {
 } Sp;
 static Sp scratchpads[] = {
   /* name     cmd  */
-  { "spterm", (char *[]){ "st", "-n", "spterm", "-g", "120x34", "-e", "fish", NULL } },
+  { "spterm", (char *[]){ "st", "-n", "spterm", "-g", "120x34", "-e", "zsh", NULL } },
   { "spclac", (char *[]){ "st", "-n", "spclac", "-g", "120x34", "-e", "clac", NULL } },
 };
 
@@ -82,7 +82,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[]            = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char* termcmd[]             = { "st", "-e", "fish", NULL };
+static const char* termcmd[]             = { "st", "-e", "zsh", NULL };
 static const char* flameshotfull[]       = { "flameshot", "full", "--clipboard", NULL };
 static const char* flameshotgui[]        = { "flameshot", "gui", NULL };
 static const char* flameshotguidelayed[] = { "flameshot", "gui", "-d", "2500", NULL };
