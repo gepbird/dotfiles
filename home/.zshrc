@@ -2,6 +2,8 @@ TERMINAL='st'
 EDITOR='nvim'
 PATH="$PATH:$HOME/.local/bin"
 
+umask 0002
+
 # History
 HISTFILE=$HOME/.cache/.zsh_history
 HISTSIZE=1000000
@@ -50,7 +52,7 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 # Use lf to switch directories and bind it to ctrl-o
 cf () {
   tmp="$(mktemp)"
-  lf -last-dir-path="$tmp" "$@"
+  lfrun -last-dir-path="$tmp" "$@"
   if [ -f "$tmp" ]; then
     dir="$(cat "$tmp")"
     rm -f "$tmp"
@@ -84,6 +86,7 @@ zvm_bindkey vicmd '^[[4~' end-of-line
 alias ls='exa --color=always --group-directories-first --icons'
 alias cat='bat --style rule --style snip --style changes --style header'
 alias grep='rg -i --color=auto'
+alias lf='lfrun'
 
 # Aliases
 alias pacf='paru -Ss'

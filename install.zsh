@@ -1,112 +1,114 @@
-#!/bin/fish
+#!/bin/zsh
 
 ## Since there are user specific settings, force the user to run without sudo
-if test $USER = "root"
+if test $USER = "root"; then
   echo "Run this script without sudo!"
   exit
-end 
+fi
 
 ## Aliases
 alias paci='paru -S --noconfirm --needed'
 alias pacu='paru -Syy --noconfirm'
 
-function link
-  ./link.fish $argv[1]
-end
+link() {
+  ./link.zsh $1
+}
 
-function link_su
-  ./link.fish $argv[1] 1
-end
+link_su() {
+  ./link.zsh $1 1
+}
 
-set packages
-function queue
-  set packages $packages $argv[1]
-end
+packages=()
+queue() {
+  packages+=$1
+}
 
 ## Define an install process for every application
 
-function firefox
+firefox() {
   queue community/firefox-developer-edition
-end
+}
 
-function chromium
+chromium() {
  queue extra/chromium
-end
+}
 
-function sublime_text
+sublime_text() {
   queue aur/sublime-text-4
-end
+}
 
-function discord
+discord() {
   paci aur/dvm-git
   dvm install stable
   dvm update stable
-end
+}
 
-function redshift
+redshift() {
   queue aur/redshift-git
   link .config/redshift.conf
-end
+}
 
-function nerdfonts
+pipewire() {
+  queue extra/pipewire
+  queue extra/pipewire-pulse
+  queue extra/pavucontrol
+  queue aur/autojump-git
+}
+
+nerdfonts() {
   paci ttf-iosevka-nerd
   mkdir -p ~/.local/share/fonts
   ln -vsf "/usr/share/fonts/TTF/Iosevka Nerd Font Complete.ttf" \
     "$HOME/.local/share/fonts/Iosevka Nerd Font Complete.ttf"
-end
+}
 
-function emojifont
+emojifont() {
   queue extra/noto-fonts-emoji
-end
+}
 
-function pipewire
-  queue extra/pipewire
-  queue extra/pipewire-pulse
-  queue extra/pavucontrol
-  queue aur/autojump
-end
-
-function dash
-  queue core/dash
-  queue aur/dashbinsh
-end
-
-function fish
-  link .config/fish/config.fish
-  link_su .config/fish/config.fish
+starship() {
   link .config/starship.toml
   link_su .config/starship.toml
-  nerdfonts
-end
+}
 
-function zsh
+dash() {
+  queue core/dash
+  queue aur/dashbinsh
+}
+
+fish() {
+  link .config/fish/config.fish
+  link_su .config/fish/config.fish
+}
+
+zsh() {
   queue aur/zsh-autosuggestions-git
   queue aur/zsh-syntax-highlighting-git
   queue aur/zsh-vi-mode-git
   link .zshrc
-end
+}
 
-function python
+python() {
   queue extra/python-pip
-end
+}
 
-function postman
+postman() {
   queue aur/postman-bin
-end
+}
 
-function flameshot
+flameshot() {
   paci community/flameshot
-end
+}
 
-function screenkey
+screenkey() {
   queue community/screenkey
-end
+}
 
-function gitconfig
+gitconfig() {
   link .gitconfig
-end
+}
 
-function vscode
+vscode() {
   queue aur/visual-studio-code-bin
   link .config/Code/User/settings.json
   link .config/Code/User/keybindings.json
@@ -121,10 +123,9 @@ function vscode
   link .vscode/extensions/extension-manager.quality-of-life-1.0.0
   link .vscode/extensions/extension-manager.scripting-profile-1.0.0
   link .vscode/extensions/extension-manager.viewers,-syntax-highlighters-1.0.0
-  link .vscode/extensions/extension-manager.web-frontend-profile-1.0.0
-end
+}
 
-function flutter_install
+flutter_install() {
   queue community/android-tools
   paci aur/flutter-git
   paci aur/android-sdk
@@ -136,94 +137,94 @@ function flutter_install
   sudo chown -R $USER /opt/android-sdk
   sdkmanager --install 'cmdline-tools;latest'
   flutter doctor --android-licenses
-end
+}
 
-function java
+java() {
   queue extra/jdk8-openjdk
   queue aur/jdk18-openj9-bin
   queue extra/jdk19-openjdk
-end
+}
 
-function nodejs
+nodejs() {
   queue community/nodejs
   queue community/npm
-end
+}
 
-function yarn
+yarn() {
   queue community/yarn
-end
+}
 
-function dotnet
+dotnet() {
   queue community/dotnet-sdk
   link .omnisharp
-end
+}
 
-function rust
+rust() {
   queue extra/rust
-end
+}
 
-function sqlite
+sqlite() {
   queue core/sqlite
-end
+}
 
-function dbeaver
+dbeaver() {
   queue community/dbeaver
-end
+}
 
-function onlyoffice
+onlyoffice() {
   queue aur/onlyoffice-bin
-end
+}
 
-function wine
+wine() {
   paci multilib/wine
   paci multilib/winetricks
   paci community/wine-mono
-end
+}
 
-function steam
+steam() {
   queue multilib/steam
-end
+}
 
-function heroic
+heroic() {
   queue aur/heroic-games-launcher-bin
   link .config/heroic/config.json
   link .config/heroic/GamesConfig/CrabEA.json
-end
+}
 
-function lutris
+lutris() {
   queue community/lutris
-end
+}
 
-function roblox
+roblox() {
   wine
   paci aur/grapejuice-git
   paci multilib/lib32-nvidia-utils
   paci extra/vulkan-icd-loader
   paci multilib/lib32-vulkan-icd-loader
   grapejuice first-time-setup
-end
+}
 
-function minecraft
+minecraft() {
   queue aur/prismlauncher-git
   queue aur/mcrcon
-end
+}
 
-function osu
+osu() {
   queue aur/osu-lazer-git
   queue aur/opentabletdriver-git
-end
+}
 
-function filezilla
+filezilla() {
   queue community/filezilla
   link .config/filezilla/sitemanager.xml
-end
+}
 
-function teams
+teams() {
   queue aur/teams
-end
+}
 
-function packet_tracer
-  if ! paru -Q | grep -q packettracer
+packet_tracer() {
+  if ! paru -Q | grep -q packettracer; then
     git clone https://aur.archlinux.org/packettracer.git
     set deb_link 'https://www.netacad.com/portal/resources/file/36b7afbe-2109-40d3-aa8e-d57a18531687'
     set downloads_link 'https://www.netacad.com/portal/node/488'
@@ -249,28 +250,28 @@ function packet_tracer
     rm -rf packettracer
   else
     echo "Packet tracer is installed"
-  end
-end
+  fi
+}
 
-function anydesk
+anydesk() {
   queue aur/anydesk-bin
-end
+}
 
-function realvnc
+realvnc() {
   queue aur/realvnc-vnc-viewer
-end
+}
 
-function tailscale
+tailscale() {
   paci aur/tailscale-git
   sudo systemctl start tailscaled
   sudo tailscale up
-end
+}
 
-function virtualbox
+virtualbox() {
   queue community/virtualbox
-end
+}
 
-function nvim
+nvim() {
   queue aur/neovim-nightly-bin
   queue extra/xclip
   queue community/ueberzug # image support for terminals
@@ -278,57 +279,57 @@ function nvim
   link .config/nvim
   link_su .config/nvim
   nerdfonts
-end
+}
 
-function fman
-  if ! grep -Fq '[fman]' /etc/pacman.conf
+fman() {
+  if ! grep -Fq '[fman]' /etc/pacman.conf; then
     sudo pacman-key --keyserver hkp://keyserver.ubuntu.com:80 -r 9CFAF7EB
     sudo pacman-key --lsign-key 9CFAF7EB
     echo -e '\n[fman]\nServer = https://fman.io/updates/arch' | sudo tee -a /etc/pacman.conf
     pacu
-  end
+  fi
   queue fman/fman
-end
+}
 
-function obs
+obs() {
   queue community/obs-studio
-end
+}
 
-function kdenlive
+kdenlive() {
   queue extra/kdenlive
-end
+}
 
-function vlc
+vlc() {
   queue extra/vlc
-end
+}
 
-function youtube_dl
+youtube_dl() {
   queue community/youtube-dl
-end
+}
 
-function gimp
+gimp() {
   queue extra/gimp
-end
+}
 
-function sshfs
+sshfs() {
   queue community/sshfs
-end
+}
 
-function htop
+htop() {
   queue extra/htop
-end
+}
 
-function xampp
+xampp() {
   queue aur/xampp
-end
+}
 
-function startup
-  link .bashrc
-  link .bash_profile
+startup() {
+  link .zshrc
+  link .zprofile
   link .xinitrc
-end
+}
 
-function suckless
+suckless() {
   link .dwm
   sudo make install --directory ~/.dwm
   link .dwmblocks
@@ -339,40 +340,40 @@ function suckless
   sudo make install --directory ~/.st
   queue ttf-symbola # emoji font so st won't crash
   queue community/sxiv
-end
+}
 
-function dunst
+dunst() {
   queue community/dunst
-end
+}
 
-function clac
+clac() {
   queue aur/clac
   link .config/clac
-end
+}
 
-function lf
+lf() {
   queue community/lf
   link .config/lf
   link .local/bin/lfrun
-end
+}
 
-function nemo
+nemo() {
   queue community/nemo
-end
+}
 
-function baobab
+baobab() {
   queue extra/baobab
-end
+}
 
-function gparted
+gparted() {
   queue extra/gparted
-end
+}
 
-function downgrade
+downgrade() {
   queue aur/downgrade
-end
+}
 
-function utilities
+utilities() {
   queue community/xdotool
   queue extra/xorg-xkill
   queue extra/xorg-xev
@@ -384,25 +385,25 @@ function utilities
   queue extra/perl-file-mimeinfo
   queue community/expac
   queue aur/colorpicker
-end
+}
 
-function theming
+theming() {
   queue aur/qt5-styleplugins
   queue qt6gtk2
   link .config/Xresources
-end
+}
 
-function dragon_drop
+dragon_drop() {
   queue aur/dragon-drop
-end
+}
 
-function mimeapps
+mimeapps() {
   link .config/mimeapps.list
-end
+}
 
 ## Call the install functions
 
-if ! test -n "$argv"
+if test $# -eq 0; then
   ################################################################
   ################################################################
   ################## CHOOSE YOUR TOOLS BELOW #####################
@@ -413,9 +414,10 @@ if ! test -n "$argv"
   sublime_text
   discord
   redshift
+  pipewire
   nerdfonts
   emojifont
-  pipewire
+  starship
   dash
   fish
   zsh
@@ -475,12 +477,12 @@ if ! test -n "$argv"
   ################################################################
   ################################################################
 else
-  for tool in $argv
+  for tool in $@; do
     $tool
-  end
-end
+  done
+fi
 
 # Install
-if test -n "$packages"
+if test -n "$packages"; then
   paci $packages
-end
+fi
