@@ -1,0 +1,55 @@
+Author: Gutyina Gergő <gutyina.gergo.2@gmail.com>
+Date:   Fri Dec  9 01:30:32 2022 +0200
+
+diff --git a/dwm.c b/dwm.c
+index 03baf42..4dd3249 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -169,6 +169,7 @@ static void focus(Client *c);
+ static void focusin(XEvent *e);
+ static void focusmon(const Arg *arg);
+ static void focusstack(const Arg *arg);
++static void focuscursor();
+ static Atom getatomprop(Client *c, Atom prop);
+ static int getrootptr(int *x, int *y);
+ static long getstate(Window w);
+@@ -862,6 +863,19 @@ focusstack(const Arg *arg)
+ 	}
+ }
+ 
++void focuscursor()
++{
++	Client *c = NULL;
++	int x, y;
++	if (getrootptr(&x, &y))
++	{
++		for (c = selmon->clients; c; c = c->next)
++			if (c == NULL || (c->x <= x && x < c->x+c->w && c->y <= y && y < c->y+c->h))
++				break;
++	}
++	focus(c);
++}
++
+ Atom
+ getatomprop(Client *c, Atom prop)
+ {
+@@ -1790,9 +1804,9 @@ unmanage(Client *c, int destroyed)
+ 		XUngrabServer(dpy);
+ 	}
+ 	free(c);
+-	focus(NULL);
+ 	updateclientlist();
+ 	arrange(m);
++	focuscursor();
+ }
+ 
+ void
+@@ -2052,7 +2066,7 @@ view(const Arg *arg)
+ 	selmon->seltags ^= 1; /* toggle sel tagset */
+ 	if (arg->ui & TAGMASK)
+ 		selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;
+-	focus(NULL);
++	focuscursor();
+ 	arrange(selmon);
+ }
+ 
