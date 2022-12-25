@@ -1,6 +1,7 @@
-TERMINAL='st'
-EDITOR='nvim'
-PATH="$PATH:$HOME/.local/bin"
+export TERMINAL='st'
+export EDITOR='nvim'
+export PATH="$PATH:$HOME/.local/bin"
+export QT_QPA_PLATFORMTHEME=gtk2 # for Qt 5 and 6 apps
 
 umask 0002
 
@@ -11,8 +12,8 @@ SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY       # Write the history file in the ':start:elapsed;command' format.
 setopt HIST_EXPIRE_DUPS_FIRST # Expire a duplicate event first when trimming history.
 setopt HIST_FIND_NO_DUPS      # Do not display a previously found event.
-#setopt HIST_IGNORE_ALL_DUPS   # Delete an old recorded event if a new event is a duplicate.
-#setopt HIST_IGNORE_DUPS       # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS   # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_DUPS       # Do not record an event that was just recorded again.
 setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
 setopt SHARE_HISTORY          # Share history between all sessions.
@@ -129,6 +130,24 @@ alias sk='screenkey --timeout 2 --font-size small --key-mode raw --mouse'
 alias nosk='killall screenkey'
 cpbak() { cp -r $1 $1.bak }
 mvbak() { mv $1 $1.bak }
+extract() {
+  case $1 in
+    *.zip); echo $1; directoryName="${1%.*}";;
+    *.tar.gz); directoryName="${1%.*.*}";;
+    *.rar); directoryName="${1%.*}";;
+    *); echo 'This format is not supported'; return 1;;
+  esac
+
+  mkdir $directoryName
+  mv $1 $directoryName
+  cd $directoryName
+
+  case $1 in
+    *.zip); unzip $1;;
+    *.tar.gz); tar xvf $1;;
+    *.rar); unrar x $1;;
+  esac
+}
 
 github-ssh() {
   ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519
@@ -158,4 +177,17 @@ github-gpg() {
     gpg --armor --export | xclip -selection clipboard
     echo 'Copied gpg key to clipboard'
   fi
+}
+
+chjava() {
+java_versions=$(archlinux-java status | sed -e 1d -e 's/^ *//')
+# convert java_versions lines into opts array
+typeset -a opts; echo $java_versions | IFS=$'\n' read -r -d '' -A opts
+echo "Please choose a Java version:"
+COLUMNS=12; select opt in $opts; do
+  opt=$(echo $opt | sed 's/ (default)//')
+  sudo archlinux-java set $opt
+  echo "Java version $opt set as default."
+  break
+done
 }

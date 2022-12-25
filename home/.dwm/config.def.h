@@ -42,6 +42,7 @@ static const Rule rules[] = {
   { "firefoxdeveloperedition",   NULL,     NULL,           1 << 1,    0,          1        },
   { "Microsoft Teams - Preview", NULL,     NULL,           1 << 2,    0,          1        },
   { "flameshot",                 NULL,     NULL,           0,         1,          -1       },
+  { "PacketTracer",              NULL,     NULL,           0,         1,          -1       },
   { NULL,                        NULL,     "Event Tester", 0,         1,          -1       },
   { NULL,                        "spterm", NULL,           SPTAG(0),  1,          -1       },
   { NULL,                        "spclac", NULL,           SPTAG(1),  1,          -1       },
