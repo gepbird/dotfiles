@@ -1,4 +1,5 @@
 local o = vim.opt
+local g = vim.g
 
 o.backup = false -- creates a backup file
 o.clipboard = 'unnamedplus' -- allows neovim to access the system clipboard
@@ -39,3 +40,4 @@ o.listchars = 'space:·,tab:··,eol:' -- define whitespace rendering
 o.list = true -- show whitespace
 --o.whichwrap:append '<,>,[,],h,l'          -- can move to next line when pressing these keys
 o.iskeyword:append '-' -- what characters count as a word movement
+g.markdown_recommended_style = 0

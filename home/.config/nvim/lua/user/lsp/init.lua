@@ -51,14 +51,10 @@ local function lsp_highlight_document(client, _)
   end
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require 'cmp_nvim_lsp'.default_capabilities()
-
 lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
   on_attach = function(client, bufnr)
     lsp_highlight_document(client, bufnr)
   end,
-  capabilities = capabilities,
 })
 
 local servers = {
@@ -67,6 +63,9 @@ local servers = {
   'omnisharp',
   'jsonls',
   'clangd',
+  'cssls',
+  'emmet_ls',
+  'tsserver',
 }
 for _, server in ipairs(servers) do
   lspconfig[server].setup(require('user.lsp.' .. server))

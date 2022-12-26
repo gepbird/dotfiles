@@ -76,6 +76,9 @@ packer.startup(function(use)
         },
       },
       { 'Hoffs/omnisharp-extended-lsp.nvim' },
+      { 'jose-elias-alvarez/null-ls.nvim', config = function() require 'user.lsp.null-ls' end,
+        requires = { 'nvim-lua/plenary.nvim' },
+      },
     },
   }
   use { 'nvim-treesitter/nvim-treesitter', config = function() require 'user.treesitter' end,
