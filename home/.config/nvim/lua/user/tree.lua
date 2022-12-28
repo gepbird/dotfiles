@@ -138,8 +138,8 @@ tree.setup {
     auto_open = true,
   },
   update_focused_file = {
-    enable = true,
-    update_root = true,
+    enable = false,
+    update_root = false,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},

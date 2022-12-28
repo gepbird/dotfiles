@@ -76,6 +76,7 @@ packer.startup(function(use)
         },
       },
       { 'Hoffs/omnisharp-extended-lsp.nvim' },
+      { 'mfussenegger/nvim-jdtls' },
       { 'jose-elias-alvarez/null-ls.nvim', config = function() require 'user.lsp.null-ls' end,
         requires = { 'nvim-lua/plenary.nvim' },
       },
