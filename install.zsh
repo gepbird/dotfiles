@@ -85,7 +85,8 @@ zsh() {
   queue aur/zsh-autosuggestions-git
   queue aur/zsh-syntax-highlighting-git
   queue aur/zsh-vi-mode-git
-  link .zshrc
+  link .config/zsh
+  link .zshenv
 }
 
 python() {
@@ -105,7 +106,7 @@ screenkey() {
 }
 
 gitconfig() {
-  link .gitconfig
+  link .config/git
 }
 
 vscode() {
@@ -324,20 +325,19 @@ xampp() {
 }
 
 startup() {
-  link .zshrc
-  link .zprofile
-  link .xinitrc
+  link .config/zsh
+  link .config/X11
 }
 
 suckless() {
-  link .dwm
-  sudo make install --directory ~/.dwm
-  link .dwmblocks
-  sudo make install --directory ~/.dwmblocks
-  link .dmenu
-  sudo make install --directory ~/.dmenu
-  link .st
-  sudo make install --directory ~/.st
+  link .local/share/dwm
+  sudo make install --directory ~/.local/share/dwm
+  link .local/share/dwmblocks
+  sudo make install --directory ~/.local/share/dwmblocks
+  link .local/share/dmenu
+  sudo make install --directory ~/.local/share/dmenu
+  link .local/share/st
+  sudo make install --directory ~/.local/share/st
   queue ttf-symbola # emoji font so st won't crash
   queue community/sxiv
 }
@@ -391,6 +391,7 @@ theming() {
   queue aur/qt5-styleplugins
   queue qt6gtk2
   link .config/Xresources
+  link .config/gtk-2.0
 }
 
 dragon_drop() {

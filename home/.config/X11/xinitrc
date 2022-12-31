@@ -5,8 +5,7 @@ systemctl --user import-environment DISPLAY XAUTHORITY
 dbus-update-activation-environment DISPLAY XAUTHORITY
 
 # for autostarting gui apps
-GTK3_MODULES="xapp-gtk3-module"
-export GTK3_MODULES
+export GTK3_MODULES="xapp-gtk3-module"
 
 # disable palm rejection
 xinput set-prop `xinput list | grep Touchpad | rg -o "id=\d+" | sed "s/id=//g"` "libinput Disable While Typing Enabled" 0
@@ -17,7 +16,7 @@ xset -dpms
 xset s off
 xset b off
 # switch caps and esc
-setxkbmap -option "caps:swapescape"
+setxkbmap -option "caps:escape"
 # theming for X apps
 xrdb -load ~/.config/Xresources
 

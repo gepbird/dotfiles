@@ -1,8 +1,3 @@
-export TERMINAL='st'
-export EDITOR='nvim'
-export PATH="$PATH:$HOME/.local/bin"
-export QT_QPA_PLATFORMTHEME=gtk2 # for Qt 5 and 6 apps
-
 umask 0002
 
 # History
@@ -20,7 +15,7 @@ setopt SHARE_HISTORY          # Share history between all sessions.
 setopt INC_APPEND_HISTORY
 
 # Built in autocomplete
-autoload -U compinit && compinit -u
+autoload -U compinit -d $HOME/.cache/.zcompdump && compinit -u -d $HOME/.cache/.zcompdump
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
