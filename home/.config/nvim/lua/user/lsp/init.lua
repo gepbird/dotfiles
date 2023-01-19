@@ -1,4 +1,3 @@
--- TODO: keybind to close floatings
 local signs = {
   DiagnosticSignError = '',
   DiagnosticSignWarn = '',
@@ -66,9 +65,15 @@ local servers = {
   'emmet_ls',
   'tsserver',
   'html',
+  'astro',
+  'phpactor',
 }
 for _, server in ipairs(servers) do
-  lspconfig[server].setup(require('user.lsp.' .. server))
+  local ok, config = pcall(require, 'user.lsp.' .. server)
+  if not ok then
+    config = {}
+  end
+  lspconfig[server].setup(config)
 end
 
 local lsp = vim.lsp.buf

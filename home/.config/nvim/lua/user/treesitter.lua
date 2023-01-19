@@ -39,7 +39,7 @@ require 'nvim-treesitter.configs'.setup {
   },
   rainbow = {
     enable = true,
-    disable = {},
+    disable = { 'html' },
     extended_mode = true,
     max_file_lines = nil,
     colors = {
