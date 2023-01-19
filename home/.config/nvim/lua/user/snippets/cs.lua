@@ -90,4 +90,9 @@ return {
     i(1),
     t { '', '}' },
   }),
+  s('pő', {
+    t 'Console.WriteLine(',
+    i(1),
+    t ');',
+  }),
 }
