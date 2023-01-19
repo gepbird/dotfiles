@@ -61,11 +61,11 @@ local servers = {
   'sumneko_lua',
   'pyright',
   'omnisharp',
-  'jsonls',
   'clangd',
   'cssls',
   'emmet_ls',
   'tsserver',
+  'html',
 }
 for _, server in ipairs(servers) do
   lspconfig[server].setup(require('user.lsp.' .. server))
