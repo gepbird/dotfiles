@@ -1,6 +1,6 @@
 local packer = require 'packer'
 packer.startup(function(use)
-  local darkplus = { 'gutyina70/darkplus.nvim', config = function() require 'user.colorscheme' end }
+  local darkplus = { 'LunarVim/darkplus.nvim', config = function() require 'user.colorscheme' end }
 
   use { 'wbthomason/packer.nvim' }
   use { 'lewis6991/impatient.nvim', config = function() require 'impatient'.enable_profile() end }

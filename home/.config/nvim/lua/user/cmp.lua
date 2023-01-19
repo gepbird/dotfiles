@@ -47,8 +47,8 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ['<c-j>'] = cmp.mapping.select_next_item(),
     ['<c-k>'] = cmp.mapping.select_prev_item(),
-    ['<a-j>'] = cmp.mapping.scroll_docs(-4),
     ['<a-k>'] = cmp.mapping.scroll_docs(4),
+    ['<a-j>'] = cmp.mapping.scroll_docs(-4),
     ['<c-space>'] = cmp.mapping.complete(),
     ['<a-esc>'] = cmp.mapping.abort(),
     ['<c-l>'] = cmp.mapping.confirm { select = true },

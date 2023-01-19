@@ -41,3 +41,4 @@ o.list = true -- show whitespace
 --o.whichwrap:append '<,>,[,],h,l'          -- can move to next line when pressing these keys
 o.iskeyword:append '-' -- what characters count as a word movement
 g.markdown_recommended_style = 0
+o.spelllang = 'hu'

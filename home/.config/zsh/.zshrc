@@ -114,7 +114,7 @@ alias lff='ls -la | grep'
 alias ff='find | grep'
 alias hisf='history | grep'
 alias rmf='sudo rm -rf'
-alias zshreload='source ~/.zshrc'
+alias zshreload="source $ZDOTDIR/.zshrc"
 alias clip='xclip -selection clipboard'
 alias dnd='dragon-drop --and-exit --all'
 alias getpid='xdotool getwindowpid $(xdotool selectwindow)'
@@ -123,6 +123,7 @@ alias pickcolor='colorpicker --one-shot --preview --short'
 alias clipcolor='colorpicker --one-shot --preview --short | xclip -selection clipboard'
 alias sk='screenkey --timeout 2 --font-size small --key-mode raw --mouse'
 alias nosk='killall screenkey'
+wordcount() { echo $1 | wc -w }
 cpbak() { cp -r $1 $1.bak }
 mvbak() { mv $1 $1.bak }
 extract() {
