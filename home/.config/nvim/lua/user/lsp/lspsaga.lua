@@ -1,24 +1,42 @@
-require 'lspsaga'.init_lsp_saga {
-  code_action_lightbulb = {
+require 'lspsaga'.setup {
+  lightbulb = {
     enable = false,
   },
-  code_action_keys = {
-    quit = '<esc>',
-    exec = 'l',
+  code_action = {
+    num_shortcut = true,
+    keys = {
+      quit = '<esc>',
+      exec = 'l',
+    },
   },
-  rename_action_quit = '<esc>',
-  rename_in_select = true,
-  border_style = 'rounded',
-  saga_winblend = 0,
-  show_outline = {
+  rename = {
+    quit = '<esc>',
+    exec = '<cr>',
+    mark = 'x',
+    configrm = '<cr>',
+    in_select = true,
+    whole_project = true,
+  },
+  ui = {
+    theme = 'round',
+    title = true,
+    border = 'solid',
+    winblend = 0,
+  },
+  outline = {
     win_position = 'left',
     win_with = 'NvimTree',
     win_width = 30,
-    auto_enter = true,
+    show_detail = true,
     auto_preview = true,
-    virt_text = '┃',
-    jump_key = 'l',
     auto_refresh = true,
+    auto_close = true,
+    custom_sort = nil,
+    keys = {
+      jump = 'l',
+      expand_collapse = '<s-l>',
+      quit = 'q',
+    },
   },
 }
 
@@ -26,6 +44,7 @@ require 'user.utils'.register_maps {
   { 'n', '<space>m', function() require 'lspsaga.codeaction':code_action() end },
   { 'n', '<space>r', function() require 'lspsaga.rename':lsp_rename() end },
   { 'n', '<space>k', function() require 'lspsaga.hover':render_hover_doc() end },
-  { 'n', '<space><c-k>', function() require 'lspsaga.diagnostic':show_line_diagnostics() end },
+  { 'n', '<space><space>k', function() require 'lspsaga.hover':render_hover_doc '++keep' end },
+  { 'n', '<space><c-k>', function() require 'lspsaga.diagnostic':show_diagnostics(arg, 'line') end },
   { 'n', '<space>lo', function() require 'lspsaga.outline':render_outline() end },
 }
