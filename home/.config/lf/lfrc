@@ -100,7 +100,7 @@ map K push kkkkkk
 
 map e push /
 map w push $nvim<space>$fx<enter>
-map t push $st<space>-e<space>fish&<enter>
+map t push $st<space>-e<space>zsh&<enter>
 
 set hidden!
 set drawbox

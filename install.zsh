@@ -52,7 +52,6 @@ pipewire() {
   queue extra/pipewire
   queue extra/pipewire-pulse
   queue extra/pavucontrol
-  queue aur/autojump-git
 }
 
 nerdfonts() {
@@ -177,9 +176,13 @@ onlyoffice() {
 }
 
 wine() {
-  paci multilib/wine
+  paci multilib/wine-staging
   paci multilib/winetricks
   paci community/wine-mono
+  rm -vf ~/.local/share/mime/packages/x-wine*
+  rm -vf ~/.local/share/applications/wine-extension*
+  rm -vf ~/.local/share/icons/hicolor/*/*/application-x-wine-extension*
+  rm -vf ~/.local/share/mime/application/x-wine-extension*
 }
 
 steam() {
@@ -262,6 +265,11 @@ realvnc() {
   queue aur/realvnc-vnc-viewer
 }
 
+rustdesk() {
+  queue aur/rustdesk-bin
+  queue aur/rustdesk-server-bin
+}
+
 tailscale() {
   paci aur/tailscale-git
   sudo systemctl start tailscaled
@@ -280,16 +288,6 @@ nvim() {
   link .config/nvim
   link_su .config/nvim
   nerdfonts
-}
-
-fman() {
-  if ! grep -Fq '[fman]' /etc/pacman.conf; then
-    sudo pacman-key --keyserver hkp://keyserver.ubuntu.com:80 -r 9CFAF7EB
-    sudo pacman-key --lsign-key 9CFAF7EB
-    echo -e '\n[fman]\nServer = https://fman.io/updates/arch' | sudo tee -a /etc/pacman.conf
-    pacu
-  fi
-  queue fman/fman
 }
 
 obs() {
@@ -314,10 +312,6 @@ gimp() {
 
 sshfs() {
   queue community/sshfs
-}
-
-htop() {
-  queue extra/htop
 }
 
 xampp() {
@@ -361,8 +355,8 @@ nemo() {
   queue community/nemo
 }
 
-baobab() {
-  queue extra/baobab
+qdirstat() {
+  queue aur/qdirstat
 }
 
 gparted() {
@@ -385,6 +379,7 @@ utilities() {
   queue extra/perl-file-mimeinfo
   queue community/expac
   queue aur/colorpicker
+  queue aur/autojump-git
 }
 
 theming() {
@@ -412,7 +407,7 @@ if test $# -eq 0; then
   ################################################################
   firefox
   chromium
-  sublime_text
+  #sublime_text
   discord
   redshift
   pipewire
@@ -437,8 +432,8 @@ if test $# -eq 0; then
   onlyoffice
   wine
   steam
-  heroic
-  lutris
+  #heroic
+  #lutris
   #roblox
   minecraft
   osu
@@ -446,18 +441,17 @@ if test $# -eq 0; then
   teams
   #packet_tracer
   anydesk
-  realvnc
+  #realvnc
+  rustdesk
   #tailscale
   virtualbox
   nvim
-  fman
   obs
   kdenlive
   vlc
   youtube_dl
   gimp
   sshfs
-  htop
   xampp
   startup
   suckless
@@ -465,7 +459,7 @@ if test $# -eq 0; then
   clac
   lf
   nemo
-  baobab
+  qdirstat
   gparted
   downgrade
   utilities
