@@ -1,14 +1,13 @@
 #!/bin/bash
 
-sudo pacman -Syy
-sudo pacman -S --noconfirm --needed community/ttf-iosevka-nerd # starship dependency
-sudo pacman -S --noconfirm --needed community/starship         # custom prompt
-sudo pacman -S --noconfirm --needed extra/zsh                  # bash alt
-sudo pacman -S --noconfirm --needed community/exa              # ls alt
-sudo pacman -S --noconfirm --needed community/ripgrep          # grip alt
-sudo pacman -S --noconfirm --needed community/bat              # cat alt
-
-sudo pacman -S --noconfirm --needed base-devel extra/rust
+sudo pacman -Syy --noconfirm --needed \
+  extra/zsh \
+  community/exa \
+  community/ripgrep \
+  community/bat \
+  base-devel \
+  community/rustup
+rustup install nightly
 git clone --depth 1 https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
