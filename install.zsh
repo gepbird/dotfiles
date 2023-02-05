@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 ## Since there are user specific settings, force the user to run without sudo
-if test $USER = "root"; then
-  echo "Run this script without sudo!"
+if test $USER = 'root'; then
+  echo 'Run this script without sudo!'
   exit
 fi
 
@@ -10,12 +10,56 @@ fi
 alias paci='paru -S --noconfirm --needed'
 alias pacu='paru -Syy --noconfirm'
 
-link() {
-  ./link.zsh $1
+## Link script
+read_confirm() {
+  while true; do
+    echo "$1 [y/N]"
+    read confirm
+    case $confirm in
+      Y) return 0;;
+      y) return 0;;
+      *) return 1;;
+    esac
+  done
 }
 
-link_su() {
-  ./link.zsh $1 1
+link() {
+  SCRIPT_DIR=${0:a:h}
+  source_path="$SCRIPT_DIR/home/$1"
+
+  if test -n "$2"; then # root
+
+    target_path="/root/$1"
+    if sudo test -L $target_path; then # is symlink
+      sudo rm -v $target_path
+    fi
+    if sudo test -e $target_path; then # exists
+      if read_confirm "Do you want to delete $target_path?"; then
+        sudo rm -vrf $target_path
+      else
+        return 1
+      fi
+    fi
+    sudo mkdir -vp $(dirname $target_path)
+    sudo ln -vsf $source_path $target_path
+
+  else # normal user
+
+    target_path="$HOME/$1"
+    if test -L $target_path; then # is symlink
+      rm -v $target_path
+    fi
+    if test -e $target_path; then # exists
+      if read_confirm "Do you want to delete $target_path?"; then
+        rm -vrf $target_path
+      else
+        return 1
+      fi
+    fi
+    mkdir -vp $(dirname $target_path)
+    ln -vsf $source_path $target_path
+
+  fi
 }
 
 packages=()
@@ -38,9 +82,9 @@ sublime_text() {
 }
 
 discord() {
-  paci aur/dvm-git
+  paci core/openssl-1.1
+  paci aur/dvm
   dvm install stable
-  dvm update stable
 }
 
 redshift() {
@@ -66,8 +110,10 @@ emojifont() {
 }
 
 starship() {
+  nerdfonts
+  queue community/starship
   link .config/starship.toml
-  link_su .config/starship.toml
+  link .config/starship.toml 'root'
 }
 
 dash() {
@@ -76,11 +122,19 @@ dash() {
 }
 
 zsh() {
+  queue extra/zsh
   queue aur/zsh-autosuggestions-git
   queue aur/zsh-syntax-highlighting-git
   queue aur/zsh-vi-mode-git
+  queue aur/autojump-git
+  coreutils_replacements
   link .config/zsh
+  link .config/zsh 'root'
   link .zshenv
+  link .zshenv 'root'
+  if ! test $SHELL = '/bin/zsh'; then
+    chsh -s /bin/zsh
+  fi
 }
 
 python() {
@@ -136,7 +190,6 @@ flutter_install() {
 
 java() {
   queue extra/jdk8-openjdk
-  queue aur/jdk18-openj9-bin
   queue extra/jdk19-openjdk
 }
 
@@ -149,13 +202,19 @@ yarn() {
   queue community/yarn
 }
 
+php() {
+  queue extra/php
+  queue extra/composer
+}
+
 dotnet() {
   queue community/dotnet-sdk
   link .omnisharp
 }
 
 rust() {
-  queue extra/rust
+  queue community/rustup
+  rustup install nightly
 }
 
 sqlite() {
@@ -202,7 +261,7 @@ roblox() {
 }
 
 minecraft() {
-  queue aur/prismlauncher-git
+  queue aur/prismlauncher-bin
   queue aur/mcrcon
 }
 
@@ -222,23 +281,24 @@ teams() {
 packet_tracer() {
   if ! paru -Q | grep -q packettracer; then
     git clone https://aur.archlinux.org/packettracer.git
-    set deb_link 'https://www.netacad.com/portal/resources/file/36b7afbe-2109-40d3-aa8e-d57a18531687'
-    set downloads_link 'https://www.netacad.com/portal/node/488'
+    deb_link='https://www.netacad.com/portal/resources/file/36b7afbe-2109-40d3-aa8e-d57a18531687'
+    downloads_link='https://www.netacad.com/portal/node/488'
     echo "------------------packet-tracer------------------"
     echo "Log in to netacad and"
     echo " - download packet tracer version 8.2.0 from $deb_link"
     echo " - or choose another version from $downloads_link "
     echo "Wait for the download to complete"
-    echo "If the script doesnt continue, try manually moving the downloaded deb file to "(pwd)"/packettracer"
+    echo "If the script doesnt continue, try manually moving the downloaded deb file to "$(pwd)"/packettracer"
     echo "-------------------------------------------------"
     xdg-open $deb_link 2>/dev/null
-    read -P 'Press enter when the deb file is downloaded'
+    echo 'Press enter when the deb file is downloaded'
+    read
 
     mv ~/Downloads/CiscoPacketTracer_*_Ubuntu_64bit.deb packettracer
     cd packettracer
     # packet tracer version in the deb and AUR PKBUILD may differ, put deb version to PKGBUILD
     echo "Patching PKGBUILD"
-    set deb_file (exa | grep *.deb)
+    deb_file=$(exa | grep *.deb)
     echo "source=('local://$deb_file' 'packettracer.sh')" | tee -a PKGBUILD
     makepkg -src --skipchecksums
     paru -U --noconfirm *.pkg.*
@@ -275,10 +335,11 @@ virtualbox() {
 nvim() {
   queue aur/neovim-nightly-bin
   queue extra/xclip
+  queue community/tree-sitter
   queue community/ueberzug # image support for terminals
   queue aur/nvim-packer-git
   link .config/nvim
-  link_su .config/nvim
+  link .config/nvim 'root'
   nerdfonts
 }
 
@@ -311,7 +372,6 @@ xampp() {
 }
 
 startup() {
-  link .config/zsh
   link .config/X11
 }
 
@@ -340,7 +400,9 @@ clac() {
 lf() {
   queue community/lf
   link .config/lf
+  link .config/lf 'root'
   link .local/bin/lfrun
+  link .local/bin/lfrun 'root'
 }
 
 nemo() {
@@ -359,19 +421,31 @@ downgrade() {
   queue aur/downgrade
 }
 
-utilities() {
+system_monitor() {
+  queue community/iotop
+  queue community/btop
+}
+
+xutilities() {
   queue community/xdotool
   queue extra/xorg-xkill
   queue extra/xorg-xev
-  queue community/iotop
-  queue community/btop
+  queue extra/xorg-xhost
+}
+
+utilities() {
   queue extra/wget
   queue extra/unrar
-  queue core/man-db
-  queue extra/perl-file-mimeinfo
   queue community/expac
+  queue core/man-db
   queue aur/colorpicker
-  queue aur/autojump-git
+  queue aur/backlight_control
+}
+
+coreutils_replacements() {
+  queue community/exa
+  queue community/ripgrep
+  queue community/bat
 }
 
 theming() {
@@ -386,6 +460,7 @@ dragon_drop() {
 }
 
 mimeapps() {
+  queue extra/perl-file-mimeinfo
   link .config/mimeapps.list
 }
 
@@ -416,6 +491,9 @@ if test $# -eq 0; then
   vscode
   #flutter_install
   java
+  yarn
+  php
+  nodejs
   dotnet
   rust
   sqlite
@@ -453,7 +531,10 @@ if test $# -eq 0; then
   qdirstat
   gparted
   downgrade
+  system_monitor
+  xutilities
   utilities
+  coreutils_replacements
   theming
   dragon_drop
   mimeapps

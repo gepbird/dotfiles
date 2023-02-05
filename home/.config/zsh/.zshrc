@@ -104,6 +104,7 @@ alias syse='sudo systemctl enable --now'
 alias sysE='sudo systemctl enable'
 alias sysd='sudo systemctl disable --now'
 alias sysD='sudo systemctl disable'
+alias sysdr='sudo systemctl daemon-reload'
 alias jouri='journalctl -u'
 alias joure='journalctl -xeu'
 
