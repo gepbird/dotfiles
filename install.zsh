@@ -75,11 +75,6 @@ dash() {
   queue aur/dashbinsh
 }
 
-fish() {
-  link .config/fish/config.fish
-  link_su .config/fish/config.fish
-}
-
 zsh() {
   queue aur/zsh-autosuggestions-git
   queue aur/zsh-syntax-highlighting-git
@@ -191,8 +186,6 @@ steam() {
 
 heroic() {
   queue aur/heroic-games-launcher-bin
-  link .config/heroic/config.json
-  link .config/heroic/GamesConfig/CrabEA.json
 }
 
 lutris() {
@@ -220,7 +213,6 @@ osu() {
 
 filezilla() {
   queue community/filezilla
-  link .config/filezilla/sitemanager.xml
 }
 
 teams() {
@@ -415,7 +407,6 @@ if test $# -eq 0; then
   emojifont
   starship
   dash
-  fish
   zsh
   python
   postman
