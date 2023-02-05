@@ -22,3 +22,4 @@ export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/.zcompdump
+export VSCODE_PORTABLE=$XDG_DATA_HOME/vscode

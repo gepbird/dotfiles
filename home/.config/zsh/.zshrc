@@ -176,14 +176,14 @@ github-gpg() {
 }
 
 chjava() {
-java_versions=$(archlinux-java status | sed -e 1d -e 's/^ *//')
-# convert java_versions lines into opts array
-typeset -a opts; echo $java_versions | IFS=$'\n' read -r -d '' -A opts
-echo "Please choose a Java version:"
-COLUMNS=12; select opt in $opts; do
-  opt=$(echo $opt | sed 's/ (default)//')
-  sudo archlinux-java set $opt
-  echo "Java version $opt set as default."
-  break
-done
+  java_versions=$(archlinux-java status | sed -e 1d -e 's/^ *//')
+  # convert java_versions lines into opts array
+  typeset -a opts; echo $java_versions | IFS=$'\n' read -r -d '' -A opts
+  echo "Please choose a Java version:"
+  COLUMNS=12; select opt in $opts; do
+    opt=$(echo $opt | sed 's/ (default)//')
+    sudo archlinux-java set $opt
+    echo "Java version $opt set as default."
+    break
+  done
 }
