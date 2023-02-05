@@ -7,8 +7,13 @@ dbus-update-activation-environment DISPLAY XAUTHORITY
 # for autostarting gui apps
 export GTK3_MODULES="xapp-gtk3-module"
 
+## touchpad
 # disable palm rejection
-xinput set-prop `xinput list | grep Touchpad | rg -o "id=\d+" | sed "s/id=//g"` "libinput Disable While Typing Enabled" 0
+touchpad_device=$(xinput list | grep Touchpad | rg -o "id=\d+" | sed "s/id=//g")
+xinput set-prop $touchpad_device "libinput Disable While Typing Enabled" 0
+# left, middle and right click on tap
+xinput set-prop $touchpad_device "libinput Tapping Enabled" 1
+
 # fast key repeat
 xset r rate 250 30
 # disable screensaver

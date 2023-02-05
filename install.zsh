@@ -431,6 +431,7 @@ xutilities() {
   queue extra/xorg-xkill
   queue extra/xorg-xev
   queue extra/xorg-xhost
+  queue extra/xorg-xinput
 }
 
 utilities() {
