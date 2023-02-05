@@ -21,7 +21,7 @@ link() {
     target_path="/home/$USER/$1"
   fi
 
-  if test -L $target_path; then # is symlink
+  if sudo test -L $target_path; then # is symlink
     if test -n "$2"; then
       sudo rm $target_path
     else
