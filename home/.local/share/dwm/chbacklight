@@ -4,4 +4,4 @@ msgTag="backlight"
 max=$(cat /sys/class/backlight/radeon_bl0/max_brightness)
 current=$(cat /sys/class/backlight/radeon_bl0/brightness)
 percentage=$((current * 100 / max))
-dunstify -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag -h int:value:"$percentage" "Brightness: ${percentage}%"
+dunstify -a "changeBacklight" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag -h int:value:"$percentage" "Brightness: ${percentage}%"
