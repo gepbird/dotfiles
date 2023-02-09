@@ -440,7 +440,9 @@ utilities() {
   queue community/expac
   queue core/man-db
   queue aur/colorpicker
-  queue aur/backlight_control
+  if test $(ls /sys/class/backlight | wc -l) -gt 0; then
+    queue aur/backlight_control
+  fi
 }
 
 coreutils_replacements() {
