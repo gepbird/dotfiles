@@ -16,6 +16,7 @@ require 'nvim-treesitter.configs'.setup {
     'sql',
     'json',
     'markdown',
+    'markdown_inline',
     'diff',
     'vim',
     'make',
