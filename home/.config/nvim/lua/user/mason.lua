@@ -7,6 +7,7 @@ require 'mason-tool-installer'.setup {
     'autopep8',
     'jdtls',
     'prettierd',
+    'xmlformatter',
   },
   auto_update = true,
 }

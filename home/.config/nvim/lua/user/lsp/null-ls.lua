@@ -9,5 +9,7 @@ null_ls.setup {
         '--indent-size=2',
       },
     },
+    null_ls.builtins.formatting.xmlformat.with {
+    },
   },
 }

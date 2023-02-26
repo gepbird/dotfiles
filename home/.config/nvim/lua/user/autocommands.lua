@@ -11,4 +11,11 @@ require 'user.utils'.register_autocmds {
       vim.cmd 'set formatoptions-=cro'
     end,
   },
+  {
+    { 'BufRead','BufNewFile' },
+    function()
+      vim.bo.filetype = 'xml'
+    end,
+    { pattern = { '*.xaml', '*.axaml' } },
+  },
 }

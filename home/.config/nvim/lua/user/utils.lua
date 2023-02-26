@@ -63,6 +63,9 @@ end
 
 M.register_autocmd = function(autocmd)
   local event = autocmd[1]
+  if type(event) ~= 'table' then
+    event = { event }
+  end
   local callback = autocmd[2]
   local options = autocmd[3] or {}
   options = vim.tbl_extend('error', options, {
@@ -73,7 +76,7 @@ M.register_autocmd = function(autocmd)
     options.buffer = 0
   end
 
-  vim.api.nvim_create_autocmd({ event }, options)
+  vim.api.nvim_create_autocmd(event, options)
 end
 
 return M;
