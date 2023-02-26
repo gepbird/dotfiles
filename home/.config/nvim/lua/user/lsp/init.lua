@@ -71,7 +71,7 @@ lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_c
 })
 
 local servers = {
-  'sumneko_lua',
+  'lua_ls',
   'pyright',
   'omnisharp',
   'clangd',
