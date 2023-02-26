@@ -46,9 +46,9 @@ telescope.setup {
         ['j'] = actions.move_selection_next,
         ['k'] = actions.move_selection_previous,
         ['<s-j>'] = actions.move_selection_next + actions.move_selection_next + actions.move_selection_next +
-            actions.move_selection_next + actions.move_selection_next,
+          actions.move_selection_next + actions.move_selection_next,
         ['<s-k>'] = actions.move_selection_previous + actions.move_selection_previous + actions.move_selection_previous +
-            actions.move_selection_previous + actions.move_selection_previous,
+          actions.move_selection_previous + actions.move_selection_previous,
         ['<c-j>'] = actions.results_scrolling_up,
         ['<c-k>'] = actions.results_scrolling_down,
         ['gg'] = actions.move_to_top,
@@ -93,20 +93,20 @@ local find_command = { 'rg', '--files', '--glob=!.git', '--color', 'never' }
 require 'user.utils'.register_maps {
   { 'n', '<space>o', function()
     builtin.find_files { hidden = true, find_command = find_command }
-  end, },
+  end },
   { 'n', '<space><s-o>', function()
     builtin.find_files { hidden = true, no_ignore = true, find_command = find_command }
-  end, },
+  end },
   { 'n', '<space><tab>', builtin.oldfiles },
-  { 'n', '<space>tf', fb.file_browser },
-  { 'n', '<space>tg', builtin.live_grep },
+  { 'n', '<space>tf',    fb.file_browser },
+  { 'n', '<space>tg',    builtin.live_grep },
   { 'n', '<space>t<s-g>', function()
-    builtin.live_grep { additional_args = function() return { '--no-ignore' } end }
-  end, },
-  { 'n', '<space>tb', builtin.buffers },
-  { 'n', '<space>tm', builtin.keymaps },
-  { 'n', '<space>tc', builtin.commands },
-  { 'n', '<space>th', builtin.help_tags },
+    builtin.live_grep { additional_args = { '--no-ignore' } }
+  end },
+  { 'n', '<space>tb',     builtin.buffers },
+  { 'n', '<space>tm',     builtin.keymaps },
+  { 'n', '<space>tc',     builtin.commands },
+  { 'n', '<space>th',     builtin.help_tags },
   { 'n', '<space>t<s-h>', builtin.highlights },
-  { 'n', '<space>tr', builtin.registers },
+  { 'n', '<space>tr',     builtin.registers },
 }

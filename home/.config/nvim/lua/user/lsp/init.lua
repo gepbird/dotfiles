@@ -44,8 +44,8 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 local function lsp_highlight_document(client, _)
   if client.server_capabilities.documentHighlightProvider then
     utils.register_autocmds {
-      { 'CursorHold', vim.lsp.buf.document_highlight, { buffer = true } },
-      { 'CursorMoved', vim.lsp.buf.clear_references, { buffer = true } },
+      { 'CursorHold',  vim.lsp.buf.document_highlight, { buffer = true } },
+      { 'CursorMoved', vim.lsp.buf.clear_references,   { buffer = true } },
     }
   end
 end
@@ -66,7 +66,6 @@ lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_c
           'xml', 'xml', 'xml', 'regexp', 'regexp', 'regexp', 'regexp', 'regexp', 'regexp', 'regexp', 'regexp', 'regexp' },
       }
     end
-
   end,
 })
 
@@ -94,11 +93,14 @@ local lsp = vim.lsp.buf
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
 utils.register_maps {
-  { 'n', '<space>li', ':Mason<cr>' },
-  { 'n', '<space>ls', ':LspInfo<cr>' },
-  { 'n', '<space>-', function() telescope.lsp_references(ivy) end },
-  { 'n', '<space>.', vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions
-  { 'n', '<space>:', function() telescope.lsp_type_definitions(ivy) end },
-  { 'n', '<space>f', function() lsp.format { async = false }; vim.cmd ':w' end },
+  { 'n', '<space>li',    ':Mason<cr>' },
+  { 'n', '<space>ls',    ':LspInfo<cr>' },
+  { 'n', '<space>-',     function() telescope.lsp_references(ivy) end },
+  { 'n', '<space>.',     vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions
+  { 'n', '<space>:',     function() telescope.lsp_type_definitions(ivy) end },
+  { 'n', '<space>f',     function()
+    lsp.format { async = false };
+    vim.cmd ':w'
+  end },
   { 'n', '<space><s-k>', vim.lsp.buf.signature_help },
 }

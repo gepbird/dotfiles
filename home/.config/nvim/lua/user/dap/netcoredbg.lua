@@ -24,7 +24,6 @@ end
 local function build_and_debug(new_config)
   local dll_paths = {}
   vim.fn.jobstart('dotnet build --nologo', {
-
     on_stdout = function(_, lines, _)
       for _, line in ipairs(lines) do
         print(line)
@@ -37,7 +36,6 @@ local function build_and_debug(new_config)
         end
       end
     end,
-
     on_exit = function(_, code, _)
       if code == 0 then
         if new_config then
@@ -52,7 +50,6 @@ local function build_and_debug(new_config)
         vim.notify('Build failed', 'error', { title = 'netcoredbg' })
       end
     end,
-
   })
 end
 

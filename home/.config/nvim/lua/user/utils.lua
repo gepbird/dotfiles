@@ -50,7 +50,6 @@ M.register_map = function(map)
     else
       keymap_set()
     end
-
   end
 end
 

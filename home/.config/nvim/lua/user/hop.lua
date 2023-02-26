@@ -22,5 +22,5 @@ require 'user.utils'.register_maps {
   { 'nxo', 'qj', hint_lines { direction = dir.AFTER_CURSOR } },
   { 'nxo', 'qk', hint_lines { direction = dir.BEFORE_CURSOR } },
   { 'nxo', 'ql', hint_words { direction = dir.AFTER_CURSOR, current_line_only = true } },
-  { 'nxo', 'S', hint_char2 {} },
+  { 'nxo', 'S',  hint_char2 {} },
 }

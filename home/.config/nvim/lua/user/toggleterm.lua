@@ -20,9 +20,9 @@ require 'toggleterm'.setup {
 }
 
 require 'user.utils'.register_maps {
-  { 't', '<esc>', '<c-\\><c-s-n>', { unmap = true } },
-  { 't', '<a-h>', '<c-\\><c-s-n><c-w>h', { unmap = true } },
-  { 't', '<a-j>', '<c-\\><c-s-n><c-w>j', { unmap = true } },
-  { 't', '<a-k>', '<c-\\><c-s-n><c-w>k', { unmap = true } },
-  { 't', '<a-l>', '<c-\\><c-s-n><c-w>l', { unmap = true } },
+  { 't', '<esc>', '<c-\\><c-s-n>' },
+  { 't', '<a-h>', '<c-\\><c-s-n><c-w>h' },
+  { 't', '<a-j>', '<c-\\><c-s-n><c-w>j' },
+  { 't', '<a-k>', '<c-\\><c-s-n><c-w>k' },
+  { 't', '<a-l>', '<c-\\><c-s-n><c-w>l' },
 }

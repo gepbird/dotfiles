@@ -67,6 +67,6 @@ require 'Comment'.setup {
 }
 
 require 'user.utils'.register_maps {
-  { 'x', '<space>i', '<plug>(comment_toggle_linewise_visual)' },
+  { 'x', '<space>i',     '<plug>(comment_toggle_linewise_visual)' },
   { 'x', '<space><s-i>', '<plug>(comment_toggle_blockwise_visual)' },
 }

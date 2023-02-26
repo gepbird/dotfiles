@@ -28,5 +28,5 @@ require 'user.utils'.register_maps {
       end
     end
     vim.cmd ':copen'
-  end, },
+  end },
 }

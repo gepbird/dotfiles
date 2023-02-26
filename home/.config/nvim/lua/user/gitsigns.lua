@@ -50,15 +50,15 @@ local function then_write(callback)
 end
 
 require 'user.utils'.register_maps {
-  { 'n', '<space>gj', gs.next_hunk },
-  { 'n', '<space>gk', gs.prev_hunk },
-  { 'nx', '<space>gs', then_write(gs.stage_hunk) },
-  { 'n', '<space>g<s-s>', then_write(gs.stage_buffer) },
-  { 'nx', '<space>gr', then_write(gs.reset_hunk) },
-  { 'n', '<space>g<s-r>', then_write(gs.reset_buffer) },
-  { 'n', '<space>gu', then_write(gs.undo_stage_hunk) },
-  { 'n', '<space>gp', gs.preview_hunk },
-  { 'n', '<space>gb', function() gs.blame_line { full = true } end },
-  { 'n', '<space>gB', gs.toggle_current_line_blame },
-  { 'n', '<space>gd', gs.diffthis },
+  { 'n',  '<space>gj',     gs.next_hunk },
+  { 'n',  '<space>gk',     gs.prev_hunk },
+  { 'nx', '<space>gs',     then_write(gs.stage_hunk) },
+  { 'n',  '<space>g<s-s>', then_write(gs.stage_buffer) },
+  { 'nx', '<space>gr',     then_write(gs.reset_hunk) },
+  { 'n',  '<space>g<s-r>', then_write(gs.reset_buffer) },
+  { 'n',  '<space>gu',     then_write(gs.undo_stage_hunk) },
+  { 'n',  '<space>gp',     gs.preview_hunk },
+  { 'n',  '<space>gb',     function() gs.blame_line { full = true } end },
+  { 'n',  '<space>gB',     gs.toggle_current_line_blame },
+  { 'n',  '<space>gd',     gs.diffthis },
 }

@@ -12,7 +12,7 @@ require 'user.utils'.register_autocmds {
     end,
   },
   {
-    { 'BufRead','BufNewFile' },
+    { 'BufRead', 'BufNewFile' },
     function()
       vim.bo.filetype = 'xml'
     end,

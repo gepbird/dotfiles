@@ -76,7 +76,7 @@ dap.on_run = dap.continue
 dap.on_restart = dap.run_last
 
 require 'user.utils'.register_maps {
-  { 'n', '<space>b', dap.toggle_breakpoint },
+  { 'n', '<space>b',     dap.toggle_breakpoint },
   { 'n', '<space><s-b>', function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end },
   { 'n', '<space><c-b>', function() dap.set_breakpoint(nil, nil, vim.fn.input 'Log point message: ') end },
   { 'n', '<a-up>', function()
@@ -85,32 +85,32 @@ require 'user.utils'.register_maps {
       return
     end
     dap.on_run()
-  end, },
+  end },
   { 'n', '<space>dp', function() dap.on_restart() end },
-  { 'n', '<a-down>', dap.step_over },
-  { 'n', '<a-left>', dap.step_out },
+  { 'n', '<a-down>',  dap.step_over },
+  { 'n', '<a-left>',  dap.step_out },
   { 'n', '<a-right>', dap.step_into },
-  { 'n', '<end>', dap.terminate },
+  { 'n', '<end>',     dap.terminate },
   { 'n', '<a-cr>', function()
     local ok, nvim_tree = pcall(require, 'nvim-tree.view')
     if ok then
       nvim_tree.close()
     end
     dapui.toggle()
-  end, },
-  { 'n', '<space><a-k>', widgets.hover },
-  { 'n', '<space>td', telescope_dap.commands },
-  { 'nv', '<space>de', function() dapui.eval() end },
-  { 'nv', '<space>de', function() dapui.eval() end },
-  { 'n', '<space>d<s-e>', function() dapui.eval(vim.fn.input("Expression: ")) end },
-  { 'n', '<space>dl', function() dapui.float_element('scopes', { enter = true }) end },
-  { 'n', '<space>db', function() dapui.float_element('breakpoints', { enter = true }) end },
-  { 'n', '<space>dw', function() dapui.float_element('watches', { enter = true }) end },
-  { 'n', '<space>ds', function() dapui.float_element('stacks', { enter = true }) end },
-  { 'n', '<space>dr', function() dapui.float_element('repl', { enter = true }) end },
-  { 'n', '<space>dc', function() dapui.float_element('console', { enter = true }) end },
-  { 'n', 't', telescope_dap.variables, { filetype = { 'dapui_scopes', 'dapui_watches' } } },
-  { 'n', 't', telescope_dap.frames, { filetype = 'dapui_stacks' } },
+  end },
+  { 'n',  '<space><a-k>',  widgets.hover },
+  { 'n',  '<space>td',     telescope_dap.commands },
+  { 'nv', '<space>de',     function() dapui.eval() end },
+  { 'nv', '<space>de',     function() dapui.eval() end },
+  { 'n',  '<space>d<s-e>', function() dapui.eval(vim.fn.input("Expression: ")) end },
+  { 'n',  '<space>dl',     function() dapui.float_element('scopes', { enter = true }) end },
+  { 'n',  '<space>db',     function() dapui.float_element('breakpoints', { enter = true }) end },
+  { 'n',  '<space>dw',     function() dapui.float_element('watches', { enter = true }) end },
+  { 'n',  '<space>ds',     function() dapui.float_element('stacks', { enter = true }) end },
+  { 'n',  '<space>dr',     function() dapui.float_element('repl', { enter = true }) end },
+  { 'n',  '<space>dc',     function() dapui.float_element('console', { enter = true }) end },
+  { 'n',  't',             telescope_dap.variables,                                            { filetype = { 'dapui_scopes', 'dapui_watches' } } },
+  { 'n',  't',             telescope_dap.frames,                                               { filetype = 'dapui_stacks' } },
 }
 
 require 'user.dap.debugpy'
