@@ -28,55 +28,6 @@ tree.setup {
     number = false,
     relativenumber = false,
     signcolumn = 'yes',
-    mappings = {
-      custom_only = true,
-      list = {
-        { key = '<c-e>',    action = 'edit_in_place' },
-        { key = '<s-o>',    action = 'edit_no_picker' },
-        { key = 'c',        action = 'cd' },
-        { key = '<c-v>',    action = 'vsplit' },
-        { key = '<c-x>',    action = 'split' },
-        { key = '<c-t>',    action = 'tabnew' },
-        { key = '<c-k>',    action = 'prev_sibling' },
-        { key = '<c-j>',    action = 'next_sibling' },
-        { key = 'P',        action = 'parent_node' },
-        { key = 'h',        action = 'close_node' },
-        { key = 'l',        action = 'open_node' }, -- and edit
-        { key = '<s-h>',    action = 'collapse_all' },
-        { key = '<s-l>',    action = 'expand_all' },
-        { key = '<tab>',    action = 'preview' },
-        { key = '<s-i>',    action = 'toggle_git_ignored' },
-        { key = '<s-d>',    action = 'toggle_dotfiles' },
-        { key = '<s-u>',    action = 'toggle_custom' },
-        { key = '<s-r>',    action = 'refresh' },
-        { key = 'a',        action = 'create' },
-        { key = '<s-d>',    action = 'remove' },
-        { key = 'd',        action = 'trash' },
-        { key = '<c-r>',    action = 'rename' },
-        { key = 'r',        action = 'full_rename' },
-        { key = 'x',        action = 'cut' },
-        { key = 'y',        action = 'copy' },
-        { key = 'p',        action = 'paste' },
-        { key = '<c-y>',    action = 'copy_name' },
-        { key = '<s-y>',    action = 'copy_path' },
-        { key = 'gy',       action = 'copy_absolute_path' },
-        { key = '[e',       action = 'prev_diag_item' },
-        { key = '[c',       action = 'prev_git_item' },
-        { key = ']e',       action = 'next_diag_item' },
-        { key = ']c',       action = 'next_git_item' },
-        { key = '-',        action = 'dir_up' },
-        { key = 's',        action = 'system_open' },
-        { key = 'f',        action = 'live_filter' },
-        { key = 'F',        action = 'clear_live_filter' },
-        { key = 'q',        action = 'close' },
-        { key = '<s-s>',    action = 'search_node' },
-        { key = '.',        action = 'run_file_command' },
-        { key = '<space>k', action = 'toggle_file_info' },
-        { key = 'g?',       action = 'toggle_help' },
-        { key = 'm',        action = 'toggle_mark' },
-        { key = 'bmv',      action = 'bulk_move' },
-      },
-    },
   },
   renderer = {
     add_trailing = false,
@@ -222,6 +173,58 @@ tree.setup {
       watcher = false,
     },
   },
+  on_attach = function(bufnr)
+    local api = require 'nvim-tree.api'
+
+    local opts = function(desc)
+      return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    vim.keymap.set('n', '<c-e>', api.node.open.replace_tree_buffer, opts 'Open: In Place')
+    vim.keymap.set('n', '<s-o>', api.node.open.no_window_picker, opts 'Open: No Window Picker')
+    vim.keymap.set('n', 'c', api.tree.change_root_to_node, opts 'CD')
+    vim.keymap.set('n', '<c-v>', api.node.open.vertical, opts 'Open: Vertical Split')
+    vim.keymap.set('n', '<c-x>', api.node.open.horizontal, opts 'Open: Horizontal Split')
+    vim.keymap.set('n', '<c-t>', api.node.open.tab, opts 'Open: New Tab')
+    vim.keymap.set('n', '<c-k>', api.node.navigate.sibling.prev, opts 'Previous Sibling')
+    vim.keymap.set('n', '<c-j>', api.node.navigate.sibling.next, opts 'Next Sibling')
+    vim.keymap.set('n', '<s-p>', api.node.navigate.parent, opts 'Parent Directory')
+    vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts 'Close Directory')
+    vim.keymap.set('n', 'l', api.node.open.edit, opts 'Open')
+    vim.keymap.set('n', '<s-h>', api.tree.collapse_all, opts 'Collapse')
+    vim.keymap.set('n', '<s-l>', api.tree.expand_all, opts 'Expand All')
+    vim.keymap.set('n', '<tab>', api.node.open.preview, opts 'Open Preview')
+    vim.keymap.set('n', '<s-i>', api.tree.toggle_gitignore_filter, opts 'Toggle Git Ignore')
+    vim.keymap.set('n', '<s-d>', api.tree.toggle_hidden_filter, opts 'Toggle Dotfiles')
+    vim.keymap.set('n', '<s-u>', api.tree.toggle_custom_filter, opts 'Toggle Hidden')
+    vim.keymap.set('n', '<s-r>', api.tree.reload, opts 'Refresh')
+    vim.keymap.set('n', 'a', api.fs.create, opts 'Create')
+    vim.keymap.set('n', '<s-d>', api.fs.remove, opts 'Delete')
+    vim.keymap.set('n', 'd', api.fs.trash, opts 'Trash')
+    vim.keymap.set('n', '<c-r>', api.fs.rename, opts 'Rename')
+    vim.keymap.set('n', 'r', api.fs.rename_sub, opts 'Rename: Omit Filename')
+    vim.keymap.set('n', 'x', api.fs.cut, opts 'Cut')
+    vim.keymap.set('n', 'y', api.fs.copy.node, opts 'Copy')
+    vim.keymap.set('n', 'p', api.fs.paste, opts 'Paste')
+    vim.keymap.set('n', '<c-y>', api.fs.copy.filename, opts 'Copy Name')
+    vim.keymap.set('n', '<s-y>', api.fs.copy.relative_path, opts 'Copy Relative Path')
+    vim.keymap.set('n', 'gy', api.fs.copy.absolute_path, opts 'Copy Absolute Path')
+    vim.keymap.set('n', '[e', api.node.navigate.diagnostics.prev, opts 'Prev Diagnostic')
+    vim.keymap.set('n', '[c', api.node.navigate.git.prev, opts 'Prev Git')
+    vim.keymap.set('n', ']e', api.node.navigate.diagnostics.next, opts 'Next Diagnostic')
+    vim.keymap.set('n', ']c', api.node.navigate.git.next, opts 'Next Git')
+    vim.keymap.set('n', '-', api.tree.change_root_to_parent, opts 'Up')
+    vim.keymap.set('n', 's', api.node.run.system, opts 'Run System')
+    vim.keymap.set('n', 'f', api.live_filter.start, opts 'Filter')
+    vim.keymap.set('n', 'F', api.live_filter.clear, opts 'Clean Filter')
+    vim.keymap.set('n', 'q', api.tree.close, opts 'Close')
+    vim.keymap.set('n', '<s-s>', api.tree.search_node, opts 'Search')
+    vim.keymap.set('n', '.', api.node.run.cmd, opts 'Run Command')
+    vim.keymap.set('n', '<space>k', api.node.show_info_popup, opts 'Info')
+    vim.keymap.set('n', 'g?', api.tree.toggle_help, opts 'Help')
+    vim.keymap.set('n', 'm', api.marks.toggle, opts 'Toggle Bookmark')
+    vim.keymap.set('n', 'bmv', api.marks.bulk.move, opts 'Move Bookmarked')
+  end,
 }
 
 require 'user.utils'.register_maps {
