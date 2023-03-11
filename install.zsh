@@ -281,11 +281,11 @@ teams() {
 packet_tracer() {
   if ! paru -Q | grep -q packettracer; then
     git clone https://aur.archlinux.org/packettracer.git
-    deb_link='https://www.netacad.com/portal/resources/file/36b7afbe-2109-40d3-aa8e-d57a18531687'
-    downloads_link='https://www.netacad.com/portal/node/488'
+    deb_link='https://www.netacad.com/portal/resources/file/f40aaa18-2b25-4337-81a3-8f989232abf6'
+    downloads_link='https://www.netacad.com/portal/resources/packet-tracer'
     echo "------------------packet-tracer------------------"
     echo "Log in to netacad and"
-    echo " - download packet tracer version 8.2.0 from $deb_link"
+    echo " - download packet tracer from $deb_link"
     echo " - or choose another version from $downloads_link "
     echo "Wait for the download to complete"
     echo "If the script doesnt continue, try manually moving the downloaded deb file to "$(pwd)"/packettracer"
@@ -299,7 +299,8 @@ packet_tracer() {
     # packet tracer version in the deb and AUR PKBUILD may differ, put deb version to PKGBUILD
     echo "Patching PKGBUILD"
     deb_file=$(exa | grep *.deb)
-    echo "source=('local://$deb_file' 'packettracer.sh')" | tee -a PKGBUILD
+    echo "source=('local://$deb_file' 'packettracer.sh' 'cisco-pt.desktop' 'cisco-ptsa.desktop')" | \
+      tee -a PKGBUILD
     makepkg -src --skipchecksums
     paru -U --noconfirm *.pkg.*
     cd ..
