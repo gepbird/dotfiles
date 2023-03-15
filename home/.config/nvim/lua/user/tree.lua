@@ -1,6 +1,6 @@
-local tree = require 'nvim-tree'
+local api = require 'nvim-tree.api'
 
-tree.setup {
+require 'nvim-tree'.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
@@ -174,8 +174,6 @@ tree.setup {
     },
   },
   on_attach = function(bufnr)
-    local api = require 'nvim-tree.api'
-
     local opts = function(desc)
       return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end
@@ -228,5 +226,5 @@ tree.setup {
 }
 
 require 'user.utils'.register_maps {
-  { 'n', '<space>e', tree.toggle },
+  { 'n', '<space>e', api.tree.toggle },
 }
