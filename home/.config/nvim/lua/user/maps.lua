@@ -63,8 +63,8 @@ require 'user.utils'.register_maps {
   { 'n',   '<s-z>',        '<s-j>' },
   { 'nxi', '<a-f>',        'mfgg=G`f' },
 
-  { 'n',   ',',            'mz$a,<esc>`z' },
-  { 'n',   ';',            'mz$a;<esc>`z' },
+  { 'n',   ',',            'mz<s-a>,<esc>`z' },
+  { 'n',   ';',            'mz<s-a>;<esc>`z' },
   { 'n',   'w',            'ciw' },
 
   { 'n',   '<c-r>',        ':lua reload_config()<cr>' },
