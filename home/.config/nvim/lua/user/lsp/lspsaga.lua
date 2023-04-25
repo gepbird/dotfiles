@@ -45,6 +45,6 @@ require 'user.utils'.register_maps {
   { 'n', '<space>r',        function() require 'lspsaga.rename':lsp_rename() end },
   { 'n', '<space>k',        function() require 'lspsaga.hover':render_hover_doc() end },
   { 'n', '<space><space>k', function() require 'lspsaga.hover':render_hover_doc '++keep' end },
-  { 'n', '<space><c-k>',    function() require 'lspsaga.diagnostic':show_diagnostics(arg, 'line') end },
+  { 'n', '<space><c-k>',    function() require 'lspsaga.showdiag':show_diagnostics { line = true, arg = '++unfocus' } end },
   { 'n', '<space>lo',       function() require 'lspsaga.outline':render_outline() end },
 }
