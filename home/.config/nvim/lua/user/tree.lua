@@ -124,7 +124,7 @@ require 'nvim-tree'.setup {
     use_system_clipboard = true,
     change_dir = {
       enable = true,
-      global = false,
+      global = true,
       restrict_above_cwd = false,
     },
     expand_all = {
