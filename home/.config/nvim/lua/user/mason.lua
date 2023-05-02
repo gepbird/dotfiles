@@ -11,3 +11,5 @@ require 'mason-tool-installer'.setup {
   },
   auto_update = true,
 }
+
+require 'user.lsp'
