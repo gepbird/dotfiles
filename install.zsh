@@ -101,8 +101,8 @@ pipewire() {
 nerdfonts() {
   paci ttf-iosevka-nerd
   mkdir -p ~/.local/share/fonts
-  ln -vsf "/usr/share/fonts/TTF/Iosevka Nerd Font Complete.ttf" \
-    "$HOME/.local/share/fonts/Iosevka Nerd Font Complete.ttf"
+  ln -vsf "/usr/share/fonts/TTF/IosevkaNerdFont-Regular.ttf" \
+    "$HOME/.local/share/fonts/IosevkaNerdFont-Regular.ttf"
 }
 
 emojifont() {
