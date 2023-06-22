@@ -190,7 +190,7 @@ flutter_install() {
 
 java() {
   queue extra/jdk8-openjdk
-  queue extra/jdk19-openjdk
+  queue extra/jdk-openjdk
 }
 
 nodejs() {
