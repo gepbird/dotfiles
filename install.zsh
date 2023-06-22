@@ -229,6 +229,10 @@ onlyoffice() {
   queue aur/onlyoffice-bin
 }
 
+nvidia() {
+  link .config/nvidia
+}
+
 wine() {
   paci multilib/wine-staging
   paci multilib/winetricks
@@ -503,6 +507,7 @@ if test $# -eq 0; then
   sqlite
   dbeaver
   onlyoffice
+  nvidia
   wine
   steam
   #heroic

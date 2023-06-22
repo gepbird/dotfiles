@@ -25,6 +25,9 @@ setxkbmap -option "caps:escape"
 # theming for X apps
 xrdb -load ~/.config/Xresources
 
+# load nvidia config
+nvidia-settings --load-config-only --config="$XDG_CONFIG_HOME/nvidia/settings"
+
 # auto start apps
 redshift &
 dunst &
