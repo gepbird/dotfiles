@@ -270,7 +270,7 @@ minecraft() {
 }
 
 osu() {
-  queue aur/osu-lazer-git
+  queue aur/osu-lazer-bin
   queue aur/opentabletdriver-git
 }
 
