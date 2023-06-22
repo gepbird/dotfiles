@@ -67,9 +67,6 @@ require 'user.utils'.register_maps {
   { 'n',   ';',            'mz<s-a>;<esc>`z' },
   { 'n',   'w',            'ciw' },
 
-  { 'n',   '<c-r>',        ':lua reload_config()<cr>' },
-  { 'n',   '<a-r>',        ':e $MYVIMRC<cr>' },
-
   { 'n',   '<tab>',        ':bnex<cr>' },
   { 'n',   '<s-tab>',      ':bprevious<cr>' },
   { 'n',   '<c-n>',        ':enew<cr>' },
