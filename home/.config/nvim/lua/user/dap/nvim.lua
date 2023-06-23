@@ -16,7 +16,7 @@ dap.adapters.nlua = function(callback, config)
 end
 
 local function on_run()
-  local launch = [[st -e sh -c "nvim -c \"lua require 'osv'.launch { port = ]] .. port .. [[}\""]]
+  local launch = [[xfce4-terminal -e "nvim -c \"lua require 'osv'.launch { port = ]] .. port .. [[}\""]]
   vim.fn.jobstart(launch)
   vim.wait(1000)
   dap.continue()
