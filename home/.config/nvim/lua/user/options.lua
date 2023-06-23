@@ -36,7 +36,7 @@ o.scrolloff = 8 -- always see the last x lines
 o.sidescrolloff = 8
 --o.guifont = 'monospace:h17'               -- the font used in graphical neovim applications
 o.shortmess:append 'c' -- turn off common vim messages
-o.listchars = 'space:·,tab:··,eol:' -- define whitespace rendering
+o.listchars = 'space:·,tab:  󰌒,eol:󰌑' -- define whitespace rendering
 o.list = true -- show whitespace
 --o.whichwrap:append '<,>,[,],h,l'          -- can move to next line when pressing these keys
 o.iskeyword:append '-' -- what characters count as a word movement
