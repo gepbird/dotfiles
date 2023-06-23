@@ -380,6 +380,11 @@ startup() {
   link .config/X11
 }
 
+xfce4-terminal() {
+  queue xfce4-terminal
+  link .config/xfce
+}
+
 suckless() {
   link .local/share/dwm
   sudo make install --directory ~/.local/share/dwm
@@ -532,6 +537,7 @@ if test $# -eq 0; then
   sshfs
   xampp
   startup
+  xfce4-terminal
   suckless
   dunst
   clac
