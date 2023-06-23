@@ -69,7 +69,7 @@ packer.startup(function(use)
 
   use { 'ThePrimeagen/vim-be-good' }
   use { 'moll/vim-bbye' }
-  --use { 'github/copilot.vim', config = function() require 'user.copilot' end }
+  use { 'github/copilot.vim', config = function() require 'user.copilot' end }
 end)
 
 require 'user.utils'.register_maps {
