@@ -27,6 +27,7 @@ packer.startup(function(use)
     run = function() require 'nvim-treesitter.install'.update { with_sync = true } end, }
   use { 'p00f/nvim-ts-rainbow' }
   use { 'nvim-treesitter/nvim-treesitter-textobjects' }
+  use { 'nvim-treesitter/playground' }
 
   use { 'nvim-telescope/telescope.nvim', config = function() require 'user.telescope' end }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
