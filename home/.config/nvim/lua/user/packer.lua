@@ -61,6 +61,7 @@ packer.startup(function(use)
   use { 'theHamsta/nvim-dap-virtual-text' }
   use { 'nvim-telescope/telescope-dap.nvim' }
 
+  use { 'simrat39/rust-tools.nvim', config = function() require 'user.rusttools' end }
   use { 'akinsho/flutter-tools.nvim', config = function() require 'user.fluttertools' end }
   use { 'mfussenegger/nvim-jdtls' }
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install',
