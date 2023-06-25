@@ -1,3 +1,7 @@
+-- disable chaning tabstop by ftplugin
+vim.cmd 'let g:rust_recommended_style = 0'
+vim.cmd 'let g:python_recommended_style = 0'
+
 local o = vim.opt
 local g = vim.g
 
