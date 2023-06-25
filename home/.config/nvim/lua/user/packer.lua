@@ -9,7 +9,7 @@ packer.startup(function(use)
   use { 'Joakker/lua-json5', run = 'OSTYPE="linux-gnu" ./install.sh' }
 
   use { 'rcarriga/nvim-notify', config = function() require 'user.notify' end }
-  use { 'LunarVim/darkplus.nvim', config = function() require 'user.colorscheme' end }
+  use { 'gutyina70/darkplus.nvim', config = function() require 'user.colorscheme' end }
   use { 'nvim-lualine/lualine.nvim', config = function() require 'user.lualine' end }
   use { 'akinsho/bufferline.nvim', config = function() require 'user.bufferline' end }
   use { 'kyazdani42/nvim-tree.lua', config = function() require 'user.tree' end }
