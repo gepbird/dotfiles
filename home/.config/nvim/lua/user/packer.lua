@@ -32,6 +32,7 @@ packer.startup(function(use)
   use { 'nvim-telescope/telescope.nvim', config = function() require 'user.telescope' end }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
   use { 'nvim-telescope/telescope-media-files.nvim' }
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
 
   use { 'tpope/vim-fugitive', config = function() require 'user.fugitive' end }
   use { 'tpope/vim-rhubarb' }

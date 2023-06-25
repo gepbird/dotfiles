@@ -81,11 +81,15 @@ telescope.setup {
       filetypes = { 'png', 'webp', 'jpg', 'jpeg' },
       find_cmd = 'rg',
     },
+    ['ui-select'] = {
+      require 'telescope.themes'.get_dropdown {},
+    },
   },
 }
 
 telescope.load_extension 'file_browser'
 telescope.load_extension 'media_files'
+telescope.load_extension 'ui-select'
 
 local builtin = require 'telescope.builtin'
 local find_command = { 'rg', '--files', '--glob=!.git', '--color', 'never' }
