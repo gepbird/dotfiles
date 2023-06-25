@@ -1,8 +1,6 @@
-local mason_registry = require 'mason-registry'
-local codelldb = mason_registry.get_package 'codelldb'
-local extension_path = codelldb:get_install_path() .. '/extension/'
-local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
+local codelldb_extension_path = vim.fn.expand '~/.local/share/nvim/mason/packages/codelldb/extension/'
+local codelldb_path = codelldb_extension_path .. 'adapter/codelldb'
+local liblldb_path = codelldb_extension_path .. 'lldb/lib/liblldb.so'
 
 require 'rust-tools'.setup {
   tools = {
@@ -142,17 +140,7 @@ require 'rust-tools'.setup {
     standalone = true,
   }, -- rust-analyzer options
 
-  -- TODO: fix DAP
- dap =
-  {
-    adapter = {
-      type = 'server',
-      port = '14000',
-      host = '127.0.0.1',
-      executable = {
-        command = codelldb_path,
-        args = { '--liblldb', liblldb_path, '--port', '14000' },
-      },
-    },
+  dap = {
+    adapter = require 'rust-tools.dap'.get_codelldb_adapter(codelldb_path, liblldb_path),
   },
 }
