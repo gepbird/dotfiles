@@ -15,6 +15,7 @@ packer.startup(function(use)
   use { 'kyazdani42/nvim-tree.lua', config = function() require 'user.tree' end }
   use { 'akinsho/toggleterm.nvim', config = function() require 'user.toggleterm' end }
   use { 'kevinhwang91/nvim-bqf', config = function() require 'user.bqf' end }
+  use { 'mbbill/undotree', config = function() require 'user.undotree' end }
 
   use { 'tpope/vim-repeat' }
   use { 'machakann/vim-sandwich', config = function() require 'user.sandwich' end }
