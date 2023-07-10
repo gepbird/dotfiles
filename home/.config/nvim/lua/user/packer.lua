@@ -67,7 +67,7 @@ packer.startup(function(use)
   use { 'williamboman/mason-lspconfig.nvim' }
   use { 'neovim/nvim-lspconfig' }
   use { 'jose-elias-alvarez/null-ls.nvim', config = function() require 'user.lsp.null-ls' end }
-  use { 'glepnir/lspsaga.nvim', config = function() require 'user.lsp.lspsaga' end }
+  use { 'nvimdev/lspsaga.nvim', config = function() require 'user.lsp.lspsaga' end }
   use { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end }
   use { 'j-hui/fidget.nvim', tag = 'legacy', config = function() require 'user.lsp.fidget' end }
 
