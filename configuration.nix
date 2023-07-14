@@ -40,6 +40,35 @@
     defaultEditor = true;
   };
 
+  programs.git = {
+    enable = true;
+    config = {
+      user = {
+        name = "Gutyina Gergő";
+        email = "gutyina.gergo.2@gmail.com";
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      alias = {
+        c = "commit -S";
+        ca = "commit -S --amend";
+        s = "status -uno";
+        b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
+        d = "diff";
+        co = "checkout";
+        p = "!git pull && git push";
+        l = "!git log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
+      };
+      core = {
+        editor = "nvim";
+      };
+      push = {
+        autoSetupRemote = true;
+      };
+    };
+  };
+
   # Don't forget to set a password with ‘passwd’.
   users.users.gep = {
     isNormalUser = true;
