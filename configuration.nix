@@ -35,6 +35,13 @@
 
   services.xserver.layout = "hu";
 
+  # GPG with pinentry, used to sign git commits.
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+     enable = true;
+     enableSSHSupport = true;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
