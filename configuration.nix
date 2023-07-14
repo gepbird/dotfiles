@@ -84,6 +84,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    wget
+    zip
+    unzip
+    fzf
+    file
+    ripgrep
+    fd
+    exa
+    bat
+    xdotool
+    xclip
+    xzoom
+    xdragon
+    colorpicker
+    neofetch # TODO: switch to fastfetch when released
+    btop
+    w3m
   ];
 
   nixpkgs.config = {
