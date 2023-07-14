@@ -8,6 +8,7 @@
   imports =
   [
     ./hardware-configuration.nix
+    ./home.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
