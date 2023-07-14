@@ -35,6 +35,15 @@
 
   services.xserver.layout = "hu";
 
+  location.provider = "geoclue2";
+  services.redshift = {
+    enable = true;
+    temperature = {
+      day = 4000;
+      night = 2700;
+    };
+  };
+
   # GPG with pinentry, used to sign git commits.
   services.pcscd.enable = true;
   programs.gnupg.agent = {
