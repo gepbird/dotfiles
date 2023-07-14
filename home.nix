@@ -13,6 +13,10 @@ in
   home-manager.users.gep = {
     home.stateVersion = "23.05";
     home.file = {
+      ".config/nvim/ftplugin".source = ./home/.config/nvim/ftplugin;
+      ".config/nvim/lua".source = ./home/.config/nvim/lua;
+      ".config/nvim/init.lua".source = ./home/.config/nvim/init.lua;
+      ".config/nvim/.luarc.json".source = ./home/.config/nvim/.luarc.json;
     };
   };
 }

@@ -35,6 +35,8 @@
 
   services.xserver.layout = "hu";
 
+  programs.neovim.enable = true;
+
   # Don't forget to set a password with ‘passwd’.
   users.users.gep = {
     isNormalUser = true;
