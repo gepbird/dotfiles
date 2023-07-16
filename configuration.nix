@@ -35,6 +35,10 @@
 
   services.xserver.layout = "hu";
 
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+  ];
+
   location.provider = "geoclue2";
   services.redshift = {
     enable = true;
