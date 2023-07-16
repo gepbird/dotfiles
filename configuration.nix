@@ -54,6 +54,12 @@
      enable = true;
   };
 
+  # Sound.
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -122,6 +128,7 @@
     neofetch # TODO: switch to fastfetch when released
     btop
     w3m
+    pavucontrol
   ];
 
   nixpkgs.config = {
