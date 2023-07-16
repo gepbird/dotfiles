@@ -84,6 +84,11 @@
     };
   };
 
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox-devedition;
+  };
+
   # Don't forget to set a password with ‘passwd’.
   users.users.gep = {
     isNormalUser = true;
