@@ -96,12 +96,15 @@
     wget
     zip
     unzip
+    unrar
     fzf
     file
     ripgrep
     fd
     exa
     bat
+    xorg.xkill
+    xorg.xev
     xdotool
     xclip
     xzoom
