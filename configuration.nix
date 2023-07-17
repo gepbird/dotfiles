@@ -99,6 +99,10 @@
     package = pkgs.firefox-devedition;
   };
 
+  programs.steam = {
+    enable = true;
+  };
+
   # Don't forget to set a password with ‘passwd’.
   users.users.gep = {
     isNormalUser = true;
