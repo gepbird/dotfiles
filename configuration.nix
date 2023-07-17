@@ -128,6 +128,21 @@
     neofetch # TODO: switch to fastfetch when released
     btop
     w3m
+    gcc
+    gnumake
+    rustc
+    cargo
+    php
+    php83Packages.composer
+    python3
+    python311Packages.pip
+    nodejs
+    openjdk8
+    openjdk19
+    gradle
+    dotnet-sdk
+    flutter
+    sqlite
     pavucontrol
   ];
 

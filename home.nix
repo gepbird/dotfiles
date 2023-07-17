@@ -17,6 +17,7 @@ in
       ".config/nvim/lua".source = ./home/.config/nvim/lua;
       ".config/nvim/init.lua".source = ./home/.config/nvim/init.lua;
       ".config/nvim/.luarc.json".source = ./home/.config/nvim/.luarc.json;
+      ".omnisharp".source = ./home/.omnisharp;
     };
   };
 }
