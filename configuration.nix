@@ -148,12 +148,15 @@
     flutter
     sqlite
     pavucontrol
+    dbeaver
     flameshot
     gimp
     kdenlive
     obs-studio
     mpv
     nsxiv
+    cinnamon.nemo
+    qdirstat
     (discord.override { withOpenASAR = true; })
   ];
 
