@@ -148,6 +148,12 @@
     flutter
     sqlite
     pavucontrol
+    flameshot
+    gimp
+    kdenlive
+    obs-studio
+    mpv
+    nsxiv
   ];
 
   nixpkgs.config = {
