@@ -154,6 +154,7 @@
     obs-studio
     mpv
     nsxiv
+    (discord.override { withOpenASAR = true; })
   ];
 
   nixpkgs.config = {
