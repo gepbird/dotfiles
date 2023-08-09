@@ -174,16 +174,25 @@
     flutter
     sqlite
     pavucontrol
+    gparted
     dbeaver
+    postman
+    ungoogled-chromium
+    screenkey
     flameshot
     gimp
     kdenlive
     obs-studio
     mpv
+    onlyoffice-bin
     nsxiv
     cinnamon.nemo
     qdirstat
+    anydesk
+    rustdesk
     (discord.override { withOpenASAR = true; })
+    prismlauncher
+    osu-lazer
   ];
 
   nixpkgs.config = {
