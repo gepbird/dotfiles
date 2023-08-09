@@ -94,6 +94,32 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      format = lib.concatStrings [
+        "$username"
+        "$hostname"
+        "$directory"
+        "$character"
+      ];
+      directory = {
+        style = "blue";
+      };
+      character = {
+        success_symbol = "[❯](purple)";
+        error_symbol = "[❯](red)";
+        vicmd_symbol = "[❮](green)";
+      };
+      hostname = {
+        ssh_only = true;
+        format = "@[$hostname]($style) ";
+        style = "bold dimmed white";
+      };
+    };
+  };
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-devedition;
