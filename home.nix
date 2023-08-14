@@ -12,6 +12,37 @@ in
 
   home-manager.sharedModules = [
     {
+      programs.git = {
+        enable = true;
+        aliases = {
+          c = "commit -S";
+          ca = "commit -S --amend";
+          s = "status -uno";
+          b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
+          d = "diff";
+          co = "checkout";
+          cl = "clone";
+          p = "!git pull && git push";
+          l = "!git log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
+        };
+        extraConfig = {
+          user = {
+            name = "Gutyina Gergő";
+            email = "gutyina.gergo.2@gmail.com";
+          };
+          init = {
+            defaultBranch = "main";
+          };
+          core = {
+            editor = "nvim";
+          };
+          push = {
+            autoSetupRemote = true;
+          };
+        };
+      };
+    }
+    {
       programs.lf = {
         enable = true;
         settings = {
@@ -107,6 +138,33 @@ in
         previewer = {
           source = pkgs.writeShellScript "pv.sh" "${pkgs.pistol}/bin/pistol \"$1\"";
           keybinding = "i";
+        };
+      };
+    }
+    {
+      programs.starship = {
+        enable = true;
+        settings = {
+          add_newline = false;
+          format = lib.concatStrings [
+            "$username"
+            "$hostname"
+            "$directory"
+            "$character"
+          ];
+          directory = {
+            style = "blue";
+          };
+          character = {
+            success_symbol = "[❯](purple)";
+            error_symbol = "[❯](red)";
+            vicmd_symbol = "[❮](green)";
+          };
+          hostname = {
+            ssh_only = true;
+            format = "@[$hostname]($style) ";
+            style = "bold dimmed white";
+          };
         };
       };
     }
