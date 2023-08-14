@@ -200,6 +200,8 @@
     (discord.override { withOpenASAR = true; })
     prismlauncher
     osu-lazer
+    wineWowPackages.staging
+    winetricks
   ];
 
   nixpkgs.config = {
