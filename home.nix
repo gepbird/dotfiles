@@ -194,6 +194,7 @@ in
       ".config/nvim/.luarc.json".source = ./home/.config/nvim/.luarc.json;
       ".omnisharp".source = ./home/.omnisharp;
       ".config/lf/icons".source = ./home/.config/lf/icons;
+      ".config/xfce4/terminal/terminalrc".source = ./home/.config/xfce4/terminal/terminalrc;
     };
   };
 }

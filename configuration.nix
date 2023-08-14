@@ -124,6 +124,7 @@
     dotnet-sdk
     flutter
     sqlite
+    xfce.xfce4-terminal
     pavucontrol
     gparted
     dbeaver
