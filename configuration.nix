@@ -142,12 +142,18 @@
     zip
     unzip
     unrar
+    p7zip
     fzf
     file
     ripgrep
+    hck
     fd
     exa
     bat
+    sshfs
+    exiftool
+    perl536Packages.FileMimeInfo
+    killall
     xorg.xkill
     xorg.xev
     xdotool
