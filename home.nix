@@ -101,6 +101,16 @@ in
           cmd term %${pkgs.xfce.xfce4-terminal}/bin/xfce4-terminal
 
           cmd dragon %set -f; ${pkgs.xdragon}/bin/xdragon --and-exit --all $fx
+
+          cmd j %{{
+            result="$(${pkgs.zoxide}/bin/zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+            lf -remote "send $id cd \"$result\""
+          }}
+
+          cmd ji ''${{
+            result="$(${pkgs.zoxide}/bin/zoxide query -i $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+            lf -remote "send $id cd \"$result\""
+          }}
         '';
         keybindings = {
           # $ = execute shell command
@@ -134,6 +144,8 @@ in
           "R" = ":reload";
           "t" = ":term";
           "ő" = ":dragon";
+          "o" = "push :j<space>";
+          "O" = ":ji";
         };
         previewer = {
           source = pkgs.writeShellScript "pv.sh" "${pkgs.pistol}/bin/pistol \"$1\"";
@@ -166,6 +178,12 @@ in
             style = "bold dimmed white";
           };
         };
+      };
+    }
+    {
+      programs.zoxide = {
+        enable = true;
+        options = [ "--cmd j" ];
       };
     }
     {
