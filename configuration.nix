@@ -15,6 +15,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
 
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 4 * 1024;
+  }];
+
   networking.hostName = "geptop";
   networking.networkmanager.enable = true;
 
