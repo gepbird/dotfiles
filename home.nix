@@ -29,12 +29,16 @@ in
           user = {
             name = "Gutyina Gergő";
             email = "gutyina.gergo.2@gmail.com";
+            signingKey = "~/.ssh/id_ed25519.pub";
           };
           init = {
             defaultBranch = "main";
           };
           core = {
             editor = "nvim";
+          };
+          gpg = {
+            format = "ssh";
           };
           push = {
             autoSetupRemote = true;

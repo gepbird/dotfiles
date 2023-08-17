@@ -53,12 +53,6 @@
     };
   };
 
-  # GPG with pinentry, used to sign git commits.
-  services.pcscd.enable = true;
-  programs.gnupg.agent = {
-     enable = true;
-  };
-
   # Sound.
   services.pipewire = {
     enable = true;
