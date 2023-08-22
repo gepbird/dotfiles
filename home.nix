@@ -185,6 +185,114 @@ in
           # TODO: remove when merged: https://github.com/NixOS/nixpkgs/pull/250761
           _JAVA_AWT_WM_NONREPARENTING = 1; # fix java apps blank screen
         };
+        shellAliases = {
+          ls = "${pkgs.exa}/bin/exa --color=always --group-directories-first --icons";
+          cat = "${pkgs.bat}/bin/bat --style rule --style snip --style changes --style header";
+          cut = "${pkgs.hck}/bin/hck";
+          grep = "${pkgs.ripgrep}/bin/rg -i --color=auto";
+
+          v = "${pkgs.neovim}/bin/nvim";
+          g = "${pkgs.git}/bin/git";
+          la = "ls -la";
+          lff = "ls -la | grep";
+          ff = "${pkgs.fd}/bin/fd | grep";
+          cf = "cd $(find . -type d | fzf)";
+          rmf = "sudo rm -rf";
+          clip = "${pkgs.xsel}/bin/xsel -b";
+          dnd = "${pkgs.xdragon}/bin/xdragon --and-exit --all";
+          getpid = "${pkgs.xdotool}/bin/xdotool getwindowpid $(${pkgs.xdotool}/bin/xdotool selectwindow)";
+          whatsmyip = "${pkgs.curl}/bin/curl ifconfig.me";
+          # TODO: use pkgs.colorpicker when merged: https://github.com/NixOS/nixpkgs/pull/250636
+          pickcolor = "colorpicker --one-shot --preview --short";
+          sk = "${pkgs.screenkey}/bin/screenkey --timeout 2 --font-size small --key-mode raw --mouse";
+          zshreload = "source $ZDOTDIR/.zshrc";
+          update = "sudo nixos-rebuild switch -I nixos-config=$HOME/Linux-setup/configuration.nix";
+          cleanup = "sudo nix-collect-garbage --delete-older-than";
+          try = "nix-shell -p";
+
+          sysi = "systemctl status";
+          sysr = "sudo systemctl restart";
+          sysl = "sudo systemctl start";
+          syss = "sudo systemctl stop";
+          syse = "sudo systemctl enable --now";
+          sysE = "sudo systemctl enable";
+          sysd = "sudo systemctl disable --now";
+          sysD = "sudo systemctl disable";
+          sysdr = "sudo systemctl daemon-reload";
+        };
+        initExtra = ''
+          mvbak() { mv $1 $1.bak }
+          cpbak() { cp $1 $1.bak -r }
+
+          wordcount() { echo $1 | wc -w }
+
+          extract() {
+            case $1 in
+              *.zip); echo $1; directoryName="''${1%.*}";;
+              *.tar.gz); directoryName="''${1%.*.*}";;
+              *.rar); directoryName="''${1%.*}";;
+              *); echo 'This format is not supported'; return 1;;
+            esac
+
+            mkdir $directoryName
+            mv $1 $directoryName
+            cd $directoryName
+
+            case $1 in
+              *.zip); ${pkgs.unzip}/bin/unzip $1;;
+              *.tar.gz); tar xvf $1;;
+              *.rar); ${pkgs.unrar}/bin/unrar x $1;;
+            esac
+          }
+
+          cl() {
+            tmp="$(mktemp)"
+            ${pkgs.lf}/bin/lf -last-dir-path="$tmp" "$@"
+            if test -f "$tmp"; then
+              dir="$(cat "$tmp")"
+              rm -f "$tmp"
+              if test -d "$dir" && test "$dir" != "$(pwd)"; then
+                cd "$dir"
+              fi
+            fi
+          }
+
+          github-ssh() {
+            private_key="$HOME/.ssh/id_ed25519"
+            public_key="$private_key.pub"
+            github_link='https://github.com/settings/ssh/new'
+
+            echo "Generating ssh key to $key_file"
+            ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -f $private_key
+
+            echo "Add the ssh key below to github as an Authentication and a Signing key: $github_link"
+            echo '----BEGIN SSH PUBLIC KEY BLOCK----'
+            ${pkgs.bat}/bin/bat --style snip $public_key
+            echo '-----END SSH PUBLIC KEY BLOCK-----'
+
+            ${pkgs.xdg-utils}/bin/xdg-open $github_link
+            cat $public_key | ${pkgs.xsel}/bin/xsel -b
+            echo 'Opened github in browser and copied ssh key to clipboard'
+          }
+
+          # used to make home manager generated config files editable
+          unnix() {
+            temp_file=$(mktemp)
+            cat $1 > $temp_file
+            mv $temp_file $1
+          }
+
+          # edit a home manager generated file then restore it
+          nixedit() {
+            temp_link=$(mktemp -u)
+            mv $1 $temp_link
+            cat $temp_link > $1
+            ${pkgs.neovim}/bin/nvim $1
+            mv $temp_link $1
+          }
+
+          nixwhere() { realpath $(which $1) }
+        '';
       };
     }
     {
