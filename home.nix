@@ -158,6 +158,36 @@ in
       };
     }
     {
+      programs.zsh = {
+        enable = true;
+        autocd = true;
+        dotDir = ".config/zsh";
+        enableAutosuggestions = true;
+        enableCompletion = true;
+        syntaxHighlighting = {
+          enable = true;
+          # TODO: remove override when merged: https://github.com/NixOS/nixpkgs/pull/250009
+          package = pkgs.zsh-syntax-highlighting.overrideAttrs (_: {
+            src = pkgs.fetchFromGitHub {
+              owner = "zsh-users";
+              repo = "zsh-syntax-highlighting";
+              rev = "1386f1213eb0b0589d73cd3cf7c56e6a972a9bfd";
+              sha256 = "iKx7lsQCoSAbpANYFkNVCZlTFdwOEI34rx/h1rnraSg=";
+            };
+          });
+          # highlighters = "brackets"; # TODO: uncomment when merged: https://github.com/nix-community/home-manager/pull/4360
+        };
+        completionInit = "autoload -U compinit && compinit -C"; # add caching to save ~50ms load time
+        history.path = "$ZDOTDIR/.zsh_history";
+        sessionVariables = {
+          JAVA_8_HOME = "${pkgs.jdk8}";
+          JAVA_20_HOME = "${pkgs.jdk20}";
+          # TODO: remove when merged: https://github.com/NixOS/nixpkgs/pull/250761
+          _JAVA_AWT_WM_NONREPARENTING = 1; # fix java apps blank screen
+        };
+      };
+    }
+    {
       programs.starship = {
         enable = true;
         settings = {
