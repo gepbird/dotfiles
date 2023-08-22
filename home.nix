@@ -23,7 +23,9 @@ in
           co = "checkout";
           cl = "clone";
           p = "!git pull && git push";
-          l = "!git log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
+          l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
+          churl = "remote set-url origin";
+          cp = "cherry-pick";
         };
         extraConfig = {
           user = {
