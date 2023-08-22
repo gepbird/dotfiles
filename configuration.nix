@@ -59,6 +59,10 @@
     pulse.enable = true;
   };
 
+  # necessary for zsh default shell
+  programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -77,6 +81,7 @@
   users.users.gep = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
   };
 
   # List packages installed in system profile. To search, run:
