@@ -39,10 +39,17 @@ require 'bufferline'.setup {
     -- NOTE: this will be called a lot so don't do any heavy processing here
     custom_filter = function(buf_number, _)
       local filetype = vim.bo[buf_number].filetype
-      if filetype ~= 'dap-repl' and
-          filetype ~= 'qf' then
-        return true
+      local disallowed_filetypes = {
+        'dap-repl',
+        'qf',
+        'fugitive',
+      }
+      for _, disallowed in ipairs(disallowed_filetypes) do
+        if filetype == disallowed then
+          return false
+        end
       end
+      return true
     end,
     offsets = {
       {
