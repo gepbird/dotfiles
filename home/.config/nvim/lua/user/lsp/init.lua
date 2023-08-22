@@ -80,6 +80,7 @@ local servers = {
   'html',
   'astro',
   'phpactor',
+  'rnix',
 }
 for _, server in ipairs(servers) do
   local ok, config = pcall(require, 'user.lsp.' .. server)
