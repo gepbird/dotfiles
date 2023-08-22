@@ -382,6 +382,11 @@ in
         };
       };
     }
+    {
+      services.dunst = {
+        enable = true;
+      };
+    }
   ];
 
   home-manager.users.gep = {
