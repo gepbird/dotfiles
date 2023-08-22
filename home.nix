@@ -292,6 +292,43 @@ in
           }
 
           nixwhere() { realpath $(which $1) }
+
+          umask 002 # allow write for group
+
+          zstyle ':completion:*' menu select
+          # enable case insensitive and partial completion
+          zstyle ':completion:*' matcher-list "" 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+          # inclue hidden files
+          _comp_options+=(globdots)
+          zmodload zsh/complist
+
+          # completion menu navigation
+          bindkey -M menuselect '^h' vi-backward-char
+          bindkey -M menuselect '^k' vi-up-line-or-history
+          bindkey -M menuselect '^l' vi-forward-char
+          bindkey -M menuselect '^j' vi-down-line-or-history
+          bindkey -M menuselect '^[[Z' vi-up-line-or-history # <s-tab> for previous completion
+
+          autoload edit-command-line; zle -N edit-command-line
+          source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+          ZVM_VI_HIGHLIGHT_BACKGROUND=#264F78 # light blue color for visual mode
+
+          zvm_bindkey viins 'ú' autosuggest-accept
+          zvm_bindkey vicmd 'e' _atuin_search_widget
+          zvm_bindkey vicmd 'w' edit-command-line
+
+          zvm_bindkey viins '^h' beginning-of-line
+          zvm_bindkey vicmd '^h' beginning-of-line
+          zvm_bindkey viins '^l' end-of-line
+          zvm_bindkey vicmd '^l' end-of-line
+          zvm_bindkey vicmd 'H' vi-backward-word
+          zvm_bindkey vicmd 'L' vi-forward-word
+
+          # fix end and home key
+          zvm_bindkey viins '^[OF' end-of-line
+          zvm_bindkey vicmd '^[OF' end-of-line
+          zvm_bindkey viins '^[OH' beginning-of-line
+          zvm_bindkey vicmd '^[OH' beginning-of-line
         '';
       };
     }
