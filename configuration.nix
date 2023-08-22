@@ -148,8 +148,9 @@
     kdenlive
     obs-studio
     mpv
-    onlyoffice-bin
+    zathura
     nsxiv
+    onlyoffice-bin
     cinnamon.nemo
     qdirstat
     anydesk
