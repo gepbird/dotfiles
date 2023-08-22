@@ -67,7 +67,7 @@ require 'user.utils'.register_maps {
   { 'n',   ';',            'mz<s-a>;<esc>`z' },
   { 'n',   'w',            'ciw' },
 
-  { 'n',   '<tab>',        ':bnex<cr>' },
-  { 'n',   '<s-tab>',      ':bprevious<cr>' },
+  { 'n',   '<tab>',        function() require 'bufferline'.cycle(1) end },
+  { 'n',   '<s-tab>',      function() require 'bufferline'.cycle(-1) end },
   { 'n',   '<c-n>',        ':enew<cr>' },
 }
