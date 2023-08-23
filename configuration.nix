@@ -106,7 +106,7 @@
     xorg.xkill
     xorg.xev
     xdotool
-    xclip
+    xsel
     xzoom
     xdragon
     # TODO: remove override when merged: https://github.com/NixOS/nixpkgs/pull/250636
