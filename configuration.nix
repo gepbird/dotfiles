@@ -68,6 +68,8 @@
     defaultEditor = true;
   };
 
+  programs.slock.enable = true;
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-devedition;
