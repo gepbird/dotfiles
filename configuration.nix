@@ -99,6 +99,7 @@
     fd
     exa
     bat
+    glib # for gio trash
     sshfs
     exiftool
     perl536Packages.FileMimeInfo
