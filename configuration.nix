@@ -112,15 +112,7 @@
     xsel
     xzoom
     xdragon
-    # TODO: remove override when merged: https://github.com/NixOS/nixpkgs/pull/250636
-    (colorpicker.overrideAttrs (_: {
-      src = fetchFromGitHub {
-        owner = "Jack12816";
-        repo = "colorpicker";
-        rev = "a4455b92fde1dfbac81e7852f171093932154a30";
-        sha256 = "z2asxTIP8WcsWcePmIg0k4bOF2JwkqOxNqSpQv4/a40=";
-      };
-    }))
+    colorpicker
     neofetch # TODO: switch to fastfetch when released
     btop
     w3m
