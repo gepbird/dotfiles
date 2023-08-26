@@ -184,8 +184,6 @@ in
         sessionVariables = {
           JAVA_8_HOME = "${pkgs.jdk8}";
           JAVA_20_HOME = "${pkgs.jdk20}";
-          # TODO: remove when merged: https://github.com/NixOS/nixpkgs/pull/250761
-          _JAVA_AWT_WM_NONREPARENTING = 1; # fix java apps blank screen
           ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
         };
         shellAliases = {
