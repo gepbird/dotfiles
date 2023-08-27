@@ -75,6 +75,9 @@
     package = pkgs.firefox-devedition;
   };
 
+  # necessary for xfce4-terminal configurations
+  programs.xfconf.enable = true;
+
   programs.steam = {
     enable = true;
   };
