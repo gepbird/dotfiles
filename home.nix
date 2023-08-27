@@ -453,6 +453,7 @@ in
       ".config/nvim/init.lua".source = ./home/.config/nvim/init.lua;
       ".config/nvim/.luarc.json".source = ./home/.config/nvim/.luarc.json;
       ".omnisharp".source = ./home/.omnisharp;
+      ".config/clac/words".source = ./home/.config/clac/words;
       ".config/lf/icons".source = ./home/.config/lf/icons;
     };
   };

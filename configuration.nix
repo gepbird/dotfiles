@@ -104,6 +104,15 @@
     fd
     exa
     bat
+    # TODO remove override when merged: https://github.com/NixOS/nixpkgs/pull/251838
+    (clac.overrideAttrs (_: {
+      src = fetchFromGitHub {
+        owner = "soveran";
+        repo = "clac";
+        rev = "beae8c4bc89912f4cd66bb875585fa471692cd54";
+        sha256 = "XaULDkFF9OZW7Hbh60wbGgvCJ6L+3gZNGQ9uQv3G0zU=";
+      };
+    }))
     glib # for gio trash
     sshfs
     exiftool

@@ -1,0 +1,7 @@
+pi 3.14159265358979323846
+sqrt "0.5 ^"
+avg "count . sum , /"
+# example usage: 8 2 lg -> log2(8)
+l "log swap log swap /"
+l2 "2 l"
+lg "10 l"
