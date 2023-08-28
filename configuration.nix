@@ -70,6 +70,8 @@
 
   programs.slock.enable = true;
 
+  programs.light.enable = true; # backlight controller
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-devedition;
@@ -85,7 +87,10 @@
   # Don't forget to set a password with ‘passwd’.
   users.users.gep = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "video" # necessary for controlling backlight with `light`
+    ];
     shell = pkgs.zsh;
   };
 
