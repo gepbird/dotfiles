@@ -35,8 +35,12 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  # services.xserver.windowManager.dwm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true; # TODO: remove
+  services.xserver.windowManager.dwm = {
+    enable = true;
+    package = pkgs.dwm.overrideAttrs (_: {
+      src = ./home/.local/share/dwm;
+    });
+  };
 
   services.xserver.layout = "hu";
 
@@ -119,6 +123,7 @@
       };
     }))
     glib # for gio trash
+    pulseaudio # pactl is a dependency of dwm change volume script
     sshfs
     exiftool
     perl536Packages.FileMimeInfo
