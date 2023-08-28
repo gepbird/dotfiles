@@ -166,19 +166,6 @@ in
         dotDir = ".config/zsh";
         enableAutosuggestions = true;
         enableCompletion = true;
-        syntaxHighlighting = {
-          enable = true;
-          # TODO: remove override when merged: https://github.com/NixOS/nixpkgs/pull/250009
-          package = pkgs.zsh-syntax-highlighting.overrideAttrs (_: {
-            src = pkgs.fetchFromGitHub {
-              owner = "zsh-users";
-              repo = "zsh-syntax-highlighting";
-              rev = "1386f1213eb0b0589d73cd3cf7c56e6a972a9bfd";
-              sha256 = "iKx7lsQCoSAbpANYFkNVCZlTFdwOEI34rx/h1rnraSg=";
-            };
-          });
-          # highlighters = "brackets"; # TODO: uncomment when merged: https://github.com/nix-community/home-manager/pull/4360
-        };
         completionInit = "autoload -U compinit && compinit -C"; # add caching to save ~50ms load time
         history.path = "$ZDOTDIR/.zsh_history";
         sessionVariables = {
@@ -308,6 +295,8 @@ in
           bindkey -M menuselect '^l' vi-forward-char
           bindkey -M menuselect '^j' vi-down-line-or-history
           bindkey -M menuselect '^[[Z' vi-up-line-or-history # <s-tab> for previous completion
+
+          source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
 
           autoload edit-command-line; zle -N edit-command-line
           source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
