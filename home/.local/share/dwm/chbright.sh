@@ -1,7 +1,6 @@
 #!/bin/sh
 backlight_control "$@"
 msgTag="backlight"
-max=$(cat /sys/class/backlight/radeon_bl0/max_brightness)
-current=$(cat /sys/class/backlight/radeon_bl0/brightness)
-percentage=$((current * 100 / max))
+light -T "$@" # multiply brightness by argument
+percentage=$(light -G | cut -d '.' -f 1)
 dunstify -a "changeBacklight" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag -h int:value:"$percentage" "Brightness: ${percentage}%"

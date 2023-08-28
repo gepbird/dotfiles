@@ -1,11 +1,17 @@
-Author: Gutyina Gergő <gutyina.gergo.2@gmail.com>
-Date:   Tue Nov 22 14:57:45 2022 +0200
+From d2824944615917697c18555a397bf84f2249a722 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Gutyina=20Gerg=C5=91?= <gutyina.gergo.2@gmail.com>
+Date: Thu, 24 Aug 2023 15:06:56 +0200
+Subject: [PATCH] Resize clients without wrapping the pointer
+
+---
+ dwm.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/dwm.c b/dwm.c
-index a96f33c..2ffcda1 100644
+index f1d86b2..8c661a2 100644
 --- a/dwm.c
 +++ b/dwm.c
-@@ -1294,7 +1294,7 @@ resizeclient(Client *c, int x, int y, int w, int h)
+@@ -1300,7 +1300,7 @@ resizeclient(Client *c, int x, int y, int w, int h)
  void
  resizemouse(const Arg *arg)
  {
@@ -14,7 +20,7 @@ index a96f33c..2ffcda1 100644
  	Client *c;
  	Monitor *m;
  	XEvent ev;
-@@ -1305,12 +1305,13 @@ resizemouse(const Arg *arg)
+@@ -1311,12 +1311,13 @@ resizemouse(const Arg *arg)
  	if (c->isfullscreen) /* no support resizing fullscreen windows by mouse */
  		return;
  	restack(selmon);
@@ -31,7 +37,7 @@ index a96f33c..2ffcda1 100644
  	do {
  		XMaskEvent(dpy, MOUSEMASK|ExposureMask|SubstructureRedirectMask, &ev);
  		switch(ev.type) {
-@@ -1324,8 +1325,8 @@ resizemouse(const Arg *arg)
+@@ -1330,8 +1331,8 @@ resizemouse(const Arg *arg)
  				continue;
  			lasttime = ev.xmotion.time;
  
@@ -42,7 +48,7 @@ index a96f33c..2ffcda1 100644
  			if (c->mon->wx + nw >= selmon->wx && c->mon->wx + nw <= selmon->wx + selmon->ww
  			&& c->mon->wy + nh >= selmon->wy && c->mon->wy + nh <= selmon->wy + selmon->wh)
  			{
-@@ -1338,7 +1339,6 @@ resizemouse(const Arg *arg)
+@@ -1344,7 +1345,6 @@ resizemouse(const Arg *arg)
  			break;
  		}
  	} while (ev.type != ButtonRelease);
@@ -50,3 +56,6 @@ index a96f33c..2ffcda1 100644
  	XUngrabPointer(dpy, CurrentTime);
  	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
  	if ((m = recttomon(c->x, c->y, c->w, c->h)) != selmon) {
+-- 
+2.41.0
+
