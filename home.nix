@@ -432,6 +432,21 @@ in
         };
       };
     }
+    {
+      # gtk3 dark theme
+      gtk = {
+        enable = true;
+        gtk3.extraConfig = {
+          gtk-application-prefer-dark-theme = true;
+        };
+      };
+      # gtk4 dark theme
+      dconf = {
+        enable = true;
+        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+        settings."org/gnome/desktop/sound".event-sounds = false; # disable bell sound that got enabled by enabling gtk
+      };
+    }
   ];
 
   home-manager.users.gep = {

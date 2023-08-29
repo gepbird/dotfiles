@@ -98,6 +98,14 @@
     shell = pkgs.zsh;
   };
 
+  # qt dark theme
+  # TODO: try to move this to home manager once it's fixed: https://github.com/nix-community/home-manager/pull/4306
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
