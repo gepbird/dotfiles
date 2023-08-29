@@ -144,7 +144,7 @@
     xzoom
     xdragon
     colorpicker
-    neofetch # TODO: switch to fastfetch when released
+    freshfetch
     btop
     w3m
     gcc
