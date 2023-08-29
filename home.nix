@@ -444,7 +444,6 @@ in
       dconf = {
         enable = true;
         settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-        settings."org/gnome/desktop/sound".event-sounds = false; # disable bell sound that got enabled by enabling gtk
       };
     }
   ];
