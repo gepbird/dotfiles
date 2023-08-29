@@ -174,8 +174,9 @@
     obs-studio
     mpv
     zathura
-    nsxiv
+    feh
     onlyoffice-bin
+    teams-for-linux
     cinnamon.nemo
     qdirstat
     anydesk
