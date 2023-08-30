@@ -42,6 +42,19 @@
     });
   };
 
+  services.dwm-status = {
+    enable = true;
+    order = [
+      "battery"
+      "time"
+    ];
+    extraConfig = ''
+      [time]
+      format = "%F %a %r"
+      update_seconds = true
+    '';
+  };
+
   services.xserver.layout = "hu";
 
   fonts.packages = with pkgs; [
