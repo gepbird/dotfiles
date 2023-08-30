@@ -440,10 +440,17 @@ in
           gtk-application-prefer-dark-theme = true;
         };
       };
-      # gtk4 dark theme
       dconf = {
         enable = true;
-        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+        settings = {
+          # gtk4 dark theme
+          "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+          # virt manager autoconnect
+          "org/virt-manager/virt-manager/connections" = {
+            autoconnect = [ "qemu:///system" ];
+            uris = [ "qemu:///system" ];
+          };
+        };
       };
     }
   ];

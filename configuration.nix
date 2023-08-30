@@ -104,6 +104,8 @@
     enable = true;
   };
 
+  virtualisation.libvirtd.enable = true;
+
   systemd.user.services = {
     polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
@@ -211,6 +213,7 @@
     teams-for-linux
     cinnamon.nemo
     qdirstat
+    virt-manager
     anydesk
     rustdesk
     (discord.override { withOpenASAR = true; })
