@@ -97,6 +97,9 @@
   # necessary for xfce4-terminal configurations
   programs.xfconf.enable = true;
 
+  # necessary for gtk4 dark theme
+  programs.dconf.enable = true;
+
   programs.steam = {
     enable = true;
   };
@@ -143,7 +146,6 @@
         sha256 = "XaULDkFF9OZW7Hbh60wbGgvCJ6L+3gZNGQ9uQv3G0zU=";
       };
     }))
-    dconf # for gtk4 dark theme
     glib # for gio trash
     pulseaudio # pactl is a dependency of dwm change volume script
     sshfs
