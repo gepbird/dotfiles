@@ -32,14 +32,21 @@
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
+  console.useXkbConfig = true;
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.windowManager.dwm = {
+  services.xserver = {
     enable = true;
-    package = pkgs.dwm.overrideAttrs (_: {
-      src = ./home/.local/share/dwm;
-    });
+    layout = "hu";
+    xkbOptions = "caps:escape";
+    autoRepeatDelay = 250;
+    autoRepeatInterval = 30;
+    windowManager.dwm = {
+      enable = true;
+      package = pkgs.dwm.overrideAttrs (_: {
+        src = ./home/.local/share/dwm;
+      });
+    };
   };
 
   services.dwm-status = {
@@ -54,8 +61,6 @@
       update_seconds = true
     '';
   };
-
-  services.xserver.layout = "hu";
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
