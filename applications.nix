@@ -27,15 +27,6 @@
     postman
     ungoogled-chromium
     screenkey
-    # TODO: remove override when fixed: https://github.com/flameshot-org/flameshot/issues/2768
-    (flameshot.overrideAttrs (o: {
-      patches = o.patches ++ [
-        (pkgs.fetchpatch {
-          url = "https://github.com/gepbird/flameshot/commit/d48d1860244b7a1b9b0c7970c96441a08054a526.patch";
-          hash = "sha256-jfy8vkPiPVhqfOpDOTnOco+hFNyfXv4An5kJZhM7BuU=";
-        })
-      ];
-    }))
     feh
     gimp
     kdenlive
