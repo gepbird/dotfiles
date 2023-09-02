@@ -7,6 +7,10 @@
     xkbOptions = "caps:escape";
     autoRepeatDelay = 250;
     autoRepeatInterval = 30;
+    # disable black screen after 10 minutes
+    serverLayoutSection = ''
+      Option "BlankTime" "0"
+    '';
   };
 
   services.xserver.windowManager.dwm = {
