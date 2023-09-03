@@ -1,12 +1,12 @@
 { pkgs, ... }:
 
 {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   home-manager.users.gep = {
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+
     home.file = {
       # use manual symlinking for nvim, configuring it with slow rebuild time is pain
       #".config/nvim/ftplugin".source = ./home/.config/nvim/ftplugin;

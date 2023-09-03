@@ -1,11 +1,6 @@
 { pkgs, home-manager, ... }:
 
 {
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox-devedition;
-  };
-
   programs.steam.enable = true;
 
   # virt-manager
@@ -22,6 +17,11 @@
   };
 
   home-manager.users.gep = {
+    programs.firefox = {
+      enable = true;
+      package = pkgs.firefox-devedition;
+    };
+
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {

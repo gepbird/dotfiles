@@ -11,13 +11,12 @@
     serverLayoutSection = ''
       Option "BlankTime" "0"
     '';
-  };
-
-  services.xserver.windowManager.dwm = {
-    enable = true;
-    package = pkgs.dwm.overrideAttrs (_: {
-      src = ./home/.local/share/dwm;
-    });
+    windowManager.dwm = {
+      enable = true;
+      package = pkgs.dwm.overrideAttrs (_: {
+        src = ./home/.local/share/dwm;
+      });
+    };
   };
 
   services.dwm-status = {
