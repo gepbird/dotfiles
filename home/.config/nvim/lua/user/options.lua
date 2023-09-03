@@ -46,3 +46,9 @@ o.list = true -- show whitespace
 o.iskeyword:append '-' -- what characters count as a word movement
 g.markdown_recommended_style = 0
 o.spelllang = 'hu'
+
+-- disable bad indent for comments by disabling smartindent and re-enabling most of its features
+o.smartindent = false
+o.cindent = true
+o.cinkeys:remove '0#'
+o.indentkeys:remove '0#'
