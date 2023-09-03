@@ -28,7 +28,14 @@
       postman
       ungoogled-chromium
       screenkey
-      feh
+      # add --scale-down and --auto-zoom, for 100% image scale
+      # add --edit for saving rotation and mirroring edits
+      (feh.overrideAttrs (_: {
+        postInstall = ''
+          wrapProgram "$out/bin/feh" --prefix PATH : "${lib.makeBinPath [ libjpeg jpegexiforient ]}" \
+                                     --add-flags '--theme=feh --scale-down --auto-zoom --edit'
+        '';
+      }))
       gimp
       kdenlive
       obs-studio
