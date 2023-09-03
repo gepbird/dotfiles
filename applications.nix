@@ -22,6 +22,22 @@
   };
 
   home-manager.users.gep = {
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = [ "lf.desktop" ];
+        "application/zip" = [ "org.gnome.FileRoller.desktop" ];
+        "text/plain" = [ "nvim.desktop" ];
+        "text/html" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        "image/png" = [ "feh.desktop" ];
+        "image/jpeg" = [ "feh.desktop" ];
+        "video/mp4" = [ "mpv.desktop" ];
+      };
+    };
+
     home.packages = with pkgs; [
       pavucontrol
       gparted
