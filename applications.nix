@@ -58,6 +58,7 @@
       mpv
       xzoom
       zathura
+      gnome.file-roller
       onlyoffice-bin
       teams-for-linux
       cinnamon.nemo
