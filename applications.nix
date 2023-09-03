@@ -21,30 +21,32 @@
     };
   };
 
-  home-manager.users.gep.home.packages = with pkgs; [
-    pavucontrol
-    gparted
-    postman
-    ungoogled-chromium
-    screenkey
-    feh
-    gimp
-    kdenlive
-    obs-studio
-    mpv
-    xzoom
-    zathura
-    onlyoffice-bin
-    teams-for-linux
-    cinnamon.nemo
-    qdirstat
-    anydesk
-    rustdesk
-    virt-manager
-    (discord.override { withOpenASAR = true; })
-    prismlauncher
-    osu-lazer
-    wineWowPackages.staging
-    winetricks
-  ];
+  home-manager.users.gep = {
+    home.packages = with pkgs; [
+      pavucontrol
+      gparted
+      postman
+      ungoogled-chromium
+      screenkey
+      feh
+      gimp
+      kdenlive
+      obs-studio
+      mpv
+      xzoom
+      zathura
+      onlyoffice-bin
+      teams-for-linux
+      cinnamon.nemo
+      qdirstat
+      anydesk
+      rustdesk
+      virt-manager
+      (discord.override { withOpenASAR = true; })
+      prismlauncher
+      osu-lazer
+      wineWowPackages.staging
+      winetricks
+    ];
+  };
 }
