@@ -33,6 +33,8 @@
       flutter
       sqlite
       dbeaver
+
+      omnisharp-roslyn
     ];
   };
 }
