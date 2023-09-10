@@ -65,7 +65,7 @@ local servers = {
   'emmet_ls',
   'tsserver',
   'html',
-  'astro',
+  'jsonls',
   'phpactor',
   'rnix',
 }

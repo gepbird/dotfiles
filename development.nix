@@ -35,9 +35,17 @@
       dbeaver
 
       clang-tools
+      rust-analyzer
+      phpactor
+      lua-language-server
       omnisharp-roslyn
+      nodePackages.typescript-language-server
+      emmet-ls
+      vscode-langservers-extracted # html, css, json (unused: eslint)
       prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
+      nodePackages.pyright
       yapf
+      rnix-lsp
     ];
   };
 }
