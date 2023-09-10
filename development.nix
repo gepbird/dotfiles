@@ -34,6 +34,7 @@
       sqlite
       dbeaver
 
+      clang-tools
       omnisharp-roslyn
       prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
       yapf
