@@ -22,7 +22,7 @@
       };
 
       shellAliases = {
-        ls = "${pkgs.exa}/bin/exa --color=always --group-directories-first --icons";
+        ls = "${pkgs.eza}/bin/eza --color=always --group-directories-first --icons";
         cat = "${pkgs.bat}/bin/bat --style rule --style snip --style changes --style header";
         cut = "${pkgs.hck}/bin/hck";
         grep = "${pkgs.ripgrep}/bin/rg -i --color=auto";

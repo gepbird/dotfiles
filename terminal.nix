@@ -47,7 +47,7 @@
       ripgrep
       hck
       fd
-      exa
+      eza
       bat
       clac
       glib # for gio trash
