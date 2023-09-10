@@ -78,7 +78,6 @@ packer.startup(function(use)
 
   use { 'simrat39/rust-tools.nvim', config = function() require 'user.rusttools' end }
   use { 'akinsho/flutter-tools.nvim', config = function() require 'user.fluttertools' end }
-  use { 'mfussenegger/nvim-jdtls' }
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install',
     setup = function() vim.g.mkdp_filetypes = { 'markdown' } end, ft = { 'markdown' }, }
   use { 'Hoffs/omnisharp-extended-lsp.nvim' }
