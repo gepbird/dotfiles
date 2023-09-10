@@ -3,7 +3,7 @@ local utils = require 'user.utils'
 
 dap.adapters.coreclr = {
   type = 'executable',
-  command = vim.fn.expand '~/.local/share/nvim/mason/packages/netcoredbg/build/netcoredbg',
+  command = 'netcoredbg',
   args = { '--interpreter=vscode' },
 }
 

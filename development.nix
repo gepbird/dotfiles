@@ -39,6 +39,7 @@
       phpactor
       lua-language-server
       omnisharp-roslyn
+      netcoredbg
       nodePackages.typescript-language-server
       emmet-ls
       vscode-langservers-extracted # html, css, json (unused: eslint)
