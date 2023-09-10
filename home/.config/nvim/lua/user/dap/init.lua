@@ -115,4 +115,3 @@ require 'user.utils'.register_maps {
 
 require 'user.dap.debugpy'
 require 'user.dap.netcoredbg'
-require 'user.dap.nvim'
