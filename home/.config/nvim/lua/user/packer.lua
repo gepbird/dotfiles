@@ -66,6 +66,7 @@ packer.startup(function(use)
   use { 'WhoIsSethDaniel/mason-tool-installer.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
   use { 'neovim/nvim-lspconfig' }
+  use { 'nvimdev/guard-collection' }
   use { 'nvimdev/guard.nvim', config = function() require 'user.lsp.guard' end }
   use { 'nvimdev/lspsaga.nvim', config = function() require 'user.lsp.lspsaga' end }
   use { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end }
