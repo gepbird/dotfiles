@@ -21,6 +21,7 @@ return {
         defaultConfig = {
           indent_style = 'space',
           indent_size = '2',
+          continuation_indent = '2',
           quote_style = 'single',
           call_arg_parentheses = 'remove',
           continuous_assign_statement_align_to_equal_sign = 'false',
