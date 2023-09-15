@@ -147,6 +147,8 @@
 
         source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
 
+        source ${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use/you-should-use.plugin.zsh
+
         autoload edit-command-line; zle -N edit-command-line
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
         ZVM_VI_HIGHLIGHT_BACKGROUND=#264F78 # light blue color for visual mode
