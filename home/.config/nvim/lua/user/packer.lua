@@ -85,7 +85,8 @@ packer.startup(function(use)
 
   use { 'ThePrimeagen/vim-be-good' }
   use { 'moll/vim-bbye' }
-  use { 'github/copilot.vim', config = function() require 'user.copilot' end }
+  use { 'zbirenbaum/copilot.lua' }
+  use { 'zbirenbaum/copilot-cmp', config = function() require 'user.copilot' end }
 end)
 
 if packer_bootstrap then

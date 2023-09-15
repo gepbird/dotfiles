@@ -31,6 +31,7 @@ local kind_icons = {
   Event = '',
   Operator = '',
   TypeParameter = '',
+  Copilot = '',
 }
 --
 local check_backspace = function()
@@ -102,6 +103,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = 'copilot' },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

@@ -1,3 +1,11 @@
-require 'user.utils'.register_maps {
-  { 'i', 'úő', 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false } },
+require 'copilot'.setup {
+  panel = {
+    enabled = false,
+  },
+  suggestion = {
+    enabled = false,
+  },
+}
+
+require 'copilot_cmp'.setup {
 }
