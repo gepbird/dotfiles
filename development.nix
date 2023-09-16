@@ -7,6 +7,11 @@
       defaultEditor = true;
     };
 
+    programs.vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+    };
+
     home.file = {
       # use manual symlinking for nvim, configuring it with slow rebuild time is pain
       #".config/nvim/ftplugin".source = ./home/.config/nvim/ftplugin;
