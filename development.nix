@@ -46,6 +46,8 @@
       prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
       nodePackages.pyright
       yapf
+      # TODO: use latest debugpy when fixed: https://github.com/NixOS/nixpkgs/pull/255379
+      python310Packages.debugpy
       rnix-lsp
     ];
   };

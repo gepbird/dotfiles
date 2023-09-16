@@ -2,7 +2,7 @@ local dap = require 'dap'
 
 dap.adapters.python = {
   type = 'executable',
-  command = vim.fn.expand '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python',
+  command = 'python',
   args = { '-m', 'debugpy.adapter' },
 }
 
