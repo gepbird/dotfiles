@@ -1,7 +1,3 @@
-local codelldb_extension_path = vim.fn.expand '~/.local/share/nvim/mason/packages/codelldb/extension/'
-local codelldb_path = codelldb_extension_path .. 'adapter/codelldb'
-local liblldb_path = codelldb_extension_path .. 'lldb/lib/liblldb.so'
-
 require 'rust-tools'.setup {
   tools = {
 
@@ -139,8 +135,4 @@ require 'rust-tools'.setup {
     -- setting it to false may improve startup time
     standalone = true,
   }, -- rust-analyzer options
-
-  dap = {
-    adapter = require 'rust-tools.dap'.get_codelldb_adapter(codelldb_path, liblldb_path),
-  },
 }
