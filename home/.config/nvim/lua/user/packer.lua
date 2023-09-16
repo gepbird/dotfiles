@@ -15,7 +15,7 @@ local packer = require 'packer'
 packer.startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
-  use { 'lewis6991/impatient.nvim', config = function() require 'impatient'.enable_profile() end }
+  use { 'lewis6991/impatient.nvim', config = function() require 'impatient' end }
   use { 'kyazdani42/nvim-web-devicons' }
   use { 'nvim-lua/plenary.nvim' }
   use { 'nvim-lua/popup.nvim' }
