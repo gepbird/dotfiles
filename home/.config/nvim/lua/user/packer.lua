@@ -1,6 +1,6 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
     vim.cmd [[ packadd packer.nvim ]]
@@ -37,7 +37,7 @@ packer.startup(function(use)
   use { 'ethanholz/nvim-lastplace', config = function() require 'user.lastplace' end }
 
   use { 'nvim-treesitter/nvim-treesitter', config = function() require 'user.treesitter' end,
-    run = function() require 'nvim-treesitter.install'.update { with_sync = true } end, }
+    run = function() require 'nvim-treesitter.install'.update { with_sync = true } end }
   use { 'p00f/nvim-ts-rainbow' }
   use { 'nvim-treesitter/nvim-treesitter-textobjects' }
   use { 'nvim-treesitter/playground' }
@@ -76,7 +76,7 @@ packer.startup(function(use)
   use { 'simrat39/rust-tools.nvim', config = function() require 'user.rusttools' end }
   use { 'akinsho/flutter-tools.nvim', config = function() require 'user.fluttertools' end }
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install',
-    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end, ft = { 'markdown' }, }
+    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end, ft = { 'markdown' } }
   use { 'Hoffs/omnisharp-extended-lsp.nvim' }
 
   use { 'ThePrimeagen/vim-be-good' }

@@ -4,10 +4,10 @@ require 'user.utils'.register_maps {
   { 'nxo', '<s-k>',        '5k' },
   { 'nxo', '<s-l>',        '5l' },
 
-  { 'nxo', '<c-h>',        '_',                                    {} },
-  { 'nxo', '<c-j>',        '}',                                    { unmap = true } },
-  { 'nxo', '<c-k>',        '{',                                    { unmap = true } },
-  { 'nxo', '<c-l>',        '$',                                    { unmap = true } },
+  { 'nxo', '<c-h>',        '_',                                          {} },
+  { 'nxo', '<c-j>',        '}',                                          { unmap = true } },
+  { 'nxo', '<c-k>',        '{',                                          { unmap = true } },
+  { 'nxo', '<c-l>',        '$',                                          { unmap = true } },
 
   { 'nxi', '<a-h>',        '<c-w>h' },
   { 'nxi', '<a-j>',        '<c-w>j' },
@@ -25,13 +25,13 @@ require 'user.utils'.register_maps {
   { 'n',   '<space>h',     ':split<cr>' },
   { 'n',   '<space>v',     ':vsplit<cr>' },
 
-  { 'nxo', 'e',            '/',                                    { unmap = true } },
-  { 'nxo', '<s-e>',        '?',                                    { unmap = true } },
+  { 'nxo', 'e',            '/',                                          { unmap = true } },
+  { 'nxo', '<s-e>',        '?',                                          { unmap = true } },
   { 'n',   '<c-e>',        ':nohlsearch<cr>' },
 
-  { 'nxo', 'b',            '%',                                    { unmap = true } },
-  { 'nxo', '_',            ',',                                    { unmap = true } },
-  { 'nxo', '-',            ';',                                    { unmap = true } },
+  { 'nxo', 'b',            '%',                                          { unmap = true } },
+  { 'nxo', '_',            ',',                                          { unmap = true } },
+  { 'nxo', '-',            ';',                                          { unmap = true } },
 
   { 'x',   '<',            '<gv' },
   { 'x',   '>',            '>gv' },
@@ -43,9 +43,9 @@ require 'user.utils'.register_maps {
   { 'n',   '<c-left>',     ':vertical resize -2<cr>' },
   { 'n',   '<c-right>',    ':vertical resize +2<cr>' },
 
-  { 'n',   '<s-y>',        'yy',                                   { unmap = true } },
-  { 'n',   '<s-c>',        'cc',                                   { unmap = true } },
-  { 'n',   '<s-d>',        'dd',                                   { unmap = true } },
+  { 'n',   '<s-y>',        'yy',                                         { unmap = true } },
+  { 'n',   '<s-c>',        'cc',                                         { unmap = true } },
+  { 'n',   '<s-d>',        'dd',                                         { unmap = true } },
 
   { 'n',   '<space>q',     ':q<cr>' },
   { 'n',   '<space><s-q>', ':quitall!<cr>' },
@@ -58,7 +58,7 @@ require 'user.utils'.register_maps {
   { 'n',   '<a-q>',        'q' },
   { 'n',   '<space><s-r>', ':w<cr>:e<cr>' },
 
-  { 'n',   '<s-u>',        '<c-r>',                                { unmap = true } },
+  { 'n',   '<s-u>',        '<c-r>',                                      { unmap = true } },
   { 'n',   'z',            'i<cr><esc>' },
   { 'n',   '<s-z>',        '<s-j>' },
   { 'nxi', '<a-f>',        'mfgg=G`f' },

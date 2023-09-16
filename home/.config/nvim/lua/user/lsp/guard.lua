@@ -8,7 +8,7 @@ ft 'javascript,typescript,css,json,yaml,markdown':fmt {
   fname = true,
 }
 ft 'python':fmt 'yapf'
-    :extra('--style', '{indent_width: 2}')
+  :extra('--style', '{indent_width: 2}')
 require 'guard'.setup {
   fmt_on_save = true,
   lsp_as_default_formatter = false,

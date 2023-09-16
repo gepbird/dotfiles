@@ -102,7 +102,7 @@ require 'user.utils'.register_maps {
   { 'n',  '<space>td',     telescope_dap.commands },
   { 'nv', '<space>de',     function() dapui.eval() end },
   { 'nv', '<space>d<s-e>', function() dapui.eval(nil, { enter = true }) end },
-  { 'n',  '<space>d<c-e>', function() dapui.eval(vim.fn.input("Expression: ")) end },
+  { 'n',  '<space>d<c-e>', function() dapui.eval(vim.fn.input 'Expression: ') end },
   { 'n',  '<space>dl',     function() dapui.float_element('scopes', { enter = true }) end },
   { 'n',  '<space>db',     function() dapui.float_element('breakpoints', { enter = true }) end },
   { 'n',  '<space>dw',     function() dapui.float_element('watches', { enter = true }) end },

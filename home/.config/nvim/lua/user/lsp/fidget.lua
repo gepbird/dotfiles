@@ -25,18 +25,18 @@ require 'fidget'.setup {
     stack_upwards = true,
     max_width = 0,
     fidget =
-        function(fidget_name, spinner)
-          return string.format('%s %s', spinner, fidget_name)
-        end,
+      function(fidget_name, spinner)
+        return string.format('%s %s', spinner, fidget_name)
+      end,
     task =
-        function(task_name, message, percentage)
-          return string.format(
-            '%s%s [%s]',
-            message,
-            percentage and string.format(' (%s%%)', percentage) or '',
-            task_name
-          )
-        end,
+      function(task_name, message, percentage)
+        return string.format(
+          '%s%s [%s]',
+          message,
+          percentage and string.format(' (%s%%)', percentage) or '',
+          task_name
+        )
+      end,
   },
   sources = {
     ['*'] = {
