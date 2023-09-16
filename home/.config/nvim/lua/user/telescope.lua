@@ -20,39 +20,7 @@ telescope.setup {
 
         ['<c-j>'] = actions.move_selection_next,
         ['<c-k>'] = actions.move_selection_previous,
-
-        ['<c-u>'] = actions.preview_scrolling_up,
-        ['<c-d>'] = actions.preview_scrolling_down,
-
-        ['<c-n>'] = actions.cycle_history_next,
-        ['<c-p>'] = actions.cycle_history_prev,
-
-        ['<tab>'] = actions.toggle_selection,
-
-        ['<a-h>'] = fb.actions.toggle_hidden,
-      },
-
-      n = {
-        ['<esc>'] = actions.close,
-        ['<a-esc>'] = actions.close,
-        ['<c-l>'] = actions.select_default,
-        ['l'] = actions.select_default,
-        ['<c-x>'] = actions.select_horizontal,
-        ['<c-v>'] = actions.select_vertical,
-        ['<c-t>'] = actions.select_tab,
-        ['<a-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
-        ['<a-t>'] = actions.complete_tag,
-
-        ['j'] = actions.move_selection_next,
-        ['k'] = actions.move_selection_previous,
-        ['<s-j>'] = actions.move_selection_next + actions.move_selection_next + actions.move_selection_next +
-          actions.move_selection_next + actions.move_selection_next,
-        ['<s-k>'] = actions.move_selection_previous + actions.move_selection_previous + actions.move_selection_previous +
-          actions.move_selection_previous + actions.move_selection_previous,
-        ['<c-j>'] = actions.results_scrolling_up,
-        ['<c-k>'] = actions.results_scrolling_down,
-        ['gg'] = actions.move_to_top,
-        ['<s-g>'] = actions.move_to_bottom,
+        ['<c-g>'] = actions.move_to_bottom,
 
         ['<c-u>'] = actions.preview_scrolling_up,
         ['<c-d>'] = actions.preview_scrolling_down,
