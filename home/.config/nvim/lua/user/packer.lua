@@ -62,10 +62,7 @@ packer.startup(function(use)
   use { 'L3MON4D3/LuaSnip', config = function() require 'user.snippets' end }
   use { 'rafamadriz/friendly-snippets' }
 
-  use { 'williamboman/mason.nvim', config = function() require 'user.mason' end }
-  use { 'WhoIsSethDaniel/mason-tool-installer.nvim' }
-  use { 'williamboman/mason-lspconfig.nvim' }
-  use { 'neovim/nvim-lspconfig' }
+  use { 'neovim/nvim-lspconfig', config = function() require 'user.lsp' end }
   use { 'nvimdev/guard-collection' }
   use { 'nvimdev/guard.nvim', config = function() require 'user.lsp.guard' end }
   use { 'nvimdev/lspsaga.nvim', config = function() require 'user.lsp.lspsaga' end }

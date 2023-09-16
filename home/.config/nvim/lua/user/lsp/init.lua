@@ -27,10 +27,6 @@ vim.diagnostic.config {
   },
 }
 
-require 'mason-lspconfig'.setup {
-  automatic_installation = true,
-}
-
 local lspconfig = require 'lspconfig'
 local utils = require 'user.utils'
 
@@ -81,7 +77,6 @@ local lsp = vim.lsp.buf
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
 utils.register_maps {
-  { 'n', '<space>li',    ':Mason<cr>' },
   { 'n', '<space>ls',    ':LspInfo<cr>' },
   { 'n', '<space>-',     function() telescope.lsp_references(ivy) end },
   { 'n', '<space>.',     vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions
