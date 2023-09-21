@@ -28,8 +28,10 @@
       cargo
       php
       php83Packages.composer
-      python3
-      python311Packages.pip
+      (python3.withPackages (ps: with ps; [
+        pip
+        debugpy
+      ]))
       nodejs
       #openjdk8
       openjdk19
@@ -51,8 +53,6 @@
       prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
       nodePackages.pyright
       yapf
-      # TODO: use latest debugpy when fixed: https://github.com/NixOS/nixpkgs/pull/255379
-      python310Packages.debugpy
       rnix-lsp
     ];
   };
