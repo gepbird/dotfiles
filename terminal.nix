@@ -47,6 +47,7 @@
       ripgrep
       hck
       fd
+      dos2unix
       eza
       bat
       clac
