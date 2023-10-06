@@ -54,6 +54,9 @@
       nodePackages.pyright
       yapf
       rnix-lsp
+      lemminx
+      taplo
+      yaml-language-server
     ];
   };
 }

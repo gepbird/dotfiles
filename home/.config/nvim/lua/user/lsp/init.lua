@@ -64,6 +64,9 @@ local servers = {
   'jsonls',
   'phpactor',
   'rnix',
+  'lemminx',
+  'taplo',
+  'yamlls',
 }
 for _, server in ipairs(servers) do
   local ok, config = pcall(require, 'user.lsp.' .. server)
