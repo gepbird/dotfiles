@@ -70,6 +70,7 @@
       anydesk
       rustdesk
       virt-manager
+      rnote
       (discord.override { withOpenASAR = true; })
       prismlauncher
       osu-lazer

@@ -14,6 +14,8 @@
     size = 4 * 1024;
   }];
 
+  hardware.opentabletdriver.enable = true;
+
   # hopefully more battery time with these settings
   powerManagement = {
     cpuFreqGovernor = "schedutil";
