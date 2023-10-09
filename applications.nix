@@ -45,7 +45,7 @@
     home.packages = with pkgs; [
       pavucontrol
       gparted
-      postman
+      bruno
       ungoogled-chromium
       screenkey
       # add --scale-down and --auto-zoom, for 100% image scale
