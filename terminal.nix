@@ -62,9 +62,17 @@
       xdragon
       colorpicker
       freshfetch
-      btop
       w3m
     ];
+
+    programs.bottom = {
+      enable = true;
+      settings = {
+        flags = {
+          color = "gruvbox";
+        };
+      };
+    };
 
     programs.starship = {
       enable = true;
