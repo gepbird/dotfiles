@@ -26,6 +26,7 @@
       gnumake
       rustc
       cargo
+      cargo-watch
       php
       php83Packages.composer
       (python3.withPackages (ps: with ps; [
@@ -43,6 +44,7 @@
 
       clang-tools
       rust-analyzer
+      rustfmt
       phpactor
       lua-language-server
       omnisharp-roslyn
