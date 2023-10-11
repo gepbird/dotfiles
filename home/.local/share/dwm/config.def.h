@@ -112,7 +112,6 @@ static const Key keys[] = {
   { Sup,                          XK_h,       setmfact,       { .f = -0.05 } },
   { Sup,                          XK_l,       setmfact,       { .f = +0.05 } },
   { Sup,                          XK_Tab,     zoom,           { 0 } },
-  { Sup,                          XK_Tab,     view,           { 0 } },
   { Alt,                          XK_Tab,     viewnext,       { 0 } },
   { Alt|Sft,                      XK_Tab,     viewprev,       { 0 } },
   { Sup,                          XK_w,       spawn,          { .v = xkill } },
