@@ -43,7 +43,6 @@
         zshreload = "source $ZDOTDIR/.zshrc";
         update = "sudo nixos-rebuild switch --flake $HOME/dotfiles";
         cleanup = "sudo nix-collect-garbage --delete-older-than";
-        try = "nix-shell -p";
 
         sysi = "systemctl status";
         sysr = "sudo systemctl restart";
@@ -128,6 +127,8 @@
         }
 
         nixwhere() { realpath $(which $1) }
+
+        try() { nix shell nixpkgs#$1 }
 
         umask 002 # allow write for group
 
