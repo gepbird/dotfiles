@@ -41,6 +41,7 @@
       flutter
       sqlite
       dbeaver
+      texlive.combined.scheme-full
 
       clang-tools
       rust-analyzer
@@ -54,6 +55,7 @@
       vscode-langservers-extracted # html, css, json (unused: eslint)
       prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
       nodePackages.pyright
+      texlab
       yapf
       rnix-lsp
       lemminx

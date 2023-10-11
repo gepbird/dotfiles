@@ -64,6 +64,7 @@ local servers = {
   'jsonls',
   'phpactor',
   'rnix',
+  'texlab',
   'lemminx',
   'taplo',
   'yamlls',
