@@ -14,6 +14,9 @@
     size = 4 * 1024;
   }];
 
+  # for auto mounting external storages
+  services.gvfs.enable = true;
+
   hardware.opentabletdriver.enable = true;
 
   networking.networkmanager.enable = true;
