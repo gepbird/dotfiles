@@ -33,10 +33,7 @@
     };
   };
 
-  networking = {
-    hostName = "geptop";
-    networkmanager.enable = true;
-  };
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Budapest";
 

@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "My NixOS configuration for my PC and laptop";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -16,10 +16,22 @@
       lib = nixpkgs.lib;
     in
     {
+      nixosConfigurations.geppc = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration-geppc.nix
+          ./hardware-configuration-geppc.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+          }
+        ];
+      };
       nixosConfigurations.geptop = lib.nixosSystem {
         inherit system;
         modules = [
-          ./configuration.nix
+          ./configuration-geptop.nix
+          ./hardware-configuration-geptop.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
