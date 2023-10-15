@@ -31,6 +31,7 @@
         core.editor = "nvim";
         gpg.format = "ssh";
         push.autoSetupRemote = true;
+        pull.rebase = true;
       };
     };
   };
