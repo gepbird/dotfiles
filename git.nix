@@ -7,9 +7,12 @@
       aliases = {
         c = "commit -S";
         ca = "commit -S --amend";
-        s = "status -uno";
+        st = "stash --include-untracked";
+        sp = "stash pop";
+        s = "status";
         b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
         d = "diff";
+        ds = "diff --staged";
         co = "checkout";
         cl = "clone";
         gh = "!git clone git@github.com:$1";
