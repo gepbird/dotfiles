@@ -40,9 +40,9 @@ static const Rule rules[] = {
    *  WM_NAME(STRING) = title
    */
   /* class       instance    title       tags mask     isfloating   monitor */
-  { "discord",   NULL,       NULL,       1 << 0,       0,           1  },
-  { "firefox",   NULL,       NULL,       1 << 1,       0,           1  },
-  { "flameshot", NULL,       NULL,       0,            1,           1  },
+  { "discord",   NULL,       NULL,       1 << 0,       0,           0  },
+  { "firefox",   NULL,       NULL,       1 << 1,       0,           0  },
+  { "flameshot", NULL,       NULL,       0,            0,           -1  },
   { NULL,        NULL,       "spterm",   SPTAG(0),     1,           -1 },
   { NULL,        NULL,       "spclac",   SPTAG(1),     1,           -1 },
   { NULL,        NULL,       "splf",     SPTAG(2),     1,           -1 },
