@@ -1,4 +1,4 @@
-{ config, home-manager, ... }:
+{ config, pkgs, home-manager, ... }:
 
 {
   boot = {
@@ -7,6 +7,7 @@
       efi.canTouchEfiVariables = true;
     };
     supportedFilesystems = [ "ntfs" ];
+    kernelPackages = pkgs.linuxPackages_zen;
   };
 
   swapDevices = [{
