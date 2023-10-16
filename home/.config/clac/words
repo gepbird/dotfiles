@@ -1,8 +1,29 @@
+s swap
+d dup
+r roll
+
 pi 3.14159265358979323846
 sqrt "0.5 ^"
 avg "count . sum , /"
+
 # example usage: 8 2 lg -> log2(8)
-l "log swap log swap /"
+l "log s log s /"
 l2 "2 l"
 lg "10 l"
-replus "dup . swap dup  . * , , + /"
+
+rep "d . s d  . * , , + /"
+
+deg "pi / 180 *"
+rad "180 / pi *"
+
+dot2 ". s . * , , * +"
+dot3 ". . s . s . * , , , s . * , , * + +"
+
+# Cross product Yank by index: helper function for cross product, duplicate an element from the stack and stash it
+cy "6 s r d ."
+cross "4 cy 2 cy , , * . 1 cy 2 cy , , * , s - . 2 cy 1 cy , , * . 2 cy 1 cy , , * , s - -1 * . 2 cy 2 cy , , * . 1 cy 2 cy , , * , s - . drop drop drop drop drop drop , , s , 3 1 r"
+
+det2 "4 1 r * . * , -"
+# Determinant Yank by index: same as `cy`, but for 9 inputs
+dy "9 s r d ."
+det3 "4 dy 5 dy 1 dy 2 dy , , * , , * s - . 5 dy , , * . 6 dy 4 dy 2 dy 1 dy , , * , , * s - . 4 dy , , * -1 * . 7 dy 5 dy 1 dy 2 dy , , * , , * s - . 2 dy , , * . drop drop drop drop drop drop drop drop drop , , , + +"
