@@ -62,6 +62,7 @@
   };
 
   fonts.packages = with pkgs; [
+    corefonts
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 
