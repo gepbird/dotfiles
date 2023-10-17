@@ -42,6 +42,7 @@
       sqlite
       dbeaver
       texlive.combined.scheme-full
+      nixpkgs-review
 
       clang-tools
       rust-analyzer
