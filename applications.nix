@@ -65,6 +65,7 @@
       gnome.file-roller
       # manual fix required for fonts to work: https://nixos.wiki/wiki/Onlyoffice#Install_and_use_missing_corefonts
       onlyoffice-bin
+      libreoffice
       teams-for-linux
       cinnamon.nemo
       qdirstat
