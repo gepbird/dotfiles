@@ -16,6 +16,17 @@
       lib = nixpkgs.lib;
     in
     {
+      nixosConfigurations.gepvm = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration-gepvm.nix
+          ./hardware-configuration-gepvm.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+          }
+        ];
+      };
       nixosConfigurations.geppc = lib.nixosSystem {
         inherit system;
         modules = [
