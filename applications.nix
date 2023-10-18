@@ -73,6 +73,7 @@
       rustdesk
       virt-manager
       rnote
+      blender
       (discord.override { withOpenASAR = true; })
       prismlauncher
       osu-lazer
