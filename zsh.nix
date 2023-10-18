@@ -41,8 +41,8 @@
         pickcolor = "${pkgs.colorpicker}/bin/colorpicker --one-shot --preview --short";
         sk = "${pkgs.screenkey}/bin/screenkey --timeout 2 --font-size small --key-mode raw --mouse";
         zshreload = "source $ZDOTDIR/.zshrc";
-        update = "sudo nixos-rebuild switch --flake $HOME/dotfiles";
-        cleanup = "sudo nix-collect-garbage --delete-older-than";
+        rebuild = "sudo nixos-rebuild switch --flake $HOME/dotfiles";
+        cleanup = "sudo nix-collect-garbage -d";
 
         sysi = "systemctl status";
         sysr = "sudo systemctl restart";
