@@ -26,6 +26,13 @@
       package = pkgs.firefox-devedition;
     };
 
+    programs.zathura = {
+      enable = true;
+      options = {
+        selection-clipboard = "clipboard";
+      };
+    };
+
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
@@ -61,7 +68,6 @@
       obs-studio
       mpv
       xzoom
-      zathura
       gnome.file-roller
       # manual fix required for fonts to work: https://nixos.wiki/wiki/Onlyoffice#Install_and_use_missing_corefonts
       onlyoffice-bin
