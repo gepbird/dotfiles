@@ -43,6 +43,9 @@
         "x-scheme-handler/http" = [ "firefox.desktop" ];
         "x-scheme-handler/https" = [ "firefox.desktop" ];
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "onlyoffice-desktopeditors.desktop" ];
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "onlyoffice-desktopeditors.desktop" ];
         "image/png" = [ "feh.desktop" ];
         "image/jpeg" = [ "feh.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
