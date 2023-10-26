@@ -120,5 +120,10 @@
         exit_mode = "return-query";
       };
     };
+
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 }
