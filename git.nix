@@ -14,8 +14,8 @@
         d = "diff";
         ds = "diff --staged";
         co = "checkout";
-        cl = "clone";
-        gh = "!git clone git@github.com:$1";
+        cl = "clone --recursive";
+        gh = "!git clone --recursive git@github.com:$1";
         p = "!git pull && git push";
         l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
         churl = "remote set-url origin";
