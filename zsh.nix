@@ -129,7 +129,7 @@
 
         nixwhere() { realpath $(which $1) }
 
-        try() { nix shell nixpkgs#$1 }
+        try() { NIXPKGS_ALLOW_UNFREE=1 nix shell --impure nixpkgs/nixos-unstable#$1 ''${@:2} }
 
         umask 002 # allow write for group
 
