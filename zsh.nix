@@ -38,7 +38,7 @@
         clip = "${pkgs.xsel}/bin/xsel -b";
         dnd = "${pkgs.xdragon}/bin/xdragon --and-exit --all";
         getpid = "${pkgs.xdotool}/bin/xdotool getwindowpid $(${pkgs.xdotool}/bin/xdotool selectwindow)";
-        whatsmyip = "${pkgs.curl}/bin/curl ifconfig.me";
+        whatsmyip = "${pkgs.curl}/bin/curl -4 icanhazip.com";
         pickcolor = "${pkgs.colorpicker}/bin/colorpicker --one-shot --preview --short";
         sk = "${pkgs.screenkey}/bin/screenkey --timeout 2 --font-size small --key-mode raw --mouse";
         zshreload = "source $ZDOTDIR/.zshrc";
