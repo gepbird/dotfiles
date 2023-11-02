@@ -28,6 +28,7 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
+      X11Forwarding = true;
     };
   };
   users.users.gep.openssh.authorizedKeys.keys = [
