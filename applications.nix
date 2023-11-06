@@ -84,7 +84,7 @@
       blender
       (discord.override { withOpenASAR = true; })
       prismlauncher
-      osu-lazer
+      osu-lazer-bin
       wineWowPackages.staging
       winetricks
     ];
