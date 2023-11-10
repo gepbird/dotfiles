@@ -100,9 +100,12 @@
     style = "adwaita-dark";
   };
 
+  services.ratbagd.enable = true;
+
   home-manager.users.gep = {
     home.packages = with pkgs; [
       pulseaudio # pactl is a dependency of dwm change volume script
+      piper
     ];
 
     services.dunst = {
