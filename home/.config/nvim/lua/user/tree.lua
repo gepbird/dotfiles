@@ -52,6 +52,7 @@ require 'nvim-tree'.setup {
       { 'n', '<s-h>',    api.tree.collapse_all,              { buffer = bufnr, nowait = true } },
       { 'n', '<s-l>',    api.tree.expand_all,                { buffer = bufnr, nowait = true } },
       { 'n', '<tab>',    api.node.open.preview,              { buffer = bufnr, nowait = true } },
+      { 'n', 's',        api.node.run.system,                { buffer = bufnr, nowait = true } },
       { 'n', '<s-i>',    api.tree.toggle_gitignore_filter,   { buffer = bufnr, nowait = true } },
       { 'n', '<s-u>',    api.tree.toggle_custom_filter,      { buffer = bufnr, nowait = true } },
       { 'n', '<s-r>',    api.tree.reload,                    { buffer = bufnr, nowait = true } },
