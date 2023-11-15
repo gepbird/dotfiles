@@ -50,6 +50,7 @@
       dos2unix
       eza
       bat
+      progress
       clac
       glib # for gio trash
       sshfs
