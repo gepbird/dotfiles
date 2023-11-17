@@ -15,6 +15,25 @@
       enable = true;
       package = pkgs.dwm.overrideAttrs (_: {
         src = ./home/.local/share/dwm;
+        postPatch = with pkgs; ''
+          substituteInPlace chbright.sh \
+            --replace '@hck@' '${hck}/bin/hck' \
+            --replace '@dunstify@' '${dunst}/bin/dunstify' \
+            --replace '@light@' '${light}/bin/light'
+          substituteInPlace chvol.sh \
+            --replace '@sed@' '${gnused}/bin/sed' \
+            --replace '@rg@' '${ripgrep}/bin/rg' \
+            --replace '@dunstify@' '${dunst}/bin/dunstify' \
+            --replace '@pactl@' '${pulseaudio}/bin/pactl'
+          substituteInPlace config.def.h \
+            --replace '@zsh@' '${zsh}/bin/zsh' \
+            --replace '@clac@' '${clac}/bin/clac' \
+            --replace '@lf@' '${lf}/bin/lf' \
+            --replace '@xkill@' '${xorg.xkill}/bin/xkill' \
+            --replace '@rofi@' '${rofi}/bin/rofi' \
+            --replace '@flameshot@' '${flameshot}/bin/flameshot' \
+            --replace '@xfce4-terminal@' '${xfce.xfce4-terminal}/bin/xfce4-terminal'
+        '';
       });
     };
   };
@@ -104,7 +123,6 @@
 
   home-manager.users.gep = {
     home.packages = with pkgs; [
-      pulseaudio # pactl is a dependency of dwm change volume script
       piper
     ];
 

@@ -23,12 +23,12 @@ typedef struct {
   const void *cmd;
 } Sp;
 #define SP(tag, cmd) \
-  { tag, (char *[]) { "xfce4-terminal", "--geometry", "120x34", "-T", tag, "-e", cmd, NULL } },
+  { tag, (char *[]) { "@xfce4-terminal@", "--geometry", "120x34", "-T", tag, "-e", cmd, NULL } },
 static Sp scratchpads[] = {
   /* name          cmd  */
-  SP("spterm",     "zsh")
-  SP("spclac",     "clac")
-  SP("splf",       "lf")
+  SP("spterm",     "@zsh@")
+  SP("spclac",     "@clac@")
+  SP("splf",       "@lf@")
 };
 
 /* tagging */
@@ -80,11 +80,11 @@ static const Layout layouts[] = {
   { Sup|Ctr|Sft,                  KEY,      toggletag,      { .ui = 1 << TAG } },
 
 /* commands */
-static const char *rofi[]             = { "rofi", "-show", "run", NULL };
-static const char *term[]             = { "xfce4-terminal", NULL };
-static const char *flameshot[]        = { "flameshot", "gui", NULL };
-static const char *flameshotdelayed[] = { "flameshot", "gui", "-d", "2500", NULL };
-static const char *xkill[]            = { "xkill", NULL };
+static const char *rofi[]             = { "@rofi@", "-show", "run", NULL };
+static const char *term[]             = { "@xfce4-terminal@", NULL };
+static const char *flameshot[]        = { "@flameshot@", "gui", NULL };
+static const char *flameshotdelayed[] = { "@flameshot@", "gui", "-d", "2500", NULL };
+static const char *xkill[]            = { "@xkill@", NULL };
 static const char* voltoggle[]        = { "chvol.sh", "set-sink-mute", "0", "toggle", NULL };
 static const char* voldown[]          = { "chvol.sh", "set-sink-volume", "0", "-10%", NULL };
 static const char* voldownlite[]      = { "chvol.sh", "set-sink-volume", "0", "-1%", NULL };
