@@ -43,6 +43,7 @@ require 'user.utils'.register_maps {
   { 'n',   '<c-left>',     ':vertical resize -2<cr>' },
   { 'n',   '<c-right>',    ':vertical resize +2<cr>' },
 
+  { 'x',   'p',            '"_dP',                                       { unmap = true } },
   { 'n',   '<s-y>',        'yy',                                         { unmap = true } },
   { 'n',   '<s-c>',        'cc',                                         { unmap = true } },
   { 'n',   '<s-d>',        'dd',                                         { unmap = true } },
