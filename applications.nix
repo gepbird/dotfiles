@@ -9,6 +9,7 @@
 
   # virt-manager
   virtualisation.libvirtd.enable = true;
+  users.users.gep.extraGroups = [ "libvirtd" ];
   programs.dconf.enable = true;
   home-manager.users.gep = {
     dconf = {
