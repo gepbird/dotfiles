@@ -21,8 +21,8 @@
       options = [ "nofail" ];
     };
     "/winchi" = {
-      device = "/dev/disk/by-uuid/F6084FBD084F7C1D";
-      fsType = "ntfs";
+      device = "/dev/disk/by-uuid/bfd2931c-b7a1-429b-adfe-4ec2dc8390e2";
+      fsType = "btrfs";
       options = [ "nofail" ];
     };
     "/windows" = {
