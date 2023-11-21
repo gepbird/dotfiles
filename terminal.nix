@@ -44,6 +44,7 @@
       p7zip
       fzf
       file
+      lsof
       ripgrep
       hck
       fd
