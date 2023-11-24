@@ -30,7 +30,7 @@ packer.startup(function(use)
   use { 'mbbill/undotree', config = function() require 'user.undotree' end }
 
   use { 'tpope/vim-repeat' }
-  use { 'machakann/vim-sandwich', config = function() require 'user.sandwich' end }
+  use { 'machakann/vim-sandwich' }
   use { 'phaazon/hop.nvim', config = function() require 'user.hop' end }
   use { 'numToStr/Comment.nvim', config = function() require 'user.comment' end }
   use { 'windwp/nvim-autopairs', config = function() require 'user.autopairs' end }
