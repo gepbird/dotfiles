@@ -65,6 +65,7 @@ packer.startup(function(use)
   use { 'nvimdev/guard-collection' }
   use { 'nvimdev/guard.nvim', config = function() require 'user.lsp.guard' end }
   use { 'nvimdev/lspsaga.nvim', config = function() require 'user.lsp.lspsaga' end }
+  use { 'RRethy/vim-illuminate', config = function() require 'user.lsp.illuminate' end }
   use { 'folke/trouble.nvim', config = function() require 'user.lsp.trouble' end }
   use { 'j-hui/fidget.nvim', tag = 'legacy', config = function() require 'user.lsp.fidget' end }
 

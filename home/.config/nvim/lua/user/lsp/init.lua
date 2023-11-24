@@ -37,21 +37,6 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
   border = 'rounded',
 })
 
-local function lsp_highlight_document(client, _)
-  if client.server_capabilities.documentHighlightProvider then
-    utils.register_autocmds {
-      { 'CursorHold',  vim.lsp.buf.document_highlight, { buffer = true } },
-      { 'CursorMoved', vim.lsp.buf.clear_references,   { buffer = true } },
-    }
-  end
-end
-
-lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
-  on_attach = function(client, bufnr)
-    lsp_highlight_document(client, bufnr)
-  end,
-})
-
 local servers = {
   'lua_ls',
   'pyright',
