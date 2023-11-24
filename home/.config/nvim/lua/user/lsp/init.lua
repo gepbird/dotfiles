@@ -4,7 +4,6 @@ local signs = {
   DiagnosticSignHint = '',
   DiagnosticSignInfo = '',
 }
-
 for name, text in pairs(signs) do
   vim.fn.sign_define(name, { texthl = name, text = text, numhl = '' })
 end
@@ -17,25 +16,10 @@ vim.diagnostic.config {
   update_in_insert = true,
   underline = true,
   severity_sort = true,
-  float = {
-    focusable = false,
-    style = 'minimal',
-    border = 'rounded',
-    source = 'always',
-    header = '',
-    prefix = '',
-  },
 }
 
 local lspconfig = require 'lspconfig'
 local utils = require 'user.utils'
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = 'rounded',
-})
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = 'rounded',
-})
 
 local servers = {
   'lua_ls',
