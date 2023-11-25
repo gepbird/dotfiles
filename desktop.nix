@@ -51,6 +51,8 @@
     '';
   };
 
+  services.picom.enable = true;
+
   programs.slock.enable = true;
 
   # backlight control
