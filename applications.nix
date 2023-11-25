@@ -56,6 +56,8 @@
     };
 
     home.packages = with pkgs; [
+      # shared file system for libvirt
+      virtiofsd
       pavucontrol
       gparted
       bruno
