@@ -70,6 +70,7 @@
         '';
       }))
       gimp
+      tenacity
       kdenlive
       obs-studio
       mpv
