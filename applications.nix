@@ -49,6 +49,8 @@
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "onlyoffice-desktopeditors.desktop" ];
         "image/png" = [ "feh.desktop" ];
         "image/jpeg" = [ "feh.desktop" ];
+        "audio/vnd.wave" = [ "mpv.desktop" ];
+        "audio/mpeg" = [ "mpv.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
       };
     };
