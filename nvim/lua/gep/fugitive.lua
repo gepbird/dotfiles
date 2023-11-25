@@ -1,4 +1,4 @@
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'n',  '<space>g<s-d>', ':G diff<cr>' },
   { 'n',  '<space>g<c-d>', ':G diff --staged<cr>' },
   { 'nx', '<space>go',     ':GBrowse<cr>' },

@@ -62,7 +62,7 @@ telescope.load_extension 'ui-select'
 local builtin = require 'telescope.builtin'
 local find_command = { 'rg', '--files', '--glob=!.git', '--color', 'never' }
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'n', '<space>o', function()
     builtin.find_files { hidden = true, find_command = find_command }
   end },

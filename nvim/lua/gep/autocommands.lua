@@ -1,4 +1,4 @@
-require 'user.utils'.register_autocmds {
+require 'gep.utils'.register_autocmds {
   {
     'TextYankPost',
     function()

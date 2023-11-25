@@ -75,7 +75,7 @@ local telescope_dap = require 'telescope'.load_extension 'dap'
 dap.on_run = dap.continue
 dap.on_restart = dap.run_last
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'n', '<space>b',     dap.toggle_breakpoint },
   { 'n', '<space><s-b>', function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end },
   { 'n', '<space><c-b>', function() dap.set_breakpoint(nil, nil, vim.fn.input 'Log point message: ') end },
@@ -113,5 +113,5 @@ require 'user.utils'.register_maps {
   { 'n',  't',             telescope_dap.frames,                                               { filetype = 'dapui_stacks' } },
 }
 
-require 'user.dap.debugpy'
-require 'user.dap.netcoredbg'
+require 'gep.dap.debugpy'
+require 'gep.dap.netcoredbg'

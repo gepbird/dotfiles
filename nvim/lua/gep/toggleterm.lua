@@ -19,7 +19,7 @@ require 'toggleterm'.setup {
   },
 }
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 't', '<esc>', '<c-\\><c-s-n>' },
   { 't', '<a-h>', '<c-\\><c-s-n><c-w>h' },
   { 't', '<a-j>', '<c-\\><c-s-n><c-w>j' },

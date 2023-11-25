@@ -46,7 +46,7 @@ require 'trouble'.setup {
   use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
 }
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'n', '<space>,', ':TroubleToggle workspace_diagnostics<cr>' },
   { 'n', '<space>?', ':TroubleToggle document_diagnostics<cr>' },
 }

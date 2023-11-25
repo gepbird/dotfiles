@@ -49,7 +49,7 @@ local function then_write(callback)
   end
 end
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'n',  '<space>gj',     gs.next_hunk },
   { 'n',  '<space>gk',     gs.prev_hunk },
   { 'nx', '<space>gs',     then_write(gs.stage_hunk) },

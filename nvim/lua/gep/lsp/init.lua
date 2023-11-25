@@ -19,7 +19,7 @@ vim.diagnostic.config {
 }
 
 local lspconfig = require 'lspconfig'
-local utils = require 'user.utils'
+local utils = require 'gep.utils'
 
 local servers = {
   'lua_ls',
@@ -39,7 +39,7 @@ local servers = {
   'yamlls',
 }
 for _, server in ipairs(servers) do
-  local ok, config = pcall(require, 'user.lsp.' .. server)
+  local ok, config = pcall(require, 'gep.lsp.' .. server)
   if not ok then
     config = {}
   end

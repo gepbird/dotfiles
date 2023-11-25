@@ -40,7 +40,7 @@ require 'nvim-tree'.setup {
     custom = { '\\.git$' },
   },
   on_attach = function(bufnr)
-    require 'user.utils'.register_maps {
+    require 'gep.utils'.register_maps {
       { 'n', '<s-o>',    api.node.open.no_window_picker,     { buffer = bufnr, nowait = true } },
       { 'n', 'c',        api.tree.change_root_to_node,       { buffer = bufnr, nowait = true } },
       { 'n', '<c-v>',    api.node.open.vertical,             { buffer = bufnr, nowait = true } },
@@ -85,6 +85,6 @@ require 'nvim-tree'.setup {
   end,
 }
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'n', '<space>e', function() api.tree.toggle { find_file = true } end },
 }

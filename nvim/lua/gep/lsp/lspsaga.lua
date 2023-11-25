@@ -40,7 +40,7 @@ require 'lspsaga'.setup {
   },
 }
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'n', '<space>m',        function() require 'lspsaga.codeaction':code_action() end },
   { 'n', '<space>r',        function() require 'lspsaga.rename':lsp_rename {} end },
   { 'n', '<space>k',        function() require 'lspsaga.hover':render_hover_doc {} end },

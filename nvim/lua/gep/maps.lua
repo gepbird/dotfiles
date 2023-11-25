@@ -1,4 +1,4 @@
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'nxo', '<s-h>',        '5h' },
   { 'nxo', '<s-j>',        '5j' },
   { 'nxo', '<s-k>',        '5k' },

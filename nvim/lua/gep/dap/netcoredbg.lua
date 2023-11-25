@@ -1,5 +1,5 @@
 local dap = require 'dap'
-local utils = require 'user.utils'
+local utils = require 'gep.utils'
 
 dap.adapters.coreclr = {
   type = 'executable',

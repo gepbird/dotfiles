@@ -66,7 +66,7 @@ require 'Comment'.setup {
   post_hook = nil,
 }
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'x', '<space>i',     '<plug>(comment_toggle_linewise_visual)' },
   { 'x', '<space><s-i>', '<plug>(comment_toggle_blockwise_visual)' },
 }

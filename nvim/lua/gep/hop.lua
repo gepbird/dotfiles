@@ -16,7 +16,7 @@ local function hint_lines(opts) return function() hop.hint_lines(opts) end end
 
 local function hint_char2(opts) return function() hop.hint_char2(opts) end end
 
-require 'user.utils'.register_maps {
+require 'gep.utils'.register_maps {
   { 'nxo', 'qw', hint_words {} },
   { 'nxo', 'qh', hint_words { direction = dir.BEFORE_CURSOR, current_line_only = true } },
   { 'nxo', 'qj', hint_lines { direction = dir.AFTER_CURSOR } },
