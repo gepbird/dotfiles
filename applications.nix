@@ -11,6 +11,10 @@
   virtualisation.libvirtd.enable = true;
   users.users.gep.extraGroups = [ "libvirtd" ];
   programs.dconf.enable = true;
+  environment.systemPackages = with pkgs; [
+    # shared file system
+    virtiofsd
+  ];
   home-manager.users.gep = {
     dconf = {
       enable = true;
@@ -56,8 +60,6 @@
     };
 
     home.packages = with pkgs; [
-      # shared file system for libvirt
-      virtiofsd
       pavucontrol
       gparted
       bruno
