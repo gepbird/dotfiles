@@ -1,4 +1,4 @@
 require 'gep.options'
 require 'gep.maps'
 require 'gep.autocommands'
-require 'gep.packer'
+require 'gep.plugins'

@@ -28,7 +28,7 @@
         cut = "${pkgs.hck}/bin/hck";
         grep = "${pkgs.ripgrep}/bin/rg -i --color=auto";
 
-        v = "${pkgs.neovim}/bin/nvim";
+        v = "nvim";
         g = "${pkgs.git}/bin/git";
         la = "ls -la";
         lff = "ls -la | grep";
@@ -123,7 +123,7 @@
           temp_link=$(mktemp -u)
           mv $1 $temp_link
           cat $temp_link > $1
-          ${pkgs.neovim}/bin/nvim $1
+          nvim $1
           mv $temp_link $1
         }
 

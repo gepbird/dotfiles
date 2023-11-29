@@ -6,8 +6,6 @@ vim.fn.sign_define('DapBreakpoint', { text = ' ', texthl = 'DapBreakpoint' })
 vim.fn.sign_define('DapBreakpointRejected', { text = ' ', texthl = 'DapUIBreakpointsDisabledLine' })
 vim.fn.sign_define('DapStopped', { text = ' ' })
 
-require 'dap.ext.vscode'.json_decode = require 'json5'.parse
-
 dapui.setup {
   icons = { expanded = '▾', collapsed = '▸' },
   mappings = {
