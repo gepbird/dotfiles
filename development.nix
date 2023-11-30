@@ -145,6 +145,7 @@
       dbeaver
       texlive.combined.scheme-full
       nixpkgs-review
+      nix-prefetch-git
 
       clang-tools
       rust-analyzer
