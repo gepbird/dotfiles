@@ -99,7 +99,7 @@
           github_link='https://github.com/settings/ssh/new'
 
           echo "Generating ssh key to $key_file"
-          ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -f $private_key
+          ${pkgs.openssh}/bin/ssh-keygen -f $private_key
 
           echo "Add the ssh key below to github as an Authentication and a Signing key: $github_link"
           echo '----BEGIN SSH PUBLIC KEY BLOCK----'
