@@ -1,6 +1,5 @@
 local telescope = require 'telescope'
 local actions = require 'telescope.actions'
-local fb = require 'telescope'.extensions.file_browser
 
 telescope.setup {
   defaults = {
@@ -29,8 +28,6 @@ telescope.setup {
         ['<c-p>'] = actions.cycle_history_prev,
 
         ['<tab>'] = actions.toggle_selection,
-
-        ['<a-h>'] = fb.actions.toggle_hidden,
       },
     },
     vimgrep_arguments = {
@@ -45,18 +42,12 @@ telescope.setup {
     },
   },
   extensions = {
-    media_files = {
-      filetypes = { 'png', 'webp', 'jpg', 'jpeg' },
-      find_cmd = 'rg',
-    },
     ['ui-select'] = {
       require 'telescope.themes'.get_dropdown {},
     },
   },
 }
 
-telescope.load_extension 'file_browser'
-telescope.load_extension 'media_files'
 telescope.load_extension 'ui-select'
 
 local builtin = require 'telescope.builtin'
@@ -70,7 +61,6 @@ require 'gep.utils'.register_maps {
     builtin.find_files { hidden = true, no_ignore = true, find_command = find_command }
   end },
   { 'n', '<space><tab>', builtin.oldfiles },
-  { 'n', '<space>tf',    fb.file_browser },
   { 'n', '<space>tg',    builtin.live_grep },
   { 'n', '<space>t<s-g>', function()
     builtin.live_grep { additional_args = { '--no-ignore' } }

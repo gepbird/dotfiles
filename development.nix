@@ -67,8 +67,6 @@
           nvim-ts-rainbow
 
           telescope-nvim
-          telescope-file-browser-nvim
-          telescope-media-files-nvim
           telescope-ui-select-nvim
 
           vim-fugitive
