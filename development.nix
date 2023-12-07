@@ -59,7 +59,6 @@
 
           vim-repeat
           vim-sandwich
-          hop-nvim
           comment-nvim
           nvim-autopairs
           nvim-lastplace
