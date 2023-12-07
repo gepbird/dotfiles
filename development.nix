@@ -120,7 +120,7 @@
       in
       {
         ".omnisharp".source = ./home/.omnisharp;
-        ".config/nvim/lua".source = mkOutOfStoreSymlink ./nvim/lua;
+        ".config/nvim/lua".source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/lua";
       };
 
     home.packages = with pkgs; [
