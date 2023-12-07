@@ -45,7 +45,6 @@
           };
         in
         with pkgs.vimPlugins; [
-          impatient-nvim
           nvim-web-devicons
 
           darkplus-nvim
