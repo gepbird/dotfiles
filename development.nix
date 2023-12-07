@@ -33,14 +33,15 @@
           };
           guard-nvim = buildVimPlugin {
             pname = "guard.nvim";
-            version = "2023-11-23";
+            version = "2023-11-27";
             src = fetchFromGitHub {
               owner = "nvimdev";
               repo = "guard.nvim";
-              rev = "3678107699520af00d2db51ba30908882bca0ef8";
-              sha256 = "1ls64x599h1p4pk1axxchp4xkfhii76dnvd1yy6bw49jswvnpz9b";
+              rev = "394317c25a6b0f0e064aebcfcf902e46fb0a04ba";
+              sha256 = "sha256-Yva/mSn5RdvHLK5cVGHUCEHRauYrwy7wR2uDzyBM9sw=";
             };
             meta.homepage = "https://github.com/nvimdev/guard.nvim/";
+            dependencies = [ guard-collection ];
           };
         in
         with pkgs.vimPlugins; [
@@ -90,7 +91,6 @@
 
           nvim-lspconfig
           guard-nvim
-          guard-collection # TODO: remove when pr is merged
           lspsaga-nvim
           trouble-nvim
           fidget-nvim
