@@ -167,9 +167,7 @@
         zvm_bindkey vicmd 'L' vi-forward-word
 
         # fix end and home key
-        zvm_bindkey viins '^[OF' end-of-line
         zvm_bindkey vicmd '^[OF' end-of-line
-        zvm_bindkey viins '^[OH' beginning-of-line
         zvm_bindkey vicmd '^[OH' beginning-of-line
       '';
     };
