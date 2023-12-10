@@ -144,6 +144,7 @@
       nix-prefetch-git
 
       clang-tools
+      lldb
       rust-analyzer
       rustfmt
       phpactor
