@@ -2,7 +2,7 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
 vim.cmd [[
-set completeopt=menu,noselect
+  set completeopt=menu,noselect
 ]]
 
 local kind_icons = {
@@ -34,11 +34,6 @@ local kind_icons = {
   Copilot = '',
 }
 
-local check_backspace = function()
-  local col = vim.fn.col '.' - 1
-  return col == 0 or vim.fn.getline '.':sub(col, col):match '%s'
-end
-
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -53,34 +48,6 @@ cmp.setup {
     ['<c-space>'] = cmp.mapping.complete(),
     ['<a-esc>'] = cmp.mapping.abort(),
     ['<c-l>'] = cmp.mapping.confirm { select = true },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      local has_words_before = function()
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
-      end
-      if luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
-      elseif check_backspace() then
-        fallback()
-      else
-        fallback()
-      end
-    end, {
-      'i',
-      's',
-    }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, {
-      'i',
-      's',
-    }),
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
