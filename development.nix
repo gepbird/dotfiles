@@ -119,59 +119,77 @@
         ".config/nvim/lua".source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/lua";
       };
 
-    home.packages = with pkgs; [
-      gcc
-      gnumake
-      rustc
-      cargo
-      cargo-watch
-      php
-      php83Packages.composer
-      (python3.withPackages (ps: with ps; [
-        pip
-        debugpy
-      ]))
-      nodejs
-      #openjdk8
-      openjdk19
-      gradle
-      dotnet-sdk
-      flutter
-      sqlite
-      dbeaver
-      texlive.combined.scheme-full
-      nixpkgs-review
-      nix-prefetch-git
+    home.packages = with pkgs;
+      let
+        latex = (texlive.withPackages (ps: with ps; [
+          scheme-basic
 
-      clang-tools
-      lldb
-      rust-analyzer
-      rustfmt
-      phpactor
-      # TODO: remove when luals includes commit https://github.com/CppCXY/EmmyLuaCodeStyle/commit/aa767977707dc36a2558765c7111910fbe937f1e
-      (lua-language-server.overrideAttrs (_: {
-        version = "3.7.0-unstable-2023-10-30";
-        src = pkgs.fetchFromGitHub {
-          owner = "gepbird";
-          repo = "lua-language-server";
-          rev = "449b43ce7e5b217baa020dc737250841fed529e4";
-          hash = "sha256-JeoBkiet4EkMgx1FHGn/BWXc0NgHbOOB97kJVWXms0U=";
-          fetchSubmodules = true;
-        };
-      }))
-      omnisharp-roslyn
-      netcoredbg
-      nodePackages.typescript-language-server
-      emmet-ls
-      vscode-langservers-extracted # html, css, json (unused: eslint)
-      prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
-      nodePackages.pyright
-      texlab
-      yapf
-      rnix-lsp
-      lemminx
-      taplo
-      yaml-language-server
-    ];
+          latexmk
+
+          #collection-mathscience
+          naive-ebnf # fixes tikz.sty not found
+          siunitx
+
+          xstring
+          soul
+          environ
+          circuitikz
+        ]));
+      in
+      [
+        gcc
+        gnumake
+        rustc
+        cargo
+        cargo-watch
+        php
+        php83Packages.composer
+        (python3.withPackages (ps: with ps; [
+          pip
+          debugpy
+        ]))
+        nodejs
+        #openjdk8
+        openjdk19
+        gradle
+        dotnet-sdk
+        flutter
+        sqlite
+        dbeaver
+        #texlive.combined.scheme-full
+        latex
+        nixpkgs-review
+        nix-prefetch-git
+
+        clang-tools
+        lldb
+        rust-analyzer
+        rustfmt
+        phpactor
+        # TODO: remove when luals includes commit https://github.com/CppCXY/EmmyLuaCodeStyle/commit/aa767977707dc36a2558765c7111910fbe937f1e
+        (lua-language-server.overrideAttrs (_: {
+          version = "3.7.0-unstable-2023-10-30";
+          src = pkgs.fetchFromGitHub {
+            owner = "gepbird";
+            repo = "lua-language-server";
+            rev = "449b43ce7e5b217baa020dc737250841fed529e4";
+            hash = "sha256-JeoBkiet4EkMgx1FHGn/BWXc0NgHbOOB97kJVWXms0U=";
+            fetchSubmodules = true;
+          };
+        }))
+        omnisharp-roslyn
+        netcoredbg
+        nodePackages.typescript-language-server
+        emmet-ls
+        vscode-langservers-extracted # html, css, json (unused: eslint)
+        prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
+        nodePackages.pyright
+        texlab
+        yapf
+        rnix-lsp
+        lemminx
+        taplo
+        yaml-language-server
+      ];
   };
 }
