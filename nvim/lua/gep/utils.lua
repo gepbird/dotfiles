@@ -78,4 +78,17 @@ M.register_autocmd = function(autocmd)
   vim.api.nvim_create_autocmd(event, options)
 end
 
+local file_big_cache = {}
+M.is_file_big = function(buffer)
+  if file_big_cache[buffer] ~= nil then
+    return file_big_cache[buffer]
+  end
+
+  local max_bytes = 100 * 1024
+  local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buffer))
+  local big = ok and stats and stats.size > max_bytes
+  file_big_cache[buffer] = big
+  return big
+end
+
 return M;

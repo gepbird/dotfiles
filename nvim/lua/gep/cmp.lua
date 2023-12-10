@@ -97,14 +97,6 @@ cmp.setup {
       return vim_item
     end,
   },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
-    { name = 'luasnip' },
-    { name = 'buffer' },
-    { name = 'path' },
-    { name = 'copilot' },
-  },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -130,3 +122,33 @@ cmp.setup.cmdline(':', {
     { { name = 'cmdline' } }
   ),
 })
+
+-- set up cmp sources for current buffer
+local default_cmp_sources = cmp.config.sources {
+  { name = 'nvim_lsp' },
+  { name = 'nvim_lua' },
+  { name = 'luasnip' },
+  { name = 'path' },
+  { name = 'copilot' },
+}
+require 'gep.utils'.register_autocmd {
+  'BufReadPre',
+  function(t)
+    if not require 'gep.utils'.is_file_big(t.buf) then
+      local sources = {}
+      for k, v in pairs(default_cmp_sources) do
+        sources[k] = v
+      end
+      -- add buffer source for small files
+      sources[#sources + 1] = { name = 'buffer', group_index = 4 }
+      cmp.setup.buffer {
+        sources = sources,
+      }
+    else
+      -- only use default sources for big files
+      cmp.setup.buffer {
+        sources = default_cmp_sources,
+      }
+    end
+  end,
+}
