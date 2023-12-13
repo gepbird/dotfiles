@@ -9,6 +9,7 @@ local languages = {
   'cs',
   'dart',
   'java',
+  'tex',
 }
 for _, language in ipairs(languages) do
   ls.add_snippets(language, require('gep.snippets.' .. language), { type = 'autosnippets' })
