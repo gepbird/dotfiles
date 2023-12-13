@@ -7,6 +7,10 @@
       aliases = {
         c = "commit -S";
         ca = "commit -S --amend";
+        can = "commit -S --amend --no-edit";
+        cp = "cherry-pick";
+        ri = "rebase -i";
+        rc = "rebase --continue";
         st = "stash --include-untracked";
         sp = "stash pop";
         s = "status";
@@ -19,7 +23,6 @@
         p = "!git pull && git push";
         l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
         churl = "remote set-url origin";
-        cp = "cherry-pick";
       };
       extraConfig = {
         user = {
