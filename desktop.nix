@@ -114,7 +114,6 @@
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
   };
-  # TODO: try to move this to home manager once it's fixed: https://github.com/nix-community/home-manager/pull/4306
   qt = {
     enable = true;
     platformTheme = "gnome";
