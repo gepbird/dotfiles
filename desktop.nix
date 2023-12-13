@@ -123,7 +123,16 @@
 
   services.ratbagd.enable = true;
 
+  environment.sessionVariables.PATH = [
+    "$HOME/.local/bin"
+  ];
+
   home-manager.users.gep = {
+    home.file = with pkgs; {
+      ".local/bin/java-8".source = "${jdk8}/bin/java";
+      ".local/bin/java-21".source = "${jdk21}/bin/java";
+    };
+
     home.packages = with pkgs; [
       piper
     ];

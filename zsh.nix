@@ -17,8 +17,6 @@
 
       sessionVariables = {
         DOTNET_ROOT = "${pkgs.dotnet-sdk}";
-        JAVA_8_HOME = "${pkgs.jdk8}";
-        JAVA_20_HOME = "${pkgs.jdk20}";
         ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
       };
 
