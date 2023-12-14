@@ -9,6 +9,11 @@
     ./applications.nix
   ];
 
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
   networking.hostName = "geptop";
 
   # hopefully more battery time with these settings
