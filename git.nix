@@ -31,6 +31,7 @@
           signingKey = "~/.ssh/id_ed25519.pub";
         };
         init.defaultBranch = "main";
+        safe.directory = "*";
         core.editor = "nvim";
         gpg.format = "ssh";
         push.autoSetupRemote = true;
