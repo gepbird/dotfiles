@@ -35,11 +35,20 @@
       options = [ "nofail" ];
     };
     "/windows" = {
-      device = "/dev/disk/by-uuid/F6DC963EDC95F957";
+      device = "/dev/disk/by-uuid/69757C261F69C15A";
       fsType = "ntfs";
       options = [ "nofail" ];
     };
+    "/nixos-vm" = {
+      device = "/dev/disk/by-uuid/cb725a9a-7cc9-43f4-8639-cbc203547832";
+      fsType = "btrfs";
+      options = [ "nofail" ];
+    };
   };
+
+  systemd.tmpfiles.rules = [
+    "d /vm 0755 gep root"
+  ];
 
   networking.hostName = "geppc";
 
