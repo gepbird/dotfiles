@@ -129,11 +129,13 @@
           #collection-mathscience
           naive-ebnf # fixes tikz.sty not found
           siunitx
+          steinmetz # required for \phasor
 
           xstring
           soul
           environ
           circuitikz
+          pict2e # required for \phasor
         ]));
       in
       [
