@@ -35,7 +35,7 @@
       options = [ "nofail" ];
     };
     "/windows" = {
-      device = "/dev/disk/by-uuid/69757C261F69C15A";
+      device = "/dev/disk/by-uuid/98D4C937D4C91900";
       fsType = "ntfs";
       options = [ "nofail" ];
     };
