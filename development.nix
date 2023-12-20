@@ -64,7 +64,7 @@
 
           nvim-treesitter.withAllGrammars
           nvim-treesitter-textobjects
-          nvim-ts-rainbow
+          rainbow-delimiters-nvim
 
           telescope-nvim
           telescope-ui-select-nvim

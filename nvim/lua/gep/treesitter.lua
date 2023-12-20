@@ -14,19 +14,9 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
     disable = {},
   },
-  rainbow = {
-    enable = true,
-    disable = { 'html' },
-    extended_mode = true,
-    max_file_lines = nil,
-    colors = {
-      '#d26dcf', -- pink
-      '#ffd700', -- yellow
-      '#00cc00', -- green
-      '#d26dcf', -- pink
-    },
-    --termcolors = { },
-  },
+}
+
+require 'rainbow-delimiters.setup'.setup {
 }
 
 require 'nvim-treesitter.configs'.setup {
