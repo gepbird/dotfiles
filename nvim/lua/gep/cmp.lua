@@ -48,9 +48,11 @@ cmp.setup {
     ['<c-space>'] = cmp.mapping.complete(),
     ['<a-esc>'] = cmp.mapping.abort(),
     ['<c-l>'] = cmp.mapping.confirm { select = true },
-    ['<Tab>'] = cmp.mapping(function()
-      if luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
       end
     end, {
       'i',
