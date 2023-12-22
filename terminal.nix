@@ -67,6 +67,11 @@
       w3m
     ];
 
+    programs.ssh = {
+      enable = true;
+      matchBlocks."*".extraOptions.StrictHostKeyChecking = "no";
+    };
+
     programs.bottom = {
       enable = true;
       settings = {
