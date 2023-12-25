@@ -15,6 +15,7 @@
       useOSProber = true;
       efiSupport = true;
       device = "nodev";
+      timeoutStyle = "hidden";
     };
   };
 
