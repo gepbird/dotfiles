@@ -16,7 +16,10 @@
 
   hardware.opentabletdriver.enable = true;
 
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    firewall.enable = false;
+  };
 
   services.openssh = {
     enable = true;
