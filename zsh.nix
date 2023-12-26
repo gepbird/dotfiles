@@ -16,6 +16,7 @@
       history.path = "$ZDOTDIR/.zsh_history";
 
       sessionVariables = {
+        NIXPKGS_ALLOW_UNFREE = 1;
         DOTNET_ROOT = "${pkgs.dotnet-sdk}";
         ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
       };
