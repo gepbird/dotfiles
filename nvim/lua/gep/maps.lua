@@ -43,7 +43,19 @@ require 'gep.utils'.register_maps {
   { 'n',   '<c-left>',     ':vertical resize -2<cr>' },
   { 'n',   '<c-right>',    ':vertical resize +2<cr>' },
 
-  { 'x',   'p',            '"_dP',                                       { unmap = true } },
+  { 'x', 'p', function()
+    local src_mode = vim.fn.getregtype '"'
+    local dst_mode = vim.fn.mode()
+    if src_mode == dst_mode then
+      vim.cmd 'normal! "_dP'
+    elseif src_mode == 'V' and dst_mode == 'v' then
+      vim.cmd 'normal! "_di\r'
+      vim.cmd 'normal! P'
+    elseif src_mode == 'v' and dst_mode == 'V' then
+      vim.cmd 'normal! "_dO'
+      vim.cmd 'normal! p'
+    end
+  end },
   { 'n',   '<s-y>',        'yy',                                         { unmap = true } },
   { 'n',   '<s-c>',        'cc',                                         { unmap = true } },
   { 'n',   '<s-d>',        'dd',                                         { unmap = true } },
