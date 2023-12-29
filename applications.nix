@@ -85,6 +85,7 @@
       libreoffice
       cinnamon.nemo
       qdirstat
+      qbittorrent
       anydesk
       rustdesk
       virt-manager
