@@ -39,7 +39,10 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQXysKutq2b67RAmq46qMH8TDLEYf0D5SYon4vE6efO u0_a483@localhost"
   ];
 
-  time.timeZone = "Europe/Budapest";
+  time = {
+    timeZone = "Europe/Budapest";
+    hardwareClockInLocalTime = true;
+  };
 
   console.useXkbConfig = true;
 
