@@ -8,14 +8,14 @@
       extraLuaConfig = "require 'gep'";
       plugins = with pkgs; with vimUtils;
         let
-          darkplus-nvim = buildVimPlugin {
-            pname = "darkplus-nvim";
-            version = "2024-01-02";
+          vscode-nvim = buildVimPlugin {
+            pname = "vscode-nvim";
+            version = "2023-11-06";
             src = fetchFromGitHub {
-              owner = "gepbird";
-              repo = "darkplus.nvim";
-              rev = "merged";
-              hash = "sha256-9QFG7l5m3VZ9Nkz2D87JqbaggUBRprFO+6+HQNihTGA=";
+              owner = "Mofiqul";
+              repo = "vscode.nvim";
+              rev = "master";
+              hash = "sha256-DnVDm0m3cvdPKZuCSRzBdHKgPXGB4X3nBsykFJjfzvY=";
             };
             meta.homepage = "https://github.com/gepbird/darkplus.nvim/";
           };
@@ -23,7 +23,7 @@
         with pkgs.vimPlugins; [
           nvim-web-devicons
 
-          darkplus-nvim
+          vscode-nvim
           lualine-nvim
           bufferline-nvim
           nvim-tree-lua

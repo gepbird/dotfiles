@@ -1,4 +1,4 @@
-require 'gep.darkplus'
+require 'gep.vscode'
 require 'gep.lualine'
 require 'gep.bufferline'
 require 'gep.tree'
