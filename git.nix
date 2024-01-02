@@ -5,9 +5,9 @@
     programs.git = {
       enable = true;
       aliases = {
-        c = "commit -S";
-        ca = "commit -S --amend";
-        can = "commit -S --amend --no-edit";
+        c = "commit";
+        ca = "commit --amend";
+        can = "commit --amend --no-edit";
         cp = "cherry-pick";
         ri = "rebase -i";
         rc = "rebase --continue";
@@ -34,6 +34,7 @@
         safe.directory = "*";
         core.editor = "nvim";
         gpg.format = "ssh";
+        commit.gpgSign = true;
         push.autoSetupRemote = true;
         pull.rebase = true;
       };
