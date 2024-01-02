@@ -10,12 +10,12 @@
         let
           darkplus-nvim = buildVimPlugin {
             pname = "darkplus-nvim";
-            version = "2023-11-06";
+            version = "2024-01-02";
             src = fetchFromGitHub {
               owner = "gepbird";
               repo = "darkplus.nvim";
-              rev = "276e1f2794af13a90bae1df08f7e72c2a5badd53";
-              hash = "sha256-j+z+K/T3eyS6oJUGtd6J77JD7DXEFSZocR8BWlOVznM=";
+              rev = "merged";
+              hash = "sha256-9QFG7l5m3VZ9Nkz2D87JqbaggUBRprFO+6+HQNihTGA=";
             };
             meta.homepage = "https://github.com/gepbird/darkplus.nvim/";
           };
