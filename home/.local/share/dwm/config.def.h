@@ -84,6 +84,11 @@ static const char *rofi[]             = { "@rofi@", "-show", "run", NULL };
 static const char *term[]             = { "@xfce4-terminal@", NULL };
 static const char *flameshot[]        = { "@flameshot@", "gui", NULL };
 static const char *flameshotdelayed[] = { "@flameshot@", "gui", "-d", "2500", NULL };
+static const char *gromitgrab[]       = { "@gromit-mpx@", "-t", NULL };
+static const char *gromittoggle[]     = { "@gromit-mpx@", "-v", NULL };
+static const char *gromitundo[]       = { "@gromit-mpx@", "-z", NULL };
+static const char *gromitclear[]      = { "@gromit-mpx@", "-c", NULL };
+static const char *gromitredo[]       = { "@gromit-mpx@", "-y", NULL };
 static const char *xkill[]            = { "@xkill@", NULL };
 static const char* voltoggle[]        = { "chvol.sh", "set-sink-mute", "0", "toggle", NULL };
 static const char* voldown[]          = { "chvol.sh", "set-sink-volume", "0", "-10%", NULL };
@@ -101,6 +106,11 @@ static const Key keys[] = {
   { Sup,                          XK_Return,  spawn,          { .v = term } },
   { 0,                            XK_Print,   spawn,          { .v = flameshot } },
   { Sft,                          XK_Print,   spawn,          { .v = flameshotdelayed } },
+  { Sup,                          XK_e,       spawn,          { .v = gromitgrab } },
+  { Sup,                          XK_r,       spawn,          { .v = gromittoggle } },
+  { Sup,                          XK_a,       spawn,          { .v = gromitundo } },
+  { Sup|Sft,                      XK_a,       spawn,          { .v = gromitclear } },
+  { Sup,                          XK_s,       spawn,          { .v = gromitredo } },
   { Sup,                          XK_b,       togglebar,      { 0 } },
   { Sup,                          XK_v,       toggleborder,   { 0 } },
   { Sup,                          XK_c,       incborder,      { .i = +1 } },

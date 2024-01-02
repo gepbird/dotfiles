@@ -1,4 +1,4 @@
-{ pkgs, home-manager, ... }:
+{ pkgs, lib, home-manager, ... }:
 
 {
   services.xserver = {
@@ -32,6 +32,7 @@
             --replace '@xkill@' '${xorg.xkill}/bin/xkill' \
             --replace '@rofi@' '${rofi}/bin/rofi' \
             --replace '@flameshot@' '${flameshot}/bin/flameshot' \
+            --replace '@gromit-mpx@' '${gromit-mpx}/bin/gromit-mpx' \
             --replace '@xfce4-terminal@' '${xfce.xfce4-terminal}/bin/xfce4-terminal'
         '';
       });
@@ -147,6 +148,39 @@
         day = 4000;
         night = 2700;
       };
+    };
+
+    services.gromit-mpx = {
+      enable = true;
+      hotKey = null;
+      tools = map
+        (x: with lib; {
+          device = mkDefault "default";
+          type = mkDefault "pen";
+          size = mkDefault 3;
+        } // x) [
+        {
+          color = "red";
+        }
+        {
+          color = "green";
+          modifiers = [ "SHIFT" ];
+        }
+        {
+          color = "blue";
+          modifiers = [ "CONTROL" ];
+        }
+        {
+          color = "red";
+          arrowSize = 2;
+          modifiers = [ "ALT" ];
+        }
+        {
+          type = "eraser";
+          size = 75;
+          modifiers = [ "3" ];
+        }
+      ];
     };
 
     services.flameshot = {
