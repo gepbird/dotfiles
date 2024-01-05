@@ -54,6 +54,7 @@
       progress
       clac
       glib # for gio trash
+      nmap
       sshfs
       exiftool
       perl536Packages.FileMimeInfo

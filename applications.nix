@@ -3,6 +3,7 @@
 {
   imports = [
     ./matlab.nix
+    ./modules/wireshark.nix
   ];
 
   programs.steam.enable = true;
