@@ -4,27 +4,10 @@
   imports = [
     ./matlab.nix
     ./modules/wireshark.nix
+    ./modules/virt-manager.nix
   ];
 
   programs.steam.enable = true;
-
-  # virt-manager
-  virtualisation.libvirtd.enable = true;
-  users.users.gep.extraGroups = [ "libvirtd" ];
-  programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [
-    # shared file system
-    virtiofsd
-  ];
-  home-manager.users.gep = {
-    dconf = {
-      enable = true;
-      settings."org/virt-manager/virt-manager/connections" = {
-        autoconnect = [ "qemu:///system" ];
-        uris = [ "qemu:///system" ];
-      };
-    };
-  };
 
   home-manager.users.gep = {
     programs.firefox = {
@@ -89,7 +72,6 @@
       qbittorrent
       anydesk
       rustdesk
-      virt-manager
       rnote
       blender
       (discord.override { withOpenASAR = true; })
