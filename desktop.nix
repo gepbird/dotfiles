@@ -15,25 +15,25 @@
       enable = true;
       package = pkgs.dwm.overrideAttrs (_: {
         src = ./home/.local/share/dwm;
-        postPatch = with pkgs; ''
+        postPatch = with lib; with pkgs; ''
           substituteInPlace chbright.sh \
-            --replace '@hck@' '${hck}/bin/hck' \
-            --replace '@dunstify@' '${dunst}/bin/dunstify' \
-            --replace '@light@' '${light}/bin/light'
+            --replace '@hck@' '${getExe hck}' \
+            --replace '@dunstify@' '${getExe' dunst "dunstify"}' \
+            --replace '@light@' '${getExe light}'
           substituteInPlace chvol.sh \
-            --replace '@sed@' '${gnused}/bin/sed' \
-            --replace '@rg@' '${ripgrep}/bin/rg' \
-            --replace '@dunstify@' '${dunst}/bin/dunstify' \
-            --replace '@pactl@' '${pulseaudio}/bin/pactl'
+            --replace '@sed@' '${getExe gnused}' \
+            --replace '@rg@' '${getExe ripgrep}' \
+            --replace '@dunstify@' '${getExe' dunst "dunstify"}' \
+            --replace '@pactl@' '${getExe' pulseaudio "pactl"}'
           substituteInPlace config.def.h \
-            --replace '@zsh@' '${zsh}/bin/zsh' \
-            --replace '@clac@' '${clac}/bin/clac' \
-            --replace '@lf@' '${lf}/bin/lf' \
-            --replace '@xkill@' '${xorg.xkill}/bin/xkill' \
-            --replace '@rofi@' '${rofi}/bin/rofi' \
-            --replace '@flameshot@' '${flameshot}/bin/flameshot' \
-            --replace '@gromit-mpx@' '${gromit-mpx}/bin/gromit-mpx' \
-            --replace '@xfce4-terminal@' '${xfce.xfce4-terminal}/bin/xfce4-terminal'
+            --replace '@zsh@' '${getExe zsh}' \
+            --replace '@clac@' '${getExe clac}' \
+            --replace '@lf@' '${getExe lf}' \
+            --replace '@xkill@' '${getExe xorg.xkill}' \
+            --replace '@rofi@' '${getExe rofi}' \
+            --replace '@flameshot@' '${getExe flameshot}' \
+            --replace '@gromit-mpx@' '${getExe gromit-mpx}' \
+            --replace '@xfce4-terminal@' '${getExe xfce.xfce4-terminal}'
         '';
       });
     };
@@ -128,9 +128,9 @@
   ];
 
   home-manager.users.gep = {
-    home.file = with pkgs; {
-      ".local/bin/java-8".source = "${jdk8}/bin/java";
-      ".local/bin/java-21".source = "${jdk21}/bin/java";
+    home.file = with lib; with pkgs; {
+      ".local/bin/java-8".source = getExe' jdk8 "java";
+      ".local/bin/java-21".source = getExe' jdk21 "java";
     };
 
     home.packages = with pkgs; [
@@ -223,7 +223,7 @@
     programs.rofi = {
       enable = true;
       theme = "gruvbox-dark-hard";
-      terminal = "${pkgs.xfce.xfce4-terminal}/bin/xfce4-terminal";
+      terminal = lib.getExe pkgs.xfce.xfce4-terminal;
       extraConfig = {
         matching = "fuzzy";
         sort = true;

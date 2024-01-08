@@ -1,5 +1,6 @@
-{ pkgs, home-manager, ... }:
+{ pkgs, lib, home-manager, ... }:
 
+with lib; with pkgs;
 {
   home-manager.users.gep = {
     home.file.".config/lf/icons".source = ./home/.config/lf/icons;
@@ -7,7 +8,7 @@
     programs.lf = {
       enable = true;
       previewer = {
-        source = pkgs.writeShellScript "pv.sh" "${pkgs.pistol}/bin/pistol \"$1\"";
+        source = writeShellScript "pv.sh" "${getExe pistol} \"$1\"";
         keybinding = "i";
       };
       settings = {
@@ -29,9 +30,9 @@
       };
       # $ has to be escaped: ''$
       extraConfig = ''
-        cmd mimeopen $set -f; ${pkgs.perl536Packages.FileMimeInfo}/bin/mimeopen --ask $f
+        cmd mimeopen $set -f; ${getExe' perl538Packages.FileMimeInfo "mimeopen"} --ask $f
 
-        cmd trash %set -f; ${pkgs.glib}/bin/gio trash $fx
+        cmd trash %set -f; ${getExe' glib "gio"} trash $fx
 
         cmd uncompress ''${{
           set -f
@@ -39,9 +40,9 @@
             *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
             *.tar.gz|*.tgz) tar xzvf $f;;
             *.tar.xz|*.txz) tar xJvf $f;;
-            *.zip) ${pkgs.unzip}/bin/unzip $f;;
-            *.rar) ${pkgs.unrar}/bin/unrar x $f;;
-            *.7z) ${pkgs.p7zip}/bin/7z x $f;;
+            *.zip) ${getExe unzip} $f;;
+            *.rar) ${getExe unrar} x $f;;
+            *.7z) ${getExe p7zip} x $f;;
           esac
         }}
 
@@ -63,17 +64,17 @@
 
         cmd edit $set -f; nvim $f
 
-        cmd term %${pkgs.xfce.xfce4-terminal}/bin/xfce4-terminal
+        cmd term %${getExe xfce.xfce4-terminal}
 
-        cmd dragon %set -f; ${pkgs.xdragon}/bin/xdragon --and-exit --all $fx
+        cmd dragon %set -f; ${getExe xdragon} --and-exit --all $fx
 
         cmd j %{{
-          result="$(${pkgs.zoxide}/bin/zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+          result="$(${getExe zoxide} query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
           lf -remote "send $id cd \"$result\""
         }}
 
         cmd ji ''${{
-          result="$(${pkgs.zoxide}/bin/zoxide query -i $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+          result="$(${getExe zoxide} query -i $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
           lf -remote "send $id cd \"$result\""
         }}
       '';
