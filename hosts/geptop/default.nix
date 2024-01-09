@@ -1,15 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration-geptop.nix
-    ./system.nix
-    ./terminal.nix
-    ./desktop.nix
-    ./development.nix
-    ./applications.nix
-    ./modules
-  ];
+  imports = [ ./hardware.nix ];
 
   boot.loader = {
     systemd-boot.enable = true;

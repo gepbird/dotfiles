@@ -16,15 +16,16 @@
       let
         mkSystem = host: nixpkgs.lib.nixosSystem {
           modules = [
-            host
             home-manager.nixosModule
+            host
+            ./configuration.nix
           ];
         };
       in
       {
-        geppc = mkSystem ./configuration-geppc.nix;
-        geptop = mkSystem ./configuration-geptop.nix;
-        gepvm = mkSystem ./configuration-gepvm.nix;
+        geppc = mkSystem ./hosts/geppc;
+        geptop = mkSystem ./hosts/geptop;
+        gepvm = mkSystem ./hosts/gepvm;
       };
   };
 }
