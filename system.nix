@@ -39,6 +39,8 @@
     "flakes"
   ];
 
+  home-manager.useGlobalPkgs = true;
+
   home-manager.users.gep = {
     home.stateVersion = config.system.stateVersion;
   };

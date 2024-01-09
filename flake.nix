@@ -21,10 +21,7 @@
         modules = [
           ./configuration-gepvm.nix
           ./hardware-configuration-gepvm.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-          }
+          home-manager.nixosModule
         ];
       };
       nixosConfigurations.geppc = lib.nixosSystem {
@@ -32,10 +29,7 @@
         modules = [
           ./configuration-geppc.nix
           ./hardware-configuration-geppc.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-          }
+          home-manager.nixosModule
         ];
       };
       nixosConfigurations.geptop = lib.nixosSystem {
@@ -43,10 +37,7 @@
         modules = [
           ./configuration-geptop.nix
           ./hardware-configuration-geptop.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-          }
+          home-manager.nixosModule
         ];
       };
     };
