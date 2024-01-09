@@ -1,10 +1,6 @@
 { pkgs, home-manager, lib, ... }:
 
 {
-  imports = [
-    ./zsh.nix
-  ];
-
   # xfce4-terminal
   programs.xfconf.enable = true;
   home-manager.users.gep = {
