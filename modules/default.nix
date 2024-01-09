@@ -5,7 +5,7 @@
     (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "gep" ])
     ./atuin.nix
     ./bottom.nix
-    ./clac.nix
+    ./clac
     ./dark-theme.nix
     ./direnv.nix
     ./flameshot.nix
