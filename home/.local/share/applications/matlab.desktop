@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=MATLAB
-# this doesn't work because ~ is not resolved and it should be run inside a terminal
-#Exec=nix run ~/.local/share/matlab/launch 
-Exec=xfce4-terminal -e 'sh -c "nix run ~/.local/share/matlab/launch"'
-Type=Application

@@ -1,4 +1,4 @@
-{ hm, ... }:
+{ pkgs, lib, hm, ... }:
 
 {
   # NOTE: MANUAL INSTALL REQUIRED FOR MATLAB:
@@ -12,7 +12,17 @@
   # rebuild your system to regenerate mimeapps.list and link files with home manager
   # download the matlab launcher script: $ git clone https://gitlab.com/doronbehar/nix-matlab ~/.local/share/matlab/launch
   hm.home.file = {
-    ".config/matlab/nix.sh".source = ../home/.config/matlab/nix.sh;
-    ".local/share/applications/matlab.desktop".source = ../home/.local/share/applications/matlab.desktop;
+    ".config/matlab/nix.sh" = {
+      executable = true;
+      text = "INSTALL_DIR=$HOME/.local/share/matlab/install";
+    };
+    # TODO: install with flake
+    # https://gitlab.com/doronbehar/nix-matlab#user-content-for-nixos-users-with-a-flakes-setup
+    ".local/share/applications/matlab.desktop".text = ''
+      [Desktop Entry]
+      Name=MATLAB
+      Exec=${lib.getExe pkgs.xfce.xfce4-terminal} -e 'sh -c "nix run ~/.local/share/matlab/launch"'
+      Type=Application
+    '';
   };
 }
