@@ -10,6 +10,7 @@
     ./git.nix
     ./lf.nix
     ./matlab.nix
+    ./ssh.nix
     ./starship.nix
     ./virt-manager.nix
     ./wireshark.nix
