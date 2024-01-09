@@ -8,9 +8,12 @@
     ./clac.nix
     ./dark-theme.nix
     ./direnv.nix
+    ./flameshot.nix
     ./git.nix
+    ./gromit-mpx.nix
     ./lf.nix
     ./matlab.nix
+    ./rofi.nix
     ./ssh.nix
     ./starship.nix
     ./virt-manager.nix
