@@ -23,6 +23,7 @@
     ./virt-manager.nix
     ./wireshark.nix
     ./xfce4-terminal.nix
+    ./zathura.nix
     ./zoxide.nix
     ./zsh.nix
   ];

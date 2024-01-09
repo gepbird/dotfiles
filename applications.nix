@@ -4,19 +4,11 @@
   programs.steam.enable = true;
 
   home-manager.users.gep = {
-    programs.zathura = {
-      enable = true;
-      options = {
-        selection-clipboard = "clipboard";
-      };
-    };
-
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
         "application/zip" = [ "org.gnome.FileRoller.desktop" ];
         "text/plain" = [ "nvim.desktop" ];
-        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
         "image/png" = [ "feh.desktop" ];
         "image/jpeg" = [ "feh.desktop" ];
         "audio/vnd.wave" = [ "mpv.desktop" ];
