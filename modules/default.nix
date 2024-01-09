@@ -9,6 +9,7 @@
     ./dark-theme.nix
     ./direnv.nix
     ./flameshot.nix
+    ./gammastep.nix
     ./git.nix
     ./gromit-mpx.nix
     ./lf.nix

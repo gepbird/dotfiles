@@ -75,8 +75,6 @@
     '';
   };
 
-  services.geoclue2.enable = true;
-
   systemd.user.services = {
     polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
@@ -113,15 +111,6 @@
 
     services.dunst = {
       enable = true;
-    };
-
-    services.gammastep = {
-      provider = "geoclue2";
-      enable = true;
-      temperature = {
-        day = 4000;
-        night = 2700;
-      };
     };
   };
 }
