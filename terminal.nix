@@ -4,7 +4,6 @@
   imports = [
     ./zsh.nix
     ./lf.nix
-    ./git.nix
   ];
 
   # xfce4-terminal
