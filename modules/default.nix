@@ -13,6 +13,7 @@
     ./gromit-mpx.nix
     ./lf.nix
     ./matlab.nix
+    ./piper.nix
     ./rofi.nix
     ./ssh.nix
     ./starship.nix

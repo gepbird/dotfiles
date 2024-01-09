@@ -101,8 +101,6 @@
 
   programs.dconf.enable = true;
 
-  services.ratbagd.enable = true;
-
   environment.sessionVariables.PATH = [
     "$HOME/.local/bin"
   ];
@@ -112,10 +110,6 @@
       ".local/bin/java-8".source = getExe' jdk8 "java";
       ".local/bin/java-21".source = getExe' jdk21 "java";
     };
-
-    home.packages = with pkgs; [
-      piper
-    ];
 
     services.dunst = {
       enable = true;
