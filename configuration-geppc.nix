@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./hardware-configuration-geppc.nix
     ./system.nix
     ./terminal.nix
     ./desktop.nix

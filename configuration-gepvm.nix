@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./hardware-configuration-gepvm.nix
     ./system.nix
     ./terminal.nix
     ./desktop.nix
