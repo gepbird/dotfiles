@@ -1,12 +1,10 @@
-{ pkgs, home-manager, ... }:
+{ pkgs, hm, ... }:
 
 {
   programs.virt-manager.enable = true;
-  home-manager.users.gep = {
-    dconf.settings."org/virt-manager/virt-manager/connections" = {
-      autoconnect = [ "qemu:///system" ];
-      uris = [ "qemu:///system" ];
-    };
+  hm.dconf.settings."org/virt-manager/virt-manager/connections" = {
+    autoconnect = [ "qemu:///system" ];
+    uris = [ "qemu:///system" ];
   };
 
   # Manually add the following line to shared filesystem xmls:

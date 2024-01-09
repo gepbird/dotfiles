@@ -3,8 +3,6 @@
 {
   imports = [
     ./matlab.nix
-    ./modules/wireshark.nix
-    ./modules/virt-manager.nix
   ];
 
   programs.steam.enable = true;

@@ -7,6 +7,7 @@
     ./desktop.nix
     ./development.nix
     ./applications.nix
+    ./modules
   ];
 
   boot.loader = {
