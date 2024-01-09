@@ -4,11 +4,6 @@
   programs.steam.enable = true;
 
   home-manager.users.gep = {
-    programs.firefox = {
-      enable = true;
-      package = pkgs.firefox-devedition;
-    };
-
     programs.zathura = {
       enable = true;
       options = {
@@ -21,9 +16,6 @@
       defaultApplications = {
         "application/zip" = [ "org.gnome.FileRoller.desktop" ];
         "text/plain" = [ "nvim.desktop" ];
-        "text/html" = [ "firefox.desktop" ];
-        "x-scheme-handler/http" = [ "firefox.desktop" ];
-        "x-scheme-handler/https" = [ "firefox.desktop" ];
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
         "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [ "onlyoffice-desktopeditors.desktop" ];
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "onlyoffice-desktopeditors.desktop" ];

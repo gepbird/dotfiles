@@ -8,6 +8,7 @@
     ./clac
     ./dark-theme.nix
     ./direnv.nix
+    ./firefox.nix
     ./flameshot.nix
     ./gammastep.nix
     ./git.nix
