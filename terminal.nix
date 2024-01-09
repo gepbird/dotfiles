@@ -3,7 +3,6 @@
 {
   imports = [
     ./zsh.nix
-    ./lf.nix
   ];
 
   # xfce4-terminal

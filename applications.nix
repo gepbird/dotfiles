@@ -19,7 +19,6 @@
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
-        "inode/directory" = [ "lf.desktop" ];
         "application/zip" = [ "org.gnome.FileRoller.desktop" ];
         "text/plain" = [ "nvim.desktop" ];
         "text/html" = [ "firefox.desktop" ];
