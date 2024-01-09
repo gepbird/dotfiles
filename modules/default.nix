@@ -8,6 +8,7 @@
     ./matlab.nix
     ./virt-manager.nix
     ./wireshark.nix
+    ./xfce4-terminal.nix
     ./zsh.nix
   ];
 }
