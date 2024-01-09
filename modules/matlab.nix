@@ -1,4 +1,4 @@
-{ home-manager, ... }:
+{ hm, ... }:
 
 {
   # NOTE: MANUAL INSTALL REQUIRED FOR MATLAB:
@@ -11,8 +11,8 @@
   # remove broken installer generated and modified files: $ rm ~/.local/share/applications/mimeapps.list ~/.local/share/applications/mw-*.desktop
   # rebuild your system to regenerate mimeapps.list and link files with home manager
   # download the matlab launcher script: $ git clone https://gitlab.com/doronbehar/nix-matlab ~/.local/share/matlab/launch
-  home-manager.users.gep.home.file = {
-    ".config/matlab/nix.sh".source = ./home/.config/matlab/nix.sh;
-    ".local/share/applications/matlab.desktop".source = ./home/.local/share/applications/matlab.desktop;
+  hm.home.file = {
+    ".config/matlab/nix.sh".source = ../home/.config/matlab/nix.sh;
+    ".local/share/applications/matlab.desktop".source = ../home/.local/share/applications/matlab.desktop;
   };
 }

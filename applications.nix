@@ -1,10 +1,6 @@
 { pkgs, home-manager, ... }:
 
 {
-  imports = [
-    ./matlab.nix
-  ];
-
   programs.steam.enable = true;
 
   home-manager.users.gep = {
