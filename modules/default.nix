@@ -6,6 +6,7 @@
     ./atuin.nix
     ./bottom.nix
     ./clac.nix
+    ./dark-theme.nix
     ./direnv.nix
     ./git.nix
     ./lf.nix

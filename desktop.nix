@@ -99,27 +99,7 @@
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 
-  # dark theme
   programs.dconf.enable = true;
-  home-manager.users.gep = {
-    # gtk3
-    gtk = {
-      enable = true;
-      gtk3.extraConfig = {
-        gtk-application-prefer-dark-theme = true;
-      };
-    };
-    # gtk4
-    dconf = {
-      enable = true;
-      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    };
-  };
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
 
   services.ratbagd.enable = true;
 
