@@ -12,7 +12,7 @@
     ./gammastep.nix
     ./git.nix
     ./gromit-mpx.nix
-    ./lf.nix
+    ./lf
     ./matlab.nix
     ./piper.nix
     ./rofi.nix
