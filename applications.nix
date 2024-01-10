@@ -11,9 +11,6 @@
         "text/plain" = [ "nvim.desktop" ];
         "image/png" = [ "feh.desktop" ];
         "image/jpeg" = [ "feh.desktop" ];
-        "audio/vnd.wave" = [ "mpv.desktop" ];
-        "audio/mpeg" = [ "mpv.desktop" ];
-        "video/mp4" = [ "mpv.desktop" ];
       };
     };
 
@@ -35,7 +32,6 @@
       tenacity
       kdenlive
       obs-studio
-      mpv
       xzoom
       gnome.file-roller
       libreoffice

@@ -15,6 +15,7 @@
     ./gromit-mpx.nix
     ./lf
     ./matlab.nix
+    ./mpv.nix
     ./onlyoffice.nix
     ./piper.nix
     ./rofi.nix
