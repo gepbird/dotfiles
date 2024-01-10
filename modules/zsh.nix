@@ -22,6 +22,7 @@ in
       NIXPKGS_ALLOW_UNFREE = 1;
       DOTNET_ROOT = dotnet-sdk;
       ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
+      MANPAGER = "nvim +Man!";
     };
 
     shellAliases = {
