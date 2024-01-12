@@ -5,6 +5,7 @@
     (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "gep" ])
     ./cli
     ./dark-theme.nix
+    ./discord.nix
     ./firefox.nix
     ./flameshot.nix
     ./gammastep.nix

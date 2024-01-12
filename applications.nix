@@ -42,7 +42,6 @@
       rustdesk
       rnote
       blender
-      (discord.override { withOpenASAR = true; })
       element-desktop
       prismlauncher
       osu-lazer-bin
