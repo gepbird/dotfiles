@@ -48,15 +48,18 @@ in
       rebuild = "sudo nixos-rebuild switch --flake $HOME/dotfiles";
       cleanup = "sudo nix-collect-garbage -d";
 
+      syst = "systemctl list-units --all | grep";
       sysi = "systemctl status";
       sysr = "sudo systemctl restart";
       sysl = "sudo systemctl start";
       syss = "sudo systemctl stop";
-      syse = "sudo systemctl enable --now";
-      sysE = "sudo systemctl enable";
-      sysd = "sudo systemctl disable --now";
-      sysD = "sudo systemctl disable";
-      sysdr = "sudo systemctl daemon-reload";
+      jour = "journalctl -xeu";
+      sysut = "systemctl --user list-units --all | grep";
+      sysui = "systemctl --user status";
+      sysur = "systemctl --user restart";
+      sysul = "systemctl --user start";
+      sysus = "systemctl --user stop";
+      jouru = "journalctl --user -xeu";
     };
 
     initExtra = ''
