@@ -13,9 +13,9 @@
     '';
     windowManager.dwm = {
       enable = true;
-      package = pkgs.dwm.overrideAttrs (_: {
+      package = with lib; with pkgs; dwm.overrideAttrs (_: {
         src = ./home/.local/share/dwm;
-        postPatch = with lib; with pkgs; ''
+        postPatch = ''
           substituteInPlace chbright.sh \
             --replace '@hck@' '${getExe hck}' \
             --replace '@dunstify@' '${getExe' dunst "dunstify"}' \
@@ -35,6 +35,7 @@
             --replace '@gromit-mpx@' '${getExe gromit-mpx}' \
             --replace '@xfce4-terminal@' '${getExe xfce.xfce4-terminal}'
         '';
+        buildInputs = [ wrapGAppsHook ];
       });
     };
   };
