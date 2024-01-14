@@ -23,6 +23,7 @@
   hm.xdg.mimeApps.defaultApplications = {
     "audio/vnd.wave" = [ "mpv.desktop" ];
     "audio/mpeg" = [ "mpv.desktop" ];
+    "image/gif" = [ "mpv.desktop" ];
     "video/mp4" = [ "mpv.desktop" ];
   };
 }
