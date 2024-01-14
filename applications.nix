@@ -9,8 +9,6 @@
       defaultApplications = {
         "application/zip" = [ "org.gnome.FileRoller.desktop" ];
         "text/plain" = [ "nvim.desktop" ];
-        "image/png" = [ "feh.desktop" ];
-        "image/jpeg" = [ "feh.desktop" ];
       };
     };
 
@@ -20,14 +18,6 @@
       bruno
       ungoogled-chromium
       screenkey
-      # add --scale-down and --auto-zoom, for 100% image scale
-      # add --edit for saving rotation and mirroring edits
-      (feh.overrideAttrs (_: {
-        postInstall = ''
-          wrapProgram "$out/bin/feh" --prefix PATH : "${lib.makeBinPath [ libjpeg jpegexiforient ]}" \
-                                     --add-flags '--theme=feh --scale-down --auto-zoom --edit'
-        '';
-      }))
       gimp
       tenacity
       kdenlive

@@ -6,6 +6,7 @@
     ./cli
     ./dark-theme.nix
     ./discord.nix
+    ./feh.nix
     ./firefox.nix
     ./flameshot.nix
     ./gammastep.nix
