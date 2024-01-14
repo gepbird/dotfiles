@@ -1,4 +1,4 @@
-{ pkgs, lib, home-manager, ... }:
+{ config, pkgs, lib, home-manager, ... }:
 
 {
   services.xserver = {
@@ -42,8 +42,9 @@
 
   services.dwm-status = {
     enable = true;
-    order = [
+    order = lib.optional (config.networking.hostName == "geptop") [
       "battery"
+    ] ++ [
       "time"
     ];
     extraConfig = ''
