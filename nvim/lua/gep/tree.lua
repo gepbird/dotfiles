@@ -1,5 +1,29 @@
 local api = require 'nvim-tree.api'
 
+local function is_sshfs()
+  local handle = io.popen "mount | grep 'type fuse.sshfs'"
+  if handle == nil then
+    return false
+  end
+  local result = handle:read '*a'
+  handle:close()
+
+  local lines = {}
+  for line in result:gmatch '[^\r\n]+' do
+    table.insert(lines, line)
+  end
+
+  local current_dir = vim.fn.getcwd()
+  for _, line in ipairs(lines) do
+    local mountpoint = line:match '^%S+%s+on%s+(%S+)%s+'
+    if mountpoint and current_dir:sub(1, #mountpoint) == mountpoint then
+      return true
+    end
+  end
+
+  return false
+end
+
 require 'nvim-tree'.setup {
   hijack_cursor = true,
   sync_root_with_cwd = true,
@@ -38,6 +62,9 @@ require 'nvim-tree'.setup {
   },
   filters = {
     custom = { '\\.git$' },
+  },
+  git = {
+    enable = not is_sshfs(),
   },
   on_attach = function(bufnr)
     require 'gep.utils'.register_maps {
