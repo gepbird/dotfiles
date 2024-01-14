@@ -150,7 +150,7 @@
         nodePackages.typescript-language-server
         emmet-ls
         vscode-langservers-extracted # html, css, json (unused: eslint)
-        prettierd # js+ts, css, json, yaml, markdown (unused: html, graphql)
+        nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
         nodePackages.pyright
         texlab
         yapf
