@@ -29,6 +29,7 @@
       xsel
       xdragon
       colorpicker
+      ffmpeg
       freshfetch
       w3m
     ];
