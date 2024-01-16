@@ -35,6 +35,7 @@
       element-desktop
       prismlauncher
       osu-lazer-bin
+      r2modman
       wineWowPackages.staging
       winetricks
     ];
