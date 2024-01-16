@@ -82,7 +82,6 @@
 
     programs.vscode = {
       enable = true;
-      package = pkgs.vscodium;
     };
 
     home.file =
