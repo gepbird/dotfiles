@@ -42,9 +42,7 @@
 
   services.dwm-status = {
     enable = true;
-    order = lib.optional (config.networking.hostName == "geptop") [
-      "battery"
-    ] ++ [
+    order = lib.optional (config.networking.hostName == "geptop") "battery" ++ [
       "time"
     ];
     extraConfig = ''
