@@ -1,4 +1,4 @@
-{ pkgs, home-manager, ... }:
+{ config, pkgs, home-manager, ... }:
 
 {
   programs.steam.enable = true;
@@ -12,32 +12,34 @@
       };
     };
 
-    home.packages = with pkgs; [
-      pavucontrol
-      gparted
-      bruno
-      ungoogled-chromium
-      screenkey
-      gimp
-      tenacity
-      kdenlive
-      obs-studio
-      xzoom
-      gnome.file-roller
-      libreoffice
-      cinnamon.nemo
-      qdirstat
-      qbittorrent
-      anydesk
-      rustdesk
-      rnote
-      blender
-      element-desktop
-      prismlauncher
-      osu-lazer-bin
-      r2modman
-      wineWowPackages.staging
-      winetricks
-    ];
+    home.packages =
+      if (config.networking.hostName != "gepvm") then with pkgs; [
+        pavucontrol
+        gparted
+        bruno
+        ungoogled-chromium
+        screenkey
+        gimp
+        tenacity
+        kdenlive
+        obs-studio
+        xzoom
+        gnome.file-roller
+        libreoffice
+        cinnamon.nemo
+        qdirstat
+        qbittorrent
+        anydesk
+        rustdesk
+        rnote
+        blender
+        element-desktop
+        prismlauncher
+        osu-lazer-bin
+        r2modman
+        wineWowPackages.staging
+        winetricks
+      ]
+      else [ ];
   };
 }
