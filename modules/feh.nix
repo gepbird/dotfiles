@@ -22,9 +22,8 @@
   hm.home.file = {
     # --scale-down and --auto-zoom, for 100% image scale
     # --edit for saving rotation and mirroring edits
-    # --force-aliasing for nice pixel arts
     ".config/feh/themes".text = ''
-      feh --scale-down --auto-zoom --edit --force-aliasing
+      feh --scale-down --auto-zoom --edit
     '';
   };
 
