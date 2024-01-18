@@ -19,6 +19,7 @@
       co = "checkout";
       cl = "clone --recursive";
       gh = "!_() { git clone --recursive git@github.com:$1 \${@:2}; }; _";
+      pr = "!_() { git fetch upstream pull/$1/head:pr-$1 && git checkout pr-$1; }; _";
       p = "!git pull && git push";
       l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
       churl = "remote set-url origin";
