@@ -27,6 +27,7 @@
     fzf
     glib # for gio trash
     hck
+    jq
     lsof
     nmap
     p7zip
