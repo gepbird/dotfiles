@@ -1,4 +1,4 @@
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs, lib, home-manager, ... }:
 
 {
   boot = {
@@ -15,6 +15,9 @@
   services.gvfs.enable = true;
 
   hardware.opentabletdriver.enable = true;
+
+  # TODO: remove mkForce once merged: https://github.com/NixOS/nixpkgs/pull/282117
+  services.upower.enable = lib.mkForce true;
 
   networking = {
     networkmanager.enable = true;
