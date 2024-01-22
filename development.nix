@@ -8,17 +8,6 @@
       extraLuaConfig = "require 'gep'";
       plugins = with pkgs; with vimUtils;
         let
-          vscode-nvim = buildVimPlugin {
-            pname = "vscode-nvim";
-            version = "2023-11-06";
-            src = fetchFromGitHub {
-              owner = "Mofiqul";
-              repo = "vscode.nvim";
-              rev = "master";
-              hash = "sha256-DnVDm0m3cvdPKZuCSRzBdHKgPXGB4X3nBsykFJjfzvY=";
-            };
-            meta.homepage = "https://github.com/gepbird/darkplus.nvim/";
-          };
         in
         with pkgs.vimPlugins; [
           nvim-web-devicons
