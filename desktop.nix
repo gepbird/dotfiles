@@ -99,9 +99,10 @@
 
   programs.dconf.enable = true;
 
-  environment.sessionVariables.PATH = [
-    "$HOME/.local/bin"
-  ];
+  environment.sessionVariables = {
+    _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
+    PATH = [ "$HOME/.local/bin" ];
+  };
 
   home-manager.users.gep = {
     home.file = with lib; with pkgs; {
