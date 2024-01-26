@@ -16,6 +16,7 @@
       if (config.networking.hostName != "gepvm") then with pkgs; [
         pavucontrol
         gparted
+        jd-gui
         bruno
         ungoogled-chromium
         screenkey
