@@ -61,7 +61,7 @@
           nvim-dap-virtual-text
           telescope-dap-nvim
 
-          rust-tools-nvim
+          rustaceanvim
           flutter-tools-nvim
           markdown-preview-nvim
           omnisharp-extended-lsp-nvim
