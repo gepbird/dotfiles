@@ -45,7 +45,7 @@ in
       pickcolor = "${getExe colorpicker} --one-shot --preview --short";
       sk = "${getExe screenkey} --timeout 2 --font-size small --key-mode raw --mouse";
       zshreload = "source $ZDOTDIR/.zshrc";
-      rebuild = "sudo nixos-rebuild switch --flake $HOME/dotfiles";
+      rebuild = "sudo nixos-rebuild switch --flake $HOME/dotfiles --option eval-cache false";
       cleanup = "sudo nix-collect-garbage -d";
 
       syst = "systemctl list-units --all | grep";
