@@ -2,9 +2,12 @@ local dap = require 'dap'
 local dapui = require 'dapui'
 local widgets = require 'dap.ui.widgets'
 
+vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#E51400' })
+vim.api.nvim_set_hl(0, 'DapBreakpointRejected', { link = 'DapBreakpoint' })
+vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#F3C302' })
 vim.fn.sign_define('DapBreakpoint', { text = ' ', texthl = 'DapBreakpoint' })
-vim.fn.sign_define('DapBreakpointRejected', { text = ' ', texthl = 'DapUIBreakpointsDisabledLine' })
-vim.fn.sign_define('DapStopped', { text = ' ' })
+vim.fn.sign_define('DapBreakpointRejected', { text = ' ', texthl = 'DapBreakpointRejected' })
+vim.fn.sign_define('DapStopped', { text = ' ', texthl = 'DapStopped' })
 
 dapui.setup {
   icons = { expanded = '▾', collapsed = '▸' },
