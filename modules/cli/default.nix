@@ -27,6 +27,7 @@
     fzf
     glib # for gio trash
     hck
+    inotify-tools
     jq
     lsof
     nmap
