@@ -16,7 +16,11 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
+local rainbow = require 'rainbow-delimiters'
 require 'rainbow-delimiters.setup'.setup {
+  strategy = {
+    html = rainbow.strategy.noop,
+  },
 }
 
 require 'nvim-treesitter.configs'.setup {
