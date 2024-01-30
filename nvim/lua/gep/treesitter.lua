@@ -16,10 +16,18 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
+vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#FAD430' })
+vim.api.nvim_set_hl(0, 'RainbowDelimiterPurple', { fg = '#c792ea' })
+vim.api.nvim_set_hl(0, 'RainbowDelimiterBlue', { fg = '#64B5F6' })
 local rainbow = require 'rainbow-delimiters'
 require 'rainbow-delimiters.setup'.setup {
   strategy = {
     html = rainbow.strategy.noop,
+  },
+  highlight = {
+    'RainbowDelimiterYellow',
+    'RainbowDelimiterPurple',
+    'RainbowDelimiterBlue',
   },
 }
 
