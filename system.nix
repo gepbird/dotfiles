@@ -34,6 +34,7 @@
   users.users.gep = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    passwordFile = config.age.secrets.system-password.path;
   };
 
   nixpkgs.config.allowUnfree = true;

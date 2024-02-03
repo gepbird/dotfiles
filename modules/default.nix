@@ -3,6 +3,7 @@
 {
   imports = [
     (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "gep" ])
+    ./agenix.nix
     ./cli
     ./dark-theme.nix
     ./discord.nix

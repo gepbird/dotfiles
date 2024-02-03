@@ -9,9 +9,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+      inputs.darwin.follows = "";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations =
       let
         mkSystem = host: nixpkgs.lib.nixosSystem {
@@ -20,6 +26,7 @@
             host
             ./configuration.nix
           ];
+          specialArgs = inputs;
         };
       in
       {
