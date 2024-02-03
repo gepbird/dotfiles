@@ -30,6 +30,7 @@
           nvim-treesitter.withAllGrammars
           nvim-treesitter-textobjects
           rainbow-delimiters-nvim
+          nvim-colorizer-lua
 
           telescope-nvim
           telescope-ui-select-nvim
