@@ -49,6 +49,7 @@ telescope.setup {
 }
 
 telescope.load_extension 'ui-select'
+telescope.load_extension 'fzf'
 
 local builtin = require 'telescope.builtin'
 local find_command = { 'rg', '--files', '--glob=!.git', '--color', 'never' }

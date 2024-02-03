@@ -34,6 +34,7 @@
 
           telescope-nvim
           telescope-ui-select-nvim
+          telescope-fzf-native-nvim
 
           vim-fugitive
           vim-rhubarb
