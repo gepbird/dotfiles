@@ -3,8 +3,8 @@
 {
   services.xserver = {
     enable = true;
-    layout = "hu";
-    xkbOptions = "caps:escape";
+    xkb.layout = "hu";
+    xkb.options = "caps:escape";
     autoRepeatDelay = 250;
     autoRepeatInterval = 30;
     # disable black screen after 10 minutes
