@@ -152,28 +152,14 @@ in
       bindkey -M menuselect '^j' vi-down-line-or-history
       bindkey -M menuselect '^[[Z' vi-up-line-or-history # <s-tab> for previous completion
 
+      autoload edit-command-line; zle -N edit-command-line
+      bindkey '^w' edit-command-line
+
+      bindkey '^l' autosuggest-accept
+
       source ${zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
 
       source ${zsh-you-should-use}/share/zsh/plugins/you-should-use/you-should-use.plugin.zsh
-
-      autoload edit-command-line; zle -N edit-command-line
-      source ${zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-      ZVM_VI_HIGHLIGHT_BACKGROUND=#264F78 # light blue color for visual mode
-
-      zvm_bindkey viins 'ú' autosuggest-accept
-      zvm_bindkey vicmd 'e' _atuin_search_widget
-      zvm_bindkey vicmd 'w' edit-command-line
-
-      zvm_bindkey viins '^h' beginning-of-line
-      zvm_bindkey vicmd '^h' beginning-of-line
-      zvm_bindkey viins '^l' end-of-line
-      zvm_bindkey vicmd '^l' end-of-line
-      zvm_bindkey vicmd 'H' vi-backward-word
-      zvm_bindkey vicmd 'L' vi-forward-word
-
-      # fix end and home key
-      zvm_bindkey vicmd '^[OF' end-of-line
-      zvm_bindkey vicmd '^[OH' beginning-of-line
     '';
   };
 }
