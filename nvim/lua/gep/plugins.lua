@@ -1,7 +1,6 @@
 require 'gep.vscode'
 require 'gep.lualine'
 require 'gep.bufferline'
-require 'gep.tree'
 require 'gep.window-picker'
 require 'gep.neotree'
 require 'gep.toggleterm'
