@@ -31,7 +31,7 @@
         qdirstat
         qbittorrent
         anydesk
-        rustdesk
+        rustdesk-flutter
         rnote
         blender
         element-desktop
