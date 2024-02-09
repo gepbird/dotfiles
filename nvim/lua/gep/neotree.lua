@@ -43,10 +43,10 @@ require 'neo-tree'.setup {
     icon = {
       folder_closed = '',
       folder_open = '',
-      folder_empty = '󰜌',
+      folder_empty = '',
       -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
       -- then these will never be used.
-      default = '*',
+      default = '',
       highlight = 'NeoTreeFileIcon',
     },
     modified = {
@@ -114,18 +114,17 @@ require 'neo-tree'.setup {
       nowait = true,
     },
     mappings = {
-      ['<space>'] = {
-        'toggle_node',
-        -- disable `nowait` if you have existing combos starting with this char that you want to use
-        nowait = false,
-      },
-      ['<2-LeftMouse>'] = 'open',
-      ['<cr>'] = 'open',
+      --['l'] = 'open',
+      ['l'] = 'open_with_window_picker',
+      -- TODO: uncomment when fixed: https://github.com/nvim-neo-tree/neo-tree.nvim/issues/777
+      --["L"] = "expand_all_subnodes",
+      ['h'] = 'close_node',
+      ['H'] = 'close_all_subnodes',
       -- close preview or floating neo-tree window
       ['<esc>'] = 'cancel',
-      ['P'] = { 'toggle_preview', config = { use_float = true, use_image_nvim = true } },
-      -- Read `# Preview Mode` for more information
-      ['l'] = 'focus_preview',
+      -- enter preview mode, which shows the current node without focusing
+      ['P'] = { 'toggle_preview', config = { use_float = true } },
+      --['l'] = 'focus_preview',
       ['S'] = 'open_split',
       ['s'] = 'open_vsplit',
       -- ["S"] = "split_with_window_picker",
@@ -133,13 +132,6 @@ require 'neo-tree'.setup {
       ['t'] = 'open_tabnew',
       -- ["<cr>"] = "open_drop",
       -- ["t"] = "open_tab_drop",
-      ['w'] = 'open_with_window_picker',
-      -- enter preview mode, which shows the current node without focusing
-      --["P"] = "toggle_preview",
-      ['C'] = 'close_node',
-      -- ['C'] = 'close_all_subnodes',
-      ['z'] = 'close_all_nodes',
-      --["Z"] = "expand_all_nodes",
       ['a'] = {
         'add',
         -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
@@ -179,10 +171,8 @@ require 'neo-tree'.setup {
     filtered_items = {
       -- when true, they will just be displayed differently than normal items
       visible = false,
-      hide_dotfiles = true,
+      hide_dotfiles = false,
       hide_gitignored = true,
-      -- only works on Windows for hidden files/directories
-      hide_hidden = true,
       hide_by_name = {
         --"node_modules"
       },
@@ -207,7 +197,7 @@ require 'neo-tree'.setup {
     },
     follow_current_file = {
       -- This will find and focus the file in the active buffer every time
-      enabled = false,
+      enabled = true,
       -- the current file is changed while the tree is open.
       -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
       leave_dirs_open = false,
@@ -223,22 +213,22 @@ require 'neo-tree'.setup {
     -- netrw left alone, neo-tree does not handle opening dirs
     -- "disabled",
     -- This will use the OS level file watchers to detect changes
-    use_libuv_file_watcher = false,
     -- instead of relying on nvim autocmd events.
+    use_libuv_file_watcher = true,
     window = {
       mappings = {
         ['<bs>'] = 'navigate_up',
         ['.'] = 'set_root',
-        ['H'] = 'toggle_hidden',
+        ['I'] = 'toggle_hidden',
         ['/'] = 'fuzzy_finder',
         ['D'] = 'fuzzy_finder_directory',
         -- fuzzy sorting using the fzy algorithm
         ['#'] = 'fuzzy_sorter',
         -- ["D"] = "fuzzy_sorter_directory",
-        ['f'] = 'filter_on_submit',
-        ['<c-x>'] = 'clear_filter',
-        ['[g'] = 'prev_git_modified',
-        [']g'] = 'next_git_modified',
+        ['e'] = 'filter_on_submit',
+        ['<c-e>'] = 'clear_filter',
+        ['<space>gk'] = 'prev_git_modified',
+        ['<space>gj'] = 'next_git_modified',
         ['o'] = { 'show_help', nowait = false, config = { title = 'Order by', prefix_key = 'o' } },
         ['oc'] = { 'order_by_created', nowait = false },
         ['od'] = { 'order_by_diagnostics', nowait = false },
@@ -250,10 +240,8 @@ require 'neo-tree'.setup {
       },
       -- define keymaps for filter popup window in fuzzy_finder_mode
       fuzzy_finder_mappings = {
-        ['<down>'] = 'move_cursor_down',
-        ['<C-n>'] = 'move_cursor_down',
-        ['<up>'] = 'move_cursor_up',
-        ['<C-p>'] = 'move_cursor_up',
+        ['<c-j>'] = 'move_cursor_down',
+        ['<c-k>'] = 'move_cursor_up',
       },
     },
 
