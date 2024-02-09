@@ -94,7 +94,3 @@ require 'nvim-tree'.setup {
     }
   end,
 }
-
-require 'gep.utils'.register_maps {
-  { 'n', '<space>e', function() api.tree.toggle { find_file = true } end },
-}

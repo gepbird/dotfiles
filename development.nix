@@ -15,7 +15,9 @@
           vscode-nvim
           lualine-nvim
           bufferline-nvim
+          # TODO: remove after done configuring neotree
           nvim-tree-lua
+          neo-tree-nvim
           toggleterm-nvim
           nvim-bqf
           undotree
