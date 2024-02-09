@@ -13,8 +13,4 @@
   };
 
   networking.hostName = "gepvm";
-
-  environment.systemPackages = with pkgs; [
-    tmux
-  ];
 }
