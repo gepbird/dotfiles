@@ -145,7 +145,7 @@
         nodePackages.pyright
         texlab
         yapf
-        rnix-lsp
+        nil
         lemminx
         taplo
         yaml-language-server
