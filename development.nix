@@ -144,6 +144,7 @@
         texlab
         yapf
         nil
+        nixpkgs-fmt
         lemminx
         taplo
         yaml-language-server
