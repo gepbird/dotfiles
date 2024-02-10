@@ -1,4 +1,4 @@
-{ pkgs, hm, ... }:
+{ pkgs, ... }:
 
 {
   hm.services.flameshot = {

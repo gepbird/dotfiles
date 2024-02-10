@@ -1,4 +1,4 @@
-{ pkgs, hm, ... }:
+{ ... }:
 
 {
   hm.programs.feh = {

@@ -1,4 +1,4 @@
-{ pkgs, lib, hm, ... }:
+{ pkgs, lib, ... }:
 
 {
   # NOTE: MANUAL INSTALL REQUIRED FOR MATLAB:

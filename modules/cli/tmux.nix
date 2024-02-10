@@ -1,4 +1,4 @@
-{ pkgs, lib, hm, ... }:
+{ pkgs, ... }:
 
 {
   hm.programs.tmux = {

@@ -7,8 +7,6 @@
       defaultEditor = true;
       extraLuaConfig = "require 'gep'";
       plugins = with pkgs; with vimUtils;
-        let
-        in
         with pkgs.vimPlugins; [
           nvim-web-devicons
 

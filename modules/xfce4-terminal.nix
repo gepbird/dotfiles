@@ -1,4 +1,4 @@
-{ pkgs, hm, ... }:
+{ pkgs, ... }:
 
 {
   hm.home.packages = [ pkgs.xfce.xfce4-terminal ];

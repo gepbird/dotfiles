@@ -1,4 +1,4 @@
-{ hm, ... }:
+{ ... }:
 
 {
   services.geoclue2.enable = true;

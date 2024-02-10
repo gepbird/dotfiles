@@ -1,4 +1,4 @@
-{ lib, hm, ... }:
+{ lib, ... }:
 
 {
   hm.programs.starship = {
