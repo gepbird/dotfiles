@@ -70,9 +70,8 @@ in
 
       extract() {
         case $1 in
-          *.zip); echo $1; directoryName="''${1%.*}";;
           *.tar.gz); directoryName="''${1%.*.*}";;
-          *.rar); directoryName="''${1%.*}";;
+          *.zip|*.rar|*.7z); echo $1; directoryName="''${1%.*}";;
           *); echo 'This format is not supported'; return 1;;
         esac
 
@@ -81,9 +80,10 @@ in
         cd $directoryName
 
         case $1 in
-          *.zip); ${getExe unzip} $1;;
           *.tar.gz); tar xvf $1;;
+          *.zip); ${getExe unzip} $1;;
           *.rar); ${getExe unrar} x $1;;
+          *.7z); ${getExe p7zip} x $1;;
         esac
       }
 
