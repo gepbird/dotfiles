@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home-manager.users.gep = {
@@ -138,7 +138,17 @@
         netcoredbg
         nodePackages.typescript-language-server
         emmet-ls
-        vscode-langservers-extracted # html, css, json (unused: eslint)
+        vscode-langservers-extracted # html, css, json, eslint
+        stylelint
+        (stylelint.overrideAttrs (o: {
+          patches = [
+            (fetchpatch {
+              url = "https://github.com/gepbird/stylelint/commit/ab4d0a42df2bdc6a95675cd341f8c511543420d9.patch";
+              hash = "sha256-qVfbifVBd9sAX2Z9tRG0yLjBtDrymvn+KgeepCEN0m4";
+            })
+          ];
+          npmDepsHash = "sha256-UgfTOllVkpnBtFsuiEqw6SS2w03sWGOXKu6RvLf4pBA=";
+        }))
         nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
         nodePackages.pyright
         texlab
