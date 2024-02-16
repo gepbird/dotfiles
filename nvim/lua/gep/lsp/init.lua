@@ -39,6 +39,22 @@ local servers = {
   taplo = { 'toml' },
   yamlls = { 'yaml' },
 }
+
+local lsp = vim.lsp.buf
+local telescope = require 'telescope.builtin'
+local ivy = require 'telescope.themes'.get_ivy()
+utils.register_maps {
+  { 'n', '<space>ls', ':LspInfo<cr>' },
+  { 'n', '<space>-',  function() telescope.lsp_references(ivy) end },
+  { 'n', '<space>.',  vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions
+  { 'n', '<space>:',  function() telescope.lsp_type_definitions(ivy) end },
+  { 'n', '<space>f', function()
+    lsp.format { async = false };
+    vim.cmd ':w'
+  end },
+  { 'n', '<space><s-k>', vim.lsp.buf.signature_help },
+}
+
 for server, languages in pairs(servers) do
   for _, language in ipairs(languages) do
     -- lazy load servers
@@ -62,18 +78,3 @@ for server, languages in pairs(servers) do
     }
   end
 end
-
-local lsp = vim.lsp.buf
-local telescope = require 'telescope.builtin'
-local ivy = require 'telescope.themes'.get_ivy()
-utils.register_maps {
-  { 'n', '<space>ls', ':LspInfo<cr>' },
-  { 'n', '<space>-',  function() telescope.lsp_references(ivy) end },
-  { 'n', '<space>.',  vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions
-  { 'n', '<space>:',  function() telescope.lsp_type_definitions(ivy) end },
-  { 'n', '<space>f', function()
-    lsp.format { async = false };
-    vim.cmd ':w'
-  end },
-  { 'n', '<space><s-k>', vim.lsp.buf.signature_help },
-}
