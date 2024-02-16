@@ -101,6 +101,7 @@
           environ
           circuitikz
           pict2e # required for \phasor
+          enumitem
         ]));
       in
       [
