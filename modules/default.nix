@@ -17,7 +17,7 @@
     ./onlyoffice.nix
     ./piper.nix
     ./rofi.nix
-    ./virt-manager.nix
+    ./virtualisation.nix
     ./wireshark.nix
     ./xfce4-terminal.nix
     ./zathura.nix

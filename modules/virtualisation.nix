@@ -13,4 +13,9 @@
 
   virtualisation.libvirtd.enable = true;
   users.users.gep.extraGroups = [ "libvirtd" ];
+
+  virtualisation.vmware = {
+    host.enable = true;
+    guest.enable = true;
+  };
 }
