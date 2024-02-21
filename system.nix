@@ -36,10 +36,4 @@
     extraGroups = [ "wheel" ];
     hashedPasswordFile = config.age.secrets.system-password.path;
   };
-
-  home-manager.useGlobalPkgs = true;
-
-  home-manager.users.gep = {
-    home.stateVersion = config.system.stateVersion;
-  };
 }

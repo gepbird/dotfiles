@@ -1,8 +1,7 @@
-{ lib, ... }:
+{ ... }:
 
 {
   imports = [
-    (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "gep" ])
     ./agenix.nix
     ./atuin.nix
     ./bottom.nix
@@ -20,6 +19,7 @@
     ./git.nix
     ./gromit-mpx.nix
     ./gui.nix
+    ./hm.nix
     ./lf
     ./matlab.nix
     ./mpv.nix
