@@ -19,6 +19,7 @@
     ./gammastep.nix
     ./git.nix
     ./gromit-mpx.nix
+    ./gui.nix
     ./lf
     ./matlab.nix
     ./mpv.nix
