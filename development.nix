@@ -83,29 +83,5 @@
         ".omnisharp".source = ./home/.omnisharp;
         ".config/nvim/lua".source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/lua";
       };
-
-    home.packages = with pkgs;
-      [
-        clang-tools
-        lldb
-        rust-analyzer
-        rustfmt
-        phpactor
-        lua-language-server
-        omnisharp-roslyn
-        netcoredbg
-        nodePackages.typescript-language-server
-        emmet-ls
-        vscode-langservers-extracted # html, css, json (unused: eslint)
-        nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
-        nodePackages.pyright
-        texlab
-        yapf
-        nil
-        nixpkgs-fmt
-        lemminx
-        taplo
-        yaml-language-server
-      ];
   };
 }
