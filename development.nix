@@ -2,6 +2,10 @@
 
 {
   home-manager.users.gep = {
+    xdg.mimeApps.defaultApplications = {
+      "text/plain" = [ "nvim.desktop" ];
+    };
+
     programs.neovim = {
       enable = true;
       defaultEditor = true;

@@ -4,9 +4,6 @@
   home-manager.users.gep = {
     xdg.mimeApps = {
       enable = true;
-      defaultApplications = {
-        "text/plain" = [ "nvim.desktop" ];
-      };
     };
 
     home.packages =
