@@ -85,25 +85,6 @@
       };
 
     home.packages = with pkgs;
-      let
-        latex = (texlive.withPackages (ps: with ps; [
-          scheme-basic
-
-          latexmk
-
-          #collection-mathscience
-          naive-ebnf # fixes tikz.sty not found
-          siunitx
-          steinmetz # required for \phasor
-
-          xstring
-          soul
-          environ
-          circuitikz
-          pict2e # required for \phasor
-          enumitem
-        ]));
-      in
       [
         gcc
         gnumake
@@ -121,8 +102,6 @@
         flutter
         sqlite
         dbeaver
-        #texlive.combined.scheme-full
-        latex
 
         clang-tools
         lldb
