@@ -84,18 +84,8 @@
 
   programs.dconf.enable = true;
 
-  environment.sessionVariables = {
-    _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
-    PATH = [ "$HOME/.local/bin" ];
-  };
-
   home-manager.users.gep = {
     xdg.mimeApps.enable = true;
-
-    home.file = with lib; with pkgs; {
-      ".local/bin/java-8".source = getExe' jdk8 "java";
-      ".local/bin/java-21".source = getExe' jdk21 "java";
-    };
 
     services.dunst = {
       enable = true;

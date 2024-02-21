@@ -20,6 +20,7 @@
     ./gromit-mpx.nix
     ./gui.nix
     ./hm.nix
+    ./java.nix
     ./lf
     ./matlab.nix
     ./mpv.nix

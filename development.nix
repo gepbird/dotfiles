@@ -117,9 +117,6 @@
           debugpy
         ]))
         nodejs
-        #openjdk8
-        openjdk19
-        gradle
         dotnet-sdk
         flutter
         sqlite

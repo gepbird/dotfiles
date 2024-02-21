@@ -9,7 +9,6 @@
     element-desktop
     gimp
     gparted
-    jd-gui
     kdenlive
     libreoffice
     obs-studio
