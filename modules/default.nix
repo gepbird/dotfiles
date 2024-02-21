@@ -31,6 +31,7 @@
     ./starship.nix
     ./tmux.nix
     ./virtualisation.nix
+    ./vscode.nix
     ./wireshark.nix
     ./xfce4-terminal.nix
     ./zathura.nix

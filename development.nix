@@ -74,10 +74,6 @@
         ];
     };
 
-    programs.vscode = {
-      enable = true;
-    };
-
     home.file =
       let
         mkOutOfStoreSymlink = config.home-manager.users.gep.lib.file.mkOutOfStoreSymlink;
