@@ -107,6 +107,8 @@
   };
 
   home-manager.users.gep = {
+    xdg.mimeApps.enable = true;
+
     home.file = with lib; with pkgs; {
       ".local/bin/java-8".source = getExe' jdk8 "java";
       ".local/bin/java-21".source = getExe' jdk21 "java";

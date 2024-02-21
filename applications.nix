@@ -2,10 +2,6 @@
 
 {
   home-manager.users.gep = {
-    xdg.mimeApps = {
-      enable = true;
-    };
-
     home.packages =
       if (config.networking.hostName != "gepvm") then with pkgs; [
         pavucontrol
