@@ -26,6 +26,7 @@
     ./onlyoffice.nix
     ./piper.nix
     ./rofi.nix
+    ./sound.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix
