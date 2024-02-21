@@ -5,7 +5,6 @@
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
-        "application/zip" = [ "org.gnome.FileRoller.desktop" ];
         "text/plain" = [ "nvim.desktop" ];
       };
     };
@@ -23,7 +22,6 @@
         kdenlive
         obs-studio
         xzoom
-        gnome.file-roller
         libreoffice
         cinnamon.nemo
         qdirstat

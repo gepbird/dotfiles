@@ -8,6 +8,7 @@
     ./dark-theme.nix
     ./discord.nix
     ./feh.nix
+    ./file-roller.nix
     ./firefox.nix
     ./flameshot.nix
     ./games.nix
