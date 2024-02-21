@@ -30,6 +30,7 @@
     ./piper.nix
     ./python.nix
     ./rofi.nix
+    ./sdk.nix
     ./sound.nix
     ./ssh.nix
     ./starship.nix

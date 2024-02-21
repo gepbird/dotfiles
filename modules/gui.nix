@@ -6,6 +6,7 @@
     blender
     bruno
     cinnamon.nemo
+    dbeaver
     element-desktop
     gimp
     gparted

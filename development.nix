@@ -86,19 +86,6 @@
 
     home.packages = with pkgs;
       [
-        gcc
-        gnumake
-        rustc
-        cargo
-        cargo-watch
-        php
-        php83Packages.composer
-        nodejs
-        dotnet-sdk
-        flutter
-        sqlite
-        dbeaver
-
         clang-tools
         lldb
         rust-analyzer
