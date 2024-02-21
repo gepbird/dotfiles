@@ -1,20 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./atuin.nix
-    ./bottom.nix
-    ./clac
-    ./direnv.nix
-    ./git.nix
-    ./lf
-    ./ssh.nix
-    ./starship.nix
-    ./tmux.nix
-    ./zoxide.nix
-    ./zsh.nix
-  ];
-
   hm.home.packages = with pkgs; [
     bat
     colorpicker
