@@ -28,6 +28,7 @@
     ./nix.nix
     ./onlyoffice.nix
     ./piper.nix
+    ./python.nix
     ./rofi.nix
     ./sound.nix
     ./ssh.nix

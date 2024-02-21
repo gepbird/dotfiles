@@ -93,10 +93,6 @@
         cargo-watch
         php
         php83Packages.composer
-        (python3.withPackages (ps: with ps; [
-          pip
-          debugpy
-        ]))
         nodejs
         dotnet-sdk
         flutter
