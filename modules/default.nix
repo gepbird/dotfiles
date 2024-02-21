@@ -7,7 +7,7 @@
     ./atuin.nix
     ./bottom.nix
     ./clac
-    ./cli
+    ./cli.nix
     ./dark-theme.nix
     ./direnv.nix
     ./discord.nix
