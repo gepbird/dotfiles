@@ -126,8 +126,6 @@
         dbeaver
         #texlive.combined.scheme-full
         latex
-        nixpkgs-review
-        nix-prefetch-git
 
         clang-tools
         lldb

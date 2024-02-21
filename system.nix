@@ -37,17 +37,9 @@
     hashedPasswordFile = config.age.secrets.system-password.path;
   };
 
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-    "repl-flake"
-  ];
-
   home-manager.useGlobalPkgs = true;
 
   home-manager.users.gep = {
     home.stateVersion = config.system.stateVersion;
   };
-  system.stateVersion = "23.05";
 }

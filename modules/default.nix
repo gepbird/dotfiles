@@ -23,6 +23,7 @@
     ./lf
     ./matlab.nix
     ./mpv.nix
+    ./nix.nix
     ./onlyoffice.nix
     ./piper.nix
     ./rofi.nix
