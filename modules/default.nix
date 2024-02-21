@@ -10,6 +10,7 @@
     ./feh.nix
     ./firefox.nix
     ./flameshot.nix
+    ./games.nix
     ./gammastep.nix
     ./gromit-mpx.nix
     ./matlab.nix

@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  programs.steam.enable = true;
-
   home-manager.users.gep = {
     xdg.mimeApps = {
       enable = true;
@@ -35,11 +33,6 @@
         rnote
         blender
         element-desktop
-        prismlauncher
-        osu-lazer-bin
-        r2modman
-        wineWowPackages.staging
-        winetricks
       ]
       else [ ];
   };
