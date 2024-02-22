@@ -23,4 +23,8 @@
     yaml-language-server
     yapf
   ];
+
+  hm.home.file = {
+    ".omnisharp/omnisharp.json".source = ./omnisharp.json;
+  };
 }

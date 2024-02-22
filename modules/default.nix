@@ -22,7 +22,7 @@
     ./hm.nix
     ./java.nix
     ./latex.nix
-    ./lsp.nix
+    ./lsp
     ./lf
     ./matlab.nix
     ./mpv.nix

@@ -75,7 +75,6 @@
     };
 
     home.file = {
-      ".omnisharp".source = ./home/.omnisharp;
       ".config/nvim/lua".source =
         self.lib.mkDotfilesSymlink config "nvim/lua";
     };
