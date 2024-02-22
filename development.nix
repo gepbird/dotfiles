@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ self, config, pkgs, ... }:
 
 {
   home-manager.users.gep = {
@@ -74,14 +74,10 @@
         ];
     };
 
-    home.file =
-      let
-        mkOutOfStoreSymlink = config.home-manager.users.gep.lib.file.mkOutOfStoreSymlink;
-        homeDirectory = config.home-manager.users.gep.home.homeDirectory;
-      in
-      {
-        ".omnisharp".source = ./home/.omnisharp;
-        ".config/nvim/lua".source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/nvim/lua";
-      };
+    home.file = {
+      ".omnisharp".source = ./home/.omnisharp;
+      ".config/nvim/lua".source =
+        self.lib.mkDotfilesSymlink config "nvim/lua";
+    };
   };
 }

@@ -22,6 +22,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
+    lib = import ./lib.nix { };
     nixosConfigurations =
       let
         mkSystem = host: nixpkgs.lib.nixosSystem {
