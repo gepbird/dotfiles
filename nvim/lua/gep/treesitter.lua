@@ -29,6 +29,7 @@ require 'rainbow-delimiters.setup'.setup {
     'RainbowDelimiterPurple',
     'RainbowDelimiterBlue',
   },
+  blacklist = { 'markdown' }, -- due to performance issues in long nvim docs
 }
 
 require 'nvim-treesitter.configs'.setup {
