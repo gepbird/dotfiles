@@ -40,32 +40,33 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
+  -- Entering to insert mode will process these maps
+  -- the processing gets called multiple times in tex files, making it laggy
   mapping = cmp.mapping.preset.insert {
     ['<c-j>'] = cmp.mapping.select_next_item(),
     ['<c-k>'] = cmp.mapping.select_prev_item(),
     ['<a-j>'] = cmp.mapping.scroll_docs(4),
     ['<a-k>'] = cmp.mapping.scroll_docs(-4),
     ['<c-space>'] = cmp.mapping.complete(),
-    ['<a-esc>'] = cmp.mapping.abort(),
     ['<c-l>'] = cmp.mapping.confirm { select = true },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(1) then
-        luasnip.jump(1)
-      else
-        fallback()
-      end
-    end, {
-      'i',
-      's',
-    }),
-    ['<S-Tab>'] = cmp.mapping(function()
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      end
-    end, {
-      'i',
-      's',
-    }),
+    --['<Tab>'] = cmp.mapping(function(fallback)
+    --  if luasnip.jumpable(1) then
+    --    luasnip.jump(1)
+    --  else
+    --    fallback()
+    --  end
+    --end, {
+    --  'i',
+    --  's',
+    --}),
+    --['<S-Tab>'] = cmp.mapping(function()
+    --  if luasnip.jumpable(-1) then
+    --    luasnip.jump(-1)
+    --  end
+    --end, {
+    --  'i',
+    --  's',
+    --}),
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
