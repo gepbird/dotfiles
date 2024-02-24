@@ -22,11 +22,12 @@
     ./hm.nix
     ./java.nix
     ./latex.nix
-    ./lsp
     ./lf
+    ./lsp
     ./matlab.nix
     ./mpv.nix
     ./nix.nix
+    ./nvim
     ./onlyoffice.nix
     ./piper.nix
     ./python.nix
