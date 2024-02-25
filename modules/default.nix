@@ -34,6 +34,7 @@
     ./nix.nix
     ./nvim
     ./onlyoffice.nix
+    ./opentabletdriver.nix
     ./piper.nix
     ./polkit.nix
     ./python.nix
