@@ -12,4 +12,6 @@
       Option "BlankTime" "0"
     '';
   };
+
+  console.useXkbConfig = true;
 }

@@ -27,8 +27,6 @@
     hardwareClockInLocalTime = true;
   };
 
-  console.useXkbConfig = true;
-
   users.users.gep = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
