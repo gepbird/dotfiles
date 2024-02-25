@@ -10,6 +10,7 @@
     ./dark-theme.nix
     ./direnv.nix
     ./discord.nix
+    ./dwm
     ./feh.nix
     ./file-roller.nix
     ./firefox.nix
