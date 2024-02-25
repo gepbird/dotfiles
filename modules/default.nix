@@ -8,13 +8,16 @@
     ./clac
     ./cli.nix
     ./dark-theme.nix
+    ./desktop.nix
     ./direnv.nix
     ./discord.nix
     ./dwm
+    ./dwm-status.nix
     ./feh.nix
     ./file-roller.nix
     ./firefox.nix
     ./flameshot.nix
+    ./fonts.nix
     ./games.nix
     ./gammastep.nix
     ./git.nix
@@ -23,6 +26,7 @@
     ./hm.nix
     ./java.nix
     ./latex.nix
+    ./light.nix
     ./lf
     ./lsp
     ./matlab.nix
@@ -43,6 +47,7 @@
     ./vscode.nix
     ./wireshark.nix
     ./xfce4-terminal.nix
+    ./xserver.nix
     ./zathura.nix
     ./zoxide.nix
     ./zsh.nix
