@@ -30,6 +30,7 @@
     ./nvim
     ./onlyoffice.nix
     ./piper.nix
+    ./polkit.nix
     ./python.nix
     ./rofi.nix
     ./sdk.nix
