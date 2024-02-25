@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./system.nix
     ./modules
   ];
 }

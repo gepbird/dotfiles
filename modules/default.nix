@@ -26,8 +26,8 @@
     ./hm.nix
     ./java.nix
     ./latex.nix
-    ./light.nix
     ./lf
+    ./light.nix
     ./lsp
     ./matlab.nix
     ./mpv.nix
@@ -43,6 +43,7 @@
     ./sound.nix
     ./ssh.nix
     ./starship.nix
+    ./system.nix
     ./tmux.nix
     ./virtualisation.nix
     ./vscode.nix
