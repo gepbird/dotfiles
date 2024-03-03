@@ -13,6 +13,7 @@
       naive-ebnf # fixes tikz.sty not found
       siunitx
       steinmetz # required for \phasor
+      collection-fontsrecommended
 
       circuitikz
       enumitem
