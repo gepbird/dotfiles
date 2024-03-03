@@ -21,6 +21,7 @@
     screenkey
     tenacity
     ungoogled-chromium
+    xclicker
     xzoom
   ];
 }
