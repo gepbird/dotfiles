@@ -13,13 +13,14 @@
       naive-ebnf # fixes tikz.sty not found
       siunitx
       steinmetz # required for \phasor
-      collection-fontsrecommended
 
       circuitikz
+      collection-fontsrecommended
       enumitem
       environ
       pict2e # required for \phasor
       soul
+      titlesec
       xstring
     ]))
   ];
