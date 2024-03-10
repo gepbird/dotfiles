@@ -16,10 +16,8 @@
     matlab
   ];
 
-  hm.home.file = {
-    ".config/matlab/nix.sh" = {
-      executable = true;
-      text = "INSTALL_DIR=$HOME/.local/share/matlab/install";
-    };
+  hm.xdg.configFile."matlab/nix.sh" = {
+    executable = true;
+    text = "INSTALL_DIR=$HOME/.local/share/matlab/install";
   };
 }

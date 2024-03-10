@@ -19,13 +19,11 @@
     };
   };
 
-  hm.home.file = {
-    # --scale-down and --auto-zoom, for 100% image scale
-    # --edit for saving rotation and mirroring edits
-    ".config/feh/themes".text = ''
-      feh --scale-down --auto-zoom --edit
-    '';
-  };
+  # --scale-down and --auto-zoom, for 100% image scale
+  # --edit for saving rotation and mirroring edits
+  hm.xdg.configFile."feh/themes".text = ''
+    feh --scale-down --auto-zoom --edit
+  '';
 
   hm.xdg.mimeApps.defaultApplications = {
     "image/png" = [ "feh.desktop" ];

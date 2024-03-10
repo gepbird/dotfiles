@@ -69,10 +69,8 @@
       ];
   };
 
-  hm.home.file = {
-    ".config/nvim/lua".source =
-      self.lib.mkDotfilesSymlink config "modules/nvim/lua";
-  };
+  hm.xdg.configFile."nvim/lua".source =
+    self.lib.mkDotfilesSymlink config "modules/nvim/lua";
 
   hm.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];

@@ -5,7 +5,7 @@ let
   inherit (lib) getExe getExe';
 in
 {
-  hm.home.file.".config/lf/icons".source = ./icons;
+  hm.xdg.configFile."lf/icons".source = ./icons;
 
   hm.xdg.mimeApps.defaultApplications = {
     "inode/directory" = [ "lf.desktop" ];
