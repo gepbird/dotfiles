@@ -28,7 +28,7 @@
     ./latex.nix
     ./lf
     ./light.nix
-    ./lsp
+    ./lsp.nix
     ./matlab.nix
     ./mpv.nix
     ./nix.nix

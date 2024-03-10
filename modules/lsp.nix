@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  jsonFormat = pkgs.formats.json { };
+in
 {
   hm.home.packages = with pkgs; [
     clang-tools
@@ -24,7 +27,9 @@
     yapf
   ];
 
-  hm.home.file = {
-    ".omnisharp/omnisharp.json".source = ./omnisharp.json;
+  hm.home.file.".omnisharp/omnisharp.json".source = jsonFormat.generate "omnisharp.json" {
+    RoslynExtensionsOptions = {
+      EnableDecompilationSupport = true;
+    };
   };
 }
