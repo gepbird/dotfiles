@@ -6,4 +6,5 @@ let
 in
 {
   "system-password.age".publicKeys = keys;
+  "openai-token.age".publicKeys = keys;
 }

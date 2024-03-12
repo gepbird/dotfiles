@@ -7,6 +7,7 @@
   age = {
     secrets = {
       system-password.file = ../secrets/system-password.age;
+      openai-token.file = ../secrets/openai-token.age;
     };
   };
 }

@@ -5,6 +5,7 @@
     ./agenix.nix
     ./atuin.nix
     ./bottom.nix
+    ./chatgpt.nix
     ./clac
     ./cli.nix
     ./dark-theme.nix
