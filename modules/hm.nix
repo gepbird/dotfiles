@@ -1,7 +1,8 @@
-{ config, lib, ... }:
+{ config, lib, home-manager, ... }:
 
 {
   imports = [
+    home-manager.nixosModules.default
     (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "gep" ])
   ];
 

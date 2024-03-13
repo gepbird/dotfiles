@@ -27,7 +27,6 @@
       let
         mkSystem = host: nixpkgs.lib.nixosSystem {
           modules = [
-            home-manager.nixosModule
             host
             ./configuration.nix
           ];
