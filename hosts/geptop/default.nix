@@ -3,6 +3,12 @@
 {
   imports = [ ./hardware.nix ] ++
     self.nixosModules.allImportsExcept [
+      "flutter"
+      "games"
+      "java"
+      "libreoffice"
+      "piper"
+      "virt-manager"
     ];
 
   boot.loader = {
