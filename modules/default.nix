@@ -2,9 +2,9 @@
 # A utility function to import everything except some specified modules is also included
 # Example output:
 # {
-#   "games" = import /nix/store/xxxx-source/modules/games.nix;
-#   "nvim" = import /nix/store/xxxx-source/modules/nvim;
-#   "allImportsExcept" = <LAMBDA [ "games" ] -> [ import .../firefox.nix ]>;
+#   games = import /nix/store/xxxx-source/modules/games.nix;
+#   nvim = import /nix/store/xxxx-source/modules/nvim;
+#   allImportsExcept = <LAMBDA [ "games" ] -> [ import .../nvim ]>;
 # }
 
 let
