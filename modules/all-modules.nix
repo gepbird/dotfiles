@@ -1,8 +1,10 @@
-# Read all files in the current directory and convert them into nixosModules
+# Read all files and folders in the current directory and convert them into nixosModules
+# A utility function to import everything except some specified modules is also included
 # Example output:
 # {
-#   "firefox" = import /nix/store/xxxx-source/modules/firefox.nix;
+#   "games" = import /nix/store/xxxx-source/modules/games.nix;
 #   "nvim" = import /nix/store/xxxx-source/modules/nvim;
+#   "allImportsExcept" = <LAMBDA [ "games" ] -> [ import .../firefox.nix ]>;
 # }
 
 let
@@ -19,5 +21,10 @@ let
       })
       filesAndDirectories
   );
+
+  allImportsExcept = exceptions: builtins.attrValues (builtins.removeAttrs allModules exceptions);
 in
-allModules
+allModules //
+{
+  inherit allImportsExcept;
+}

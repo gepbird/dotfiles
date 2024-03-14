@@ -1,7 +1,9 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 
 {
-  imports = [ ./hardware.nix ];
+  imports = [ ./hardware.nix ] ++
+    self.nixosModules.allImportsExcept [
+    ];
 
   boot.loader = {
     efi.canTouchEfiVariables = true;

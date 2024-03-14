@@ -1,7 +1,9 @@
-{ lib, ... }:
+{ self, lib, ... }:
 
 {
-  imports = [ ./hardware.nix ];
+  imports = [ ./hardware.nix ] ++
+    self.nixosModules.allImportsExcept [
+    ];
 
   boot.loader = {
     systemd-boot.enable = lib.mkForce false;

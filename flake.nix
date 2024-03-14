@@ -26,10 +26,7 @@
     nixosConfigurations =
       let
         mkSystem = host: nixpkgs.lib.nixosSystem {
-          modules = [
-            host
-            ./configuration.nix
-          ];
+          modules = [ host ];
           specialArgs = inputs;
         };
       in
