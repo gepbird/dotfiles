@@ -11,7 +11,7 @@ let
   modulesDir = builtins.toString ./.;
 
   filesAndDirectories = builtins.attrNames
-    (builtins.removeAttrs (builtins.readDir modulesDir) [ "all-modules.nix" "default.nix" ]);
+    (builtins.removeAttrs (builtins.readDir modulesDir) [ "default.nix" ]);
 
   allModules = builtins.listToAttrs (
     map
