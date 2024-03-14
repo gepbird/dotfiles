@@ -5,7 +5,6 @@
     cargo
     cargo-watch
     dotnet-sdk
-    flutter
     gcc
     gnumake
     nodejs

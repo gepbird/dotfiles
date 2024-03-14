@@ -11,7 +11,6 @@
     gimp
     gparted
     kdenlive
-    libreoffice
     obs-studio
     pavucontrol
     qbittorrent
