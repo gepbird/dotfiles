@@ -10,6 +10,13 @@
     prefix = "m-w";
     plugins = with pkgs.tmuxPlugins; [
       yank
+      {
+        plugin = dracula;
+        extraConfig = ''
+          set -g @dracula-plugins " "
+          set -g @dracula-show-left-icon session
+        '';
+      }
     ];
     extraConfig = ''
       bind m-h select-pane -L
