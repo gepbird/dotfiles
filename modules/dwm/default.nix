@@ -19,6 +19,8 @@
           --replace '@zsh@' '${getExe zsh}' \
           --replace '@clac@' '${getExe clac}' \
           --replace '@lf@' '${getExe lf}' \
+          --replace '@chatgpt@' '${getExe chatgpt-cli}' \
+          --replace '@btm@' '${getExe bottom}' \
           --replace '@xkill@' '${getExe xorg.xkill}' \
           --replace '@rofi@' '${getExe rofi}' \
           --replace '@flameshot@' '${getExe flameshot}' \

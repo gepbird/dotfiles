@@ -29,6 +29,8 @@ static Sp scratchpads[] = {
   SP("spterm",     "@zsh@")
   SP("spclac",     "@clac@")
   SP("splf",       "@lf@")
+  SP("spchatgpt",  "@chatgpt@")
+  SP("spbtm",      "@btm@")
 };
 
 /* tagging */
@@ -39,13 +41,15 @@ static const Rule rules[] = {
    *  WM_CLASS(STRING) = instance, class
    *  WM_NAME(STRING) = title
    */
-  /* class       instance    title       tags mask     isfloating   monitor */
-  { "discord",   NULL,       NULL,       1 << 0,       0,           1  },
-  { "firefox",   NULL,       NULL,       1 << 1,       0,           1  },
-  { "flameshot", NULL,       NULL,       0,            1,           -1 },
-  { NULL,        NULL,       "spterm",   SPTAG(0),     1,           -1 },
-  { NULL,        NULL,       "spclac",   SPTAG(1),     1,           -1 },
-  { NULL,        NULL,       "splf",     SPTAG(2),     1,           -1 },
+  /* class       instance    title        tags mask     isfloating   monitor */
+  { "discord",   NULL,       NULL,        1 << 0,       0,           1  },
+  { "firefox",   NULL,       NULL,        1 << 1,       0,           1  },
+  { "flameshot", NULL,       NULL,        0,            1,           -1 },
+  { NULL,        NULL,       "spterm",    SPTAG(0),     1,           -1 },
+  { NULL,        NULL,       "spclac",    SPTAG(1),     1,           -1 },
+  { NULL,        NULL,       "splf",      SPTAG(2),     1,           -1 },
+  { NULL,        NULL,       "spchatgpt", SPTAG(3),     1,           -1 },
+  { NULL,        NULL,       "spbtm",     SPTAG(4),     1,           -1 },
 };
 
 /* layout(s) */
@@ -72,6 +76,8 @@ static const Layout layouts[] = {
 #define VolUp XF86XK_AudioRaiseVolume
 #define BrightDown XF86XK_MonBrightnessDown
 #define BrightUp XF86XK_MonBrightnessUp
+#define XK_ő XK_odoubleacute
+#define XK_ú XK_uacute
 
 #define TAGKEYS(KEY,TAG) \
   { Sup,                          KEY,      view,           { .ui = 1 << TAG } }, \
@@ -138,6 +144,8 @@ static const Key keys[] = {
   { Sup,                          XK_z,       togglescratch,  { .ui = 0 } },
   { Sup,                          XK_u,       togglescratch,  { .ui = 1 } },
   { Sup,                          XK_o,       togglescratch,  { .ui = 2 } },
+  { Sup,                          XK_ő,       togglescratch,  { .ui = 3 } },
+  { Sup,                          XK_ú,       togglescratch,  { .ui = 4 } },
   { Sup,                          XK_0,       view,           { .ui = ~0 } },
   { Sup|Sft,                      XK_0,       tag,            { .ui = ~0 } },
   { 0,                            BrightUp,   spawn,          { .v = brightup } },
