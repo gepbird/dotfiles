@@ -13,7 +13,7 @@ in
     enable = true;
     autocd = true;
     dotDir = ".config/zsh";
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     completionInit = "autoload -U compinit && compinit -C"; # add caching to save ~50ms load time
     history.path = "$ZDOTDIR/.zsh_history";
