@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+self: { pkgs, lib, ... }:
 
 with pkgs;
 let

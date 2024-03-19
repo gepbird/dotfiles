@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+self: { pkgs, ... }:
 
 {
   programs.virt-manager.enable = true;

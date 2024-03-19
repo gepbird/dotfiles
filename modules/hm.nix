@@ -1,4 +1,4 @@
-{ config, lib, home-manager, ... }:
+self: { config, lib, home-manager, ... }:
 
 {
   imports = [

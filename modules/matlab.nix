@@ -1,4 +1,4 @@
-{ pkgs, nix-matlab, ... }:
+self: { pkgs, nix-matlab, ... }:
 
 {
   # NOTE: MANUAL INSTALL REQUIRED FOR MATLAB:

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+self: { pkgs, ... }:
 
 let
   jsonFormat = pkgs.formats.json { };

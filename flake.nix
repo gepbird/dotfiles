@@ -35,6 +35,6 @@
         geptop = mkSystem ./hosts/geptop;
         gepvm = mkSystem ./hosts/gepvm;
       };
-    nixosModules = import ./modules;
+    nixosModules = import ./modules self;
   };
 }

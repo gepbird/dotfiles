@@ -1,4 +1,4 @@
-{ ... }:
+self: { ... }:
 
 {
   hm.programs.bottom = {

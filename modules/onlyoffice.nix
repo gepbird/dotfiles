@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+self: { pkgs, ... }:
 
 {
   # manual fix required for fonts to work: https://nixos.wiki/wiki/Onlyoffice#Install_and_use_missing_corefonts

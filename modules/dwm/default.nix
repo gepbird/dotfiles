@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+self: { pkgs, lib, ... }:
 
 {
   services.xserver.windowManager.dwm = {

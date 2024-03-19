@@ -1,4 +1,4 @@
-{ agenix, ... }:
+self: { agenix, ... }:
 
 {
   imports = [ agenix.nixosModules.default ];

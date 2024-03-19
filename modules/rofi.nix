@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+self: { pkgs, lib, ... }:
 
 {
   hm.programs.rofi = {

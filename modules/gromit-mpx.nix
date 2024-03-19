@@ -1,4 +1,4 @@
-{ lib, ... }:
+self: { lib, ... }:
 
 {
   hm.services.gromit-mpx = {

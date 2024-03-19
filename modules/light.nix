@@ -1,4 +1,4 @@
-{ ... }:
+self: { ... }:
 
 {
   programs.light.enable = true;

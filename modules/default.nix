@@ -7,6 +7,7 @@
 #   allImportsExcept = <LAMBDA [ "games" ] -> [ import .../nvim ]>;
 # }
 
+self:
 let
   modulesDir = builtins.toString ./.;
 
@@ -17,7 +18,7 @@ let
     map
       (name: {
         name = builtins.replaceStrings [ ".nix" ] [ "" ] name;
-        value = import "${modulesDir}/${name}";
+        value = import "${modulesDir}/${name}" self;
       })
       filesAndDirectories
   );

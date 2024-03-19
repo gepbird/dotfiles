@@ -1,4 +1,4 @@
-{ self, config, pkgs, ... }:
+self: { config, pkgs, ... }:
 
 {
   hm.home.packages = [ pkgs.clac ];
