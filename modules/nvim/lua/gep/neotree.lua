@@ -4,8 +4,6 @@ require 'neo-tree'.setup {
   popup_border_style = 'rounded',
   enable_git_status = true,
   enable_diagnostics = true,
-  -- Enable normal mode for input dialogs.
-  enable_normal_mode_for_inputs = false,
   -- when opening files, do not use windows containing these filetypes or buftypes
   open_files_do_not_replace_types = { 'terminal', 'trouble', 'qf' },
   -- used when sorting files and directories in the tree
