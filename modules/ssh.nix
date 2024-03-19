@@ -20,7 +20,7 @@ self: { ... }:
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQXysKutq2b67RAmq46qMH8TDLEYf0D5SYon4vE6efO u0_a483@localhost"
   ];
 
-  hm.programs.ssh = {
+  hm-gep.programs.ssh = {
     enable = true;
     matchBlocks."*".extraOptions.StrictHostKeyChecking = "no";
   };

@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.git = {
+  hm-gep.programs.git = {
     enable = true;
     aliases = {
       c = "commit";

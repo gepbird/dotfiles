@@ -4,7 +4,7 @@ let
   jsonFormat = pkgs.formats.json { };
 in
 {
-  hm.home.packages = with pkgs; [
+  hm-gep.home.packages = with pkgs; [
     clang-tools
     emmet-ls
     lemminx
@@ -27,7 +27,7 @@ in
     yapf
   ];
 
-  hm.home.file.".omnisharp/omnisharp.json".source = jsonFormat.generate "omnisharp.json" {
+  hm-gep.home.file.".omnisharp/omnisharp.json".source = jsonFormat.generate "omnisharp.json" {
     RoslynExtensionsOptions = {
       EnableDecompilationSupport = true;
     };

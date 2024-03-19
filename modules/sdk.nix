@@ -1,7 +1,7 @@
 self: { pkgs, ... }:
 
 {
-  hm.home.packages = with pkgs; [
+  hm-gep.home.packages = with pkgs; [
     cargo
     cargo-watch
     dotnet-sdk

@@ -2,13 +2,13 @@ self: { ... }:
 
 {
   # gtk3
-  hm.gtk = {
+  hm-gep.gtk = {
     enable = true;
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
   # gtk4
-  hm.dconf = {
+  hm-gep.dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };

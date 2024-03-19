@@ -1,7 +1,7 @@
 self: { config, pkgs, ... }:
 
 {
-  hm.programs.neovim = {
+  hm-gep.programs.neovim = {
     enable = true;
     defaultEditor = true;
     extraLuaConfig = "require 'gep'";
@@ -69,10 +69,10 @@ self: { config, pkgs, ... }:
       ];
   };
 
-  hm.xdg.configFile."nvim/lua".source =
+  hm-gep.xdg.configFile."nvim/lua".source =
     self.lib.mkDotfilesSymlink config "modules/nvim/lua";
 
-  hm.xdg.mimeApps.defaultApplications = {
+  hm-gep.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
   };
 }

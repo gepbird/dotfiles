@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.mpv = {
+  hm-gep.programs.mpv = {
     enable = true;
     config = {
       force-window = true; # open gui for audio-only
@@ -20,7 +20,7 @@ self: { ... }:
     };
   };
 
-  hm.xdg.mimeApps.defaultApplications = {
+  hm-gep.xdg.mimeApps.defaultApplications = {
     "audio/vnd.wave" = [ "mpv.desktop" ];
     "audio/mpeg" = [ "mpv.desktop" ];
     "image/gif" = [ "mpv.desktop" ];

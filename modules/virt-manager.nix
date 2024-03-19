@@ -2,7 +2,7 @@ self: { pkgs, ... }:
 
 {
   programs.virt-manager.enable = true;
-  hm.dconf.settings."org/virt-manager/virt-manager/connections" = {
+  hm-gep.dconf.settings."org/virt-manager/virt-manager/connections" = {
     autoconnect = [ "qemu:///system" ];
     uris = [ "qemu:///system" ];
   };

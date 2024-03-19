@@ -1,9 +1,9 @@
 self: { pkgs, ... }:
 
 {
-  hm.home.packages = with pkgs; [ gnome.file-roller ];
+  hm-gep.home.packages = with pkgs; [ gnome.file-roller ];
 
-  hm.xdg.mimeApps.defaultApplications = {
+  hm-gep.xdg.mimeApps.defaultApplications = {
     "application/zip" = [ "org.gnome.FileRoller.desktop" ];
   };
 }

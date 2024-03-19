@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.vscode = {
+  hm-gep.programs.vscode = {
     enable = true;
   };
 }

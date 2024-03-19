@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.zathura = {
+  hm-gep.programs.zathura = {
     enable = true;
     options = {
       selection-clipboard = "clipboard";
@@ -20,7 +20,7 @@ self: { ... }:
     };
   };
 
-  hm.xdg.mimeApps.defaultApplications = {
+  hm-gep.xdg.mimeApps.defaultApplications = {
     "application/pdf" = [ "org.pwmt.zathura.desktop" ];
   };
 }

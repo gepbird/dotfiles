@@ -1,7 +1,7 @@
 self: { lib, ... }:
 
 {
-  hm.programs.starship = {
+  hm-gep.programs.starship = {
     enable = true;
     settings = {
       add_newline = false;

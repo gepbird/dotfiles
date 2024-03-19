@@ -1,7 +1,7 @@
 self: { pkgs, ... }:
 
 {
-  hm.programs.tmux = {
+  hm-gep.programs.tmux = {
     enable = true;
     escapeTime = 0;
     historyLimit = 100 * 1000;

@@ -1,7 +1,7 @@
 self: { pkgs, ... }:
 
 {
-  hm.home.packages = [
+  hm-gep.home.packages = [
     (pkgs.discord.override {
       withOpenASAR = true;
       withVencord = true;

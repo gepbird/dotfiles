@@ -3,5 +3,5 @@ self: { pkgs, ... }:
 {
   services.ratbagd.enable = true;
 
-  hm.home.packages = [ pkgs.piper ];
+  hm-gep.home.packages = [ pkgs.piper ];
 }

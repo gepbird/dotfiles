@@ -9,7 +9,7 @@ self: { pkgs, ... }:
     "repl-flake"
   ];
 
-  hm.home.packages = with pkgs; [
+  hm-gep.home.packages = with pkgs; [
     nixpkgs-review
     nix-prefetch-git
   ];

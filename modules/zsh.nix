@@ -9,7 +9,7 @@ in
   environment.shells = [ zsh ];
   users.users.gep.shell = zsh;
 
-  hm.programs.zsh = {
+  hm-gep.programs.zsh = {
     enable = true;
     autocd = true;
     dotDir = ".config/zsh";

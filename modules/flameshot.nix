@@ -1,7 +1,7 @@
 self: { pkgs, ... }:
 
 {
-  hm.services.flameshot = {
+  hm-gep.services.flameshot = {
     enable = true;
     # TODO: remove override when fixed: https://github.com/flameshot-org/flameshot/issues/2768
     package = pkgs.flameshot.overrideAttrs (o: {

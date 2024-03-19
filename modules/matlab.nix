@@ -12,11 +12,11 @@ self: { pkgs, nix-matlab, ... }:
   # rebuild your system to regenerate mimeapps.list and link files with home manager
   nixpkgs.overlays = [ nix-matlab.overlay ];
 
-  hm.home.packages = with pkgs; [
+  hm-gep.home.packages = with pkgs; [
     matlab
   ];
 
-  hm.xdg.configFile."matlab/nix.sh" = {
+  hm-gep.xdg.configFile."matlab/nix.sh" = {
     executable = true;
     text = "INSTALL_DIR=$HOME/.local/share/matlab/install";
   };

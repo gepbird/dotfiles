@@ -3,7 +3,7 @@ self: { pkgs, ... }:
 {
   programs.steam.enable = true;
 
-  hm.home.packages = with pkgs; [
+  hm-gep.home.packages = with pkgs; [
     prismlauncher
     osu-lazer-bin
     r2modman

@@ -1,9 +1,9 @@
 self: { pkgs, ... }:
 
 {
-  hm.home.packages = [ pkgs.xfce.xfce4-terminal ];
+  hm-gep.home.packages = [ pkgs.xfce.xfce4-terminal ];
   programs.xfconf.enable = true;
-  hm.xfconf = {
+  hm-gep.xfconf = {
     enable = true;
     settings = {
       xfce4-terminal = {

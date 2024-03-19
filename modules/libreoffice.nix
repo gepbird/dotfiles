@@ -1,5 +1,5 @@
 self: { pkgs, ... }:
 
 {
-  hm.home.packages = [ pkgs.libreoffice ];
+  hm-gep.home.packages = [ pkgs.libreoffice ];
 }

@@ -3,7 +3,7 @@ self: { ... }:
 {
   services.geoclue2.enable = true;
 
-  hm.services.gammastep = {
+  hm-gep.services.gammastep = {
     provider = "geoclue2";
     enable = true;
     temperature = {

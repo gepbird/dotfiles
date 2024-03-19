@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.atuin = {
+  hm-gep.programs.atuin = {
     enable = true;
     flags = [ "--disable-up-arrow" ];
     settings = {

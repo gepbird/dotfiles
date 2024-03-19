@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.bottom = {
+  hm-gep.programs.bottom = {
     enable = true;
     settings = {
       flags = {

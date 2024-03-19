@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.zoxide = {
+  hm-gep.programs.zoxide = {
     enable = true;
     options = [ "--cmd j" ];
   };

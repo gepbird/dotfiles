@@ -1,7 +1,7 @@
 self: { pkgs, lib, ... }:
 
 {
-  hm.programs.rofi = {
+  hm-gep.programs.rofi = {
     enable = true;
     theme = "gruvbox-dark-hard";
     terminal = lib.getExe pkgs.xfce.xfce4-terminal;

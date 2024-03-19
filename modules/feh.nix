@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.feh = {
+  hm-gep.programs.feh = {
     enable = true;
     keybindings = {
       zoom_in = "z";
@@ -21,11 +21,11 @@ self: { ... }:
 
   # --scale-down and --auto-zoom, for 100% image scale
   # --edit for saving rotation and mirroring edits
-  hm.xdg.configFile."feh/themes".text = ''
+  hm-gep.xdg.configFile."feh/themes".text = ''
     feh --scale-down --auto-zoom --edit
   '';
 
-  hm.xdg.mimeApps.defaultApplications = {
+  hm-gep.xdg.mimeApps.defaultApplications = {
     "image/png" = [ "feh.desktop" ];
     "image/jpeg" = [ "feh.desktop" ];
   };

@@ -5,13 +5,13 @@ let
   inherit (lib) getExe getExe';
 in
 {
-  hm.xdg.configFile."lf/icons".source = ./icons;
+  hm-gep.xdg.configFile."lf/icons".source = ./icons;
 
-  hm.xdg.mimeApps.defaultApplications = {
+  hm-gep.xdg.mimeApps.defaultApplications = {
     "inode/directory" = [ "lf.desktop" ];
   };
 
-  hm.programs.lf = {
+  hm-gep.programs.lf = {
     enable = true;
     previewer = {
       source = pkgs.writeShellScript "pv.sh" "${getExe pistol} \"$1\"";

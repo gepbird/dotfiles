@@ -1,7 +1,7 @@
 self: { lib, ... }:
 
 {
-  hm.services.gromit-mpx = {
+  hm-gep.services.gromit-mpx = {
     enable = true;
     hotKey = null;
     tools = map

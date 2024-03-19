@@ -1,7 +1,7 @@
 self: { ... }:
 
 {
-  hm.programs.direnv = {
+  hm-gep.programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
     # human readable cache directories
