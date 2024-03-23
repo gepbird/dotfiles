@@ -65,7 +65,7 @@
 
   home-manager.users.gep = {
     home.packages = with pkgs; [
-      nvtop
+      nvtopPackages.full
     ];
   };
 }
