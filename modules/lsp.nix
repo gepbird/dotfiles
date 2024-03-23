@@ -1,4 +1,4 @@
-self: { pkgs, ... }:
+self: { pkgs, nixpkgs-stylelint-lsp, ... }:
 
 let
   jsonFormat = pkgs.formats.json { };
@@ -16,6 +16,7 @@ in
     nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
     nodePackages.pyright
     nodePackages.typescript-language-server
+    (import nixpkgs-stylelint-lsp { }).stylelint-lsp
     omnisharp-roslyn
     phpactor
     rust-analyzer

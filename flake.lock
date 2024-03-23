@@ -98,12 +98,29 @@
         "type": "github"
       }
     },
+    "nixpkgs-stylelint-lsp": {
+      "locked": {
+        "lastModified": 1711214309,
+        "narHash": "sha256-QEMivPQDvTVivn8iT3vefAeVDMjdGfGx9Y6NT/f1wY4=",
+        "owner": "gepbird",
+        "repo": "nixpkgs",
+        "rev": "672b6b386f12163a40faf5ba4a749282793dc66c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gepbird",
+        "ref": "stylelint-lsp-init",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
         "home-manager": "home-manager",
         "nix-matlab": "nix-matlab",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-stylelint-lsp": "nixpkgs-stylelint-lsp"
       }
     },
     "systems": {
