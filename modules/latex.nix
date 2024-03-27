@@ -18,9 +18,11 @@ self: { pkgs, ... }:
       collection-fontsrecommended
       enumitem
       environ
+      listings
       pict2e # required for \phasor
       soul
       titlesec
+      wrapfig
       xstring
     ]))
   ];
