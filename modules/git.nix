@@ -13,7 +13,9 @@ self: { ... }:
       ra = "rebase --abort";
       st = "stash --include-untracked";
       sp = "stash pop";
+      sd = "stash drop";
       sl = "stash list";
+      ss = "stash show 0 -p";
       s = "status";
       b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
       d = "diff";
