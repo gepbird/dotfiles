@@ -36,9 +36,6 @@ gs.setup {
     row = 0,
     col = 1,
   },
-  yadm = {
-    enable = false,
-  },
 }
 
 local function then_write(callback)
