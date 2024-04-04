@@ -14,6 +14,18 @@ self: { config, pkgs, ... }:
         bufferline-nvim
         nvim-window-picker
         neo-tree-nvim
+        # TODO: when merged: https://github.com/NixOS/nixpkgs/pull/301478
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "nvim-nio";
+          version = "2024-04-02";
+          src = pkgs.fetchFromGitHub {
+            owner = "nvim-neotest";
+            repo = "nvim-nio";
+            rev = "173f285eebb410199273fa178aa517fd2d7edd80";
+            sha256 = "0favgnfpsak44lzyzyhfavazr2i64l7ysk370xm4wbrb51kjsdkf";
+          };
+          meta.homepage = "https://github.com/nvim-neotest/nvim-nio/";
+        })
         toggleterm-nvim
         nvim-bqf
         undotree
