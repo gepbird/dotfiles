@@ -10,9 +10,12 @@ self: { pkgs, ... }:
   ];
 
   hm-gep.home.packages = with pkgs; [
+    nix-diff
     nix-index
+    nix-output-monitor
     nix-prefetch-git
     nixpkgs-review
+    nvd
   ];
 
   system.stateVersion = "23.05";
