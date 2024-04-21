@@ -9,7 +9,7 @@ in
   hm-gep.xdg.configFile."chatgpt/config.json".source = jsonFormat.generate "config.json" {
     api_key = builtins.readFile config.age.secrets.openai-token.path;
     conversation = {
-      model = "gpt-4-turbo-preview";
+      model = "gpt-4-turbo";
     };
   };
 }
