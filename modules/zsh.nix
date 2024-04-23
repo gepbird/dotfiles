@@ -20,9 +20,7 @@ in
 
     sessionVariables = {
       NIXPKGS_ALLOW_UNFREE = 1;
-      DOTNET_ROOT = dotnet-sdk;
       ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
-      MANPAGER = "nvim +Man!";
     };
 
     shellAliases = {
@@ -31,7 +29,6 @@ in
       cut = getExe hck;
       grep = "${getExe ripgrep} -i --color=auto";
 
-      v = "nvim";
       g = getExe git;
       la = "ls -la";
       lff = "ls -la | grep";
@@ -128,7 +125,7 @@ in
         temp_link=$(mktemp -u)
         mv $1 $temp_link
         cat $temp_link > $1
-        nvim $1
+        $EDITOR $1
         mv $temp_link $1
       }
 

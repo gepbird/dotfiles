@@ -13,4 +13,8 @@ self: { pkgs, ... }:
     rustc
     sqlite
   ];
+
+  hm-gep.home.sessionVariables = {
+    DOTNET_ROOT = pkgs.dotnet-sdk;
+  };
 }

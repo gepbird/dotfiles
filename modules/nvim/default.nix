@@ -1,5 +1,8 @@
-self: { config, pkgs, ... }:
+self: { config, pkgs, lib, ... }:
 
+let
+  finalPackage = lib.getExe config.hm-gep.programs.neovim.finalPackage;
+in
 {
   hm-gep.programs.neovim = {
     enable = true;
@@ -74,5 +77,13 @@ self: { config, pkgs, ... }:
 
   hm-gep.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
+  };
+
+  hm-gep.home.shellAliases = {
+    v = finalPackage;
+  };
+
+  hm-gep.home.sessionVariables = {
+    MANPAGER = "${finalPackage} +Man!";
   };
 }

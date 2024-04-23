@@ -32,4 +32,6 @@ self: { config, pkgs, lib, ... }:
     extraGroups = [ "wheel" ];
     hashedPasswordFile = config.age.secrets.system-password.path;
   };
+
+  system.stateVersion = "23.05";
 }

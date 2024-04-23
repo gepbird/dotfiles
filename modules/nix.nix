@@ -17,6 +17,4 @@ self: { pkgs, ... }:
     nixpkgs-review
     nvd
   ];
-
-  system.stateVersion = "23.05";
 }
