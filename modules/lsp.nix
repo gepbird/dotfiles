@@ -16,7 +16,6 @@ in
     nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
     nodePackages.pyright
     nodePackages.typescript-language-server
-    (import self.inputs.nixpkgs-stylelint-lsp { }).stylelint-lsp
     omnisharp-roslyn
     phpactor
     rust-analyzer
