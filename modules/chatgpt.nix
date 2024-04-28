@@ -20,6 +20,7 @@ in
     echo '${builtins.toJSON configuration}' \
       | ${lib.getExe pkgs.gnused} "s#@secret@#$secret#" \
       > ${runConfigPath}
+    chown ${config.users.users.gep.name} ${runConfigPath}
     chmod 400 ${runConfigPath}
   '';
 }
