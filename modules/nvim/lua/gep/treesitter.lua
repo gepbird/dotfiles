@@ -4,9 +4,9 @@ require 'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-    -- disable slow treesitter highlight for large files
     disable = function(_, buffer)
       return require 'gep.utils'.is_file_big(buffer)
+        or vim.bo.filetype == 'tex'
     end,
     additional_vim_regex_highlighting = false,
   },
@@ -30,7 +30,7 @@ require 'rainbow-delimiters.setup'.setup {
     'RainbowDelimiterBlue',
   },
   -- blacklisted because opening these filetypes takes a long time
-  blacklist = { 
+  blacklist = {
     'markdown', -- nvim docs
     'latex', -- ~450ms improvement~
   },
