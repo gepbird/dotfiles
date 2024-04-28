@@ -22,7 +22,7 @@ self: { ... }:
       ds = "diff --staged";
       co = "checkout";
       cob = "checkout -b";
-      f = "fetch --all";
+      f = "fetch";
       cl = "clone --recursive";
       gh = "!_() { git clone --recursive git@github.com:$1 \${@:2}; }; _";
       pr = "!_() { git fetch upstream pull/$1/head:pr-$1 && git checkout pr-$1; }; _";
