@@ -1,4 +1,4 @@
-self: { pkgs, ... }:
+self: { pkgs, lib, ... }:
 
 {
   programs.steam.enable = true;
@@ -10,4 +10,37 @@ self: { pkgs, ... }:
     wineWowPackages.staging
     winetricks
   ];
+
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general = {
+        desiredgov = "performance";
+        defaultgov = "powersave";
+      };
+      custom = {
+        start = "${lib.getExe' pkgs.dunst "dunstify"} 'GameMode started'";
+        end = "${lib.getExe' pkgs.dunst "dunstify"} 'GameMode ended'";
+      };
+    };
+  };
+
+  hm-gep.programs.mangohud = {
+    enable = true;
+    enableSessionWide = true;
+    settings = {
+      cpu_temp = true;
+      gamemode = true;
+      gpu_temp = true;
+      io_read = true;
+      io_write = true;
+      no_display = true;
+      ram = true;
+      swap = true;
+      vram = true;
+      vulkan_driver = true;
+      wine = true;
+      winesync = true;
+    };
+  };
 }
