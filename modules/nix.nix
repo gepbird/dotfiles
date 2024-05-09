@@ -17,4 +17,6 @@ self: { pkgs, ... }:
     nixpkgs-review
     nvd
   ];
+
+  nix.settings.trusted-users = [ "gep" ];
 }
