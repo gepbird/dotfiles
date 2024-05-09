@@ -11,10 +11,7 @@ self: { ... }:
   };
 
   # gtk4
-  hm-gep.dconf = {
-    enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
+  environment.sessionVariables.GTK_THEME = "Adwaita-dark";
 
   qt = {
     enable = true;
