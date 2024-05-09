@@ -4,7 +4,10 @@ self: { ... }:
   # gtk3
   hm-gep.gtk = {
     enable = true;
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+      gtk-error-bell = false;
+    };
   };
 
   # gtk4
