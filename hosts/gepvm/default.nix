@@ -23,6 +23,7 @@
       "piper"
       "polkit"
       "python"
+      "rnote"
       "sdk"
       "virt-manager"
       "vmware"
