@@ -1,4 +1,4 @@
-self: { ... }:
+self: { config, pkgs, ... }:
 
 {
   # gtk3
@@ -11,7 +11,11 @@ self: { ... }:
   };
 
   # gtk4
-  environment.sessionVariables.GTK_THEME = "Adwaita-dark";
+  hm-gep.xdg.configFile."gtk-4.0/gtk.css".source =
+    config.hm-gep.lib.file.mkOutOfStoreSymlink
+      # this gtk4 css tries to import gtk3/libadwaita.css that breaks some styles
+      # I deliberately didn't link that gtk3 css, so it won't be loaded and won't break styles
+      "${pkgs.adw-gtk3}/share/themes/adw-gtk3-dark/gtk-4.0/gtk.css";
 
   qt = {
     enable = true;
