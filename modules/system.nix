@@ -4,6 +4,7 @@ self: { config, pkgs, lib, ... }:
   boot = {
     supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
+    loader.timeout = 1;
   };
 
   swapDevices = [{
