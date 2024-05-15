@@ -4,7 +4,15 @@ self: { config, pkgs, lib, ... }:
   boot = {
     supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
-    loader.timeout = 1;
+    loader = {
+      timeout = 1;
+      efi.canTouchEfiVariables = true;
+      grub = {
+        useOSProber = true;
+        efiSupport = true;
+        device = "nodev";
+      };
+    };
   };
 
   swapDevices = [{

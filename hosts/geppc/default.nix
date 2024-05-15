@@ -6,16 +6,6 @@
       "light"
     ];
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      useOSProber = true;
-      efiSupport = true;
-      device = "nodev";
-      timeoutStyle = "hidden";
-    };
-  };
-
   fileSystems = {
     "/data" = {
       device = "/dev/disk/by-uuid/a2499480-9845-4acf-95c0-aaaab51936c6";
