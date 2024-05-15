@@ -13,6 +13,11 @@ self: { pkgs, ... }:
       ];
     });
     settings = {
+      General = {
+        disabledTrayIcon = true;
+        predefinedColorPaletteLarge = true;
+        showHelp = false;
+      };
       Shortcuts = {
         TYPE_ARROW = "a";
         TYPE_MARKER = "ctrl+m";
