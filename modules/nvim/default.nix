@@ -69,6 +69,7 @@ in
         markdown-preview-nvim
         omnisharp-extended-lsp-nvim
         vimtex
+        ChatGPT-nvim
       ];
   };
 
