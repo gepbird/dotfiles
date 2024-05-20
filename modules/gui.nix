@@ -6,7 +6,7 @@ self: { pkgs, ... }:
     blender
     bruno
     cinnamon.nemo
-    dbeaver
+    dbeaver-bin
     element-desktop
     gimp
     gparted
