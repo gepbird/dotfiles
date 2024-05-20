@@ -25,7 +25,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-stylelint-lsp, ... } @ inputs: {
+  outputs = inputs: with inputs; {
     lib = import ./lib.nix { };
     nixosConfigurations =
       let
