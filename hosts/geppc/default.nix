@@ -4,6 +4,7 @@
   imports = [ ./hardware.nix ] ++
     self.nixosModules.allImportsExcept [
       "light"
+      "vmware"
     ];
 
   fileSystems = {

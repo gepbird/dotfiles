@@ -9,6 +9,7 @@
       "libreoffice"
       "piper"
       "virt-manager"
+      "vmware"
     ];
 
   networking.hostName = "geptop";
