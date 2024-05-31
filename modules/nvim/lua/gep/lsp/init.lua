@@ -41,11 +41,17 @@ local servers = {
   yamlls = { 'yaml' },
 }
 
+local function toggle_inlay_hints()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
+end
+toggle_inlay_hints()
+
 local lsp = vim.lsp.buf
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
 utils.register_maps {
   { 'n', '<space>ls', ':LspInfo<cr>' },
+  { 'n', '<space>lh', toggle_inlay_hints },
   { 'n', '<space>-',  function() telescope.lsp_references(ivy) end },
   { 'n', '<space>.',  vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions
   { 'n', '<space>:',  function() telescope.lsp_type_definitions(ivy) end },
