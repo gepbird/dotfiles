@@ -8,6 +8,7 @@ in
     enable = true;
     defaultEditor = true;
     extraLuaConfig = "require 'gep'";
+    package = self.inputs.neovim-nightly.packages.${pkgs.system}.default;
     plugins = with pkgs; with vimUtils;
       with pkgs.vimPlugins; [
         nvim-web-devicons
