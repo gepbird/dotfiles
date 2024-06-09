@@ -14,7 +14,7 @@ in
     nil
     nixpkgs-fmt
     nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
-    nodePackages.pyright
+    pyright
     nodePackages.typescript-language-server
     omnisharp-roslyn
     phpactor
