@@ -50,7 +50,15 @@ in
         cmp-nvim-lua
         cmp_luasnip
         copilot-lua
-        copilot-cmp
+        # TODO: remove override when merged: https://github.com/zbirenbaum/copilot-cmp/pull/109
+        (copilot-cmp.overrideAttrs ({
+          src = pkgs.fetchFromGitHub {
+            owner = "tris203";
+            repo = "copilot-cmp";
+            rev = "0.11_compat";
+            hash = "sha256-Eu4wi+j/QK+U9mGL1vvPiVos2mX9WNnl4Ak/+ti2g1o=";
+          };
+        }))
         luasnip
         friendly-snippets
 
