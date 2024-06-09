@@ -17,7 +17,7 @@ local diagnostics = {
 }
 
 local lsp = function()
-  local clients = vim.lsp.buf_get_clients()
+  local clients = vim.lsp.get_clients()
   local client_names = vim.tbl_map(function(v)
     return v.name
   end, clients)
