@@ -80,7 +80,5 @@ require 'gep.utils'.register_maps {
   { 'n',   ';',            'mz<s-a>;<esc>`z' },
   { 'n',   'w',            'ciw' },
 
-  { 'n',   '<tab>',        function() require 'bufferline'.cycle(1) end },
-  { 'n',   '<s-tab>',      function() require 'bufferline'.cycle(-1) end },
   { 'n',   '<c-n>',        ':enew<cr>' },
 }
