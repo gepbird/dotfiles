@@ -1,8 +1,8 @@
 local signs = {
-  DiagnosticSignError = '',
-  DiagnosticSignWarn = '',
-  DiagnosticSignInfo = '',
-  DiagnosticSignHint = '󰌵',
+  DiagnosticSignError = ' ',
+  DiagnosticSignWarn = ' ',
+  DiagnosticSignInfo = ' ',
+  DiagnosticSignHint = ' ',
 }
 for name, text in pairs(signs) do
   vim.fn.sign_define(name, { texthl = name, text = text, numhl = '' })
