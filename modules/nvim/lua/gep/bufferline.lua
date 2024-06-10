@@ -3,6 +3,7 @@ local disallowed_filetypes = {
   qf = true,
   fugitive = true,
 }
+local seve = vim.diagnostic.severity
 
 -- :h bufferline-configuration
 local bufferline = require 'bufferline'
@@ -25,6 +26,24 @@ bufferline.setup {
     } },
     show_buffer_close_icons = false,
     always_show_bufferline = true,
+    custom_areas = {
+      right = function()
+        local result = {}
+        local diagnostics_count = vim.diagnostic.count()
+        local process_diagnostics = function(severity, display)
+          local count = diagnostics_count[severity]
+          if count then
+            display.text = display.text .. count
+            table.insert(result, display)
+          end
+        end
+        process_diagnostics(seve.ERROR, { text = '  ', link = 'DiagnosticError' })
+        process_diagnostics(seve.WARN, { text = '  ', link = 'DiagnosticWarn' })
+        process_diagnostics(seve.HINT, { text = '  ', link = 'DiagnosticHint' })
+        process_diagnostics(seve.INFO, { text = '  ', link = 'DiagnosticInfo' })
+        return result
+      end,
+    },
   },
 }
 
