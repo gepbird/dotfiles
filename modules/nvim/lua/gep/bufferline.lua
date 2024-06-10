@@ -14,7 +14,6 @@ bufferline.setup {
       style = 'none',
     },
     diagnostics = 'nvim_lsp',
-    diagnostics_update_in_insert = true,
     -- NOTE: this will be called a lot so don't do any heavy processing here
     custom_filter = function(buf_number, _)
       return not disallowed_filetypes[vim.bo[buf_number].filetype]
@@ -27,6 +26,14 @@ bufferline.setup {
     show_buffer_close_icons = false,
     always_show_bufferline = true,
   },
+}
+
+-- TODO: remove when fixed: https://github.com/akinsho/bufferline.nvim/issues/923
+local bufferline_ui = require 'bufferline.ui'
+vim.diagnostic.handlers['bufferline'] = {
+  show = function()
+    bufferline_ui.refresh()
+  end,
 }
 
 require 'gep.utils'.register_maps {
