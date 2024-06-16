@@ -50,13 +50,13 @@ in
         cmp-nvim-lua
         cmp_luasnip
         copilot-lua
-        # TODO: remove override when merged: https://github.com/zbirenbaum/copilot-cmp/pull/109
+        # TODO: remove when updated in nixpkgs
         (copilot-cmp.overrideAttrs ({
           src = pkgs.fetchFromGitHub {
-            owner = "tris203";
+            owner = "zbirenbaum";
             repo = "copilot-cmp";
-            rev = "0.11_compat";
-            hash = "sha256-Eu4wi+j/QK+U9mGL1vvPiVos2mX9WNnl4Ak/+ti2g1o=";
+            rev = "b0ec7067460d77fc28a96429c99a84b2248f0f61";
+            hash = "sha256-ep3s4Kh8m7ML/qIlQ4h45WYNu05YoWd7n+DPiyNOCFM=";
           };
         }))
         luasnip
