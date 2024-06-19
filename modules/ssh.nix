@@ -24,4 +24,8 @@ self: { ... }:
     enable = true;
     matchBlocks."*".extraOptions.StrictHostKeyChecking = "no";
   };
+
+  hm-gep.services.ssh-agent = {
+    enable = true;
+  };
 }
