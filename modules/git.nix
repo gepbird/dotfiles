@@ -8,6 +8,7 @@ self: { ... }:
       ca = "commit --amend";
       can = "commit --amend --no-edit";
       cp = "cherry-pick";
+      m = "merge";
       ri = "rebase -i";
       rc = "rebase --continue";
       ra = "rebase --abort";
@@ -18,6 +19,11 @@ self: { ... }:
       ss = "stash show 0 -p";
       s = "status";
       b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
+      bir = "bisect reset";
+      big = "bisect good";
+      bib = "bisect bad";
+      biv = "bisect view --oneline";
+      bil = "bisect log";
       d = "diff";
       ds = "diff --staged";
       co = "checkout";
