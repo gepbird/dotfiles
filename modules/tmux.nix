@@ -30,6 +30,11 @@ self: { pkgs, ... }:
       bind m-q kill-pane
 
       bind space copy-mode
+
+      # make colors inside tmux look the same as outside of tmux
+      # see https://github.com/tmux/tmux/issues/696
+      # see https://stackoverflow.com/a/41786092
+      set-option -ga terminal-overrides ",$TERM:Tc"
     '';
   };
 }
