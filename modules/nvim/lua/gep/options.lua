@@ -24,6 +24,7 @@ o.splitright = true                       -- force all vertical splits to go to 
 o.swapfile = false                        -- creates a swapfile
 o.termguicolors = true                    -- set term gui colors (most terminals support this)
 o.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
+o.ttimeout = false                        -- process <esc> immediately
 o.undofile = true                         -- enable persistent undo
 o.updatetime = 300                        -- faster completion (4000ms default)
 o.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
