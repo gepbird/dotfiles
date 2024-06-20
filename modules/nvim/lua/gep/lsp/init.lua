@@ -1,17 +1,13 @@
-local signs = {
-  DiagnosticSignError = ' ',
-  DiagnosticSignWarn = ' ',
-  DiagnosticSignInfo = ' ',
-  DiagnosticSignHint = ' ',
-}
-for name, text in pairs(signs) do
-  vim.fn.sign_define(name, { texthl = name, text = text, numhl = '' })
-end
-
+local seve = vim.diagnostic.severity
 vim.diagnostic.config {
   virtual_text = false,
   signs = {
-    active = signs,
+    text = {
+      [seve.ERROR] =  ' ',
+      [seve.WARN] =  ' ',
+      [seve.INFO] =  ' ',
+      [seve.HINT] =  ' ',
+    },
   },
   update_in_insert = true,
   underline = true,
