@@ -4,6 +4,21 @@ let
   finalPackage = lib.getExe config.hm-gep.programs.neovim.finalPackage;
 in
 {
+  # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/461
+  # https://github.com/tree-sitter/tree-sitter/issues/973
+  nixpkgs.overlays = [
+    (final: prev: {
+      tree-sitter = prev.tree-sitter.overrideAttrs {
+        patches = [
+          (prev.fetchpatch {
+            url = "https://github.com/gepbird/tree-sitter/commit/4b93751ee7fe92b3063baf0cd4d80e7991c6e5e8.patch";
+            hash = "sha256-bMFrPozoWUbSNdKyPVsFQLhSf+MYb3aiWlybI2/J6Zg=";
+          })
+        ];
+      };
+    })
+  ];
+
   hm-gep.programs.neovim = {
     enable = true;
     defaultEditor = true;
