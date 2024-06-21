@@ -29,11 +29,6 @@ require 'rainbow-delimiters.setup'.setup {
     'RainbowDelimiterPurple',
     'RainbowDelimiterBlue',
   },
-  -- blacklisted because opening these filetypes takes a long time
-  blacklist = {
-    'markdown', -- nvim docs
-    'latex', -- ~450ms improvement~
-  },
 }
 
 require 'nvim-treesitter.configs'.setup {
