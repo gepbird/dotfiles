@@ -65,15 +65,7 @@ in
         cmp-nvim-lua
         cmp_luasnip
         copilot-lua
-        # TODO: remove when updated in nixpkgs
-        (copilot-cmp.overrideAttrs ({
-          src = pkgs.fetchFromGitHub {
-            owner = "zbirenbaum";
-            repo = "copilot-cmp";
-            rev = "b0ec7067460d77fc28a96429c99a84b2248f0f61";
-            hash = "sha256-ep3s4Kh8m7ML/qIlQ4h45WYNu05YoWd7n+DPiyNOCFM=";
-          };
-        }))
+        copilot-cmp
         luasnip
         friendly-snippets
 
