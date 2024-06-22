@@ -1,40 +1,12 @@
 local gs = require 'gitsigns'
 
+-- :h gitsigns-config
 gs.setup {
-  signs = {
-    add = { text = '▎', hl = 'GitSignsAdd', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
-    change = { text = '▎', hl = 'GitSignsChange', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
-    delete = { text = '▎', hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-    topdelete = { text = '▎', hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-    changedelete = { text = '▎', hl = 'GitSignsChange', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
-  },
-  signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-  numhl = false,     -- Toggle with `:Gitsigns toggle_numhl`
-  linehl = false,    -- Toggle with `:Gitsigns toggle_linehl`
-  word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
-  watch_gitdir = {
-    follow_files = true,
-  },
+  signcolumn = false,
+  numhl = true,
   attach_to_untracked = true,
-  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
-  current_line_blame_opts = {
-    virt_text = true,
-    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-    delay = 1000,
-    ignore_whitespace = true,
-  },
-  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
-  sign_priority = 6,
-  update_debounce = 100,
-  status_formatter = nil, -- Use default
-  max_file_length = 40000,
   preview_config = {
-    -- Options passed to nvim_open_win
     border = 'rounded',
-    style = 'minimal',
-    relative = 'cursor',
-    row = 0,
-    col = 1,
   },
 }
 
@@ -53,8 +25,9 @@ require 'gep.utils'.register_maps {
   { 'nx', '<space>gr',     then_write(gs.reset_hunk) },
   { 'n',  '<space>g<s-r>', then_write(gs.reset_buffer) },
   { 'n',  '<space>gu',     then_write(gs.undo_stage_hunk) },
+  { 'n',  '<space>gt',     gs.toggle_deleted },
   { 'n',  '<space>gp',     gs.preview_hunk },
   { 'n',  '<space>gb',     function() gs.blame_line { full = true } end },
-  { 'n',  '<space>gB',     gs.toggle_current_line_blame },
+  { 'n',  '<space>gB',     gs.blame },
   { 'n',  '<space>gd',     gs.diffthis },
 }
