@@ -14,12 +14,13 @@ in
     nil
     nixpkgs-fmt
     nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
-    pyright
     nodePackages.typescript-language-server
     omnisharp-roslyn
     phpactor
+    pyright
     rust-analyzer
     rustfmt
+    stylelint-lsp
     taplo
     texlab
     vscode-langservers-extracted # html, css, json, eslint

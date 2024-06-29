@@ -5,10 +5,6 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    # TODO: remove when merged: https://github.com/NixOS/nixpkgs/pull/298407
-    nixpkgs-stylelint-lsp = {
-      url = "github:gepbird/nixpkgs/stylelint-lsp-init";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
