@@ -5,6 +5,10 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    # TODO: remove after https://github.com/NixOS/nixpkgs/issues/324252
+    nixpkgs-nvidia = {
+      url = "github:NixOS/nixpkgs/b2852eb9365c6de48ffb0dc2c9562591f652242a";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

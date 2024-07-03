@@ -323,6 +323,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-nvidia": {
+      "locked": {
+        "lastModified": 1719506693,
+        "narHash": "sha256-C8e9S7RzshSdHB7L+v9I51af1gDM5unhJ2xO1ywxNH8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b2852eb9365c6de48ffb0dc2c9562591f652242a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b2852eb9365c6de48ffb0dc2c9562591f652242a",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -330,7 +346,8 @@
         "home-manager": "home-manager",
         "neovim-nightly": "neovim-nightly",
         "nix-matlab": "nix-matlab",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-nvidia": "nixpkgs-nvidia"
       }
     },
     "systems": {
