@@ -18,6 +18,7 @@
       "lsp"
       "matlab"
       "mpv"
+      "nvidia"
       "onlyoffice"
       "opentabletdriver"
       "piper"

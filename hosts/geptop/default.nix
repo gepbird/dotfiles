@@ -7,6 +7,7 @@
       "games"
       "java"
       "libreoffice"
+      "nvidia"
       "piper"
       "virt-manager"
       "vmware"
