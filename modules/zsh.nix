@@ -2,7 +2,7 @@ self: { pkgs, lib, ... }:
 
 with pkgs;
 let
-  inherit (lib) getExe getExe';
+  inherit (lib) getExe;
 in
 {
   programs.zsh.enable = true; # necessary for zsh default shell
@@ -42,8 +42,6 @@ in
       pickcolor = "${getExe colorpicker} --one-shot --preview --short";
       sk = "${getExe screenkey} --timeout 2 --font-size small --key-mode raw --mouse";
       zshreload = "source $ZDOTDIR/.zshrc";
-      rebuild = "sudo nixos-rebuild switch --flake $HOME/dotfiles --option eval-cache false --impure";
-      cleanup = "sudo nix-collect-garbage -d";
 
       syst = "systemctl list-units --all | grep";
       sysi = "systemctl status";
@@ -94,30 +92,6 @@ in
             cd "$dir"
           fi
         fi
-      }
-
-      github-ssh() {
-        private_key="$HOME/.ssh/id_ed25519"
-        public_key="$private_key.pub"
-        github_link='https://github.com/settings/ssh/new'
-
-        ${getExe' openssh "ssh-keygen"} -f $private_key
-
-        echo "Add the ssh key below to github as an Authentication and a Signing key: $github_link"
-        echo '----BEGIN SSH PUBLIC KEY BLOCK----'
-        ${getExe bat} --style snip $public_key
-        echo '-----END SSH PUBLIC KEY BLOCK-----'
-
-        cat $public_key | ${getExe xsel} -b
-        ${getExe' xdg-utils "xdg-open"} $github_link
-        echo 'Copied ssh key to clipboard and opened github in browser'
-      }
-
-      # used to make home manager generated config files editable
-      unnix() {
-        temp_file=$(mktemp)
-        cat $1 > $temp_file
-        mv $temp_file $1
       }
 
       # edit a home manager generated file then restore it
