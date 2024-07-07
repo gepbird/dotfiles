@@ -42,11 +42,6 @@
 
   networking.hostName = "geppc";
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     open = false; # when enabled lightdm is not visible
