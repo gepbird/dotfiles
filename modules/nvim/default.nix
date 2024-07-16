@@ -42,7 +42,7 @@ in
         vim-sandwich
         comment-nvim
         nvim-autopairs
-        nvim-lastplace
+        remember-nvim
 
         nvim-treesitter.withAllGrammars
         nvim-treesitter-textobjects
