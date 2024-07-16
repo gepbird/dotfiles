@@ -62,7 +62,6 @@ in
         cmp-buffer
         cmp-path
         cmp-cmdline
-        cmp-nvim-lua
         cmp_luasnip
         copilot-lua
         copilot-cmp

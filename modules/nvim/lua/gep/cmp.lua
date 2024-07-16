@@ -104,7 +104,6 @@ cmp.setup.cmdline(':', {
 -- set up cmp sources for current buffer
 local default_cmp_sources = cmp.config.sources {
   { name = 'nvim_lsp' },
-  { name = 'nvim_lua' },
   { name = 'luasnip' },
   { name = 'path' },
   { name = 'copilot' },
