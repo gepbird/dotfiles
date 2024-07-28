@@ -17,6 +17,7 @@ self: { pkgs, ... }:
     inotify-tools
     jq
     lsof
+    ncdu
     nmap
     p7zip
     perl536Packages.FileMimeInfo
