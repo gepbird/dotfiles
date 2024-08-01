@@ -7,8 +7,8 @@ self: { pkgs, ... }:
     package = pkgs.flameshot.overrideAttrs (o: {
       patches = o.patches ++ [
         (pkgs.fetchpatch {
-          url = "https://github.com/gepbird/flameshot/commit/d48d1860244b7a1b9b0c7970c96441a08054a526.patch";
-          hash = "sha256-jfy8vkPiPVhqfOpDOTnOco+hFNyfXv4An5kJZhM7BuU=";
+          url = "https://github.com/gepbird/flameshot/commit/21cae1eae9ae116ac97a65b1b0494b91413ac423.patch";
+          hash = "sha256-gYQDXZeKO5GUxQ6KcPP+EYN9l1zZlNLsKjTCVFsrmtE=";
         })
       ];
     });
