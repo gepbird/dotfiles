@@ -5,7 +5,7 @@ self: { pkgs, ... }:
     anydesk
     blender
     bruno
-    cinnamon.nemo
+    nemo
     dbeaver-bin
     element-desktop
     gimp
