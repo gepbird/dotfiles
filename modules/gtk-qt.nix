@@ -12,8 +12,10 @@ self: { config, pkgs, ... }:
     };
   };
 
-  # dark theme for libadwaita (mostly/only gtk4?)
   environment.sessionVariables = {
+    # some gtk3 apps like pavucontrol and lightdm only work with this
+    GTK_THEME = "Adwaita:dark";
+    # dark theme for libadwaita (mostly/only gtk4?)
     ADW_DISABLE_PORTAL = 1; # use color-scheme from dconf rather than from portal
   };
   hm-gep.dconf.settings = {
