@@ -72,7 +72,6 @@ in
         guard-nvim
         lspsaga-nvim
         trouble-nvim
-        fidget-nvim
 
         nvim-dap
         nvim-dap-ui
