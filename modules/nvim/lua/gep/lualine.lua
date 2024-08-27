@@ -27,6 +27,18 @@ local lsp = function()
   return table.concat(client_names_normalized, ',')
 end
 
+local function lsp_progress()
+  return require 'lsp-progress'.progress()
+end
+-- listen lsp-progress event and refresh lualine
+require 'gep.utils'.register_autocmds {
+  {
+    'User',
+    require 'lualine'.refresh,
+    { pattern = 'LspProgressStatusUpdated' },
+  },
+}
+
 local debug_status = function()
   return require 'dap'.status()
 end
@@ -50,7 +62,7 @@ local filename = {
 local sections = {
   lualine_a = { 'mode' },
   lualine_b = { branch, diff },
-  lualine_c = { diagnostics, lsp },
+  lualine_c = { diagnostics, lsp, lsp_progress },
   lualine_x = { debug_status },
   lualine_y = { filetype, filename },
   lualine_z = { 'location', 'progress' },

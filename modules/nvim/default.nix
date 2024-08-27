@@ -2,6 +2,18 @@ self: { config, pkgs, lib, ... }:
 
 let
   finalPackage = lib.getExe config.hm-gep.programs.neovim.finalPackage;
+  # TODO: remove after merged: https://github.com/NixOS/nixpkgs/pull/337717
+  lsp-progress-nvim = pkgs.vimUtils.buildVimPlugin {
+    pname = "lsp-progress.nvim";
+    version = "2024-07-15";
+    src = pkgs.fetchFromGitHub {
+      owner = "linrongbin16";
+      repo = "lsp-progress.nvim";
+      rev = "d5f4d28efe75ce636bfbe271eb45f39689765aab";
+      sha256 = "0h63z55gwv36rahhha8vkbxb9n4f8psa265khz719i97j17x39rr";
+    };
+    meta.homepage = "https://github.com/linrongbin16/lsp-progress.nvim/";
+  };
 in
 {
   # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/461
@@ -30,6 +42,7 @@ in
 
         vscode-nvim
         lualine-nvim
+        lsp-progress-nvim
         bufferline-nvim
         nvim-window-picker
         neo-tree-nvim
