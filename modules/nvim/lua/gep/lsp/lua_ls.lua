@@ -1,4 +1,7 @@
 return {
+  --cmd = {
+  --  '/nix/store/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-lua-language-server-x.xx.x/bin/lua-language-server',
+  --},
   settings = {
     Lua = {
       diagnostics = {
