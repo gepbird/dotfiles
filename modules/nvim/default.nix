@@ -102,6 +102,8 @@ in
 
   hm-gep.xdg.configFile."nvim/lua".source =
     self.lib.mkDotfilesSymlink config "modules/nvim/lua";
+  hm-gep.xdg.configFile."nvim/after".source =
+    self.lib.mkDotfilesSymlink config "modules/nvim/after";
 
   hm-gep.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
