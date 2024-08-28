@@ -3,10 +3,10 @@ vim.diagnostic.config {
   virtual_text = false,
   signs = {
     text = {
-      [seve.ERROR] =  ' ',
-      [seve.WARN] =  ' ',
-      [seve.INFO] =  ' ',
-      [seve.HINT] =  ' ',
+      [seve.ERROR] = ' ',
+      [seve.WARN] = ' ',
+      [seve.INFO] = ' ',
+      [seve.HINT] = ' ',
     },
   },
   update_in_insert = true,
