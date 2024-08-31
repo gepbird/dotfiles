@@ -1,9 +1,10 @@
--- disable chaning tabstop by ftplugin
-vim.cmd 'let g:rust_recommended_style = 0'
-vim.cmd 'let g:python_recommended_style = 0'
-
 local o = vim.opt
 local g = vim.g
+
+-- disable chaning tabstop by ftplugin
+g.rust_recommended_style = false
+g.python_recommended_style = false
+g.markdown_recommended_style = false
 
 o.backup = false                          -- creates a backup file
 o.clipboard = 'unnamedplus'               -- allows neovim to access the system clipboard
@@ -37,16 +38,12 @@ o.relativenumber = false                  -- set relative numbered lines
 o.numberwidth = 4                         -- set number column width to 2 {default 4}
 o.signcolumn = 'yes'                      -- always show the sign column, otherwise it would shift the text each time
 o.wrap = false                            -- display lines as one long line
-o.scrolloff = 8                           -- always see the last x lines
-o.sidescrolloff = 8
---o.guifont = 'monospace:h17'               -- the font used in graphical neovim applications
-o.shortmess:append 'c' -- turn off common vim messages
-o.listchars = 'space:·,tab:  󰌒,eol:󰌑' -- define whitespace rendering
-o.list = true -- show whitespace
---o.whichwrap:append '<,>,[,],h,l'          -- can move to next line when pressing these keys
-o.iskeyword:append '-' -- what characters count as a word movement
-g.markdown_recommended_style = 0
-o.spelllang = 'hu'
+o.scrolloff = 8                           -- always see the first/last x lines
+o.sidescrolloff = 8                       -- always see the first/last x columns
+o.shortmess:append 'c'                    -- turn off common vim messages
+o.listchars = 'space:·,tab:  󰌒,eol:󰌑'     -- define whitespace rendering
+o.list = true                             -- enable whitespace rendering
+o.iskeyword:append '-'                    -- what characters count as a word movement
 
 -- disable bad indent for comments by disabling smartindent and re-enabling most of its features
 o.smartindent = false
