@@ -5,7 +5,6 @@
     self.nixosModules.allImportsExcept [
       "flutter" # LICENSE file conflicts with composer's
       "light"
-      "vmware"
     ];
 
   fileSystems = {
