@@ -6,7 +6,6 @@
       "flutter"
       "games"
       "java"
-      "libreoffice"
       "nvidia"
       "piper"
       "virt-manager"
