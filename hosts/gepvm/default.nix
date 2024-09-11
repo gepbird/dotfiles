@@ -21,6 +21,7 @@
       "nvidia"
       "onlyoffice"
       "opentabletdriver"
+      "packettracer"
       "piper"
       "polkit"
       "python"
