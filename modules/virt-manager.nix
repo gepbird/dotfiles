@@ -7,10 +7,12 @@ self: { pkgs, ... }:
     uris = [ "qemu:///system" ];
   };
 
-  # Manually add the following line to shared filesystem xmls:
-  # <binary path="/run/current-system/sw/bin/virtiofsd"/>
-  environment.systemPackages = [ pkgs.virtiofsd ];
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.vhostUserPackages = with pkgs; [
+      virtiofsd
+    ];
+  };
 
-  virtualisation.libvirtd.enable = true;
   users.users.gep.extraGroups = [ "libvirtd" ];
 }
