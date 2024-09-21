@@ -5,12 +5,12 @@ self: { pkgs, ... }:
     anydesk
     blender
     bruno
-    nemo
     dbeaver-bin
     element-desktop
     gimp
     gparted
     kdenlive
+    nemo
     obs-studio
     pavucontrol
     qbittorrent
@@ -18,6 +18,7 @@ self: { pkgs, ... }:
     rnote
     rustdesk-flutter
     screenkey
+    teams-for-linux
     tenacity
     ungoogled-chromium
     xclicker
