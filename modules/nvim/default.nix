@@ -14,8 +14,8 @@ in
       tree-sitter = prev.tree-sitter.overrideAttrs {
         patches = [
           (pkgs.fetchpatch {
-            url = "https://github.com/gepbird/tree-sitter/commit/4b93751ee7fe92b3063baf0cd4d80e7991c6e5e8.patch";
-            hash = "sha256-bMFrPozoWUbSNdKyPVsFQLhSf+MYb3aiWlybI2/J6Zg=";
+            url = "https://github.com/gepbird/tree-sitter/commit/4eb2ab69ce4c1ab399e282369ca04c94a1b34c6f.patch";
+            hash = "sha256-mPW04JwPYq94uZUhx6CH7Ii+dE2+kavG6TsyrpWoNf0=";
           })
         ];
       };
