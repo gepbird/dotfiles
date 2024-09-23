@@ -23,7 +23,8 @@ self: { config, pkgs, ... }:
   };
 
   qt = {
-    enable = true;
+    # disable due to packet tracer looking bad with half light, half dark theme
+    enable = false;
     platformTheme = "gnome";
     style = "adwaita-dark";
   };
