@@ -4,8 +4,9 @@ self: { pkgs, lib, ... }:
   programs.steam.enable = true;
 
   hm-gep.home.packages = with pkgs; [
-    prismlauncher
+    heroic
     osu-lazer-bin
+    prismlauncher
     r2modman
     wineWowPackages.staging
     winetricks
