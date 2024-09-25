@@ -16,6 +16,7 @@ self: { pkgs, ... }:
     hck
     inotify-tools
     jq
+    libnotify
     lsof
     ncdu
     nmap
