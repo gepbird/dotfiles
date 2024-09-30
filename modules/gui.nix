@@ -8,7 +8,6 @@ self: { pkgs, ... }:
     dbeaver-bin
     element-desktop
     gimp
-    gparted
     kdenlive
     nemo
     obs-studio
@@ -23,5 +22,9 @@ self: { pkgs, ... }:
     ungoogled-chromium
     xclicker
     xzoom
+  ];
+
+  environment.systemPackages = with pkgs; [
+    gparted
   ];
 }
