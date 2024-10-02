@@ -34,6 +34,11 @@
       inputs.hercules-ci-effects.follows = "hercules-ci-effects";
       inputs.git-hooks.follows = "git-hooks";
     };
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     # dependencies of the above modules
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
