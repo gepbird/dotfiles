@@ -8,6 +8,8 @@ self: { ... }:
         color = "gruvbox";
         enable_gpu = true;
         default_time_value = "30s";
+        memory_legend = "left";
+        network_legend = "left";
       };
       processes.columns = [
         "name"
