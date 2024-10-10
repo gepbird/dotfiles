@@ -4,7 +4,7 @@ local ft = require 'guard.filetype'
 ft 'css,yaml,markdown':fmt 'prettier'
 ft 'python':fmt 'yapf'
   :extra('--style', '{indent_width: 2}')
-require 'guard'.setup {
+vim.g.guard_config = {
   fmt_on_save = true,
   lsp_as_default_formatter = false,
 }
