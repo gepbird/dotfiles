@@ -1,10 +1,6 @@
 self: { pkgs, ... }:
 
 {
-  imports = [
-    self.inputs.lix-module.nixosModules.lixFromNixpkgs
-  ];
-
   nixpkgs.config.allowUnfree = true;
 
   hm-gep.home.packages = with pkgs; [
