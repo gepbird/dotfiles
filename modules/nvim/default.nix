@@ -43,13 +43,7 @@ in
 
         nvim-treesitter.withAllGrammars
         (nvim-treesitter-textobjects.overrideAttrs {
-        # use newer main branch, see https://github.com/nvim-treesitter/nvim-treesitter-textobjects/pull/692
-          src = pkgs.fetchFromGitHub {
-            owner = "nvim-treesitter";
-            repo = "nvim-treesitter-textobjects";
-            rev = "a34d063932adab24234e85f35f5d3529d34c1c4c";
-            hash = "sha256-elHFuox2TCkWE/MRMbUhJo78I8dT8+YMFMj7u+inyfo=";
-          };
+          src = self.inputs.nvim-treesitter-textobjects;
         })
         rainbow-delimiters-nvim
         nvim-colorizer-lua

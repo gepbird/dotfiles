@@ -294,6 +294,23 @@
         "type": "github"
       }
     },
+    "nvim-treesitter-textobjects": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727372584,
+        "narHash": "sha256-TJqL25NzrToxKHSHckeAanaFJH7+EHPUtEkFKwPLyMs=",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter-textobjects",
+        "rev": "aad2c8e6b029ada30621e67780801420ee9debe9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-treesitter",
+        "ref": "main",
+        "repo": "nvim-treesitter-textobjects",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -307,6 +324,7 @@
         "neovim-nightly": "neovim-nightly",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "systems": "systems"
       }
     },

@@ -39,6 +39,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    # use newer main branch, see https://github.com/nvim-treesitter/nvim-treesitter-textobjects/pull/692
+    nvim-treesitter-textobjects = {
+      url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
+      flake = false;
+    };
     # dependencies of the above modules
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
