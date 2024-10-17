@@ -21,7 +21,7 @@ self: { pkgs, ... }:
     ncdu
     nmap
     p7zip
-    perl536Packages.FileMimeInfo
+    perlPackages.FileMimeInfo
     progress
     ripgrep
     sshfs
