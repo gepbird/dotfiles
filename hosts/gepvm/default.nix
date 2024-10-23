@@ -7,6 +7,7 @@
       "clac"
       "direnv"
       "discord"
+      "ente-auth"
       "feh"
       "flutter"
       "games"
