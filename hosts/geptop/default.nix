@@ -14,6 +14,11 @@
 
   networking.hostName = "geptop";
 
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 4 * 1024;
+  }];
+
   # hopefully more battery time with these settings
   powerManagement = {
     cpuFreqGovernor = "schedutil";

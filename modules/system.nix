@@ -15,11 +15,6 @@ self: { config, pkgs, lib, ... }:
     };
   };
 
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 4 * 1024;
-  }];
-
   # for auto mounting external storages
   services.gvfs.enable = true;
 
