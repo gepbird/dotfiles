@@ -13,6 +13,6 @@ self: { pkgs, lib, ... }:
   ];
 
   hm-gep.home.packages = with pkgs; [
-    jd-gui
+    bytecode-viewer
   ];
 }
