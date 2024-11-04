@@ -3,7 +3,7 @@ self: { pkgs, ... }:
 {
   hm-gep.home.packages = with pkgs; [
     bat
-    colorpicker
+    xcolor
     dos2unix
     exiftool
     eza

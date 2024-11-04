@@ -39,7 +39,7 @@ in
       dnd = "${getExe xdragon} --and-exit --all";
       getpid = "${getExe xdotool} getwindowpid $(${getExe xdotool} selectwindow)";
       whatsmyip = "${getExe curl} -4 icanhazip.com";
-      pickcolor = "${getExe colorpicker} --one-shot --preview --short";
+      pickcolor = "${getExe xcolor} -s";
       sk = "${getExe screenkey} --timeout 2 --font-size small --key-mode raw --mouse";
       zshreload = "source $ZDOTDIR/.zshrc";
 
