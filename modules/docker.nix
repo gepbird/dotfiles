@@ -1,6 +1,10 @@
-self: { ... }:
+self: { pkgs, ... }:
 
 {
+  hm-gep.home.packages = with pkgs; [
+    docker-compose
+  ];
+
   virtualisation.docker = {
     enable = true;
     enableOnBoot = false;
