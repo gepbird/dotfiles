@@ -3,7 +3,6 @@ self: { pkgs, ... }:
 {
   hm-gep.home.packages = with pkgs; [
     bat
-    xcolor
     dos2unix
     exiftool
     eza
@@ -29,6 +28,7 @@ self: { pkgs, ... }:
     unzip
     w3m
     wget
+    xcolor
     xdotool
     xdragon
     xorg.xev
