@@ -1,5 +1,8 @@
-self: { pkgs, ... }:
+self: { lib, pkgs, ... }:
 
+let
+  inherit (lib) getExe;
+in
 {
   hm-gep.programs.git = {
     enable = true;
@@ -33,6 +36,7 @@ self: { pkgs, ... }:
       gh = "!_() { git clone --recursive git@github.com:$1 \${@:2}; }; _";
       pf = "push --force";
       l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
+      lg = "!_() { git log --oneline | ${getExe pkgs.ripgrep} $1; }; _";
       churl = "remote set-url origin";
     };
     extraConfig = {
