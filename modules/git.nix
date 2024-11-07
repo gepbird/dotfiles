@@ -1,4 +1,4 @@
-self: { ... }:
+self: { pkgs, ... }:
 
 {
   hm-gep.programs.git = {
@@ -31,7 +31,6 @@ self: { ... }:
       f = "fetch";
       cl = "clone --recursive";
       gh = "!_() { git clone --recursive git@github.com:$1 \${@:2}; }; _";
-      pr = "!_() { git fetch upstream pull/$1/head:pr-$1 && git checkout pr-$1; }; _";
       pf = "push --force";
       l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
       churl = "remote set-url origin";
@@ -51,4 +50,8 @@ self: { ... }:
       pull.rebase = true;
     };
   };
+
+  hm-gep.home.packages = with pkgs; [
+    git-extras
+  ];
 }
