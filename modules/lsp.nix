@@ -12,7 +12,7 @@ in
     lua-language-server
     netcoredbg
     nil
-    nixpkgs-fmt
+    nixfmt-rfc-style
     nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
     nodePackages.typescript-language-server
     omnisharp-roslyn
