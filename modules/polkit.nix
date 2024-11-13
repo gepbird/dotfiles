@@ -1,4 +1,8 @@
-self: { pkgs, ... }:
+self:
+{
+  pkgs,
+  ...
+}:
 
 {
   systemd.user.services = {

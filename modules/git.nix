@@ -1,4 +1,9 @@
-self: { lib, pkgs, ... }:
+self:
+{
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (lib) getExe;

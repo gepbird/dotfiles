@@ -1,4 +1,10 @@
-self: { config, pkgs, lib, ... }:
+self:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   finalPackage = lib.getExe config.hm-gep.programs.neovim.finalPackage;
@@ -20,76 +26,73 @@ in
         ];
       };
     });
-    plugins = with pkgs; with vimUtils;
-      with pkgs.vimPlugins; [
-        nvim-web-devicons
+    plugins = with pkgs.vimPlugins; [
+      nvim-web-devicons
 
-        vscode-nvim
-        lualine-nvim
-        lsp-progress-nvim
-        bufferline-nvim
-        nvim-window-picker
-        neo-tree-nvim
-        toggleterm-nvim
-        nvim-bqf
-        undotree
-        vim-bbye
+      vscode-nvim
+      lualine-nvim
+      lsp-progress-nvim
+      bufferline-nvim
+      nvim-window-picker
+      neo-tree-nvim
+      toggleterm-nvim
+      nvim-bqf
+      undotree
+      vim-bbye
 
-        vim-repeat
-        vim-sandwich
-        comment-nvim
-        nvim-autopairs
-        remember-nvim
+      vim-repeat
+      vim-sandwich
+      comment-nvim
+      nvim-autopairs
+      remember-nvim
 
-        nvim-treesitter.withAllGrammars
-        (nvim-treesitter-textobjects.overrideAttrs {
-          src = self.inputs.nvim-treesitter-textobjects;
-        })
-        rainbow-delimiters-nvim
-        nvim-colorizer-lua
+      nvim-treesitter.withAllGrammars
+      (nvim-treesitter-textobjects.overrideAttrs {
+        src = self.inputs.nvim-treesitter-textobjects;
+      })
+      rainbow-delimiters-nvim
+      nvim-colorizer-lua
 
-        telescope-nvim
-        telescope-ui-select-nvim
-        telescope-fzf-native-nvim
+      telescope-nvim
+      telescope-ui-select-nvim
+      telescope-fzf-native-nvim
 
-        vim-fugitive
-        vim-rhubarb
-        gitsigns-nvim
+      vim-fugitive
+      vim-rhubarb
+      gitsigns-nvim
 
-        nvim-cmp
-        cmp-nvim-lsp
-        cmp-buffer
-        cmp-path
-        cmp-cmdline
-        cmp_luasnip
-        copilot-lua
-        copilot-cmp
-        luasnip
-        friendly-snippets
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      cmp_luasnip
+      copilot-lua
+      copilot-cmp
+      luasnip
+      friendly-snippets
 
-        nvim-lspconfig
-        guard-nvim
-        lspsaga-nvim
-        trouble-nvim
+      nvim-lspconfig
+      guard-nvim
+      lspsaga-nvim
+      trouble-nvim
 
-        nvim-dap
-        nvim-dap-ui
-        nvim-dap-virtual-text
-        telescope-dap-nvim
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
+      telescope-dap-nvim
 
-        rustaceanvim
-        flutter-tools-nvim
-        markdown-preview-nvim
-        omnisharp-extended-lsp-nvim
-        vimtex
-        ChatGPT-nvim
-      ];
+      rustaceanvim
+      flutter-tools-nvim
+      markdown-preview-nvim
+      omnisharp-extended-lsp-nvim
+      vimtex
+      ChatGPT-nvim
+    ];
   };
 
-  hm-gep.xdg.configFile."nvim/lua".source =
-    self.lib.mkDotfilesSymlink config "modules/nvim/lua";
-  hm-gep.xdg.configFile."nvim/after".source =
-    self.lib.mkDotfilesSymlink config "modules/nvim/after";
+  hm-gep.xdg.configFile."nvim/lua".source = self.lib.mkDotfilesSymlink config "modules/nvim/lua";
+  hm-gep.xdg.configFile."nvim/after".source = self.lib.mkDotfilesSymlink config "modules/nvim/after";
 
   hm-gep.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];

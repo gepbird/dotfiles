@@ -1,29 +1,35 @@
-self: { pkgs, ... }:
+self:
+{
+  pkgs,
+  ...
+}:
 
 {
   hm-gep.home.packages = with pkgs; [
     #texlive.combined.scheme-full
 
-    (texlive.withPackages (ps: with ps; [
-      scheme-basic
+    (texlive.withPackages (
+      ps: with ps; [
+        scheme-basic
 
-      latexmk
+        latexmk
 
-      #collection-mathscience
-      naive-ebnf # fixes tikz.sty not found
-      siunitx
-      steinmetz # required for \phasor
+        #collection-mathscience
+        naive-ebnf # fixes tikz.sty not found
+        siunitx
+        steinmetz # required for \phasor
 
-      circuitikz
-      collection-fontsrecommended
-      enumitem
-      environ
-      listings
-      pict2e # required for \phasor
-      soul
-      titlesec
-      wrapfig
-      xstring
-    ]))
+        circuitikz
+        collection-fontsrecommended
+        enumitem
+        environ
+        listings
+        pict2e # required for \phasor
+        soul
+        titlesec
+        wrapfig
+        xstring
+      ]
+    ))
   ];
 }

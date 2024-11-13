@@ -1,4 +1,7 @@
-self: { ... }:
+self:
+{
+  ...
+}:
 
 {
   hardware.opentabletdriver.enable = true;

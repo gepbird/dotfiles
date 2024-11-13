@@ -1,4 +1,8 @@
-self: { pkgs, ... }:
+self:
+{
+  pkgs,
+  ...
+}:
 
 {
   hm-gep.home.packages = [ pkgs.rnote ];
@@ -12,7 +16,12 @@ self: { pkgs, ... }:
         };
         background =
           let
-            gray = x: { r = x; g = x; b = x; a = 1; };
+            gray = x: {
+              r = x;
+              g = x;
+              b = x;
+              a = 1;
+            };
           in
           {
             color = gray 0.118;

@@ -1,4 +1,8 @@
-self: { config, ... }:
+self:
+{
+  config,
+  ...
+}:
 
 {
   programs.nh = {

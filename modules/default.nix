@@ -11,21 +11,20 @@ self:
 let
   modulesDir = builtins.toString ./.;
 
-  filesAndDirectories = builtins.attrNames
-    (builtins.removeAttrs (builtins.readDir modulesDir) [ "default.nix" ]);
+  filesAndDirectories = builtins.attrNames (
+    builtins.removeAttrs (builtins.readDir modulesDir) [ "default.nix" ]
+  );
 
   allModules = builtins.listToAttrs (
-    map
-      (name: {
-        name = builtins.replaceStrings [ ".nix" ] [ "" ] name;
-        value = import "${modulesDir}/${name}" self;
-      })
-      filesAndDirectories
+    map (name: {
+      name = builtins.replaceStrings [ ".nix" ] [ "" ] name;
+      value = import "${modulesDir}/${name}" self;
+    }) filesAndDirectories
   );
 
   allImportsExcept = exceptions: builtins.attrValues (builtins.removeAttrs allModules exceptions);
 in
-allModules //
-{
+allModules
+// {
   inherit allImportsExcept;
 }

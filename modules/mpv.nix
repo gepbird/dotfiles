@@ -1,4 +1,7 @@
-self: { ... }:
+self:
+{
+  ...
+}:
 
 {
   hm-gep.programs.mpv = {

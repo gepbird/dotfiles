@@ -1,4 +1,7 @@
-self: { ... }:
+self:
+{
+  ...
+}:
 
 {
   virtualisation.vmware = {

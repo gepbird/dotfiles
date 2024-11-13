@@ -71,20 +71,23 @@
     };
   };
 
-  outputs = inputs: with inputs; {
-    lib = import ./lib.nix { };
-    nixosConfigurations =
-      let
-        mkSystem = host: nixpkgs.lib.nixosSystem {
-          modules = [ host ];
-          specialArgs = inputs;
+  outputs =
+    inputs: with inputs; {
+      lib = import ./lib.nix { };
+      nixosConfigurations =
+        let
+          mkSystem =
+            host:
+            nixpkgs.lib.nixosSystem {
+              modules = [ host ];
+              specialArgs = inputs;
+            };
+        in
+        {
+          geppc = mkSystem ./hosts/geppc;
+          geptop = mkSystem ./hosts/geptop;
+          gepvm = mkSystem ./hosts/gepvm;
         };
-      in
-      {
-        geppc = mkSystem ./hosts/geppc;
-        geptop = mkSystem ./hosts/geptop;
-        gepvm = mkSystem ./hosts/gepvm;
-      };
-    nixosModules = import ./modules self;
-  };
+      nixosModules = import ./modules self;
+    };
 }

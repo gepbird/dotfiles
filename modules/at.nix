@@ -1,4 +1,7 @@
-self: { ... }:
+self:
+{
+  ...
+}:
 
 {
   services.atd.enable = true;

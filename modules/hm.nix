@@ -1,9 +1,19 @@
-self: { config, lib, home-manager, ... }:
+self:
+{
+  config,
+  lib,
+  home-manager,
+  ...
+}:
 
 {
   imports = [
     home-manager.nixosModules.default
-    (lib.mkAliasOptionModule [ "hm-gep" ] [ "home-manager" "users" "gep" ])
+    (lib.mkAliasOptionModule [ "hm-gep" ] [
+      "home-manager"
+      "users"
+      "gep"
+    ])
   ];
 
   home-manager.useGlobalPkgs = true;

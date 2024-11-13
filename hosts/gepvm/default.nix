@@ -1,8 +1,14 @@
-{ self, lib, pkgs, ... }:
+{
+  self,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [ ./hardware.nix ] ++
-    self.nixosModules.allImportsExcept [
+  imports =
+    [ ./hardware.nix ]
+    ++ self.nixosModules.allImportsExcept [
       "chatgpt"
       "clac"
       "direnv"
@@ -41,7 +47,9 @@
   };
 
   age.secrets = {
-    system-password.file = lib.mkForce (pkgs.writeText "$6$Z6Mge73J$mBdqB5EcjwEb/QifNdBPVyVgeIz6hL4RQpDGACssXrCShUkVyEdehBAzPEltCfNXZof5Icg3aRoRa3nlaPtAH." "system-password");
+    system-password.file = lib.mkForce (
+      pkgs.writeText "$6$Z6Mge73J$mBdqB5EcjwEb/QifNdBPVyVgeIz6hL4RQpDGACssXrCShUkVyEdehBAzPEltCfNXZof5Icg3aRoRa3nlaPtAH." "system-password"
+    );
     openai-token.file = lib.mkForce (pkgs.writeText "" "openai-token");
   };
 

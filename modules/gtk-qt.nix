@@ -1,4 +1,7 @@
-self: { config, pkgs, ... }:
+self:
+{
+  ...
+}:
 
 {
   hm-gep.gtk = {

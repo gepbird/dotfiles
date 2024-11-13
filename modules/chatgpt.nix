@@ -1,4 +1,10 @@
-self: { config, pkgs, lib, ... }:
+self:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   configuration = {
@@ -12,8 +18,7 @@ in
 {
   hm-gep.home.packages = [ pkgs.chatgpt-cli ];
 
-  hm-gep.xdg.configFile."chatgpt/config.json".source =
-    config.hm-gep.lib.file.mkOutOfStoreSymlink runConfigPath;
+  hm-gep.xdg.configFile."chatgpt/config.json".source = config.hm-gep.lib.file.mkOutOfStoreSymlink runConfigPath;
 
   system.activationScripts."chatgpt-secret" = ''
     secret=$(cat ${config.age.secrets.openai-token.path})

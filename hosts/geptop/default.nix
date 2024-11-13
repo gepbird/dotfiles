@@ -1,8 +1,12 @@
-{ self, ... }:
+{
+  self,
+  ...
+}:
 
 {
-  imports = [ ./hardware.nix ] ++
-    self.nixosModules.allImportsExcept [
+  imports =
+    [ ./hardware.nix ]
+    ++ self.nixosModules.allImportsExcept [
       "flutter"
       "games"
       "java"
@@ -14,10 +18,12 @@
 
   networking.hostName = "geptop";
 
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 4 * 1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4 * 1024;
+    }
+  ];
 
   # hopefully more battery time with these settings
   powerManagement = {

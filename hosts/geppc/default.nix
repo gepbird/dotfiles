@@ -1,8 +1,12 @@
-{ self, pkgs, ... }:
+{
+  self,
+  ...
+}:
 
 {
-  imports = [ ./hardware.nix ] ++
-    self.nixosModules.allImportsExcept [
+  imports =
+    [ ./hardware.nix ]
+    ++ self.nixosModules.allImportsExcept [
       "flutter" # LICENSE file conflicts with composer's
       "light"
       "vmware"
@@ -42,8 +46,10 @@
 
   networking.hostName = "geppc";
 
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 8 * 1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 }

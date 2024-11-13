@@ -1,4 +1,9 @@
-self: { pkgs, nixpkgs, ... }:
+self:
+{
+  pkgs,
+  nixpkgs,
+  ...
+}:
 
 {
   nixpkgs.config.allowUnfree = true;

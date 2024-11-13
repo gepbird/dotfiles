@@ -1,4 +1,8 @@
-self: { lib, ... }:
+self:
+{
+  lib,
+  ...
+}:
 
 {
   hm-gep.programs.starship = {

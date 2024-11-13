@@ -1,4 +1,8 @@
-self: { pkgs, ... }:
+self:
+{
+  pkgs,
+  ...
+}:
 
 {
   # TODO: fix conflict with rustdesk-flutter

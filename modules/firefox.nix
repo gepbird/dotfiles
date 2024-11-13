@@ -1,4 +1,8 @@
-self: { pkgs, ... }:
+self:
+{
+  pkgs,
+  ...
+}:
 
 {
   hm-gep.programs.firefox = {

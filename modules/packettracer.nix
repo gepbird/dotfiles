@@ -1,4 +1,8 @@
-self: { pkgs, ... }:
+self:
+{
+  pkgs,
+  ...
+}:
 
 {
   # NOTE: MANUAL INSTALL REQUIRED FOR PACKET TRACER:

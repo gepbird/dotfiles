@@ -1,4 +1,7 @@
-self: { pkgs, ... }:
+self:
+{
+  ...
+}:
 
 {
   imports = [
