@@ -11,7 +11,7 @@ in
     lldb
     lua-language-server
     netcoredbg
-    nil
+    nixd
     nixfmt-rfc-style
     nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
     nodePackages.typescript-language-server

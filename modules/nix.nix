@@ -4,7 +4,7 @@ self: { pkgs, ... }:
   nixpkgs.config.allowUnfree = true;
 
   hm-gep.home.packages = with pkgs; [
-    nil
+    nixd
     nix-diff
     nix-index
     nix-output-monitor
