@@ -1,4 +1,4 @@
-self: { pkgs, ... }:
+self: { pkgs, nixpkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -13,13 +13,18 @@ self: { pkgs, ... }:
     nvd
   ];
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
+  nix = {
+    nixPath = [
+      "nixpkgs=${nixpkgs}"
     ];
-    substituters = [ "https://nix-community.cachix.org" ];
-    trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
-    trusted-users = [ "gep" ];
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [ "https://nix-community.cachix.org" ];
+      trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+      trusted-users = [ "gep" ];
+    };
   };
 }
