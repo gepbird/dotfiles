@@ -1,11 +1,15 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   services.xserver = {
     enable = true;
+    excludePackages = with pkgs; [
+      xterm
+    ];
     xkb.layout = "hu";
     xkb.options = "caps:escape";
     autoRepeatDelay = 250;
