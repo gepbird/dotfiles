@@ -1,9 +1,11 @@
+local omnisharp = require 'omnisharp_extended'
+require 'gep.utils'.register_maps {
+  { 'n', '<space>.', omnisharp.telescope_lsp_definition, filetype = 'cs' },
+}
+
 -- see ~/.omnisharp/omnisharp.json
 return {
   cmd = { 'OmniSharp' },
-  handlers = {
-    ['textDocument/definition'] = require 'omnisharp_extended'.handler,
-  },
   analyze_open_documents_only = true,
   enable_editorconfig_support = true,
   enable_import_completion = true,
