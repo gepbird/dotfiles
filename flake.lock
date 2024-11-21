@@ -199,15 +199,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1729360442,
-        "narHash": "sha256-6U0CyPycIBc04hbYy2hBINnVso58n/ZyywY2BD3hu+s=",
-        "rev": "2bbdcd73b9a464f8acf45a7100feb979883ba485",
+        "lastModified": 1732194752,
+        "narHash": "sha256-aPQOepYHQVBUdqQRKFuF4/TXnXOX8ndped3ljHDkfPw=",
+        "rev": "1ea5e4380dece9f9245b84e0dd8868c54b44cafd",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/nixos-module/archive/2bbdcd73b9a464f8acf45a7100feb979883ba485.tar.gz?rev=2bbdcd73b9a464f8acf45a7100feb979883ba485"
+        "url": "https://git.lix.systems/api/v1/repos/gepbird/lix-nixos-module/archive/1ea5e4380dece9f9245b84e0dd8868c54b44cafd.tar.gz?rev=1ea5e4380dece9f9245b84e0dd8868c54b44cafd"
       },
       "original": {
         "type": "tarball",
-        "url": "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz"
+        "url": "https://git.lix.systems/gepbird/lix-nixos-module/archive/stable.tar.gz"
       }
     },
     "neovim-nightly": {
