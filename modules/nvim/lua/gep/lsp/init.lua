@@ -49,7 +49,7 @@ utils.register_maps {
   { 'n', '<space>ls', ':LspInfo<cr>' },
   { 'n', '<space>lh', toggle_inlay_hints },
   { 'n', '<space>-',  function() telescope.lsp_references(ivy) end },
-  { 'n', '<space>.',  vim.lsp.buf.definition }, -- omnisharp-extended doesn't work with telescope definitions
+  { 'n', '<space>.',  function() telescope.lsp_definitions(ivy) end },
   { 'n', '<space>:',  function() telescope.lsp_type_definitions(ivy) end },
   { 'n', '<space>f', function()
     lsp.format { async = false };
