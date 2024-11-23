@@ -10,6 +10,7 @@ self:
       ps: with ps; [
         pip
         debugpy
+        python-lsp-server
       ]
     ))
   ];
