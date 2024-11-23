@@ -9,6 +9,7 @@ self:
     settings = {
       flags = {
         color = "gruvbox";
+        # TODO: remove in >0.10.2 (https://github.com/ClementTsang/bottom/pull/1559)
         enable_gpu = true;
         default_time_value = "30s";
         memory_legend = "left";
@@ -18,9 +19,9 @@ self:
         "name"
         "mem%"
         "cpu%"
-        # TODO: this will be introduced in 0.9.6+
-        #"gmem%"
-        #"gpu%"
+        # TODO: gpu doesn't work yet: https://github.com/ClementTsang/bottom/issues/1629
+        "gmem%"
+        "gpu%"
         "pid"
         "read"
         "write"
