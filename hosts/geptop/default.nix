@@ -25,6 +25,16 @@
     }
   ];
 
+  # while using firefox: radeon 0000:00:01.0: ring 0 stalled for more than 10280msec
+  # https://bugzilla.kernel.org/show_bug.cgi?id=85421
+  # maybe helps: https://forums.linuxmint.com/viewtopic.php?t=361652
+  boot.kernelParams = [
+    "radeon.hard_reset=1"
+    "radeon.dpm=0"
+  ];
+  # TODO: try disabling it in the future
+  #boot.blacklistedKernelModules = [ "radeon" ];
+
   # hopefully more battery time with these settings
   powerManagement = {
     # probably doesn't work: Failed to find module 'cpufreq_schedutil'
