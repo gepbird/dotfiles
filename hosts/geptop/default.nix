@@ -27,6 +27,8 @@
 
   # hopefully more battery time with these settings
   powerManagement = {
+    # probably doesn't work: Failed to find module 'cpufreq_schedutil'
+    # https://github.com/NixOS/nixpkgs/issues/204619
     cpuFreqGovernor = "schedutil";
     powertop.enable = true;
   };
