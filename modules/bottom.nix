@@ -1,11 +1,18 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.bottom = {
     enable = true;
+    # TODO: remove after merged: https://github.com/NixOS/nixpkgs/pull/360568
+    package = pkgs.bottom.overrideAttrs (o: {
+      buildInputs = (o.buildInputs or []) ++ [
+        pkgs.autoAddDriverRunpath
+      ];
+    });
     settings = {
       flags = {
         color = "gruvbox";
@@ -19,7 +26,6 @@ self:
         "name"
         "mem%"
         "cpu%"
-        # TODO: gpu doesn't work yet: https://github.com/ClementTsang/bottom/issues/1629
         "gmem%"
         "gpu%"
         "pid"
