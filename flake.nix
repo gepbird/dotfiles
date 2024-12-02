@@ -36,9 +36,7 @@
       inputs.git-hooks.follows = "git-hooks";
     };
     lix-module = {
-      # TODO: remove patch after merged: https://git.lix.systems/lix-project/nixos-module/pulls/46
-      #url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
-      url = "https://git.lix.systems/gepbird/lix-nixos-module/archive/stable.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
