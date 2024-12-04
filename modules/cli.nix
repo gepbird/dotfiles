@@ -7,6 +7,7 @@ self:
 {
   hm-gep.home.packages = with pkgs; [
     bat
+    cntr
     dos2unix
     exiftool
     eza
