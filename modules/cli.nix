@@ -22,6 +22,7 @@ self:
     jq
     libnotify
     lsof
+    lurk
     ncdu
     nmap
     p7zip
