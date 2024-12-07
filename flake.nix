@@ -6,6 +6,11 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
     };
+    # TODO: remove after broken attr is removed from
+    # https://github.com/nixos/nixpkgs/blob/master/pkgs/os-specific/linux/nvidia-x11/default.nix#L82 
+    nixpkgs-nvidia = {
+      url = "github:NixOS/nixpkgs/566e53c2ad750c84f6d31f9ccb9d00f823165550";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
