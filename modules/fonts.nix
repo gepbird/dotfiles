@@ -8,6 +8,6 @@ self:
   fonts.packages = with pkgs; [
     corefonts
     minecraftia
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
   ];
 }
