@@ -74,6 +74,7 @@ in
 
       nvim-lspconfig
       guard-nvim
+      guard-collection
       lspsaga-nvim
       trouble-nvim
 
