@@ -39,6 +39,7 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.hercules-ci-effects.follows = "hercules-ci-effects";
       inputs.git-hooks.follows = "git-hooks";
+      inputs.treefmt-nix.follows = "";
     };
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
