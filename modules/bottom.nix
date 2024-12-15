@@ -7,12 +7,6 @@ self:
 {
   hm-gep.programs.bottom = {
     enable = true;
-    # TODO: remove after merged: https://github.com/NixOS/nixpkgs/pull/360568
-    package = pkgs.bottom.overrideAttrs (o: {
-      buildInputs = (o.buildInputs or []) ++ [
-        pkgs.autoAddDriverRunpath
-      ];
-    });
     settings = {
       flags = {
         color = "gruvbox";
