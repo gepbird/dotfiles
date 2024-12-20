@@ -11,6 +11,10 @@
     nixpkgs-nvidia = {
       url = "github:NixOS/nixpkgs/566e53c2ad750c84f6d31f9ccb9d00f823165550";
     };
+    # TODO: remove after fixed: https://github.com/NixOS/nixpkgs/pull/366250#issuecomment-2557528916
+    nixpkgs-anydesk = {
+      url = "github:NixOS/nixpkgs/ccc4ef55e3a40f3bcd92396a8ba932a13071cfca";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
