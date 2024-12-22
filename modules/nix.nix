@@ -9,11 +9,12 @@ self:
   nixpkgs.config.allowUnfree = true;
 
   hm-gep.home.packages = with pkgs; [
-    nixd
     nix-diff
     nix-index
     nix-output-monitor
     nix-prefetch-git
+    nix-update
+    nixd
     nixpkgs-review
     nvd
   ];
