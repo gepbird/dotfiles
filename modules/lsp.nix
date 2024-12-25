@@ -28,7 +28,6 @@ in
     texlab
     vscode-langservers-extracted # html, css, json, eslint
     yaml-language-server
-    yapf
   ];
 
   hm-gep.home.file.".omnisharp/omnisharp.json".source = jsonFormat.generate "omnisharp.json" {
