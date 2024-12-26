@@ -17,7 +17,7 @@ in
     netcoredbg
     nixd
     nixfmt-rfc-style
-    nodePackages.prettier # css, yaml, markdown (unused: js+ts, html, json, graphql)
+    prettierd # yaml, markdown (unused: js+ts, css, html, json, graphql)
     nodePackages.typescript-language-server
     omnisharp-roslyn
     phpactor
