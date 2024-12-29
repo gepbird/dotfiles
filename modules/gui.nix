@@ -29,6 +29,7 @@ in
     qdirstat
     rnote
     rustdesk-flutter
+    scrcpy
     screenkey
     teams-for-linux
     tenacity
