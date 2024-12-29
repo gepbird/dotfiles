@@ -41,6 +41,7 @@ in
     progress
     ripgrep
     sshfs
+    sysstat
     unrar
     unzip
     w3m
