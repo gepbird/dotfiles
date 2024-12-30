@@ -40,6 +40,7 @@ in
     perlPackages.FileMimeInfo
     progress
     ripgrep
+    sd
     sshfs
     sysstat
     unrar
