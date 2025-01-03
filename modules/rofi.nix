@@ -36,6 +36,7 @@ self:
       kb-cancel = "Escape";
 
       # remove some keys from default binds due to conflict
+      kb-secondary-copy = "Control+y"; # remove Control+c
       kb-remove-char-forward = "Delete"; # remove Control+d
       kb-remove-char-back = "BackSpace,Shift+BackSpace"; # remove Control+h
       kb-remove-to-eol = ""; # remove Control+k
