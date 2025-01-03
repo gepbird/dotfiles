@@ -6,15 +6,7 @@ self:
   ...
 }:
 
-let
-  pkgs-nvidia = import self.inputs.nixpkgs-nvidia {
-    inherit (pkgs) system;
-    config.allowUnfree = true;
-  };
-in
 {
-  boot.kernelPackages = lib.mkForce pkgs-nvidia.linuxPackages_zen;
-
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     open = false; # when enabled lightdm is not visible
