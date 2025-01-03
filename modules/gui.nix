@@ -4,15 +4,6 @@ self:
   ...
 }:
 
-let
-  inherit
-    (import self.inputs.nixpkgs-anydesk {
-      inherit (pkgs) system;
-      config.allowUnfree = true;
-    })
-    anydesk
-    ;
-in
 {
   hm-gep.home.packages = with pkgs; [
     anydesk

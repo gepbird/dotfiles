@@ -292,22 +292,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-anydesk": {
-      "locked": {
-        "lastModified": 1727439354,
-        "narHash": "sha256-OvrWgil+wfnhBrYDXxpUXpGkAxuv46BSiWSgenvZr/I=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ccc4ef55e3a40f3bcd92396a8ba932a13071cfca",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ccc4ef55e3a40f3bcd92396a8ba932a13071cfca",
-        "type": "github"
-      }
-    },
     "nixpkgs-nvidia": {
       "locked": {
         "lastModified": 1733229606,
@@ -354,7 +338,6 @@
         "neovim-nightly": "neovim-nightly",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-anydesk": "nixpkgs-anydesk",
         "nixpkgs-nvidia": "nixpkgs-nvidia",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "systems": "systems"
