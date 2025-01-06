@@ -43,19 +43,39 @@ require 'gep.utils'.register_maps {
   { 'n',   '<c-left>',  ':vertical resize -2<cr>' },
   { 'n',   '<c-right>', ':vertical resize +2<cr>' },
 
-  { 'x', 'p', function()
-    local src_mode = vim.fn.getregtype '"'
-    local dst_mode = vim.fn.mode()
-    if src_mode == dst_mode then
-      vim.cmd 'normal! "_dP'
-    elseif src_mode == 'V' and dst_mode == 'v' then
-      vim.cmd 'normal! "_di\r'
-      vim.cmd 'normal! P'
-    elseif src_mode == 'v' and dst_mode == 'V' then
-      vim.cmd 'normal! "_dO'
+
+  --{ 'x', 'p', function()
+  --  local src_mode = vim.fn.getregtype '"'
+  --  local dst_mode = vim.fn.mode()
+  --  if src_mode == dst_mode then
+  --    vim.cmd 'normal! "_dP'
+  --  elseif src_mode == 'V' and dst_mode == 'v' then
+  --    vim.cmd 'normal! "_di\r'
+  --    vim.cmd 'normal! P'
+  --  elseif src_mode == 'v' and dst_mode == 'V' then
+  --    vim.cmd 'normal! "_dO'
+  --    vim.cmd 'normal! p'
+  --  end
+  --end },
+
+  -- when pasting, trim trailing newlines if the content came from outside of nvim
+  -- so nvim pastes the content in the current line of opening a new one
+  { 'n', 'p',
+    function()
+      local last_nvim_content = vim.fn.getreg '"'
+      local clipboard_content = vim.fn.getreg '+'
+      local pasted_from_nvim = last_nvim_content == clipboard_content
+      if not pasted_from_nvim then
+        local _, newlines = string.gsub(clipboard_content, '\n', '')
+        if newlines == 1 then
+          local content_stripped = string.gsub(clipboard_content, '\n$', '')
+          vim.fn.setreg('+', content_stripped)
+        end
+      end
       vim.cmd 'normal! p'
-    end
-  end },
+    end,
+  },
+
   { 'n',   '<s-y>',        'yy',                                   { unmap = true } },
   { 'n',   '<s-c>',        'cc',                                   { unmap = true } },
   { 'n',   '<s-d>',        'dd',                                   { unmap = true } },
