@@ -38,6 +38,7 @@ in
     nmap
     p7zip
     perlPackages.FileMimeInfo
+    procs
     progress
     ripgrep
     sd
