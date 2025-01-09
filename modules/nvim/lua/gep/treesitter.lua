@@ -23,6 +23,13 @@ local rainbow = require 'rainbow-delimiters'
 require 'rainbow-delimiters.setup'.setup {
   strategy = {
     html = rainbow.strategy.noop,
+    [''] = function(bufnr)
+      local is_too_big = require 'gep.utils'.is_file_big(bufnr)
+      if is_too_big then
+        return nil
+      end
+      return rainbow.strategy.global
+    end,
   },
   highlight = {
     'RainbowDelimiterYellow',
