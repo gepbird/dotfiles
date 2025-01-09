@@ -11,7 +11,8 @@ require 'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true,
+    -- indentation works better without this (tested in nix file), laggy in big files
+    enable = false,
     disable = {},
   },
 }
