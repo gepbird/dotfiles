@@ -47,6 +47,7 @@ o.iskeyword:append '-'                    -- what characters count as a word mov
 o.wrap = true                             -- break up long lines
 o.breakindent = true                      -- indent broken up lines better
 o.showbreak = ''                         -- character used to indicate broken up lines
+o.redrawtime = 200                        -- turn off syntax highlighting when it gets too laggy
 
 -- disable bad indent for comments by disabling smartindent and re-enabling most of its features
 o.smartindent = false
