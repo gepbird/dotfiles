@@ -9,14 +9,19 @@
   imports =
     [ ./hardware.nix ]
     ++ self.nixosModules.allImportsExcept [
+      "adb"
+      "at"
       "chatgpt"
       "clac"
       "direnv"
       "discord"
       "ente-auth"
       "feh"
+      "file-roller"
+      "flameshot"
       "flutter"
       "games"
+      "gromit-mpx"
       "gui"
       "java"
       "latex"
