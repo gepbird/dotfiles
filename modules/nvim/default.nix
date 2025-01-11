@@ -17,14 +17,15 @@ in
     package = self.inputs.neovim-nightly.packages.${pkgs.system}.default.override (prev: {
       # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/461
       # https://github.com/tree-sitter/tree-sitter/issues/973
-      tree-sitter = prev.tree-sitter.overrideAttrs {
-        patches = [
-          (pkgs.fetchpatch {
-            url = "https://github.com/gepbird/tree-sitter/commit/4eb2ab69ce4c1ab399e282369ca04c94a1b34c6f.patch";
-            hash = "sha256-mPW04JwPYq94uZUhx6CH7Ii+dE2+kavG6TsyrpWoNf0=";
-          })
-        ];
-      };
+      # disabled: try to reproduce the slowdown without this patch
+      #tree-sitter = prev.tree-sitter.overrideAttrs {
+      #  patches = [
+      #    (pkgs.fetchpatch {
+      #      url = "https://github.com/gepbird/tree-sitter/commit/4eb2ab69ce4c1ab399e282369ca04c94a1b34c6f.patch";
+      #      hash = "sha256-mPW04JwPYq94uZUhx6CH7Ii+dE2+kavG6TsyrpWoNf0=";
+      #    })
+      #  ];
+      #};
     });
     plugins = with pkgs.vimPlugins; [
       nvim-web-devicons
