@@ -3,7 +3,6 @@ local g = vim.g
 
 -- disable chaning tabstop by ftplugin
 g.rust_recommended_style = false
-g.python_recommended_style = false
 g.markdown_recommended_style = false
 
 o.backup = false                          -- creates a backup file
