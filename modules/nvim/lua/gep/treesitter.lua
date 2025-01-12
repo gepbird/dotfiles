@@ -4,16 +4,18 @@ require 'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-    disable = function(_, buffer)
-      return require 'gep.utils'.is_file_big(buffer)
+    disable = function(_, bufnr)
+      return require 'gep.utils'.is_file_big(bufnr)
         or vim.bo.filetype == 'tex'
     end,
     additional_vim_regex_highlighting = false,
   },
   indent = {
-    -- indentation works better without this (tested in nix file), laggy in big files
-    enable = false,
-    disable = {},
+    enable = true,
+    disable = function(_, bufnr)
+      return require 'gep.utils'.is_file_big(bufnr)
+        or vim.bo.filetype == 'nix'
+    end,
   },
 }
 
