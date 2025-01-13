@@ -10,23 +10,31 @@ let
   finalPackage = lib.getExe config.hm-gep.programs.neovim.finalPackage;
 in
 {
+  nixpkgs.overlays = [
+    self.inputs.neovim-nightly.overlays.default
+
+    # DISABLED: try to reproduce the slowdown without this patch
+    # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/461
+    # https://github.com/tree-sitter/tree-sitter/issues/973
+    #(final: prev: {
+    #  neovim = prev.neovim.override (prev: {
+    #    tree-sitter = prev.tree-sitter.overrideAttrs {
+    #      patches = [
+    #        (pkgs.fetchpatch {
+    #          url = "https://github.com/gepbird/tree-sitter/commit/4eb2ab69ce4c1ab399e282369ca04c94a1b34c6f.patch";
+    #          hash = "sha256-mPW04JwPYq94uZUhx6CH7Ii+dE2+kavG6TsyrpWoNf0=";
+    #        })
+    #      ];
+    #    };
+    #  });
+    #})
+  ];
+
   hm-gep.programs.neovim = {
     enable = true;
     defaultEditor = true;
     extraLuaConfig = "require 'gep'";
-    package = self.inputs.neovim-nightly.packages.${pkgs.system}.default.override (prev: {
-      # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/461
-      # https://github.com/tree-sitter/tree-sitter/issues/973
-      # disabled: try to reproduce the slowdown without this patch
-      #tree-sitter = prev.tree-sitter.overrideAttrs {
-      #  patches = [
-      #    (pkgs.fetchpatch {
-      #      url = "https://github.com/gepbird/tree-sitter/commit/4eb2ab69ce4c1ab399e282369ca04c94a1b34c6f.patch";
-      #      hash = "sha256-mPW04JwPYq94uZUhx6CH7Ii+dE2+kavG6TsyrpWoNf0=";
-      #    })
-      #  ];
-      #};
-    });
+    package = pkgs.neovim;
     plugins = with pkgs.vimPlugins; [
       nvim-web-devicons
 
