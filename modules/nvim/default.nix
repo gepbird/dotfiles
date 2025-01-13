@@ -28,6 +28,15 @@ in
     #    };
     #  });
     #})
+
+    # faster build, useful for debugging
+    #(final: prev: {
+    #  neovim = prev.neovim.overrideAttrs (prev: {
+    #    cmakeFlags = [
+    #      "-DENABLE_LTO=OFF"
+    #    ];
+    #  });
+    #})
   ];
 
   hm-gep.programs.neovim = {
