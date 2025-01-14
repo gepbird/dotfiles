@@ -20,6 +20,7 @@ local utils = require 'gep.utils'
 local servers = {
   lua_ls = { 'lua' },
   pylsp = { 'python' },
+  pyright = { 'python' },
   omnisharp = { 'cs' },
   clangd = { 'c' },
   cssls = { 'css', 'scss' },

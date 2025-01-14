@@ -21,6 +21,7 @@ in
     nodePackages.typescript-language-server
     omnisharp-roslyn
     phpactor
+    pyright
     rust-analyzer
     rustfmt
     stylelint-lsp
