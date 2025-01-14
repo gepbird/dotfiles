@@ -34,4 +34,9 @@ self:
 
   nixpkgs.config.allowUnfree = true;
   hm-gep.home.sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
+
+  hm-gep.home.shellAliases = {
+    bump = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr package";
+    bumpc = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr commit true --argstr package";
+  };
 }
