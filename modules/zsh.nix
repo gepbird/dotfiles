@@ -24,7 +24,6 @@ in
     history.path = "$ZDOTDIR/.zsh_history";
 
     sessionVariables = {
-      NIXPKGS_ALLOW_UNFREE = 1;
       ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
     };
 

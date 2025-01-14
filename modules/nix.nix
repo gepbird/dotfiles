@@ -6,8 +6,6 @@ self:
 }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
   hm-gep.home.packages = with pkgs; [
     nix-diff
     nix-index
@@ -33,4 +31,7 @@ self:
       trusted-users = [ "gep" ];
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
+  hm-gep.home.sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
 }
