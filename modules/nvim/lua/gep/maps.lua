@@ -82,8 +82,8 @@ require 'gep.utils'.register_maps {
 
   { 'n',   '<space>q',     ':q<cr>' },
   { 'n',   '<space><s-q>', ':quitall!<cr>' },
-  { 'n',   '<space>w',     ':w<cr>' },
-  { 'n',   '<space>W',     ':wq<cr>' },
+  { 'n',   '<space>w',     ':w ++p<cr>' },
+  { 'n',   '<space>W',     ':wq ++p<cr>' },
 
   { 'n',   '<space><s-m>', ':messages<cr>' },
   { 'n',   '<space>n',     function() print(vim.fn.expand '%') end },
