@@ -15,8 +15,9 @@ in
       c = "commit";
       ca = "commit --amend";
       can = "commit --amend --no-edit";
-      cp = "cherry-pick";
+      chp = "cherry-pick";
       m = "merge";
+      ma = "merge --abort";
       ri = "rebase -i";
       rc = "rebase --continue";
       ra = "rebase --abort";
@@ -39,10 +40,11 @@ in
       f = "fetch";
       cl = "clone --recursive";
       gh = "!_() { git clone --recursive git@github.com:$1 \${@:2}; }; _";
-      pf = "push --force";
+      pl = "pull";
+      ps = "push";
+      psf = "push --force";
       l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
       lg = "!_() { git log --oneline | ${getExe pkgs.ripgrep} $1; }; _";
-      churl = "remote set-url origin";
     };
     extraConfig = {
       user = {
