@@ -113,6 +113,8 @@ in
 
       umask 002 # allow write for group
 
+      set -o ignoreeof # disable ctrl+d to exit, useful when scrolling with it in tmux
+
       zstyle ':completion:*' menu select
       # enable case insensitive and partial completion
       zstyle ':completion:*' matcher-list "" 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
