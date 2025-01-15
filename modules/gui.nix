@@ -11,6 +11,7 @@ self:
     bruno
     dbeaver-bin
     element-desktop
+    fractal
     gimp
     kdenlive
     nemo
