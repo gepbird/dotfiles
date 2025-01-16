@@ -10,6 +10,7 @@
     [ ./hardware.nix ]
     ++ self.nixosModules.allImportsExcept [
       "adb"
+      "arduino"
       "at"
       "chatgpt"
       "clac"
