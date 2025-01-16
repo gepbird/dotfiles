@@ -41,6 +41,7 @@ in
     procs
     progress
     ripgrep
+    screen
     sd
     sshfs
     sysstat
