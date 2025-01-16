@@ -48,6 +48,7 @@ in
     unrar
     unzip
     w3m
+    wavemon
     wget
     xcolor
     xdotool
