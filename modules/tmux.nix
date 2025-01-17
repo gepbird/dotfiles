@@ -1,9 +1,13 @@
 self:
 {
+  lib,
   pkgs,
   ...
 }:
 
+let
+  inherit (lib) getExe;
+in
 {
   hm-gep.programs.tmux = {
     enable = true;
@@ -41,4 +45,19 @@ self:
       set-option -ga terminal-overrides ",$TERM:Tc"
     '';
   };
+
+  hm-gep.home.shellAliases = {
+    t = "tmux";
+    td = "tmux detach";
+  };
+
+  hm-gep.home.packages = with pkgs; [
+    (writeShellScriptBin "ta" ''
+      set -euo pipefail
+      selected_session=$(tmux ls | ${getExe gum} choose --select-if-one | ${getExe hck} -f1)
+      if [ -n "$selected_session" ]; then
+        tmux a -t "$selected_session"
+      fi
+    '')
+  ];
 }
