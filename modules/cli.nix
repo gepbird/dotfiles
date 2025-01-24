@@ -28,6 +28,7 @@ in
     file
     freshfetch
     fzf
+    gh
     glib # for gio trash
     hck
     inotify-tools
