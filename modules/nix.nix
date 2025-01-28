@@ -28,6 +28,10 @@ self:
             substituter = "https://nix-community.cachix.org";
             trusted-public-key = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
           }
+          {
+            substituter = "https://cosmic.cachix.org";
+            trusted-public-key = "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=";
+          }
         ];
       in
       {
