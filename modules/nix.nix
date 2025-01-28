@@ -21,15 +21,24 @@ self:
     nixPath = [
       "nixpkgs=${nixpkgs}"
     ];
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      substituters = [ "https://nix-community.cachix.org" ];
-      trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
-      trusted-users = [ "gep" ];
-    };
+    settings =
+      let
+        caches = [
+          {
+            substituter = "https://nix-community.cachix.org";
+            trusted-public-key = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
+          }
+        ];
+      in
+      {
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        substituters = map (cache: cache.substituter) caches;
+        trusted-public-keys = map (cache: cache.trusted-public-key) caches;
+        trusted-users = [ "gep" ];
+      };
   };
 
   nixpkgs.config.allowUnfree = true;
