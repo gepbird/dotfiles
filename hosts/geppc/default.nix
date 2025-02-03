@@ -13,7 +13,7 @@
     ];
 
   fileSystems = {
-    "/data" = {
+    "/hdd" = {
       device = "/dev/disk/by-uuid/a2499480-9845-4acf-95c0-aaaab51936c6";
       fsType = "ext4";
       options = [ "nofail" ];
@@ -33,16 +33,12 @@
       fsType = "ntfs";
       options = [ "nofail" ];
     };
-    "/nixos-vm" = {
-      device = "/dev/disk/by-uuid/cb725a9a-7cc9-43f4-8639-cbc203547832";
+    "/ssd" = {
+      device = "/dev/disk/by-uuid/df6f7312-7a1d-4008-af27-cd77bb613f0b";
       fsType = "btrfs";
       options = [ "nofail" ];
     };
   };
-
-  systemd.tmpfiles.rules = [
-    "d /vm 0755 gep root"
-  ];
 
   networking.hostName = "geppc";
 
