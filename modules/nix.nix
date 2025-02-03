@@ -38,6 +38,7 @@ self:
         experimental-features = [
           "nix-command"
           "flakes"
+          "repl-flake"
         ];
         substituters = map (cache: cache.substituter) caches;
         trusted-public-keys = map (cache: cache.trusted-public-key) caches;
