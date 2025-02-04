@@ -40,6 +40,8 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.flakey-profile.follows = "";
+      inputs.lix.follows = "";
     };
     # use newer main branch, see https://github.com/nvim-treesitter/nvim-treesitter-textobjects/pull/692
     nvim-treesitter-textobjects = {
