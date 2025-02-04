@@ -32,6 +32,7 @@ in
     glib # for gio trash
     hck
     inotify-tools
+    isd
     jq
     libnotify
     lsof
