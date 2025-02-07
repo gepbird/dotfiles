@@ -28,7 +28,7 @@ in
       ss = "stash show 0 -p";
       s = "status";
       b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
-      bir = "bisect reset";
+      bir = "bisect reset HEAD";
       big = "bisect good";
       bib = "bisect bad";
       biv = "bisect view --oneline";
