@@ -56,4 +56,6 @@ self:
     bump = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr package";
     bumpc = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr commit true --argstr package";
   };
+
+  programs.nix-index-database.comma.enable = true;
 }
