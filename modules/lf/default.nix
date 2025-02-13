@@ -45,32 +45,12 @@ in
 
       cmd trash %set -f; ${getExe' glib "gio"} trash $fx
 
-      cmd uncompress ''${{
-        set -f
-        case $f in
-          *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-          *.tar.gz|*.tgz) tar xzvf $f;;
-          *.tar.xz|*.txz) tar xJvf $f;;
-          *.zip) ${getExe unzip} $f;;
-          *.rar) ${getExe unrar} x $f;;
-          *.7z) ${getExe p7zip} x $f;;
-        esac
+      cmd decompress ''${{
+        ${getExe ouch} decompress $f
       }}
 
-      cmd tar ''${{
-        set -f
-        mkdir $1
-        cp -r $fx $1
-        tar czf $1.tar.gz $1
-        rm -rf $1
-      }}
-
-      cmd zip ''${{
-        set -f
-        mkdir $1
-        cp -r $fx $1
-        zip -r $1.zip $1
-        rm -rf $1
+      cmd compress ''${{
+        ${getExe ouch} compress $f $1
       }}
 
       cmd edit $set -f; nvim $f
@@ -105,9 +85,8 @@ in
       "x" = ":cut";
       "y" = ":copy";
       "p" = ":paste";
-      "u" = ":uncompress";
-      "c" = "push :tar<space>";
-      "C" = "push :zip<space>";
+      "u" = ":decompress";
+      "c" = "push :compress<space>";
       "a" = "push %touch<space>";
       "A" = "push %mkdir<space>";
       "J" = "push 5j";
