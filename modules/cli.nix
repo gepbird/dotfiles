@@ -39,7 +39,7 @@ in
     lurk
     ncdu
     nmap
-    p7zip
+    ouch
     perlPackages.FileMimeInfo
     procs
     progress
@@ -48,8 +48,6 @@ in
     sd
     sshfs
     sysstat
-    unrar
-    unzip
     w3m
     watchexec
     wavemon
@@ -60,6 +58,5 @@ in
     xorg.xev
     xorg.xkill
     xsel
-    zip
   ];
 }
