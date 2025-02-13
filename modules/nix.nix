@@ -6,9 +6,12 @@ self:
 }:
 
 {
+  imports = [
+    self.inputs.nix-index-database.nixosModules.nix-index
+  ];
+
   hm-gep.home.packages = with pkgs; [
     nix-diff
-    nix-index
     nix-output-monitor
     nix-prefetch-git
     nix-update

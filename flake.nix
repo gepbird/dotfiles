@@ -43,6 +43,10 @@
       inputs.flakey-profile.follows = "";
       inputs.lix.follows = "";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # use newer main branch, see https://github.com/nvim-treesitter/nvim-treesitter-textobjects/pull/692
     nvim-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";

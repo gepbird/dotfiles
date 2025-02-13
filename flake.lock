@@ -226,6 +226,26 @@
         "type": "github"
       }
     },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739071773,
+        "narHash": "sha256-/Ak+Quinhmdxa9m3shjm4lwwwqmzG8zzGhhhhgR1k9I=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "895d81b6228bbd50a6ef22f5a58a504ca99763ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nix-matlab": {
       "inputs": {
         "flake-compat": [],
@@ -291,6 +311,7 @@
         "home-manager": "home-manager",
         "lix-module": "lix-module",
         "neovim-nightly": "neovim-nightly",
+        "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
