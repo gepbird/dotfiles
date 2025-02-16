@@ -124,4 +124,8 @@ in
   hm-gep.home.sessionVariables = {
     MANPAGER = "${finalPackage} +Man!";
   };
+
+  hm-gep.home.packages = with pkgs; [
+    lua-language-server
+  ];
 }

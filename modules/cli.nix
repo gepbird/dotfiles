@@ -46,6 +46,7 @@ in
     ripgrep
     screen
     sd
+    sqlite
     sshfs
     sysstat
     w3m

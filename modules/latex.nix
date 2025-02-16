@@ -6,6 +6,8 @@ self:
 
 {
   hm-gep.home.packages = with pkgs; [
+    texlab
+
     #texlive.combined.scheme-full
 
     (texlive.withPackages (

@@ -16,6 +16,7 @@ self:
     nix-prefetch-git
     nix-update
     nixd
+    nixfmt-rfc-style
     nixpkgs-review
     nvd
   ];
