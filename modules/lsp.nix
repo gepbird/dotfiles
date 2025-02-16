@@ -13,6 +13,7 @@ in
     emmet-ls
     lemminx
     lldb
+    gdb
     lua-language-server
     netcoredbg
     nixd
