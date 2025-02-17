@@ -11,6 +11,7 @@
       "flutter"
       "games"
       "java"
+      "matlab"
       "nvidia"
       "packettracer"
       "piper"
