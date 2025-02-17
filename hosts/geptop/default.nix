@@ -12,6 +12,7 @@
       "games"
       "java"
       "nvidia"
+      "packettracer"
       "piper"
       "virt-manager"
       "vmware"
