@@ -11,7 +11,6 @@
       "light"
       "matlab"
       "packettracer"
-      "vmware"
     ];
 
   fileSystems = {
