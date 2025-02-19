@@ -11,8 +11,8 @@ self:
       ps: with ps; [
         debugpy
         pip
-        ruff
       ]
     ))
+    ruff
   ];
 }
