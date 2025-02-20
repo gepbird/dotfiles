@@ -11,6 +11,7 @@
       "light"
       "matlab"
       "packettracer"
+      "php"
     ];
 
   fileSystems = {

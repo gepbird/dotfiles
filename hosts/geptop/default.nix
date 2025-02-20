@@ -14,6 +14,7 @@
       "matlab"
       "nvidia"
       "packettracer"
+      "php"
       "piper"
       "virt-manager"
     ];
