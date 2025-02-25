@@ -32,7 +32,6 @@ in
     glib # for gio trash
     hck
     inotify-tools
-    isd
     jq
     libnotify
     lsof
@@ -49,6 +48,7 @@ in
     sqlite
     sshfs
     sysstat
+    sysz
     w3m
     watchexec
     wavemon
