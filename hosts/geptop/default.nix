@@ -16,7 +16,7 @@
       "packettracer"
       "php"
       "piper"
-      "virt-manager"
+      "vmware"
     ];
 
   networking.hostName = "geptop";
