@@ -13,7 +13,7 @@ self:
     element-desktop
     fractal
     gimp
-    kdenlive
+    kdePackages.kdenlive
     nemo
     obs-studio
     pavucontrol
