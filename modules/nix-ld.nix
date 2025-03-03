@@ -31,7 +31,10 @@ self:
           libxkbcommon
           alsa-lib
         ];
+        python-deps = [
+          stdenv.cc.cc.lib
+        ];
       in
-      electron-deps;
+      python-deps;
   };
 }
