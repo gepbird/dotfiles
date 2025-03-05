@@ -26,6 +26,10 @@
       device = "/var/lib/swapfile";
       size = 4 * 1024;
     }
+    {
+      device = "/var/lib/swapfile-os-project";
+      size = 8 * 1024;
+    }
   ];
 
   # while using firefox: radeon 0000:00:01.0: ring 0 stalled for more than 10280msec
