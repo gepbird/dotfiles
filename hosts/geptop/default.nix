@@ -13,7 +13,6 @@
       "java"
       "matlab"
       "nvidia"
-      "packettracer"
       "php"
       "piper"
       "vmware"
