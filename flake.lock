@@ -283,6 +283,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-firefox": {
+      "locked": {
+        "lastModified": 1740916017,
+        "narHash": "sha256-Ze/3XCElkVljFCnBKezLldOz2ZaGp7eozxRqFzACnMI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b58e19b11fe72175fd7a9e014a4786a91e99da5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b58e19b11fe72175fd7a9e014a4786a91e99da5f",
+        "type": "github"
+      }
+    },
     "nvim-treesitter-textobjects": {
       "flake": false,
       "locked": {
@@ -314,6 +330,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-firefox": "nixpkgs-firefox",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "systems": "systems"
       }

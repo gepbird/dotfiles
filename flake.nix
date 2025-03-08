@@ -6,6 +6,10 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
     };
+    # TODO: remove after https://github.com/NixOS/nixpkgs/pull/387931
+    nixpkgs-firefox = {
+      url = "github:NixOS/nixpkgs/b58e19b11fe72175fd7a9e014a4786a91e99da5f";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
