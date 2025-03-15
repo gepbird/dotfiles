@@ -10,6 +10,10 @@
     nixpkgs-firefox = {
       url = "github:NixOS/nixpkgs/b58e19b11fe72175fd7a9e014a4786a91e99da5f";
     };
+    # TODO: remove after https://github.com/NixOS/nixpkgs/issues/389638
+    nixpkgs-rustdesk = {
+      url = "github:NixOS/nixpkgs/e3e32b642a31e6714ec1b712de8c91a3352ce7e1";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
