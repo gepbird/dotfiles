@@ -7,7 +7,6 @@
   imports =
     [ ./hardware.nix ]
     ++ self.nixosModules.allImportsExcept [
-      "arduino"
       "flutter"
       "games"
       "java"
