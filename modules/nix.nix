@@ -11,6 +11,7 @@ self:
   ];
 
   hm-gep.home.packages = with pkgs; [
+    cachix
     nix-diff
     nix-output-monitor
     nix-prefetch-git
