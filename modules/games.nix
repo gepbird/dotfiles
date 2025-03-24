@@ -10,6 +10,7 @@ self:
 
   hm-gep.home.packages = with pkgs; [
     heroic
+    nur.repos.gepbird.mint-mod-manager
     osu-lazer-bin
     prismlauncher
     r2modman
