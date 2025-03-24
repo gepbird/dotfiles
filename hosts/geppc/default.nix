@@ -12,6 +12,8 @@
       "matlab"
       "packettracer"
       "php"
+      # TODO: remove after https://github.com/NixOS/nixpkgs/issues/392841
+      "vmware"
     ];
 
   fileSystems = {
