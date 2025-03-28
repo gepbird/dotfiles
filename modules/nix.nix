@@ -12,15 +12,16 @@ self:
 
   hm-gep.home.packages = with pkgs; [
     cachix
-    nix-tree
     nix-diff
     nix-inspect
     nix-output-monitor
     nix-prefetch-git
+    nix-tree
     nix-update
     nixd
     nixfmt-rfc-style
     nixpkgs-review
+    nurl
     nvd
   ];
 
