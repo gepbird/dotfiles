@@ -28,3 +28,6 @@ det2 "4 1 r * . * , -"
 # Determinant Yank by index: same as `cy`, but for 9 inputs
 dy "9 s r d ."
 det3 "4 dy 5 dy 1 dy 2 dy , , * , , * s - . 5 dy , , * . 6 dy 4 dy 2 dy 1 dy , , * , , * s - . 4 dy , , * -1 * . 7 dy 5 dy 1 dy 2 dy , , * , , * s - . 2 dy , , * . drop drop drop drop drop drop drop drop drop , , , + +"
+
+# eg. 10 3 ncr -> 10! / (3! * (10-3)!)
+ncr ". d ! , , s . d ! . - ! , * , s /"
