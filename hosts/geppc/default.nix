@@ -33,7 +33,7 @@
       options = [ "nofail" ];
     };
     "/windows" = {
-      device = "/dev/disk/by-uuid/98D4C937D4C91900";
+      device = "/dev/disk/by-uuid/4AF26EFCF26EEB9F";
       fsType = "ntfs";
       options = [ "nofail" ];
     };
@@ -53,5 +53,5 @@
     }
   ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.11";
 }
