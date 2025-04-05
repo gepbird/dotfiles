@@ -67,4 +67,6 @@
 
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
+
+  system.stateVersion = "23.05";
 }

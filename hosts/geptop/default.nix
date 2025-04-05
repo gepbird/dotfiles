@@ -63,4 +63,6 @@
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
     };
   };
+
+  system.stateVersion = "23.05";
 }
