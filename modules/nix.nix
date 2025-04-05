@@ -12,6 +12,7 @@ self:
 
   hm-gep.home.packages = with pkgs; [
     cachix
+    hydra-check
     nix-diff
     nix-inspect
     nix-output-monitor
