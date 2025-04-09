@@ -34,16 +34,11 @@
   # https://bugzilla.kernel.org/show_bug.cgi?id=85421
   # maybe helps: https://forums.linuxmint.com/viewtopic.php?t=361652
   boot.kernelParams = [
-    #"radeon.hard_reset=1"
-    #"radeon.dpm=0"
-    "radeon.si_support=0"
-    "amdgpu.si_support=1"
-    "radeon.cik_support=0"
-    "amdgpu.cik_support=1"
+    "radeon.hard_reset=1"
+    "radeon.dpm=0"
   ];
   # TODO: try disabling it in the future
-  # also falls back to software rendering: https://github.com/NixOS/nixpkgs/issues/391482 
-  boot.blacklistedKernelModules = [ "radeon" ];
+  #boot.blacklistedKernelModules = [ "radeon" ];
 
   # hopefully more battery time with these settings
   powerManagement = {
