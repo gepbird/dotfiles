@@ -32,7 +32,7 @@ self:
 
   time = {
     timeZone = "Europe/Budapest";
-    hardwareClockInLocalTime = true;
+    hardwareClockInLocalTime = false;
   };
 
   users.users.gep = {
