@@ -18,6 +18,7 @@ self:
     serverLayoutSection = ''
       Option "BlankTime" "0"
     '';
+    updateDbusEnvironment = true;
   };
 
   console.useXkbConfig = true;
