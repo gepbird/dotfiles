@@ -9,20 +9,29 @@
 
 self:
 let
-  modulesDir = builtins.toString ./.;
+  inherit (builtins)
+    attrNames
+    removeAttrs
+    readDir
+    listToAttrs
+    replaceStrings
+    attrValues
+    ;
 
-  filesAndDirectories = builtins.attrNames (
-    builtins.removeAttrs (builtins.readDir modulesDir) [ "default.nix" ]
+  modulesDir = toString ./.;
+
+  filesAndDirectories = attrNames (
+    removeAttrs (readDir modulesDir) [ "default.nix" ]
   );
 
-  allModules = builtins.listToAttrs (
+  allModules = listToAttrs (
     map (name: {
-      name = builtins.replaceStrings [ ".nix" ] [ "" ] name;
+      name = replaceStrings [ ".nix" ] [ "" ] name;
       value = import "${modulesDir}/${name}" self;
     }) filesAndDirectories
   );
 
-  allImportsExcept = exceptions: builtins.attrValues (builtins.removeAttrs allModules exceptions);
+  allImportsExcept = exceptions: attrValues (removeAttrs allModules exceptions);
 in
 allModules
 // {
