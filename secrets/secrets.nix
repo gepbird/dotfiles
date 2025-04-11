@@ -2,10 +2,8 @@ let
   inherit (builtins)
     attrNames
     listToAttrs
-    map
     readDir
     removeAttrs
-    toString
     ;
 
   ssh-module = import ../modules/ssh.nix null { };
