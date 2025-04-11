@@ -1,8 +1,6 @@
 let
-  keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6/2MNWBfc/D9LgtrpHADj487KMNAwZ0RliXNCVpyGo root@geptop"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK4t5Q+D/J7QdvsqTD8saryirJDbTm/kymLumToDqsHw root@geppc"
-  ];
+  ssh-module = import ../modules/ssh.nix null { };
+  keys = ssh-module.users.users.gep.openssh.authorizedKeys.keys;
 in
 {
   "system-password.age".publicKeys = keys;
