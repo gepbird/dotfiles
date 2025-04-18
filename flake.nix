@@ -7,9 +7,6 @@
       #url = "/home/gep/nixpkgs";
     };
     # TODO: remove after https://github.com/NixOS/nixpkgs/issues/389638
-    nixpkgs-rustdesk = {
-      url = "github:NixOS/nixpkgs/e3e32b642a31e6714ec1b712de8c91a3352ce7e1";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
