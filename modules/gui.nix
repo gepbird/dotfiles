@@ -12,7 +12,7 @@ self:
     dbeaver-bin
     element-desktop
     fractal
-    gimp
+    gimp3
     kdePackages.kdenlive
     nemo
     obs-studio
