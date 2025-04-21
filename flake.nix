@@ -6,7 +6,6 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
     };
-    # TODO: remove after https://github.com/NixOS/nixpkgs/issues/389638
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
