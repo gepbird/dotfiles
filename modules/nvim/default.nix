@@ -37,25 +37,6 @@ in
     #    ];
     #  });
     #})
-
-    # [ERROR]: Failed to create directory: /nix/store/dqwm6s71rlc3i5d2y7vklfpqfn7z4r9m-vim-pack-dir/pack/myNeovimPackages/start/copilot.lua/copilot/linux-x64
-    # https://github.com/zbirenbaum/copilot.lua/pull/384
-    (final: prev: {
-      vimPlugins = prev.vimPlugins // {
-        copilot-lua = prev.vimPlugins.copilot-lua.overrideAttrs {
-          version = "2025-02-10";
-          src = pkgs.fetchFromGitHub {
-            owner = "zbirenbaum";
-            repo = "copilot.lua";
-            rev = "30321e33b03cb924fdcd6a806a0dc6fa0b0eafb9";
-            sha256 = "0jlwd5x0pdfxa1hg41dfvz9zji0frvlfg86vzak0d3xmn4hr8zgb";
-          };
-        };
-        copilot-cmp = prev.vimPlugins.copilot-cmp.overrideAttrs {
-          dependencies = [ final.vimPlugins.copilot-lua ];
-        };
-      };
-    })
   ];
 
   hm-gep.programs.neovim = {
