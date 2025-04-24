@@ -90,8 +90,6 @@ in
 
       nixwhere() { realpath $(which $1) }
 
-      try() { NIXPKGS_ALLOW_UNFREE=1 nix shell --impure nixpkgs/nixos-unstable#$1 ''${@:2} }
-
       umask 002 # allow write for group
 
       set -o ignoreeof # disable ctrl+d to exit, useful when scrolling with it in tmux
