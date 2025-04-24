@@ -33,6 +33,7 @@ local servers = {
   phpactor = { 'php' },
   nixd = { 'nix' },
   texlab = { 'tex' },
+  tinymist = { 'typst' },
   lemminx = { 'xml' },
   taplo = { 'toml' },
   yamlls = { 'yaml' },
