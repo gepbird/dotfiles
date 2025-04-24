@@ -1,0 +1,2 @@
+require 'typst-preview'.setup {
+}
