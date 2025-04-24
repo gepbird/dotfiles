@@ -61,7 +61,7 @@ in
       jouru = "journalctl --user -xeu";
     };
 
-    initExtra = ''
+    initContent = ''
       mvbak() { mv $1 $1.bak }
       cpbak() { cp $1 $1.bak -r }
 
