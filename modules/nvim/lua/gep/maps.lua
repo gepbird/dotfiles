@@ -101,4 +101,6 @@ require 'gep.utils'.register_maps {
   { 'n',   'w',            'ciw' },
 
   { 'n',   '<c-n>',        ':enew<cr>' },
+
+  { 'n',   'gl',           '<s-k>' },
 }
