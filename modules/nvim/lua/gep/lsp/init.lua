@@ -14,7 +14,6 @@ vim.diagnostic.config {
   severity_sort = true,
 }
 
-local lspconfig = require 'lspconfig'
 local utils = require 'gep.utils'
 
 local servers = {
@@ -61,25 +60,10 @@ utils.register_maps {
 }
 
 for server, languages in pairs(servers) do
-  for _, language in ipairs(languages) do
-    -- lazy load servers
-    utils.register_autocmd {
-      'FileType',
-      function()
-        -- don't load it multiple times
-        if not servers[server] then
-          return
-        end
-        servers[server] = nil
-
-        local ok, config = pcall(require, 'gep.lsp.' .. server)
-        if not ok then
-          config = {}
-        end
-        lspconfig[server].setup(config)
-        vim.cmd [[:LspStart]]
-      end,
-      { pattern = language },
-    }
+  local ok, config = pcall(require, 'gep.lsp.' .. server)
+  if not ok then
+    config = {}
   end
+  vim.lsp.enable(server)
+  vim.lsp.config(server, config)
 end
