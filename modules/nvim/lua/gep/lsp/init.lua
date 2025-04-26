@@ -55,7 +55,7 @@ toggle_inlay_hints()
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
 utils.register_maps {
-  { 'n', '<space>ls', ':LspInfo<cr>' },
+  { 'n', '<space>ls', ':checkhealth vim.lsp<cr>' },
   { 'n', '<space>lh', toggle_inlay_hints },
   { 'n', '<space>-',  function() telescope.lsp_references(ivy) end },
   { 'n', '<space>.',  function() telescope.lsp_definitions(ivy) end },
