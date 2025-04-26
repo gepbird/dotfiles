@@ -38,12 +38,20 @@ local servers = {
   'yamlls',
 }
 
+for _, server in ipairs(servers) do
+  local ok, config = pcall(require, 'gep.lsp.' .. server)
+  if not ok then
+    config = {}
+  end
+  vim.lsp.enable(server)
+  vim.lsp.config(server, config)
+end
+
 local function toggle_inlay_hints()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
 end
 toggle_inlay_hints()
 
-local lsp = vim.lsp.buf
 local telescope = require 'telescope.builtin'
 local ivy = require 'telescope.themes'.get_ivy()
 utils.register_maps {
@@ -53,17 +61,8 @@ utils.register_maps {
   { 'n', '<space>.',  function() telescope.lsp_definitions(ivy) end },
   { 'n', '<space>:',  function() telescope.lsp_type_definitions(ivy) end },
   { 'n', '<space>f', function()
-    lsp.format { async = false };
+    vim.lsp.buf.format { async = false };
     vim.cmd ':w'
   end },
   { 'n', '<space><s-k>', vim.lsp.buf.signature_help },
 }
-
-for _, server in ipairs(servers) do
-  local ok, config = pcall(require, 'gep.lsp.' .. server)
-  if not ok then
-    config = {}
-  end
-  vim.lsp.enable(server)
-  vim.lsp.config(server, config)
-end
