@@ -17,25 +17,25 @@ vim.diagnostic.config {
 local utils = require 'gep.utils'
 
 local servers = {
-  lua_ls = { 'lua' },
-  ruff = { 'python' },
-  pyright = { 'python' },
-  omnisharp = { 'cs' },
-  clangd = { 'c', 'cpp' },
-  cssls = { 'css', 'scss' },
-  stylelint_lsp = { 'css', 'scss' },
-  emmet_ls = { 'html', 'typescriptreact', 'javascriptreact' },
-  eslint = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
-  ts_ls = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
-  html = { 'html' },
-  jsonls = { 'json' },
-  phpactor = { 'php' },
-  nixd = { 'nix' },
-  texlab = { 'tex' },
-  tinymist = { 'typst' },
-  lemminx = { 'xml' },
-  taplo = { 'toml' },
-  yamlls = { 'yaml' },
+  'lua_ls',
+  'ruff',
+  'pyright',
+  'omnisharp',
+  'clangd',
+  'cssls',
+  'stylelint_lsp',
+  'emmet_ls',
+  'eslint',
+  'ts_ls',
+  'html',
+  'jsonls',
+  'phpactor',
+  'nixd',
+  'texlab',
+  'tinymist',
+  'lemminx',
+  'taplo',
+  'yamlls',
 }
 
 local function toggle_inlay_hints()
@@ -59,7 +59,7 @@ utils.register_maps {
   { 'n', '<space><s-k>', vim.lsp.buf.signature_help },
 }
 
-for server, languages in pairs(servers) do
+for _, server in ipairs(servers) do
   local ok, config = pcall(require, 'gep.lsp.' .. server)
   if not ok then
     config = {}
