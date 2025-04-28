@@ -19,6 +19,7 @@ in
   hm-gep.home.packages = with pkgs; [
     bat
     cntr
+    diffoscope
     dig
     dos2unix
     exiftool
