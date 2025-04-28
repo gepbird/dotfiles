@@ -17,6 +17,7 @@ self:
     nemo
     obs-studio
     pavucontrol
+    grayjay
     qbittorrent
     qdirstat
     rnote
