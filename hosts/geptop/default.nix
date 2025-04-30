@@ -38,7 +38,7 @@
     "radeon.dpm=0"
   ];
   # TODO: try disabling it in the future
-  #boot.blacklistedKernelModules = [ "radeon" ];
+  boot.blacklistedKernelModules = [ "radeon" ];
 
   # hopefully more battery time with these settings
   powerManagement = {
