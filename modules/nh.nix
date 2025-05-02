@@ -5,7 +5,7 @@ self:
 }:
 
 {
-  programs.nh = {
+  hm-gep.programs.nh = {
     enable = true;
     flake = "${config.hm-gep.home.homeDirectory}/dotfiles";
   };
