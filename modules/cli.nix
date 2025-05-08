@@ -46,7 +46,7 @@ in
     ripgrep
     screen
     sd
-    sqlite
+    sqlite-interactive
     sshfs
     sysstat
     sysz
