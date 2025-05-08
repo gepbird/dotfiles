@@ -22,7 +22,7 @@ self:
     # gepphone
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQXysKutq2b67RAmq46qMH8TDLEYf0D5SYon4vE6efO u0_a483@localhost"
     # gepwin
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrg9sldIBPgx4Jxpa+OZBQGX/ej4rMoi/q7M+48mLYa root@nixos"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM5plUDJC9i4F1FG7+lZvWFyYDhse98E94usal1yr3gE gep@DESKTOP-3LEAJ4K"
   ];
 
   hm-gep.programs.ssh = {
