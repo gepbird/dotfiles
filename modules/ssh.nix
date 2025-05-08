@@ -27,7 +27,16 @@ self:
 
   hm-gep.programs.ssh = {
     enable = true;
-    matchBlocks."*".extraOptions.StrictHostKeyChecking = "no";
+    matchBlocks = {
+      "*" = {
+        extraOptions.StrictHostKeyChecking = "no";
+      };
+      "raspi.tchfoo.com" = {
+        port = 42727;
+        forwardX11 = true;
+        forwardX11Trusted = true;
+      };
+    };
   };
 
   hm-gep.services.ssh-agent = {
