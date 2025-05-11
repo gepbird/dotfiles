@@ -19,6 +19,7 @@
       "direnv"
       "discord"
       "dotnet"
+      "droidcam"
       "ente-auth"
       "feh"
       "file-roller"
