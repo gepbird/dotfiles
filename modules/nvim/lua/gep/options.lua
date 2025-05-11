@@ -1,7 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
--- disable chaning tabstop by ftplugin
+-- disable changing indentation by ftplugins
 g.rust_recommended_style = false
 g.markdown_recommended_style = false
 
@@ -44,7 +44,7 @@ o.listchars = 'space:·,tab:  󰌒,eol:󰌑'     -- define whitespace rendering
 o.list = true                             -- enable whitespace rendering
 o.iskeyword:append '-'                    -- what characters count as a word movement
 o.wrap = true                             -- break up long lines
-o.breakindent = true                      -- indent broken up lines better
+o.breakindent = true                      -- indent wrapped lines better
 o.showbreak = ''                         -- character used to indicate broken up lines
 o.redrawtime = 200                        -- turn off syntax highlighting when it gets too laggy
 o.display = 'uhex'                        -- display non-printable characters as hex
