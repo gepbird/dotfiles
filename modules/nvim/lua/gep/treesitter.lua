@@ -14,7 +14,7 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
     disable = function(_, bufnr)
       return require 'gep.utils'.is_file_big(bufnr)
-        or vim.bo.filetype == 'nix'
+        --or vim.bo.filetype == 'nix' -- why was this turned off?
         or vim.bo.filetype == 'html' -- LS dedents body by one, TS doesn't
     end,
   },
