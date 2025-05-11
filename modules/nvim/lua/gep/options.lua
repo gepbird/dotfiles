@@ -49,8 +49,18 @@ o.showbreak = ''                         -- character used to indicate broken
 o.redrawtime = 200                        -- turn off syntax highlighting when it gets too laggy
 o.display = 'uhex'                        -- display non-printable characters as hex
 
+-- this breaks indentation for example here:
+--[[
+```nix
+{
+  foo, # press `o` here
+    |
+}:
+null
+```
+--]]
 -- disable bad indent for comments by disabling smartindent and re-enabling most of its features
-o.smartindent = false
-o.cindent = true
-o.cinkeys:remove '0#'
-o.indentkeys:remove '0#'
+--o.smartindent = false
+--o.cindent = true
+--o.cinkeys:remove '0#'
+--o.indentkeys:remove '0#'
