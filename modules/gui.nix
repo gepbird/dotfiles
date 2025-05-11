@@ -15,7 +15,6 @@ self:
     gimp3
     kdePackages.kdenlive
     nemo
-    obs-studio
     pavucontrol
     grayjay
     qbittorrent

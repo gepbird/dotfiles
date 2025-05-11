@@ -34,6 +34,7 @@
       "matlab"
       "mpv"
       "nvidia"
+      "obs-studio"
       "onlyoffice"
       "opentabletdriver"
       "packettracer"
