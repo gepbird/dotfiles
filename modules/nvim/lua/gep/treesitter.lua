@@ -15,6 +15,7 @@ require 'nvim-treesitter.configs'.setup {
     disable = function(_, bufnr)
       return require 'gep.utils'.is_file_big(bufnr)
         or vim.bo.filetype == 'nix'
+        or vim.bo.filetype == 'html' -- LS dedents body by one, TS doesn't
     end,
   },
 }
