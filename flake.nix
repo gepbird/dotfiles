@@ -51,11 +51,16 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
+      inputs.treefmt-nix.follows = "treefmt-nix";
     };
     # use newer main branch, see https://github.com/nvim-treesitter/nvim-treesitter-textobjects/pull/692
     nvim-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
       flake = false;
+    };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # dependencies of the above modules
     flake-parts = {
@@ -83,7 +88,28 @@
   };
 
   outputs =
-    inputs: with inputs; {
+    inputs:
+    with inputs;
+    let
+      eachSystem =
+        function:
+        nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ] (
+          system: function (import nixpkgs { inherit system; })
+        );
+      treefmtEval = eachSystem (
+        pkgs:
+        treefmt-nix.lib.evalModule pkgs {
+          programs.nixfmt.enable = true;
+        }
+      );
+    in
+    {
+      formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+      checks = eachSystem (pkgs: {
+        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+      });
+    }
+    // {
       lib = import ./lib.nix { };
       nixosConfigurations =
         let
