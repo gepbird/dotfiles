@@ -5,8 +5,8 @@ self:
 }:
 
 let
-  lurk = pkgs.lurk.overrideAttrs(o:{
-    patches = (o.patches or []) ++ [
+  lurk = pkgs.lurk.overrideAttrs (o: {
+    patches = (o.patches or [ ]) ++ [
       (pkgs.fetchpatch2 {
         name = "unknown-syscall-workaround.patch";
         url = "https://github.com/JakWai01/lurk/commit/cd570da4ece3da2539e963c2579896a0fb6313bd.patch";

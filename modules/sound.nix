@@ -10,7 +10,7 @@ self:
     pulse.enable = true;
   };
 
-  # make less audio stutters when high gpu+cpu usage by buffering and delaying audio by ~30ms 
+  # make less audio stutters when high gpu+cpu usage by buffering and delaying audio by ~30ms
   # disabled because it causes audio desync in osu!
   #environment.etc = {
   #  "pipewire/pipewire.conf.d/90-bigger-buffer.conf".text = ''

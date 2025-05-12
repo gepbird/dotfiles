@@ -20,9 +20,7 @@ let
 
   modulesDir = toString ./.;
 
-  filesAndDirectories = attrNames (
-    removeAttrs (readDir modulesDir) [ "default.nix" ]
-  );
+  filesAndDirectories = attrNames (removeAttrs (readDir modulesDir) [ "default.nix" ]);
 
   allModules = listToAttrs (
     map (name: {
