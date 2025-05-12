@@ -29,10 +29,7 @@ in
     chmod 400 ${runConfigPath}
   '';
 
-  system.activationScripts."openai-token" = ''
-    configPath="/run/openai-token"
-    cp ${config.age.secrets.openai-token.path} $configPath
-    chown ${config.users.users.gep.name} $configPath
-    chmod 400 $configPath
-  '';
+  age.secrets = {
+    openai-token.owner = config.users.users.gep.name;
+  };
 }
