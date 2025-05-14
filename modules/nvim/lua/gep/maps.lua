@@ -76,6 +76,9 @@ require 'gep.utils'.register_maps {
     end,
   },
 
+  { 'n',   'gy',           'mfggy<s-g>`f' },
+  { 'n',   'gp',           'gg"_d<s-g>P' },
+
   { 'n',   '<s-y>',        'yy',                                   { unmap = true } },
   { 'n',   '<s-c>',        'cc',                                   { unmap = true } },
   { 'n',   '<s-d>',        'dd',                                   { unmap = true } },
