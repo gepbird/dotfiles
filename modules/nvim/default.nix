@@ -14,9 +14,22 @@ let
     patches = (o.patches or [ ]) ++ [
       (toString (
         pkgs.fetchpatch2 {
-          name = "deprecation-varning-fix.patch";
+          name = "deprecation-warning-fix.patch";
           url = "https://github.com/zbirenbaum/copilot-cmp/commit/80891f552bb3f02a768e2d86ac3f9786c3fbb753.patch";
           hash = "sha256-XVsfnb2+E8OnVGMZjCW5rrp18P/x84b7iHH597VcjQQ=";
+        }
+      ))
+    ];
+  });
+
+  # https://github.com/nvimdev/lspsaga.nvim/pull/1538 but was reverted
+  lspsaga-nvim = pkgs.vimPlugins.lspsaga-nvim.overrideAttrs (o: {
+    patches = (o.patches or [ ]) ++ [
+      (toString (
+        pkgs.fetchpatch2 {
+          name = "deprecation-warning-fix.patch";
+          url = "https://github.com/nvimdev/lspsaga.nvim/commit/ff6b5be0ca32e7b8b34d9415084aa353dc52277f.patch";
+          hash = "sha256-u6KFa0j+4kpAr3VltVLsY7d/dBxieXoQ/4W1tPo/1T0=";
         }
       ))
     ];
