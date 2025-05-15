@@ -83,7 +83,8 @@ telescope.load_extension 'ui-select'
 telescope.load_extension 'fzf'
 
 local builtin = require 'telescope.builtin'
-local find_command = { 'rg', '--files', '--glob=!.git', '--color', 'never' }
+local glob_pattern = '!.git'
+local find_command = { 'rg', '--files', '--glob=' .. glob_pattern, '--color', 'never' }
 
 require 'gep.utils'.register_maps {
   { 'n', '<space>o', function()
@@ -92,8 +93,10 @@ require 'gep.utils'.register_maps {
   { 'n', '<space><s-o>', function()
     builtin.find_files { hidden = true, no_ignore = true, find_command = find_command }
   end },
-  { 'n', '<space><tab>', builtin.oldfiles },
-  { 'n', '<space>tg',    builtin.live_grep },
+  { 'n', '<space><tab>',  builtin.oldfiles },
+  { 'n', '<space>tg', function()
+    builtin.live_grep { glob_pattern = glob_pattern }
+  end },
   { 'n', '<space>t<s-g>', function()
     builtin.live_grep { additional_args = { '--no-ignore' } }
   end },
