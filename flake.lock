@@ -37,11 +37,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747082576,
-        "narHash": "sha256-nq2FzuCmaED4CFaAVLCBCVCgA9gspjecH2bhKYhdn9Y=",
+        "lastModified": 1747400796,
+        "narHash": "sha256-EHEHJTuANeMOmnrmt2x+6L231S/v9CxhtPy4nI51Nns=",
         "owner": "gepbird",
         "repo": "dwm",
-        "rev": "a326d52f51954b7ec8c4ac1ec9e256b19c33c9dc",
+        "rev": "6d4b130558fb8ca4c04cc5c695a45a54c00aa563",
         "type": "github"
       },
       "original": {
