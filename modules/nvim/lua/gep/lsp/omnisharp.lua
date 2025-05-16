@@ -8,7 +8,6 @@ require 'gep.utils'.register_maps {
 
 -- see ~/.omnisharp/omnisharp.json
 return {
-  cmd = { 'OmniSharp' },
   analyze_open_documents_only = true,
   enable_editorconfig_support = true,
   enable_import_completion = true,
