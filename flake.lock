@@ -283,18 +283,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-vencord": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-CWb3bVgVMMy8EjKq9OBtMxWUxx5li30cxP58aQr0sc8=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/pull/407053/head~1...pull/407053/head.patch"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/pull/407053/head~1...pull/407053/head.patch"
-      }
-    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -352,7 +340,6 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-vencord": "nixpkgs-patch-vencord",
         "nur": "nur",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "systems": "systems",

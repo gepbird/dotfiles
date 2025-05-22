@@ -6,11 +6,6 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
     };
-    # fix discord blank screen on startup https://github.com/nixos/nixpkgs/pull/407053
-    nixpkgs-patch-vencord = {
-      url = "https://github.com/NixOS/nixpkgs/compare/pull/407053/head~1...pull/407053/head.patch";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
