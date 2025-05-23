@@ -42,7 +42,7 @@ self:
             trusted-public-key = "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=";
           }
           {
-            substituter = "https://cosmic.cachix.org";
+            substituter = "https://gepbird-nur-packages.cachix.org";
             trusted-public-key = "gepbird-nur-packages.cachix.org-1:Ip2iveknanFBbJ2DFWk8cDomfRquUJiMWS/2fSeuMis=";
           }
         ];
