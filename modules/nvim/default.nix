@@ -34,21 +34,6 @@ let
       ))
     ];
   });
-
-  gptmodels-nvim = pkgs.vimUtils.buildVimPlugin {
-    pname = "gptmodels-nvim";
-    version = "0-unstable-2025-04-19";
-    src = pkgs.fetchFromGitHub {
-      owner = "Aaronik";
-      repo = "GPTModels.nvim";
-      rev = "8807b55af2d81370a258eeecf84ab926e2e43826";
-      hash = "sha256-rEqWFR/5ZukHNB+04ZpRVlHF913ofHCJWDxOB7zdjS4=";
-    };
-    dependencies = with pkgs.vimPlugins; [
-      nui-nvim
-      telescope-nvim
-    ];
-  };
 in
 {
   nixpkgs.overlays = [
@@ -148,7 +133,7 @@ in
       omnisharp-extended-lsp-nvim
       vimtex
       typst-preview-nvim
-      gptmodels-nvim
+      GPTModels-nvim
     ];
   };
 
