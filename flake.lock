@@ -283,6 +283,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-patcher": {
+      "locked": {
+        "lastModified": 1748090558,
+        "narHash": "sha256-B6S2GOjYafCSlTbN2YQfG8fdwarWZsTVe1VelLtu7v8=",
+        "owner": "gepbird",
+        "repo": "nixpkgs-patcher",
+        "rev": "3c3eb30dc5e48b8e80b1ff5296a39609b7a99d48",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gepbird",
+        "repo": "nixpkgs-patcher",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -340,6 +355,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "systems": "systems",

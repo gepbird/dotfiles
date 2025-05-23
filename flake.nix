@@ -6,6 +6,10 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
     };
+    nixpkgs-patcher = {
+      url = "github:gepbird/nixpkgs-patcher";
+      #url = "/home/gep/nixpkgs-patcher";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -113,28 +117,9 @@
       lib = import ./lib.nix { };
       nixosConfigurations =
         let
-          # TODO: don't hardcode system
-          # maybe try to wrap it in a function (that is used to replace nixosSystem)
-          # and get nixpkgs.hostPlatform from the config?
-          system = "x86_64-linux";
-          pkgs = import nixpkgs { inherit system; };
-          # take "nixpkgs" input as a base and apply patches that start with "nixpkgs-patch"
-          patches = builtins.attrValues (
-            nixpkgs.lib.filterAttrs (n: v: builtins.match "^nixpkgs-patch.*" n != null) inputs
-          );
-          patchedNixpkgs = pkgs.applyPatches {
-            name = "nixpkgs-patched";
-            src = nixpkgs;
-            inherit patches;
-          };
-          # don't use the patchedNixpkgs without patches, it takes time to build it
-          finalNixpkgs = if patches == [ ] then nixpkgs else patchedNixpkgs;
-          nixosSystem = import "${finalNixpkgs}/nixos/lib/eval-config.nix";
-
           mkSystem =
             host:
-            nixosSystem {
-              inherit system;
+            nixpkgs-patcher.lib.nixosSystem {
               modules = [ host ];
               specialArgs = inputs;
             };
