@@ -23,6 +23,7 @@ self:
     rustdesk-flutter
     scrcpy
     screenkey
+    signal-desktop
     teams-for-linux
     tenacity
     ungoogled-chromium
