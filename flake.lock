@@ -283,6 +283,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-dwm-status": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-ORsAcOIolUFsiJ3ZYxebcI0BbQNiQi2fiw7KiL1G/RM=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/416212.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/416212.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1749382261,
@@ -355,6 +367,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-dwm-status": "nixpkgs-patch-dwm-status",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
