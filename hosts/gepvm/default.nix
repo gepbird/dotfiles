@@ -34,6 +34,7 @@
       "light"
       "matlab"
       "mpv"
+      "network-bridge"
       "nvidia"
       "obs"
       "onlyoffice"

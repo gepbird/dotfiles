@@ -10,6 +10,7 @@
       "flutter" # LICENSE file conflicts with composer's
       "light"
       "matlab"
+      "network-bridge"
       "packettracer"
       "php"
       "vmware"

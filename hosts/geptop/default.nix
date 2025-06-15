@@ -12,6 +12,7 @@
       "games"
       "java"
       "matlab"
+      "network-bridge"
       "nvidia"
       "php"
       "piper"
