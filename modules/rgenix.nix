@@ -1,6 +1,6 @@
 self:
 {
-  agenix,
+  ragenix,
   pkgs,
   ...
 }:
@@ -28,8 +28,8 @@ let
 
 in
 {
-  imports = [ agenix.nixosModules.default ];
-  hm-gep.home.packages = [ agenix.packages.${pkgs.system}.default ];
+  imports = [ ragenix.nixosModules.default ];
+  hm-gep.home.packages = [ ragenix.packages.${pkgs.system}.default ];
 
   age.secrets = secrets;
 }
