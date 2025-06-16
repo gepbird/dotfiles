@@ -1,7 +1,6 @@
 {
   self,
   lib,
-  pkgs,
   ...
 }:
 
@@ -59,12 +58,7 @@
     device = lib.mkForce "/dev/vda";
   };
 
-  age.secrets = {
-    system-password.file = lib.mkForce (
-      pkgs.writeText "$6$Z6Mge73J$mBdqB5EcjwEb/QifNdBPVyVgeIz6hL4RQpDGACssXrCShUkVyEdehBAzPEltCfNXZof5Icg3aRoRa3nlaPtAH." "system-password"
-    );
-    openai-token.file = lib.mkForce (pkgs.writeText "" "openai-token");
-  };
+  age.secrets = lib.mkForce { };
 
   networking.hostName = "gepvm";
 

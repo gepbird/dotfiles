@@ -38,6 +38,9 @@ self:
   users.users.gep = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    hashedPasswordFile = config.age.secrets.system-password.path;
+    hashedPasswordFile =
+      config.age.secrets.system-password.path or (toString (
+        pkgs.writeText "system-password" "$6$Z6Mge73J$mBdqB5EcjwEb/QifNdBPVyVgeIz6hL4RQpDGACssXrCShUkVyEdehBAzPEltCfNXZof5Icg3aRoRa3nlaPtAH."
+      ));
   };
 }
