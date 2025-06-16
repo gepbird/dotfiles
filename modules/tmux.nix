@@ -53,9 +53,12 @@ in
 
   hm-gep.home.packages = with pkgs; [
     (writeShellScriptBin "ta" ''
-      set -euo pipefail
-      selected_session=$(tmux ls | ${getExe gum} choose --select-if-one | ${getExe hck} -f1)
-      if [ -n "$selected_session" ]; then
+      set -uo pipefail
+      sessions=$(tmux ls 2>/dev/null)
+      if [ -z "$sessions" ]; then
+        tmux
+      else
+        selected_session=$(echo $sessions | ${getExe gum} choose --select-if-one | ${getExe hck} -f1)
         tmux a -t "$selected_session"
       fi
     '')
