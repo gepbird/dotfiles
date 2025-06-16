@@ -38,6 +38,10 @@ self:
           })
         ];
       });
+      # the above nom patch triggers an nh rebuild, make it faster
+      nh = prev.nh.overrideAttrs {
+        doCheck = false;
+      };
     })
   ];
 
