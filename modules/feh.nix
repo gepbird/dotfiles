@@ -13,10 +13,17 @@ self:
       scroll_right = "l";
       scroll_down = "j";
       scroll_up = "k";
-      next_img = "L";
-      prev_img = "H";
+      next_img = [
+        "L"
+        "J"
+      ];
+      prev_img = [
+        "H"
+        "K"
+      ];
       orient_1 = "r";
       orient_3 = "R";
+      delete = "d";
       reload_image = "C-r";
       render = null; # fix conflict with orient_3
     };
