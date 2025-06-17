@@ -11,5 +11,6 @@ require 'copilot'.setup {
   },
 }
 
-require 'copilot_cmp'.setup {
-}
+-- TODO: blink-cmp
+--require 'copilot_cmp'.setup {
+--}

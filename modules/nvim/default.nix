@@ -105,14 +105,15 @@ in
       vim-rhubarb
       gitsigns-nvim
 
-      nvim-cmp
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      cmp_luasnip
+      # TODO: blink-cmp
+      #nvim-cmp
+      #cmp-nvim-lsp
+      #cmp-buffer
+      #cmp-path
+      #cmp-cmdline
+      #cmp_luasnip
+      #copilot-cmp
       copilot-lua
-      copilot-cmp
       luasnip
       friendly-snippets
 
