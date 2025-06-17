@@ -106,6 +106,7 @@ in
       gitsigns-nvim
 
       # TODO: blink-cmp
+      blink-cmp
       #nvim-cmp
       #cmp-nvim-lsp
       #cmp-buffer
