@@ -31,7 +31,6 @@ local kind_icons = {
   Event = '',
   Operator = '󰦒',
   TypeParameter = '',
-  Copilot = '',
 }
 
 cmp.setup {
@@ -106,7 +105,6 @@ local default_cmp_sources = cmp.config.sources {
   { name = 'nvim_lsp' },
   { name = 'luasnip' },
   { name = 'path' },
-  { name = 'copilot' },
 }
 require 'gep.utils'.register_autocmd {
   'BufReadPre',

@@ -9,19 +9,6 @@ self:
 let
   finalPackage = lib.getExe config.hm-gep.programs.neovim.finalPackage;
 
-  # https://github.com/zbirenbaum/copilot-cmp/pull/126
-  copilot-cmp = pkgs.vimPlugins.copilot-cmp.overrideAttrs (o: {
-    patches = (o.patches or [ ]) ++ [
-      (toString (
-        pkgs.fetchpatch2 {
-          name = "deprecation-warning-fix.patch";
-          url = "https://github.com/zbirenbaum/copilot-cmp/commit/80891f552bb3f02a768e2d86ac3f9786c3fbb753.patch";
-          hash = "sha256-XVsfnb2+E8OnVGMZjCW5rrp18P/x84b7iHH597VcjQQ=";
-        }
-      ))
-    ];
-  });
-
   # https://github.com/nvimdev/lspsaga.nvim/pull/1538 but was reverted
   lspsaga-nvim = pkgs.vimPlugins.lspsaga-nvim.overrideAttrs (o: {
     patches = (o.patches or [ ]) ++ [
@@ -113,7 +100,7 @@ in
       #cmp-path
       #cmp-cmdline
       #cmp_luasnip
-      #copilot-cmp
+      blink-cmp-copilot
       copilot-lua
       friendly-snippets
 

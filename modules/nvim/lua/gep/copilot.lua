@@ -11,6 +11,4 @@ require 'copilot'.setup {
   },
 }
 
--- TODO: blink-cmp
---require 'copilot_cmp'.setup {
---}
+-- used in blink-cmp.lua
