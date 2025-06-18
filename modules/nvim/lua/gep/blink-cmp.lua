@@ -1,14 +1,16 @@
 -- TODO: set up lsp capabilities
+local keymap = {
+  preset = 'none',
+  ['<c-space>'] = { 'show' },
+  ['<c-j>'] = { 'select_next' },
+  ['<c-k>'] = { 'select_prev' },
+  ['<c-l>'] = { 'accept' },
+  ['<a-j>'] = { 'scroll_documentation_down' },
+  ['<a-k>'] = { 'scroll_documentation_up' },
+}
+
 require 'blink-cmp'.setup {
-  keymap = {
-    preset = 'none',
-    ['<c-space>'] = { 'show' },
-    ['<c-j>'] = { 'select_next' },
-    ['<c-k>'] = { 'select_prev' },
-    ['<c-l>'] = { 'accept' },
-    ['<a-j>'] = { 'scroll_documentation_down' },
-    ['<a-k>'] = { 'scroll_documentation_up' },
-  },
+  keymap = keymap,
   completion = {
     menu = {
       draw = {
@@ -38,15 +40,7 @@ require 'blink-cmp'.setup {
     },
   },
   cmdline = {
-    keymap = {
-      preset = 'none',
-      ['<c-space>'] = { 'show' },
-      ['<c-j>'] = { 'select_next' },
-      ['<c-k>'] = { 'select_prev' },
-      ['<c-l>'] = { 'accept' },
-      ['<a-j>'] = { 'scroll_documentation_down' },
-      ['<a-k>'] = { 'scroll_documentation_up' },
-    },
+    keymap = keymap,
     completion = {
       menu = {
         auto_show = true,
