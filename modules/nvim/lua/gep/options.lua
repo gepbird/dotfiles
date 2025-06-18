@@ -8,8 +8,6 @@ g.markdown_recommended_style = false
 o.backup = false                          -- creates a backup file
 o.clipboard = 'unnamedplus'               -- allows neovim to access the system clipboard
 o.cmdheight = 1                           -- more space in the neovim command line for displaying messages
--- TODO: blink-cmp
---o.completeopt = { 'menuone', 'noselect' } -- mostly just for cmp
 o.conceallevel = 0                        -- so that `` is visible in markdown files
 o.fileencoding = 'utf-8'                  -- the encoding written to a file
 o.hlsearch = true                         -- highlight all matches on previous search pattern

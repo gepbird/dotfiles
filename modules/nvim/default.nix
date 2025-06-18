@@ -92,14 +92,7 @@ in
       vim-rhubarb
       gitsigns-nvim
 
-      # TODO: blink-cmp
       blink-cmp
-      #nvim-cmp
-      #cmp-nvim-lsp
-      #cmp-buffer
-      #cmp-path
-      #cmp-cmdline
-      #cmp_luasnip
       blink-cmp-copilot
       copilot-lua
       friendly-snippets

@@ -14,8 +14,6 @@ require 'gep.colorizer'
 require 'gep.telescope'
 require 'gep.fugitive'
 require 'gep.gitsigns'
--- TODO: blink-cmp
---require 'gep.cmp'
 require 'gep.blink-cmp'
 require 'gep.lsp'
 require 'gep.lsp.progress'
