@@ -58,7 +58,7 @@ in
       if [ -z "$sessions" ]; then
         tmux
       else
-        selected_session=$(echo $sessions | ${getExe gum} choose --select-if-one | ${getExe hck} -f1)
+        selected_session=$(printf '%s\n' "$sessions" | ${getExe gum} choose --select-if-one | ${getExe hck} -f1)
         tmux a -t "$selected_session"
       fi
     '')
