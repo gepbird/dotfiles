@@ -1,4 +1,3 @@
--- TODO: set up lsp capabilities
 local keymap = {
   preset = 'none',
   ['<c-space>'] = { 'show' },
