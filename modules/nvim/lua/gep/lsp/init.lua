@@ -43,6 +43,7 @@ for _, server in ipairs(servers) do
   if not ok then
     config = {}
   end
+  config.capabilities = require 'blink.cmp'.get_lsp_capabilities(config.capabilities)
   vim.lsp.enable(server)
   vim.lsp.config(server, config)
 end
