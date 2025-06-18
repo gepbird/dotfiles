@@ -17,7 +17,6 @@ require 'gep.gitsigns'
 -- TODO: blink-cmp
 --require 'gep.cmp'
 require 'gep.blink-cmp'
-require 'gep.snippets'
 require 'gep.lsp'
 require 'gep.lsp.progress'
 require 'gep.lsp.guard'

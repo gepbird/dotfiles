@@ -115,7 +115,6 @@ in
       #cmp_luasnip
       #copilot-cmp
       copilot-lua
-      luasnip
       friendly-snippets
 
       nvim-lspconfig
