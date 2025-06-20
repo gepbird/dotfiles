@@ -1,6 +1,6 @@
 local keymap = {
   preset = 'none',
-  ['<c-space>'] = { 'show' },
+  ['<c-space>'] = { 'show', 'show_documentation' },
   ['<c-j>'] = { 'select_next' },
   ['<c-k>'] = { 'select_prev' },
   ['<c-l>'] = { 'accept' },
@@ -20,10 +20,11 @@ require 'blink-cmp'.setup {
         },
       },
     },
-    documentation = {
-      auto_show = true,
-      auto_show_delay_ms = 0,
-    },
+    -- TODO: enable when fixed: https://github.com/Saghen/blink.cmp/issues/1932
+    --documentation = {
+    --  auto_show = true,
+    --  auto_show_delay_ms = 0,
+    --},
     ghost_text = {
       enabled = true,
     },
