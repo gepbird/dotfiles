@@ -20,7 +20,7 @@ self:
     # geppc
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKGW5zKjn01DVf6vTs/D2VV+/awXTNboY1iaCThi2A1v gep@geppc"
     # gepphone
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQXysKutq2b67RAmq46qMH8TDLEYf0D5SYon4vE6efO u0_a483@localhost"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAI7atY2/1xxvfFA8UvieoZg2UHpcnQ7u/IaMbA3OJB4 u0_a288@localhost"
     # gepwin
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM5plUDJC9i4F1FG7+lZvWFyYDhse98E94usal1yr3gE gep@DESKTOP-3LEAJ4K"
   ];
