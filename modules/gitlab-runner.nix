@@ -14,5 +14,11 @@ self:
           or (toString (pkgs.writeText "gitlab-runner-work-test" ""));
       executor = "shell";
     };
+    extraPackages = with pkgs; [
+      git
+    ];
   };
+
+  # https://github.com/NixOS/nixpkgs/issues/420039
+  environment.systemPackages = config.services.gitlab-runner.extraPackages;
 }
