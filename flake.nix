@@ -30,14 +30,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-compat.follows = "";
     };
-    neovim-nightly = {
-      url = "github:nix-community/neovim-nightly-overlay";
+    nvim = {
+      url = "github:gepbird/nvim";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.hercules-ci-effects.follows = "hercules-ci-effects";
-      inputs.git-hooks.follows = "git-hooks";
-      inputs.treefmt-nix.follows = "";
+      inputs.systems.follows = "systems";
     };
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
@@ -56,11 +53,6 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.treefmt-nix.follows = "treefmt-nix";
     };
-    # use newer main branch, see https://github.com/nvim-treesitter/nvim-treesitter-textobjects/pull/692
-    nvim-treesitter-textobjects = {
-      url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
-      flake = false;
-    };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -76,17 +68,6 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    hercules-ci-effects = {
-      url = "github:hercules-ci/hercules-ci-effects";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-    git-hooks = {
-      url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "";
-      inputs.gitignore.follows = "";
     };
     systems = {
       url = "github:nix-systems/default";
