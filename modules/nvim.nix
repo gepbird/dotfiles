@@ -14,6 +14,8 @@ in
     package
   ];
 
+  hm-gep.home.sessionVariables.EDITOR = binary;
+
   hm-gep.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
   };
