@@ -1,5 +1,6 @@
 self:
 {
+  config,
   lib,
   pkgs,
   ...
@@ -65,6 +66,16 @@ in
       rerere.enabled = true;
       branch.sort = "-committerdate";
     };
+    includes = [
+      {
+        condition = "gitdir:~/work/";
+        path = config.age.secrets.gitconfig-work.path or (toString (pkgs.writeText "gitconfig-work" ""));
+      }
+    ];
+  };
+
+  age.secrets = {
+    gitconfig-work.owner = config.users.users.gep.name;
   };
 
   hm-gep.home.packages = with pkgs; [
