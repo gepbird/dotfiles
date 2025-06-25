@@ -10,6 +10,7 @@
       "droidcam"
       "flutter"
       "games"
+      "gitlab-runner"
       "java"
       "matlab"
       "network-bridge"

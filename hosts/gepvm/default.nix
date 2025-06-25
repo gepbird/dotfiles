@@ -25,6 +25,7 @@
       "flameshot"
       "flutter"
       "games"
+      "gitlab-runner"
       "gromit-mpx"
       "gui"
       "java"
