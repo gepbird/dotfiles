@@ -9,8 +9,8 @@ let
     patches = (o.patches or [ ]) ++ [
       (pkgs.fetchpatch2 {
         name = "unknown-syscall-workaround.patch";
-        url = "https://github.com/JakWai01/lurk/commit/cd570da4ece3da2539e963c2579896a0fb6313bd.patch";
-        hash = "sha256-xfSDa2tMu+Jy2M+s2yofzh86748ZcZxYF4Ge+jRiTpw=";
+        url = "https://github.com/gepbird/lurk/commit/41ec25cda933fb9f3a8e55f8b3683b8f628e938c.patch";
+        hash = "sha256-7jWTv/OA5B2trK6sBx/PXPy2fmDwSguup8vVxt/ZXEU=";
       })
     ];
   });
