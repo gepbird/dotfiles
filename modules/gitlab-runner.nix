@@ -11,7 +11,7 @@ self:
     services.work-test = {
       authenticationTokenConfigFile =
         config.age.secrets.gitlab-runner-work-test.path
-          or (toString (pkgs.writeText "gitlab-runner-work-test" ""));
+          or (toString (pkgs.writeText "gitlab-runner-work-test-stub" ""));
       executor = "shell";
     };
     extraPackages = with pkgs; [

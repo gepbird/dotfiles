@@ -69,7 +69,7 @@ in
     includes = [
       {
         condition = "gitdir:~/work/";
-        path = config.age.secrets.gitconfig-work.path or (toString (pkgs.writeText "gitconfig-work" ""));
+        path = config.age.secrets.gitconfig-work.path or (toString (pkgs.writeText "gitconfig-work-stub" ""));
       }
     ];
   };
