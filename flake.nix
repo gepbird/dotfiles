@@ -10,10 +10,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-lurk-0-3-10 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/419566.patch";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
