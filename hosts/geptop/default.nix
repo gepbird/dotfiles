@@ -15,6 +15,7 @@
       "matlab"
       "network-bridge"
       "nvidia"
+      "packettracer"
       "php"
       "piper"
       "vmware"
