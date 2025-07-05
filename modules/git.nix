@@ -16,6 +16,7 @@ in
       c = "commit";
       ca = "commit --amend";
       can = "commit --amend --no-edit";
+      cs = "commit --all";
       chp = "cherry-pick";
       m = "merge";
       ma = "merge --abort";
