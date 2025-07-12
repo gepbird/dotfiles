@@ -46,6 +46,7 @@
       "python"
       "rnote"
       "rust"
+      "typst"
       "virt-manager"
       "vmware"
       "vscode"
