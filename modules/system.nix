@@ -43,4 +43,6 @@ self:
         pkgs.writeText "system-password-stub" "$6$Z6Mge73J$mBdqB5EcjwEb/QifNdBPVyVgeIz6hL4RQpDGACssXrCShUkVyEdehBAzPEltCfNXZof5Icg3aRoRa3nlaPtAH."
       ));
   };
+
+  security.sudo-rs.enable = true;
 }
