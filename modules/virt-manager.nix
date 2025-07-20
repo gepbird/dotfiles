@@ -17,6 +17,7 @@ self:
       virtiofsd
     ];
   };
-
   users.users.gep.extraGroups = [ "libvirtd" ];
+
+  # for windows guests, install https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe
 }
