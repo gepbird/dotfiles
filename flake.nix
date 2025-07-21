@@ -19,11 +19,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    ragenix = {
-      url = "github:yaxitech/ragenix";
+    agenix = {
+      url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.agenix.follows = "agenix";
+      inputs.home-manager.follows = "home-manager";
+      inputs.systems.follows = "systems";
+      inputs.darwin.follows = "";
     };
     nix-matlab = {
       url = "gitlab:doronbehar/nix-matlab";
@@ -53,13 +54,6 @@
       inputs.flake-parts.follows = "flake-parts";
     };
     # dependencies of the above modules
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-      inputs.systems.follows = "systems";
-      inputs.darwin.follows = "";
-    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
