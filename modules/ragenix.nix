@@ -29,7 +29,7 @@ let
 in
 {
   imports = [ ragenix.nixosModules.default ];
-  hm-gep.home.packages = [ ragenix.packages.${pkgs.system}.default ];
+  hm-gep.home.packages = [ pkgs.ragenix ];
 
   age.secrets = secrets;
 }
