@@ -6,7 +6,7 @@ self:
 
 {
   hm-gep.home.packages = with pkgs; [
-    emmet-ls
+    emmet-language-server
     nodePackages.typescript-language-server
     nodejs
     stylelint-lsp
