@@ -1,5 +1,6 @@
 self:
 {
+  config,
   pkgs,
   lib,
   ...
@@ -17,7 +18,7 @@ in
   hm-gep.programs.zsh = {
     enable = true;
     autocd = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.hm-gep.xdg.configHome}/zsh";
     autosuggestion.enable = true;
     enableCompletion = true;
     completionInit = "autoload -U compinit && compinit -C"; # add caching to save ~50ms load time
