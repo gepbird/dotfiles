@@ -21,7 +21,6 @@ in
     autosuggestion.enable = true;
     enableCompletion = true;
     completionInit = "autoload -U compinit && compinit -C"; # add caching to save ~50ms load time
-    history.path = "$ZDOTDIR/.zsh_history";
 
     sessionVariables = {
       ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
