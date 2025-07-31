@@ -16,18 +16,33 @@ let
 
   inherit (lib)
     replaceString
+  filterAttrs
+  flatten
     ;
 
-  secretsFolder = toString ../secrets;
-  secretFileNames = attrNames (removeAttrs (readDir secretsFolder) [ "secrets.nix" ]);
+  secretsDirectory = toString ../secrets;
+  contents = removeAttrs (readDir secretsDirectory) [ "secrets.nix" ];
+  files = attrNames (filterAttrs (name: type: type == "regular") contents);
+  directories = attrNames (filterAttrs (name: type: type == "directory") contents);
+
+  subdirectoryFiles = map (
+    directory:
+    let
+      subdirectoryContents = attrNames (readDir "${secretsDirectory}/${directory}");
+      subdirectoryFilesFullyQualified = map (file: "${directory}/${file}") subdirectoryContents;
+    in
+    subdirectoryFilesFullyQualified
+  ) directories;
+
+  allFiles = files ++ flatten subdirectoryFiles;
 
   secrets = listToAttrs (
     map (fileName: {
       name = replaceString ".age" "" fileName;
       value = {
-        file = secretsFolder + "/" + fileName;
+        file = secretsDirectory + "/" + fileName;
       };
-    }) secretFileNames
+    }) allFiles
   );
 
 in

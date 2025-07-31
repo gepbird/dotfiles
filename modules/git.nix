@@ -71,13 +71,13 @@ in
       {
         condition = "gitdir:~/work/";
         path =
-          config.age.secrets.gitconfig-work.path or (toString (pkgs.writeText "gitconfig-work-stub" ""));
+          config.age.secrets."work/gitconfig".path or (toString (pkgs.writeText "work/gitconfig-stub" ""));
       }
     ];
   };
 
   age.secrets = {
-    gitconfig-work.owner = config.users.users.gep.name;
+    "work/gitconfig".owner = config.users.users.gep.name;
   };
 
   hm-gep.home.packages = with pkgs; [
