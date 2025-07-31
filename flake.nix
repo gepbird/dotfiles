@@ -2,6 +2,13 @@
   description = "My NixOS configuration for my PC and laptop";
 
   inputs = {
+    # rebuilding with submodules is different until fixed:
+    # https://git.lix.systems/lix-project/lix/issues/942
+    # `nom build '.?submodules=1#nixosConfigurations.geppc.config.system.build.toplevel' && sudo result/bin/switch-to-configuration switch`
+    #self = {
+    #  submodules = true;
+    #};
+
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
