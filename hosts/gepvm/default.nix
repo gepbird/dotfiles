@@ -52,6 +52,7 @@
       "vscode"
       "webdev"
       "wireshark"
+      "work"
       "zathura"
     ];
 
