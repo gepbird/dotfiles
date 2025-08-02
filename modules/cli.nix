@@ -50,6 +50,7 @@ in
     sshfs
     sysstat
     sysz
+    termdown
     w3m
     watchexec
     wavemon
