@@ -21,6 +21,7 @@
       "droidcam"
       "ente-auth"
       "feh"
+      "figma"
       "file-roller"
       "flameshot"
       "flutter"
