@@ -4,8 +4,11 @@ self:
   ...
 }:
 
+let
+  flutter = self.lib.removeLicense pkgs pkgs.flutter;
+in
 {
-  hm-gep.home.packages = with pkgs; [
+  hm-gep.home.packages = [
     flutter
   ];
 }

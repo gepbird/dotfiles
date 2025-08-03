@@ -4,6 +4,9 @@ self:
   ...
 }:
 
+let
+  prettier = self.lib.removeLicense pkgs pkgs.prettier;
+in
 {
   hm-gep.home.packages = with pkgs; [
     emmet-language-server
