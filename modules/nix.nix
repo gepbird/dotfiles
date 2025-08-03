@@ -1,29 +1,53 @@
 self:
 {
   pkgs,
+  lib,
   nixpkgs,
   ...
 }:
 
+let
+  inherit (lib)
+    mapAttrsToList
+    ;
+  inherit (pkgs)
+    writeShellScriptBin
+    ;
+
+  aliasFunctions = {
+    bump = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr package";
+    bumpc = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr commit true --argstr package";
+    nb = "if [[ -e default.nix ]]; then nom build -f . $@; else nom build .#$@; fi";
+    nd = "if [[ -e default.nix ]]; then nom develop -f . $@; else nom develop .#$@; fi";
+    ne = "nix eval -f . $@";
+    nr = "nix repl -f . $@";
+  };
+  aliasFunctionPackages = mapAttrsToList (
+    alias: script: writeShellScriptBin alias script
+  ) aliasFunctions;
+in
 {
   imports = [
     self.inputs.nix-index-database.nixosModules.nix-index
   ];
 
-  hm-gep.home.packages = with pkgs; [
-    cachix
-    hydra-check
-    nix-diff
-    nix-inspect
-    nix-output-monitor
-    nix-prefetch-git
-    nix-tree
-    nix-update
-    nixd
-    nixfmt-rfc-style
-    nixpkgs-review
-    nvd
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    [
+      cachix
+      hydra-check
+      nix-diff
+      nix-inspect
+      nix-output-monitor
+      nix-prefetch-git
+      nix-tree
+      nix-update
+      nixd
+      nixfmt-rfc-style
+      nixpkgs-review
+      nvd
+    ]
+    ++ aliasFunctionPackages;
 
   nixpkgs.overlays = [
     (final: prev: {
@@ -78,11 +102,6 @@ self:
 
   nixpkgs.config.allowUnfree = true;
   hm-gep.home.sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
-
-  hm-gep.home.shellAliases = {
-    bump = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr package";
-    bumpc = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr commit true --argstr package";
-  };
 
   programs.nix-index-database.comma.enable = true;
 }
