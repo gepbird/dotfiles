@@ -15,8 +15,8 @@ let
     ;
 
   aliasFunctions = {
-    bump = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr package";
-    bumpc = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr commit true --argstr package";
+    bump = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr package $@";
+    bumpc = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr commit true --argstr package $@";
     nb = "if [[ -e default.nix ]]; then nom build -f . $@; else nom build .#$@; fi";
     nd = "if [[ -e default.nix ]]; then nom develop -f . $@; else nom develop .#$@; fi";
     ne = "nix eval -f . $@";
