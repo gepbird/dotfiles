@@ -19,7 +19,7 @@ let
     bumpc = "nix-shell maintainers/scripts/update.nix --argstr skip-prompt true --argstr commit true --argstr package $@";
     nb = "if [[ -e default.nix ]]; then nom build -f . $@; else nom build .#$@; fi";
     nd = "if [[ -e default.nix ]]; then nom develop -f . $@; else nom develop .#$@; fi";
-    ne = "nix eval -f . $@";
+    ne = "if [[ -e default.nix ]]; then nix eval -f . $@; else nix eval .#$@; fi";
     nr = "nix repl -f . $@";
   };
   aliasFunctionPackages = mapAttrsToList (
