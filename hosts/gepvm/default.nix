@@ -19,6 +19,7 @@
       "discord"
       "dotnet"
       "droidcam"
+      "elixir"
       "ente-auth"
       "feh"
       "figma"
