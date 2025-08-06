@@ -43,7 +43,7 @@ in
       nix-tree
       nix-update
       nixd
-      nixfmt-rfc-style
+      nixfmt
       nixpkgs-review
       nvd
     ]
