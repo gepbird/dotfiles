@@ -47,10 +47,14 @@ let
     }) allFiles
   );
 
+  package =
+    self.lib.cacheDerivation "agenix-${self.inputs.agenix.narHash}"
+      self.inputs.agenix.packages.${pkgs.system}.default;
+
 in
 {
   imports = [ agenix.nixosModules.default ];
-  hm-gep.home.packages = [ agenix.packages.${pkgs.system}.default ];
+  hm-gep.home.packages = [ package ];
 
   age.secrets = secrets;
 }
