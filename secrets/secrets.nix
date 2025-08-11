@@ -20,7 +20,9 @@ let
   secretsDirectory = toString ./.;
   contents = removeAttrs (readDir secretsDirectory) [ "secrets.nix" ];
   files = attrNames (filterAttrs (name: type: type == "regular") contents);
-  directories = attrNames (filterAttrs (name: type: type == "directory" || type == "symlink") contents);
+  directories = attrNames (
+    filterAttrs (name: type: type == "directory" || type == "symlink") contents
+  );
 
   subdirectoryFiles = map (
     directory:

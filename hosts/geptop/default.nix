@@ -4,21 +4,22 @@
 }:
 
 {
-  imports =
-    [ ./hardware.nix ]
-    ++ self.nixosModules.allImportsExcept [
-      "droidcam"
-      "flutter"
-      "games"
-      "java"
-      "matlab"
-      "network-bridge"
-      "nvidia"
-      "packettracer"
-      "php"
-      "piper"
-      "vmware"
-    ];
+  imports = [
+    ./hardware.nix
+  ]
+  ++ self.nixosModules.allImportsExcept [
+    "droidcam"
+    "flutter"
+    "games"
+    "java"
+    "matlab"
+    "network-bridge"
+    "nvidia"
+    "packettracer"
+    "php"
+    "piper"
+    "vmware"
+  ];
 
   networking.hostName = "geptop";
 
