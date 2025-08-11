@@ -6,7 +6,9 @@ self:
 }:
 
 let
-  package = self.inputs.nvim.packages.${pkgs.system}.default;
+  package =
+    self.lib.cacheDerivation "gepbird-nvim-${self.inputs.nvim.narHash}"
+      self.inputs.nvim.packages.${pkgs.system}.default;
   binary = lib.getExe package;
 in
 {
