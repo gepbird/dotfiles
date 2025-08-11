@@ -4,7 +4,7 @@
   inputs = {
     # rebuilding with submodules is different until fixed:
     # https://git.lix.systems/lix-project/lix/issues/942
-    # `nom build '.?submodules=1#nixosConfigurations.geppc.config.system.build.toplevel' && sudo result/bin/switch-to-configuration switch`
+    # `nom build ".?submodules=1#nixosConfigurations.$(hostname).config.system.build.toplevel" && sudo result/bin/switch-to-configuration switch`
     #self = {
     #  submodules = true;
     #};
