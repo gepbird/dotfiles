@@ -5,7 +5,11 @@ self:
 }:
 
 {
-  hm-gep.home.packages = [ pkgs.arduino ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      arduino
+    ];
 
   users.users.gep.extraGroups = [ "dialout" ];
 }

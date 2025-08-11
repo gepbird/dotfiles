@@ -17,9 +17,11 @@ self:
   # rebuild your system to regenerate mimeapps.list and link files with home manager
   nixpkgs.overlays = [ nix-matlab.overlay ];
 
-  hm-gep.home.packages = with pkgs; [
-    matlab
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      matlab
+    ];
 
   hm-gep.xdg.configFile."matlab/nix.sh" = {
     executable = true;

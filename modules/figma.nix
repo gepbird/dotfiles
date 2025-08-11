@@ -5,7 +5,9 @@ self:
 }:
 
 {
-  hm-gep.home.packages = with pkgs; [
-    figma-linux
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      figma-linux
+    ];
 }

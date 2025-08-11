@@ -5,8 +5,10 @@ self:
 }:
 
 {
-  hm-gep.home.packages = with pkgs; [
-    typst
-    tinymist
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      typst
+      tinymist
+    ];
 }

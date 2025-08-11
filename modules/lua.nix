@@ -5,7 +5,9 @@ self:
 }:
 
 {
-  hm-gep.home.packages = with pkgs; [
-    lua-language-server
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      lua-language-server
+    ];
 }

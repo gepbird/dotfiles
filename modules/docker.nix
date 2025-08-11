@@ -5,9 +5,11 @@ self:
 }:
 
 {
-  hm-gep.home.packages = with pkgs; [
-    docker-compose
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      docker-compose
+    ];
 
   virtualisation.docker = {
     enable = true;

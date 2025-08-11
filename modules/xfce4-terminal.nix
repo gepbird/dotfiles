@@ -5,7 +5,12 @@ self:
 }:
 
 {
-  hm-gep.home.packages = [ pkgs.xfce.xfce4-terminal ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      xfce.xfce4-terminal
+    ];
+
   programs.xfconf.enable = true;
   hm-gep.xfconf = {
     enable = true;

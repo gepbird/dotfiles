@@ -5,7 +5,7 @@ self:
 }:
 
 let
-  flutter = self.lib.removeLicense pkgs pkgs.flutter;
+  flutter = self.lib.cachePackage self self.lib.removeLicense pkgs pkgs.flutter;
 in
 {
   hm-gep.home.packages = [

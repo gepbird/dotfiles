@@ -68,7 +68,9 @@ in
     };
   };
 
-  hm-gep.home.packages = with pkgs; [
-    git-extras
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.cachePackages self [
+      git-extras
+    ];
 }
