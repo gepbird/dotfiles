@@ -4,17 +4,18 @@
 }:
 
 {
-  imports =
-    [ ./hardware.nix ]
-    ++ self.nixosModules.allImportsExcept [
-      "flutter"
-      "light"
-      "matlab"
-      "network-bridge"
-      "packettracer"
-      "php"
-      "vmware"
-    ];
+  imports = [
+    ./hardware.nix
+  ]
+  ++ self.nixosModules.allImportsExcept [
+    "flutter"
+    "light"
+    "matlab"
+    "network-bridge"
+    "packettracer"
+    "php"
+    "vmware"
+  ];
 
   fileSystems = {
     "/hdd" = {
