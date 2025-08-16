@@ -14,10 +14,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-bottom-0-11-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/431600.diff";
-      flake = false;
-    };
     nixpkgs-patch-bottom-0-11-1 = {
       url = "https://github.com/NixOS/nixpkgs/pull/433929.diff";
       flake = false;
