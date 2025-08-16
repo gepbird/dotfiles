@@ -11,6 +11,7 @@ self:
         disabledTrayIcon = true;
         predefinedColorPaletteLarge = true;
         showHelp = false;
+        showAbortNotification = false;
       };
       Shortcuts = {
         TYPE_ARROW = "a";
