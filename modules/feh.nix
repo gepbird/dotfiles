@@ -38,5 +38,6 @@ self:
   hm-gep.xdg.mimeApps.defaultApplications = {
     "image/png" = [ "feh.desktop" ];
     "image/jpeg" = [ "feh.desktop" ];
+    "image/svg+xml" = [ "feh.desktop" ];
   };
 }
