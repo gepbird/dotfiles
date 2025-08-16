@@ -1,6 +1,5 @@
 self:
 {
-  pkgs,
   ...
 }:
 
@@ -10,8 +9,6 @@ self:
     settings = {
       flags = {
         color = "gruvbox";
-        # TODO: remove in >0.10.2 (https://github.com/ClementTsang/bottom/pull/1559)
-        enable_gpu = true;
         default_time_value = "30s";
         memory_legend = "left";
         network_legend = "left";
