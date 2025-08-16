@@ -47,7 +47,7 @@ in
   };
 
   hm-gep.home.shellAliases = {
-    t = "tmux";
+    t = "tmux new-session -s $(basename $PWD)";
     td = "tmux detach";
   };
 
@@ -56,7 +56,7 @@ in
       set -euo pipefail
       sessions=$(tmux ls 2>/dev/null)
       if [[ -z "$sessions" ]]; then
-        tmux
+        t
       else
         selected_session=$(echo "$sessions" | ${getExe fzf} --select-1 | ${getExe hck} -f1)
         tmux a -t "$selected_session"
