@@ -28,6 +28,14 @@ self:
         "user"
         "time"
       ];
+      disk.columns = [
+        "mount"
+        "r/s"
+        "w/s"
+        "used%"
+        "total"
+        "disk"
+      ];
       row = [
         {
           ratio = 40;
