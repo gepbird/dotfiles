@@ -93,6 +93,7 @@ in
         experimental-features = [
           "nix-command"
           "flakes"
+          "flake-self-attrs"
         ];
         substituters = map (cache: cache.substituter) caches;
         trusted-public-keys = map (cache: cache.trusted-public-key) caches;

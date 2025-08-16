@@ -2,12 +2,9 @@
   description = "My NixOS configuration for my PC and laptop";
 
   inputs = {
-    # rebuilding with submodules is different until fixed:
+    # required for dotfiles-work submodule
     # https://git.lix.systems/lix-project/lix/issues/942
-    # `nom build ".?submodules=1#nixosConfigurations.$(hostname).config.system.build.toplevel" && sudo result/bin/switch-to-configuration switch`
-    #self = {
-    #  submodules = true;
-    #};
+    self.submodules = true;
 
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
