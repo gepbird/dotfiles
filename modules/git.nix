@@ -46,7 +46,7 @@ in
       ps = "push";
       psf = "push --force-with-lease";
       l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
-      lg = "!_() { git log --oneline | ${getExe pkgs.ripgrep} $1; }; _";
+      lg = "!_() { git log --oneline | ${getExe pkgs.ripgrep} \"$*\"; }; _";
     };
     extraConfig = {
       user = {
