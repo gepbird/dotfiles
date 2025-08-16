@@ -52,22 +52,22 @@ self:
           ratio = 30;
           child = [
             {
-              ratio = 30;
+              ratio = 20;
               type = "temp";
             }
             {
-              ratio = 70;
+              ratio = 50;
               type = "disk";
+            }
+            {
+              ratio = 40;
+              type = "net";
             }
           ];
         }
         {
           ratio = 30;
           child = [
-            {
-              ratio = 40;
-              type = "net";
-            }
             {
               ratio = 60;
               type = "proc";
