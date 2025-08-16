@@ -25,6 +25,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/433929.diff";
       flake = false;
     };
+    nixpkgs-patch-flameshot-13-0-1 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/431307.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
