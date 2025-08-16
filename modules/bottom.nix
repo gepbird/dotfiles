@@ -1,11 +1,22 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.bottom = {
     enable = true;
+    package = pkgs.bottom.overrideAttrs (o: {
+      patches = (o.patches or [ ]) ++ [
+        (pkgs.fetchpatch2 {
+          # https://github.com/ClementTsang/bottom/pull/1791
+          name = "short-gpu-name-in-memory-widget.patch";
+          url = "https://github.com/ClementTsang/bottom/pull/1791/commits/78f6de9a5204d5578f2c6e7560747d761e931b1d.patch";
+          hash = "sha256-9AL0MF4Q/urn5KsOHT1eaIIWNtuCf7rUabqMsY9Mmd4=";
+        })
+      ];
+    });
     settings = {
       flags = {
         color = "gruvbox";
