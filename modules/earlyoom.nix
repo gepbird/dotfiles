@@ -14,7 +14,7 @@ self:
     # regex patterns match against values in /proc/<PID>/comm, which is truncated at 15 bytes
     extraArgs = [
       "--prefer"
-      "(electron|systemd-coredum|Discord|Isolated Web|Web Content|nixd|clangd|OmniSharp)"
+      "(electron|systemd-coredum|Discord|Isolated Web|Web Content|nixd|clangd|OmniSharp|rust-analyzer)"
       "--avoid"
       "(gammastep|dunst|OpenTablet|gromit-mpx)"
       "--ignore"
