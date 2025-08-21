@@ -43,6 +43,9 @@ in
       # see https://github.com/tmux/tmux/issues/696
       # see https://stackoverflow.com/a/41786092
       set-option -ga terminal-overrides ",$TERM:Tc"
+
+      # terminal color 8 is different in tmux, change it from default screen
+      set-option -g default-terminal "screen-256color"
     '';
   };
 
