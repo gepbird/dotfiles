@@ -35,6 +35,7 @@ in
     with pkgs;
     [
       cachix
+      dix
       hydra-check
       nix-diff
       nix-inspect
@@ -45,7 +46,6 @@ in
       nixd
       nixfmt
       nixpkgs-review
-      nvd
     ]
     ++ aliasFunctionPackages;
 
