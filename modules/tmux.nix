@@ -1,5 +1,6 @@
 self:
 {
+  config,
   lib,
   pkgs,
   ...
@@ -7,6 +8,24 @@ self:
 
 let
   inherit (lib) getExe;
+
+  inherit (lib)
+    mapAttrs'
+    nameValuePair
+    ;
+
+  format = pkgs.formats.yaml { };
+
+  sessions = {
+    nixpkgs = {
+      name = "nixpkgs";
+      root = "~/nixpkgs";
+      windows = [
+        { editor = "nvim"; }
+        { shell = null; }
+      ];
+    };
+  };
 in
 {
   hm-gep.programs.tmux = {
@@ -16,6 +35,9 @@ in
     keyMode = "vi";
     mouse = true;
     prefix = "m-w";
+    tmuxinator = {
+      enable = true;
+    };
     plugins = with pkgs.tmuxPlugins; [
       yank
       {
@@ -66,4 +88,14 @@ in
       fi
     '')
   ];
+
+  # TODO: upstream to home-manager
+  hm-gep = {
+    xdg.configFile = mapAttrs' (
+      name: value:
+      nameValuePair "tmuxinator/${name}.yml" {
+        source = format.generate "tmuxinator-${name}.yml" value;
+      }
+    ) sessions;
+  };
 }
