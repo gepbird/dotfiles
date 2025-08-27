@@ -25,6 +25,8 @@ self:
 
   services.upower.enable = true;
 
+  systemd.coredump.enable = false;
+
   networking = {
     networkmanager.enable = true;
     firewall.enable = false;
