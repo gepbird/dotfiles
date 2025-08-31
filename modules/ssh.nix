@@ -29,6 +29,7 @@ self:
 
   hm-gep.programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks = {
       "*" = {
         extraOptions.StrictHostKeyChecking = "no";
