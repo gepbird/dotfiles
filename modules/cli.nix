@@ -61,5 +61,6 @@ in
     xorg.xev
     xorg.xkill
     xsel
+    yaml2nix
   ];
 }
