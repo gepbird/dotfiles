@@ -244,6 +244,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-rnote-0-13-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-ovWGUyWjUphkOm87v5gfK9wezMuoqJf6qj8Te1cL86w=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/440811.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/440811.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1756482624,
@@ -371,6 +383,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-rnote-0-13-0": "nixpkgs-patch-rnote-0-13-0",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim": "nvim",
