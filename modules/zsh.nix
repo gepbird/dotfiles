@@ -97,6 +97,8 @@ in
 
       umask 002 # allow write for group
 
+      ulimit -c 0 # prevent creating core dumps (with systemd-coredump disabled)
+
       set -o ignoreeof # disable ctrl+d to exit, useful when scrolling with it in tmux
 
       zstyle ':completion:*' menu select
