@@ -1,6 +1,5 @@
 self:
 {
-  config,
   lib,
   pkgs,
   ...
@@ -28,6 +27,21 @@ let
   };
 in
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      tmux = prev.tmux.overrideAttrs (old: {
+        patches = (old.patches or [ ]) ++ [
+          (prev.fetchpatch2 {
+            name = "fix-sixel-image-messing-up-terminal.patch";
+            url = "https://github.com/tmux/tmux/commit/1198eed6326ba384093e34c348c843f59e841d20.patch";
+            hash = "sha256-dl0PqmWbkdlpSfF9Mt7uXDrBxxbwTExabxWCznyPvew=";
+          })
+        ];
+        patchFlags = (old.patchFlags or [ ]) ++ [ "-F3" ];
+      });
+    })
+  ];
+
   hm-gep.programs.tmux = {
     enable = true;
     escapeTime = 0;
