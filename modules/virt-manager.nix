@@ -12,16 +12,21 @@ self:
     autoconnect = [ config.hm-gep.home.sessionVariables.LIBVIRT_DEFAULT_URI ];
     uris = [ config.hm-gep.home.sessionVariables.LIBVIRT_DEFAULT_URI ];
   };
+
   hm-gep.home.sessionVariables = {
     LIBVIRT_DEFAULT_URI = "qemu:///system";
   };
 
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu.vhostUserPackages = with pkgs; [
-      virtiofsd
-    ];
+  virtualisation = {
+    spiceUSBRedirection.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu.vhostUserPackages = with pkgs; [
+        virtiofsd
+      ];
+    };
   };
+
   users.users.gep.extraGroups = [ "libvirtd" ];
 
   # for windows guests, install https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe
