@@ -75,6 +75,9 @@ in
 
       bind space copy-mode
 
+      # display hostname
+      set-option -g status-right "#H"
+
       # make colors inside tmux look the same as outside of tmux
       # see https://github.com/tmux/tmux/issues/696
       # see https://stackoverflow.com/a/41786092
