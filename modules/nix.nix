@@ -105,4 +105,6 @@ in
   hm-gep.home.sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
 
   programs.nix-index-database.comma.enable = true;
+
+  documentation.nixos.enable = false;
 }
