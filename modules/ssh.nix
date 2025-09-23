@@ -18,6 +18,9 @@ self:
     # geptop
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDPWyW2tBcCORf4C/Z7iPaKGoiswyLdds3m8ZrNY8OXl gutyina.gergo.2@gmail.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6/2MNWBfc/D9LgtrpHADj487KMNAwZ0RliXNCVpyGo root@geptop"
+    # geptop-xmg
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID799rcrUU09obAHEqsXteQxPYIedCFlFr3tf0XDDowM gep@geptop-xmg"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbDt4o2HwPry7W6q71ccF2xcBb8+w4V3MUG4Q7z/+vC root@nixos"
     # geppc
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKGW5zKjn01DVf6vTs/D2VV+/awXTNboY1iaCThi2A1v gep@geppc"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrg9sldIBPgx4Jxpa+OZBQGX/ej4rMoi/q7M+48mLYa root@nixos"
