@@ -44,6 +44,14 @@
     }
   ];
 
+  # TODO: switch to highest and adapt applications to it
+  services.xserver.resolutions = [
+    {
+      x = 1920;
+      y = 1200;
+    }
+  ];
+
   # hopefully more battery time with these settings
   powerManagement = {
     # probably doesn't work: Failed to find module 'cpufreq_schedutil'
