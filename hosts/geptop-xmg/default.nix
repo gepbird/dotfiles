@@ -16,7 +16,6 @@
     "network-bridge"
     "nvidia"
     "nvim-gep"
-    "packettracer"
     "php"
     "piper"
     "vmware"

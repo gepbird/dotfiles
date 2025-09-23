@@ -13,7 +13,6 @@
     "matlab"
     "network-bridge"
     "nvim-gep"
-    "packettracer"
     "php"
     "vmware"
   ];
