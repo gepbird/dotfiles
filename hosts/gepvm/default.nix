@@ -48,6 +48,7 @@
     "python"
     "rnote"
     "rust"
+    "thesis"
     "typst"
     "virt-manager"
     "vmware"
