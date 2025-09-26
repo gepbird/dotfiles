@@ -40,6 +40,7 @@ in
     ncdu
     nmap
     ouch
+    pciutils
     perlPackages.FileMimeInfo
     procs
     progress
