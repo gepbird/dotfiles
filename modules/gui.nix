@@ -7,16 +7,17 @@ self:
 {
   hm-gep.home.packages = with pkgs; [
     anydesk
+    arandr
     blender
     bruno
     dbeaver-bin
     element-desktop
     fractal
     gimp3
+    grayjay
     kdePackages.kdenlive
     nemo
     pavucontrol
-    grayjay
     qbittorrent
     qdirstat
     rnote
