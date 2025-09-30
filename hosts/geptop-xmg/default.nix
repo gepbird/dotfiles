@@ -8,6 +8,7 @@
     ./hardware.nix
   ]
   ++ self.nixosModules.allImportsExcept [
+    "anydesk-download"
     "droidcam"
     "flutter"
     "games"

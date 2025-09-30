@@ -10,6 +10,7 @@
   ]
   ++ self.nixosModules.allImportsExcept [
     "adb"
+    "anydesk-download"
     "arduino"
     "at"
     "c"
