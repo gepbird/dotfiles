@@ -1,17 +1,11 @@
 self:
 {
-  config,
   pkgs,
   ...
 }:
 
 {
   programs.virt-manager.enable = true;
-  hm-gep.dconf.settings."org/virt-manager/virt-manager/connections" = {
-    # TODO: check if this is still needed
-    autoconnect = [ config.hm-gep.home.sessionVariables.LIBVIRT_DEFAULT_URI ];
-    uris = [ config.hm-gep.home.sessionVariables.LIBVIRT_DEFAULT_URI ];
-  };
 
   hm-gep.home.sessionVariables = {
     LIBVIRT_DEFAULT_URI = "qemu:///system";
