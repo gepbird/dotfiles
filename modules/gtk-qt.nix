@@ -26,8 +26,7 @@ self:
   };
 
   qt = {
-    # disable due to packet tracer looking bad with half light, half dark theme
-    enable = false;
+    enable = true;
     platformTheme = "gnome";
     style = "adwaita-dark";
   };
