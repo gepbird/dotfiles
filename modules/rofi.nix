@@ -11,6 +11,10 @@ self:
     theme = "gruvbox-dark-hard";
     terminal = lib.getExe pkgs.xfce.xfce4-terminal;
     extraConfig = {
+      modes = [
+        "run"
+        "drun"
+      ];
       matching = "fuzzy";
       sort = true;
 
