@@ -7,6 +7,11 @@ self:
 {
   programs.virt-manager.enable = true;
 
+  hm-gep.dconf.settings."org/virt-manager/virt-manager" = {
+    "xmleditor-enabled" = true;
+    "console/resize-guest" = 1;
+  };
+
   hm-gep.home.sessionVariables = {
     LIBVIRT_DEFAULT_URI = "qemu:///system";
   };
