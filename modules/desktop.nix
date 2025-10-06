@@ -8,8 +8,5 @@ self:
 
   hm-gep.services.dunst.enable = true;
 
-  programs.dconf.enable = true;
-  hm-gep.dconf.enable = true;
-
   hm-gep.xdg.mimeApps.enable = true;
 }
