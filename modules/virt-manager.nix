@@ -27,4 +27,7 @@ self:
   # https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win-guest-tools.exe
   # (link from https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md)
   # set VirtioFsSvc service startup type to Automatic
+
+  # fix "Error starting domain: Requested operation is not valid: network 'default' is not active":
+  # virt-manager > Edit > Connection Details > Virtual Networks > default > Autostart: On Boot > enable
 }
