@@ -244,6 +244,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-bottom-0-11-2": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-KD9CDC+VjSsotYQXgMdLPPTdt/03c4omNnpR1QiSz98=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/450437.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/450437.diff"
+      }
+    },
     "nixpkgs-patch-vm-efi-fix": {
       "flake": false,
       "locked": {
@@ -383,6 +395,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-bottom-0-11-2": "nixpkgs-patch-bottom-0-11-2",
         "nixpkgs-patch-vm-efi-fix": "nixpkgs-patch-vm-efi-fix",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
