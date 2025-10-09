@@ -23,6 +23,7 @@ self:
         default_time_value = "30s";
         memory_legend = "left";
         network_legend = "left";
+        hide_k_threads = true;
       };
       processes.columns = [
         "name"
