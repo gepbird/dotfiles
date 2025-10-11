@@ -268,6 +268,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/451113.diff"
       }
     },
+    "nixpkgs-patch-qgnomeplatform-fix-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-Hh7dKX8oAtjmNLBpsa2CMhOcK3rO9rPigyTYaiD0D+8=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/449396.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/449396.diff"
+      }
+    },
     "nixpkgs-patch-vm-efi-fix": {
       "flake": false,
       "locked": {
@@ -409,6 +421,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-bottom-0-11-2": "nixpkgs-patch-bottom-0-11-2",
         "nixpkgs-patch-gromit-mpx-fix-build": "nixpkgs-patch-gromit-mpx-fix-build",
+        "nixpkgs-patch-qgnomeplatform-fix-build": "nixpkgs-patch-qgnomeplatform-fix-build",
         "nixpkgs-patch-vm-efi-fix": "nixpkgs-patch-vm-efi-fix",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",

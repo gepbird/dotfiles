@@ -29,6 +29,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/451113.diff";
       flake = false;
     };
+    nixpkgs-patch-qgnomeplatform-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/449396.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
