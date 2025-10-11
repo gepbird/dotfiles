@@ -25,6 +25,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/450437.diff";
       flake = false;
     };
+    nixpkgs-patch-gromit-mpx-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/451113.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

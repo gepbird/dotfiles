@@ -256,6 +256,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/450437.diff"
       }
     },
+    "nixpkgs-patch-gromit-mpx-fix-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-qMnW361f4AK+R3QLGkemxaf4mq5QxpFpPzBK6CMBZQ0=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/451113.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/451113.diff"
+      }
+    },
     "nixpkgs-patch-vm-efi-fix": {
       "flake": false,
       "locked": {
@@ -396,6 +408,7 @@
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-bottom-0-11-2": "nixpkgs-patch-bottom-0-11-2",
+        "nixpkgs-patch-gromit-mpx-fix-build": "nixpkgs-patch-gromit-mpx-fix-build",
         "nixpkgs-patch-vm-efi-fix": "nixpkgs-patch-vm-efi-fix",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
