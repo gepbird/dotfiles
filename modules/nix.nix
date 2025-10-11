@@ -1,5 +1,6 @@
 self:
 {
+  config,
   pkgs,
   lib,
   nixpkgs,
@@ -68,6 +69,10 @@ in
     })
   ];
 
+  age.secrets = {
+    nix-github-access-token.owner = config.users.users.gep.name;
+  };
+
   nix = {
     nixPath = [
       "nixpkgs=${nixpkgs}"
@@ -99,6 +104,9 @@ in
         trusted-public-keys = map (cache: cache.trusted-public-key) caches;
         trusted-users = [ "gep" ];
       };
+    extraOptions = lib.mkIf (config.age.secrets ? nix-github-access-token) ''
+      !include ${config.age.secrets.nix-github-access-token.path}
+    '';
   };
 
   nixpkgs.config.allowUnfree = true;
