@@ -17,10 +17,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-vm-efi-fix = {
-      url = "https://github.com/NixOS/nixpkgs/pull/421549.diff";
-      flake = false;
-    };
     nixpkgs-patch-bottom-0-11-2 = {
       url = "https://github.com/NixOS/nixpkgs/pull/450437.diff";
       flake = false;
