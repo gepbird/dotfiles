@@ -125,7 +125,6 @@
         in
         {
           geppc = mkSystem ./hosts/geppc;
-          geptop = mkSystem ./hosts/geptop;
           geptop-xmg = mkSystem ./hosts/geptop-xmg;
           gepvm = mkSystem ./hosts/gepvm;
         };
