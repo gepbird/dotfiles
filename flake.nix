@@ -17,18 +17,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-bottom-0-11-2 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/450437.diff";
-      flake = false;
-    };
-    nixpkgs-patch-gromit-mpx-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/451113.diff";
-      flake = false;
-    };
-    nixpkgs-patch-qgnomeplatform-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/449396.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
