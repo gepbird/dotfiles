@@ -2,7 +2,7 @@
   ...
 }:
 
-{
+let
   # This function expects this repository to be at ~/dotfiles
   mkDotfilesSymlink =
     config: pathFromHome:
@@ -18,4 +18,15 @@
         rm -f $out/LICENSE
       '';
     };
+
+  dontCachePackages = packages: packages;
+
+  maybeCachePackages = self: packages: (dontCachePackages packages);
+in
+{
+  inherit
+    mkDotfilesSymlink
+    removeLicense
+    maybeCachePackages
+    ;
 }
