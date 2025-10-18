@@ -5,8 +5,10 @@ self:
 }:
 
 {
-  hm-gep.home.packages = with pkgs; [
-    bitwarden
-    bitwarden-cli
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      bitwarden
+      bitwarden-cli
+    ];
 }

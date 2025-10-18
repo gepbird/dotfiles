@@ -14,9 +14,11 @@ self:
     forceFullCompositionPipeline = false; # when enabled fixes screen tearing, but disables other monitors
   };
 
-  hm-gep.home.packages = with pkgs; [
-    nvtopPackages.full
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      nvtopPackages.full
+    ];
 
   systemd.user.services.nvidia-settings = {
     description = "nvidia-settings";

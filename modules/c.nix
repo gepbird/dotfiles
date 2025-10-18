@@ -5,9 +5,11 @@ self:
 }:
 
 {
-  hm-gep.home.packages = with pkgs; [
-    clang-tools
-    gcc
-    gnumake
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      clang-tools
+      gcc
+      gnumake
+    ];
 }

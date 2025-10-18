@@ -34,7 +34,7 @@ in
 
   hm-gep.home.packages =
     with pkgs;
-    [
+    self.lib.maybeCachePackages self [
       cachix
       dix
       hydra-check
