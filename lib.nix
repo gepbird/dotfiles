@@ -19,14 +19,24 @@ let
       '';
     };
 
-  dontCachePackages = packages: packages;
+  doCacheDerivations = false;
 
-  maybeCachePackages = self: packages: (dontCachePackages packages);
+  cacheDerivation = cacheKey: derivation: throw "Caching derivations is not yet supported";
+  cachePackage = self: package: throw "Caching derivations is not yet supported";
+
+  maybeCacheDerivation =
+    cacheKey: derivation:
+    if doCacheDerivations then cacheDerivation cacheKey derivation else derivation;
+  maybeCachePackage = self: package: if doCacheDerivations then cachePackage self package else package;
+  maybeCachePackages =
+    self: packages: if doCacheDerivations then map (maybeCachePackage self) packages else packages;
 in
 {
   inherit
     mkDotfilesSymlink
     removeLicense
+    maybeCacheDerivation
+    maybeCachePackage
     maybeCachePackages
     ;
 }
