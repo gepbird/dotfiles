@@ -32,6 +32,7 @@ self:
     xzoom
   ];
 
+  # if installed as a home-manager package, the popup for entering the password doesn't come up and must be ran with sudo
   environment.systemPackages = with pkgs; [
     gparted
   ];
