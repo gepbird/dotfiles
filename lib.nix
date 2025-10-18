@@ -19,10 +19,12 @@ let
       '';
     };
 
-  doCacheDerivations = false;
+  doCacheDerivations = true;
 
-  cacheDerivation = cacheKey: derivation: throw "Caching derivations is not yet supported";
-  cachePackage = self: package: throw "Caching derivations is not yet supported";
+  cacheDerivation = cacheKey: derivation: builtins.trace "cache=${cacheKey}" derivation;
+  cachePackage =
+    self: package:
+    cacheDerivation "nixpkgs-package-${package.name}-${self.inputs.nixpkgs.narHash}" package;
 
   maybeCacheDerivation =
     cacheKey: derivation:
