@@ -24,6 +24,10 @@ self:
     # geppc
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKGW5zKjn01DVf6vTs/D2VV+/awXTNboY1iaCThi2A1v gep@geppc"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrg9sldIBPgx4Jxpa+OZBQGX/ej4rMoi/q7M+48mLYa root@nixos"
+    # raspi-doboz
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3olHivyTuztxmwefBJ5EtsaG2Kff7kDGVUacrFMIFQ gep@raspi-doboz"
+    # raspi5-doboz
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGp3MDIeetPKbS95IkRhQm/4Q1tRKd8iVKBcNaWR2TIk gep@raspi5-doboz"
     # gepphone
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAI7atY2/1xxvfFA8UvieoZg2UHpcnQ7u/IaMbA3OJB4 u0_a288@localhost"
     # gepwin
