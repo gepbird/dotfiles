@@ -40,6 +40,11 @@ self:
         forwardX11 = true;
         forwardX11Trusted = true;
       };
+      "raspi5.tchfoo.com" = {
+        port = 42728;
+        forwardX11 = true;
+        forwardX11Trusted = true;
+      };
     };
   };
 
