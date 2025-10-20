@@ -16,7 +16,6 @@
     "matlab"
     "network-bridge"
     "nvidia"
-    "nvim-gep"
     "php"
     "piper"
     "vmware"

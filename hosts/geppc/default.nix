@@ -13,7 +13,6 @@
     "light"
     "matlab"
     "network-bridge"
-    "nvim-gep"
     "php"
     "vmware"
   ];
