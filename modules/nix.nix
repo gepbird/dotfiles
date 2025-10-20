@@ -41,13 +41,15 @@ in
       hydra-check
       nix-diff
       nix-inspect
-      nix-output-monitor
       nix-prefetch-git
       nix-tree
       nix-update
       nixd
       nixfmt
       nixpkgs-review
+    ]
+    ++ [
+      nix-output-monitor
     ]
     ++ aliasFunctionPackages;
 

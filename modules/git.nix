@@ -7,10 +7,12 @@ self:
 
 let
   inherit (lib) getExe;
+  ripgrep = self.lib.maybeCachePackage self pkgs.ripgrep;
 in
 {
   hm-gep.programs.git = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.git;
     aliases = {
       c = "commit";
       ca = "commit --amend";
@@ -46,7 +48,7 @@ in
       ps = "push";
       psf = "push --force-with-lease";
       l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
-      lg = "!_() { git log --oneline | ${getExe pkgs.ripgrep} \"$*\"; }; _";
+      lg = "!_() { git log --oneline | ${getExe ripgrep} \"$*\"; }; _";
     };
     extraConfig = {
       user = {

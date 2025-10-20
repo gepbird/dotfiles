@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.services.flameshot = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.flameshot;
     settings = {
       General = {
         disabledTrayIcon = true;

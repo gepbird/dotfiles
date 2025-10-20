@@ -13,6 +13,7 @@ self:
 
   virtualisation.docker = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.docker;
     enableOnBoot = false;
   };
 

@@ -6,9 +6,14 @@ self:
 
 {
   hm-gep.home.packages = [
-    (pkgs.discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
+    (self.lib.maybeCacheDerivation
+      "nixpkgs-package-discord-with-openasar-with-vencord-${self.inputs.nixpkgs.narHash}"
+      (
+        pkgs.discord.override {
+          withOpenASAR = true;
+          withVencord = true;
+        }
+      )
+    )
   ];
 }

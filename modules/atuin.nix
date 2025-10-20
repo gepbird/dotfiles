@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.atuin = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.atuin;
     flags = [ "--disable-up-arrow" ];
     settings = {
       auto_sync = false;

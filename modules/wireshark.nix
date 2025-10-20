@@ -7,7 +7,7 @@ self:
 {
   programs.wireshark = {
     enable = true;
-    package = pkgs.wireshark;
+    package = self.lib.maybeCachePackage self pkgs.wireshark;
   };
 
   users.users.gep.extraGroups = [ "wireshark" ];

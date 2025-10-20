@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   services.nginx = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.nginx;
     virtualHosts."gepbird.ovh" = {
       enableACME = true;
       forceSSL = true;

@@ -6,7 +6,9 @@ self:
 }:
 
 {
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+  };
 
   hm-gep.home.packages =
     with pkgs;
@@ -36,6 +38,7 @@ self:
 
   hm-gep.programs.mangohud = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.mangohud;
     enableSessionWide = true;
     settings = {
       cpu_temp = true;
@@ -52,4 +55,8 @@ self:
       winesync = true;
     };
   };
+
+  nixpkgs.overlays = [
+    (self.lib.maybeCachePackageOverlay self "gamemode")
+  ];
 }

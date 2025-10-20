@@ -4,6 +4,9 @@ self:
   ...
 }:
 
+let
+  polkit_gnome = self.lib.maybeCachePackage self pkgs.docker;
+in
 {
   systemd.user.services = {
     polkit-gnome-authentication-agent-1 = {
@@ -13,7 +16,7 @@ self:
       after = [ "graphical-session.target" ];
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        ExecStart = "${polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
         Restart = "on-failure";
         RestartSec = 1;
         TimeoutStopSec = 10;

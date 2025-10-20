@@ -1,12 +1,14 @@
 self:
 {
   lib,
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.starship = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.starship;
     settings = {
       add_newline = false;
       format = lib.concatStrings [

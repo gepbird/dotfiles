@@ -7,6 +7,7 @@ self:
 {
   programs.nix-ld = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.docker;
     libraries =
       with pkgs;
       let
@@ -35,6 +36,6 @@ self:
           stdenv.cc.cc.lib
         ];
       in
-      python-deps;
+      self.lib.maybeCachePackages self python-deps;
   };
 }

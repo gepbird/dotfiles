@@ -21,14 +21,23 @@ self:
   };
 
   # for auto mounting external storages
-  services.gvfs.enable = true;
+  services.gvfs = {
+    enable = true;
+    package = self.lib.maybeCachePackage self pkgs.gnome.gvfs;
+  };
 
-  services.upower.enable = true;
+  services.upower = {
+    enable = true;
+    package = self.lib.maybeCachePackage self pkgs.upower;
+  };
 
   systemd.coredump.enable = false;
 
   networking = {
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      package = self.lib.maybeCachePackage self pkgs.networkmanager;
+    };
     firewall.enable = false;
   };
 
@@ -46,5 +55,8 @@ self:
       ));
   };
 
-  security.sudo-rs.enable = true;
+  security.sudo-rs = {
+    enable = true;
+    package = self.lib.maybeCachePackage self pkgs.sudo-rs;
+  };
 }

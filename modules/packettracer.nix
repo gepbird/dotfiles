@@ -16,16 +16,21 @@ self:
   nixpkgs.overlays = [
     # fix text being unreadable and ugly due to half applied dark theme
     (final: prev: {
-      ciscoPacketTracer8 = prev.ciscoPacketTracer8.overrideAttrs (o: {
-        nativeBuildInputs = (o.nativeBuildInputs or [ ]) ++ [
-          prev.makeWrapper
-        ];
-        postInstall = (o.postInstall or "") + ''
-          wrapProgram $out/bin/packettracer8 \
-            --unset QT_QPA_PLATFORMTHEME \
-            --unset QT_STYLE_OVERRIDE
-        '';
-      });
+      ciscoPacketTracer8 =
+        self.lib.maybeCacheDerivation
+          "nixpkgs-package-ciscoPacketTracer8-fix-theming-${self.inputs.nixpkgs.narHash}"
+          (
+            prev.ciscoPacketTracer8.overrideAttrs (o: {
+              nativeBuildInputs = (o.nativeBuildInputs or [ ]) ++ [
+                prev.makeWrapper
+              ];
+              postInstall = (o.postInstall or "") + ''
+                wrapProgram $out/bin/packettracer8 \
+                  --unset QT_QPA_PLATFORMTHEME \
+                  --unset QT_STYLE_OVERRIDE
+              '';
+            })
+          );
     })
   ];
 }

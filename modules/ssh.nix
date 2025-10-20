@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   services.openssh = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.openssh;
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
@@ -36,6 +38,7 @@ self:
 
   hm-gep.programs.ssh = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.openssh;
     enableDefaultConfig = false;
     matchBlocks = {
       "*" = {
@@ -52,4 +55,8 @@ self:
   hm-gep.services.ssh-agent = {
     enable = true;
   };
+
+  nixpkgs.overlays = [
+    (self.lib.maybeCachePackageOverlay self "openssh")
+  ];
 }

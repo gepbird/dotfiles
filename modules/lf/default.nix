@@ -5,10 +5,31 @@ self:
   ...
 }:
 
-with pkgs;
 let
-  inherit (lib) getExe getExe';
+  inherit (lib)
+    getExe
+    getExe'
+    mapAttrs
+    ;
+
+  packages = mapAttrs (pname: package: self.lib.maybeCachePackage self package) {
+    inherit (pkgs)
+      glib
+      lf
+      ouch
+      pistol
+      xdragon
+      zoxide
+      ;
+    inherit (pkgs.perl540Packages)
+      FileMimeInfo
+      ;
+    inherit (pkgs.xfce)
+      xfce4-terminal
+      ;
+  };
 in
+with packages;
 {
   hm-gep.xdg.configFile."lf/icons".source = ./icons;
 
@@ -18,6 +39,7 @@ in
 
   hm-gep.programs.lf = {
     enable = true;
+    package = lf;
     previewer = {
       source = pkgs.writeShellScript "pv.sh" "${getExe pistol} \"$1\"";
       keybinding = "i";
@@ -41,7 +63,7 @@ in
     };
     # $ has to be escaped: ''$
     extraConfig = ''
-      cmd mimeopen $set -f; ${getExe' perl538Packages.FileMimeInfo "mimeopen"} --ask $f
+      cmd mimeopen $set -f; ${getExe' FileMimeInfo "mimeopen"} --ask $f
 
       cmd trash %set -f; ${getExe' glib "gio"} trash $fx
 
@@ -55,7 +77,7 @@ in
 
       cmd edit $set -f; nvim $f
 
-      cmd term %${getExe xfce.xfce4-terminal}
+      cmd term %${getExe xfce4-terminal}
 
       cmd dragon %set -f; ${getExe xdragon} --and-exit --all $fx
 

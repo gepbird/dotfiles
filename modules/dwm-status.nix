@@ -2,6 +2,7 @@ self:
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -11,6 +12,7 @@ in
 {
   services.dwm-status = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.dwm-status;
     settings = {
       order = lib.optional isLaptop "battery" ++ [
         "time"

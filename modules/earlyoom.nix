@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   services.earlyoom = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.earlyoom;
     reportInterval = 60;
     freeSwapThreshold = 20;
     freeMemThreshold = 20;

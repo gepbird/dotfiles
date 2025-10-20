@@ -1,12 +1,14 @@
 self:
 {
   lib,
+  pkgs,
   ...
 }:
 
 {
   hm-gep.services.gromit-mpx = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.gromit-mpx;
     hotKey = null;
     tools =
       map

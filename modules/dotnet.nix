@@ -23,6 +23,6 @@ in
   };
 
   hm-gep.home.sessionVariables = {
-    DOTNET_ROOT = pkgs.dotnet-sdk;
+    DOTNET_ROOT = self.lib.maybeCachePackage self pkgs.dotnet-sdk;
   };
 }

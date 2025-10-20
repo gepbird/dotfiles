@@ -1,12 +1,17 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.direnv = {
     enable = true;
-    nix-direnv.enable = true;
+    package = self.lib.maybeCachePackage self pkgs.direnv;
+    nix-direnv = {
+      enable = true;
+      package = self.lib.maybeCachePackage self pkgs.nix-direnv;
+    };
     # human readable cache directories
     # https://github.com/direnv/direnv/wiki/Customizing-cache-location#human-readable-directories
     stdlib = ''

@@ -29,9 +29,18 @@ let
   maybeCacheDerivation =
     cacheKey: derivation:
     if doCacheDerivations then cacheDerivation cacheKey derivation else derivation;
-  maybeCachePackage = self: package: if doCacheDerivations then cachePackage self package else package;
+  maybeCachePackage =
+    self: package: if doCacheDerivations then cachePackage self package else package;
   maybeCachePackages =
     self: packages: if doCacheDerivations then map (maybeCachePackage self) packages else packages;
+  maybeCachePackageOverlay =
+    self: packageName: final: prev:
+    if doCacheDerivations then
+      {
+        "${packageName}" = cachePackage self (prev."${packageName}");
+      }
+    else
+      { };
 in
 {
   inherit
@@ -40,5 +49,6 @@ in
     maybeCacheDerivation
     maybeCachePackage
     maybeCachePackages
+    maybeCachePackageOverlay
     ;
 }

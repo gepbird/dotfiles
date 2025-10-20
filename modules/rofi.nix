@@ -8,6 +8,7 @@ self:
 {
   hm-gep.programs.rofi = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.rofi;
     theme = "gruvbox-dark-hard";
     terminal = lib.getExe pkgs.xfce.xfce4-terminal;
     extraConfig = {

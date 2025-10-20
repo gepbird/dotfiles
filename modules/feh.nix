@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.feh = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.feh;
     keybindings = {
       zoom_in = "z";
       zoom_out = "u";

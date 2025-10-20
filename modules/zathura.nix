@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.zathura = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.zathura;
     options = {
       selection-clipboard = "clipboard";
       guioptions = "hvs"; # horizontal+vertical scroolbar, statusline

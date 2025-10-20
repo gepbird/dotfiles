@@ -1,11 +1,13 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
   hm-gep.programs.mpv = {
     enable = true;
+    package = self.lib.maybeCachePackage self pkgs.mpv;
     config = {
       force-window = true; # open gui for audio-only
       keepaspect-window = false; # allow wm resize
