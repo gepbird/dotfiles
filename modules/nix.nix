@@ -32,6 +32,7 @@ in
     self.inputs.nix-index-database.nixosModules.nix-index
   ];
 
+  # NOTE: these may not rebuild after changes to lix due to trace-cache, it shouldn't be a problem
   hm-gep.home.packages =
     with pkgs;
     self.lib.maybeCachePackages self [

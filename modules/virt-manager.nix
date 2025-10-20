@@ -20,9 +20,11 @@ self:
     spiceUSBRedirection.enable = true;
     libvirtd = {
       enable = true;
-      qemu.vhostUserPackages = with pkgs; [
-        virtiofsd
-      ];
+      qemu.vhostUserPackages =
+        with pkgs;
+        self.lib.maybeCachePackages self [
+          virtiofsd
+        ];
     };
   };
 

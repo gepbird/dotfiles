@@ -5,7 +5,9 @@ self:
 }:
 
 let
-  composer = self.lib.removeLicense pkgs pkgs.php84Packages.composer;
+  composer = self.lib.maybeCacheDerivation "nixpkgs-package-composer-without-license-${self.inputs.nixpkgs.narHash}" (
+    self.lib.removeLicense pkgs pkgs.composer
+  );
 in
 {
   hm-gep.home.packages =
@@ -13,6 +15,8 @@ in
     self.lib.maybeCachePackages self [
       phpactor
       php
+    ]
+    ++ [
       composer
     ];
 }

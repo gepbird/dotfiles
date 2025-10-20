@@ -13,7 +13,9 @@ self:
     ]
     ++ [
       (python3.withPackages (
-        ps: with ps; [
+        ps:
+        with ps;
+        self.lib.maybeCachePackages self [
           debugpy
           pip
         ]

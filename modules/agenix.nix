@@ -50,7 +50,11 @@ let
 in
 {
   imports = [ agenix.nixosModules.default ];
-  hm-gep.home.packages = [ agenix.packages.${pkgs.system}.default ];
+  hm-gep.home.packages = [
+    (self.lib.maybeCacheDerivation "dwm-gep-package-dwm-${self.inputs.dwm-gep.narHash}"
+      agenix.packages.${pkgs.system}.default
+    )
+  ];
 
   age.secrets = secrets;
 }

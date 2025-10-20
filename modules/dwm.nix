@@ -7,6 +7,8 @@ self:
 {
   services.xserver.windowManager.dwm = {
     enable = true;
-    package = self.inputs.dwm-gep.packages.${pkgs.system}.default;
+    package =
+      self.lib.maybeCacheDerivation "dwm-gep-package-dwm-${self.inputs.dwm-gep.narHash}"
+        self.inputs.dwm-gep.packages.${pkgs.system}.default;
   };
 }

@@ -6,14 +6,38 @@ self:
   ...
 }:
 
-with pkgs;
 let
-  inherit (lib) getExe;
+  inherit (lib)
+    getExe
+    mapAttrs
+    ;
+
+  packages = mapAttrs (pname: package: self.lib.maybeCachePackage self package) {
+    inherit (pkgs)
+      bat
+      curl
+      eza
+      fd
+      git
+      hck
+      lf
+      ripgrep
+      screenkey
+      xcolor
+      xdotool
+      xdragon
+      xsel
+      zsh
+      zsh-fast-syntax-highlighting
+      zsh-you-should-use
+      ;
+  };
 in
+with packages;
 {
   programs.zsh.enable = true; # necessary for zsh default shell
-  environment.shells = [ zsh ];
-  users.users.gep.shell = zsh;
+  environment.shells = [ pkgs.zsh ];
+  users.users.gep.shell = pkgs.zsh;
 
   hm-gep.programs.zsh = {
     enable = true;

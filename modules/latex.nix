@@ -13,28 +13,34 @@ self:
       #texlive.combined.scheme-full
     ]
     ++ [
-      (texlive.withPackages (
-        ps: with ps; [
-          scheme-basic
+      (
+        # TODO: correctly calculate hash key based on texlive packages
+        # for now, modify the cache key when changing packages
+        self.lib.maybeCacheDerivation "texlive-packages+1" (
+          texlive.withPackages (
+            ps: with ps; [
+              scheme-basic
 
-          latexmk
+              latexmk
 
-          #collection-mathscience
-          naive-ebnf # fixes tikz.sty not found
-          siunitx
-          steinmetz # required for \phasor
+              #collection-mathscience
+              naive-ebnf # fixes tikz.sty not found
+              siunitx
+              steinmetz # required for \phasor
 
-          circuitikz
-          collection-fontsrecommended
-          enumitem
-          environ
-          listings
-          pict2e # required for \phasor
-          soul
-          titlesec
-          wrapfig
-          xstring
-        ]
-      ))
+              circuitikz
+              collection-fontsrecommended
+              enumitem
+              environ
+              listings
+              pict2e # required for \phasor
+              soul
+              titlesec
+              wrapfig
+              xstring
+            ]
+          )
+        )
+      )
     ];
 }
