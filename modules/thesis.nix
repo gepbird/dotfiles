@@ -5,7 +5,9 @@ self:
 }:
 
 {
-  hm-gep.home.packages = with pkgs; [
-    zotero
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      zotero
+    ];
 }

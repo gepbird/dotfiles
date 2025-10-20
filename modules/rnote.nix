@@ -5,7 +5,11 @@ self:
 }:
 
 {
-  hm-gep.home.packages = [ pkgs.rnote ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      rnote
+    ];
 
   hm-gep.dconf.settings."com/github/flxzt/rnote" = {
     document-config-preset = builtins.toJSON {

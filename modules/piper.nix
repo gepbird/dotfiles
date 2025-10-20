@@ -7,5 +7,9 @@ self:
 {
   services.ratbagd.enable = true;
 
-  hm-gep.home.packages = [ pkgs.piper ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      piper
+    ];
 }

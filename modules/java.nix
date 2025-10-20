@@ -10,13 +10,17 @@ self:
   };
 
   # home-manager doesn't like packages with conflicting fiels
-  environment.systemPackages = with pkgs; [
-    jdk8
-    jdk17
-    jdk21
-  ];
+  environment.systemPackages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      jdk8
+      jdk17
+      jdk21
+    ];
 
-  hm-gep.home.packages = with pkgs; [
-    bytecode-viewer
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      bytecode-viewer
+    ];
 }

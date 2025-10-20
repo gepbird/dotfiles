@@ -8,15 +8,17 @@ self:
 {
   programs.steam.enable = true;
 
-  hm-gep.home.packages = with pkgs; [
-    heroic
-    nur.repos.gepbird.mint-mod-manager
-    osu-lazer-bin
-    prismlauncher
-    r2modman
-    wineWowPackages.staging
-    winetricks
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      heroic
+      nur.repos.gepbird.mint-mod-manager
+      osu-lazer-bin
+      prismlauncher
+      r2modman
+      wineWowPackages.staging
+      winetricks
+    ];
 
   programs.gamemode = {
     enable = true;

@@ -16,52 +16,54 @@ let
   });
 in
 {
-  hm-gep.home.packages = with pkgs; [
-    bat
-    cntr
-    diffoscopeMinimal
-    dig
-    dos2unix
-    exiftool
-    eza
-    fd
-    ffmpeg
-    file
-    freshfetch
-    fzf
-    gh
-    glib # for gio trash
-    hck
-    inotify-tools
-    jq
-    libnotify
-    lsof
-    lurk
-    ncdu
-    nmap
-    ouch
-    pciutils
-    perlPackages.FileMimeInfo
-    procs
-    progress
-    ripgrep
-    screen
-    sd
-    sqlite-interactive
-    sshfs
-    sysstat
-    sysz
-    termdown
-    w3m
-    watchexec
-    wavemon
-    wget
-    xcolor
-    xdotool
-    xdragon
-    xorg.xev
-    xorg.xkill
-    xsel
-    yaml2nix
-  ];
+  hm-gep.home.packages =
+    with pkgs;
+    self.lib.maybeCachePackages self [
+      bat
+      cntr
+      diffoscopeMinimal
+      dig
+      dos2unix
+      exiftool
+      eza
+      fd
+      ffmpeg
+      file
+      freshfetch
+      fzf
+      gh
+      glib # for gio trash
+      hck
+      inotify-tools
+      jq
+      libnotify
+      lsof
+      lurk
+      ncdu
+      nmap
+      ouch
+      pciutils
+      perlPackages.FileMimeInfo
+      procs
+      progress
+      ripgrep
+      screen
+      sd
+      sqlite-interactive
+      sshfs
+      sysstat
+      sysz
+      termdown
+      w3m
+      watchexec
+      wavemon
+      wget
+      xcolor
+      xdotool
+      xdragon
+      xorg.xev
+      xorg.xkill
+      xsel
+      yaml2nix
+    ];
 }
