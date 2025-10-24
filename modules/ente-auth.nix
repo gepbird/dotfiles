@@ -14,7 +14,6 @@ self:
   services.gnome.gnome-keyring.enable = true;
 
   nixpkgs.overlays = [
-    (self.lib.maybeCachePackageOverlay self "gnome-keyring")
     (self.lib.maybeCachePackageOverlay self "grc")
   ];
 }
