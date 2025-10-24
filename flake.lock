@@ -237,6 +237,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-prettier-fix-license-collision": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-6hlR2Yhb6Tr84rhh3NLq8a9B5B3oIvGEIVkgAzu0jF4=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/454726.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/454726.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1759655918,
@@ -364,6 +376,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-prettier-fix-license-collision": "nixpkgs-patch-prettier-fix-license-collision",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim": "nvim",
