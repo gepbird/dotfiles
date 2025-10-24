@@ -2,7 +2,6 @@ self:
 {
   lib,
   pkgs,
-  agenix,
   ...
 }:
 
@@ -49,11 +48,12 @@ let
 
 in
 {
-  imports = [ agenix.nixosModules.default ];
-  hm-gep.home.packages = [
-    (self.lib.maybeCacheDerivation "agenix-package-agenix-${self.inputs.agenix.narHash}"
-      agenix.packages.${pkgs.system}.default
-    )
+  imports = [ self.inputs.agenix.nixosModules.default ];
+
+  nixpkgs.overlays = [ self.inputs.agenix.overlays.default ];
+
+  hm-gep.home.packages = with pkgs; [
+    (self.lib.maybeCacheDerivation "agenix-package-agenix-${self.inputs.agenix.narHash}-nixpkgs-overlayed-${self.inputs.nixpkgs.narHash}" agenix)
   ];
 
   age.secrets = secrets;

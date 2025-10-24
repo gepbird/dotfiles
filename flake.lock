@@ -6,9 +6,7 @@
         "home-manager": [
           "home-manager"
         ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": [],
         "systems": [
           "systems"
         ]
