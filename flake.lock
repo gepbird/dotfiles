@@ -27,9 +27,7 @@
     },
     "dwm-gep": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": []
       },
       "locked": {
         "lastModified": 1761312295,

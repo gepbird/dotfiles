@@ -5,10 +5,10 @@ self:
 }:
 
 {
+  nixpkgs.overlays = [ self.inputs.dwm-gep.overlays.default ];
+
   services.xserver.windowManager.dwm = {
     enable = true;
-    package =
-      self.lib.maybeCacheDerivation "dwm-gep-package-dwm-${self.inputs.dwm-gep.narHash}"
-        self.inputs.dwm-gep.packages.${pkgs.system}.default;
+    package = self.lib.maybeCacheDerivation "dwm-gep-package-dwm-${self.inputs.dwm-gep.narHash}-nixpkgs-overlayed-${self.inputs.nixpkgs.narHash}" pkgs.dwm;
   };
 }

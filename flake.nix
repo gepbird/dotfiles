@@ -23,7 +23,7 @@
     };
     dwm-gep = {
       url = "github:gepbird/dwm";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "";
     };
     agenix = {
       url = "github:ryantm/agenix";
