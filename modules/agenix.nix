@@ -51,7 +51,7 @@ in
 {
   imports = [ agenix.nixosModules.default ];
   hm-gep.home.packages = [
-    (self.lib.maybeCacheDerivation "dwm-gep-package-dwm-${self.inputs.dwm-gep.narHash}"
+    (self.lib.maybeCacheDerivation "agenix-package-agenix-${self.inputs.agenix.narHash}"
       agenix.packages.${pkgs.system}.default
     )
   ];
