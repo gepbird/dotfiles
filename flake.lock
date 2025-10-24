@@ -27,19 +27,16 @@
     },
     "dwm-gep": {
       "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1757254189,
-        "narHash": "sha256-eZllQ/wZxV2n1CykptSPqoslvI+JCFjYzcRgeIWQWS4=",
+        "lastModified": 1761312295,
+        "narHash": "sha256-l3RObEC6fRaGpNMdJZP5LlW6v1ZiQMgug4sahJL6syY=",
         "owner": "gepbird",
         "repo": "dwm",
-        "rev": "2709f648e1edde13463b2ac702cd472089e8dad0",
+        "rev": "070b9643147cb871f8ae82f950c3c84e843c1986",
         "type": "github"
       },
       "original": {
