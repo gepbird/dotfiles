@@ -50,7 +50,7 @@ in
       l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
       lg = "!_() { git log --oneline | ${getExe ripgrep} \"$*\"; }; _";
     };
-    extraConfig = {
+    settings = {
       user = {
         name = "Gutyina Gergő";
         email = "gutyina.gergo.2@gmail.com";
