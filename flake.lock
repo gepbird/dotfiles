@@ -3,13 +3,9 @@
     "agenix": {
       "inputs": {
         "darwin": [],
-        "home-manager": [
-          "home-manager"
-        ],
+        "home-manager": [],
         "nixpkgs": [],
-        "systems": [
-          "systems"
-        ]
+        "systems": []
       },
       "locked": {
         "lastModified": 1760836749,

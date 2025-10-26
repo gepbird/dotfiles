@@ -32,8 +32,8 @@
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "";
-      inputs.home-manager.follows = "home-manager";
-      inputs.systems.follows = "systems";
+      inputs.home-manager.follows = "";
+      inputs.systems.follows = "";
       inputs.darwin.follows = "";
     };
     nix-matlab = {
