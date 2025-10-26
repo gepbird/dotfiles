@@ -17,10 +17,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-prettier-fix-license-collision = {
-      url = "https://github.com/NixOS/nixpkgs/pull/454726.diff";
-      flake = false;
-    };
     nixpkgs-patch-qgnomeplatform-qt6-fix-build = {
       url = "https://github.com/NixOS/nixpkgs/pull/455370.diff";
       flake = false;
