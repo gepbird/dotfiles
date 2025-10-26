@@ -245,6 +245,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/454726.diff"
       }
     },
+    "nixpkgs-patch-qgnomeplatform-qt6-fix-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-+QGicgBjQf02Czjf/tZkPCRgPuS16oe54kf2IovG7Vs=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/455370.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/455370.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1759655918,
@@ -371,6 +383,7 @@
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-prettier-fix-license-collision": "nixpkgs-patch-prettier-fix-license-collision",
+        "nixpkgs-patch-qgnomeplatform-qt6-fix-build": "nixpkgs-patch-qgnomeplatform-qt6-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
