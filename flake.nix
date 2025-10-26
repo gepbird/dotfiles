@@ -41,7 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-compat.follows = "";
     };
-    nvim = {
+    nvim-gep = {
       url = "github:gepbird/nvim";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";

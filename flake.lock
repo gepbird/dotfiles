@@ -127,25 +127,25 @@
     "neovim-nightly": {
       "inputs": {
         "flake-compat": [
-          "nvim"
+          "nvim-gep"
         ],
         "flake-parts": [
-          "nvim",
+          "nvim-gep",
           "flake-parts"
         ],
         "git-hooks": [
-          "nvim"
+          "nvim-gep"
         ],
         "hercules-ci-effects": [
-          "nvim"
+          "nvim-gep"
         ],
         "neovim-src": "neovim-src",
         "nixpkgs": [
-          "nvim",
+          "nvim-gep",
           "nixpkgs"
         ],
         "treefmt-nix": [
-          "nvim"
+          "nvim-gep"
         ]
       },
       "locked": {
@@ -263,18 +263,18 @@
     "nixvim": {
       "inputs": {
         "flake-parts": [
-          "nvim",
+          "nvim-gep",
           "flake-parts"
         ],
         "nixpkgs": [
-          "nvim",
+          "nvim-gep",
           "nixpkgs"
         ],
         "nuschtosSearch": [
-          "nvim"
+          "nvim-gep"
         ],
         "systems": [
-          "nvim",
+          "nvim-gep",
           "systems"
         ]
       },
@@ -313,7 +313,7 @@
         "type": "github"
       }
     },
-    "nvim": {
+    "nvim-gep": {
       "inputs": {
         "flake-parts": [
           "flake-parts"
@@ -329,11 +329,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760214551,
-        "narHash": "sha256-ym6FGFMfxZwF8+4kjerItwDnuEPhMR5HikzFPjq2wcU=",
+        "lastModified": 1761463760,
+        "narHash": "sha256-UjwSk+Zl72hiRzQ76qXBBYRo9HLzKTyx1L58Ln7GPW0=",
         "owner": "gepbird",
         "repo": "nvim",
-        "rev": "6c944752c09f853324c6de4a93ff8309b3dfbb05",
+        "rev": "99cd3ae70f98df6c67680e179670d46017b7a7e9",
         "type": "github"
       },
       "original": {
@@ -373,7 +373,7 @@
         "nixpkgs-patch-prettier-fix-license-collision": "nixpkgs-patch-prettier-fix-license-collision",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
-        "nvim": "nvim",
+        "nvim-gep": "nvim-gep",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"
       }
