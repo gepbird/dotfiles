@@ -30,11 +30,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1761312295,
-        "narHash": "sha256-l3RObEC6fRaGpNMdJZP5LlW6v1ZiQMgug4sahJL6syY=",
+        "lastModified": 1761464095,
+        "narHash": "sha256-Mico/3X9uO6bUSh/Bv90dbTMVI+w/8k8pBVguTwlGrI=",
         "owner": "gepbird",
         "repo": "dwm",
-        "rev": "070b9643147cb871f8ae82f950c3c84e843c1986",
+        "rev": "1a4d59d20072b046482a87be18174c61335690d5",
         "type": "github"
       },
       "original": {
