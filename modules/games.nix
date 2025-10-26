@@ -55,8 +55,4 @@ self:
       winesync = true;
     };
   };
-
-  nixpkgs.overlays = [
-    (self.lib.maybeCachePackageOverlay self "gamemode")
-  ];
 }
