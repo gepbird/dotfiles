@@ -125,6 +125,15 @@ with packages;
 
       set -o ignoreeof # disable ctrl+d to exit, useful when scrolling with it in tmux
 
+      bindkey -M vicmd '^h' beginning-of-line
+      bindkey -M vicmd '^l' end-of-line
+      forward-5-chars() { for _ in {1..5}; do zle forward-char; done }
+      zle -N forward-5-chars
+      bindkey -M vicmd 'L' forward-5-chars
+      backward-5-chars() { for _ in {1..5}; do zle backward-char; done }
+      zle -N backward-5-chars
+      bindkey -M vicmd 'H' backward-5-chars
+
       zstyle ':completion:*' menu select
       # enable case insensitive and partial completion
       zstyle ':completion:*' matcher-list "" 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
