@@ -18,7 +18,6 @@
     "nvidia"
     "php"
     "piper"
-    "vmware"
   ];
 
   boot = {
