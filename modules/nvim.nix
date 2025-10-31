@@ -6,6 +6,7 @@ self:
 {
   hm-gep.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
+    "application/xml" = [ "nvim.desktop" ];
   };
 
   hm-gep.home.shellAliases = {
