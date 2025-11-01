@@ -153,7 +153,7 @@ with packages;
 
       bindkey '^l' autosuggest-accept
 
-      source ${zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
+      source ${zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
       source ${zsh-you-should-use}/share/zsh/plugins/you-should-use/you-should-use.plugin.zsh
     '';
