@@ -8,7 +8,7 @@ self:
   hm-gep.home.packages =
     with pkgs;
     self.lib.maybeCachePackages self [
-      bitwarden
+      bitwarden-desktop
       bitwarden-cli
     ];
 }

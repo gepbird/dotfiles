@@ -60,7 +60,7 @@ in
       wget
       xcolor
       xdotool
-      xdragon
+      dragon-drop
       xorg.xev
       xorg.xkill
       xsel

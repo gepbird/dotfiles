@@ -16,6 +16,7 @@ let
     inherit (pkgs)
       bat
       curl
+      dragon-drop
       eza
       fd
       git
@@ -25,7 +26,6 @@ let
       screenkey
       xcolor
       xdotool
-      xdragon
       xsel
       zsh
       zsh-fast-syntax-highlighting
@@ -69,7 +69,7 @@ with packages;
       cf = "cd $(find . -type d | fzf)";
       rmf = "sudo rm -rf";
       clip = "${getExe xsel} -b";
-      dnd = "${getExe xdragon} --and-exit --all";
+      dnd = "${getExe dragon-drop} --and-exit --all";
       getpid = "${getExe xdotool} getwindowpid $(${getExe xdotool} selectwindow)";
       whatsmyip = "${getExe curl} -4 icanhazip.com";
       pickcolor = "${getExe xcolor} -s";

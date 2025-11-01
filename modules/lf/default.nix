@@ -14,11 +14,11 @@ let
 
   packages = mapAttrs (pname: package: self.lib.maybeCachePackage self package) {
     inherit (pkgs)
+      dragon-drop
       glib
       lf
       ouch
       pistol
-      xdragon
       zoxide
       ;
     inherit (pkgs.perl540Packages)
@@ -50,7 +50,7 @@ with packages;
       hidden = true;
       drawbox = true;
       icons = true;
-      shell = "sh"; # zsh shell breaks xdragon and $fx
+      shell = "sh"; # zsh shell breaks dragon-drop and $fx
       # set '-eu' options for shell commands
       # These options are used to have safer shell commands. Option '-e' is used to
       # exit on error and option '-u' is used to give error for unset variables.
@@ -79,7 +79,7 @@ with packages;
 
       cmd term %${getExe xfce4-terminal}
 
-      cmd dragon %set -f; ${getExe xdragon} --and-exit --all $fx
+      cmd dragon %set -f; ${getExe dragon-drop} --and-exit --all $fx
 
       cmd j %{{
         result="$(${getExe zoxide} query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
