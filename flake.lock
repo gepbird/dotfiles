@@ -311,11 +311,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762004299,
-        "narHash": "sha256-XShTBgRrsCTGqSvplL37wJL857WTVjBr4G0H2rdjc2k=",
+        "lastModified": 1762041928,
+        "narHash": "sha256-tyvdsCbZkTHuTSE9KYlyBSWX8XDJ/YNyzYutLtVwO48=",
         "owner": "gepbird",
         "repo": "nvim",
-        "rev": "f95d477a734983c31a575a5ce15c91ee132d1753",
+        "rev": "173c672a024f518c675d35aba7398a521b5d0130",
         "type": "github"
       },
       "original": {
