@@ -24,12 +24,13 @@ self:
         memory_legend = "left";
         network_legend = "left";
         hide_k_threads = true;
+        process_memory_as_value = true;
       };
       processes.columns = [
         "name"
-        "mem%"
+        "mem"
         "cpu%"
-        "gmem%"
+        "gmem"
         "gpu%"
         "pid"
         "read"
