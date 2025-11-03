@@ -21,9 +21,11 @@ in
     self.lib.maybeCachePackages self [
       bat
       cntr
+      colorized-logs # for ansi2txt
       diffoscopeMinimal
       dig
       dos2unix
+      dragon-drop
       exiftool
       eza
       fd
@@ -60,7 +62,6 @@ in
       wget
       xcolor
       xdotool
-      dragon-drop
       xorg.xev
       xorg.xkill
       xsel
