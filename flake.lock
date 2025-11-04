@@ -46,11 +46,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760948891,
-        "narHash": "sha256-TmWcdiUUaWk8J4lpjzu4gCGxWY6/Ok7mOK4fIFfBuU4=",
+        "lastModified": 1762040540,
+        "narHash": "sha256-z5PlZ47j50VNF3R+IMS9LmzI5fYRGY/Z5O5tol1c9I4=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "864599284fc7c0ba6357ed89ed5e2cd5040f0c04",
+        "rev": "0010412d62a25d959151790968765a70c436598b",
         "type": "github"
       },
       "original": {
@@ -84,11 +84,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1761878381,
-        "narHash": "sha256-lCRaipHgszaFZ1Cs8fdGJguVycCisBAf2HEFgip5+xU=",
+        "lastModified": 1762228452,
+        "narHash": "sha256-Y5950vzoyJ8+u4U6dlI/2VEbf3JQnIJsmRWWWcsgpRg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4ac96eb21c101a3e5b77ba105febc5641a8959aa",
+        "rev": "aa6936bb637e46a49cf1292486200ba41dd4bcf7",
         "type": "github"
       },
       "original": {
@@ -165,11 +165,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1761451000,
-        "narHash": "sha256-qBJL6xEIjqYq9zOcG2vf2nPTeVBppNJzvO0LuQWMwMo=",
+        "lastModified": 1762055842,
+        "narHash": "sha256-Pu1v3mlFhRzZiSxVHb2/i/f5yeYyRNqr0RvEUJ4UgHo=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "ed6b293161b378a7368cda38659eb8d3d9a0dac4",
+        "rev": "359ff6333a7b0b60819d4c20ed05a3a1f726771f",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1761907660,
-        "narHash": "sha256-kJ8lIZsiPOmbkJypG+B5sReDXSD1KGu2VEPNqhRa/ew=",
+        "lastModified": 1762111121,
+        "narHash": "sha256-4vhDuZ7OZaZmKKrnDpxLZZpGIJvAeMtK6FKLJYUtAdw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2fb006b87f04c4d3bdf08cfdbc7fab9c13d94a15",
+        "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
         "type": "github"
       },
       "original": {
@@ -215,25 +215,13 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-qgnomeplatform-qt6-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-+QGicgBjQf02Czjf/tZkPCRgPuS16oe54kf2IovG7Vs=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/455370.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/455370.diff"
-      }
-    },
     "nixpkgs-patcher": {
       "locked": {
-        "lastModified": 1759655918,
-        "narHash": "sha256-UBxtzgeSan7K186nYyokjIUIgMEqg1JM9yR0Lk6+ifQ=",
+        "lastModified": 1762257953,
+        "narHash": "sha256-k5nRdIiYlOXCKaHwL8lnNW6Q7VcOsHNQzE8Oo/Q0e4w=",
         "owner": "gepbird",
         "repo": "nixpkgs-patcher",
-        "rev": "385ea045e492ec62b2c9c571b4311f75dd5342d8",
+        "rev": "2ca07dcc1204b25757cf2f0e5a9335d9b36b2298",
         "type": "github"
       },
       "original": {
@@ -282,11 +270,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1762002747,
-        "narHash": "sha256-RVXEfHjR6HIWqrUJWTBUSSV0KEM0704p3Pc0RgLCDQ0=",
+        "lastModified": 1762200885,
+        "narHash": "sha256-IPrbvJWU+Gwgg6RBFHW1pgBTZi2uDzgBvEZm3phAId0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "23ee6df641f9ebed4114fbe132ed240415a73300",
+        "rev": "0fbd67c5f81aa452afad41ed95f0e6d161f339cc",
         "type": "github"
       },
       "original": {
@@ -311,11 +299,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762041928,
-        "narHash": "sha256-tyvdsCbZkTHuTSE9KYlyBSWX8XDJ/YNyzYutLtVwO48=",
+        "lastModified": 1762122443,
+        "narHash": "sha256-v2JTxHWab0CapomeltSMD9yU3wy0o0vo0n0wrusWma0=",
         "owner": "gepbird",
         "repo": "nvim",
-        "rev": "173c672a024f518c675d35aba7398a521b5d0130",
+        "rev": "b983c61bb47864285cc266babf71973529feec3b",
         "type": "github"
       },
       "original": {
@@ -352,7 +340,6 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-qgnomeplatform-qt6-fix-build": "nixpkgs-patch-qgnomeplatform-qt6-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
