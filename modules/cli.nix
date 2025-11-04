@@ -36,6 +36,7 @@ in
       gh
       glib # for gio trash
       hck
+      inetutils
       inotify-tools
       jq
       libnotify
