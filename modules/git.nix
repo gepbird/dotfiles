@@ -15,7 +15,7 @@ in
     package = self.lib.maybeCachePackage self pkgs.git;
     settings = {
       alias = {
-        c = "commit";
+        c = "commit --reedit-message HEAD";
         ca = "commit --amend";
         can = "commit --amend --no-edit";
         cs = "commit --all";
