@@ -17,6 +17,10 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
+    nixpkgs-patch-fix-element-web-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/460637.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
