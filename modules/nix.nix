@@ -106,6 +106,7 @@ in
         substituters = map (cache: cache.substituter) caches;
         trusted-public-keys = map (cache: cache.trusted-public-key) caches;
         trusted-users = [ "gep" ];
+        warn-dirty = false;
       };
     extraOptions = lib.mkIf (config.age.secrets ? nix-github-access-token) ''
       !include ${config.age.secrets.nix-github-access-token.path}
