@@ -13,6 +13,10 @@ self:
     ciscoPacketTracer8
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "ciscoPacketTracer8-8.2.2"
+  ];
+
   nixpkgs.overlays = [
     # fix text being unreadable and ugly due to half applied dark theme
     (final: prev: {

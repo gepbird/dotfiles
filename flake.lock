@@ -215,6 +215,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-dou3x4yc4hw+fzF8Q2fVndhTBcHzz+DrzwmagiZOCj0=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456622.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/456622.diff"
+      }
+    },
     "nixpkgs-patch-fix-element-web-build": {
       "flake": false,
       "locked": {
@@ -352,6 +364,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable": "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable",
         "nixpkgs-patch-fix-element-web-build": "nixpkgs-patch-fix-element-web-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",

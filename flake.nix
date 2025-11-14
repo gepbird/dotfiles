@@ -21,6 +21,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/460637.diff";
       flake = false;
     };
+    nixpkgs-patch-cisco-packet-tracer-mark-vulnerable = {
+      url = "https://github.com/NixOS/nixpkgs/pull/456622.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
