@@ -112,6 +112,7 @@
       });
     }
     // {
+      inherit inputs;
       lib = import ./lib.nix { };
       nixosConfigurations =
         let

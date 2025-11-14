@@ -5,7 +5,7 @@ self:
 }:
 
 let
-  composer = self.lib.maybeCacheDerivation "nixpkgs-package-composer-without-license-${self.inputs.nixpkgs.narHash}" (
+  composer = self.lib.maybeCacheDerivation "nixpkgs-package-composer-without-license-${self.lib.nixpkgsHash self}" (
     self.lib.removeLicense pkgs pkgs.php84Packages.composer
   );
 in

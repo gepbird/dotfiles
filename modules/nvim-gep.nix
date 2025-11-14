@@ -10,6 +10,6 @@ self:
   nixpkgs.overlays = [ self.inputs.nvim-gep.overlays.default ];
 
   hm-gep.home.packages = with pkgs; [
-    (self.lib.maybeCacheDerivation "nvim-package-nvim-${self.inputs.nvim-gep.narHash}-nixpkgs-overlayed-${self.inputs.nixpkgs.narHash}" nvim-gep)
+    (self.lib.maybeCacheDerivation "nvim-package-nvim-${self.inputs.nvim-gep.narHash}-nixpkgs-overlayed-${self.lib.nixpkgsHash self}" nvim-gep)
   ];
 }

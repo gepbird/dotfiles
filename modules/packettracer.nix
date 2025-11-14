@@ -22,7 +22,7 @@ self:
     (final: prev: {
       ciscoPacketTracer8 =
         self.lib.maybeCacheDerivation
-          "nixpkgs-package-ciscoPacketTracer8-fix-theming-${self.inputs.nixpkgs.narHash}"
+          "nixpkgs-package-ciscoPacketTracer8-fix-theming-${self.lib.nixpkgsHash self}"
           (
             prev.ciscoPacketTracer8.overrideAttrs (o: {
               nativeBuildInputs = (o.nativeBuildInputs or [ ]) ++ [

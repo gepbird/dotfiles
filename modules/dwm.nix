@@ -9,6 +9,6 @@ self:
 
   services.xserver.windowManager.dwm = {
     enable = true;
-    package = self.lib.maybeCacheDerivation "dwm-gep-package-dwm-${self.inputs.dwm-gep.narHash}-nixpkgs-overlayed-${self.inputs.nixpkgs.narHash}" pkgs.dwm-gep;
+    package = self.lib.maybeCacheDerivation "dwm-gep-package-dwm-${self.inputs.dwm-gep.narHash}-nixpkgs-overlayed-${self.lib.nixpkgsHash self}" pkgs.dwm-gep;
   };
 }

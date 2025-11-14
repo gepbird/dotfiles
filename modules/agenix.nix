@@ -53,7 +53,7 @@ in
   nixpkgs.overlays = [ self.inputs.agenix.overlays.default ];
 
   hm-gep.home.packages = with pkgs; [
-    (self.lib.maybeCacheDerivation "agenix-package-agenix-${self.inputs.agenix.narHash}-nixpkgs-overlayed-${self.inputs.nixpkgs.narHash}" agenix)
+    (self.lib.maybeCacheDerivation "agenix-package-agenix-${self.inputs.agenix.narHash}-nixpkgs-overlayed-${self.lib.nixpkgsHash self}" agenix)
   ];
 
   age.secrets = secrets;
