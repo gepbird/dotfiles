@@ -239,6 +239,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/460637.diff"
       }
     },
+    "nixpkgs-patch-rustdesk-flutter-fix-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-GGp1WIjw1o5qi/8aBETxlkKE70bRUaDhFRZ/hNs41Iw=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/461661.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/461661.diff"
+      }
+    },
     "nixpkgs-patch-tenacity-fix-build": {
       "flake": false,
       "locked": {
@@ -378,6 +390,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable": "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable",
         "nixpkgs-patch-fix-element-web-build": "nixpkgs-patch-fix-element-web-build",
+        "nixpkgs-patch-rustdesk-flutter-fix-build": "nixpkgs-patch-rustdesk-flutter-fix-build",
         "nixpkgs-patch-tenacity-fix-build": "nixpkgs-patch-tenacity-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
