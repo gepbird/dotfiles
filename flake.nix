@@ -121,4 +121,15 @@
         };
       nixosModules = import ./modules self;
     };
+
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://gepbird-nur-packages.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "gepbird-nur-packages.cachix.org-1:Ip2iveknanFBbJ2DFWk8cDomfRquUJiMWS/2fSeuMis="
+    ];
+  };
 }
