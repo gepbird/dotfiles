@@ -25,6 +25,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/456622.diff";
       flake = false;
     };
+    nixpkgs-patch-tenacity-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/461636.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";

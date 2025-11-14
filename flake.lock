@@ -239,6 +239,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/460637.diff"
       }
     },
+    "nixpkgs-patch-tenacity-fix-build": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-qLSZuLGRK7biKYdOmJuVJAbJooH9cooI5joiEyQxlYE=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/461636.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/461636.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1762257953,
@@ -366,6 +378,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable": "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable",
         "nixpkgs-patch-fix-element-web-build": "nixpkgs-patch-fix-element-web-build",
+        "nixpkgs-patch-tenacity-fix-build": "nixpkgs-patch-tenacity-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
