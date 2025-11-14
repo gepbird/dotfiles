@@ -201,11 +201,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762844143,
-        "narHash": "sha256-SlybxLZ1/e4T2lb1czEtWVzDCVSTvk9WLwGhmxFmBxI=",
+        "lastModified": 1762977756,
+        "narHash": "sha256-4PqRErxfe+2toFJFgcRKZ0UI9NSIOJa+7RXVtBhy4KE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9da7f1cf7f8a6e2a7cb3001b048546c92a8258b4",
+        "rev": "c5ae371f1a6a7fd27823bc500d9390b38c05fa55",
         "type": "github"
       },
       "original": {
@@ -225,18 +225,6 @@
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/456622.diff"
-      }
-    },
-    "nixpkgs-patch-fix-element-web-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-M3FNMh7/l4sHJHTa40Ii5TFLkJ9JoSejNHS1E/zEaHo=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/460637.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/460637.diff"
       }
     },
     "nixpkgs-patch-rustdesk-flutter-fix-build": {
@@ -318,11 +306,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1763066905,
-        "narHash": "sha256-8QK99Nkn3N6Heu7Fl9kPDVdzJjQmfIcCITrSJMbWLOQ=",
+        "lastModified": 1763143871,
+        "narHash": "sha256-aH/C/Gf5Ha56VXDKq/KA6zdQAgK9QhmTo6i+CoQJ8jw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8c0d7c52aaf0ff0b22ca6ccd431220df9d977bb7",
+        "rev": "fbd14e7211921588f53d67b6f210ea67f1490084",
         "type": "github"
       },
       "original": {
@@ -347,11 +335,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762557314,
-        "narHash": "sha256-KFqtvpMXmcj/oQ9mjxRJDH2ziGw7FVxdQ2Z5j/UpAx8=",
+        "lastModified": 1763125368,
+        "narHash": "sha256-6U8h2I2c5H7/RKlVV6+OFw+IV1ZCkz1ncMil6CUmXT8=",
         "owner": "gepbird",
         "repo": "nvim",
-        "rev": "5614f3ad20730c25d568e3943c663187e7c23a03",
+        "rev": "f3f1f610770f97cbb13830a9147f50737da507da",
         "type": "github"
       },
       "original": {
@@ -389,7 +377,6 @@
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable": "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable",
-        "nixpkgs-patch-fix-element-web-build": "nixpkgs-patch-fix-element-web-build",
         "nixpkgs-patch-rustdesk-flutter-fix-build": "nixpkgs-patch-rustdesk-flutter-fix-build",
         "nixpkgs-patch-tenacity-fix-build": "nixpkgs-patch-tenacity-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
