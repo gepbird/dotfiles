@@ -110,14 +110,6 @@
       );
     in
     {
-      formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
-      checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check self;
-      });
-    }
-    // {
-      inherit inputs;
-      lib = import ./lib.nix { };
       nixosConfigurations =
         let
           mkSystem =
@@ -132,7 +124,15 @@
           geptop-xmg = mkSystem ./hosts/geptop-xmg;
           gepvm = mkSystem ./hosts/gepvm;
         };
+
+      inherit inputs;
+      lib = import ./lib.nix { };
       nixosModules = import ./modules self;
+
+      formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
+      checks = eachSystem (pkgs: {
+        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+      });
     };
 
   nixConfig = {
