@@ -113,6 +113,14 @@ in
     '';
   };
 
+  nix.sshServe = {
+    enable = true;
+    keys = config.users.users.gep.openssh.authorizedKeys.keys;
+    protocol = "ssh-ng";
+    trusted = true;
+    write = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
   hm-gep.home.sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
 
