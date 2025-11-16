@@ -29,6 +29,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/461661.diff";
       flake = false;
     };
+    nixpkgs-patch-droidcam-obs-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/462246.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
