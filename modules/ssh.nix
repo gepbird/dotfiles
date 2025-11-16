@@ -16,6 +16,10 @@ self:
     };
   };
 
+  programs.ssh.extraConfig = ''
+    IdentityFile /etc/ssh/ssh_host_ed25519_key
+  '';
+
   users.users.gep.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID799rcrUU09obAHEqsXteQxPYIedCFlFr3tf0XDDowM gep@geptop-xmg"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbDt4o2HwPry7W6q71ccF2xcBb8+w4V3MUG4Q7z/+vC root@geptop-xmg"
