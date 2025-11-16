@@ -104,8 +104,15 @@ in
           "flake-self-attrs"
         ];
         substituters = map (cache: cache.substituter) caches;
-        trusted-public-keys = map (cache: cache.trusted-public-key) caches;
-        trusted-users = [ "gep" ];
+        trusted-public-keys = map (cache: cache.trusted-public-key) caches ++ [
+          "cache.gepbird.ovh-1:/2wN3bgUOBBp2e2a7Rj2hieqdyL0fEoLF0ohldEtMEY="
+        ];
+        trusted-users = [
+          "gep"
+        ];
+        secret-key-files = [
+          config.age.secrets."cache.gepbord.ovh-1.priv".path
+        ];
         warn-dirty = false;
       };
     extraOptions = lib.mkIf (config.age.secrets ? nix-github-access-token) ''
