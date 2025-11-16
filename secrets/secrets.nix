@@ -14,7 +14,7 @@ let
     flatten
     ;
 
-  ssh-module = import ../modules/ssh.nix null { };
+  ssh-module = pkgs.callPackage (import ../modules/ssh.nix null) { };
   keys = ssh-module.users.users.gep.openssh.authorizedKeys.keys;
 
   secretsDirectory = toString ./.;
