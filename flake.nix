@@ -17,18 +17,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-cisco-packet-tracer-mark-vulnerable = {
-      url = "https://github.com/NixOS/nixpkgs/pull/456622.diff";
-      flake = false;
-    };
-    nixpkgs-patch-tenacity-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/461636.diff";
-      flake = false;
-    };
-    nixpkgs-patch-rustdesk-flutter-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/461661.diff";
-      flake = false;
-    };
     nixpkgs-patch-droidcam-obs-fix-build = {
       url = "https://github.com/NixOS/nixpkgs/pull/462246.diff";
       flake = false;

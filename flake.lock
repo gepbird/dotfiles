@@ -84,11 +84,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1762964643,
-        "narHash": "sha256-RYHN8O/Aja59XDji6WSJZPkJpYVUfpSkyH+PEupBJqM=",
+        "lastModified": 1763313531,
+        "narHash": "sha256-yvdCYUL85zEDp2NzPUBmaNBXP6KnWEOhAk3j7PTfsKw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "827f2a23373a774a8805f84ca5344654c31f354b",
+        "rev": "3670a78eee49deebe4825fc8ecc46b172d1a8391",
         "type": "github"
       },
       "original": {
@@ -165,11 +165,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1762660502,
-        "narHash": "sha256-C9F1C31ys0V7mnp4EcDy7L1cLZw/sCTEXqqTtGnvu08=",
+        "lastModified": 1763265660,
+        "narHash": "sha256-Ad9Rd3ZAidrH01xP73S3CjPiyXo7ywZs3uCESjPwUdc=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "15c5451c63f4c612874a43846bfe3fa828b03eee",
+        "rev": "469ef53571ea80890c9497952787920c79c1ee6e",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762977756,
-        "narHash": "sha256-4PqRErxfe+2toFJFgcRKZ0UI9NSIOJa+7RXVtBhy4KE=",
+        "lastModified": 1763283776,
+        "narHash": "sha256-Y7TDFPK4GlqrKrivOcsHG8xSGqQx3A6c+i7novT85Uk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c5ae371f1a6a7fd27823bc500d9390b38c05fa55",
+        "rev": "50a96edd8d0db6cc8db57dab6bb6d6ee1f3dc49a",
         "type": "github"
       },
       "original": {
@@ -213,18 +213,6 @@
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
-      }
-    },
-    "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-dou3x4yc4hw+fzF8Q2fVndhTBcHzz+DrzwmagiZOCj0=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/456622.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/456622.diff"
       }
     },
     "nixpkgs-patch-droidcam-obs-fix-build": {
@@ -237,30 +225,6 @@
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/462246.diff"
-      }
-    },
-    "nixpkgs-patch-rustdesk-flutter-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-GGp1WIjw1o5qi/8aBETxlkKE70bRUaDhFRZ/hNs41Iw=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/461661.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/461661.diff"
-      }
-    },
-    "nixpkgs-patch-tenacity-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-qLSZuLGRK7biKYdOmJuVJAbJooH9cooI5joiEyQxlYE=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/461636.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/461636.diff"
       }
     },
     "nixpkgs-patcher": {
@@ -318,11 +282,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1763143871,
-        "narHash": "sha256-aH/C/Gf5Ha56VXDKq/KA6zdQAgK9QhmTo6i+CoQJ8jw=",
+        "lastModified": 1763379182,
+        "narHash": "sha256-S16LIAQxJDTr8iEYEcAVe5aJP8qxSFzkKRGI+o8Mld0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "fbd14e7211921588f53d67b6f210ea67f1490084",
+        "rev": "3651150786ee33f53c5d7fa6a795fb91ef7a3b1a",
         "type": "github"
       },
       "original": {
@@ -347,11 +311,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763125368,
-        "narHash": "sha256-6U8h2I2c5H7/RKlVV6+OFw+IV1ZCkz1ncMil6CUmXT8=",
+        "lastModified": 1763149332,
+        "narHash": "sha256-uKUkdHsWBsrFBkucEy3T+svVWOKv+6FGrPsVzLxFQfE=",
         "owner": "gepbird",
         "repo": "nvim",
-        "rev": "f3f1f610770f97cbb13830a9147f50737da507da",
+        "rev": "94305602340dad3ebc9181e72dc132097a98dae0",
         "type": "github"
       },
       "original": {
@@ -388,10 +352,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable": "nixpkgs-patch-cisco-packet-tracer-mark-vulnerable",
         "nixpkgs-patch-droidcam-obs-fix-build": "nixpkgs-patch-droidcam-obs-fix-build",
-        "nixpkgs-patch-rustdesk-flutter-fix-build": "nixpkgs-patch-rustdesk-flutter-fix-build",
-        "nixpkgs-patch-tenacity-fix-build": "nixpkgs-patch-tenacity-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
