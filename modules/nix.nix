@@ -88,10 +88,6 @@ in
             trusted-public-key = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
           }
           {
-            substituter = "https://cosmic.cachix.org";
-            trusted-public-key = "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=";
-          }
-          {
             substituter = "https://gepbird-nur-packages.cachix.org";
             trusted-public-key = "gepbird-nur-packages.cachix.org-1:Ip2iveknanFBbJ2DFWk8cDomfRquUJiMWS/2fSeuMis=";
           }
