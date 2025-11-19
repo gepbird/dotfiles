@@ -42,6 +42,7 @@ in
       libnotify
       lsof
       lurk
+      moreutils # for ts
       ncdu
       nmap
       ouch
