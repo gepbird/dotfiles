@@ -13,6 +13,7 @@
     "flutter"
     "games"
     "java"
+    "latex"
     "matlab"
     "network-bridge"
     "nvidia"

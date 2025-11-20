@@ -10,6 +10,7 @@
   ++ self.nixosModules.allImportsExcept [
     "anydesk-download"
     "flutter"
+    "latex"
     "light"
     "matlab"
     "network-bridge"
