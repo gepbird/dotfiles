@@ -17,7 +17,6 @@ let
       dragon-drop
       glib
       lf
-      ouch
       pistol
       zoxide
       ;
@@ -28,6 +27,11 @@ let
       xfce4-terminal
       ;
   };
+
+  # already cached
+  inherit (pkgs)
+    ouch
+    ;
 in
 with packages;
 {

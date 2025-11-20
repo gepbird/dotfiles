@@ -45,7 +45,6 @@ in
       moreutils # for ts
       ncdu
       nmap
-      ouch
       pciutils
       perlPackages.FileMimeInfo
       procs
