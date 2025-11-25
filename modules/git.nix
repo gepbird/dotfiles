@@ -6,9 +6,20 @@ self:
 }:
 
 let
-  inherit (lib) getExe;
-  ripgrep = self.lib.maybeCachePackage self pkgs.ripgrep;
+  inherit (lib)
+    getExe
+    mapAttrs
+    ;
+
+  packages = mapAttrs (pname: package: self.lib.maybeCachePackage self package) {
+    inherit (pkgs)
+      fzf
+      hck
+      ripgrep
+      ;
+  };
 in
+with packages;
 {
   hm-gep.programs.git = {
     enable = true;
@@ -41,6 +52,7 @@ in
         d = "diff";
         dw = "diff --word-diff";
         ds = "diff --staged";
+        sw = "!git switch $(git branch | ${getExe hck} -f2 | ${getExe fzf})";
         co = "checkout";
         cob = "checkout -b";
         f = "fetch";
