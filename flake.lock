@@ -215,6 +215,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-tmux-3-6": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-XYb+nXBiVl0pokxsptZy5F2dx8f/24OtfKbI1X0uSM8=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/465187.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/465187.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1762257953,
@@ -340,6 +352,7 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-tmux-3-6": "nixpkgs-patch-tmux-3-6",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
