@@ -17,10 +17,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-tmux-3-6 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/465187.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";

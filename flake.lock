@@ -46,11 +46,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762980239,
-        "narHash": "sha256-8oNVE8TrD19ulHinjaqONf9QWCKK+w4url56cdStMpM=",
+        "lastModified": 1763759067,
+        "narHash": "sha256-LlLt2Jo/gMNYAwOgdRQBrsRoOz7BPRkzvNaI/fzXi2Q=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "52a2caecc898d0b46b2b905f058ccc5081f842da",
+        "rev": "2cccadc7357c0ba201788ae99c4dfa90728ef5e0",
         "type": "github"
       },
       "original": {
@@ -84,11 +84,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1763416652,
-        "narHash": "sha256-8EBEEvtzQ11LCxpQHMNEBQAGtQiCu/pqP9zSovDSbNM=",
+        "lastModified": 1764361670,
+        "narHash": "sha256-jgWzgpIaHbL3USIq0gihZeuy1lLf2YSfwvWEwnfAJUw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ea164b7c9ccdc2321379c2ff78fd4317b4c41312",
+        "rev": "780be8ef503a28939cf9dc7996b48ffb1a3e04c6",
         "type": "github"
       },
       "original": {
@@ -165,11 +165,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1763265660,
-        "narHash": "sha256-Ad9Rd3ZAidrH01xP73S3CjPiyXo7ywZs3uCESjPwUdc=",
+        "lastModified": 1763870992,
+        "narHash": "sha256-NPyc76Wxmv/vAsXJ8F+/8fXECHYcv2YGSqdiSHp/F/A=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "469ef53571ea80890c9497952787920c79c1ee6e",
+        "rev": "d7423982c7a26586aa237d130b14c8b302c7a367",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1763421233,
-        "narHash": "sha256-Stk9ZYRkGrnnpyJ4eqt9eQtdFWRRIvMxpNRf4sIegnw=",
+        "lastModified": 1764242076,
+        "narHash": "sha256-sKoIWfnijJ0+9e4wRvIgm/HgE27bzwQxcEmo2J/gNpI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "89c2b2330e733d6cdb5eae7b899326930c2c0648",
+        "rev": "2fad6eac6077f03fe109c4d4eb171cf96791faa4",
         "type": "github"
       },
       "original": {
@@ -215,25 +215,13 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-tmux-3-6": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-XYb+nXBiVl0pokxsptZy5F2dx8f/24OtfKbI1X0uSM8=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/465187.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/465187.diff"
-      }
-    },
     "nixpkgs-patcher": {
       "locked": {
-        "lastModified": 1762257953,
-        "narHash": "sha256-k5nRdIiYlOXCKaHwL8lnNW6Q7VcOsHNQzE8Oo/Q0e4w=",
+        "lastModified": 1764189861,
+        "narHash": "sha256-TCol1ASMY2g7K8idtY9eP7ISlkhaX5T3EFC05TH4VIU=",
         "owner": "gepbird",
         "repo": "nixpkgs-patcher",
-        "rev": "2ca07dcc1204b25757cf2f0e5a9335d9b36b2298",
+        "rev": "cf110da81fa1e3362dd9b97bf722a48e12d5e1a9",
         "type": "github"
       },
       "original": {
@@ -282,11 +270,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1763582179,
-        "narHash": "sha256-1aQmUpl2dNNY2NaxAFRrOOgibEcFM/7ekkW/2Rwk4RY=",
+        "lastModified": 1764404323,
+        "narHash": "sha256-lyAJQNdm/ZRfH6mDXLIA8/g2tCuHlHEfthC0UA+BLFs=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "382dd3782d5f35ddfaf5ab20b460bd9d8f8f2f88",
+        "rev": "5a7ff5a222e1422c4f129f64e10ebecf78ace9f8",
         "type": "github"
       },
       "original": {
@@ -311,11 +299,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763149332,
-        "narHash": "sha256-uKUkdHsWBsrFBkucEy3T+svVWOKv+6FGrPsVzLxFQfE=",
+        "lastModified": 1763914740,
+        "narHash": "sha256-R3+0AGXsV0DeYA9AkS+7paEhBgvVu4UUUSx5kps7YYQ=",
         "owner": "gepbird",
         "repo": "nvim",
-        "rev": "94305602340dad3ebc9181e72dc132097a98dae0",
+        "rev": "23fa22278dfff2a9ecdfc146a4e4a148acdeb150",
         "type": "github"
       },
       "original": {
@@ -352,7 +340,6 @@
         "nix-index-database": "nix-index-database",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-tmux-3-6": "nixpkgs-patch-tmux-3-6",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
