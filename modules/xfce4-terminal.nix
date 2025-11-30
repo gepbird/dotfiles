@@ -5,11 +5,10 @@ self:
 }:
 
 {
-  hm-gep.home.packages =
-    with pkgs;
-    self.lib.maybeCachePackages self [
-      xfce.xfce4-terminal
-    ];
+  hm-gep.home.packages = with pkgs; [
+    (self.lib.maybeCacheDerivation "nur.xfce4-terminal-sixel-${self.inputs.nur.narHash}-nixpkgs-overlayed-${self.lib.nixpkgsHash self}" nur.repos.gepbird.xfce.xfce4-terminal-sixel)
+  ];
+
   programs.xfconf.enable = true;
   hm-gep.xfconf = {
     enable = true;
