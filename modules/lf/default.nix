@@ -76,7 +76,7 @@ with packages;
       }}
 
       cmd compress ''${{
-        ${getExe ouch} compress $f $1
+        ${getExe ouch} compress $fx $1
       }}
 
       cmd edit $set -f; nvim $f
