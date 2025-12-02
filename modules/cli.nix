@@ -26,6 +26,7 @@ in
       dig
       dos2unix
       dragon-drop
+      dust
       exiftool
       eza
       fd
