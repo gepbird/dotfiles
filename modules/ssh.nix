@@ -55,8 +55,4 @@ self:
   hm-gep.services.ssh-agent = {
     enable = true;
   };
-
-  nixpkgs.overlays = [
-    (self.lib.maybeCachePackageOverlay self "openssh")
-  ];
 }
