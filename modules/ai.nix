@@ -11,9 +11,11 @@ in
 {
   age.secrets = {
     openai-api-key.owner = config.users.users.gep.name;
+    gemini-api-key.owner = config.users.users.gep.name;
   };
 
   hm-gep.home.sessionVariables = {
     OPENAI_API_KEY = "$(cat ${config.age.secrets.openai-api-key.path or stub})";
+    GEMINI_API_KEY = "$(cat ${config.age.secrets.gemini-api-key.path or stub})";
   };
 }
