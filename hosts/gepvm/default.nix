@@ -10,11 +10,11 @@
   ]
   ++ self.nixosModules.allImportsExcept [
     "adb"
+    "ai"
     "anydesk-download"
     "arduino"
     "at"
     "c"
-    "chatgpt"
     "clac"
     "config-formats"
     "direnv"
