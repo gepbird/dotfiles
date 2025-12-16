@@ -104,6 +104,7 @@ in
           "gep"
         ];
         warn-dirty = false;
+        max-jobs = if config.networking.hostName == "geptop-xmg" then 8 else 4;
       };
     extraOptions = lib.mkIf (config.age.secrets ? nix-github-access-token) ''
       !include ${config.age.secrets.nix-github-access-token.path}
