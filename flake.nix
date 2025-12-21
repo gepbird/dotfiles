@@ -32,11 +32,6 @@
       inputs.systems.follows = "";
       inputs.darwin.follows = "";
     };
-    nix-matlab = {
-      url = "gitlab:doronbehar/nix-matlab";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "";
-    };
     nvim-gep = {
       url = "github:gepbird/nvim";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -14,7 +14,6 @@
     "games"
     "java"
     "latex"
-    "matlab"
     "network-bridge"
     "nvidia"
     "php"

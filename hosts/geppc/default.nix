@@ -12,7 +12,6 @@
     "flutter"
     "latex"
     "light"
-    "matlab"
     "network-bridge"
     "php"
     "vmware"

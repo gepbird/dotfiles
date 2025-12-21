@@ -35,7 +35,6 @@
     "latex"
     "libreoffice"
     "light"
-    "matlab"
     "mpv"
     "network-bridge"
     "nvidia"
