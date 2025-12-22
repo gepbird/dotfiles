@@ -38,13 +38,6 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.systems.follows = "systems";
     };
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
-      inputs.nixpkgs.follows = "";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.flakey-profile.follows = "";
-      inputs.lix.follows = "";
-    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "";
@@ -65,10 +58,6 @@
     };
     systems = {
       url = "github:nix-systems/default";
-    };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
     };
   };
 

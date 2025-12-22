@@ -4,13 +4,9 @@ self:
 }:
 
 {
-  imports = [
-    self.inputs.lix-module.nixosModules.lixFromNixpkgs
-  ];
-
   nixpkgs.overlays = [
     (final: prev: {
-      lix = prev.lixPackageSets.lix_2_93.lix.overrideAttrs (o: {
+      nix = prev.lixPackageSets.lix_2_93.lix.overrideAttrs (o: {
         patches = (o.patches or [ ]) ++ [
           (prev.fetchpatch2 {
             name = "add-inputs-self-submodules-flake-attribute.patch";
