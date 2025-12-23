@@ -35,7 +35,7 @@ in
       "nix-cache.tchfoo.com-1:pWK4l0phRA3bE0CviZodEQ5mWAQYoiuVi2LML+VNtNY="
     ];
     secret-key-files = [
-      config.age.secrets."nix-cache.tchfoo.com-1.sec".path
+      config.secrets.gep."nix-cache.tchfoo.com-1.sec"
     ];
   };
 }

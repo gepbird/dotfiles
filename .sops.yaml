@@ -1,0 +1,9 @@
+keys:
+  - &geppc-host age1as4eqaevhamx3w4kzel6pfdzu8dgtta9cjcytma6cpx30f8qrqhsgw8gnk
+  - &geptop-xmg-host age1gjv0dnpuuh05f8pdsz0pk2t3vjxrtpwvyk69h2damwr473ztpals96nxvc
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+        - *geppc-host
+        - *geptop-xmg-host

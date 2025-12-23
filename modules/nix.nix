@@ -72,8 +72,8 @@ in
     })
   ];
 
-  age.secrets = {
-    nix-github-access-token.owner = config.users.users.gep.name;
+  sops.secrets = {
+    "gep/nix-github-access-token".owner = config.users.users.gep.name;
   };
 
   nix = {
@@ -106,8 +106,8 @@ in
         warn-dirty = false;
         max-jobs = if config.networking.hostName == "geptop-xmg" then 8 else 4;
       };
-    extraOptions = lib.mkIf (config.age.secrets ? nix-github-access-token) ''
-      !include ${config.age.secrets.nix-github-access-token.path}
+    extraOptions = lib.mkIf (config.secrets.gep ? nix-github-access-token) ''
+      !include ${config.secrets.gep.nix-github-access-token}
     '';
   };
 

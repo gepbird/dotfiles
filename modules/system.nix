@@ -53,7 +53,7 @@ self:
       "wheel"
     ];
     hashedPasswordFile =
-      config.age.secrets.system-password.path or (toString (
+      config.secrets.gep.system-password.path or (toString (
         pkgs.writeText "system-password-stub" "$6$Z6Mge73J$mBdqB5EcjwEb/QifNdBPVyVgeIz6hL4RQpDGACssXrCShUkVyEdehBAzPEltCfNXZof5Icg3aRoRa3nlaPtAH."
       ));
   };

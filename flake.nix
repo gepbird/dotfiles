@@ -32,6 +32,10 @@
       inputs.systems.follows = "";
       inputs.darwin.follows = "";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvim-gep = {
       url = "github:gepbird/nvim";
       inputs.nixpkgs.follows = "nixpkgs";

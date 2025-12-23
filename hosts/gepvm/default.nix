@@ -64,7 +64,7 @@
     device = lib.mkForce "/dev/vda";
   };
 
-  age.secrets = lib.mkForce { };
+  sops.secrets = lib.mkForce { };
 
   networking.hostName = "gepvm";
 

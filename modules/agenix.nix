@@ -20,7 +20,10 @@ let
     ;
 
   secretsDirectory = toString ../secrets;
-  contents = removeAttrs (readDir secretsDirectory) [ "secrets.nix" ];
+  contents = removeAttrs (readDir secretsDirectory) [
+    "secrets.nix"
+    "secrets.yaml"
+  ];
   files = attrNames (filterAttrs (name: type: type == "regular") contents);
   directories = attrNames (
     filterAttrs (name: type: type == "directory" || type == "symlink") contents
