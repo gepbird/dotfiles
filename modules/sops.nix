@@ -73,7 +73,11 @@ in
       inherit secrets;
     };
 
-    environment.systemPackages = [ pkgs.sops ];
+    environment.systemPackages =
+      with pkgs;
+      self.lib.maybeCachePackages self [
+        sops
+      ];
   };
 
   options.secrets = secretOptions;
