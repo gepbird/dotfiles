@@ -2,13 +2,6 @@
   description = "My NixOS configuration for my PC and laptop";
 
   inputs = {
-    # required for dotfiles-work submodule
-    # https://git.lix.systems/lix-project/lix/issues/942
-    # this doesn't work when using this flake in another flake
-    #self.submodules = true;
-    # for now use the long command:
-    # `nom build ".?submodules=1#nixosConfigurations.$(hostname).config.system.build.toplevel" && sudo result/bin/switch-to-configuration switch`
-
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
