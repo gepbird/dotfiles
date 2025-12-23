@@ -55,7 +55,8 @@
     "vscode"
     "webdev"
     "wireshark"
-    "work"
+    "work-git"
+    "work-wireguard"
     "zathura"
   ];
 
