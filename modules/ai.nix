@@ -16,6 +16,6 @@ in
 
   hm-gep.home.sessionVariables = {
     OPENAI_API_KEY = "$(cat ${config.secrets.gep.ai-api-keys.openai or stub})";
-    GEMINI_API_KEY = "$(cat ${config.secrets.gep.ai.api-keys.gemini or stub})";
+    GEMINI_API_KEY = "$(cat ${config.secrets.gep.ai-api-keys.gemini or stub})";
   };
 }
