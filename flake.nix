@@ -18,13 +18,6 @@
       url = "github:gepbird/dwm";
       inputs.nixpkgs.follows = "";
     };
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "";
-      inputs.home-manager.follows = "";
-      inputs.systems.follows = "";
-      inputs.darwin.follows = "";
-    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
