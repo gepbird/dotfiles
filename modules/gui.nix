@@ -14,7 +14,6 @@ self:
       bruno
       dbeaver-bin
       element-desktop
-      fractal
       gimp3
       grayjay
       kdePackages.kdenlive
