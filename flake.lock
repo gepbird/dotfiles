@@ -5,17 +5,17 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1761464095,
-        "narHash": "sha256-Mico/3X9uO6bUSh/Bv90dbTMVI+w/8k8pBVguTwlGrI=",
-        "owner": "gepbird",
-        "repo": "dwm",
-        "rev": "1a4d59d20072b046482a87be18174c61335690d5",
-        "type": "github"
+        "lastModified": 1766569080,
+        "narHash": "sha256-P1w+Pfw3DiMESkRxJISJ1xMEngQ42lDpC3Rf2MoNAD0=",
+        "ref": "refs/heads/rice",
+        "rev": "5a6862a0247710fb9fa831190571bcf871c5d227",
+        "revCount": 1764,
+        "type": "git",
+        "url": "https://git.tchfoo.com/gepbird/dwm"
       },
       "original": {
-        "owner": "gepbird",
-        "repo": "dwm",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.tchfoo.com/gepbird/dwm"
       }
     },
     "flake-parts": {
@@ -213,17 +213,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1766360472,
-        "narHash": "sha256-aE4rYkhlZcATEwMFIpiBO+LqZFMzGR0NHbKwAD1Kb3Y=",
-        "owner": "gepbird",
-        "repo": "nvim",
-        "rev": "ae41e94c1f5c54addfd2d424a0faf0d665c195b4",
-        "type": "github"
+        "lastModified": 1766568549,
+        "narHash": "sha256-f8Nph03Y7mzehtUhNJK+S+u63lBZJ7i4n8EU1GRYtSE=",
+        "ref": "refs/heads/main",
+        "rev": "5a0910846c385ba01566f8fddd64d2918188f33b",
+        "revCount": 90,
+        "type": "git",
+        "url": "https://git.tchfoo.com/gepbird/nvim"
       },
       "original": {
-        "owner": "gepbird",
-        "repo": "nvim",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.tchfoo.com/gepbird/nvim"
       }
     },
     "nvim-treesitter-textobjects": {

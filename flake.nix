@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "";
     };
     dwm-gep = {
-      url = "github:gepbird/dwm";
+      url = "git+https://git.tchfoo.com/gepbird/dwm";
       inputs.nixpkgs.follows = "";
     };
     sops-nix = {
@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim-gep = {
-      url = "github:gepbird/nvim";
+      url = "git+https://git.tchfoo.com/gepbird/nvim";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.systems.follows = "systems";
