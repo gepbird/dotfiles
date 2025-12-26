@@ -38,6 +38,7 @@ self:
     matchBlocks = {
       "*" = {
         extraOptions.StrictHostKeyChecking = "no";
+        identityFile = "~/.ssh/id_ed25519";
       };
       "raspi.tchfoo.com" = {
         port = 42727;
