@@ -20,6 +20,7 @@ self:
     )
   ];
   home-manager = {
+    backupCommand = lib.getExe pkgs.trash-cli;
     useGlobalPkgs = true;
 
     users.gep = {
