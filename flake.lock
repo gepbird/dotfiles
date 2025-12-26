@@ -132,6 +132,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-nixos-ente-auth-init": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-N9WJ38PhuI2YE+newloJkeOZMvj+UPY/SRMHGTdufIg=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/421940.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/421940.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1765447685,
@@ -250,6 +262,7 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-nixos-ente-auth-init": "nixpkgs-patch-nixos-ente-auth-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",

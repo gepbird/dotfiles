@@ -5,13 +5,10 @@ self:
 }:
 
 {
-  hm-gep.home.packages =
-    with pkgs;
-    self.lib.maybeCachePackages self [
-      ente-auth
-    ];
-
-  services.gnome.gnome-keyring.enable = true;
+  programs.ente-auth = {
+    enable = true;
+    package = self.lib.maybeCachePackage self pkgs.ente-auth;
+  };
 
   nixpkgs.overlays = [
     (self.lib.maybeCachePackageOverlay self "grc")
