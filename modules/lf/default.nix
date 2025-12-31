@@ -20,7 +20,7 @@ let
       pistol
       zoxide
       ;
-    inherit (pkgs.perl540Packages)
+    inherit (pkgs.perlPackages)
       FileMimeInfo
       ;
     inherit (pkgs.xfce)
