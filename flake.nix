@@ -10,6 +10,14 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
+    nixpkgs-patch-grayjay-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/475903.diff";
+      flake = false;
+    };
+    nixpkgs-patch-nvim-treesitter-legacy = {
+      url = "https://github.com/NixOS/nixpkgs/pull/472119.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
@@ -25,6 +33,8 @@
     nvim-gep = {
       url = "git+https://git.tchfoo.com/gepbird/nvim";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-patcher.follows = "";
+      inputs.nixpkgs-patch-nvim-treesitter-legacy.follows = "nixpkgs-patch-nvim-treesitter-legacy";
       inputs.flake-parts.follows = "flake-parts";
       inputs.systems.follows = "systems";
     };
