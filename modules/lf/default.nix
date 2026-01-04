@@ -18,13 +18,11 @@ let
       glib
       lf
       pistol
+      xfce4-terminal
       zoxide
       ;
     inherit (pkgs.perlPackages)
       FileMimeInfo
-      ;
-    inherit (pkgs.xfce)
-      xfce4-terminal
       ;
   };
 
