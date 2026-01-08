@@ -14,6 +14,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/472119.diff";
       flake = false;
     };
+    nixpkgs-patch-lurk-0-3-11 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/477254.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";

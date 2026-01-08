@@ -4,17 +4,6 @@ self:
   ...
 }:
 
-let
-  lurk = pkgs.lurk.overrideAttrs (o: {
-    patches = (o.patches or [ ]) ++ [
-      (pkgs.fetchpatch2 {
-        name = "unknown-syscall-workaround.patch";
-        url = "https://github.com/gepbird/lurk/commit/41ec25cda933fb9f3a8e55f8b3683b8f628e938c.patch";
-        hash = "sha256-7jWTv/OA5B2trK6sBx/PXPy2fmDwSguup8vVxt/ZXEU=";
-      })
-    ];
-  });
-in
 {
   hm-gep.home.packages =
     with pkgs;

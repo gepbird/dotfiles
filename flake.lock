@@ -132,6 +132,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-lurk-0-3-11": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-/JJBaQuFlriTrD2x8Fa8r8FHzpjWFcN5rkbi/natyY0=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/477254.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/477254.diff"
+      }
+    },
     "nixpkgs-patch-nvim-treesitter-legacy": {
       "flake": false,
       "locked": {
@@ -266,6 +278,7 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-lurk-0-3-11": "nixpkgs-patch-lurk-0-3-11",
         "nixpkgs-patch-nvim-treesitter-legacy": "nixpkgs-patch-nvim-treesitter-legacy",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
