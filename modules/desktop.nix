@@ -16,4 +16,14 @@ self:
   };
 
   hm-gep.xdg.mimeApps.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals =
+      with pkgs;
+      self.lib.maybeCachePackages self [
+        xdg-desktop-portal-gtk
+      ];
+    config.common.default = [ "gtk" ];
+  };
 }
