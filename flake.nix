@@ -12,6 +12,10 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
+    nixpkgs-patch-linux_zen-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/482971.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
