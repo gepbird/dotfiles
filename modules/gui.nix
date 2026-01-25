@@ -4,6 +4,11 @@ self:
   ...
 }:
 
+let
+  pkgs-kdenlive = import self.inputs.nixpkgs-kdenlive {
+    inherit (pkgs.stdenv.hostPlatform) system;
+  };
+in
 {
   hm-gep.home.packages =
     with pkgs;
@@ -16,7 +21,7 @@ self:
       element-desktop
       gimp3
       grayjay
-      kdePackages.kdenlive
+      #kdePackages.kdenlive
       nemo
       pavucontrol
       qbittorrent
@@ -31,6 +36,9 @@ self:
       ungoogled-chromium
       xclicker
       xzoom
+    ]
+    ++ [
+      pkgs-kdenlive.kdePackages.kdenlive
     ];
 
   # if installed as a home-manager package, the popup for entering the password doesn't come up and must be ran with sudo
