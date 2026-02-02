@@ -40,6 +40,7 @@ in
       dix
       hydra-check
       nix-diff
+      nix-eval-jobs
       nix-inspect
       nix-prefetch-git
       nix-tree
