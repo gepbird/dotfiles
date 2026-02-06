@@ -7,7 +7,6 @@ self:
 {
   services.openssh = {
     enable = true;
-    package = self.lib.maybeCachePackage self pkgs.openssh;
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
