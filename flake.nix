@@ -6,8 +6,6 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
       #url = "/home/gep/nixpkgs";
     };
-    # TODO: remove after https://github.com/NixOS/nixpkgs/issues/483540
-    nixpkgs-kdenlive.url = "github:NixOS/nixpkgs/9d3f216d67d8a33c7171c72e030f0ffb14cf886c";
     nixpkgs-patcher = {
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
