@@ -7,6 +7,7 @@ self:
 
 {
   boot = {
+    enableContainers = true;
     supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
     loader = {
