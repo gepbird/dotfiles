@@ -10,6 +10,10 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
+    nixpkgs-patch-hytale-launcher = {
+      url = "https://github.com/NixOS/nixpkgs/pull/479368.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
