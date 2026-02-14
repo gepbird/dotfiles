@@ -53,8 +53,8 @@ self:
       wget
       xcolor
       xdotool
-      xorg.xev
-      xorg.xkill
+      xev
+      xkill
       xsel
       yaml2nix
     ];
