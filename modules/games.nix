@@ -19,7 +19,7 @@ self:
       osu-lazer-bin
       prismlauncher
       r2modman
-      wineWowPackages.staging
+      wineWow64Packages.staging
       winetricks
     ];
 
