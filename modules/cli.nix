@@ -29,6 +29,7 @@ self:
       inetutils
       inotify-tools
       jq
+      just
       libnotify
       lsof
       lurk
@@ -44,6 +45,7 @@ self:
       sd
       sqlite-interactive
       sshfs
+      stress
       sysstat
       sysz
       termdown
