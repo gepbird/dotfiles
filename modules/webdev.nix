@@ -11,6 +11,7 @@ self:
       emmet-language-server
       nodePackages.typescript-language-server
       nodejs
+      pnpm
       prettier
       stylelint-lsp
       vscode-langservers-extracted # html, css, json, eslint
