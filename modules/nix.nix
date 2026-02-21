@@ -81,32 +81,23 @@ in
     nixPath = [
       "nixpkgs=${nixpkgs}"
     ];
-    settings =
-      let
-        caches = [
-          {
-            substituter = "https://nix-community.cachix.org";
-            trusted-public-key = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
-          }
-          {
-            substituter = "https://gepbird-nur-packages.cachix.org";
-            trusted-public-key = "gepbird-nur-packages.cachix.org-1:Ip2iveknanFBbJ2DFWk8cDomfRquUJiMWS/2fSeuMis=";
-          }
-        ];
-      in
-      {
-        experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
-        substituters = map (cache: cache.substituter) caches;
-        trusted-public-keys = map (cache: cache.trusted-public-key) caches;
-        trusted-users = [
-          "gep"
-        ];
-        warn-dirty = false;
-        max-jobs = if config.networking.hostName == "geptop-xmg" then 8 else 4;
-      };
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [
+        "https://nix-cache.tchfoo.com"
+      ];
+      trusted-public-keys = [
+        "nix-cache.tchfoo.com-1:pWK4l0phRA3bE0CviZodEQ5mWAQYoiuVi2LML+VNtNY="
+      ];
+      trusted-users = [
+        "gep"
+      ];
+      warn-dirty = false;
+      max-jobs = if config.networking.hostName == "geptop-xmg" then 8 else 4;
+    };
     extraOptions = lib.mkIf (config.secrets.gep ? nix-github-access-token) ''
       !include ${config.secrets.gep.nix-github-access-token}
     '';
