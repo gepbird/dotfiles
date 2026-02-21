@@ -1,3 +1,4 @@
+# public key: "cache.gepbird.ovh-1:3+1oLReKrK2xdXCcIgei+fdmP/F0+UYZA1uOMbVzWzE="
 self:
 {
   config,
@@ -35,7 +36,7 @@ in
       "nix-cache.tchfoo.com-1:pWK4l0phRA3bE0CviZodEQ5mWAQYoiuVi2LML+VNtNY="
     ];
     secret-key-files = [
-      config.secrets.gep."nix-cache.tchfoo.com-1.sec"
+      config.secrets.gep."cache.gepbird.ovh-1.sec"
     ];
   };
 }
