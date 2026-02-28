@@ -1,4 +1,5 @@
 {
+  config,
   self,
   ...
 }:
@@ -30,6 +31,10 @@
         "dm-snapshot"
       ];
     };
+
+    extraModulePackages = [
+      config.boot.kernelPackages.yt6801
+    ];
   };
 
   networking.hostName = "geptop-xmg";
