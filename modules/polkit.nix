@@ -5,7 +5,7 @@ self:
 }:
 
 let
-  polkit_gnome = self.lib.maybeCachePackage self pkgs.docker;
+  polkit_gnome = self.lib.maybeCachePackage self pkgs.polkit_gnome;
 in
 {
   systemd.user.services = {
