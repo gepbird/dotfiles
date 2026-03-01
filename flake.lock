@@ -22,11 +22,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1771165461,
-        "narHash": "sha256-4G1kpceKx87kbpnutuid3rMD1ivJ2wgFxL2UhVmrjA8=",
+        "lastModified": 1772372331,
+        "narHash": "sha256-NOo9Hb0hnitu1GDxVAgUUmerqhI2k4fB9LvLqY0tSjU=",
         "ref": "refs/heads/rice",
-        "rev": "408e7e72bddb2e9b0417a26e76c7b217f2485cf5",
-        "revCount": 1767,
+        "rev": "3fb1e6e5b6fdd9a9d9847addc02c21ff63d15ce5",
+        "revCount": 1769,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/dwm"
       },
