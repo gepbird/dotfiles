@@ -11,7 +11,6 @@
     "anydesk-download"
     "flutter"
     "latex"
-    "light"
     "network-bridge"
     "php"
     "vmware"

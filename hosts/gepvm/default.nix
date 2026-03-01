@@ -34,7 +34,6 @@
     "java"
     "latex"
     "libreoffice"
-    "light"
     "mpv"
     "network-bridge"
     "nvidia"
