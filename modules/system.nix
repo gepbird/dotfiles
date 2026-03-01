@@ -1,6 +1,7 @@
 self:
 {
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -53,13 +54,8 @@ self:
       "networkmanager"
       "wheel"
     ];
-    hashedPasswordFile =
-      if config.enableSecrets then
-        config.secrets.gep.system-password
-      else
-        (toString (
-          pkgs.writeText "system-password-stub" "$6$Z6Mge73J$mBdqB5EcjwEb/QifNdBPVyVgeIz6hL4RQpDGACssXrCShUkVyEdehBAzPEltCfNXZof5Icg3aRoRa3nlaPtAH."
-        ));
+    hashedPasswordFile = lib.mkIf config.enableSecrets config.secrets.gep.system-password;
+    initialPassword = lib.mkIf (!config.enableSecrets) "gep";
   };
 
   security.sudo-rs = {
