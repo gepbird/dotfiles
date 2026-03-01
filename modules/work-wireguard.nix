@@ -25,7 +25,7 @@ let
 in
 {
   networking.wireguard = {
-    enable = true;
+    enable = config.enableSecrets;
     interfaces = {
       wg0 = {
         ips = [ stub ];
@@ -48,7 +48,7 @@ in
 
   # implementation details are taken from:
   # https://github.com/NixOS/nixpkgs/blob/1306659b587dc277866c7b69eb97e5f07864d8c4/nixos/modules/services/networking/wireguard.nix
-  sops.templates = {
+  sops.templates = lib.optionalAttrs config.enableSecrets {
     wireguard-wg0-start.content = # sh
       ''
         modprobe wireguard || true
@@ -72,7 +72,7 @@ in
       '';
   };
 
-  systemd.services = {
+  systemd.services = lib.optionalAttrs config.enableSecrets {
     wireguard-wg0 = {
       serviceConfig = {
         ExecStart = bootstrapScript "wireguard-wg0-start";

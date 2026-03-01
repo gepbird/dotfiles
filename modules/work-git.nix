@@ -1,6 +1,7 @@
 self:
 {
   config,
+  lib,
   ...
 }:
 
@@ -10,11 +11,9 @@ self:
   };
 
   hm-gep.programs.git = {
-    includes = [
-      {
-        condition = "gitdir:~/work/";
-        path = config.secrets.gep.work.gitconfig;
-      }
-    ];
+    includes = lib.optional config.enableSecrets {
+      condition = "gitdir:~/work/";
+      path = config.secrets.gep.work.gitconfig;
+    };
   };
 }

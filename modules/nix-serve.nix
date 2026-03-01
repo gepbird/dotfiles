@@ -8,7 +8,7 @@ self:
 }:
 
 let
-  enableServing = config.networking.hostName == "geptop-xmg";
+  enableServing = config.networking.hostName == "geptop-xmg" && config.enableSecrets;
 in
 {
   services.nix-serve = {
@@ -26,7 +26,7 @@ in
     };
   };
 
-  nix.settings.secret-key-files = [
-    config.secrets.gep."cache.gepbird.ovh-1.sec"
-  ];
+  nix.settings.secret-key-files =
+    lib.optional config.enableSecrets
+      config.secrets.gep."cache.gepbird.ovh-1.sec";
 }
