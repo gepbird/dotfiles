@@ -62,8 +62,4 @@ self:
     enable = true;
     package = self.lib.maybeCachePackage self pkgs.sudo-rs;
   };
-
-  virtualisation.vmVariant = {
-    enableSecrets = false;
-  };
 }
