@@ -173,6 +173,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/494721.diff"
       }
     },
+    "nixpkgs-patch-packet-tracer-fix-mime": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-1QW2zsDrQ2bUWW+hduD1pOCBKz0XgjwR7yQbPUBG8YA=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1769207991,
@@ -277,6 +289,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-noto-fonts-fix-build": "nixpkgs-patch-noto-fonts-fix-build",
+        "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",

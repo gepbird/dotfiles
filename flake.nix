@@ -18,6 +18,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/494721.diff";
       flake = false;
     };
+    nixpkgs-patch-packet-tracer-fix-mime = {
+      url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
