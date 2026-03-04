@@ -42,11 +42,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769996383,
-        "narHash": "sha256-AnYjnFWgS49RlqX7LrC4uA+sCCDBj0Ry/WOJ5XWAsa0=",
+        "lastModified": 1772408722,
+        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "57928607ea566b5db3ad13af0e57e921e6b12381",
+        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
         "type": "github"
       },
       "original": {
@@ -60,11 +60,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1772330611,
-        "narHash": "sha256-UZjPc/d5XRxvjDbk4veAO4XFdvx6BUum2l40V688Xq8=",
+        "lastModified": 1772569491,
+        "narHash": "sha256-bdr6ueeXO1Xg91sFkuvaysYF0mVdwHBpdyhTjBEWv+s=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "58fd7ff0eec2cda43e705c4c0585729ec471d400",
+        "rev": "924e61f5c2aeab38504028078d7091077744ab17",
         "type": "github"
       },
       "original": {
@@ -135,11 +135,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772198003,
-        "narHash": "sha256-I45esRSssFtJ8p/gLHUZ1OUaaTaVLluNkABkk6arQwE=",
+        "lastModified": 1772542754,
+        "narHash": "sha256-WGV2hy+VIeQsYXpsLjdr4GvHv5eECMISX1zKLTedhdg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "dd9b079222d43e1943b6ebd802f04fd959dc8e61",
+        "rev": "8c809a146a140c5c8806f13399592dbcb1bb5dc4",
         "type": "github"
       },
       "original": {
@@ -152,31 +152,19 @@
     "nixpkgs-patch-hytale-launcher": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-LrMGYPS0e8L6YSWkpgaII0SOFR9xIpyWNraNbGDW9uM=",
+        "narHash": "sha256-7tmj6Xu/s9SznRHaLOFe1MYfshfiRfYMK8aPIN/T0CI=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
       },
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
-      }
-    },
-    "nixpkgs-patch-noto-fonts-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-1hwQn060BgSWFZF0q9ny6763lwUNisWYSW53ceEXK1A=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/494721.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/494721.diff"
       }
     },
     "nixpkgs-patch-packet-tracer-fix-mime": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-1QW2zsDrQ2bUWW+hduD1pOCBKz0XgjwR7yQbPUBG8YA=",
+        "narHash": "sha256-1Tzuqj1146SGCCSwG9ZkEmnO/IIADRcgev9y/+8t4WY=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
       },
@@ -187,11 +175,11 @@
     },
     "nixpkgs-patcher": {
       "locked": {
-        "lastModified": 1769207991,
-        "narHash": "sha256-SwGLSB3H/Lq2gPa2/yCtmcUn8E/fVuPtZ5qnjrDj62s=",
+        "lastModified": 1772571520,
+        "narHash": "sha256-wyMa3TVw55QaKUy86iFEDdw6MARAEm0zGe/PfQ855AA=",
         "owner": "gepbird",
         "repo": "nixpkgs-patcher",
-        "rev": "2e59a7b94478f67e3ac2b221f737fe75c2175edc",
+        "rev": "69d83828fbd61d88eb494d08b2fb7da2c6e2d2fc",
         "type": "github"
       },
       "original": {
@@ -237,11 +225,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1772375218,
-        "narHash": "sha256-GI/4O0GITkeTFrHnXbULOuhdQ1SpAnp2TozvogOkXx4=",
+        "lastModified": 1772577972,
+        "narHash": "sha256-KU1cQoEP2HwtDyn8UBhaBXm2BNVOmgkpBHTsKIBHNXg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "be2890aef34536ae6479db4985f0081fb3fd2d83",
+        "rev": "b4fd104d0118be1a2ab49f402868a40518f07cbf",
         "type": "github"
       },
       "original": {
@@ -288,7 +276,6 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
-        "nixpkgs-patch-noto-fonts-fix-build": "nixpkgs-patch-noto-fonts-fix-build",
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
@@ -305,11 +292,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772340640,
-        "narHash": "sha256-1nq7+Kt5IUBD8Hu3nptVPbMf+22rNJoHT0t9L1X+GKA=",
+        "lastModified": 1772495394,
+        "narHash": "sha256-hmIvE/slLKEFKNEJz27IZ8BKlAaZDcjIHmkZ7GCEjfw=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "dec4d8eac700dcd2fe3c020857d3ee220ec147f1",
+        "rev": "1d9b98a29a45abe9c4d3174bd36de9f28755e3ff",
         "type": "github"
       },
       "original": {

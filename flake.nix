@@ -14,10 +14,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/479368.diff";
       flake = false;
     };
-    nixpkgs-patch-noto-fonts-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/494721.diff";
-      flake = false;
-    };
     nixpkgs-patch-packet-tracer-fix-mime = {
       url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
       flake = false;
