@@ -110,17 +110,6 @@ with packages;
         fi
       }
 
-      # edit a home manager generated file then restore it
-      nixedit() {
-        temp_link=$(mktemp -u)
-        mv $1 $temp_link
-        cat $temp_link > $1
-        $EDITOR $1
-        mv $temp_link $1
-      }
-
-      nixwhere() { realpath $(which $1) }
-
       umask 002 # allow write for group
 
       ulimit -c 0 # prevent creating core dumps (with systemd-coredump disabled)

@@ -22,6 +22,14 @@ let
     nd = "if [[ -e default.nix ]]; then nom develop -f . $@; else nom develop .#$@; fi";
     ne = "if [[ -e default.nix ]]; then nix eval -f . $@; else nix eval .#$@; fi";
     nr = "if [[ -e default.nix ]]; then nix run -f . $@; else nix run .#$@; fi";
+    nixedit = ''
+      temp_link=$(mktemp -u)
+      mv $1 $temp_link
+      cat $temp_link > $1
+      $EDITOR $1
+      mv $temp_link $1
+    '';
+    nixwhere = "realpath $(which $1)";
   };
   aliasFunctionPackages = mapAttrsToList (
     alias: script: writeShellScriptBin alias script
