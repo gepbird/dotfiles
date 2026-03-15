@@ -21,7 +21,7 @@ let
     nb = "if [[ -e default.nix ]]; then nom build -f . $@; else nom build .#$@; fi";
     nd = "if [[ -e default.nix ]]; then nom develop -f . $@; else nom develop .#$@; fi";
     ne = "if [[ -e default.nix ]]; then nix eval -f . $@; else nix eval .#$@; fi";
-    nr = "nix repl -f . $@";
+    nr = "if [[ -e default.nix ]]; then nix run -f . $@; else nix run .#$@; fi";
   };
   aliasFunctionPackages = mapAttrsToList (
     alias: script: writeShellScriptBin alias script
