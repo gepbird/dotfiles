@@ -47,6 +47,7 @@
     "python"
     "rnote"
     "rust"
+    "tailscale"
     "thesis"
     "typst"
     "virt-manager"
