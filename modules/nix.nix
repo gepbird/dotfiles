@@ -22,6 +22,7 @@ let
     nd = "if [[ -e default.nix ]]; then nom develop -f . $@; else nom develop .#$@; fi";
     ne = "if [[ -e default.nix ]]; then nix eval -f . $@; else nix eval .#$@; fi";
     nr = "if [[ -e default.nix ]]; then nix run -f . $@; else nix run .#$@; fi";
+    ns = "nix shell nixpkgs#$1 \${@:2}";
     nixedit = ''
       temp_link=$(mktemp -u)
       mv $1 $temp_link
