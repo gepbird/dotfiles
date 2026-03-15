@@ -57,6 +57,8 @@ with packages;
     };
 
     shellAliases = {
+      e = "exit";
+
       ls = "${getExe eza} --color=always --group-directories-first --icons=auto";
       cat = "${getExe bat} --style rule --style snip --style changes --style header";
       cut = getExe hck;
