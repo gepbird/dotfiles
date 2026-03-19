@@ -28,6 +28,7 @@ self:
       hck
       inetutils
       inotify-tools
+      iotop
       jq
       just
       libnotify
@@ -40,9 +41,12 @@ self:
       perlPackages.FileMimeInfo
       procs
       progress
+      python3Packages.py-cpuinfo
       ripgrep
+      s-tui
       screen
       sd
+      smartmontools
       sqlite-interactive
       sshfs
       stress
