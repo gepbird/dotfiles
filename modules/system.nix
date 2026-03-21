@@ -12,7 +12,7 @@ self:
     supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
     loader = {
-      timeout = 1;
+      timeout = lib.mkForce 1;
       efi.canTouchEfiVariables = true;
       grub = {
         useOSProber = true;
