@@ -22,6 +22,18 @@ self:
     };
   };
 
+  # fix file copy incorrectly ending minutes earlier before it's really written on pendrives
+  boot.kernel.sysctl = {
+    # start background writeback at 5MB instead of 10%
+    "vm.dirty_background_bytes" = 5242880;
+    # block new writes at 50MB instead of 20%
+    "vm.dirty_bytes" = 52428800;
+    # write back anything older than 2 seconds (default is 30s)
+    "vm.dirty_expire_centisecs" = 200;
+    # wake up flusher thread every 1 second
+    "vm.dirty_writeback_centisecs" = 100;
+  };
+
   # for auto mounting external storages
   services.gvfs = {
     enable = true;
