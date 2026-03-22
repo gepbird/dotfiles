@@ -37,6 +37,7 @@ self:
       moreutils # for ts
       ncdu
       nmap
+      openssl
       pciutils
       perlPackages.FileMimeInfo
       procs
