@@ -144,6 +144,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
       }
     },
+    "nixpkgs-patch-no-acme-email": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-DqYv0ZCTzkG6lcH/h/FPPpoVkR2JFHwg4+awhCa7GT0=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/489983.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/489983.diff"
+      }
+    },
     "nixpkgs-patch-packet-tracer-fix-mime": {
       "flake": false,
       "locked": {
@@ -258,6 +270,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
+        "nixpkgs-patch-no-acme-email": "nixpkgs-patch-no-acme-email",
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",

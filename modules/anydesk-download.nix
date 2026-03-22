@@ -19,10 +19,7 @@ self:
     };
   };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "gutyina.gergo.2@gmail.com";
-  };
+  security.acme.acceptTerms = true;
 
   networking.firewall.allowedTCPPorts = [
     80
