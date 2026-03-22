@@ -1,5 +1,6 @@
 self:
 {
+  config,
   pkgs,
   ...
 }:
@@ -98,6 +99,6 @@ self:
     capabilities = "cap_kill+eip";
     owner = "root";
     group = "root";
-    source = "${self.lib.maybeCachePackage self pkgs.bottom}/bin/btm";
+    source = "${config.hm-gep.programs.bottom.package}/bin/btm";
   };
 }
