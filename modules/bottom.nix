@@ -90,4 +90,14 @@ self:
       ];
     };
   };
+
+  # allow users to send signals to any process without sudo
+  security.wrappers.btm = {
+    setuid = false;
+    setgid = false;
+    capabilities = "cap_kill+eip";
+    owner = "root";
+    group = "root";
+    source = "${self.lib.maybeCachePackage self pkgs.bottom}/bin/btm";
+  };
 }
