@@ -13,6 +13,8 @@ self:
     gtk4.extraConfig = {
       gtk-error-bell = false;
     };
+    # TODO: remove when updating stateVersion: https://github.com/nix-community/home-manager/pull/8899
+    gtk4.theme = null;
   };
 
   environment.sessionVariables = {
