@@ -34,18 +34,6 @@ self:
           Requires = [ "graphical-session-pre.target" ];
         };
       };
-
-      # TODO: remove when fixed: https://github.com/nix-community/home-manager/issues/8786
-      home.activation.installPackages = lib.mkForce (
-        config.hm-gep.lib.dag.entryAfter [ "writeBoundary" ] ''
-          nixProfileRemove home-manager-path
-          if [[ -e ${config.hm-gep.home.profileDirectory}/manifest.json ]]; then
-            run nix profile install ${config.hm-gep.home.path}
-          else
-            run nix-env -i ${config.hm-gep.home.path}
-          fi
-        ''
-      );
     };
   };
 }
