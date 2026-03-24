@@ -26,7 +26,7 @@ self:
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrg9sldIBPgx4Jxpa+OZBQGX/ej4rMoi/q7M+48mLYa root@geppc"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3olHivyTuztxmwefBJ5EtsaG2Kff7kDGVUacrFMIFQ gep@raspi-doboz"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGp3MDIeetPKbS95IkRhQm/4Q1tRKd8iVKBcNaWR2TIk gep@raspi5-doboz"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAI7atY2/1xxvfFA8UvieoZg2UHpcnQ7u/IaMbA3OJB4 gep@gepphone"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDPvctVPA1R8A9t9BceYHJeTqIJc4Rkp0NnP5IPqJnUv gep@gepphone"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM5plUDJC9i4F1FG7+lZvWFyYDhse98E94usal1yr3gE gep@gepwin"
   ];
 
