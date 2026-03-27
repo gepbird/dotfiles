@@ -20,6 +20,7 @@ self:
         device = "nodev";
       };
     };
+    zswap.enable = true;
   };
 
   # fix file copy incorrectly ending minutes earlier before it's really written on pendrives
