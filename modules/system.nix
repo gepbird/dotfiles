@@ -14,11 +14,7 @@ self:
     loader = {
       timeout = lib.mkForce 1;
       efi.canTouchEfiVariables = true;
-      grub = {
-        useOSProber = true;
-        efiSupport = true;
-        device = "nodev";
-      };
+      systemd-boot.enable = true;
     };
     zswap.enable = true;
   };

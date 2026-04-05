@@ -22,8 +22,6 @@
   ];
 
   boot = {
-    loader.systemd-boot.enable = true;
-
     initrd = {
       luks.devices.cryptroot.device = "/dev/disk/by-label/NIXOS_LUKS";
       kernelModules = [

@@ -61,8 +61,8 @@
   ];
 
   boot.loader.grub = {
-    efiSupport = lib.mkForce false;
-    device = lib.mkForce "/dev/vda";
+    enable = true;
+    device = "/dev/vda";
   };
 
   enableSecrets = false;
