@@ -22,8 +22,8 @@ self:
   users.users.gep.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID799rcrUU09obAHEqsXteQxPYIedCFlFr3tf0XDDowM gep@geptop-xmg"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbDt4o2HwPry7W6q71ccF2xcBb8+w4V3MUG4Q7z/+vC root@geptop-xmg"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKGW5zKjn01DVf6vTs/D2VV+/awXTNboY1iaCThi2A1v gep@geppc"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrg9sldIBPgx4Jxpa+OZBQGX/ej4rMoi/q7M+48mLYa root@geppc"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJJSiOYxVIEi0pFsTVLWrIEw48u97+I6NnsCo7uI9MA9 gep@geppc-2"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPF1+QvkqS0jAw0q+lRDmN8OtY4ADKm1CxsVnBzGYfZL root@geppc-2"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3olHivyTuztxmwefBJ5EtsaG2Kff7kDGVUacrFMIFQ gep@raspi-doboz"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGp3MDIeetPKbS95IkRhQm/4Q1tRKd8iVKBcNaWR2TIk gep@raspi5-doboz"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDPvctVPA1R8A9t9BceYHJeTqIJc4Rkp0NnP5IPqJnUv gep@gepphone"
