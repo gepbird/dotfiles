@@ -156,6 +156,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
       }
     },
+    "nixpkgs-patch-pi-0-64-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-yUWNEaSebm1u3tHUbcP3TrZHnMKH3gZHnPfDwktJZo8=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/506287.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/506287.diff"
+      }
+    },
     "nixpkgs-patch-zswap-module-init": {
       "flake": false,
       "locked": {
@@ -271,6 +283,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
+        "nixpkgs-patch-pi-0-64-0": "nixpkgs-patch-pi-0-64-0",
         "nixpkgs-patch-zswap-module-init": "nixpkgs-patch-zswap-module-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",

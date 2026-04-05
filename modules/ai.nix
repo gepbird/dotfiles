@@ -19,5 +19,6 @@ self:
     with pkgs;
     self.lib.maybeCachePackages self [
       llama-cpp-vulkan
+      pi-coding-agent
     ];
 }

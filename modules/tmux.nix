@@ -70,6 +70,10 @@ in
 
       # terminal color 8 is different in tmux, change it from default screen
       set-option -g default-terminal "screen-256color"
+
+      # suggested by pi coding agent
+      set-option -g extended-keys on
+      set-option -g extended-keys-format csi-u
     '';
   };
 
