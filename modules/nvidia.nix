@@ -9,10 +9,14 @@ self:
 {
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    open = false; # when enabled lightdm is not visible
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_535;
+    open = false; # "The NVIDIA GPU 0000:01:00.0 (PCI ID: 10de:1b80) installed in this system is not supported by open"
     nvidiaSettings = true;
     forceFullCompositionPipeline = false; # when enabled fixes screen tearing, but disables other monitors
   };
+
+  # legacy nvidia driver doesn't compile with zen kernel
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages;
 
   hm-gep.home.packages =
     with pkgs;

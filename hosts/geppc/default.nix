@@ -22,11 +22,6 @@
       fsType = "ext4";
       options = [ "nofail" ];
     };
-    "/hdd2" = {
-      device = "/dev/disk/by-uuid/E670ED8170ED58B7";
-      fsType = "ntfs";
-      options = [ "nofail" ];
-    };
     "/steam" = {
       device = "/dev/disk/by-uuid/ea9ffffd-d61f-4ad2-9ead-5e3a1fe6276e";
       fsType = "ext4";
@@ -49,14 +44,9 @@
     };
   };
 
+  boot.loader.systemd-boot.enable = true;
+
   networking.hostName = "geppc";
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 8 * 1024;
-    }
-  ];
-
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.11";
 }
