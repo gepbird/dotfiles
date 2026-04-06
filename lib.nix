@@ -32,7 +32,14 @@ let
 
   doCacheDerivations = true;
 
-  cacheDerivation = cacheKey: derivation: builtins.trace "cache=${cacheKey}" derivation;
+  hasMemoizeDerivation =
+    if builtins ? memoizeDerivation then
+      true
+    else
+      builtins.warn "builtins.memoizeDerivation doesn't exist, skipped caching" false;
+  cacheDerivation =
+    cacheKey: derivation:
+    if hasMemoizeDerivation then builtins.memoizeDerivation cacheKey derivation else derivation;
   cachePackage =
     self: package: cacheDerivation "nixpkgs-package-${package.name}-${nixpkgsHash self}" package;
 
