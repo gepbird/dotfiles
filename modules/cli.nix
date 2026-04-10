@@ -38,6 +38,7 @@ self:
       ncdu
       nmap
       openssl
+      pastel
       pciutils
       perlPackages.FileMimeInfo
       procs
