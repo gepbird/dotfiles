@@ -132,6 +132,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-fix-flutter-eval-warning": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-smo3MXy3gPOACPNxdr2H2x4Zpqd8o7s4h1b2FiRbaNw=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/507484.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/507484.diff"
+      }
+    },
     "nixpkgs-patch-hytale-launcher": {
       "flake": false,
       "locked": {
@@ -270,6 +282,7 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-fix-flutter-eval-warning": "nixpkgs-patch-fix-flutter-eval-warning",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patch-zswap-module-init": "nixpkgs-patch-zswap-module-init",
