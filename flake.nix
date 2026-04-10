@@ -46,7 +46,9 @@
       inputs.nixpkgs.follows = "";
     };
     nur = {
-      url = "github:nix-community/NUR";
+      # TODO: remove pin after fixed: https://github.com/nix-community/NUR/pull/1107#issuecomment-4222932898
+      url = "github:nix-community/NUR/b27570902c4578c4357b58cf23f5188293d9f5ba";
+      #url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "";
       inputs.flake-parts.follows = "flake-parts";
     };
