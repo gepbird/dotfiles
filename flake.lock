@@ -132,54 +132,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-hytale-launcher": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-+fF+k8BiwEV68fdEsVGjMKe8CtLwScwCAk0s771843E=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
-      }
-    },
-    "nixpkgs-patch-packet-tracer-fix-mime": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-1Tzuqj1146SGCCSwG9ZkEmnO/IIADRcgev9y/+8t4WY=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/496181.diff"
-      }
-    },
-    "nixpkgs-patch-pi-0-64-0": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-yUWNEaSebm1u3tHUbcP3TrZHnMKH3gZHnPfDwktJZo8=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/506287.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/506287.diff"
-      }
-    },
-    "nixpkgs-patch-zswap-module-init": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-uDWlozVooYiVfEz90v3H3f5hD/a+xjZo/nty4EWVjg8=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/470366.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/470366.diff"
-      }
-    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1772817589,
@@ -281,10 +233,6 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
-        "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
-        "nixpkgs-patch-pi-0-64-0": "nixpkgs-patch-pi-0-64-0",
-        "nixpkgs-patch-zswap-module-init": "nixpkgs-patch-zswap-module-init",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",

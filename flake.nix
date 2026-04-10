@@ -10,22 +10,6 @@
       url = "github:gepbird/nixpkgs-patcher";
       #url = "/home/gep/nixpkgs-patcher";
     };
-    nixpkgs-patch-hytale-launcher = {
-      url = "https://github.com/NixOS/nixpkgs/pull/479368.diff";
-      flake = false;
-    };
-    nixpkgs-patch-packet-tracer-fix-mime = {
-      url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
-      flake = false;
-    };
-    nixpkgs-patch-zswap-module-init = {
-      url = "https://github.com/NixOS/nixpkgs/pull/470366.diff";
-      flake = false;
-    };
-    nixpkgs-patch-pi-0-64-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/506287.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
