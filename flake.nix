@@ -22,10 +22,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/470366.diff";
       flake = false;
     };
-    nixpkgs-patch-pi-0-64-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/506287.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
