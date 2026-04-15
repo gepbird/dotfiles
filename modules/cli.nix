@@ -30,6 +30,7 @@ self:
       inotify-tools
       iotop
       jq
+      jqp
       just
       libnotify
       lsof
