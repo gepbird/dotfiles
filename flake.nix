@@ -18,14 +18,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
       flake = false;
     };
-    nixpkgs-patch-zswap-module-init = {
-      url = "https://github.com/NixOS/nixpkgs/pull/470366.diff";
-      flake = false;
-    };
-    nixpkgs-patch-fix-flutter-eval-warning = {
-      url = "https://github.com/NixOS/nixpkgs/pull/507484.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
