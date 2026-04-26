@@ -9,6 +9,9 @@ self:
   hm-gep.programs.onlyoffice = {
     enable = true;
     package = self.lib.maybeCachePackage self pkgs.onlyoffice-desktopeditors;
+    settings = {
+      UITheme = "theme-contrast-dark";
+    };
   };
 
   hm-gep.xdg.mimeApps.defaultApplications = {
