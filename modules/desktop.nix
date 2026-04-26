@@ -15,7 +15,10 @@ self:
     package = self.lib.maybeCachePackage self pkgs.dunst;
   };
 
-  hm-gep.xdg.mimeApps.enable = true;
+  hm-gep.xdg = {
+    enable = true;
+    mimeApps.enable = true;
+  };
 
   xdg.portal = {
     enable = true;
