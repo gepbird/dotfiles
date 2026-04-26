@@ -5,7 +5,12 @@ self:
 }:
 
 {
-  # manual fix required for fonts to work: https://nixos.wiki/wiki/Onlyoffice#Install_and_use_missing_corefonts
+  # a declerative version of https://wiki.nixos.org/wiki/ONLYOFFICE#Install_and_use_missing_corefonts
+  hm-gep.xdg.dataFile."fonts" = {
+    source = "${pkgs.corefonts}/share/fonts/truetype";
+    target = "fonts";
+  };
+
   hm-gep.programs.onlyoffice = {
     enable = true;
     package = self.lib.maybeCachePackage self pkgs.onlyoffice-desktopeditors;
