@@ -53,8 +53,7 @@ with packages;
     };
 
     sessionVariables = {
-      # TODO: perhaps change back to bool when fixed: https://github.com/nix-community/home-manager/pull/9189#issuecomment-4360897603
-      ZSH_AUTOSUGGEST_MANUAL_REBIND = "true"; # faster prompt
+      ZSH_AUTOSUGGEST_MANUAL_REBIND = true; # faster prompt
     };
 
     shellAliases = {
