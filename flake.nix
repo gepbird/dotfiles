@@ -18,6 +18,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
       flake = false;
     };
+    nixpkgs-patch-wireshark-fix-hash = {
+      url = "https://github.com/NixOS/nixpkgs/pull/515269.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
