@@ -19,6 +19,7 @@ self:
       osu-lazer-bin
       prismlauncher
       r2modman
+      steamcmd
       wineWow64Packages.staging
       winetricks
     ];
