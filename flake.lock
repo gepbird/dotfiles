@@ -43,11 +43,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1777913624,
-        "narHash": "sha256-4MwfrGuqjsnEORQbM3cmkmG/9cWhDV63dTDguDj4FXw=",
+        "lastModified": 1777977606,
+        "narHash": "sha256-8ceIdvijN2tm9fIAUgnIZ8BM8TlsFx7pRYKRoxNsi1k=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a89686d115e970e200eb2caa7603f3673050e00c",
+        "rev": "7ef1c04d11f7ef69fd946b118c768c32de0b89a5",
         "type": "github"
       },
       "original": {
@@ -170,11 +170,11 @@
     },
     "nixpkgs-patcher": {
       "locked": {
-        "lastModified": 1776988475,
-        "narHash": "sha256-A8NZ7PAwmNQ/p9u0+CONi70AzZJHFf/91oPlA9XiLEY=",
+        "lastModified": 1777981454,
+        "narHash": "sha256-mDLzVCux1S24GwbHzwna83HVb9tNgZdJEmWscGlrgsc=",
         "owner": "gepbird",
         "repo": "nixpkgs-patcher",
-        "rev": "0d45855a3c558f4bf067249dae4bef58b4455d85",
+        "rev": "d8645cab832b307e06648fad2a03d96b696d2155",
         "type": "github"
       },
       "original": {
@@ -222,11 +222,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777962000,
-        "narHash": "sha256-Nrr5s5BZM6NSSdTjXY9x0qpFoOX19FFtlbNF+Mf9pRE=",
+        "lastModified": 1777980602,
+        "narHash": "sha256-mZtszpTapnf0+P9NgHuS3Q+QhVFnzteGFQssamS6Rg4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2fcf045936bc226a0f006b2e92cd697478e8df31",
+        "rev": "448a2848ba6e7b83a7c1ea56246e3395a0c9f2c3",
         "type": "github"
       },
       "original": {
@@ -251,11 +251,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777939900,
-        "narHash": "sha256-AtnKGxZZQCRkCgYcAhHbgdfTlpBG2NCcL1hhsq7BWr8=",
+        "lastModified": 1777981650,
+        "narHash": "sha256-mWe84cWqimcCi9V1gKAtTCmN3Y3BnaJMrPo4YMW3r+g=",
         "ref": "refs/heads/main",
-        "rev": "bf6437e9e923a87828ea2607d8fb162afdd5bb34",
-        "revCount": 139,
+        "rev": "29a820e4fc5e9884ae642a10536e755c9c517726",
+        "revCount": 141,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/nvim"
       },
