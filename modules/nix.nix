@@ -4,6 +4,7 @@
   lib,
   nixpkgs,
   self,
+  nix-index-database,
   ...
 }:
 
@@ -38,7 +39,7 @@ let
 in
 {
   imports = [
-    self.inputs.nix-index-database.nixosModules.nix-index
+    nix-index-database.nixosModules.nix-index
   ];
 
   # NOTE: these may not rebuild after changes to lix due to trace-cache, it shouldn't be a problem
