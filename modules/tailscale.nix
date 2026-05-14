@@ -1,8 +1,12 @@
 self:
 {
+  pkgs,
   ...
 }:
 
 {
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    package = self.lib.maybeCachePackage self pkgs.tailscale;
+  };
 }
