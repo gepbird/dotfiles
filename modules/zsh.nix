@@ -1,8 +1,8 @@
-self:
 {
   config,
   pkgs,
   lib,
+  self,
   ...
 }:
 

@@ -1,6 +1,6 @@
-self:
 {
   pkgs,
+  self,
   ...
 }:
 

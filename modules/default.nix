@@ -25,7 +25,7 @@ let
   allModules = listToAttrs (
     map (name: {
       name = replaceStrings [ ".nix" ] [ "" ] name;
-      value = import "${modulesDir}/${name}" self;
+      value = import "${modulesDir}/${name}";
     }) filesAndDirectories
   );
 

@@ -1,4 +1,3 @@
-self:
 {
   lib,
   pkgs,

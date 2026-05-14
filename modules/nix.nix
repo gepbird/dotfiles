@@ -1,9 +1,9 @@
-self:
 {
   config,
   pkgs,
   lib,
   nixpkgs,
+  self,
   ...
 }:
 

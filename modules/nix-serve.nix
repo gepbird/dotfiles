@@ -1,9 +1,9 @@
 # public key: "cache.gepbird.ovh-1:3+1oLReKrK2xdXCcIgei+fdmP/F0+UYZA1uOMbVzWzE="
-self:
 {
   config,
   lib,
   pkgs,
+  self,
   ...
 }:
 

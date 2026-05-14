@@ -1,7 +1,7 @@
-self:
 {
   config,
   pkgs,
+  self,
   ...
 }:
 
