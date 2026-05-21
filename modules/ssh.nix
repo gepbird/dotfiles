@@ -34,20 +34,20 @@ self:
     enable = true;
     package = self.lib.maybeCachePackage self pkgs.openssh;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "*" = {
-        extraOptions.StrictHostKeyChecking = "no";
-        identityFile = "~/.ssh/id_ed25519";
+        StrictHostKeyChecking = "no";
+        IdentityFile = "~/.ssh/id_ed25519";
       };
       "raspi.tchfoo.com" = {
-        port = 42727;
-        forwardX11 = true;
-        forwardX11Trusted = true;
+        Port = 42727;
+        ForwardX11 = true;
+        ForwardX11Trusted = true;
       };
       "raspi5.tchfoo.com" = {
-        port = 42728;
-        forwardX11 = true;
-        forwardX11Trusted = true;
+        Port = 42728;
+        ForwardX11 = true;
+        ForwardX11Trusted = true;
       };
     };
   };
