@@ -56,6 +56,7 @@ self:
       sysstat
       sysz
       termdown
+      tinyxxd
       w3m
       watchexec
       wavemon
