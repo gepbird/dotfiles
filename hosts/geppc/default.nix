@@ -37,11 +37,6 @@
       fsType = "ntfs";
       options = [ "nofail" ];
     };
-    "/ssd" = {
-      device = "/dev/disk/by-uuid/df6f7312-7a1d-4008-af27-cd77bb613f0b";
-      fsType = "btrfs";
-      options = [ "nofail" ];
-    };
   };
 
   networking.hostName = "geppc";
