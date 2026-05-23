@@ -18,10 +18,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
       flake = false;
     };
-    nixpkgs-patch-fix-discord-openasar = {
-      url = "https://github.com/NixOS/nixpkgs/pull/520078.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
