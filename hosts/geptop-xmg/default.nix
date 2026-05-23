@@ -12,7 +12,6 @@
     "anydesk-download"
     "droidcam"
     "flutter"
-    "games"
     "java"
     "latex"
     "network-bridge"
