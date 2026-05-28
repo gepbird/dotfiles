@@ -261,11 +261,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779972819,
-        "narHash": "sha256-dQXyR1rVot496LQlc5f+2U4NXSi6e5i/GWWZSSmskq0=",
+        "lastModified": 1779983305,
+        "narHash": "sha256-+Mmx4kiX4WO26l8JP7kFfBcpvhgy4OQwHTiWuNwNDQg=",
         "ref": "refs/heads/main",
-        "rev": "fe0a651f3e7505a2e1ba4bb1c03733f82a1faed1",
-        "revCount": 179,
+        "rev": "30f57709138f825d7e81072cea5ffcbb573c8ae0",
+        "revCount": 180,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/nvim"
       },
