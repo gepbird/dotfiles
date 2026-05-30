@@ -9,7 +9,7 @@ self:
 {
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+    branch = "legacy_580";
     open = false; # "The NVIDIA GPU 0000:01:00.0 (PCI ID: 10de:1b80) installed in this system is not supported by open"
     nvidiaSettings = true;
     forceFullCompositionPipeline = false; # when enabled fixes screen tearing, but disables other monitors
