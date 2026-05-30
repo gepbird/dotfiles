@@ -33,7 +33,6 @@ self:
           # fix colors being too dark
           [DPY:DVI-D-0]/ColorRange=1
           [DPY:HDMI-0]/ColorRange=1
-          [DPY:DP-1]/ColorRange=1
         '';
       in
       {
