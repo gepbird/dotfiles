@@ -24,6 +24,7 @@ let
     nep = ''nix eval -f . --apply "pkgs: with pkgs; $@" pkgs'';
     nr = "if [[ -e default.nix ]]; then nix run -f . $@; else nix run .#$@; fi";
     ns = "nix shell nixpkgs#$1 \${@:2}";
+    nu = "nix flake update --commit-lock-file";
     nixedit = ''
       temp_link=$(mktemp -u)
       mv $1 $temp_link
