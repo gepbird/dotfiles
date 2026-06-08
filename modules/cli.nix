@@ -13,6 +13,7 @@ self:
       colorized-logs # for ansi2txt
       diffoscopeMinimal
       dig
+      dmidecode
       dos2unix
       dragon-drop
       dust
