@@ -18,6 +18,7 @@ self:
   hm-gep.home.packages =
     with pkgs;
     self.lib.maybeCachePackages self [
+      claude-code
       llama-cpp-vulkan
       pi-coding-agent
     ];
