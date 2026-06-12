@@ -6,7 +6,16 @@ self:
 
 {
   hm-gep.home.packages = with pkgs; [
-    (self.lib.maybeCacheDerivation "nur.xfce4-terminal-sixel-${self.inputs.nur.narHash}-nixpkgs-overlayed-${self.lib.nixpkgsHash self}" nur.repos.gepbird.xfce4-terminal-sixel)
+    (self.lib.maybeCacheDerivation
+      "nur.xfce4-terminal-sixel-shift-enter-${self.inputs.nur.narHash}-nixpkgs-overlayed-${self.lib.nixpkgsHash self}"
+      (
+        nur.repos.gepbird.xfce4-terminal-sixel.overrideAttrs (old: {
+          patches = (old.patches or [ ]) ++ [
+            ./shift-enter.patch
+          ];
+        })
+      )
+    )
   ];
 
   programs.xfconf.enable = true;
