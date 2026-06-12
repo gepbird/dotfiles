@@ -16,7 +16,7 @@ self:
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
     };
-    zswap.enable = true;
+    zswap.enable = config.swapDevices != [ ];
   };
 
   # fix file copy incorrectly ending minutes earlier before it's really written on pendrives
