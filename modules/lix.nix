@@ -17,6 +17,7 @@ self:
           })
         ];
       });
+      nix-eval-jobs = prev.lixPackageSets.lix_2_95.nix-eval-jobs.override { lix = final.nix; };
     })
   ];
 }
