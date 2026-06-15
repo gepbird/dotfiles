@@ -21,5 +21,6 @@ self:
       claude-code
       llama-cpp-vulkan
       pi-coding-agent
+      qwen-code
     ];
 }
