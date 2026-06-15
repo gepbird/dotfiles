@@ -29,6 +29,8 @@ self:
     "vm.dirty_expire_centisecs" = 200;
     # wake up flusher thread every 1 second
     "vm.dirty_writeback_centisecs" = 100;
+    # clear filesystem caches more agressively (default is 100)
+    "vm.vfs_cache_pressure" = 500;
   };
 
   # for auto mounting external storages
