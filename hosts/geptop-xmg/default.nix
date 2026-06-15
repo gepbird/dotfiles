@@ -26,11 +26,13 @@
       kernelModules = [
         "cryptd"
         "dm-snapshot"
+        "ryzen_smu"
       ];
     };
 
-    extraModulePackages = [
-      config.boot.kernelPackages.yt6801
+    extraModulePackages = with config.boot.kernelPackages; [
+      yt6801
+      ryzen-smu
     ];
   };
 
