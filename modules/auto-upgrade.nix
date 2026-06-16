@@ -8,6 +8,9 @@ self:
   system.autoUpgrade = {
     enable = true;
     flake = "git+https://git.tchfoo.com/gepbird/dotfiles#${config.networking.hostName}";
+    flags = [
+      "--accept-flake-config"
+    ];
     dates = "03:00";
     persistent = false;
     upgrade = false;
