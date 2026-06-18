@@ -90,7 +90,7 @@ in
 
   nix = {
     nixPath = [
-      "nixpkgs=${nixpkgs}"
+      "nixpkgs=${config.nixpkgs-patcher.patchedNixpkgs}"
     ];
     settings = {
       experimental-features = [
