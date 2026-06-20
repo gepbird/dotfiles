@@ -24,6 +24,9 @@ self:
       network_graph = {
         legend_position = "left";
       };
+      temperature_graph = {
+        legend_position = "left";
+      };
       processes = {
         default_sort = "mem";
         columns = [
@@ -68,15 +71,15 @@ self:
           ratio = 30;
           child = [
             {
-              ratio = 20;
-              type = "temp";
+              ratio = 35;
+              type = "temperature_graph";
             }
             {
-              ratio = 50;
+              ratio = 30;
               type = "disk";
             }
             {
-              ratio = 40;
+              ratio = 35;
               type = "net";
             }
           ];
