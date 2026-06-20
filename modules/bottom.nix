@@ -25,6 +25,7 @@ self:
         legend_position = "left";
       };
       processes = {
+        default_sort = "mem";
         columns = [
           "name"
           "mem"
