@@ -2,6 +2,7 @@ self:
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 
@@ -23,29 +24,33 @@ self:
       network_graph = {
         legend_position = "left";
       };
-      processes.columns = [
-        "name"
-        "mem"
-        "cpu%"
-        "gmem"
-        "gpu%"
-        "pid"
-        "read"
-        "write"
-        "tread"
-        "twrite"
-        "state"
-        "user"
-        "time"
-      ];
-      disk.columns = [
-        "mount"
-        "r/s"
-        "w/s"
-        "used%"
-        "total"
-        "disk"
-      ];
+      processes = {
+        columns = [
+          "name"
+          "mem"
+          "cpu%"
+          "gmem"
+          "gpu%"
+          "pid"
+          "read"
+          "write"
+          "tread"
+          "twrite"
+          "state"
+          "user"
+          "time"
+        ];
+      };
+      disk = {
+        columns = [
+          "mount"
+          "r/s"
+          "w/s"
+          "used%"
+          "total"
+          "disk"
+        ];
+      };
       row = [
         {
           ratio = 40;
@@ -95,6 +100,6 @@ self:
     capabilities = "cap_kill+eip";
     owner = "root";
     group = "root";
-    source = "${config.hm-gep.programs.bottom.package}/bin/btm";
+    source = lib.getExe config.hm-gep.programs.bottom.package;
   };
 }
