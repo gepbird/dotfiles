@@ -18,6 +18,7 @@ self:
         hide_k_threads = true;
         process_memory_as_value = true;
       };
+      memory_graph.short_gpu_names = true;
       processes.columns = [
         "name"
         "mem"
