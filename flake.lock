@@ -153,6 +153,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-bottom-0-13-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-y++trNDnYYdmdCzRjp6WPdLj0AlIGxVepinrE1YIXNk=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/533549.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/533549.diff"
+      }
+    },
     "nixpkgs-patch-hytale-launcher": {
       "flake": false,
       "locked": {
@@ -281,6 +293,7 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-bottom-0-13-0": "nixpkgs-patch-bottom-0-13-0",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patcher": "nixpkgs-patcher",
