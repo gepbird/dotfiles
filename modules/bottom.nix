@@ -13,12 +13,16 @@ self:
       flags = {
         color = "gruvbox";
         default_time_value = "30s";
-        memory_legend = "left";
-        network_legend = "left";
         hide_k_threads = true;
         process_memory_as_value = true;
       };
-      memory_graph.short_gpu_names = true;
+      memory_graph = {
+        legend_position = "left";
+        short_gpu_names = true;
+      };
+      network_graph = {
+        legend_position = "left";
+      };
       processes.columns = [
         "name"
         "mem"
