@@ -10,7 +10,8 @@ self:
   boot = {
     enableContainers = true;
     supportedFilesystems = [ "ntfs" ];
-    kernelPackages = pkgs.linuxPackages_zen;
+    # TODO: enable after fixed: https://github.com/NixOS/nixpkgs/issues/535850
+    #kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       timeout = lib.mkForce 1;
       efi.canTouchEfiVariables = true;
