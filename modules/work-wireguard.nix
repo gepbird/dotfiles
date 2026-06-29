@@ -51,6 +51,8 @@ in
   sops.templates = lib.optionalAttrs config.enableSecrets {
     wireguard-wg0-start.content = # sh
       ''
+        set -euo pipefail
+
         modprobe wireguard || true
 
         ip link add dev wg0 type wireguard
@@ -60,12 +62,16 @@ in
       '';
     wireguard-wg0-peer-work-start.content = # sh
       ''
+        set -euo pipefail
+
         wg set wg0 peer ${placeholder "public-key"} preshared-key ${secrets.preshared-key} endpoint ${placeholder "endpoint"} allowed-ips ${placeholder "peer-ips-1"},${placeholder "peer-ips-2"}
         ip route replace ${placeholder "peer-ips-1"} dev wg0 table main
         ip route replace ${placeholder "peer-ips-2"} dev wg0 table main
       '';
     wireguard-wg0-peer-work-post-stop.content = # sh
       ''
+        set -euo pipefail
+
         wg set wg0 peer ${placeholder "public-key"} remove
         ip route delete ${placeholder "peer-ips-1"} dev wg0 table main
         ip route delete ${placeholder "peer-ips-2"} dev wg0 table main
