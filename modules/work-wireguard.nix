@@ -89,6 +89,8 @@ in
       serviceConfig = {
         ExecStart = bootstrapScript "wireguard-wg0-peer-work-start";
         ExecStopPost = bootstrapScript "wireguard-wg0-peer-work-post-stop";
+        Restart = "on-failure";
+        RestartSec = "5s";
       };
     };
   };
