@@ -22,6 +22,8 @@ let
 
   # this will be later overwritten with sops templates
   stub = "stub";
+
+  peer-ips = lib.filterAttrs (n: v: lib.hasPrefix "peer-ips-" n) secrets;
 in
 {
   networking.wireguard = {
@@ -64,19 +66,19 @@ in
       ''
         set -euo pipefail
 
-        wg set wg0 peer ${placeholder "public-key"} preshared-key ${secrets.preshared-key} endpoint ${placeholder "endpoint"} allowed-ips ${placeholder "peer-ips-1"},${placeholder "peer-ips-2"},${placeholder "peer-ips-3"}
-        ip route replace ${placeholder "peer-ips-1"} dev wg0 table main
-        ip route replace ${placeholder "peer-ips-2"} dev wg0 table main
-        ip route replace ${placeholder "peer-ips-3"} dev wg0 table main
+        wg set wg0 peer ${placeholder "public-key"} preshared-key ${secrets.preshared-key} endpoint ${placeholder "endpoint"} allowed-ips ${
+          lib.concatMapAttrsStringSep "," (n: v: placeholder n) peer-ips
+        }
+
+        ${lib.concatMapAttrsStringSep "\n" (n: v: "ip route replace ${placeholder n} dev wg0 table main") peer-ips}
       '';
     wireguard-wg0-peer-work-post-stop.content = # sh
       ''
         set -euo pipefail
 
         wg set wg0 peer ${placeholder "public-key"} remove
-        ip route delete ${placeholder "peer-ips-1"} dev wg0 table main
-        ip route delete ${placeholder "peer-ips-2"} dev wg0 table main
-        ip route delete ${placeholder "peer-ips-3"} dev wg0 table main
+
+        ${lib.concatMapAttrsStringSep "\n" (n: v: "ip route delete ${placeholder n} dev wg0 table main") peer-ips}
       '';
   };
 
