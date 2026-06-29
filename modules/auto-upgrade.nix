@@ -10,6 +10,7 @@ self:
     flake = "git+https://git.tchfoo.com/gepbird/dotfiles#${config.networking.hostName}";
     flags = [
       "--accept-flake-config"
+      "--keep-going"
     ];
     dates = "03:00";
     persistent = false;
