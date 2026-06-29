@@ -64,9 +64,10 @@ in
       ''
         set -euo pipefail
 
-        wg set wg0 peer ${placeholder "public-key"} preshared-key ${secrets.preshared-key} endpoint ${placeholder "endpoint"} allowed-ips ${placeholder "peer-ips-1"},${placeholder "peer-ips-2"}
+        wg set wg0 peer ${placeholder "public-key"} preshared-key ${secrets.preshared-key} endpoint ${placeholder "endpoint"} allowed-ips ${placeholder "peer-ips-1"},${placeholder "peer-ips-2"},${placeholder "peer-ips-3"}
         ip route replace ${placeholder "peer-ips-1"} dev wg0 table main
         ip route replace ${placeholder "peer-ips-2"} dev wg0 table main
+        ip route replace ${placeholder "peer-ips-3"} dev wg0 table main
       '';
     wireguard-wg0-peer-work-post-stop.content = # sh
       ''
@@ -75,6 +76,7 @@ in
         wg set wg0 peer ${placeholder "public-key"} remove
         ip route delete ${placeholder "peer-ips-1"} dev wg0 table main
         ip route delete ${placeholder "peer-ips-2"} dev wg0 table main
+        ip route delete ${placeholder "peer-ips-3"} dev wg0 table main
       '';
   };
 
