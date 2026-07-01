@@ -18,8 +18,8 @@
       url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
       flake = false;
     };
-    nixpkgs-patch-anydesk-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/518524.diff";
+    nixpkgs-patch-stylelint-lsp-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/536260.diff";
       flake = false;
     };
     home-manager = {
