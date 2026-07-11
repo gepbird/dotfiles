@@ -69,11 +69,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782717626,
-        "narHash": "sha256-ezzhZespCpcwqu07KaPYqSEuaA/eKBFd/9In/flp1r8=",
+        "lastModified": 1783759266,
+        "narHash": "sha256-3ZQgHSFjx3LJmwZIRKGeEX+jYzEnsaVwu1XCkAyINLc=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "2b5cf92633caaf2604e7b78d8d16ad92dbb502c6",
+        "rev": "cb40ed774774382f7650890ecef8629238172c18",
         "type": "github"
       },
       "original": {
@@ -85,11 +85,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1782690497,
-        "narHash": "sha256-BvqC7yLfUTeeoxpb6layHkM2BpjH1YTtAWWPumtAAyQ=",
+        "lastModified": 1783702192,
+        "narHash": "sha256-Fmrw7DKAsfuw2Ibp4GadUwNbvReEvAssxbBvLTw/HfI=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "84cd87908e81da33c8daa5646668939d7ea6afa7",
+        "rev": "784765cb73940adb4ca7ca1e91ff96d22d91351d",
         "type": "github"
       },
       "original": {
@@ -106,11 +106,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1751018200,
-        "narHash": "sha256-i1sQvHqrNNZbxO8Zv4laBe4MpHwUXluxwk59a41uLVw=",
+        "lastModified": 1783271816,
+        "narHash": "sha256-j5orFiQfYzST3QtruFi0+McFXE3AUNEOMGE2hrxnJmI=",
         "owner": "name-snrl",
         "repo": "nfh",
-        "rev": "d5f830fdcd574cebb8bdea7e451da7a5f655e816",
+        "rev": "20415ed5e918c07bf0289e38e721dec7f5c09378",
         "type": "github"
       },
       "original": {
@@ -151,6 +151,18 @@
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "nixpkgs-patch-fzf-lua-fix-runtime-error": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-EIFP8EIJ/94LcpRC/Z9DVe6eyen6nYp9ocitzL8bWnk=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/commit/4aca523bd3092c948c6efc10328954d7380e7a58.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/commit/4aca523bd3092c948c6efc10328954d7380e7a58.diff"
       }
     },
     "nixpkgs-patch-hytale-launcher": {
@@ -232,11 +244,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782875700,
-        "narHash": "sha256-WTHHrBpVONCcSfW6j4OUru3tjNlr4xgweS7j13hFL/4=",
+        "lastModified": 1783647864,
+        "narHash": "sha256-gtVkWD4SbsvQQ8aSFEsrUTxxyuim4/ZC6lBJmA+sE/k=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "78acb50d9aa9cbb5d8e0ac1518d0842a29d70553",
+        "rev": "ebffdb62cd1604537ee51d4d23258c002f1c90f8",
         "type": "github"
       },
       "original": {
@@ -286,11 +298,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782950082,
-        "narHash": "sha256-jPMu52gzgy+haZB4O4x9BdP8GbSPzowB8qoVCGrIMb0=",
+        "lastModified": 1783761604,
+        "narHash": "sha256-1cCIO9eG30c7wYHB1enByqFtYojfHO0SQqrhl8s+lRk=",
         "ref": "refs/heads/main",
-        "rev": "0b6484c60f22651943a2c827f6f37f43f36fad6e",
-        "revCount": 191,
+        "rev": "afce639ae4b9886789ee2717c42ed679b266841f",
+        "revCount": 193,
         "type": "git",
         "url": "https://git.tchfoo.com/gepbird/nvim"
       },
@@ -306,6 +318,7 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-fzf-lua-fix-runtime-error": "nixpkgs-patch-fzf-lua-fix-runtime-error",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patch-stylelint-lsp-fix-build": "nixpkgs-patch-stylelint-lsp-fix-build",
