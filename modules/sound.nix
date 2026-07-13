@@ -4,12 +4,6 @@ self:
 }:
 
 {
-  services.pipewire = {
-    alsa.enable = true; # required for osu!
-    enable = true;
-    pulse.enable = true;
-  };
-
   # make less audio stutters when high gpu+cpu usage by buffering and delaying audio by ~30ms
   # disabled because it causes audio desync in osu!
   #environment.etc = {
