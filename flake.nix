@@ -22,10 +22,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/536260.diff";
       flake = false;
     };
-    nixpkgs-patch-fzf-lua-fix-runtime-error = {
-      url = "https://github.com/NixOS/nixpkgs/commit/4aca523bd3092c948c6efc10328954d7380e7a58.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
