@@ -15,7 +15,7 @@ self:
     self.lib.maybeCachePackages self [
       heroic
       hytale-launcher
-      nur.repos.gepbird.mint-mod-manager
+      nur.repos.gepbird.drg-mint-notag
       osu-lazer-bin
       prismlauncher
       r2modman
