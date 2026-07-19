@@ -93,7 +93,6 @@
         {
           geppc = mkSystem ./hosts/geppc;
           geptop-xmg = mkSystem ./hosts/geptop-xmg;
-          gepvm = mkSystem ./hosts/gepvm;
         };
 
       inherit inputs;
