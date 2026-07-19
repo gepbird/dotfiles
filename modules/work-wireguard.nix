@@ -70,7 +70,9 @@ in
           lib.concatMapAttrsStringSep "," (n: v: placeholder n) peer-ips
         }
 
-        ${lib.concatMapAttrsStringSep "\n" (n: v: "ip route replace ${placeholder n} dev wg0 table main") peer-ips}
+        ${lib.concatMapAttrsStringSep "\n" (
+          n: v: "ip route replace ${placeholder n} dev wg0 table main"
+        ) peer-ips}
       '';
     wireguard-wg0-peer-work-post-stop.content = # sh
       ''
@@ -78,7 +80,9 @@ in
 
         wg set wg0 peer ${placeholder "public-key"} remove
 
-        ${lib.concatMapAttrsStringSep "\n" (n: v: "ip route delete ${placeholder n} dev wg0 table main") peer-ips}
+        ${lib.concatMapAttrsStringSep "\n" (
+          n: v: "ip route delete ${placeholder n} dev wg0 table main"
+        ) peer-ips}
       '';
   };
 
