@@ -101,7 +101,7 @@
 
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+        formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check self;
       });
     };
 
