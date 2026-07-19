@@ -74,6 +74,13 @@ in
       # suggested by pi coding agent
       set-option -g extended-keys on
       set-option -g extended-keys-format csi-u
+
+      # TODO: this should be fixed upstream
+      # dracula sets message-style without a fill= attribute; since tmux 3.7
+      # (commit 19f3fb13) the command prompt only clears the status line
+      # background where fill= is set, so without this the prompt/message
+      # area leaves stale status line content trailing after the cursor.
+      set-option -g message-style "bg=#44475a,fg=#f8f8f2,fill=#44475a"
     '';
   };
 
