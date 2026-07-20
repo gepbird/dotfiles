@@ -34,6 +34,10 @@
       yt6801
       ryzen-smu
     ];
+
+    # dwmac-motorcomm/stmmac's interrupt handling storms and soft-locks the
+    # CPU on this NIC; blacklist it so the vendor yt6801 driver binds instead.
+    blacklistedKernelModules = [ "dwmac_motorcomm" ];
   };
 
   networking.hostName = "geptop-xmg";
