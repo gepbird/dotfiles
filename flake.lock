@@ -186,13 +186,13 @@
     "nixpkgs-patch-stylelint-lsp-fix-build": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-zvRZ6qDExoyDRGnKLIMD2XsvhZFo+BS4VKgnJ1f3zYI=",
+        "narHash": "sha256-2a/eTZkNufWG/gtG/eSvlE7R/hJSLuQ8kdpFQf4gv3s=",
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/536260.diff"
+        "url": "https://github.com/NixOS/nixpkgs/pull/530554.diff"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/536260.diff"
+        "url": "https://github.com/NixOS/nixpkgs/pull/530554.diff"
       }
     },
     "nixpkgs-patch-stylelint-lsp-fix-build_2": {

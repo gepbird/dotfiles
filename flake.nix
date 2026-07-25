@@ -19,7 +19,7 @@
       flake = false;
     };
     nixpkgs-patch-stylelint-lsp-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/536260.diff";
+      url = "https://github.com/NixOS/nixpkgs/pull/530554.diff";
       flake = false;
     };
     nixpkgs-patch-bitwarden-desktop-fix-eval = {
