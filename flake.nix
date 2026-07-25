@@ -22,6 +22,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/536260.diff";
       flake = false;
     };
+    nixpkgs-patch-bitwarden-desktop-fix-eval = {
+      url = "https://github.com/NixOS/nixpkgs/pull/545058.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";

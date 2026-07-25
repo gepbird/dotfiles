@@ -147,6 +147,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-bitwarden-desktop-fix-eval": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-COUBQCXIM7X1DIKerQpKwXTt0sq9+URpLIsBtrlQfsk=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/545058.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/545058.diff"
+      }
+    },
     "nixpkgs-patch-hytale-launcher": {
       "flake": false,
       "locked": {
@@ -300,6 +312,7 @@
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-bitwarden-desktop-fix-eval": "nixpkgs-patch-bitwarden-desktop-fix-eval",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-packet-tracer-fix-mime": "nixpkgs-patch-packet-tracer-fix-mime",
         "nixpkgs-patch-stylelint-lsp-fix-build": "nixpkgs-patch-stylelint-lsp-fix-build",
