@@ -60,7 +60,7 @@ with packages;
       e = "exit";
 
       ls = "${getExe eza} --color=always --group-directories-first --icons=auto";
-      cat = "${getExe bat} --style rule --style snip --style changes --style header";
+      cat = "${getExe bat} --style rule --style snip --style changes --style header --binary as-text";
       cut = getExe hck;
       grep = "${getExe ripgrep} -i --color=auto";
 
