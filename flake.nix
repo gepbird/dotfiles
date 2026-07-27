@@ -18,14 +18,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
       flake = false;
     };
-    nixpkgs-patch-stylelint-lsp-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/530554.diff";
-      flake = false;
-    };
-    nixpkgs-patch-bitwarden-desktop-fix-eval = {
-      url = "https://github.com/NixOS/nixpkgs/pull/545058.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
