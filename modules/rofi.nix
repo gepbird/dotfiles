@@ -14,7 +14,6 @@ self:
     extraConfig = {
       modes = [
         "run"
-        "drun"
       ];
       matching = "fuzzy";
       sort = true;
