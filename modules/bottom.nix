@@ -14,8 +14,6 @@ self:
       flags = {
         color = "gruvbox";
         default_time_value = "30s";
-        hide_k_threads = true;
-        process_memory_as_value = true;
       };
       memory_graph = {
         legend_position = "left";
@@ -28,6 +26,8 @@ self:
         legend_position = "left";
       };
       processes = {
+        hide_k_threads = true;
+        default_memory_value = true;
         default_sort = "mem";
         columns = [
           "name"
