@@ -9,6 +9,5 @@ self:
     with pkgs;
     self.lib.maybeCachePackages self [
       typst
-      tinymist
     ];
 }
