@@ -11,7 +11,6 @@ in
   hm-gep.home.packages =
     with pkgs;
     self.lib.maybeCachePackages self [
-      netcoredbg
       omnisharp-roslyn
       dotnet-sdk
     ];
