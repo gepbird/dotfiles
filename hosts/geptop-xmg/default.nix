@@ -1,9 +1,14 @@
 {
   config,
+  lib,
+  pkgs,
   self,
   ...
 }:
 
+let
+  testDwmaMotorcomm = false;
+in
 {
   imports = [
     ./hardware.nix
@@ -30,14 +35,18 @@
       ];
     };
 
-    extraModulePackages = with config.boot.kernelPackages; [
-      yt6801
-      ryzen-smu
-    ];
+    kernelPackages = lib.mkIf testDwmaMotorcomm (lib.mkForce pkgs.linuxPackages_latest);
+
+    extraModulePackages =
+      with config.boot.kernelPackages;
+      [
+        ryzen-smu
+      ]
+      ++ (lib.optional (!testDwmaMotorcomm) yt6801);
 
     # dwmac-motorcomm/stmmac's interrupt handling storms and soft-locks the
     # CPU on this NIC; blacklist it so the vendor yt6801 driver binds instead.
-    blacklistedKernelModules = [ "dwmac_motorcomm" ];
+    blacklistedKernelModules = lib.optional (!testDwmaMotorcomm) "dwmac_motorcomm";
   };
 
   networking.hostName = "geptop-xmg";
