@@ -7,7 +7,7 @@ self:
 {
   programs.nix-ld = {
     enable = true;
-    package = self.lib.maybeCachePackage self pkgs.docker;
+    package = self.lib.maybeCachePackage self pkgs.nix-ld;
     libraries =
       with pkgs;
       let
