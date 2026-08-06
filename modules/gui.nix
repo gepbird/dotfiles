@@ -18,7 +18,7 @@ self:
       grayjay
       kdePackages.kdenlive
       nemo
-      pavucontrol
+      pwvucontrol
       qbittorrent
       qdirstat
       rnote
