@@ -7,7 +7,7 @@
 }:
 
 let
-  testDwmacMotorcomm = true;
+  testDwmacMotorcomm = false;
 in
 {
   imports = [
