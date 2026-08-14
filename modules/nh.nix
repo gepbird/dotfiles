@@ -11,4 +11,8 @@ self:
     package = self.lib.maybeCachePackage self pkgs.nh;
     flake = "${config.hm-gep.home.homeDirectory}/dotfiles";
   };
+
+  hm-gep.home.sessionVariables = {
+    NH_SHOW_ACTIVATION_LOGS = true;
+  };
 }
