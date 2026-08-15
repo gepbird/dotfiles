@@ -1,5 +1,7 @@
 self:
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
@@ -19,6 +21,10 @@ self:
       Option "BlankTime" "0"
     '';
     updateDbusEnvironment = true;
+
+    # `services.xserver.xkb.layout` only applies for real devices, but rustdesk uses the
+    # "Virtual core XTEST keyboard" device that has hardcoded the US layout, this applies globally:
+    displayManager.sessionCommands = "${lib.getExe pkgs.setxkbmap} -layout ${config.services.xserver.xkb.layout}";
   };
 
   console.useXkbConfig = true;
