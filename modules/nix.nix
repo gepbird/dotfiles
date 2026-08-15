@@ -59,6 +59,7 @@ in
       nixd
       nixfmt
       nixpkgs-review
+      patchelf
     ]
     ++ [
       nix-output-monitor
