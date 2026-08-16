@@ -85,6 +85,11 @@ in
     };
   };
 
+  # for some reason the temperature sensor turns off for the RAM, enable it on boot
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="hwmon", ATTR{name}=="spd5118", ATTR{temp1_enable}="1"
+  '';
+
   hardware.enableAllFirmware = true;
 
   system.stateVersion = "25.05";
