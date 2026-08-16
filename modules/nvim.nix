@@ -7,6 +7,8 @@ self:
   hm-gep.xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
     "application/xml" = [ "nvim.desktop" ];
+    "application/rss+xml" = [ "nvim.desktop" ];
+    "text/markdown" = [ "nvim.desktop" ];
   };
 
   hm-gep.home.shellAliases = {
