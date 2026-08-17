@@ -45,6 +45,7 @@ self:
       perlPackages.FileMimeInfo
       procs
       progress
+      pv
       python3Packages.py-cpuinfo
       ripgrep
       s-tui
