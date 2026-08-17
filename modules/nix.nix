@@ -93,6 +93,11 @@ in
     nixPath = [
       "nixpkgs=${config.nixpkgs-patcher.patchedNixpkgs}"
     ];
+    optimise = {
+      automatic = true;
+      dates = [ "4:00" ];
+      persistent = false;
+    };
     settings = {
       experimental-features = [
         "nix-command"
