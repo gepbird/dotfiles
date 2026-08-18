@@ -54,13 +54,13 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "";
     };
+    systems = {
+      url = "github:nix-systems/default-linux";
+    };
     # dependencies of the above modules
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    systems = {
-      url = "github:nix-systems/default";
     };
   };
 
@@ -70,9 +70,7 @@
     let
       eachSystem =
         function:
-        nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ] (
-          system: function (import nixpkgs { inherit system; })
-        );
+        nixpkgs.lib.genAttrs (import systems) (system: function (import nixpkgs { inherit system; }));
       treefmtEval = eachSystem (
         pkgs:
         treefmt-nix.lib.evalModule pkgs {
