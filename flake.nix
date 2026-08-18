@@ -78,24 +78,27 @@
         {
           treefmt.programs.nixfmt.enable = true;
         };
+
+      flake = {
+        nixosConfigurations =
+          let
+            mkSystem =
+              host:
+              nixpkgs-patcher.lib.nixosSystem {
+                modules = [ host ];
+                specialArgs = inputs;
+              };
+          in
+          {
+            geppc = mkSystem ./hosts/geppc;
+            geptop-xmg = mkSystem ./hosts/geptop-xmg;
+          };
+
+        inherit inputs;
+        lib = import ./lib.nix { };
+      };
     }
     // {
-      nixosConfigurations =
-        let
-          mkSystem =
-            host:
-            nixpkgs-patcher.lib.nixosSystem {
-              modules = [ host ];
-              specialArgs = inputs;
-            };
-        in
-        {
-          geppc = mkSystem ./hosts/geppc;
-          geptop-xmg = mkSystem ./hosts/geptop-xmg;
-        };
-
-      inherit inputs;
-      lib = import ./lib.nix { };
       nixosModules = import ./modules self;
     };
 
