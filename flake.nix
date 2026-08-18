@@ -57,7 +57,6 @@
     systems = {
       url = "github:nix-systems/default-linux";
     };
-    # dependencies of the above modules
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -78,7 +77,10 @@
         }
       );
     in
-    {
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import systems;
+    }
+    // {
       nixosConfigurations =
         let
           mkSystem =
