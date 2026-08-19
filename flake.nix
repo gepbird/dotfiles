@@ -34,12 +34,14 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    import-tree.url = "github:denful/import-tree";
     nvim-gep = {
       url = "git+https://git.tchfoo.com/gepbird/nvim";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-patcher.follows = "";
       inputs.flake-parts.follows = "flake-parts";
       inputs.systems.follows = "systems";
+      inputs.import-tree.follows = "import-tree";
     };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -106,10 +108,11 @@
 
         inherit inputs;
         lib = import ./lib.nix { };
+        nixosModulesa = { a = { b = true;}; };
       };
     }
     // {
-      nixosModules = import ./modules self;
+      #nixosModules = import ./modules self;
     };
 
   nixConfig = {
