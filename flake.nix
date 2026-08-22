@@ -86,7 +86,6 @@
           geptop-xmg = mkSystem ./hosts/geptop-xmg;
         };
 
-      inherit inputs;
       lib = import ./lib.nix { };
       nixosModules = import ./modules self;
     };
