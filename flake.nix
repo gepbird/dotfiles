@@ -75,9 +75,19 @@
         ];
 
         perSystem =
-          { ... }:
+          { system, ... }:
+          let
+            nixpkgs-patched = inputs.nixpkgs-patcher.lib.patchNixpkgs {
+              inherit system inputs;
+              inherit (inputs) nixpkgs;
+            };
+          in
           {
             treefmt.programs.nixfmt.enable = true;
+
+            _module.args.pkgs = import nixpkgs-patched {
+              inherit system;
+            };
           };
 
         flake = {
