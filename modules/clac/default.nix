@@ -12,5 +12,5 @@ self:
       clac
     ];
 
-  hm-gep.xdg.configFile."clac/words".source = self.lib.mkDotfilesSymlink config "modules/clac/words";
+  hm-gep.xdg.configFile."clac/words".source = ./words;
 }
