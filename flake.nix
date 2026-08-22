@@ -66,20 +66,19 @@
   outputs =
     inputs:
     with inputs;
-    let
-      eachSystem =
-        function:
-        nixpkgs.lib.genAttrs (import systems) (system: function (import nixpkgs { inherit system; }));
-      treefmtEval = eachSystem (
-        pkgs:
-        treefmt-nix.lib.evalModule pkgs {
-          programs.nixfmt.enable = true;
-        }
-      );
-    in
     flake-parts.lib.mkFlake { inherit inputs; } (
       { ... }: {
         systems = import systems;
+
+        imports = [
+          treefmt-nix.flakeModule
+        ];
+
+        perSystem =
+          { ... }:
+          {
+            treefmt.programs.nixfmt.enable = true;
+          };
       }
     )
     // {
@@ -100,11 +99,6 @@
       inherit inputs;
       lib = import ./lib.nix { };
       nixosModules = import ./modules self;
-
-      formatter = eachSystem (pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper);
-      checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check self;
-      });
     };
 
   nixConfig = {
