@@ -40,6 +40,7 @@
       inputs.nixpkgs-patcher.follows = "";
       inputs.flake-parts.follows = "flake-parts";
       inputs.systems.follows = "systems";
+      inputs.import-tree.follows = "import-tree";
     };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -61,6 +62,9 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    import-tree = {
+      url = "github:denful/import-tree";
+    };
   };
 
   outputs =
@@ -77,9 +81,7 @@
         }
       );
     in
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.systems;
-    }
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./flake-parts)
     // {
       nixosConfigurations =
         let
