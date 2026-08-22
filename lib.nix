@@ -3,17 +3,6 @@
 }:
 
 let
-  # https://github.com/NixOS/nixpkgs/issues/254265
-  removeLicense =
-    pkgs: pkg:
-    pkgs.symlinkJoin {
-      name = "${pkg.name}-no-license";
-      paths = [ pkg ];
-      postBuild = ''
-        rm -f $out/LICENSE
-      '';
-    };
-
   nixpkgsHash =
     self:
     let
@@ -56,7 +45,6 @@ let
 in
 {
   inherit
-    removeLicense
     nixpkgsHash
     maybeCacheDerivation
     maybeCachePackage
