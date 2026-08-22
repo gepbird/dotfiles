@@ -3,11 +3,6 @@
 }:
 
 let
-  # This function expects this repository to be at ~/dotfiles
-  mkDotfilesSymlink =
-    config: pathFromHome:
-    config.hm-gep.lib.file.mkOutOfStoreSymlink "${config.hm-gep.home.homeDirectory}/dotfiles/${pathFromHome}";
-
   # https://github.com/NixOS/nixpkgs/issues/254265
   removeLicense =
     pkgs: pkg:
@@ -61,7 +56,6 @@ let
 in
 {
   inherit
-    mkDotfilesSymlink
     removeLicense
     nixpkgsHash
     maybeCacheDerivation
