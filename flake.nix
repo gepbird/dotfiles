@@ -67,12 +67,18 @@
     inputs:
     with inputs;
     flake-parts.lib.mkFlake { inherit inputs; } (
-      { ... }: {
+      { lib, ... }:
+      let
+        # inputs.treefmt-nix.follows = "" (used by consumers that don't need our
+        # formatter/checks) doesn't remove the input, it resolves it to `self`,
+        # so check for `flakeModule` rather than presence in `inputs`.
+        hasTreefmtNix = inputs.treefmt-nix ? flakeModule;
+      in
+      builtins.trace inputs.treefmt-nix
+      {
         systems = import systems;
 
-        imports = [
-          treefmt-nix.flakeModule
-        ];
+        imports = lib.optional hasTreefmtNix treefmt-nix.flakeModule;
 
         perSystem =
           { system, ... }:
@@ -82,9 +88,10 @@
               inherit (inputs) nixpkgs;
             };
           in
-          {
+          lib.optionalAttrs hasTreefmtNix {
             treefmt.programs.nixfmt.enable = true;
-
+          }
+          // {
             _module.args.pkgs = import nixpkgs-patched {
               inherit system;
             };
