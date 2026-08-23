@@ -69,6 +69,7 @@ with packages;
         email = "gutyina.gergo.2@gmail.com";
         signingKey = "~/.ssh/id_ed25519.pub";
       };
+      advice.detachedHead = false;
       init.defaultBranch = "main";
       safe.directory = "*";
       core.editor = "nvim";
