@@ -45,7 +45,7 @@ with packages;
         sp = "stash pop";
         sd = "stash drop";
         sl = "stash list";
-        ss = "stash show 0 -p";
+        ss = "!_() { git stash show \${1:-0} -p; }; _";
         s = "status";
         b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]'";
         bir = "bisect reset HEAD";
