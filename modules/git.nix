@@ -61,7 +61,7 @@ with packages;
         pl = "pull";
         ps = "push";
         psf = "push --force-with-lease";
-        l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit -30";
+        l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit";
         lg = "!_() { git log --oneline | ${getExe ripgrep} \"$*\"; }; _";
       };
       user = {
