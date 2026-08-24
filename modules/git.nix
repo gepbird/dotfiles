@@ -1,5 +1,6 @@
 self:
 {
+  config,
   lib,
   pkgs,
   ...
@@ -18,6 +19,8 @@ let
       ripgrep
       ;
   };
+
+  cfg = config.hm-gep.programs.git;
 in
 with packages;
 {
@@ -32,6 +35,7 @@ with packages;
         can = "commit --amend --no-edit";
         cs = "commit --all";
         chp = "cherry-pick";
+        chpa = "cherry-pick --abort";
         m = "merge";
         ma = "merge --abort";
         ri = "rebase -i";
@@ -62,6 +66,7 @@ with packages;
         ps = "push";
         psf = "push --force-with-lease";
         l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit";
+        lm = "l --author='${cfg.settings.user.name}'";
         lg = "!_() { git log --oneline | ${getExe ripgrep} \"$*\"; }; _";
       };
       user = {
