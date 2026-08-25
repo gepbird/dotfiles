@@ -21,6 +21,8 @@ let
   };
 
   cfg = config.hm-gep.programs.git;
+
+  fn = command: "!_() { git ${command}; }; _";
 in
 with packages;
 {
@@ -45,7 +47,7 @@ with packages;
         sp = "stash pop";
         sd = "stash drop";
         sl = "stash list";
-        ss = "!_() { git stash show \${1:-0} -p; }; _";
+        ss = fn "stash show \${1:-0} -p";
         s = "status";
         b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]'";
         bir = "bisect reset HEAD";
@@ -56,18 +58,18 @@ with packages;
         d = "diff";
         dw = "diff --word-diff";
         ds = "diff --staged";
-        sw = "!git switch $(git branch | ${getExe hck} -f2 | ${getExe fzf})";
+        sw = fn "switch $(git branch | ${getExe hck} -f2 | ${getExe fzf})";
         co = "checkout";
         cob = "checkout -b";
         f = "fetch";
         cl = "clone --recursive";
-        gh = "!_() { git clone --recursive git@github.com:$1 \${@:2}; }; _";
+        gh = fn "cl git@github.com:$1 \${@:2}";
         pl = "pull";
         ps = "push";
         psf = "push --force-with-lease";
         l = "log --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]' --abbrev-commit";
         lm = "l --author='${cfg.settings.user.name}'";
-        lg = "!_() { git log --oneline | ${getExe ripgrep} \"$*\"; }; _";
+        lg = fn "log --oneline | ${getExe ripgrep} \"$*\"";
       };
       user = {
         name = "Gutyina Gergő";
