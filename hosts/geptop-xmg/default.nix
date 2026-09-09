@@ -21,6 +21,7 @@ in
     "latex"
     "network-bridge"
     "nvidia"
+    "packettracer"
     "php"
     "piper"
   ];

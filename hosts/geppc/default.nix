@@ -12,6 +12,7 @@
     "flutter"
     "latex"
     "network-bridge"
+    "packettracer"
     "php"
     "vmware"
   ];
