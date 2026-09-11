@@ -47,7 +47,7 @@ with packages;
         sp = "stash pop";
         sd = "stash drop";
         sl = "stash list";
-        ss = fn "stash show \${1:-0} -p";
+        ss = fn "stash show \${1:-0} -p --include-untracked";
         s = "status";
         b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]'";
         bir = "bisect reset HEAD";
