@@ -14,10 +14,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/479368.diff";
       flake = false;
     };
-    nixpkgs-patch-packet-tracer-fix-mime = {
-      url = "https://github.com/NixOS/nixpkgs/pull/496181.diff";
-      flake = false;
-    };
     nixpkgs-patch-pipewire-auto-restart = {
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
