@@ -10,13 +10,13 @@ self:
     enable = true;
     package = self.lib.maybeCachePackage self pkgs.rofi;
     theme = "gruvbox-dark-hard";
-    terminal = lib.getExe pkgs.xfce4-terminal;
-    extraConfig = {
+    settings = {
       modes = [
         "run"
       ];
       matching = "fuzzy";
       sort = true;
+      terminal = lib.getExe pkgs.xfce4-terminal;
 
       kb-clear-line = "Control+c";
       kb-move-front = "Control+h,Home,KP_Home";
