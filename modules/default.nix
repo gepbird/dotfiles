@@ -1,5 +1,6 @@
 # Read all files and folders in the current directory and convert them into nixosModules
 # A utility function to import everything except some specified modules is also included
+  # Read all files and folders in the current directory and convert them into nixosModule,
 # Example output:
 # {
 #   games = import /nix/store/xxxx-source/modules/games.nix;
@@ -25,7 +26,7 @@ let
   allModules = listToAttrs (
     map (name: {
       name = replaceStrings [ ".nix" ] [ "" ] name;
-      value = import "${modulesDir}/${name}" self;
+      value = import "${modulesDir}/${name}";
     }) filesAndDirectories
   );
 

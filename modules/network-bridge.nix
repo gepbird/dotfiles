@@ -1,5 +1,5 @@
-{
   ...
+  ,
 }:
 
 # this is a quick and very broken way of making a network bridge for
