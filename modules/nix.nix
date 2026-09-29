@@ -90,9 +90,6 @@ in
   };
 
   nix = {
-    nixPath = [
-      "nixpkgs=${config.nixpkgs-patcher.patchedNixpkgs}"
-    ];
     optimise = {
       automatic = true;
       dates = [ "4:00" ];
@@ -110,6 +107,9 @@ in
       max-jobs = if config.networking.hostName == "geptop-xmg" then 8 else 4;
       log-format = "multiline-with-logs";
       log-lines = 0;
+      nix-path = [
+        "nixpkgs=${config.nixpkgs-patcher.patchedNixpkgs}"
+      ];
     };
     extraOptions = lib.mkIf config.enableSecrets ''
       !include ${config.secrets.gep.nix-github-access-token}
