@@ -68,7 +68,6 @@ in
   ];
 
   # hopefully more battery time with these settings
-  services.power-profiles-daemon.enable = false;
   services.thermald.enable = true;
   services.tlp = {
     enable = true;
