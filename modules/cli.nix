@@ -59,6 +59,7 @@ self:
       sysz
       termdown
       tinyxxd
+      usbutils # for lsusb
       w3m
       watchexec
       wavemon
