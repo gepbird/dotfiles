@@ -82,6 +82,9 @@ in
       CPU_BOOST_ON_BAT = 0;
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      # ASIX AX88179A USB ethernet adapter (vendor:product, see lsusb)
+      # fails after resuming from suspend
+      USB_DENYLIST = "0b95:1790";
     };
   };
 
