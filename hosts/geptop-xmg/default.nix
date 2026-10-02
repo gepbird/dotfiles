@@ -56,7 +56,6 @@
   ];
 
   # hopefully more battery time with these settings
-  services.thermald.enable = true;
   services.tlp = {
     enable = true;
     settings = {
