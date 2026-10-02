@@ -83,13 +83,13 @@ with packages;
       sysr = "sudo systemctl restart";
       sysl = "sudo systemctl start";
       syss = "sudo systemctl stop";
-      jour = "journalctl -eu";
+      jour = "journalctl -b all -eu";
       sysut = "systemctl --user list-units --all | grep";
       sysui = "systemctl --user status";
       sysur = "systemctl --user restart";
       sysul = "systemctl --user start";
       sysus = "systemctl --user stop";
-      jouru = "journalctl --user -eu";
+      jouru = "journalctl --user -b all -eu";
     };
 
     initContent = ''
