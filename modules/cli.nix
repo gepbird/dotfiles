@@ -1,5 +1,6 @@
 self:
 {
+  config,
   pkgs,
   ...
 }:
@@ -11,6 +12,7 @@ self:
       bat
       cntr
       colorized-logs # for ansi2txt
+      config.boot.kernelPackages.cpupower
       diffoscopeMinimal
       dig
       dmidecode
