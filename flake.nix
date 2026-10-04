@@ -18,6 +18,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
+    nixpkgs-patch-zotero-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/569006.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
