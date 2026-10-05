@@ -7,7 +7,7 @@ self:
 }:
 
 let
-  isLaptop = config.networking.hostName == "geptop" || config.networking.hostName == "geptop-xmg";
+  isLaptop = config.networking.hostName == "geptop-xmg";
 in
 {
   services.dwm-status = {
