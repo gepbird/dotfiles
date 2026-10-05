@@ -14,7 +14,6 @@
     "network-bridge"
     "packettracer"
     "php"
-    "vmware"
   ];
 
   fileSystems = {
