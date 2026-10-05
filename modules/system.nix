@@ -42,6 +42,10 @@ self:
   services.upower = {
     enable = true;
     package = self.lib.maybeCachePackage self pkgs.upower;
+    # leave enough charge for hybrid-sleep to finish writing the image
+    percentageAction = 5;
+    percentageCritical = 10;
+    percentageLow = 20;
   };
 
   systemd.services.upower.restartTriggers = [ config.environment.etc."UPower/UPower.conf".source ];
