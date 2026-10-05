@@ -44,6 +44,8 @@ self:
     package = self.lib.maybeCachePackage self pkgs.upower;
   };
 
+  systemd.services.upower.restartTriggers = [ config.environment.etc."UPower/UPower.conf".source ];
+
   systemd.coredump.enable = false;
 
   networking = {
