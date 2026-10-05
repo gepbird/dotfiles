@@ -43,6 +43,13 @@ self:
   # (link from https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md)
   # set VirtioFsSvc service startup type to Automatic
 
+  # for NixOS guests, add this option for guest auto resize
+  #virtualisation.vmVariant.virtualisation.qemu.options = [
+  #  "-vga none"
+  #  "-device virtio-vga"
+  #  "-display gtk,zoom-to-fit=on"
+  #];
+
   # fix "Error starting domain: Requested operation is not valid: network 'default' is not active":
   # virt-manager > Edit > Connection Details > Virtual Networks > default > Autostart: On Boot > enable
 }
