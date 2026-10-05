@@ -19,6 +19,11 @@ self:
     LIBVIRT_DEFAULT_URI = "qemu:///system";
   };
 
+  # auto start default network
+  systemd.tmpfiles.rules = [
+    "L+ /var/lib/libvirt/qemu/networks/autostart/default.xml - - - - /var/lib/libvirt/qemu/networks/default.xml"
+  ];
+
   virtualisation = {
     spiceUSBRedirection.enable = true;
     libvirtd = {
@@ -49,7 +54,4 @@ self:
   #  "-device virtio-vga"
   #  "-display gtk,zoom-to-fit=on"
   #];
-
-  # fix "Error starting domain: Requested operation is not valid: network 'default' is not active":
-  # virt-manager > Edit > Connection Details > Virtual Networks > default > Autostart: On Boot > enable
 }
