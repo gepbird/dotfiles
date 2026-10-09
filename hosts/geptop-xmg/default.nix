@@ -47,7 +47,6 @@
     }
   ];
 
-  # TODO: switch to highest and adapt applications to it
   services.xserver.resolutions = [
     {
       x = 1920;
