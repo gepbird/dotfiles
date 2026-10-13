@@ -22,6 +22,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/569006.diff";
       flake = false;
     };
+    nixpkgs-patch-typescript-language-server-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/572951.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
