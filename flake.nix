@@ -19,7 +19,7 @@
       flake = false;
     };
     nixpkgs-patch-zotero-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/569006.diff";
+      url = "https://github.com/NixOS/nixpkgs/pull/572466.diff";
       flake = false;
     };
     nixpkgs-patch-typescript-language-server-fix-build = {

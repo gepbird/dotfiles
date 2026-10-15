@@ -186,13 +186,13 @@
     "nixpkgs-patch-zotero-fix-build": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-Y7f72bHs3+qCTrXQgRx73a1JdyDDY4MuEcyi2NFOKrc=",
+        "narHash": "sha256-wq3x/0n8IdWFZxMcgd1ifdGFO7hKPUY8pKiCSnzTLUE=",
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/569006.diff"
+        "url": "https://github.com/NixOS/nixpkgs/pull/572466.diff"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/569006.diff"
+        "url": "https://github.com/NixOS/nixpkgs/pull/572466.diff"
       }
     },
     "nixpkgs-patcher": {
