@@ -5,15 +5,13 @@ self:
 }:
 
 {
-  # a declerative version of https://wiki.nixos.org/wiki/ONLYOFFICE#Install_and_use_missing_corefonts
-  hm-gep.xdg.dataFile."fonts" = {
-    source = "${pkgs.corefonts}/share/fonts/truetype";
-    target = "fonts";
-  };
+  # pass all system fonts to onlyoffice
+  programs.onlyoffice.enable = true;
 
   hm-gep.programs.onlyoffice = {
     enable = true;
-    package = self.lib.maybeCachePackage self pkgs.onlyoffice-desktopeditors;
+    # use the NixOS module's package
+    package = null;
     settings = {
       UITheme = "theme-contrast-dark";
     };
