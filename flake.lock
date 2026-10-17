@@ -159,7 +159,7 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
       }
     },
-    "nixpkgs-patch-lix-fix-build": {
+    "nixpkgs-patch-lix-01-fix-build": {
       "flake": false,
       "locked": {
         "narHash": "sha256-+MNX3SB8dTY/SJOIo/X7s1ndDgMsigYiaRNYJIccww8=",
@@ -169,6 +169,18 @@
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/573938.diff"
+      }
+    },
+    "nixpkgs-patch-lix-02-2-96-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-7tb1W+K/mts3AexLx9eWe4vgXjlAinnwGHCOb+x3H/c=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/573942.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/573942.diff"
       }
     },
     "nixpkgs-patch-pipewire-auto-restart": {
@@ -303,7 +315,8 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
-        "nixpkgs-patch-lix-fix-build": "nixpkgs-patch-lix-fix-build",
+        "nixpkgs-patch-lix-01-fix-build": "nixpkgs-patch-lix-01-fix-build",
+        "nixpkgs-patch-lix-02-2-96-0": "nixpkgs-patch-lix-02-2-96-0",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
         "nixpkgs-patch-zotero-fix-build": "nixpkgs-patch-zotero-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
