@@ -20,6 +20,7 @@ self:
       z = "zoom in";
       u = "zoom out";
       d = "recolor";
+      v = "toggle_page_mode";
       e = "feedkeys /";
       "<s-e>" = "feedkeys ?";
     };
