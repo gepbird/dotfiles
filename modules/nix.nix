@@ -73,8 +73,8 @@ in
         patches = (o.patches or [ ]) ++ [
           (prev.fetchpatch2 {
             name = "dont-print-errors-and-traces.patch";
-            url = "https://github.com/gepbird/nix-output-monitor/commit/30196c783f7c7904fb22ae943eed6ef6b39c8415.patch";
-            hash = "sha256-wzLChhPT3tEqXlB0DlHekaNytTV1+13NXP4e6Fq5UQE=";
+            url = "https://github.com/gepbird/nix-output-monitor/commit/30196c783f7c7904fb22ae943eed6ef6b39c8415.patch?full_index=1";
+            hash = "sha256-Te+4Zh08kMhUoVdrww7y7c21XZPCAeTgi0/XRjd1aMc=";
           })
         ];
       });
