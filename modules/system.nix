@@ -79,10 +79,4 @@ self:
     enable = true;
     package = self.lib.maybeCachePackage self pkgs.sudo-rs;
   };
-
-  # compromised certificates: https://emudhra.we-have-a-problem.com/
-  security.pki.caCertificateBlacklist = [
-    "Comodo AAA Services root"
-    "emSign ECC Root CA - G3"
-  ];
 }

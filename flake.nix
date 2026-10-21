@@ -18,6 +18,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
+    nixpkgs-patch-fix-CVE-2026-111943 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/576390.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
