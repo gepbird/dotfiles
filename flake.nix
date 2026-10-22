@@ -18,8 +18,12 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
-    nixpkgs-patch-fix-CVE-2026-111943 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/576390.diff";
+    nixpkgs-patch-linux-modules-ryzen-smu-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/576504.diff";
+      flake = false;
+    };
+    nixpkgs-patch-linux-modules-v4l2loopback-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/575861.diff";
       flake = false;
     };
     home-manager = {
