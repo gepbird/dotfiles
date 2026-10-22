@@ -39,6 +39,9 @@ self:
         StrictHostKeyChecking = "no";
         IdentityFile = "~/.ssh/id_ed25519";
       };
+      "*.nix-community.org" = {
+        User = "gepbird";
+      };
       "raspi.tchfoo.com" = {
         Port = 42727;
         ForwardX11 = true;
