@@ -41,6 +41,8 @@ self:
       };
       "*.nix-community.org" = {
         User = "gepbird";
+        RemoteCommand = ''tmux attach || (cd nixpkgs; nix shell "nixpkgs#bottom" "nixpkgs#git-extras" --command tmux)'';
+        RequestTTY = "yes";
       };
       "raspi.tchfoo.com" = {
         Port = 42727;
