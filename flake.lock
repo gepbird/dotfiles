@@ -43,11 +43,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1792668857,
-        "narHash": "sha256-chUrnAqBhBLvXBUsLFxFYBIl8c0GWp06wdjmAMS8l+U=",
+        "lastModified": 1792818371,
+        "narHash": "sha256-yhEZAzZRNvzYpoAlyFY3wM75V9BmkIXJIueof8S5gOg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cb7de2c7e589afe7531d4832c71ad4df144624ea",
+        "rev": "2cd3234928f60bbff695a7ee56115ef7799c47cd",
         "type": "github"
       },
       "original": {
@@ -133,11 +133,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1792502884,
-        "narHash": "sha256-IoNisKcGbUjdd45qCqywGMCYmZ5EnkxezvLII0FWwNA=",
+        "lastModified": 1792773339,
+        "narHash": "sha256-rZLrzrC6i+jnTAlvPZHogKDulY7WWDEv9hJeHieO7Zw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
         "type": "github"
       },
       "original": {
@@ -157,30 +157,6 @@
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
-      }
-    },
-    "nixpkgs-patch-linux-modules-ryzen-smu-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-lMyEsyH83mYzrR5BTOAqfUqBI9cmIDkXbnx0nX4Ybak=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/576504.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/576504.diff"
-      }
-    },
-    "nixpkgs-patch-linux-modules-v4l2loopback-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-48rXRPlEqzod0KrUxj9WAbhF2CrLezeZ3lNarSAy5zc=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/575861.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/575861.diff"
       }
     },
     "nixpkgs-patch-pipewire-auto-restart": {
@@ -249,11 +225,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792694750,
-        "narHash": "sha256-6cLKru060joGzH+9bhSD7sTHM6iAiHyw7HGc2+hF9co=",
+        "lastModified": 1792880026,
+        "narHash": "sha256-PB4GBWfIpE21/q9n5oqwptDF/VHcJVCMpanhrgb6fTQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "ad6600b6678c0c309fbe006facd616e539bfd50d",
+        "rev": "18608aeb784077e483431873ddc5d4936fdc1d5a",
         "type": "github"
       },
       "original": {
@@ -303,8 +279,6 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
-        "nixpkgs-patch-linux-modules-ryzen-smu-fix-build": "nixpkgs-patch-linux-modules-ryzen-smu-fix-build",
-        "nixpkgs-patch-linux-modules-v4l2loopback-fix-build": "nixpkgs-patch-linux-modules-v4l2loopback-fix-build",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
@@ -321,11 +295,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792308394,
-        "narHash": "sha256-r4G33ygU307QCwyngAS6E9BMhnCRPyZrL7UxRCMrqo0=",
+        "lastModified": 1792809984,
+        "narHash": "sha256-KV+CaZX7QS0hcdKxwGKehDb1jmUgx6lbkTPpaoIW5Nw=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "a1438ca361b05d1e70854d5495abcb34fdf6ff47",
+        "rev": "442449fa7b1fe6c692d0103ac9fc8f9e82931cf3",
         "type": "github"
       },
       "original": {

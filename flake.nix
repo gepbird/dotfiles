@@ -18,14 +18,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
-    nixpkgs-patch-linux-modules-ryzen-smu-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/576504.diff";
-      flake = false;
-    };
-    nixpkgs-patch-linux-modules-v4l2loopback-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/575861.diff";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
