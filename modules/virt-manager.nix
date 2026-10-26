@@ -29,6 +29,7 @@ self:
     libvirtd = {
       enable = true;
       package = self.lib.maybeCachePackage self pkgs.libvirt;
+      qemu.swtpm.enable = true;
       qemu.vhostUserPackages =
         with pkgs;
         self.lib.maybeCachePackages self [
