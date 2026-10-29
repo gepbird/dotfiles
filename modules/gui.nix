@@ -39,4 +39,31 @@ self:
     self.lib.maybeCachePackages self [
       gparted
     ];
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      # TODO: remove after fixed: https://github.com/NixOS/nixpkgs/issues/577387
+      anydesk =
+        let
+          patchelf = prev.patchelf.overrideAttrs (o: {
+            patches = (o.patches or [ ]) ++ [
+              (prev.fetchpatch2 {
+                name = "fix-overlapping-load-mappings.patch";
+                url = "https://github.com/NixOS/patchelf/commit/59acc3d98b4961cfddf02090d9426ac735603218.patch?full_index=1";
+                hash = "sha256-a09yQMW1AF48dAnivD0mrhgw1q2JfCiMEeflpjIlhBI=";
+              })
+            ];
+            nativeBuildInputs = (o.nativeBuildInputs or [ ]) ++ [ prev.autoreconfHook ];
+            postPatch = (o.postPatch or "") + ''
+              chmod +x tests/executable-header-rewrite.sh
+            '';
+          });
+        in
+        prev.anydesk.overrideAttrs (o: {
+          postFixup =
+            builtins.replaceStrings [ "patchelf \\" ] [ "${prev.lib.getExe patchelf} \\" ]
+              o.postFixup;
+        });
+    })
+  ];
 }
