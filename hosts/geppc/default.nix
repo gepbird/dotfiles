@@ -14,6 +14,7 @@
     "network-bridge"
     "packettracer"
     "php"
+    "the-missing-intel-naming-scheme"
   ];
 
   fileSystems = {

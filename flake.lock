@@ -285,6 +285,7 @@
         "nvim-gep": "nvim-gep",
         "sops-nix": "sops-nix",
         "systems": "systems",
+        "the-missing-intel-naming-scheme": "the-missing-intel-naming-scheme",
         "treefmt-nix": "treefmt-nix"
       }
     },
@@ -321,6 +322,26 @@
         "owner": "nix-systems",
         "repo": "default-linux",
         "type": "github"
+      }
+    },
+    "the-missing-intel-naming-scheme": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793575402,
+        "narHash": "sha256-bUeyDTrQEB9jzVquJ+3pvad/4s1+01u2ZwZ0LJC4WgU=",
+        "ref": "refs/heads/main",
+        "rev": "ee27dac36782e7b7e54be66ce067ae0bd5e856fc",
+        "revCount": 23,
+        "type": "git",
+        "url": "https://git.tchfoo.com/gepbird/the-missing-intel-naming-scheme"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.tchfoo.com/gepbird/the-missing-intel-naming-scheme"
       }
     },
     "treefmt-nix": {
