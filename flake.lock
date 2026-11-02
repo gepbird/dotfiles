@@ -147,6 +147,18 @@
         "type": "github"
       }
     },
+    "nixpkgs-patch-bottom-0-15-0": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-pncpGwT1lpetDdDc+pkjj1XQ447X90Hkeu9n4CbwJCo=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/582324.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/582324.diff"
+      }
+    },
     "nixpkgs-patch-hytale-launcher": {
       "flake": false,
       "locked": {
@@ -290,6 +302,7 @@
         "import-tree": "import-tree",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-patch-bottom-0-15-0": "nixpkgs-patch-bottom-0-15-0",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-onlyoffice-fix-build": "nixpkgs-patch-onlyoffice-fix-build",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",

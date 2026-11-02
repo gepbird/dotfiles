@@ -32,6 +32,7 @@ self:
         columns = [
           "name"
           "mem"
+          "swap"
           "cpu%"
           "gmem"
           "gpu%"
