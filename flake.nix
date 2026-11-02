@@ -38,10 +38,6 @@
       inputs.systems.follows = "systems";
       inputs.import-tree.follows = "import-tree";
     };
-    the-missing-intel-naming-scheme = {
-      url = "git+https://git.tchfoo.com/gepbird/the-missing-intel-naming-scheme";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "";
