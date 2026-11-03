@@ -159,6 +159,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/582324.diff"
       }
     },
+    "nixpkgs-patch-discord-openasar-fix-launch": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-empYEKWbgV3/pJxNw/P7gY2tuM6d/dkQAL7ph6Rwe6k=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/582751.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/582751.diff"
+      }
+    },
     "nixpkgs-patch-hytale-launcher": {
       "flake": false,
       "locked": {
@@ -303,6 +315,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-bottom-0-15-0": "nixpkgs-patch-bottom-0-15-0",
+        "nixpkgs-patch-discord-openasar-fix-launch": "nixpkgs-patch-discord-openasar-fix-launch",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-onlyoffice-fix-build": "nixpkgs-patch-onlyoffice-fix-build",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
