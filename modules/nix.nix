@@ -84,6 +84,8 @@ in
 
       nix = final.lixPackageSet.lix;
 
+      inherit (final.lixPackageSet) nix-eval-jobs;
+
       # https://github.com/maralorn/nix-output-monitor/issues/189
       nix-output-monitor = prev.nix-output-monitor.overrideAttrs (o: {
         patches = (o.patches or [ ]) ++ [
