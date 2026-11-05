@@ -43,7 +43,7 @@ in
     self.inputs.nix-index-database.nixosModules.nix-index
   ];
 
-  # NOTE: these may not rebuild after changes to lix due to memoize-derivation, it shouldn't be a problem
+  # NOTE: these may not rebuild after changes to lix overridden packages due to memoize-derivation
   hm-gep.home.packages =
     with pkgs;
     self.lib.maybeCachePackages self [
@@ -60,14 +60,24 @@ in
       nixfmt
       nixpkgs-review
       patchelf
-    ]
-    ++ [
       nix-output-monitor
     ]
     ++ aliasFunctionPackages;
 
   nixpkgs.overlays = [
     (final: prev: {
+      nix = prev.lixPackageSets.lix_2_96.lix.overrideAttrs (o: {
+        doCheck = false;
+        doInstallCheck = false;
+        patches = (o.patches or [ ]) ++ [
+          (prev.fetchurl {
+            name = "derivation-memoization.patch";
+            url = "https://git.lix.systems/gepbird/lix/compare/2.96.0...2.96.0-derivation-memoization-6.0.0.patch";
+            hash = "sha256-AnQLUwTSNYUl/9ayZ7XpoVJo9m/H8F0QV9OBhqmyp5U=";
+          })
+        ];
+      });
+
       # https://github.com/maralorn/nix-output-monitor/issues/189
       nix-output-monitor = prev.nix-output-monitor.overrideAttrs (o: {
         patches = (o.patches or [ ]) ++ [
@@ -99,6 +109,7 @@ in
       experimental-features = [
         "nix-command"
         "flakes"
+        "derivation-memoization"
       ];
       trusted-users = [
         "gep"
