@@ -18,14 +18,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
-    nixpkgs-patch-onlyoffice-fix-build = {
-      url = "https://github.com/NixOS/nixpkgs/pull/582158.diff";
-      flake = false;
-    };
-    nixpkgs-patch-bottom-0-15-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/582324.diff";
-      flake = false;
-    };
     nixpkgs-patch-discord-openasar-fix-launch = {
       url = "https://github.com/NixOS/nixpkgs/pull/582751.diff";
       flake = false;
