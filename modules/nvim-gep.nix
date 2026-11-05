@@ -4,7 +4,7 @@ self:
   ...
 }:
 
-# for eval performance (unless using trace-cache), this module can be excluded and installed standalone using:
+# for eval performance (unless using memoize-derivation), this module can be excluded and installed standalone using:
 # `nix profile install` in the nvim directory
 {
   nixpkgs.overlays = [ self.inputs.nvim-gep.overlays.default ];
