@@ -15,7 +15,6 @@
     "droidcam"
     "flutter"
     "java"
-    "latex"
     "network-bridge"
     "nvidia"
     "packettracer"
