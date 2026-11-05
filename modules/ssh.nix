@@ -54,6 +54,10 @@ self:
         ForwardX11 = true;
         ForwardX11Trusted = true;
       };
+      "grandma-laptop" = {
+        User = "bzsuzsa47";
+        Port = 42727;
+      };
     };
   };
 
