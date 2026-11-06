@@ -22,6 +22,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/582751.diff";
       flake = false;
     };
+    nixpkgs-patch-discord-vencord-1-15-16 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/584169.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
