@@ -61,6 +61,7 @@ self:
       sysz
       termdown
       tinyxxd
+      up
       usbutils # for lsusb
       w3m
       watchexec
