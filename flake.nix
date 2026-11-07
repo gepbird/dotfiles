@@ -18,10 +18,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
-    nixpkgs-patch-discord-openasar-fix-launch = {
-      url = "https://github.com/NixOS/nixpkgs/pull/582751.diff";
-      flake = false;
-    };
     nixpkgs-patch-discord-vencord-1-15-16 = {
       url = "https://github.com/NixOS/nixpkgs/pull/584169.diff";
       flake = false;
