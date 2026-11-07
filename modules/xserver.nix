@@ -13,7 +13,7 @@ self:
       xterm
     ];
     xkb.layout = "hu";
-    xkb.options = "caps:escape";
+    xkb.options = "caps:escape,grab:break_actions";
     autoRepeatDelay = 250;
     autoRepeatInterval = 30;
     # disable black screen after 10 minutes
