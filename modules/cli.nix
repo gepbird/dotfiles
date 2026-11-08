@@ -21,6 +21,7 @@ self:
       dust
       exiftool
       eza
+      fastmod
       fd
       ffmpeg
       file
