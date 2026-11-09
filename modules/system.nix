@@ -60,6 +60,11 @@ self:
     firewall.enable = false;
   };
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
+
   time = {
     timeZone = "Europe/Budapest";
     hardwareClockInLocalTime = false;
