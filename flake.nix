@@ -22,6 +22,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/584169.diff";
       flake = false;
     };
+    nixpkgs-patch-rustdesk-flutter-fix-build = {
+      url = "https://github.com/NixOS/nixpkgs/pull/585583.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
