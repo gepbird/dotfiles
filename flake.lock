@@ -133,11 +133,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1794192123,
-        "narHash": "sha256-SvB8u5qaJAOwZZyZciqTVOg/rBoUs2w0sFTU6ED51AQ=",
+        "lastModified": 1794386569,
+        "narHash": "sha256-x9sADJvoVG0L6RejZB+/BB4YiGZFBZrfTlhF4uBq1tQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "177d0540942fb205af6993b1d5fa0b57799e09f8",
+        "rev": "d4f25a3e562008648d45bcf2d70bcc7422cad84e",
         "type": "github"
       },
       "original": {
@@ -150,7 +150,7 @@
     "nixpkgs-patch-hytale-launcher": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-Dl9vbG0d/t46h3GAdGg4v0JGQSFk7Rc440ZrYA3PFmQ=",
+        "narHash": "sha256-+fF+k8BiwEV68fdEsVGjMKe8CtLwScwCAk0s771843E=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
       },
@@ -162,25 +162,13 @@
     "nixpkgs-patch-pipewire-auto-restart": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-+DpspxVRrIhzNm/i09M6Kxb1l+0NzaohRJ83hAtjp8M=",
+        "narHash": "sha256-Ekea3C2VUcvM8f98LaDPIbv7JLBONYGXc1jPmEiEq38=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/549706.diff"
       },
       "original": {
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/pull/549706.diff"
-      }
-    },
-    "nixpkgs-patch-rustdesk-flutter-fix-build": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-M0la8LsUgclow6Ky0wv9wd7V4Jvu88XX0U+Kswd4S/w=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/585583.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/pull/585583.diff"
       }
     },
     "nixpkgs-patcher": {
@@ -237,11 +225,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794475847,
-        "narHash": "sha256-zUMoL8Jsa21CQJ26Bo3SR/MS60oixcT2RVYV2o/Fp0w=",
+        "lastModified": 1794522531,
+        "narHash": "sha256-pFoanHz6IycpqY5tkuLxJaEAUMmKrq3eiu/mNPJiJgw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "7b921c747644347cbb458826f751416c2a7d96d3",
+        "rev": "655f5e9ff6a3705fb0252445b3d4b29efc4bfea0",
         "type": "github"
       },
       "original": {
@@ -292,7 +280,6 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
-        "nixpkgs-patch-rustdesk-flutter-fix-build": "nixpkgs-patch-rustdesk-flutter-fix-build",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
