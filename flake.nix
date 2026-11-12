@@ -18,10 +18,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
-    nixpkgs-patch-discord-vencord-1-15-16 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/584169.diff";
-      flake = false;
-    };
     nixpkgs-patch-rustdesk-flutter-fix-build = {
       url = "https://github.com/NixOS/nixpkgs/pull/585583.diff";
       flake = false;
