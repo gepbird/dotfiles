@@ -18,6 +18,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/549706.diff";
       flake = false;
     };
+    nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing = {
+      url = "https://github.com/NixOS/nixpkgs/pull/587646.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";

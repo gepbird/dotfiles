@@ -159,6 +159,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
       }
     },
+    "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-RxJMM0cieMetXHeYKV7xXm0cwlhF0418jYqBd/kJmHg=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/587646.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/587646.diff"
+      }
+    },
     "nixpkgs-patch-pipewire-auto-restart": {
       "flake": false,
       "locked": {
@@ -279,6 +291,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
+        "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing": "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
