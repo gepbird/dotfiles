@@ -1,12 +1,18 @@
 self:
 {
   config,
+  pkgs,
   ...
 }:
 
+let
+  sessionScript = pkgs.writeShellScript "session-script" ''
+  '';
+in
 {
   virtualisation.vmVariant = {
     enableSecrets = false;
+    services.xserver.displayManager.sessionCommands = "${sessionScript} &";
     services.displayManager.autoLogin = {
       enable = true;
       user = config.users.users.gep.name;
