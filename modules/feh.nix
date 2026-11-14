@@ -33,8 +33,9 @@ self:
 
   # --scale-down and --auto-zoom, for 100% image scale
   # --edit for saving rotation and mirroring edits
+  # --geometry fixes the window size, so feh doesn't resize the window to each and causes flickers
   hm-gep.xdg.configFile."feh/themes".text = ''
-    feh --scale-down --auto-zoom --edit
+    feh --scale-down --auto-zoom --edit --geometry 1920x1080
   '';
 
   hm-gep.xdg.mimeApps.defaultApplications = {
