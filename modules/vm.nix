@@ -14,7 +14,7 @@ self:
       qemu.options = [
         "-vga none"
         "-device virtio-vga"
-        "-display gtk,zoom-to-fit=on"
+        "-display gtk,zoom-to-fit=on,grab-on-hover=on"
       ];
     };
   };
