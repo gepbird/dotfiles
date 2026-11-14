@@ -159,6 +159,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/479368.diff"
       }
     },
+    "nixpkgs-patch-linux-zen-fix-kernel-panic": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-j7gDn8bQS9Ed70jSuI0mMSUmLKL0xMaCfVORZsNLIoM=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/586820.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/586820.diff"
+      }
+    },
     "nixpkgs-patch-nh-4-5-0": {
       "flake": false,
       "locked": {
@@ -303,6 +315,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-hytale-launcher": "nixpkgs-patch-hytale-launcher",
+        "nixpkgs-patch-linux-zen-fix-kernel-panic": "nixpkgs-patch-linux-zen-fix-kernel-panic",
         "nixpkgs-patch-nh-4-5-0": "nixpkgs-patch-nh-4-5-0",
         "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing": "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",

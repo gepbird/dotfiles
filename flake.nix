@@ -26,6 +26,10 @@
       url = "https://github.com/NixOS/nixpkgs/pull/578415.diff";
       flake = false;
     };
+    nixpkgs-patch-linux-zen-fix-kernel-panic = {
+      url = "https://github.com/NixOS/nixpkgs/pull/586820.diff";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "";
