@@ -7,6 +7,10 @@ self:
 {
   virtualisation.vmVariant = {
     enableSecrets = false;
+    services.displayManager.autoLogin = {
+      enable = true;
+      user = config.users.users.gep.name;
+    };
     virtualisation = {
       cores = if config.networking.hostName == "geptop-xmg" then 16 else 4;
       diskSize = 1024 * 10;
