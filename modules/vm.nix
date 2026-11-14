@@ -11,6 +11,11 @@ self:
       cores = if config.networking.hostName == "geptop-xmg" then 16 else 4;
       diskSize = 1024 * 10;
       memorySize = 4 * 1024;
+      qemu.options = [
+        "-vga none"
+        "-device virtio-vga"
+        "-display gtk,zoom-to-fit=on"
+      ];
     };
   };
 }

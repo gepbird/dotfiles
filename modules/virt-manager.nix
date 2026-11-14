@@ -47,11 +47,4 @@ self:
   # https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win-guest-tools.exe
   # (link from https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md)
   # set VirtioFsSvc service startup type to Automatic
-
-  # for NixOS guests, add this option for guest auto resize
-  #virtualisation.vmVariant.virtualisation.qemu.options = [
-  #  "-vga none"
-  #  "-device virtio-vga"
-  #  "-display gtk,zoom-to-fit=on"
-  #];
 }
