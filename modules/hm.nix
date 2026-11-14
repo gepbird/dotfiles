@@ -22,6 +22,8 @@ self:
   home-manager = {
     backupCommand = lib.getExe pkgs.trash-cli;
     useGlobalPkgs = true;
+    # fix home manager breaking in vm after a second start
+    useUserPackages = true;
 
     users.gep = {
       home.stateVersion = config.system.stateVersion;
