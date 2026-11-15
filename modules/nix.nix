@@ -60,6 +60,7 @@ in
       nixfmt
       nixpkgs-review
       patchelf
+      rom
       nix-output-monitor
     ]
     ++ aliasFunctionPackages;
