@@ -66,6 +66,18 @@ in
     ++ aliasFunctionPackages;
 
   nixpkgs.overlays = [
+    # TODO: remove when fixed: https://github.com/manic-systems/rom/issues/110
+    (
+      final: prev:
+      lib.genAttrs [ "rom" "nh" ] (
+        name:
+        final.writeShellScriptBin name ''
+          unset TMUX
+          exec ${lib.getExe prev.${name}} "$@"
+        ''
+      )
+    )
+
     (final: prev: {
       lixPackageSet = prev.lixPackageSets.lix_2_96.overrideScope (
         lixFinal: lixPrev: {
