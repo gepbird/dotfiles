@@ -19,6 +19,7 @@ self:
     with pkgs;
     self.lib.maybeCachePackages self [
       claude-code
+      codex
       pi-coding-agent
       qwen-code
     ];
