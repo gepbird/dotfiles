@@ -195,6 +195,18 @@
         "url": "https://github.com/NixOS/nixpkgs/pull/549706.diff"
       }
     },
+    "nixpkgs-patch-rom-0-6-1": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-enau4WT9K8x/tWrD/D9XKkCSEw41s7oBBB5bGFioS5c=",
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/589922.diff"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/NixOS/nixpkgs/pull/589922.diff"
+      }
+    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1793529490,
@@ -306,6 +318,7 @@
         "nixpkgs-patch-nh-4-5-0": "nixpkgs-patch-nh-4-5-0",
         "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing": "nixpkgs-patch-openasar-fix-videos-and-gifs-not-playing",
         "nixpkgs-patch-pipewire-auto-restart": "nixpkgs-patch-pipewire-auto-restart",
+        "nixpkgs-patch-rom-0-6-1": "nixpkgs-patch-rom-0-6-1",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "nur": "nur",
         "nvim-gep": "nvim-gep",
