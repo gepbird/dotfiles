@@ -22,10 +22,6 @@
       url = "https://github.com/NixOS/nixpkgs/pull/587646.diff";
       flake = false;
     };
-    nixpkgs-patch-nh-4-5-0 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/578415.diff";
-      flake = false;
-    };
     nixpkgs-patch-rom-0-6-1 = {
       url = "https://github.com/NixOS/nixpkgs/pull/589922.diff";
         flake = false;
