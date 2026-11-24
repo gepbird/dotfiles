@@ -25,6 +25,7 @@ let
     nr = "if [[ -e default.nix ]]; then nix run -f . $@; else nix run .#$@; fi";
     ns = "nix shell nixpkgs#$1 \${@:2}";
     nu = "nix flake update --commit-lock-file $@";
+    nuh = "nix-update --version=skip $@";
     nixedit = ''
       temp_link=$(mktemp -u)
       mv $1 $temp_link
