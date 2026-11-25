@@ -57,7 +57,6 @@ in
       nix-prefetch-git
       nix-tree
       nix-update
-      nixd
       nixfmt
       nixpkgs-reviewFull
       patchelf
