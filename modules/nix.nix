@@ -59,7 +59,7 @@ in
       nix-update
       nixd
       nixfmt
-      nixpkgs-review
+      nixpkgs-reviewFull
       patchelf
       rom
       nix-output-monitor
