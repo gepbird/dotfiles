@@ -82,8 +82,8 @@ in
             patches = (o.patches or [ ]) ++ [
               (prev.fetchurl {
                 name = "derivation-memoization.patch";
-                url = "https://git.lix.systems/gepbird/lix/compare/2.96.0...2.96.0-derivation-memoization-6.0.0.patch";
-                hash = "sha256-AnQLUwTSNYUl/9ayZ7XpoVJo9m/H8F0QV9OBhqmyp5U=";
+                url = "https://git.lix.systems/gepbird/lix/compare/2.96.0...2.96.0-derivation-memoization-6.2.0.patch";
+                hash = "sha256-Kcsn96CDRYtSp5zQVD/xhG3/iW6oj27O4rs2NsNgq8c=";
               })
             ];
           });
