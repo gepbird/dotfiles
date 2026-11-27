@@ -9,6 +9,7 @@ self:
     with pkgs;
     self.lib.maybeCachePackages self [
       anydesk
+      appimage-run
       arandr
       blender
       bruno
