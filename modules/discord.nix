@@ -15,5 +15,6 @@ self:
         }
       )
     )
+    (self.lib.maybeCachePackage self pkgs.nur.repos.gepbird.sunbird)
   ];
 }
